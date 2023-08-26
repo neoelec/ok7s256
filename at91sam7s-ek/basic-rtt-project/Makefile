@@ -51,7 +51,7 @@ TRACE_LEVEL = 4
 OPTIMIZATION = -Os
 
 # AT91 library directory
-AT91LIB = ../at91lib
+AT91LIB = ../../at91lib
 
 # Output file basename
 OUTPUT = basic-rtt-project-$(BOARD)-$(CHIP)
