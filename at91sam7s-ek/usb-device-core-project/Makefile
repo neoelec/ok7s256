@@ -36,6 +36,7 @@
 # (can be overriden by adding CHIP=chip and BOARD=board to the command-line)
 CHIP  = at91sam7s256
 BOARD = at91sam7s-ek
+REF_BOARD = at91sam7s-ek
 
 # Trace level used for compilation
 # (can be overriden by adding TRACE_LEVEL=#number to the command-line)
@@ -139,7 +140,7 @@ C_OBJECTS_$(1) = $(addprefix $(OBJ)/$(1)_, $(C_OBJECTS))
 ASM_OBJECTS_$(1) = $(addprefix $(OBJ)/$(1)_, $(ASM_OBJECTS))
 
 $(1): $$(ASM_OBJECTS_$(1)) $$(C_OBJECTS_$(1))
-	$(CC) $(LDFLAGS) -T"$(AT91LIB)/boards/$(BOARD)/$(CHIP)/$$@.lds" -o $(OUTPUT)-$$@.elf $$^
+	$(CC) $(LDFLAGS) -T"$(AT91LIB)/boards/$(REF_BOARD)/$(CHIP)/$$@.lds" -o $(OUTPUT)-$$@.elf $$^
 	$(OBJCOPY) -O binary $(OUTPUT)-$$@.elf $(OUTPUT)-$$@.bin
 	$(SIZE) $$^ $(OUTPUT)-$$@.elf
 
