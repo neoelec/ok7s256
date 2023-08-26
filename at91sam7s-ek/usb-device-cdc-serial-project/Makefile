@@ -51,7 +51,7 @@ TRACE_LEVEL = 3
 OPTIMIZATION = -Os
 
 # AT91 library directory
-AT91LIB = ../at91lib
+AT91LIB = ../../at91lib
 
 # Output file basename
 OUTPUT = usb-device-cdc-serial-project-$(BOARD)-$(CHIP)

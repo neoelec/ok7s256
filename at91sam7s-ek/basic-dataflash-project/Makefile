@@ -34,8 +34,8 @@
 
 # Chip & board used for compilation
 # (can be overriden by adding CHIP=chip and BOARD=board to the command-line)
-CHIP  = at91sam9263
-BOARD = at91sam9263-ek
+CHIP  = at91sam7s256
+BOARD = at91sam7s-ek
 
 # Trace level used for compilation
 # (can be overriden by adding TRACE_LEVEL=#number to the command-line)
@@ -51,7 +51,7 @@ TRACE_LEVEL = 4
 OPTIMIZATION = -Os
 
 # AT91 library directory
-AT91LIB = ../at91lib
+AT91LIB = ../../at91lib
 
 # Output file basename
 OUTPUT = basic-dataflash-project-$(BOARD)-$(CHIP)
