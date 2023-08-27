@@ -447,7 +447,7 @@ void ISO7816_cold_reset( void )
 {
     volatile unsigned int i;
 
-    // tb: wait 400 cycles, 3.58MHz => 80µs 48000000Hz  (3840)
+    // tb: wait 400 cycles, 3.58MHz => 80Âµs 48000000Hz  (3840)
     for( i=0; i<(120*(BOARD_MCK/1000000)); i++ ) {
     }
 
@@ -466,7 +466,7 @@ void ISO7816_warm_reset( void )
 
     ISO7816_IccPowerOff();
 
-    // tb: wait 400 cycles, 3.58MHz => 80µs 48000000Hz  (3840)
+    // tb: wait 400 cycles, 3.58MHz => 80Âµs 48000000Hz  (3840)
     for( i=0; i<(120*(BOARD_MCK/1000000)); i++ ) {
     }
 

@@ -64,7 +64,7 @@ static void ADC_CfgModeReg(AT91S_ADC *pAdc, unsigned int mode)
 /// \param resolution resolution selection 8 bits or 10 bits
 /// \param mckClock value of MCK in Hz
 /// \param adcClock value of the ADC clock in Hz
-/// \param startupTime value of the start up time (in µs) (see datasheet)
+/// \param startupTime value of the start up time (in Âµs) (see datasheet)
 /// \param sampleAndHoldTime (in ns)
 //-----------------------------------------------------------------------------
 void ADC_Initialize (AT91S_ADC *pAdc,
@@ -86,14 +86,14 @@ void ADC_Initialize (AT91S_ADC *pAdc,
     ASSERT(sampleAndHoldTime>=ADC_TRACK_HOLD_TIME_MIN, "ADC Bad sampleAndHoldTime\n\r");
 
     // Example:
-    // 5 MHz operation, 20µs startup time, 600ns track and hold time
+    // 5 MHz operation, 20Âµs startup time, 600ns track and hold time
     // PRESCAL: Prescaler Rate Selection ADCClock = MCK / ( (PRESCAL+1) * 2 )
     // PRESCAL = [MCK / (ADCClock * 2)] -1 = [48/(5*2)]-1 = 3,8
     // PRESCAL =  4 -> 48/((4+1)*2) = 48/10 = 4.8MHz
     // 48/((3+1)*2) = 48/8 = 6MHz
     // Startup Time = (STARTUP+1) * 8 / ADCClock
     // STARTUP = [(Startup Time * ADCClock)/8]-1 = [(20 10e-6 * 5000000)/8]-1 = 11,5
-    // STARTUP = 11 -> (11+1)*8/48000000 = 96/4800000 = 20µs
+    // STARTUP = 11 -> (11+1)*8/48000000 = 96/4800000 = 20Âµs
     //
     // Sample & Hold Time = (SHTIM+1) / ADCClock
     // SHTIM = (HoldTime * ADCClock)-1 = (600 10e-9 * 5000000)-1 = 2

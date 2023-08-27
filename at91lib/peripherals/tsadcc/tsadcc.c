@@ -156,7 +156,7 @@ void TSADCC_SetAdcFrequency(unsigned int adcclk, unsigned int mck)
 /// Sets the TSADC startup time. This function relies on the ADCCLK frequency
 /// that has been set using TSADCC_SetAdcFrequency(), so it must have been
 /// called first.
-/// \param time  Startup time in µseconds.
+/// \param time  Startup time in Âµseconds.
 //------------------------------------------------------------------------------
 void TSADCC_SetStartupTime(unsigned int time)
 {

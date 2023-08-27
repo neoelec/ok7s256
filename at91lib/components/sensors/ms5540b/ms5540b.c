@@ -279,7 +279,7 @@ void MS5540B_AcquirePressure(void)
 /// Fetches and returns the result of the last conversion from the sensor. This
 /// function must only be called whenever the MS5540B signals that the
 /// conversion is completed with the DOUT signal line.
-/// The temperature returned is 10*C° (e.g. 31.4°C -> 314).
+/// The temperature returned is 10*CÂ° (e.g. 31.4Â°C -> 314).
 //------------------------------------------------------------------------------
 unsigned short MS5540B_ConversionFinished(void)
 {

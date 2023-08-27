@@ -52,7 +52,7 @@
 //         Local definitions
 //------------------------------------------------------------------------------
 
-/// PIT period value in µseconds.
+/// PIT period value in Âµseconds.
 #define PIT_PERIOD          10000 // 10 ms
 
 /// Delay for pushbutton debouncing (in PIT_PERIOD time-base).
