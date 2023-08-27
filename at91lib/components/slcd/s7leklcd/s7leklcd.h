@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,12 +31,12 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// Interface for displaying on segment LCD of AT91SAM7L-EK board..
-/// 
+///
 /// !!!Usage
-/// 
-/// -# call corresponding function to display symbol, pixel of the matrix, char, 
+///
+/// -# call corresponding function to display symbol, pixel of the matrix, char,
 /// clock number and string.
 //------------------------------------------------------------------------------
 
@@ -54,7 +54,7 @@
 /// \page "SAM7L-EK SLCD Segments"
 /// This page lists the segment constants used to describe letters on the
 /// SAM7L-EK segment LCD display.
-/// 
+///
 /// !Constants
 /// - A
 /// - B
@@ -123,17 +123,17 @@
 #define S7LEKLCD_I      (A | J | M | D)
 #define S7LEKLCD_J      (B | C | D | E)
 #define S7LEKLCD_K      (E | F | G | K | N)
-#define S7LEKLCD_L      (D | E | F )    
+#define S7LEKLCD_L      (D | E | F )
 #define S7LEKLCD_M      (B | C | E | F | I | K )
 #define S7LEKLCD_N      (B | C | E | F | I | N)
 #define S7LEKLCD_O      (A | B | C | D | E | F)
 #define S7LEKLCD_P      (A | B | E | F | G | H)
-#define S7LEKLCD_Q      (A | B | C | D | E | F | N)    
+#define S7LEKLCD_Q      (A | B | C | D | E | F | N)
 #define S7LEKLCD_R      (A | B | E | F | G | H | N)
 #define S7LEKLCD_S      (A | C | D | F | G | H)
 #define S7LEKLCD_T      (A | J | M )
-#define S7LEKLCD_U      (B | C | D | E | F)            
-#define S7LEKLCD_V      (E | F | K | L)          
+#define S7LEKLCD_U      (B | C | D | E | F)
+#define S7LEKLCD_V      (E | F | K | L)
 #define S7LEKLCD_W      (B | C | E | F | J | L | N)
 #define S7LEKLCD_X      (I | K | L | N)
 #define S7LEKLCD_Y      (I | K | M)
@@ -155,17 +155,17 @@
 #define S7LEKLCD_m     (C | E | G | H | M)
 #define S7LEKLCD_n     (C | E | G | H)
 #define S7LEKLCD_o     (C | D | E | G | H)
-#define S7LEKLCD_p     (A | E | F | G | K)   
+#define S7LEKLCD_p     (A | E | F | G | K)
 #define S7LEKLCD_q     (A | B | C | F | H | I)
 #define S7LEKLCD_r     (J | K | M)
-#define S7LEKLCD_s     (D | H | N)      
+#define S7LEKLCD_s     (D | H | N)
 #define S7LEKLCD_t     (G | H | J | N)
 #define S7LEKLCD_u     (C | D | E)
 #define S7LEKLCD_v     (E | H | L)
 #define S7LEKLCD_w     (C | E | L | N)
 #define S7LEKLCD_x     (I | J | L | N)
 #define S7LEKLCD_y     (I | K | L)
-#define S7LEKLCD_z     (D | G | L)                     
+#define S7LEKLCD_z     (D | G | L)
 
 // Numbers.
 #define S7LEKLCD_0     (A | B | C | D | E | F)
@@ -220,7 +220,7 @@
 #define S7LEKLCD_Q3         (40 * 7 )
 #define S7LEKLCD_KEY        (40 * 8 )
 #define S7LEKLCD_SOUND      (40 * 9 )
-                        
+
 #define S7LEKLCD_S0         (40 * 1 + 39)
 #define S7LEKLCD_S1         (40 * 0 + 39)
 #define S7LEKLCD_S2         (40 * 1 + 39)
@@ -237,10 +237,10 @@
 #define S7LEKLCD_HEX        (40 * 9 + 38)
 
 #define S7LEKLCD_ATMEL      (40 * 0 + 37)
-                        
+
 #define S7LEKLCD_SNOW       (40 * 0 + 36)
 #define S7LEKLCD_FIRE       (40 * 1 + 36)
-                        
+
 #define S7LEKLCD_BIN        (40 * 9 + 36)
 #define S7LEKLCD_DEC        (40 * 9 + 34)
 #define S7LEKLCD_AUTO       (40 * 9 + 32)
@@ -249,7 +249,7 @@
 #define S7LEKLCD_PROG       (40 * 9 + 24)
 #define S7LEKLCD_SETUP      (40 * 9 + 20)
 #define S7LEKLCD_2NDF       (40 * 9 + 16)
-                        
+
 #define S7LEKLCD_1P         (40 * 9 + 37)
 #define S7LEKLCD_2P         (40 * 9 + 35)
 #define S7LEKLCD_3P         (40 * 9 + 33)
@@ -262,25 +262,25 @@
 #define S7LEKLCD_10P        (40 * 9 + 19)
 #define S7LEKLCD_11P        (40 * 9 + 17)
 #define S7LEKLCD_12P        (40 * 9 + 15)
-                        
+
 #define S7LEKLCD_V0         (40 * 0 + 35)
 #define S7LEKLCD_VOL        (40 * 1 + 35)
 #define S7LEKLCD_V1         (40 * 0 + 34)
 #define S7LEKLCD_V2         (40 * 1 + 34)
 #define S7LEKLCD_V4         (40 * 0 + 33)
 #define S7LEKLCD_V3         (40 * 1 + 33)
-                        
+
 #define S7LEKLCD_CLOCK      (40 * 0 + 32)
 #define S7LEKLCD_TOOL       (40 * 1 + 32)
-                        
+
 #define S7LEKLCD_AM         (40 * 0 + 31)
 #define S7LEKLCD_PM         (40 * 1 + 31)
-                        
+
 #define S7LEKLCD_COL1       (40 * 9 + 28)
 #define S7LEKLCD_COL2       (40 * 9 + 22)
 #define S7LEKLCD_COL3       (40 * 9 + 18)
 #define S7LEKLCD_COL4       (40 * 1 + 30)
-                        
+
 #define S7LEKLCD_DMM        (40 * 0 + 13)
 #define S7LEKLCD_TMP        (40 * 1 + 13)
 #define S7LEKLCD_BARO       (40 * 2 + 13)

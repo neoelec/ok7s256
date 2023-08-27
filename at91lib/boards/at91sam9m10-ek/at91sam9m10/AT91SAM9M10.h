@@ -2,22 +2,22 @@
 //          ATMEL Microcontroller Software Support  -  ROUSSET  -
 //  ----------------------------------------------------------------------------
 //  Copyright (c) 2006, Atmel Corporation
-// 
+//
 //  All rights reserved.
-// 
+//
 //  Redistribution and use in source and binary forms, with or without
 //  modification, are permitted provided that the following conditions are met:
-// 
+//
 //  - Redistributions of source code must retain the above copyright notice,
 //  this list of conditions and the disclaimer below.
-// 
+//
 //  - Redistributions in binary form must reproduce the above copyright notice,
 //  this list of conditions and the disclaimer below in the documentation and/or
-//  other materials provided with the distribution. 
-// 
+//  other materials provided with the distribution.
+//
 //  Atmel's name may not be used to endorse or promote products derived from
-//  this software without specific prior written permission. 
-//  
+//  this software without specific prior written permission.
+//
 //  DISCLAIMER:  THIS SOFTWARE IS PROVIDED BY ATMEL "AS IS" AND ANY EXPRESS OR
 //  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 //  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE
@@ -32,7 +32,7 @@
 // File Name           : AT91SAM9M10.h
 // Object              : AT91SAM9M10 definitions
 // Generated           : AT91 SW Application Group  09/10/2008 (16:04:26)
-// 
+//
 // CVS Reference       : /AT91SAM9M10.pl/1.1/Mon Sep  1 13:32:53 2008//
 // CVS Reference       : /SYS_SAM9264.pl/1.2/Tue Oct  2 12:19:30 2007//
 // CVS Reference       : /HMATRIX2_SAM9264.pl/1.5/Fri Aug 31 13:13:12 2007//
@@ -107,7 +107,7 @@ typedef struct _AT91S_SFR {
 #define SFR_OHCI_SUSP_INT (AT91_CAST(AT91_REG *) 	0x00000014) // (SFR_OHCI_SUSP_INT) OHCI suspend Interrupt status
 
 #endif
-// -------- SFR_EMA : (SFR Offset: 0x0) memory Extra Margin Adjustment control register -------- 
+// -------- SFR_EMA : (SFR Offset: 0x0) memory Extra Margin Adjustment control register --------
 #define AT91C_SFR_RAM_EMA     (0x7 <<  0) // (SFR) SRAM EMA
 #define 	AT91C_SFR_RAM_EMA_0                    (0x0) // (SFR) Normal Mode
 #define 	AT91C_SFR_RAM_EMA_1                    (0x1) // (SFR) DEBUG MODE 1
@@ -153,128 +153,128 @@ typedef struct _AT91S_SFR {
 #define 	AT91C_SFR_ROM_EMA_5                    (0x5 << 16) // (SFR) DEBUG MODE 5
 #define 	AT91C_SFR_ROM_EMA_6                    (0x6 << 16) // (SFR) DEBUG MODE 6
 #define 	AT91C_SFR_ROM_EMA_7                    (0x7 << 16) // (SFR) DEBUG MODE 7
-// -------- SFR_DDRCFG : (SFR Offset: 0x4) DDR2 SSTL18 control register -------- 
+// -------- SFR_DDRCFG : (SFR Offset: 0x4) DDR2 SSTL18 control register --------
 #define AT91C_SFR_DDRCFG_SSTL (0x1 <<  0) // (SFR) Control DDR2 pads SSTL mode control
 #define 	AT91C_SFR_DDRCFG_SSTL_NORMAL               (0x0) // (SFR) Force pads in SSTL18 mode when DDR2 is connected
 #define 	AT91C_SFR_DDRCFG_SSTL_COMPATIBLE           (0x1) // (SFR) LVCMOS level (compatible SSTL18)
 #define AT91C_SFR_DDRCFG_CLKDELAY (0x1 <<  8) // (SFR) Control DDR2 pads clocks delay on clk, dqs0, dqs1
 #define 	AT91C_SFR_DDRCFG_CLKDELAY_HARD                 (0x0 <<  8) // (SFR) Fixed by hardware
 #define 	AT91C_SFR_DDRCFG_CLKDELAY_SOFT                 (0x1 <<  8) // (SFR) Software must write correct delay value
-// -------- SFR_DDRDELAY : (SFR Offset: 0x8) DDR2 controller clock delay -------- 
+// -------- SFR_DDRDELAY : (SFR Offset: 0x8) DDR2 controller clock delay --------
 #define AT91C_SFR_DDRDELAY_CLK (0xFF <<  0) // (SFR) Control CLK clock delay
 #define 	AT91C_SFR_DDRDELAY_CLK_0                    (0x0) // (SFR) minimum delay
-#define 	AT91C_SFR_DDRDELAY_CLK_1                    (0x1) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_2                    (0x2) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_3                    (0x3) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_4                    (0x4) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_5                    (0x5) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_6                    (0x6) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_7                    (0x7) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_8                    (0x8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_9                    (0x9) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_10                   (0xA) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_11                   (0xB) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_12                   (0xC) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_13                   (0xD) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_14                   (0xE) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_15                   (0xF) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_CLK_16                   (0x10) // (SFR) 
+#define 	AT91C_SFR_DDRDELAY_CLK_1                    (0x1) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_2                    (0x2) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_3                    (0x3) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_4                    (0x4) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_5                    (0x5) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_6                    (0x6) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_7                    (0x7) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_8                    (0x8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_9                    (0x9) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_10                   (0xA) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_11                   (0xB) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_12                   (0xC) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_13                   (0xD) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_14                   (0xE) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_15                   (0xF) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_CLK_16                   (0x10) // (SFR)
 #define AT91C_SFR_DDRDELAY_DQS0 (0xFF <<  8) // (SFR) Control DQS0 clock delay
 #define 	AT91C_SFR_DDRDELAY_DQS0_0                    (0x0 <<  8) // (SFR) minimum delay
-#define 	AT91C_SFR_DDRDELAY_DQS0_1                    (0x1 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_2                    (0x2 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_3                    (0x3 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_4                    (0x4 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_5                    (0x5 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_6                    (0x6 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_7                    (0x7 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_8                    (0x8 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_9                    (0x9 <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_10                   (0xA <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_11                   (0xB <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_12                   (0xC <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_13                   (0xD <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_14                   (0xE <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_15                   (0xF <<  8) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS0_16                   (0x10 <<  8) // (SFR) 
+#define 	AT91C_SFR_DDRDELAY_DQS0_1                    (0x1 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_2                    (0x2 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_3                    (0x3 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_4                    (0x4 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_5                    (0x5 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_6                    (0x6 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_7                    (0x7 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_8                    (0x8 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_9                    (0x9 <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_10                   (0xA <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_11                   (0xB <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_12                   (0xC <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_13                   (0xD <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_14                   (0xE <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_15                   (0xF <<  8) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS0_16                   (0x10 <<  8) // (SFR)
 #define AT91C_SFR_DDRDELAY_DQS1 (0xFF << 16) // (SFR) Control DQS1 clock delay
 #define 	AT91C_SFR_DDRDELAY_DQS1_0                    (0x0 << 16) // (SFR) minimum delay
-#define 	AT91C_SFR_DDRDELAY_DQS1_1                    (0x1 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_2                    (0x2 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_3                    (0x3 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_4                    (0x4 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_5                    (0x5 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_6                    (0x6 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_7                    (0x7 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_8                    (0x8 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_9                    (0x9 << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_10                   (0xA << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_11                   (0xB << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_12                   (0xC << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_13                   (0xD << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_14                   (0xE << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_15                   (0xF << 16) // (SFR) 
-#define 	AT91C_SFR_DDRDELAY_DQS1_16                   (0x10 << 16) // (SFR) 
-// -------- SFR_EBIDELAY : (SFR Offset: 0xc) EBI DDR controller clock delay -------- 
+#define 	AT91C_SFR_DDRDELAY_DQS1_1                    (0x1 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_2                    (0x2 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_3                    (0x3 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_4                    (0x4 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_5                    (0x5 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_6                    (0x6 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_7                    (0x7 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_8                    (0x8 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_9                    (0x9 << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_10                   (0xA << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_11                   (0xB << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_12                   (0xC << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_13                   (0xD << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_14                   (0xE << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_15                   (0xF << 16) // (SFR)
+#define 	AT91C_SFR_DDRDELAY_DQS1_16                   (0x10 << 16) // (SFR)
+// -------- SFR_EBIDELAY : (SFR Offset: 0xc) EBI DDR controller clock delay --------
 #define AT91C_SFR_EBIDELAY_CLK (0xFF <<  0) // (SFR) Control CLK clock delay
 #define 	AT91C_SFR_EBIDELAY_CLK_0                    (0x0) // (SFR) minimum delay
-#define 	AT91C_SFR_EBIDELAY_CLK_1                    (0x1) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_2                    (0x2) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_3                    (0x3) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_4                    (0x4) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_5                    (0x5) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_6                    (0x6) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_7                    (0x7) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_8                    (0x8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_9                    (0x9) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_10                   (0xA) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_11                   (0xB) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_12                   (0xC) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_13                   (0xD) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_14                   (0xE) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_15                   (0xF) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_CLK_16                   (0x10) // (SFR) 
+#define 	AT91C_SFR_EBIDELAY_CLK_1                    (0x1) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_2                    (0x2) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_3                    (0x3) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_4                    (0x4) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_5                    (0x5) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_6                    (0x6) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_7                    (0x7) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_8                    (0x8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_9                    (0x9) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_10                   (0xA) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_11                   (0xB) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_12                   (0xC) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_13                   (0xD) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_14                   (0xE) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_15                   (0xF) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_CLK_16                   (0x10) // (SFR)
 #define AT91C_SFR_EBIDELAY_DQS0 (0xFF <<  8) // (SFR) Control DQS0 clock delay
 #define 	AT91C_SFR_EBIDELAY_DQS0_0                    (0x0 <<  8) // (SFR) minimum delay
-#define 	AT91C_SFR_EBIDELAY_DQS0_1                    (0x1 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_2                    (0x2 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_3                    (0x3 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_4                    (0x4 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_5                    (0x5 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_6                    (0x6 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_7                    (0x7 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_8                    (0x8 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_9                    (0x9 <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_10                   (0xA <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_11                   (0xB <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_12                   (0xC <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_13                   (0xD <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_14                   (0xE <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_15                   (0xF <<  8) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS0_16                   (0x10 <<  8) // (SFR) 
+#define 	AT91C_SFR_EBIDELAY_DQS0_1                    (0x1 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_2                    (0x2 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_3                    (0x3 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_4                    (0x4 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_5                    (0x5 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_6                    (0x6 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_7                    (0x7 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_8                    (0x8 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_9                    (0x9 <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_10                   (0xA <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_11                   (0xB <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_12                   (0xC <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_13                   (0xD <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_14                   (0xE <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_15                   (0xF <<  8) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS0_16                   (0x10 <<  8) // (SFR)
 #define AT91C_SFR_EBIDELAY_DQS1 (0xFF << 16) // (SFR) Control DQS1 clock delay
 #define 	AT91C_SFR_EBIDELAY_DQS1_0                    (0x0 << 16) // (SFR) minimum delay
-#define 	AT91C_SFR_EBIDELAY_DQS1_1                    (0x1 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_2                    (0x2 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_3                    (0x3 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_4                    (0x4 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_5                    (0x5 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_6                    (0x6 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_7                    (0x7 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_8                    (0x8 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_9                    (0x9 << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_10                   (0xA << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_11                   (0xB << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_12                   (0xC << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_13                   (0xD << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_14                   (0xE << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_15                   (0xF << 16) // (SFR) 
-#define 	AT91C_SFR_EBIDELAY_DQS1_16                   (0x10 << 16) // (SFR) 
-// -------- SFR_UTMICFG : (SFR Offset: 0x10) UTMI Software Reset -------- 
+#define 	AT91C_SFR_EBIDELAY_DQS1_1                    (0x1 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_2                    (0x2 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_3                    (0x3 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_4                    (0x4 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_5                    (0x5 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_6                    (0x6 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_7                    (0x7 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_8                    (0x8 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_9                    (0x9 << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_10                   (0xA << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_11                   (0xB << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_12                   (0xC << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_13                   (0xD << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_14                   (0xE << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_15                   (0xF << 16) // (SFR)
+#define 	AT91C_SFR_EBIDELAY_DQS1_16                   (0x10 << 16) // (SFR)
+// -------- SFR_UTMICFG : (SFR Offset: 0x10) UTMI Software Reset --------
 #define AT91C_SFR_UTMICFG_PORT0 (0x1 <<  0) // (SFR) UTMI Software Reset port 0
 #define AT91C_SFR_UTMICFG_PORT1 (0x1 <<  1) // (SFR) UTMI Software Reset port 1
 #define AT91C_SFR_UTMICFG_OHCI_SUSP_INT_ENABLE (0x1 <<  2) // (SFR) OHCI Suspend Interrupt enable
-// -------- SFR_OHCI_SUSP_INT : (SFR Offset: 0x14) OHCI suspend Interrupt status -------- 
+// -------- SFR_OHCI_SUSP_INT : (SFR Offset: 0x14) OHCI suspend Interrupt status --------
 #define AT91C_SFR_OHCI_SUSP_INT_STATUS (0x3 <<  0) // (SFR) OHCI suspend Interrupt status
 #define 	AT91C_SFR_OHCI_SUSP_INT_STATUS_PORT0                (0x1) // (SFR) OHCI suspend Interrupt status for port 0
 #define 	AT91C_SFR_OHCI_SUSP_INT_STATUS_PORT1                (0x2) // (SFR) OHCI suspend Interrupt status for port 1
@@ -284,15 +284,15 @@ typedef struct _AT91S_SFR {
 // *****************************************************************************
 #ifndef __ASSEMBLY__
 typedef struct _AT91S_SYS {
-	AT91_REG	 Reserved0[3904]; 	// 
+	AT91_REG	 Reserved0[3904]; 	//
 	AT91_REG	 SYS_RSTC_RCR; 	// Reset Control Register
 	AT91_REG	 SYS_RSTC_RSR; 	// Reset Status Register
 	AT91_REG	 SYS_RSTC_RMR; 	// Reset Mode Register
-	AT91_REG	 Reserved1[1]; 	// 
+	AT91_REG	 Reserved1[1]; 	//
 	AT91_REG	 SYS_SHDWC_SHCR; 	// Shut Down Control Register
 	AT91_REG	 SYS_SHDWC_SHMR; 	// Shut Down Mode Register
 	AT91_REG	 SYS_SHDWC_SHSR; 	// Shut Down Status Register
-	AT91_REG	 Reserved2[1]; 	// 
+	AT91_REG	 Reserved2[1]; 	//
 	AT91_REG	 SYS_RTTC0_RTMR; 	// Real-time Mode Register
 	AT91_REG	 SYS_RTTC0_RTAR; 	// Real-time Alarm Register
 	AT91_REG	 SYS_RTTC0_RTVR; 	// Real-time Value Register
@@ -304,11 +304,11 @@ typedef struct _AT91S_SYS {
 	AT91_REG	 SYS_WDTC_WDCR; 	// Watchdog Control Register
 	AT91_REG	 SYS_WDTC_WDMR; 	// Watchdog Mode Register
 	AT91_REG	 SYS_WDTC_WDSR; 	// Watchdog Status Register
-	AT91_REG	 Reserved3[1]; 	// 
+	AT91_REG	 Reserved3[1]; 	//
 	AT91_REG	 SYS_SLCKSEL; 	// Slow Clock Selection Register
-	AT91_REG	 Reserved4[3]; 	// 
+	AT91_REG	 Reserved4[3]; 	//
 	AT91_REG	 SYS_GPBR[4]; 	// General Purpose Register
-	AT91_REG	 Reserved5[16]; 	// 
+	AT91_REG	 Reserved5[16]; 	//
 	AT91_REG	 RTC_CR; 	// Control Register
 	AT91_REG	 RTC_MR; 	// Mode Register
 	AT91_REG	 RTC_TIMR; 	// Time Register
@@ -327,12 +327,12 @@ typedef struct _AT91S_SYS {
 #define GPBR            (AT91_CAST(AT91_REG *) 	0x00003D60) // (GPBR) General Purpose Register
 
 #endif
-// -------- SLCKSEL : (SYS Offset: 0x3d50) Slow Clock Selection Register -------- 
+// -------- SLCKSEL : (SYS Offset: 0x3d50) Slow Clock Selection Register --------
 #define AT91C_SLCKSEL_RCEN    (0x1 <<  0) // (SYS) Enable Internal RC Oscillator
 #define AT91C_SLCKSEL_OSC32EN (0x1 <<  1) // (SYS) Enable External Oscillator
 #define AT91C_SLCKSEL_OSC32BYP (0x1 <<  2) // (SYS) Bypass External Oscillator
 #define AT91C_SLCKSEL_OSCSEL  (0x1 <<  3) // (SYS) OSC Selection
-// -------- GPBR : (SYS Offset: 0x3d60) GPBR General Purpose Register -------- 
+// -------- GPBR : (SYS Offset: 0x3d60) GPBR General Purpose Register --------
 #define AT91C_GPBR_GPRV       (0x0 <<  0) // (SYS) General Purpose Register Value
 
 // *****************************************************************************
@@ -372,10 +372,10 @@ typedef struct _AT91S_HDDRSDRC2 {
 	AT91_REG	 HDDRSDRC2_DELAY6; 	// Pad delay6 Register
 	AT91_REG	 HDDRSDRC2_DELAY7; 	// Pad delay7 Register
 	AT91_REG	 HDDRSDRC2_DELAY8; 	// Pad delay8 Register
-	AT91_REG	 Reserved0[37]; 	// 
+	AT91_REG	 Reserved0[37]; 	//
 	AT91_REG	 HDDRSDRC2_WPCR; 	// High Speed Register
 	AT91_REG	 HDDRSDRC2_WPSR; 	// High Speed Register
-	AT91_REG	 Reserved1[4]; 	// 
+	AT91_REG	 Reserved1[4]; 	//
 	AT91_REG	 HDDRSDRC2_VERSION; 	// Version Register
 } AT91S_HDDRSDRC2, *AT91PS_HDDRSDRC2;
 #else
@@ -404,7 +404,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define HDDRSDRC2_VERSION (AT91_CAST(AT91_REG *) 	0x000000FC) // (HDDRSDRC2_VERSION) Version Register
 
 #endif
-// -------- HDDRSDRC2_MR : (HDDRSDRC2 Offset: 0x0) Mode Register -------- 
+// -------- HDDRSDRC2_MR : (HDDRSDRC2 Offset: 0x0) Mode Register --------
 #define AT91C_DDRC2_MODE      (0x7 <<  0) // (HDDRSDRC2) DDR/SDRAM Command Mode
 #define 	AT91C_DDRC2_MODE_NORMAL_CMD           (0x0) // (HDDRSDRC2) Normal Mode
 #define 	AT91C_DDRC2_MODE_NOP_CMD              (0x1) // (HDDRSDRC2) Issue a NOP Command at every access
@@ -414,9 +414,9 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define 	AT91C_DDRC2_MODE_EXT_LMR_CMD          (0x5) // (HDDRSDRC2) Issue an Extended Load Mode Register
 #define 	AT91C_DDRC2_MODE_DEEP_CMD             (0x6) // (HDDRSDRC2) Enter Deep Power Mode
 #define 	AT91C_DDRC2_MODE_Reserved             (0x7) // (HDDRSDRC2) Reserved value
-// -------- HDDRSDRC2_RTR : (HDDRSDRC2 Offset: 0x4) Refresh Timer Register -------- 
+// -------- HDDRSDRC2_RTR : (HDDRSDRC2 Offset: 0x4) Refresh Timer Register --------
 #define AT91C_DDRC2_COUNT     (0xFFF <<  0) // (HDDRSDRC2) Refresh Timer Count
-// -------- HDDRSDRC2_CR : (HDDRSDRC2 Offset: 0x8) Configuration Register -------- 
+// -------- HDDRSDRC2_CR : (HDDRSDRC2 Offset: 0x8) Configuration Register --------
 #define AT91C_DDRC2_NC        (0x3 <<  0) // (HDDRSDRC2) Number of Column Bits
 #define 	AT91C_DDRC2_NC_DDR9_SDR8            (0x0) // (HDDRSDRC2) DDR 9 Bits | SDR 8 Bits
 #define 	AT91C_DDRC2_NC_DDR10_SDR9           (0x1) // (HDDRSDRC2) DDR 10 Bits | SDR 9 Bits
@@ -445,7 +445,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define AT91C_DDRC2_ENRDM     (0x1 << 17) // (HDDRSDRC2) DQS/DATA phase error correction
 #define 	AT91C_DDRC2_ENRDM_OFF                  (0x0 << 17) // (HDDRSDRC2) phase error correction disabled
 #define 	AT91C_DDRC2_ENRDM_ON                   (0x1 << 17) // (HDDRSDRC2) phase error correction enabled
-// -------- HDDRSDRC2_T0PR : (HDDRSDRC2 Offset: 0xc) Timing0 Register -------- 
+// -------- HDDRSDRC2_T0PR : (HDDRSDRC2 Offset: 0xc) Timing0 Register --------
 #define AT91C_DDRC2_TRAS      (0xF <<  0) // (HDDRSDRC2) Active to precharge delay
 #define 	AT91C_DDRC2_TRAS_0                    (0x0) // (HDDRSDRC2) Value :  0
 #define 	AT91C_DDRC2_TRAS_1                    (0x1) // (HDDRSDRC2) Value :  1
@@ -568,7 +568,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define 	AT91C_DDRC2_TMRD_13                   (0xD << 28) // (HDDRSDRC2) Value : 13
 #define 	AT91C_DDRC2_TMRD_14                   (0xE << 28) // (HDDRSDRC2) Value : 14
 #define 	AT91C_DDRC2_TMRD_15                   (0xF << 28) // (HDDRSDRC2) Value : 15
-// -------- HDDRSDRC2_T1PR : (HDDRSDRC2 Offset: 0x10) Timing1 Register -------- 
+// -------- HDDRSDRC2_T1PR : (HDDRSDRC2 Offset: 0x10) Timing1 Register --------
 #define AT91C_DDRC2_TRFC      (0x1F <<  0) // (HDDRSDRC2) row cycle delay
 #define 	AT91C_DDRC2_TRFC_0                    (0x0) // (HDDRSDRC2) Value :  0
 #define 	AT91C_DDRC2_TRFC_1                    (0x1) // (HDDRSDRC2) Value :  1
@@ -657,7 +657,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define 	AT91C_DDRC2_TXP_13                   (0xD << 24) // (HDDRSDRC2) Value : 13
 #define 	AT91C_DDRC2_TXP_14                   (0xE << 24) // (HDDRSDRC2) Value : 14
 #define 	AT91C_DDRC2_TXP_15                   (0xF << 24) // (HDDRSDRC2) Value : 15
-// -------- HDDRSDRC2_T2PR : (HDDRSDRC2 Offset: 0x14) Timing2 Register -------- 
+// -------- HDDRSDRC2_T2PR : (HDDRSDRC2 Offset: 0x14) Timing2 Register --------
 #define AT91C_DDRC2_TXARD     (0xF <<  0) // (HDDRSDRC2) Exit active power down delay to read command in 'Fast Exit' mode.
 #define 	AT91C_DDRC2_TXARD_0                    (0x0) // (HDDRSDRC2) Value :  0
 #define 	AT91C_DDRC2_TXARD_1                    (0x1) // (HDDRSDRC2) Value :  1
@@ -726,7 +726,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define 	AT91C_DDRC2_TRTP_13                   (0xD << 24) // (HDDRSDRC2) Value : 13
 #define 	AT91C_DDRC2_TRTP_14                   (0xE << 24) // (HDDRSDRC2) Value : 14
 #define 	AT91C_DDRC2_TRTP_15                   (0xF << 24) // (HDDRSDRC2) Value : 15
-// -------- HDDRSDRC2_T3PR : (HDDRSDRC2 Offset: 0x18) Timing3 Register -------- 
+// -------- HDDRSDRC2_T3PR : (HDDRSDRC2 Offset: 0x18) Timing3 Register --------
 #define AT91C_DDRC2_TANPD     (0xF <<  0) // (HDDRSDRC2) ODT to power down entry
 #define 	AT91C_DDRC2_TANPD_0                    (0x0) // (HDDRSDRC2) Value :  0
 #define 	AT91C_DDRC2_TANPD_1                    (0x1) // (HDDRSDRC2) Value :  1
@@ -812,7 +812,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define 	AT91C_DDRC2_TAONPD_13                   (0xD << 16) // (HDDRSDRC2) Value : 13
 #define 	AT91C_DDRC2_TAONPD_14                   (0xE << 16) // (HDDRSDRC2) Value : 14
 #define 	AT91C_DDRC2_TAONPD_15                   (0xF << 16) // (HDDRSDRC2) Value : 15
-// -------- HDDRSDRC2_LPR : (HDDRSDRC2 Offset: 0x1c)  -------- 
+// -------- HDDRSDRC2_LPR : (HDDRSDRC2 Offset: 0x1c)  --------
 #define AT91C_DDRC2_LPCB      (0x3 <<  0) // (HDDRSDRC2) Low-power Command Bit
 #define 	AT91C_DDRC2_LPCB_DISABLED             (0x0) // (HDDRSDRC2) Low-power Feature is inhibited: no power-down, self refresh and Deep power mode are issued to the SDRAM device.
 #define 	AT91C_DDRC2_LPCB_SELFREFRESH          (0x1) // (HDDRSDRC2) The DDRSDRAMC Controller issues a Self Refresh Command to the SDRAM device, the clock(s) is/are de-activated and the CKE signal is set low. The SDRAM device leaves the self refresh mode when accessed and enters it after the access.
@@ -824,7 +824,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define 	AT91C_DDRC2_CLK_FR_POWERDOWN            (0x2 <<  2) // (HDDRSDRC2) The HDDRSDRC2 Controller issues a Power-down Command to the SDRAM device after each access, the CKE signal is set low. The SDRAM device leaves the power-down mode when accessed and enters it after the access.
 #define 	AT91C_DDRC2_CLK_FR_DEEP_PWD             (0x3 <<  2) // (HDDRSDRC2) The HDDRSDRC2 Controller issues a Deep Power-down Command to the Mobile SDRAM device. This mode is unique to Mobile SDRAM devices
 #define AT91C_DDRC2_PASR      (0x7 <<  4) // (HDDRSDRC2) Partial Array Self Refresh
-#define AT91C_                (0x0 <<  8) // (HDDRSDRC2) 
+#define AT91C_                (0x0 <<  8) // (HDDRSDRC2)
 #define AT91C_DDRC2_DS        (0x3 << 10) // (HDDRSDRC2) Drive strength
 #define AT91C_DDRC2_TIMEOUT   (0x3 << 12) // (HDDRSDRC2) low-power mode delay
 #define 	AT91C_DDRC2_TIMEOUT_0                    (0x0 << 12) // (HDDRSDRC2) The SDRAM controller activates the SDRAM low-power mode immediately after the end of the last transfer.
@@ -834,7 +834,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define AT91C_DDRC2_ADPE      (0x1 << 16) // (HDDRSDRC2) Active Power Down Exit time
 #define 	AT91C_DDRC2_ADPE_FAST                 (0x0 << 16) // (HDDRSDRC2) Fast Exit
 #define 	AT91C_DDRC2_ADPE_SLOW                 (0x1 << 16) // (HDDRSDRC2) Slow Exit
-// -------- HDDRSDRC2_MDR : (HDDRSDRC2 Offset: 0x20) Memory Device Register -------- 
+// -------- HDDRSDRC2_MDR : (HDDRSDRC2 Offset: 0x20) Memory Device Register --------
 #define AT91C_DDRC2_MD        (0x7 <<  0) // (HDDRSDRC2) memory device
 #define 	AT91C_DDRC2_MD_SDR_SDRAM            (0x0) // (HDDRSDRC2) SDR SDRAM
 #define 	AT91C_DDRC2_MD_LP_SDR_SDRAM         (0x1) // (HDDRSDRC2) Low Power SDR SDRAM
@@ -844,7 +844,7 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define AT91C_DDRC2_DBW       (0x1 <<  4) // (HDDRSDRC2) Data Bus Width
 #define 	AT91C_DDRC2_DBW_32_BITS              (0x0 <<  4) // (HDDRSDRC2) 32 Bits datas bus
 #define 	AT91C_DDRC2_DBW_16_BITS              (0x1 <<  4) // (HDDRSDRC2) 16 Bits datas bus
-// -------- HDDRSDRC2_DLL : (HDDRSDRC2 Offset: 0x24) DLL Information Register -------- 
+// -------- HDDRSDRC2_DLL : (HDDRSDRC2 Offset: 0x24) DLL Information Register --------
 #define AT91C_DDRC2_MDINC     (0x1 <<  0) // (HDDRSDRC2) DLL Master Delay Increment
 #define AT91C_DDRC2_MDDEC     (0x1 <<  1) // (HDDRSDRC2) DLL Master Delay Decrement
 #define AT91C_DDRC2_MDOVF     (0x1 <<  2) // (HDDRSDRC2) DLL Master Delay Overflow Flag
@@ -854,24 +854,24 @@ typedef struct _AT91S_HDDRSDRC2 {
 #define AT91C_DDRC2_MDVAL     (0xFF <<  8) // (HDDRSDRC2) DLL Master Delay Value
 #define AT91C_DDRC2_SDVAL     (0xFF << 16) // (HDDRSDRC2) DLL Slave Delay Value
 #define AT91C_DDRC2_SDCVAL    (0xFF << 24) // (HDDRSDRC2) DLL Slave Delay Correction Value
-// -------- HDDRSDRC2_HS : (HDDRSDRC2 Offset: 0x2c) High Speed Register -------- 
+// -------- HDDRSDRC2_HS : (HDDRSDRC2 Offset: 0x2c) High Speed Register --------
 #define AT91C_DDRC2_DA        (0x1 <<  0) // (HDDRSDRC2) Decode cycle
 #define AT91C_DDRC2_NO_OPT    (0x1 <<  1) // (HDDRSDRC2) Disable optimization
 #define AT91C_DDRC2_NO_ANT    (0x1 <<  2) // (HDDRSDRC2) Disable Anticipated read
 #define AT91C_DDRC2_RES_DQS   (0x1 <<  3) // (HDDRSDRC2) Reset DQS Active
-// -------- HDDRSDRC2_DELAY1 : (HDDRSDRC2 Offset: 0x30) Pad delay1 Register -------- 
+// -------- HDDRSDRC2_DELAY1 : (HDDRSDRC2 Offset: 0x30) Pad delay1 Register --------
 #define AT91C_DDRC2_DELAY     (0xF <<  0) // (HDDRSDRC2) Pad delay value
-// -------- HDDRSDRC2_DELAY2 : (HDDRSDRC2 Offset: 0x34) Pad delay2 Register -------- 
-// -------- HDDRSDRC2_DELAY3 : (HDDRSDRC2 Offset: 0x38) Pad delay3 Register -------- 
-// -------- HDDRSDRC2_DELAY4 : (HDDRSDRC2 Offset: 0x3c) Pad delay4 Register -------- 
-// -------- HDDRSDRC2_DELAY5 : (HDDRSDRC2 Offset: 0x40) Pad delay5 Register -------- 
-// -------- HDDRSDRC2_DELAY6 : (HDDRSDRC2 Offset: 0x44) Pad delay6 Register -------- 
-// -------- HDDRSDRC2_DELAY7 : (HDDRSDRC2 Offset: 0x48) Pad delay7 Register -------- 
-// -------- HDDRSDRC2_DELAY8 : (HDDRSDRC2 Offset: 0x4c) Pad delay8 Register -------- 
-// -------- HDDRSDRC2_WPCR : (HDDRSDRC2 Offset: 0xe4) Write Protect Control Register -------- 
+// -------- HDDRSDRC2_DELAY2 : (HDDRSDRC2 Offset: 0x34) Pad delay2 Register --------
+// -------- HDDRSDRC2_DELAY3 : (HDDRSDRC2 Offset: 0x38) Pad delay3 Register --------
+// -------- HDDRSDRC2_DELAY4 : (HDDRSDRC2 Offset: 0x3c) Pad delay4 Register --------
+// -------- HDDRSDRC2_DELAY5 : (HDDRSDRC2 Offset: 0x40) Pad delay5 Register --------
+// -------- HDDRSDRC2_DELAY6 : (HDDRSDRC2 Offset: 0x44) Pad delay6 Register --------
+// -------- HDDRSDRC2_DELAY7 : (HDDRSDRC2 Offset: 0x48) Pad delay7 Register --------
+// -------- HDDRSDRC2_DELAY8 : (HDDRSDRC2 Offset: 0x4c) Pad delay8 Register --------
+// -------- HDDRSDRC2_WPCR : (HDDRSDRC2 Offset: 0xe4) Write Protect Control Register --------
 #define AT91C_DDRC2_WPEN      (0x1 <<  0) // (HDDRSDRC2) write protect enable
 #define AT91C_DDRC2_WPKEY     (0xFFFFFF <<  8) // (HDDRSDRC2) write protect key
-// -------- HDDRSDRC2_WPSR : (HDDRSDRC2 Offset: 0xe8) Write Protect Status Register -------- 
+// -------- HDDRSDRC2_WPSR : (HDDRSDRC2 Offset: 0xe8) Write Protect Status Register --------
 #define AT91C_DDRC2_WPVS      (0x1 <<  0) // (HDDRSDRC2) write protect violation status
 #define AT91C_DDRC2_WPSRC     (0xFFFF <<  8) // (HDDRSDRC2) write protect source address
 
@@ -912,7 +912,7 @@ typedef struct _AT91S_SMC {
 	AT91_REG	 SMC_PULSE7; 	//  Pulse Register for CS 7
 	AT91_REG	 SMC_CYCLE7; 	//  Cycle Register for CS 7
 	AT91_REG	 SMC_CTRL7; 	//  Control Register for CS 7
-	AT91_REG	 Reserved0[16]; 	// 
+	AT91_REG	 Reserved0[16]; 	//
 	AT91_REG	 SMC_DELAY1; 	// SMC Delay Control Register
 	AT91_REG	 SMC_DELAY2; 	// SMC Delay Control Register
 	AT91_REG	 SMC_DELAY3; 	// SMC Delay Control Register
@@ -965,20 +965,20 @@ typedef struct _AT91S_SMC {
 #define DELAY8          (AT91_CAST(AT91_REG *) 	0x000000DC) // (DELAY8) SMC Delay Control Register
 
 #endif
-// -------- SMC_SETUP : (SMC Offset: 0x0) Setup Register for CS x -------- 
+// -------- SMC_SETUP : (SMC Offset: 0x0) Setup Register for CS x --------
 #define AT91C_SMC_NWESETUP    (0x3F <<  0) // (SMC) NWE Setup Length
 #define AT91C_SMC_NCSSETUPWR  (0x3F <<  8) // (SMC) NCS Setup Length in WRite Access
 #define AT91C_SMC_NRDSETUP    (0x3F << 16) // (SMC) NRD Setup Length
 #define AT91C_SMC_NCSSETUPRD  (0x3F << 24) // (SMC) NCS Setup Length in ReaD Access
-// -------- SMC_PULSE : (SMC Offset: 0x4) Pulse Register for CS x -------- 
+// -------- SMC_PULSE : (SMC Offset: 0x4) Pulse Register for CS x --------
 #define AT91C_SMC_NWEPULSE    (0x7F <<  0) // (SMC) NWE Pulse Length
 #define AT91C_SMC_NCSPULSEWR  (0x7F <<  8) // (SMC) NCS Pulse Length in WRite Access
 #define AT91C_SMC_NRDPULSE    (0x7F << 16) // (SMC) NRD Pulse Length
 #define AT91C_SMC_NCSPULSERD  (0x7F << 24) // (SMC) NCS Pulse Length in ReaD Access
-// -------- SMC_CYC : (SMC Offset: 0x8) Cycle Register for CS x -------- 
+// -------- SMC_CYC : (SMC Offset: 0x8) Cycle Register for CS x --------
 #define AT91C_SMC_NWECYCLE    (0x1FF <<  0) // (SMC) Total Write Cycle Length
 #define AT91C_SMC_NRDCYCLE    (0x1FF << 16) // (SMC) Total Read Cycle Length
-// -------- SMC_CTRL : (SMC Offset: 0xc) Control Register for CS x -------- 
+// -------- SMC_CTRL : (SMC Offset: 0xc) Control Register for CS x --------
 #define AT91C_SMC_READMODE    (0x1 <<  0) // (SMC) Read Mode
 #define AT91C_SMC_WRITEMODE   (0x1 <<  1) // (SMC) Write Mode
 #define AT91C_SMC_NWAITM      (0x3 <<  5) // (SMC) NWAIT Mode
@@ -1000,34 +1000,34 @@ typedef struct _AT91S_SMC {
 #define 	AT91C_SMC_PS_SIZE_EIGHT_BYTES     (0x1 << 28) // (SMC) 8 bytes.
 #define 	AT91C_SMC_PS_SIZE_SIXTEEN_BYTES   (0x2 << 28) // (SMC) 16 bytes.
 #define 	AT91C_SMC_PS_SIZE_THIRTY_TWO_BYTES (0x3 << 28) // (SMC) 32 bytes.
-// -------- SMC_SETUP : (SMC Offset: 0x10) Setup Register for CS x -------- 
-// -------- SMC_PULSE : (SMC Offset: 0x14) Pulse Register for CS x -------- 
-// -------- SMC_CYC : (SMC Offset: 0x18) Cycle Register for CS x -------- 
-// -------- SMC_CTRL : (SMC Offset: 0x1c) Control Register for CS x -------- 
-// -------- SMC_SETUP : (SMC Offset: 0x20) Setup Register for CS x -------- 
-// -------- SMC_PULSE : (SMC Offset: 0x24) Pulse Register for CS x -------- 
-// -------- SMC_CYC : (SMC Offset: 0x28) Cycle Register for CS x -------- 
-// -------- SMC_CTRL : (SMC Offset: 0x2c) Control Register for CS x -------- 
-// -------- SMC_SETUP : (SMC Offset: 0x30) Setup Register for CS x -------- 
-// -------- SMC_PULSE : (SMC Offset: 0x34) Pulse Register for CS x -------- 
-// -------- SMC_CYC : (SMC Offset: 0x38) Cycle Register for CS x -------- 
-// -------- SMC_CTRL : (SMC Offset: 0x3c) Control Register for CS x -------- 
-// -------- SMC_SETUP : (SMC Offset: 0x40) Setup Register for CS x -------- 
-// -------- SMC_PULSE : (SMC Offset: 0x44) Pulse Register for CS x -------- 
-// -------- SMC_CYC : (SMC Offset: 0x48) Cycle Register for CS x -------- 
-// -------- SMC_CTRL : (SMC Offset: 0x4c) Control Register for CS x -------- 
-// -------- SMC_SETUP : (SMC Offset: 0x50) Setup Register for CS x -------- 
-// -------- SMC_PULSE : (SMC Offset: 0x54) Pulse Register for CS x -------- 
-// -------- SMC_CYC : (SMC Offset: 0x58) Cycle Register for CS x -------- 
-// -------- SMC_CTRL : (SMC Offset: 0x5c) Control Register for CS x -------- 
-// -------- SMC_SETUP : (SMC Offset: 0x60) Setup Register for CS x -------- 
-// -------- SMC_PULSE : (SMC Offset: 0x64) Pulse Register for CS x -------- 
-// -------- SMC_CYC : (SMC Offset: 0x68) Cycle Register for CS x -------- 
-// -------- SMC_CTRL : (SMC Offset: 0x6c) Control Register for CS x -------- 
-// -------- SMC_SETUP : (SMC Offset: 0x70) Setup Register for CS x -------- 
-// -------- SMC_PULSE : (SMC Offset: 0x74) Pulse Register for CS x -------- 
-// -------- SMC_CYC : (SMC Offset: 0x78) Cycle Register for CS x -------- 
-// -------- SMC_CTRL : (SMC Offset: 0x7c) Control Register for CS x -------- 
+// -------- SMC_SETUP : (SMC Offset: 0x10) Setup Register for CS x --------
+// -------- SMC_PULSE : (SMC Offset: 0x14) Pulse Register for CS x --------
+// -------- SMC_CYC : (SMC Offset: 0x18) Cycle Register for CS x --------
+// -------- SMC_CTRL : (SMC Offset: 0x1c) Control Register for CS x --------
+// -------- SMC_SETUP : (SMC Offset: 0x20) Setup Register for CS x --------
+// -------- SMC_PULSE : (SMC Offset: 0x24) Pulse Register for CS x --------
+// -------- SMC_CYC : (SMC Offset: 0x28) Cycle Register for CS x --------
+// -------- SMC_CTRL : (SMC Offset: 0x2c) Control Register for CS x --------
+// -------- SMC_SETUP : (SMC Offset: 0x30) Setup Register for CS x --------
+// -------- SMC_PULSE : (SMC Offset: 0x34) Pulse Register for CS x --------
+// -------- SMC_CYC : (SMC Offset: 0x38) Cycle Register for CS x --------
+// -------- SMC_CTRL : (SMC Offset: 0x3c) Control Register for CS x --------
+// -------- SMC_SETUP : (SMC Offset: 0x40) Setup Register for CS x --------
+// -------- SMC_PULSE : (SMC Offset: 0x44) Pulse Register for CS x --------
+// -------- SMC_CYC : (SMC Offset: 0x48) Cycle Register for CS x --------
+// -------- SMC_CTRL : (SMC Offset: 0x4c) Control Register for CS x --------
+// -------- SMC_SETUP : (SMC Offset: 0x50) Setup Register for CS x --------
+// -------- SMC_PULSE : (SMC Offset: 0x54) Pulse Register for CS x --------
+// -------- SMC_CYC : (SMC Offset: 0x58) Cycle Register for CS x --------
+// -------- SMC_CTRL : (SMC Offset: 0x5c) Control Register for CS x --------
+// -------- SMC_SETUP : (SMC Offset: 0x60) Setup Register for CS x --------
+// -------- SMC_PULSE : (SMC Offset: 0x64) Pulse Register for CS x --------
+// -------- SMC_CYC : (SMC Offset: 0x68) Cycle Register for CS x --------
+// -------- SMC_CTRL : (SMC Offset: 0x6c) Control Register for CS x --------
+// -------- SMC_SETUP : (SMC Offset: 0x70) Setup Register for CS x --------
+// -------- SMC_PULSE : (SMC Offset: 0x74) Pulse Register for CS x --------
+// -------- SMC_CYC : (SMC Offset: 0x78) Cycle Register for CS x --------
+// -------- SMC_CTRL : (SMC Offset: 0x7c) Control Register for CS x --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR AHB Matrix Interface
@@ -1046,7 +1046,7 @@ typedef struct _AT91S_MATRIX {
 	AT91_REG	 MATRIX_MCFG9; 	//  Master Configuration Register 9 : USB Device
 	AT91_REG	 MATRIX_MCFG10; 	//  Master Configuration Register 10 : USB Host EHCI
 	AT91_REG	 MATRIX_MCFG11; 	//  Master Configuration Register 11 : Video Decoder
-	AT91_REG	 Reserved0[4]; 	// 
+	AT91_REG	 Reserved0[4]; 	//
 	AT91_REG	 MATRIX_SCFG0; 	//  Slave Configuration Register 0 : SRAM S0
 	AT91_REG	 MATRIX_SCFG1; 	//  Slave Configuration Register 1 : SRAM S1
 	AT91_REG	 MATRIX_SCFG2; 	//  Slave Configuration Register 2 : SRAM S2
@@ -1055,7 +1055,7 @@ typedef struct _AT91S_MATRIX {
 	AT91_REG	 MATRIX_SCFG5; 	//  Slave Configuration Register 5 : DDR2 S0
 	AT91_REG	 MATRIX_SCFG6; 	//  Slave Configuration Register 6 : DDR2 S1
 	AT91_REG	 MATRIX_SCFG7; 	//  Slave Configuration Register 7 : DDR2 S2
-	AT91_REG	 Reserved1[8]; 	// 
+	AT91_REG	 Reserved1[8]; 	//
 	AT91_REG	 MATRIX_PRAS0; 	//  PRAS0 : SRAM S0
 	AT91_REG	 MATRIX_PRBS0; 	//  PRBS0 : SRAM S0
 	AT91_REG	 MATRIX_PRAS1; 	//  PRAS1 : SRAM S1
@@ -1072,11 +1072,11 @@ typedef struct _AT91S_MATRIX {
 	AT91_REG	 MATRIX_PRBS6; 	//  PRBS6 : DDR2 S1
 	AT91_REG	 MATRIX_PRAS7; 	//  PRAS7 : DDR2 S2
 	AT91_REG	 MATRIX_PRBS7; 	//  PRBS7 : DDR2 S2
-	AT91_REG	 Reserved2[16]; 	// 
-	AT91_REG	 MATRIX_MRCR; 	//  Master Remap Control Register 
-	AT91_REG	 Reserved3[56]; 	// 
-	AT91_REG	 MATRIX_WRPROTEN; 	//  Write Protection Control Register 
-	AT91_REG	 MATRIX_WRPROTST; 	//  Write Protection Status Register 
+	AT91_REG	 Reserved2[16]; 	//
+	AT91_REG	 MATRIX_MRCR; 	//  Master Remap Control Register
+	AT91_REG	 Reserved3[56]; 	//
+	AT91_REG	 MATRIX_WRPROTEN; 	//  Write Protection Control Register
+	AT91_REG	 MATRIX_WRPROTST; 	//  Write Protection Status Register
 } AT91S_MATRIX, *AT91PS_MATRIX;
 #else
 #define MATRIX_MCFG0    (AT91_CAST(AT91_REG *) 	0x00000000) // (MATRIX_MCFG0)  Master Configuration Register 0 : ARM-I
@@ -1115,25 +1115,25 @@ typedef struct _AT91S_MATRIX {
 #define MATRIX_PRBS6    (AT91_CAST(AT91_REG *) 	0x000000B4) // (MATRIX_PRBS6)  PRBS6 : DDR2 S1
 #define MATRIX_PRAS7    (AT91_CAST(AT91_REG *) 	0x000000B8) // (MATRIX_PRAS7)  PRAS7 : DDR2 S2
 #define MATRIX_PRBS7    (AT91_CAST(AT91_REG *) 	0x000000BC) // (MATRIX_PRBS7)  PRBS7 : DDR2 S2
-#define MATRIX_MRCR     (AT91_CAST(AT91_REG *) 	0x00000100) // (MATRIX_MRCR)  Master Remap Control Register 
-#define MATRIX_WRPROTEN (AT91_CAST(AT91_REG *) 	0x000001E4) // (MATRIX_WRPROTEN)  Write Protection Control Register 
-#define MATRIX_WRPROTST (AT91_CAST(AT91_REG *) 	0x000001E8) // (MATRIX_WRPROTST)  Write Protection Status Register 
+#define MATRIX_MRCR     (AT91_CAST(AT91_REG *) 	0x00000100) // (MATRIX_MRCR)  Master Remap Control Register
+#define MATRIX_WRPROTEN (AT91_CAST(AT91_REG *) 	0x000001E4) // (MATRIX_WRPROTEN)  Write Protection Control Register
+#define MATRIX_WRPROTST (AT91_CAST(AT91_REG *) 	0x000001E8) // (MATRIX_WRPROTST)  Write Protection Status Register
 
 #endif
-// -------- MATRIX_MCFG0 : (MATRIX Offset: 0x0) Master Configuration Register ARM-I -------- 
+// -------- MATRIX_MCFG0 : (MATRIX Offset: 0x0) Master Configuration Register ARM-I --------
 #define AT91C_MATRIX_ULBT     (0x7 <<  0) // (MATRIX) Undefined Length Burst Type
-// -------- MATRIX_MCFG1 : (MATRIX Offset: 0x4) Master Configuration Register ARM-D -------- 
-// -------- MATRIX_MCFG2 : (MATRIX Offset: 0x8) Master Configuration Register PDC -------- 
-// -------- MATRIX_MCFG3 : (MATRIX Offset: 0xc) Master Configuration Register USB Host OHCI -------- 
-// -------- MATRIX_MCFG4 : (MATRIX Offset: 0x10) Master Configuration Register DMA0 -------- 
-// -------- MATRIX_MCFG5 : (MATRIX Offset: 0x14) Master Configuration Register DMA1 -------- 
-// -------- MATRIX_MCFG6 : (MATRIX Offset: 0x18) Master Configuration Register HISI -------- 
-// -------- MATRIX_MCFG7 : (MATRIX Offset: 0x1c) Master Configuration Register LCD -------- 
-// -------- MATRIX_MCFG8 : (MATRIX Offset: 0x20) Master Configuration Register EMAC -------- 
-// -------- MATRIX_MCFG9 : (MATRIX Offset: 0x24) Master Configuration Register USB Device -------- 
-// -------- MATRIX_MCFG10 : (MATRIX Offset: 0x28) Master Configuration Register USB Host EHCI -------- 
-// -------- MATRIX_MCFG11 : (MATRIX Offset: 0x2c) Master Configuration Register Video Decoder -------- 
-// -------- MATRIX_SCFG0 : (MATRIX Offset: 0x40) Slave Configuration Register 0 -------- 
+// -------- MATRIX_MCFG1 : (MATRIX Offset: 0x4) Master Configuration Register ARM-D --------
+// -------- MATRIX_MCFG2 : (MATRIX Offset: 0x8) Master Configuration Register PDC --------
+// -------- MATRIX_MCFG3 : (MATRIX Offset: 0xc) Master Configuration Register USB Host OHCI --------
+// -------- MATRIX_MCFG4 : (MATRIX Offset: 0x10) Master Configuration Register DMA0 --------
+// -------- MATRIX_MCFG5 : (MATRIX Offset: 0x14) Master Configuration Register DMA1 --------
+// -------- MATRIX_MCFG6 : (MATRIX Offset: 0x18) Master Configuration Register HISI --------
+// -------- MATRIX_MCFG7 : (MATRIX Offset: 0x1c) Master Configuration Register LCD --------
+// -------- MATRIX_MCFG8 : (MATRIX Offset: 0x20) Master Configuration Register EMAC --------
+// -------- MATRIX_MCFG9 : (MATRIX Offset: 0x24) Master Configuration Register USB Device --------
+// -------- MATRIX_MCFG10 : (MATRIX Offset: 0x28) Master Configuration Register USB Host EHCI --------
+// -------- MATRIX_MCFG11 : (MATRIX Offset: 0x2c) Master Configuration Register Video Decoder --------
+// -------- MATRIX_SCFG0 : (MATRIX Offset: 0x40) Slave Configuration Register 0 --------
 #define AT91C_MATRIX_SLOT_CYCLE (0xFF <<  0) // (MATRIX) Maximum Number of Allowed Cycles for a Burst
 #define AT91C_MATRIX_DEFMSTR_TYPE (0x3 << 16) // (MATRIX) Default Master Type
 #define 	AT91C_MATRIX_DEFMSTR_TYPE_NO_DEFMSTR           (0x0 << 16) // (MATRIX) No Default Master. At the end of current slave access, if no other master request is pending, the slave is deconnected from all masters. This results in having a one cycle latency for the first transfer of a burst.
@@ -1151,22 +1151,22 @@ typedef struct _AT91S_MATRIX {
 #define 	AT91C_MATRIX_FIXED_DEFMSTR0_UDPHS                (0x9 << 18) // (MATRIX) USB Device Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR0_UHPHS_EHCI           (0xA << 18) // (MATRIX) USB Host EHCI Master is Default Master
 #define AT91C_MATRIX_ARBT     (0x3 << 24) // (MATRIX) Arbitration Type
-// -------- MATRIX_SCFG1 : (MATRIX Offset: 0x44) Slave Configuration Register 1 -------- 
+// -------- MATRIX_SCFG1 : (MATRIX Offset: 0x44) Slave Configuration Register 1 --------
 #define AT91C_MATRIX_FIXED_DEFMSTR1 (0xF << 18) // (MATRIX) Fixed Index of Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR1_ARM926I              (0x0 << 18) // (MATRIX) ARM926EJ-S Instruction Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR1_ARM926D              (0x1 << 18) // (MATRIX) ARM926EJ-S Data Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR1_PDC                  (0x2 << 18) // (MATRIX) PDC Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR1_ISI                  (0x6 << 18) // (MATRIX) ISI Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR1_UDPHS                (0x9 << 18) // (MATRIX) USB Device Master is Default Master
-// -------- MATRIX_SCFG2 : (MATRIX Offset: 0x48) Slave Configuration Register 2 -------- 
+// -------- MATRIX_SCFG2 : (MATRIX Offset: 0x48) Slave Configuration Register 2 --------
 #define AT91C_MATRIX_FIXED_DEFMSTR2 (0xF << 18) // (MATRIX) Fixed Index of Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR2_ARM926I              (0x0 << 18) // (MATRIX) ARM926EJ-S Instruction Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR2_VDEC                 (0xB << 18) // (MATRIX) Video Decoder Master is Default Master
-// -------- MATRIX_SCFG3 : (MATRIX Offset: 0x4c) Slave Configuration Register 3 -------- 
+// -------- MATRIX_SCFG3 : (MATRIX Offset: 0x4c) Slave Configuration Register 3 --------
 #define AT91C_MATRIX_FIXED_DEFMSTR3 (0xF << 18) // (MATRIX) Fixed Index of Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR3_ARM926D              (0x1 << 18) // (MATRIX) ARM926EJ-S Data Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR3_LCD                  (0x7 << 18) // (MATRIX) LCD Master is Default Master
-// -------- MATRIX_SCFG4 : (MATRIX Offset: 0x50) Slave Configuration Register 4 -------- 
+// -------- MATRIX_SCFG4 : (MATRIX Offset: 0x50) Slave Configuration Register 4 --------
 #define AT91C_MATRIX_FIXED_DEFMSTR4 (0xF << 18) // (MATRIX) Fixed Index of Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR4_ARM926I              (0x0 << 18) // (MATRIX) ARM926EJ-S Instruction Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR4_PDC                  (0x2 << 18) // (MATRIX) PDC Master is Default Master
@@ -1177,7 +1177,7 @@ typedef struct _AT91S_MATRIX {
 #define 	AT91C_MATRIX_FIXED_DEFMSTR4_EMAC                 (0x8 << 18) // (MATRIX) EMAC Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR4_UDPHS                (0x9 << 18) // (MATRIX) USB Device Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR4_UHPHS_EHCI           (0xA << 18) // (MATRIX) USB Host EHCI Master is Default Master
-// -------- MATRIX_SCFG5 : (MATRIX Offset: 0x54) Slave Configuration Register 5 -------- 
+// -------- MATRIX_SCFG5 : (MATRIX Offset: 0x54) Slave Configuration Register 5 --------
 #define AT91C_MATRIX_FIXED_DEFMSTR5 (0xF << 18) // (MATRIX) Fixed Index of Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR5_ARM926D              (0x1 << 18) // (MATRIX) ARM926EJ-S Data Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR5_PDC                  (0x2 << 18) // (MATRIX) PDC Master is Default Master
@@ -1188,7 +1188,7 @@ typedef struct _AT91S_MATRIX {
 #define 	AT91C_MATRIX_FIXED_DEFMSTR5_EMAC                 (0x8 << 18) // (MATRIX) EMAC Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR5_UDPHS                (0x9 << 18) // (MATRIX) USB Device Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR5_UHPHS_EHCI           (0xA << 18) // (MATRIX) USB Host EHCI Master is Default Master
-// -------- MATRIX_SCFG6 : (MATRIX Offset: 0x58) Slave Configuration Register 6 -------- 
+// -------- MATRIX_SCFG6 : (MATRIX Offset: 0x58) Slave Configuration Register 6 --------
 #define AT91C_MATRIX_FIXED_DEFMSTR6 (0xF << 18) // (MATRIX) Fixed Index of Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR6_ARM926I              (0x0 << 18) // (MATRIX) ARM926EJ-S Instruction Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR6_ARM926D              (0x1 << 18) // (MATRIX) ARM926EJ-S Data Master is Default Master
@@ -1202,14 +1202,14 @@ typedef struct _AT91S_MATRIX {
 #define 	AT91C_MATRIX_FIXED_DEFMSTR6_UDPHS                (0x9 << 18) // (MATRIX) USB Device Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR6_UHPHS_EHCI           (0xA << 18) // (MATRIX) USB Host EHCI Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR6_VDEC                 (0xB << 18) // (MATRIX) Video Decoder Master is Default Master
-// -------- MATRIX_SCFG7 : (MATRIX Offset: 0x5c) Slave Configuration Register 7 -------- 
+// -------- MATRIX_SCFG7 : (MATRIX Offset: 0x5c) Slave Configuration Register 7 --------
 #define AT91C_MATRIX_FIXED_DEFMSTR7 (0xF << 18) // (MATRIX) Fixed Index of Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR7_ARM926I              (0x0 << 18) // (MATRIX) ARM926EJ-S Instruction Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR7_ARM926D              (0x1 << 18) // (MATRIX) ARM926EJ-S Data Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR7_PDC                  (0x2 << 18) // (MATRIX) PDC Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR7_DMA0                 (0x4 << 18) // (MATRIX) DMA0 Master is Default Master
 #define 	AT91C_MATRIX_FIXED_DEFMSTR7_DMA1                 (0x5 << 18) // (MATRIX) DMA1 Master is Default Master
-// -------- MATRIX_PRAS0 : (MATRIX Offset: 0x80) PRAS0 Register -------- 
+// -------- MATRIX_PRAS0 : (MATRIX Offset: 0x80) PRAS0 Register --------
 #define AT91C_MATRIX_M0PR     (0x3 <<  0) // (MATRIX) ARM926EJ-S Instruction priority
 #define AT91C_MATRIX_M1PR     (0x3 <<  4) // (MATRIX) ARM926EJ-S Data priority
 #define AT91C_MATRIX_M2PR     (0x3 <<  8) // (MATRIX) PDC priority
@@ -1218,26 +1218,26 @@ typedef struct _AT91S_MATRIX {
 #define AT91C_MATRIX_M5PR     (0x3 << 20) // (MATRIX) DMA1 priority
 #define AT91C_MATRIX_M6PR     (0x3 << 24) // (MATRIX) ISI priority
 #define AT91C_MATRIX_M7PR     (0x3 << 28) // (MATRIX) LCD priority
-// -------- MATRIX_PRBS0 : (MATRIX Offset: 0x84) PRBS0 Register -------- 
+// -------- MATRIX_PRBS0 : (MATRIX Offset: 0x84) PRBS0 Register --------
 #define AT91C_MATRIX_M8PR     (0x3 <<  0) // (MATRIX) EMAC priority
 #define AT91C_MATRIX_M9PR     (0x3 <<  4) // (MATRIX) USB Device priority
 #define AT91C_MATRIX_M10PR    (0x3 <<  8) // (MATRIX) USB Host EHCI priority
 #define AT91C_MATRIX_M11PR    (0x3 << 12) // (MATRIX) Video Decoder priority
-// -------- MATRIX_PRAS1 : (MATRIX Offset: 0x88) PRAS1 Register -------- 
-// -------- MATRIX_PRBS1 : (MATRIX Offset: 0x8c) PRBS1 Register -------- 
-// -------- MATRIX_PRAS2 : (MATRIX Offset: 0x90) PRAS2 Register -------- 
-// -------- MATRIX_PRBS2 : (MATRIX Offset: 0x94) PRBS2 Register -------- 
-// -------- MATRIX_PRAS3 : (MATRIX Offset: 0x98) PRAS3 Register -------- 
-// -------- MATRIX_PRBS3 : (MATRIX Offset: 0x9c) PRBS3 Register -------- 
-// -------- MATRIX_PRAS4 : (MATRIX Offset: 0xa0) PRAS4 Register -------- 
-// -------- MATRIX_PRBS4 : (MATRIX Offset: 0xa4) PRBS4 Register -------- 
-// -------- MATRIX_PRAS5 : (MATRIX Offset: 0xa8) PRAS5 Register -------- 
-// -------- MATRIX_PRBS5 : (MATRIX Offset: 0xac) PRBS5 Register -------- 
-// -------- MATRIX_PRAS6 : (MATRIX Offset: 0xb0) PRAS6 Register -------- 
-// -------- MATRIX_PRBS6 : (MATRIX Offset: 0xb4) PRBS6 Register -------- 
-// -------- MATRIX_PRAS7 : (MATRIX Offset: 0xb8) PRAS7 Register -------- 
-// -------- MATRIX_PRBS7 : (MATRIX Offset: 0xbc) PRBS7 Register -------- 
-// -------- MATRIX_MRCR : (MATRIX Offset: 0x100) MRCR Register -------- 
+// -------- MATRIX_PRAS1 : (MATRIX Offset: 0x88) PRAS1 Register --------
+// -------- MATRIX_PRBS1 : (MATRIX Offset: 0x8c) PRBS1 Register --------
+// -------- MATRIX_PRAS2 : (MATRIX Offset: 0x90) PRAS2 Register --------
+// -------- MATRIX_PRBS2 : (MATRIX Offset: 0x94) PRBS2 Register --------
+// -------- MATRIX_PRAS3 : (MATRIX Offset: 0x98) PRAS3 Register --------
+// -------- MATRIX_PRBS3 : (MATRIX Offset: 0x9c) PRBS3 Register --------
+// -------- MATRIX_PRAS4 : (MATRIX Offset: 0xa0) PRAS4 Register --------
+// -------- MATRIX_PRBS4 : (MATRIX Offset: 0xa4) PRBS4 Register --------
+// -------- MATRIX_PRAS5 : (MATRIX Offset: 0xa8) PRAS5 Register --------
+// -------- MATRIX_PRBS5 : (MATRIX Offset: 0xac) PRBS5 Register --------
+// -------- MATRIX_PRAS6 : (MATRIX Offset: 0xb0) PRAS6 Register --------
+// -------- MATRIX_PRBS6 : (MATRIX Offset: 0xb4) PRBS6 Register --------
+// -------- MATRIX_PRAS7 : (MATRIX Offset: 0xb8) PRAS7 Register --------
+// -------- MATRIX_PRBS7 : (MATRIX Offset: 0xbc) PRBS7 Register --------
+// -------- MATRIX_MRCR : (MATRIX Offset: 0x100) MRCR Register --------
 #define AT91C_MATRIX_RCA926I  (0x1 <<  0) // (MATRIX) Remap Command Bit for ARM926EJ-S Instruction
 #define AT91C_MATRIX_RCA926D  (0x1 <<  1) // (MATRIX) Remap Command Bit for ARM926EJ-S Data
 #define AT91C_MATRIX_RCB2     (0x1 <<  2) // (MATRIX) Remap Command Bit for PDC
@@ -1250,11 +1250,11 @@ typedef struct _AT91S_MATRIX {
 #define AT91C_MATRIX_RCB9     (0x1 <<  9) // (MATRIX) Remap Command Bit for USB Device
 #define AT91C_MATRIX_RCB10    (0x1 << 10) // (MATRIX) Remap Command Bit for USB Host EHCI
 #define AT91C_MATRIX_RCB11    (0x1 << 11) // (MATRIX) Remap Command Bit for Video Decoder
-// -------- MATRIX_WRPROTEN : (MATRIX Offset: 0x1e4) Write Protection Control Register -------- 
+// -------- MATRIX_WRPROTEN : (MATRIX Offset: 0x1e4) Write Protection Control Register --------
 #define AT91C_MATRIX_WRPROT   (0x1 <<  0) // (MATRIX) Enable/Disable Write Protection of HMATRIX2 configuration registers (requires key)
 #define 	AT91C_MATRIX_WRPROT_DISABLE              (0x0) // (MATRIX) Disable Write Protection of HMATRIX2 configuration registers
 #define 	AT91C_MATRIX_WRPROT_ENABLE               (0x1) // (MATRIX) Enable  Write Protection of HMATRIX2 configuration registers
-// -------- MATRIX_WRPROTST : (MATRIX Offset: 0x1e8) Write Protection Status Register -------- 
+// -------- MATRIX_WRPROTST : (MATRIX Offset: 0x1e8) Write Protection Status Register --------
 #define AT91C_MATRIX_WRPROT_VIOLATION (0x1 <<  0) // (MATRIX) Violation of Write Protection of HMATRIX2 configuration registers
 #define 	AT91C_MATRIX_WRPROT_VIOLATION_UNDETECTED           (0x0) // (MATRIX) No violation of Write Protection of HMATRIX2 configuration registers
 #define 	AT91C_MATRIX_WRPROT_VIOLATION_DETECTED             (0x1) // (MATRIX) Violation of  Write Protection of HMATRIX2 configuration registers
@@ -1268,9 +1268,9 @@ typedef struct _AT91S_CCFG {
 	AT91_REG	 CCFG_TCMR; 	//  TCM configuration
 	AT91_REG	 CCFG_UDPHS; 	//  USB HS configuration
 	AT91_REG	 CCFG_VIDEO; 	//  Video Mode configuration
-	AT91_REG	 Reserved0[3]; 	// 
+	AT91_REG	 Reserved0[3]; 	//
 	AT91_REG	 CCFG_EBICSA; 	//  EBI Chip Select Assignement Register
-	AT91_REG	 Reserved1[52]; 	// 
+	AT91_REG	 Reserved1[52]; 	//
 	AT91_REG	 CCFG_MATRIXVERSION; 	//  Version Register
 } AT91S_CCFG, *AT91PS_CCFG;
 #else
@@ -1281,7 +1281,7 @@ typedef struct _AT91S_CCFG {
 #define CCFG_MATRIXVERSION (AT91_CAST(AT91_REG *) 	0x000000EC) // (CCFG_MATRIXVERSION)  Version Register
 
 #endif
-// -------- CCFG_TCMR : (CCFG Offset: 0x0) TCM Configuration -------- 
+// -------- CCFG_TCMR : (CCFG Offset: 0x0) TCM Configuration --------
 #define AT91C_CCFG_ITCM_SIZE  (0xF <<  0) // (CCFG) Size of ITCM enabled memory block
 #define 	AT91C_CCFG_ITCM_SIZE_0KB                  (0x0) // (CCFG) 0 KB (No ITCM Memory)
 #define 	AT91C_CCFG_ITCM_SIZE_32KB                 (0x6) // (CCFG) 32 KB
@@ -1292,14 +1292,14 @@ typedef struct _AT91S_CCFG {
 #define AT91C_CCFG_WAIT_STATE_TCM (0x1 << 11) // (CCFG) Wait state TCM register
 #define 	AT91C_CCFG_WAIT_STATE_TCM_NO_WS                (0x0 << 11) // (CCFG) NO WAIT STATE : 0 WS
 #define 	AT91C_CCFG_WAIT_STATE_TCM_ONE_WS               (0x1 << 11) // (CCFG) 1 WS activated (only for RATIO 3:1 or 4:1
-// -------- CCFG_UDPHS : (CCFG Offset: 0x4) USB HS configuration -------- 
-#define AT91C_CCFG_DONT_USE_UTMI_LOCK (0x1 <<  0) // (CCFG) 
-#define 	AT91C_CCFG_DONT_USE_UTMI_LOCK_DONT_USE_LOCK        (0x0) // (CCFG) 
-// -------- CCFG_VIDEO : (CCFG Offset: 0x8) Video Mode configuration -------- 
-#define AT91C_VDEC_SEL        (0x1 <<  0) // (CCFG) 
+// -------- CCFG_UDPHS : (CCFG Offset: 0x4) USB HS configuration --------
+#define AT91C_CCFG_DONT_USE_UTMI_LOCK (0x1 <<  0) // (CCFG)
+#define 	AT91C_CCFG_DONT_USE_UTMI_LOCK_DONT_USE_LOCK        (0x0) // (CCFG)
+// -------- CCFG_VIDEO : (CCFG Offset: 0x8) Video Mode configuration --------
+#define AT91C_VDEC_SEL        (0x1 <<  0) // (CCFG)
 #define 	AT91C_VDEC_SEL_OFF                  (0x0) // (CCFG) 0: Video Mode OFF
 #define 	AT91C_VDEC_SEL_ON                   (0x1) // (CCFG) 1: Video Mode ON
-// -------- CCFG_EBICSA : (CCFG Offset: 0x18) EBI Chip Select Assignement Register -------- 
+// -------- CCFG_EBICSA : (CCFG Offset: 0x18) EBI Chip Select Assignement Register --------
 #define AT91C_EBI_CS1A        (0x1 <<  1) // (CCFG) Chip Select 1 Assignment
 #define 	AT91C_EBI_CS1A_SMC                  (0x0 <<  1) // (CCFG) Chip Select 1 is assigned to the Static Memory Controller.
 #define 	AT91C_EBI_CS1A_SDRAMC               (0x1 <<  1) // (CCFG) Chip Select 1 is assigned to the SDRAM Controller.
@@ -1330,7 +1330,7 @@ typedef struct _AT91S_AIC {
 	AT91_REG	 AIC_IPR; 	// Interrupt Pending Register
 	AT91_REG	 AIC_IMR; 	// Interrupt Mask Register
 	AT91_REG	 AIC_CISR; 	// Core Interrupt Status Register
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 AIC_IECR; 	// Interrupt Enable Command Register
 	AT91_REG	 AIC_IDCR; 	// Interrupt Disable Command Register
 	AT91_REG	 AIC_ICCR; 	// Interrupt Clear Command Register
@@ -1338,7 +1338,7 @@ typedef struct _AT91S_AIC {
 	AT91_REG	 AIC_EOICR; 	// End of Interrupt Command Register
 	AT91_REG	 AIC_SPU; 	// Spurious Vector Register
 	AT91_REG	 AIC_DCR; 	// Debug Control Register (Protect)
-	AT91_REG	 Reserved1[1]; 	// 
+	AT91_REG	 Reserved1[1]; 	//
 	AT91_REG	 AIC_FFER; 	// Fast Forcing Enable Register
 	AT91_REG	 AIC_FFDR; 	// Fast Forcing Disable Register
 	AT91_REG	 AIC_FFSR; 	// Fast Forcing Status Register
@@ -1364,7 +1364,7 @@ typedef struct _AT91S_AIC {
 #define AIC_FFSR        (AT91_CAST(AT91_REG *) 	0x00000148) // (AIC_FFSR) Fast Forcing Status Register
 
 #endif
-// -------- AIC_SMR : (AIC Offset: 0x0) Control Register -------- 
+// -------- AIC_SMR : (AIC Offset: 0x0) Control Register --------
 #define AT91C_AIC_PRIOR       (0x7 <<  0) // (AIC) Priority Level
 #define 	AT91C_AIC_PRIOR_LOWEST               (0x0) // (AIC) Lowest priority level
 #define 	AT91C_AIC_PRIOR_HIGHEST              (0x7) // (AIC) Highest priority level
@@ -1373,10 +1373,10 @@ typedef struct _AT91S_AIC {
 #define 	AT91C_AIC_SRCTYPE_INT_EDGE_TRIGGERED   (0x1 <<  5) // (AIC) Internal Sources Code Label Edge triggered
 #define 	AT91C_AIC_SRCTYPE_EXT_HIGH_LEVEL       (0x2 <<  5) // (AIC) External Sources Code Label High-level Sensitive
 #define 	AT91C_AIC_SRCTYPE_EXT_POSITIVE_EDGE    (0x3 <<  5) // (AIC) External Sources Code Label Positive Edge triggered
-// -------- AIC_CISR : (AIC Offset: 0x114) AIC Core Interrupt Status Register -------- 
+// -------- AIC_CISR : (AIC Offset: 0x114) AIC Core Interrupt Status Register --------
 #define AT91C_AIC_NFIQ        (0x1 <<  0) // (AIC) NFIQ Status
 #define AT91C_AIC_NIRQ        (0x1 <<  1) // (AIC) NIRQ Status
-// -------- AIC_DCR : (AIC Offset: 0x138) AIC Debug Control Register (Protect) -------- 
+// -------- AIC_DCR : (AIC Offset: 0x138) AIC Debug Control Register (Protect) --------
 #define AT91C_AIC_DCR_PROT    (0x1 <<  0) // (AIC) Protection Mode
 #define AT91C_AIC_DCR_GMSK    (0x1 <<  1) // (AIC) General Mask
 
@@ -1409,12 +1409,12 @@ typedef struct _AT91S_PDC {
 #define PDC_PTSR        (AT91_CAST(AT91_REG *) 	0x00000024) // (PDC_PTSR) PDC Transfer Status Register
 
 #endif
-// -------- PDC_PTCR : (PDC Offset: 0x20) PDC Transfer Control Register -------- 
+// -------- PDC_PTCR : (PDC Offset: 0x20) PDC Transfer Control Register --------
 #define AT91C_PDC_RXTEN       (0x1 <<  0) // (PDC) Receiver Transfer Enable
 #define AT91C_PDC_RXTDIS      (0x1 <<  1) // (PDC) Receiver Transfer Disable
 #define AT91C_PDC_TXTEN       (0x1 <<  8) // (PDC) Transmitter Transfer Enable
 #define AT91C_PDC_TXTDIS      (0x1 <<  9) // (PDC) Transmitter Transfer Disable
-// -------- PDC_PTSR : (PDC Offset: 0x24) PDC Transfer Status Register -------- 
+// -------- PDC_PTSR : (PDC Offset: 0x24) PDC Transfer Status Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Debug Unit
@@ -1430,11 +1430,11 @@ typedef struct _AT91S_DBGU {
 	AT91_REG	 DBGU_RHR; 	// Receiver Holding Register
 	AT91_REG	 DBGU_THR; 	// Transmitter Holding Register
 	AT91_REG	 DBGU_BRGR; 	// Baud Rate Generator Register
-	AT91_REG	 Reserved0[7]; 	// 
+	AT91_REG	 Reserved0[7]; 	//
 	AT91_REG	 DBGU_CIDR; 	// Chip ID Register
 	AT91_REG	 DBGU_EXID; 	// Chip ID Extension Register
 	AT91_REG	 DBGU_FNTR; 	// Force NTRST Register
-	AT91_REG	 Reserved1[45]; 	// 
+	AT91_REG	 Reserved1[45]; 	//
 	AT91_REG	 DBGU_RPR; 	// Receive Pointer Register
 	AT91_REG	 DBGU_RCR; 	// Receive Counter Register
 	AT91_REG	 DBGU_TPR; 	// Transmit Pointer Register
@@ -1461,7 +1461,7 @@ typedef struct _AT91S_DBGU {
 #define DBGU_FNTR       (AT91_CAST(AT91_REG *) 	0x00000048) // (DBGU_FNTR) Force NTRST Register
 
 #endif
-// -------- DBGU_CR : (DBGU Offset: 0x0) Debug Unit Control Register -------- 
+// -------- DBGU_CR : (DBGU Offset: 0x0) Debug Unit Control Register --------
 #define AT91C_US_RSTRX        (0x1 <<  2) // (DBGU) Reset Receiver
 #define AT91C_US_RSTTX        (0x1 <<  3) // (DBGU) Reset Transmitter
 #define AT91C_US_RXEN         (0x1 <<  4) // (DBGU) Receiver Enable
@@ -1469,7 +1469,7 @@ typedef struct _AT91S_DBGU {
 #define AT91C_US_TXEN         (0x1 <<  6) // (DBGU) Transmitter Enable
 #define AT91C_US_TXDIS        (0x1 <<  7) // (DBGU) Transmitter Disable
 #define AT91C_US_RSTSTA       (0x1 <<  8) // (DBGU) Reset Status Bits
-// -------- DBGU_MR : (DBGU Offset: 0x4) Debug Unit Mode Register -------- 
+// -------- DBGU_MR : (DBGU Offset: 0x4) Debug Unit Mode Register --------
 #define AT91C_US_PAR          (0x7 <<  9) // (DBGU) Parity type
 #define 	AT91C_US_PAR_EVEN                 (0x0 <<  9) // (DBGU) Even Parity
 #define 	AT91C_US_PAR_ODD                  (0x1 <<  9) // (DBGU) Odd Parity
@@ -1482,7 +1482,7 @@ typedef struct _AT91S_DBGU {
 #define 	AT91C_US_CHMODE_AUTO                 (0x1 << 14) // (DBGU) Automatic Echo: Receiver Data Input is connected to the TXD pin.
 #define 	AT91C_US_CHMODE_LOCAL                (0x2 << 14) // (DBGU) Local Loopback: Transmitter Output Signal is connected to Receiver Input Signal.
 #define 	AT91C_US_CHMODE_REMOTE               (0x3 << 14) // (DBGU) Remote Loopback: RXD pin is internally connected to TXD pin.
-// -------- DBGU_IER : (DBGU Offset: 0x8) Debug Unit Interrupt Enable Register -------- 
+// -------- DBGU_IER : (DBGU Offset: 0x8) Debug Unit Interrupt Enable Register --------
 #define AT91C_US_RXRDY        (0x1 <<  0) // (DBGU) RXRDY Interrupt
 #define AT91C_US_TXRDY        (0x1 <<  1) // (DBGU) TXRDY Interrupt
 #define AT91C_US_ENDRX        (0x1 <<  3) // (DBGU) End of Receive Transfer Interrupt
@@ -1495,10 +1495,10 @@ typedef struct _AT91S_DBGU {
 #define AT91C_US_RXBUFF       (0x1 << 12) // (DBGU) RXBUFF Interrupt
 #define AT91C_US_COMM_TX      (0x1 << 30) // (DBGU) COMM_TX Interrupt
 #define AT91C_US_COMM_RX      (0x1 << 31) // (DBGU) COMM_RX Interrupt
-// -------- DBGU_IDR : (DBGU Offset: 0xc) Debug Unit Interrupt Disable Register -------- 
-// -------- DBGU_IMR : (DBGU Offset: 0x10) Debug Unit Interrupt Mask Register -------- 
-// -------- DBGU_CSR : (DBGU Offset: 0x14) Debug Unit Channel Status Register -------- 
-// -------- DBGU_FNTR : (DBGU Offset: 0x48) Debug Unit FORCE_NTRST Register -------- 
+// -------- DBGU_IDR : (DBGU Offset: 0xc) Debug Unit Interrupt Disable Register --------
+// -------- DBGU_IMR : (DBGU Offset: 0x10) Debug Unit Interrupt Mask Register --------
+// -------- DBGU_CSR : (DBGU Offset: 0x14) Debug Unit Channel Status Register --------
+// -------- DBGU_FNTR : (DBGU Offset: 0x48) Debug Unit FORCE_NTRST Register --------
 #define AT91C_US_FORCE_NTRST  (0x1 <<  0) // (DBGU) Force NTRST in JTAG
 
 // *****************************************************************************
@@ -1509,15 +1509,15 @@ typedef struct _AT91S_PIO {
 	AT91_REG	 PIO_PER; 	// PIO Enable Register
 	AT91_REG	 PIO_PDR; 	// PIO Disable Register
 	AT91_REG	 PIO_PSR; 	// PIO Status Register
-	AT91_REG	 Reserved0[1]; 	// 
+	AT91_REG	 Reserved0[1]; 	//
 	AT91_REG	 PIO_OER; 	// Output Enable Register
 	AT91_REG	 PIO_ODR; 	// Output Disable Registerr
 	AT91_REG	 PIO_OSR; 	// Output Status Register
-	AT91_REG	 Reserved1[1]; 	// 
+	AT91_REG	 Reserved1[1]; 	//
 	AT91_REG	 PIO_IFER; 	// Input Filter Enable Register
 	AT91_REG	 PIO_IFDR; 	// Input Filter Disable Register
 	AT91_REG	 PIO_IFSR; 	// Input Filter Status Register
-	AT91_REG	 Reserved2[1]; 	// 
+	AT91_REG	 Reserved2[1]; 	//
 	AT91_REG	 PIO_SODR; 	// Set Output Data Register
 	AT91_REG	 PIO_CODR; 	// Clear Output Data Register
 	AT91_REG	 PIO_ODSR; 	// Output Data Status Register
@@ -1529,26 +1529,26 @@ typedef struct _AT91S_PIO {
 	AT91_REG	 PIO_MDER; 	// Multi-driver Enable Register
 	AT91_REG	 PIO_MDDR; 	// Multi-driver Disable Register
 	AT91_REG	 PIO_MDSR; 	// Multi-driver Status Register
-	AT91_REG	 Reserved3[1]; 	// 
+	AT91_REG	 Reserved3[1]; 	//
 	AT91_REG	 PIO_PPUDR; 	// Pull-up Disable Register
 	AT91_REG	 PIO_PPUER; 	// Pull-up Enable Register
 	AT91_REG	 PIO_PPUSR; 	// Pull-up Status Register
-	AT91_REG	 Reserved4[1]; 	// 
+	AT91_REG	 Reserved4[1]; 	//
 	AT91_REG	 PIO_ASR; 	// Select A Register
 	AT91_REG	 PIO_BSR; 	// Select B Register
 	AT91_REG	 PIO_ABSR; 	// AB Select Status Register
-	AT91_REG	 Reserved5[9]; 	// 
+	AT91_REG	 Reserved5[9]; 	//
 	AT91_REG	 PIO_OWER; 	// Output Write Enable Register
 	AT91_REG	 PIO_OWDR; 	// Output Write Disable Register
 	AT91_REG	 PIO_OWSR; 	// Output Write Status Register
-	AT91_REG	 Reserved6[1]; 	// 
+	AT91_REG	 Reserved6[1]; 	//
 	AT91_REG	 PIO_SLEWRATE1; 	// PIO Slewrate Control Register
-	AT91_REG	 Reserved7[3]; 	// 
+	AT91_REG	 Reserved7[3]; 	//
 	AT91_REG	 PIO_DELAY1; 	// PIO Delay Control Register
 	AT91_REG	 PIO_DELAY2; 	// PIO Delay Control Register
 	AT91_REG	 PIO_DELAY3; 	// PIO Delay Control Register
 	AT91_REG	 PIO_DELAY4; 	// PIO Delay Control Register
-	AT91_REG	 Reserved8[11]; 	// 
+	AT91_REG	 Reserved8[11]; 	//
 	AT91_REG	 PIO_VERSION; 	// PIO Version Register
 } AT91S_PIO, *AT91PS_PIO;
 #else
@@ -1594,7 +1594,7 @@ typedef struct _AT91S_PMC {
 	AT91_REG	 PMC_SCER; 	// System Clock Enable Register
 	AT91_REG	 PMC_SCDR; 	// System Clock Disable Register
 	AT91_REG	 PMC_SCSR; 	// System Clock Status Register
-	AT91_REG	 Reserved0[1]; 	// 
+	AT91_REG	 Reserved0[1]; 	//
 	AT91_REG	 PMC_PCER; 	// Peripheral Clock Enable Register
 	AT91_REG	 PMC_PCDR; 	// Peripheral Clock Disable Register
 	AT91_REG	 PMC_PCSR; 	// Peripheral Clock Status Register
@@ -1602,25 +1602,25 @@ typedef struct _AT91S_PMC {
 	AT91_REG	 PMC_MOR; 	// Main Oscillator Register
 	AT91_REG	 PMC_MCFR; 	// Main Clock  Frequency Register
 	AT91_REG	 PMC_PLLAR; 	// PLL A Register
-	AT91_REG	 Reserved1[1]; 	// 
+	AT91_REG	 Reserved1[1]; 	//
 	AT91_REG	 PMC_MCKR; 	// Master Clock Register
-	AT91_REG	 Reserved2[1]; 	// 
+	AT91_REG	 Reserved2[1]; 	//
 	AT91_REG	 PMC_USB; 	// USB clock register
-	AT91_REG	 Reserved3[1]; 	// 
+	AT91_REG	 Reserved3[1]; 	//
 	AT91_REG	 PMC_PCKR[2]; 	// Programmable Clock 0 Register
-	AT91_REG	 Reserved4[6]; 	// 
+	AT91_REG	 Reserved4[6]; 	//
 	AT91_REG	 PMC_IER; 	// Interrupt Enable Register
 	AT91_REG	 PMC_IDR; 	// Interrupt Disable Register
 	AT91_REG	 PMC_SR; 	// Status Register
 	AT91_REG	 PMC_IMR; 	// Interrupt Mask Register
-	AT91_REG	 Reserved5[4]; 	// 
+	AT91_REG	 Reserved5[4]; 	//
 	AT91_REG	 PMC_PLLICPR; 	// PLL Charge Pump Current Register
-	AT91_REG	 Reserved6[26]; 	// 
-	AT91_REG	 PMC_ADDRSIZE; 	// 
-	AT91_REG	 PMC_NAME1; 	// 
-	AT91_REG	 PMC_NAME2; 	// 
-	AT91_REG	 PMC_FEATURES; 	// 
-	AT91_REG	 PMC_VERSION; 	// 
+	AT91_REG	 Reserved6[26]; 	//
+	AT91_REG	 PMC_ADDRSIZE; 	//
+	AT91_REG	 PMC_NAME1; 	//
+	AT91_REG	 PMC_NAME2; 	//
+	AT91_REG	 PMC_FEATURES; 	//
+	AT91_REG	 PMC_VERSION; 	//
 } AT91S_PMC, *AT91PS_PMC;
 #else
 #define PMC_SCER        (AT91_CAST(AT91_REG *) 	0x00000000) // (PMC_SCER) System Clock Enable Register
@@ -1641,23 +1641,23 @@ typedef struct _AT91S_PMC {
 #define PMC_SR          (AT91_CAST(AT91_REG *) 	0x00000068) // (PMC_SR) Status Register
 #define PMC_IMR         (AT91_CAST(AT91_REG *) 	0x0000006C) // (PMC_IMR) Interrupt Mask Register
 #define PMC_PLLICPR     (AT91_CAST(AT91_REG *) 	0x00000080) // (PMC_PLLICPR) PLL Charge Pump Current Register
-#define PMC_ADDRSIZE    (AT91_CAST(AT91_REG *) 	0x000000EC) // (PMC_ADDRSIZE) 
-#define PMC_NAME1       (AT91_CAST(AT91_REG *) 	0x000000F0) // (PMC_NAME1) 
-#define PMC_NAME2       (AT91_CAST(AT91_REG *) 	0x000000F4) // (PMC_NAME2) 
-#define PMC_FEATURES    (AT91_CAST(AT91_REG *) 	0x000000F8) // (PMC_FEATURES) 
-#define PMC_VERSION     (AT91_CAST(AT91_REG *) 	0x000000FC) // (PMC_VERSION) 
+#define PMC_ADDRSIZE    (AT91_CAST(AT91_REG *) 	0x000000EC) // (PMC_ADDRSIZE)
+#define PMC_NAME1       (AT91_CAST(AT91_REG *) 	0x000000F0) // (PMC_NAME1)
+#define PMC_NAME2       (AT91_CAST(AT91_REG *) 	0x000000F4) // (PMC_NAME2)
+#define PMC_FEATURES    (AT91_CAST(AT91_REG *) 	0x000000F8) // (PMC_FEATURES)
+#define PMC_VERSION     (AT91_CAST(AT91_REG *) 	0x000000FC) // (PMC_VERSION)
 
 #endif
-// -------- PMC_SCER : (PMC Offset: 0x0) System Clock Enable Register -------- 
+// -------- PMC_SCER : (PMC Offset: 0x0) System Clock Enable Register --------
 #define AT91C_PMC_DDR         (0x1 <<  2) // (PMC) DDR controller Clock2x
 #define AT91C_PMC_UHP         (0x1 <<  6) // (PMC) USB Host Port Clock
 #define AT91C_PMC_UDP         (0x1 <<  7) // (PMC) USB Device Port Clock
 #define AT91C_PMC_PCK0        (0x1 <<  8) // (PMC) Programmable Clock Output
 #define AT91C_PMC_PCK1        (0x1 <<  9) // (PMC) Programmable Clock Output
-// -------- PMC_SCDR : (PMC Offset: 0x4) System Clock Disable Register -------- 
+// -------- PMC_SCDR : (PMC Offset: 0x4) System Clock Disable Register --------
 #define AT91C_PMC_PCK         (0x1 <<  0) // (PMC) Processor Clock
-// -------- PMC_SCSR : (PMC Offset: 0x8) System Clock Status Register -------- 
-// -------- CKGR_UCKR : (PMC Offset: 0x1c) UTMI Clock Configuration Register -------- 
+// -------- PMC_SCSR : (PMC Offset: 0x8) System Clock Status Register --------
+// -------- CKGR_UCKR : (PMC Offset: 0x1c) UTMI Clock Configuration Register --------
 #define AT91C_CKGR_UPLLEN     (0x1 << 16) // (PMC) UTMI PLL Enable
 #define 	AT91C_CKGR_UPLLEN_DISABLED             (0x0 << 16) // (PMC) The UTMI PLL is disabled
 #define 	AT91C_CKGR_UPLLEN_ENABLED              (0x1 << 16) // (PMC) The UTMI PLL is enabled
@@ -1666,14 +1666,14 @@ typedef struct _AT91S_PMC {
 #define 	AT91C_CKGR_BIASEN_DISABLED             (0x0 << 24) // (PMC) The UTMI BIAS is disabled
 #define 	AT91C_CKGR_BIASEN_ENABLED              (0x1 << 24) // (PMC) The UTMI BIAS is enabled
 #define AT91C_CKGR_BIASCOUNT  (0xF << 28) // (PMC) UTMI BIAS Start-up Time
-// -------- CKGR_MOR : (PMC Offset: 0x20) Main Oscillator Register -------- 
+// -------- CKGR_MOR : (PMC Offset: 0x20) Main Oscillator Register --------
 #define AT91C_CKGR_MOSCEN     (0x1 <<  0) // (PMC) Main Oscillator Enable
 #define AT91C_CKGR_OSCBYPASS  (0x1 <<  1) // (PMC) Main Oscillator Bypass
 #define AT91C_CKGR_OSCOUNT    (0xFF <<  8) // (PMC) Main Oscillator Start-up Time
-// -------- CKGR_MCFR : (PMC Offset: 0x24) Main Clock Frequency Register -------- 
+// -------- CKGR_MCFR : (PMC Offset: 0x24) Main Clock Frequency Register --------
 #define AT91C_CKGR_MAINF      (0xFFFF <<  0) // (PMC) Main Clock Frequency
 #define AT91C_CKGR_MAINRDY    (0x1 << 16) // (PMC) Main Clock Ready
-// -------- CKGR_PLLAR : (PMC Offset: 0x28) PLL A Register -------- 
+// -------- CKGR_PLLAR : (PMC Offset: 0x28) PLL A Register --------
 #define AT91C_CKGR_DIVA       (0xFF <<  0) // (PMC) Divider A Selected
 #define 	AT91C_CKGR_DIVA_0                    (0x0) // (PMC) Divider A output is 0
 #define 	AT91C_CKGR_DIVA_BYPASS               (0x1) // (PMC) Divider A is bypassed
@@ -1684,8 +1684,8 @@ typedef struct _AT91S_PMC {
 #define 	AT91C_CKGR_OUTA_2                    (0x2 << 14) // (PMC) Please refer to the PLLA datasheet
 #define 	AT91C_CKGR_OUTA_3                    (0x3 << 14) // (PMC) Please refer to the PLLA datasheet
 #define AT91C_CKGR_MULA       (0xFF << 16) // (PMC) PLL A Multiplier
-#define AT91C_CKGR_SRCA       (0x1 << 29) // (PMC) 
-// -------- PMC_MCKR : (PMC Offset: 0x30) Master Clock Register -------- 
+#define AT91C_CKGR_SRCA       (0x1 << 29) // (PMC)
+// -------- PMC_MCKR : (PMC Offset: 0x30) Master Clock Register --------
 #define AT91C_PMC_CSS         (0x3 <<  0) // (PMC) Programmable Clock Selection
 #define 	AT91C_PMC_CSS_SLOW_CLK             (0x0) // (PMC) Slow Clock is selected
 #define 	AT91C_PMC_CSS_MAIN_CLK             (0x1) // (PMC) Main Clock is selected
@@ -1707,7 +1707,7 @@ typedef struct _AT91S_PMC {
 #define AT91C_PMC_PLLADIV2    (0x1 << 12) // (PMC) PLLA divisor by 2
 #define 	AT91C_PMC_PLLADIV2_1                    (0x0 << 12) // (PMC) PLLA clock frequency is divided by 1
 #define 	AT91C_PMC_PLLADIV2_2                    (0x1 << 12) // (PMC) PLLA clock frequency is divided by 2
-// -------- PMC_USB : (PMC Offset: 0x38) USB Clock Register -------- 
+// -------- PMC_USB : (PMC Offset: 0x38) USB Clock Register --------
 #define AT91C_PMC_USBS        (0x1 <<  0) // (PMC) USBS
 #define 	AT91C_PMC_USBS_USB_PLLA             (0x0) // (PMC) USB Clock Input is PLLA
 #define 	AT91C_PMC_USBS_USB_UPLL             (0x1) // (PMC) USB Clock Input is UPLL
@@ -1728,21 +1728,21 @@ typedef struct _AT91S_PMC {
 #define 	AT91C_PMC_USBDIV_14                   (0xD <<  8) // (PMC) USB Clock divided by 14
 #define 	AT91C_PMC_USBDIV_15                   (0xE <<  8) // (PMC) USB Clock divided by 15
 #define 	AT91C_PMC_USBDIV_16                   (0xF <<  8) // (PMC) USB Clock divided by 16
-// -------- PMC_PCKR : (PMC Offset: 0x40) Programmable Clock 0 Register -------- 
+// -------- PMC_PCKR : (PMC Offset: 0x40) Programmable Clock 0 Register --------
 #define AT91C_PMC_SLCKMCK     (0x1 <<  8) // (PMC) Programmable Clock Prescaler
 #define 	AT91C_PMC_SLCKMCK_SLCK                 (0x0 <<  8) // (PMC) Slow Clock selected
 #define 	AT91C_PMC_SLCKMCK_MCK                  (0x1 <<  8) // (PMC) Master Clock selected
-// -------- PMC_IER : (PMC Offset: 0x60) PMC Interrupt Enable Register -------- 
+// -------- PMC_IER : (PMC Offset: 0x60) PMC Interrupt Enable Register --------
 #define AT91C_PMC_MOSCS       (0x1 <<  0) // (PMC) MOSC Status/Enable/Disable/Mask
 #define AT91C_PMC_LOCKA       (0x1 <<  1) // (PMC) PLL A Status/Enable/Disable/Mask
 #define AT91C_PMC_MCKRDY      (0x1 <<  3) // (PMC) Master Clock Status/Enable/Disable/Mask
 #define AT91C_PMC_LOCKU       (0x1 <<  6) // (PMC) PLL UTMI Status/Enable/Disable/Mask
 #define AT91C_PMC_PCK0RDY     (0x1 <<  8) // (PMC) PCK0_RDY Status/Enable/Disable/Mask
 #define AT91C_PMC_PCK1RDY     (0x1 <<  9) // (PMC) PCK1_RDY Status/Enable/Disable/Mask
-// -------- PMC_IDR : (PMC Offset: 0x64) PMC Interrupt Disable Register -------- 
-// -------- PMC_SR : (PMC Offset: 0x68) PMC Status Register -------- 
-// -------- PMC_IMR : (PMC Offset: 0x6c) PMC Interrupt Mask Register -------- 
-// -------- PMC_PLLICPR : (PMC Offset: 0x80) PLL Charge Pump Current Register -------- 
+// -------- PMC_IDR : (PMC Offset: 0x64) PMC Interrupt Disable Register --------
+// -------- PMC_SR : (PMC Offset: 0x68) PMC Status Register --------
+// -------- PMC_IMR : (PMC Offset: 0x6c) PMC Interrupt Mask Register --------
+// -------- PMC_PLLICPR : (PMC Offset: 0x80) PLL Charge Pump Current Register --------
 #define AT91C_PMC_ICPPLLA     (0xF <<  0) // (PMC) PLLA charge pump current setting
 #define 	AT91C_PMC_ICPPLLA_0                    (0x0) // (PMC) 595-800 MHz
 #define 	AT91C_PMC_ICPPLLA_1                    (0x1) // (PMC) 395-600 MHz
@@ -1750,63 +1750,63 @@ typedef struct _AT91S_PMC {
 #define AT91C_PMC_IPLLA       (0xF <<  8) // (PMC) PLLA special setting
 #define 	AT91C_PMC_IPLLA_0                    (0x0 <<  8) // (PMC) Internal LFT
 #define 	AT91C_PMC_IPLLA_1                    (0x1 <<  8) // (PMC) External LFT
-// -------- PMC_FEATURES : (PMC Offset: 0xf8)   -------- 
-#define AT91C_PMC_CFGAHBCLK   (0x1 <<  0) // (PMC) 
-#define 	AT91C_PMC_CFGAHBCLK_0                    (0x0) // (PMC) 
-#define 	AT91C_PMC_CFGAHBCLK_1                    (0x1) // (PMC) 
-#define AT91C_PMC_HCLKEN      (0x1 <<  1) // (PMC) 
-#define 	AT91C_PMC_HCLKEN_0                    (0x0 <<  1) // (PMC) 
-#define 	AT91C_PMC_HCLKEN_1                    (0x1 <<  1) // (PMC) 
-#define AT91C_PMC_PERMCLK     (0x1 <<  2) // (PMC) 
-#define 	AT91C_PMC_PERMCLK_0                    (0x0 <<  2) // (PMC) 
-#define 	AT91C_PMC_PERMCLK_1                    (0x1 <<  2) // (PMC) 
-#define AT91C_PMC_CORE2       (0x1 <<  3) // (PMC) 
-#define 	AT91C_PMC_CORE2_0                    (0x0 <<  3) // (PMC) 
-#define 	AT91C_PMC_CORE2_1                    (0x1 <<  3) // (PMC) 
-#define AT91C_PMC_USBDEVCK    (0x1 <<  4) // (PMC) 
-#define 	AT91C_PMC_USBDEVCK_0                    (0x0 <<  4) // (PMC) 
-#define 	AT91C_PMC_USBDEVCK_1                    (0x1 <<  4) // (PMC) 
-#define AT91C_PMC_USBHOSTCK   (0x1 <<  5) // (PMC) 
-#define 	AT91C_PMC_USBHOSTCK_0                    (0x0 <<  5) // (PMC) 
-#define 	AT91C_PMC_USBHOSTCK_1                    (0x1 <<  5) // (PMC) 
-#define AT91C_PMC_USBOTGCK    (0x1 <<  6) // (PMC) 
-#define 	AT91C_PMC_USBOTGCK_0                    (0x0 <<  6) // (PMC) 
-#define 	AT91C_PMC_USBOTGCK_1                    (0x1 <<  6) // (PMC) 
-#define AT91C_PMC_UHSYNRST    (0x1 <<  7) // (PMC) 
-#define 	AT91C_PMC_UHSYNRST_0                    (0x0 <<  7) // (PMC) 
-#define 	AT91C_PMC_UHSYNRST_1                    (0x1 <<  7) // (PMC) 
-#define AT91C_PMC_UOSYNRST    (0x1 <<  8) // (PMC) 
-#define 	AT91C_PMC_UOSYNRST_0                    (0x0 <<  8) // (PMC) 
-#define 	AT91C_PMC_UOSYNRST_1                    (0x1 <<  8) // (PMC) 
-#define AT91C_PMC_PLLENPOL    (0x1 <<  9) // (PMC) 
-#define 	AT91C_PMC_PLLENPOL_0                    (0x0 <<  9) // (PMC) 
-#define 	AT91C_PMC_PLLENPOL_1                    (0x1 <<  9) // (PMC) 
-#define AT91C_PMC_BIASREG     (0x1 << 10) // (PMC) 
-#define 	AT91C_PMC_BIASREG_0                    (0x0 << 10) // (PMC) 
-#define 	AT91C_PMC_BIASREG_1                    (0x1 << 10) // (PMC) 
-#define AT91C_PMC_OUTPLL      (0x1 << 11) // (PMC) 
-#define 	AT91C_PMC_OUTPLL_0                    (0x0 << 11) // (PMC) 
-#define 	AT91C_PMC_OUTPLL_1                    (0x1 << 11) // (PMC) 
-#define AT91C_PMC_OUTCURR     (0x1 << 12) // (PMC) 
-#define 	AT91C_PMC_OUTCURR_0                    (0x0 << 12) // (PMC) 
-#define 	AT91C_PMC_OUTCURR_1                    (0x1 << 12) // (PMC) 
-#define AT91C_PMC_FWUP        (0x1 << 13) // (PMC) 
-#define 	AT91C_PMC_FWUP_0                    (0x0 << 13) // (PMC) 
-#define 	AT91C_PMC_FWUP_1                    (0x1 << 13) // (PMC) 
-#define AT91C_PMC_SELMAINCLK  (0x1 << 14) // (PMC) 
-#define 	AT91C_PMC_SELMAINCLK_0                    (0x0 << 14) // (PMC) 
-#define 	AT91C_PMC_SELMAINCLK_1                    (0x1 << 14) // (PMC) 
-#define AT91C_PMC_RSTCLKM     (0x1 << 15) // (PMC) 
-#define 	AT91C_PMC_RSTCLKM_0                    (0x0 << 15) // (PMC) 
-#define 	AT91C_PMC_RSTCLKM_1                    (0x1 << 15) // (PMC) 
-#define AT91C_PMC_NB_PERIPH_CLOCK (0xFF << 16) // (PMC) 
-// -------- PMC_VERSION : (PMC Offset: 0xfc)   -------- 
-#define AT91C_PMC_Version     (0xFFFF <<  0) // (PMC) 
-#define 	AT91C_PMC_Version_0                    (0x0) // (PMC) 
-#define 	AT91C_PMC_Version_1                    (0x1) // (PMC) 
-#define AT91C_PMC_MFN         (0x7 << 16) // (PMC) 
-#define 	AT91C_PMC_MFN_0                    (0x0 << 16) // (PMC) 
-#define 	AT91C_PMC_MFN_1                    (0x1 << 16) // (PMC) 
+// -------- PMC_FEATURES : (PMC Offset: 0xf8)   --------
+#define AT91C_PMC_CFGAHBCLK   (0x1 <<  0) // (PMC)
+#define 	AT91C_PMC_CFGAHBCLK_0                    (0x0) // (PMC)
+#define 	AT91C_PMC_CFGAHBCLK_1                    (0x1) // (PMC)
+#define AT91C_PMC_HCLKEN      (0x1 <<  1) // (PMC)
+#define 	AT91C_PMC_HCLKEN_0                    (0x0 <<  1) // (PMC)
+#define 	AT91C_PMC_HCLKEN_1                    (0x1 <<  1) // (PMC)
+#define AT91C_PMC_PERMCLK     (0x1 <<  2) // (PMC)
+#define 	AT91C_PMC_PERMCLK_0                    (0x0 <<  2) // (PMC)
+#define 	AT91C_PMC_PERMCLK_1                    (0x1 <<  2) // (PMC)
+#define AT91C_PMC_CORE2       (0x1 <<  3) // (PMC)
+#define 	AT91C_PMC_CORE2_0                    (0x0 <<  3) // (PMC)
+#define 	AT91C_PMC_CORE2_1                    (0x1 <<  3) // (PMC)
+#define AT91C_PMC_USBDEVCK    (0x1 <<  4) // (PMC)
+#define 	AT91C_PMC_USBDEVCK_0                    (0x0 <<  4) // (PMC)
+#define 	AT91C_PMC_USBDEVCK_1                    (0x1 <<  4) // (PMC)
+#define AT91C_PMC_USBHOSTCK   (0x1 <<  5) // (PMC)
+#define 	AT91C_PMC_USBHOSTCK_0                    (0x0 <<  5) // (PMC)
+#define 	AT91C_PMC_USBHOSTCK_1                    (0x1 <<  5) // (PMC)
+#define AT91C_PMC_USBOTGCK    (0x1 <<  6) // (PMC)
+#define 	AT91C_PMC_USBOTGCK_0                    (0x0 <<  6) // (PMC)
+#define 	AT91C_PMC_USBOTGCK_1                    (0x1 <<  6) // (PMC)
+#define AT91C_PMC_UHSYNRST    (0x1 <<  7) // (PMC)
+#define 	AT91C_PMC_UHSYNRST_0                    (0x0 <<  7) // (PMC)
+#define 	AT91C_PMC_UHSYNRST_1                    (0x1 <<  7) // (PMC)
+#define AT91C_PMC_UOSYNRST    (0x1 <<  8) // (PMC)
+#define 	AT91C_PMC_UOSYNRST_0                    (0x0 <<  8) // (PMC)
+#define 	AT91C_PMC_UOSYNRST_1                    (0x1 <<  8) // (PMC)
+#define AT91C_PMC_PLLENPOL    (0x1 <<  9) // (PMC)
+#define 	AT91C_PMC_PLLENPOL_0                    (0x0 <<  9) // (PMC)
+#define 	AT91C_PMC_PLLENPOL_1                    (0x1 <<  9) // (PMC)
+#define AT91C_PMC_BIASREG     (0x1 << 10) // (PMC)
+#define 	AT91C_PMC_BIASREG_0                    (0x0 << 10) // (PMC)
+#define 	AT91C_PMC_BIASREG_1                    (0x1 << 10) // (PMC)
+#define AT91C_PMC_OUTPLL      (0x1 << 11) // (PMC)
+#define 	AT91C_PMC_OUTPLL_0                    (0x0 << 11) // (PMC)
+#define 	AT91C_PMC_OUTPLL_1                    (0x1 << 11) // (PMC)
+#define AT91C_PMC_OUTCURR     (0x1 << 12) // (PMC)
+#define 	AT91C_PMC_OUTCURR_0                    (0x0 << 12) // (PMC)
+#define 	AT91C_PMC_OUTCURR_1                    (0x1 << 12) // (PMC)
+#define AT91C_PMC_FWUP        (0x1 << 13) // (PMC)
+#define 	AT91C_PMC_FWUP_0                    (0x0 << 13) // (PMC)
+#define 	AT91C_PMC_FWUP_1                    (0x1 << 13) // (PMC)
+#define AT91C_PMC_SELMAINCLK  (0x1 << 14) // (PMC)
+#define 	AT91C_PMC_SELMAINCLK_0                    (0x0 << 14) // (PMC)
+#define 	AT91C_PMC_SELMAINCLK_1                    (0x1 << 14) // (PMC)
+#define AT91C_PMC_RSTCLKM     (0x1 << 15) // (PMC)
+#define 	AT91C_PMC_RSTCLKM_0                    (0x0 << 15) // (PMC)
+#define 	AT91C_PMC_RSTCLKM_1                    (0x1 << 15) // (PMC)
+#define AT91C_PMC_NB_PERIPH_CLOCK (0xFF << 16) // (PMC)
+// -------- PMC_VERSION : (PMC Offset: 0xfc)   --------
+#define AT91C_PMC_Version     (0xFFFF <<  0) // (PMC)
+#define 	AT91C_PMC_Version_0                    (0x0) // (PMC)
+#define 	AT91C_PMC_Version_1                    (0x1) // (PMC)
+#define AT91C_PMC_MFN         (0x7 << 16) // (PMC)
+#define 	AT91C_PMC_MFN_0                    (0x0 << 16) // (PMC)
+#define 	AT91C_PMC_MFN_1                    (0x1 << 16) // (PMC)
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Clock Generator Controler
@@ -1821,10 +1821,10 @@ typedef struct _AT91S_CKGR {
 #else
 
 #endif
-// -------- CKGR_UCKR : (CKGR Offset: 0x0) UTMI Clock Configuration Register -------- 
-// -------- CKGR_MOR : (CKGR Offset: 0x4) Main Oscillator Register -------- 
-// -------- CKGR_MCFR : (CKGR Offset: 0x8) Main Clock Frequency Register -------- 
-// -------- CKGR_PLLAR : (CKGR Offset: 0xc) PLL A Register -------- 
+// -------- CKGR_UCKR : (CKGR Offset: 0x0) UTMI Clock Configuration Register --------
+// -------- CKGR_MOR : (CKGR Offset: 0x4) Main Oscillator Register --------
+// -------- CKGR_MCFR : (CKGR Offset: 0x8) Main Clock Frequency Register --------
+// -------- CKGR_PLLAR : (CKGR Offset: 0xc) PLL A Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Reset Controller Interface
@@ -1841,13 +1841,13 @@ typedef struct _AT91S_RSTC {
 #define RSTC_RMR        (AT91_CAST(AT91_REG *) 	0x00000008) // (RSTC_RMR) Reset Mode Register
 
 #endif
-// -------- RSTC_RCR : (RSTC Offset: 0x0) Reset Control Register -------- 
+// -------- RSTC_RCR : (RSTC Offset: 0x0) Reset Control Register --------
 #define AT91C_RSTC_PROCRST    (0x1 <<  0) // (RSTC) Processor Reset
 #define AT91C_RSTC_ICERST     (0x1 <<  1) // (RSTC) ICE Interface Reset
 #define AT91C_RSTC_PERRST     (0x1 <<  2) // (RSTC) Peripheral Reset
 #define AT91C_RSTC_EXTRST     (0x1 <<  3) // (RSTC) External Reset
 #define AT91C_RSTC_KEY        (0xFF << 24) // (RSTC) Password
-// -------- RSTC_RSR : (RSTC Offset: 0x4) Reset Status Register -------- 
+// -------- RSTC_RSR : (RSTC Offset: 0x4) Reset Status Register --------
 #define AT91C_RSTC_URSTS      (0x1 <<  0) // (RSTC) User Reset Status
 #define AT91C_RSTC_RSTTYP     (0x7 <<  8) // (RSTC) Reset Type
 #define 	AT91C_RSTC_RSTTYP_GENERAL              (0x0 <<  8) // (RSTC) General reset. Both VDDCORE and VDDBU rising.
@@ -1857,7 +1857,7 @@ typedef struct _AT91S_RSTC {
 #define 	AT91C_RSTC_RSTTYP_USER                 (0x4 <<  8) // (RSTC) User Reset. NRST pin detected low.
 #define AT91C_RSTC_NRSTL      (0x1 << 16) // (RSTC) NRST pin level
 #define AT91C_RSTC_SRCMP      (0x1 << 17) // (RSTC) Software Reset Command in Progress.
-// -------- RSTC_RMR : (RSTC Offset: 0x8) Reset Mode Register -------- 
+// -------- RSTC_RMR : (RSTC Offset: 0x8) Reset Mode Register --------
 #define AT91C_RSTC_URSTEN     (0x1 <<  0) // (RSTC) User Reset Enable
 #define AT91C_RSTC_URSTIEN    (0x1 <<  4) // (RSTC) User Reset Interrupt Enable
 #define AT91C_RSTC_ERSTL      (0xF <<  8) // (RSTC) User Reset Enable
@@ -1877,10 +1877,10 @@ typedef struct _AT91S_SHDWC {
 #define SHDWC_SHSR      (AT91_CAST(AT91_REG *) 	0x00000008) // (SHDWC_SHSR) Shut Down Status Register
 
 #endif
-// -------- SHDWC_SHCR : (SHDWC Offset: 0x0) Shut Down Control Register -------- 
+// -------- SHDWC_SHCR : (SHDWC Offset: 0x0) Shut Down Control Register --------
 #define AT91C_SHDWC_SHDW      (0x1 <<  0) // (SHDWC) Processor Reset
 #define AT91C_SHDWC_KEY       (0xFF << 24) // (SHDWC) Shut down KEY Password
-// -------- SHDWC_SHMR : (SHDWC Offset: 0x4) Shut Down Mode Register -------- 
+// -------- SHDWC_SHMR : (SHDWC Offset: 0x4) Shut Down Mode Register --------
 #define AT91C_SHDWC_WKMODE0   (0x3 <<  0) // (SHDWC) Wake Up 0 Mode Selection
 #define 	AT91C_SHDWC_WKMODE0_NONE                 (0x0) // (SHDWC) None. No detection is performed on the wake up input.
 #define 	AT91C_SHDWC_WKMODE0_HIGH                 (0x1) // (SHDWC) High Level.
@@ -1895,7 +1895,7 @@ typedef struct _AT91S_SHDWC {
 #define AT91C_SHDWC_CPTWK1    (0xF << 12) // (SHDWC) Counter On Wake Up 1
 #define AT91C_SHDWC_RTTWKEN   (0x1 << 16) // (SHDWC) Real Time Timer Wake Up Enable
 #define AT91C_SHDWC_RTCWKEN   (0x1 << 17) // (SHDWC) Real Time Clock Wake Up Enable
-// -------- SHDWC_SHSR : (SHDWC Offset: 0x8) Shut Down Status Register -------- 
+// -------- SHDWC_SHSR : (SHDWC Offset: 0x8) Shut Down Status Register --------
 #define AT91C_SHDWC_WAKEUP0   (0x1 <<  0) // (SHDWC) Wake Up 0 Status
 #define AT91C_SHDWC_WAKEUP1   (0x1 <<  1) // (SHDWC) Wake Up 1 Status
 #define AT91C_SHDWC_FWKUP     (0x1 <<  2) // (SHDWC) Force Wake Up Status
@@ -1919,16 +1919,16 @@ typedef struct _AT91S_RTTC {
 #define RTTC_RTSR       (AT91_CAST(AT91_REG *) 	0x0000000C) // (RTTC_RTSR) Real-time Status Register
 
 #endif
-// -------- RTTC_RTMR : (RTTC Offset: 0x0) Real-time Mode Register -------- 
+// -------- RTTC_RTMR : (RTTC Offset: 0x0) Real-time Mode Register --------
 #define AT91C_RTTC_RTPRES     (0xFFFF <<  0) // (RTTC) Real-time Timer Prescaler Value
 #define AT91C_RTTC_ALMIEN     (0x1 << 16) // (RTTC) Alarm Interrupt Enable
 #define AT91C_RTTC_RTTINCIEN  (0x1 << 17) // (RTTC) Real Time Timer Increment Interrupt Enable
 #define AT91C_RTTC_RTTRST     (0x1 << 18) // (RTTC) Real Time Timer Restart
-// -------- RTTC_RTAR : (RTTC Offset: 0x4) Real-time Alarm Register -------- 
+// -------- RTTC_RTAR : (RTTC Offset: 0x4) Real-time Alarm Register --------
 #define AT91C_RTTC_ALMV       (0x0 <<  0) // (RTTC) Alarm Value
-// -------- RTTC_RTVR : (RTTC Offset: 0x8) Current Real-time Value Register -------- 
+// -------- RTTC_RTVR : (RTTC Offset: 0x8) Current Real-time Value Register --------
 #define AT91C_RTTC_CRTV       (0x0 <<  0) // (RTTC) Current Real-time Value
-// -------- RTTC_RTSR : (RTTC Offset: 0xc) Real-time Status Register -------- 
+// -------- RTTC_RTSR : (RTTC Offset: 0xc) Real-time Status Register --------
 #define AT91C_RTTC_ALMS       (0x1 <<  0) // (RTTC) Real-time Alarm Status
 #define AT91C_RTTC_RTTINC     (0x1 <<  1) // (RTTC) Real-time Timer Increment
 
@@ -1949,16 +1949,16 @@ typedef struct _AT91S_PITC {
 #define PITC_PIIR       (AT91_CAST(AT91_REG *) 	0x0000000C) // (PITC_PIIR) Period Interval Image Register
 
 #endif
-// -------- PITC_PIMR : (PITC Offset: 0x0) Periodic Interval Mode Register -------- 
+// -------- PITC_PIMR : (PITC Offset: 0x0) Periodic Interval Mode Register --------
 #define AT91C_PITC_PIV        (0xFFFFF <<  0) // (PITC) Periodic Interval Value
 #define AT91C_PITC_PITEN      (0x1 << 24) // (PITC) Periodic Interval Timer Enabled
 #define AT91C_PITC_PITIEN     (0x1 << 25) // (PITC) Periodic Interval Timer Interrupt Enable
-// -------- PITC_PISR : (PITC Offset: 0x4) Periodic Interval Status Register -------- 
+// -------- PITC_PISR : (PITC Offset: 0x4) Periodic Interval Status Register --------
 #define AT91C_PITC_PITS       (0x1 <<  0) // (PITC) Periodic Interval Timer Status
-// -------- PITC_PIVR : (PITC Offset: 0x8) Periodic Interval Value Register -------- 
+// -------- PITC_PIVR : (PITC Offset: 0x8) Periodic Interval Value Register --------
 #define AT91C_PITC_CPIV       (0xFFFFF <<  0) // (PITC) Current Periodic Interval Value
 #define AT91C_PITC_PICNT      (0xFFF << 20) // (PITC) Periodic Interval Counter
-// -------- PITC_PIIR : (PITC Offset: 0xc) Periodic Interval Image Register -------- 
+// -------- PITC_PIIR : (PITC Offset: 0xc) Periodic Interval Image Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Watchdog Timer Controller Interface
@@ -1975,10 +1975,10 @@ typedef struct _AT91S_WDTC {
 #define WDTC_WDSR       (AT91_CAST(AT91_REG *) 	0x00000008) // (WDTC_WDSR) Watchdog Status Register
 
 #endif
-// -------- WDTC_WDCR : (WDTC Offset: 0x0) Periodic Interval Image Register -------- 
+// -------- WDTC_WDCR : (WDTC Offset: 0x0) Periodic Interval Image Register --------
 #define AT91C_WDTC_WDRSTT     (0x1 <<  0) // (WDTC) Watchdog Restart
 #define AT91C_WDTC_KEY        (0xFF << 24) // (WDTC) Watchdog KEY Password
-// -------- WDTC_WDMR : (WDTC Offset: 0x4) Watchdog Mode Register -------- 
+// -------- WDTC_WDMR : (WDTC Offset: 0x4) Watchdog Mode Register --------
 #define AT91C_WDTC_WDV        (0xFFF <<  0) // (WDTC) Watchdog Timer Restart
 #define AT91C_WDTC_WDFIEN     (0x1 << 12) // (WDTC) Watchdog Fault Interrupt Enable
 #define AT91C_WDTC_WDRSTEN    (0x1 << 13) // (WDTC) Watchdog Reset Enable
@@ -1987,7 +1987,7 @@ typedef struct _AT91S_WDTC {
 #define AT91C_WDTC_WDD        (0xFFF << 16) // (WDTC) Watchdog Delta Value
 #define AT91C_WDTC_WDDBGHLT   (0x1 << 28) // (WDTC) Watchdog Debug Halt
 #define AT91C_WDTC_WDIDLEHLT  (0x1 << 29) // (WDTC) Watchdog Idle Halt
-// -------- WDTC_WDSR : (WDTC Offset: 0x8) Watchdog Status Register -------- 
+// -------- WDTC_WDSR : (WDTC Offset: 0x8) Watchdog Status Register --------
 #define AT91C_WDTC_WDUNF      (0x1 <<  0) // (WDTC) Watchdog Underflow
 #define AT91C_WDTC_WDERR      (0x1 <<  1) // (WDTC) Watchdog Error
 
@@ -2024,7 +2024,7 @@ typedef struct _AT91S_RTC {
 #define RTC_VER         (AT91_CAST(AT91_REG *) 	0x0000002C) // (RTC_VER) Valid Entry Register
 
 #endif
-// -------- RTC_CR : (RTC Offset: 0x0) RTC Control Register -------- 
+// -------- RTC_CR : (RTC Offset: 0x0) RTC Control Register --------
 #define AT91C_RTC_UPDTIM      (0x1 <<  0) // (RTC) Update Request Time Register
 #define AT91C_RTC_UPDCAL      (0x1 <<  1) // (RTC) Update Request Calendar Register
 #define AT91C_RTC_TIMEVSEL    (0x3 <<  8) // (RTC) Time Event Selection
@@ -2036,37 +2036,37 @@ typedef struct _AT91S_RTC {
 #define 	AT91C_RTC_CALEVSEL_WEEK                 (0x0 << 16) // (RTC) Week change (every Monday at time 00:00:00).
 #define 	AT91C_RTC_CALEVSEL_MONTH                (0x1 << 16) // (RTC) Month change (every 01 of each month at time 00:00:00).
 #define 	AT91C_RTC_CALEVSEL_YEAR                 (0x2 << 16) // (RTC) Year change (every January 1 at time 00:00:00).
-// -------- RTC_MR : (RTC Offset: 0x4) RTC Mode Register -------- 
+// -------- RTC_MR : (RTC Offset: 0x4) RTC Mode Register --------
 #define AT91C_RTC_HRMOD       (0x1 <<  0) // (RTC) 12-24 hour Mode
-// -------- RTC_TIMR : (RTC Offset: 0x8) RTC Time Register -------- 
+// -------- RTC_TIMR : (RTC Offset: 0x8) RTC Time Register --------
 #define AT91C_RTC_SEC         (0x7F <<  0) // (RTC) Current Second
 #define AT91C_RTC_MIN         (0x7F <<  8) // (RTC) Current Minute
 #define AT91C_RTC_HOUR        (0x3F << 16) // (RTC) Current Hour
 #define AT91C_RTC_AMPM        (0x1 << 22) // (RTC) Ante Meridiem, Post Meridiem Indicator
-// -------- RTC_CALR : (RTC Offset: 0xc) RTC Calendar Register -------- 
+// -------- RTC_CALR : (RTC Offset: 0xc) RTC Calendar Register --------
 #define AT91C_RTC_CENT        (0x3F <<  0) // (RTC) Current Century
 #define AT91C_RTC_YEAR        (0xFF <<  8) // (RTC) Current Year
 #define AT91C_RTC_MONTH       (0x1F << 16) // (RTC) Current Month
 #define AT91C_RTC_DAY         (0x7 << 21) // (RTC) Current Day
 #define AT91C_RTC_DATE        (0x3F << 24) // (RTC) Current Date
-// -------- RTC_TIMALR : (RTC Offset: 0x10) RTC Time Alarm Register -------- 
+// -------- RTC_TIMALR : (RTC Offset: 0x10) RTC Time Alarm Register --------
 #define AT91C_RTC_SECEN       (0x1 <<  7) // (RTC) Second Alarm Enable
 #define AT91C_RTC_MINEN       (0x1 << 15) // (RTC) Minute Alarm
 #define AT91C_RTC_HOUREN      (0x1 << 23) // (RTC) Current Hour
-// -------- RTC_CALALR : (RTC Offset: 0x14) RTC Calendar Alarm Register -------- 
+// -------- RTC_CALALR : (RTC Offset: 0x14) RTC Calendar Alarm Register --------
 #define AT91C_RTC_MONTHEN     (0x1 << 23) // (RTC) Month Alarm Enable
 #define AT91C_RTC_DATEEN      (0x1 << 31) // (RTC) Date Alarm Enable
-// -------- RTC_SR : (RTC Offset: 0x18) RTC Status Register -------- 
+// -------- RTC_SR : (RTC Offset: 0x18) RTC Status Register --------
 #define AT91C_RTC_ACKUPD      (0x1 <<  0) // (RTC) Acknowledge for Update
 #define AT91C_RTC_ALARM       (0x1 <<  1) // (RTC) Alarm Flag
 #define AT91C_RTC_SECEV       (0x1 <<  2) // (RTC) Second Event
 #define AT91C_RTC_TIMEV       (0x1 <<  3) // (RTC) Time Event
 #define AT91C_RTC_CALEV       (0x1 <<  4) // (RTC) Calendar event
-// -------- RTC_SCCR : (RTC Offset: 0x1c) RTC Status Clear Command Register -------- 
-// -------- RTC_IER : (RTC Offset: 0x20) RTC Interrupt Enable Register -------- 
-// -------- RTC_IDR : (RTC Offset: 0x24) RTC Interrupt Disable Register -------- 
-// -------- RTC_IMR : (RTC Offset: 0x28) RTC Interrupt Mask Register -------- 
-// -------- RTC_VER : (RTC Offset: 0x2c) RTC Valid Entry Register -------- 
+// -------- RTC_SCCR : (RTC Offset: 0x1c) RTC Status Clear Command Register --------
+// -------- RTC_IER : (RTC Offset: 0x20) RTC Interrupt Enable Register --------
+// -------- RTC_IDR : (RTC Offset: 0x24) RTC Interrupt Disable Register --------
+// -------- RTC_IMR : (RTC Offset: 0x28) RTC Interrupt Mask Register --------
+// -------- RTC_VER : (RTC Offset: 0x2c) RTC Valid Entry Register --------
 #define AT91C_RTC_NVTIM       (0x1 <<  0) // (RTC) Non valid Time
 #define AT91C_RTC_NVCAL       (0x1 <<  1) // (RTC) Non valid Calendar
 #define AT91C_RTC_NVTIMALR    (0x1 <<  2) // (RTC) Non valid time Alarm
@@ -2079,7 +2079,7 @@ typedef struct _AT91S_RTC {
 typedef struct _AT91S_TC {
 	AT91_REG	 TC_CCR; 	// Channel Control Register
 	AT91_REG	 TC_CMR; 	// Channel Mode Register (Capture Mode / Waveform Mode)
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 TC_CV; 	// Counter Value
 	AT91_REG	 TC_RA; 	// Register A
 	AT91_REG	 TC_RB; 	// Register B
@@ -2102,11 +2102,11 @@ typedef struct _AT91S_TC {
 #define TC_IMR          (AT91_CAST(AT91_REG *) 	0x0000002C) // (TC_IMR) Interrupt Mask Register
 
 #endif
-// -------- TC_CCR : (TC Offset: 0x0) TC Channel Control Register -------- 
+// -------- TC_CCR : (TC Offset: 0x0) TC Channel Control Register --------
 #define AT91C_TC_CLKEN        (0x1 <<  0) // (TC) Counter Clock Enable Command
 #define AT91C_TC_CLKDIS       (0x1 <<  1) // (TC) Counter Clock Disable Command
 #define AT91C_TC_SWTRG        (0x1 <<  2) // (TC) Software Trigger Command
-// -------- TC_CMR : (TC Offset: 0x4) TC Channel Mode Register: Capture Mode / Waveform Mode -------- 
+// -------- TC_CMR : (TC Offset: 0x4) TC Channel Mode Register: Capture Mode / Waveform Mode --------
 #define AT91C_TC_CLKS         (0x7 <<  0) // (TC) Clock Selection
 #define 	AT91C_TC_CLKS_TIMER_DIV1_CLOCK     (0x0) // (TC) Clock selected: TIMER_DIV1_CLOCK
 #define 	AT91C_TC_CLKS_TIMER_DIV2_CLOCK     (0x1) // (TC) Clock selected: TIMER_DIV2_CLOCK
@@ -2149,7 +2149,7 @@ typedef struct _AT91S_TC {
 #define 	AT91C_TC_WAVESEL_UP_AUTO              (0x2 << 13) // (TC) UP mode with automatic trigger on RC Compare
 #define 	AT91C_TC_WAVESEL_UPDOWN_AUTO          (0x3 << 13) // (TC) UPDOWN mode with automatic trigger on RC Compare
 #define AT91C_TC_CPCTRG       (0x1 << 14) // (TC) RC Compare Trigger Enable
-#define AT91C_TC_WAVE         (0x1 << 15) // (TC) 
+#define AT91C_TC_WAVE         (0x1 << 15) // (TC)
 #define AT91C_TC_ACPA         (0x3 << 16) // (TC) RA Compare Effect on TIOA
 #define 	AT91C_TC_ACPA_NONE                 (0x0 << 16) // (TC) Effect: none
 #define 	AT91C_TC_ACPA_SET                  (0x1 << 16) // (TC) Effect: set
@@ -2200,7 +2200,7 @@ typedef struct _AT91S_TC {
 #define 	AT91C_TC_BSWTRG_SET                  (0x1 << 30) // (TC) Effect: set
 #define 	AT91C_TC_BSWTRG_CLEAR                (0x2 << 30) // (TC) Effect: clear
 #define 	AT91C_TC_BSWTRG_TOGGLE               (0x3 << 30) // (TC) Effect: toggle
-// -------- TC_SR : (TC Offset: 0x20) TC Channel Status Register -------- 
+// -------- TC_SR : (TC Offset: 0x20) TC Channel Status Register --------
 #define AT91C_TC_COVFS        (0x1 <<  0) // (TC) Counter Overflow
 #define AT91C_TC_LOVRS        (0x1 <<  1) // (TC) Load Overrun
 #define AT91C_TC_CPAS         (0x1 <<  2) // (TC) RA Compare
@@ -2212,9 +2212,9 @@ typedef struct _AT91S_TC {
 #define AT91C_TC_CLKSTA       (0x1 << 16) // (TC) Clock Enabling
 #define AT91C_TC_MTIOA        (0x1 << 17) // (TC) TIOA Mirror
 #define AT91C_TC_MTIOB        (0x1 << 18) // (TC) TIOA Mirror
-// -------- TC_IER : (TC Offset: 0x24) TC Channel Interrupt Enable Register -------- 
-// -------- TC_IDR : (TC Offset: 0x28) TC Channel Interrupt Disable Register -------- 
-// -------- TC_IMR : (TC Offset: 0x2c) TC Channel Interrupt Mask Register -------- 
+// -------- TC_IER : (TC Offset: 0x24) TC Channel Interrupt Enable Register --------
+// -------- TC_IDR : (TC Offset: 0x28) TC Channel Interrupt Disable Register --------
+// -------- TC_IMR : (TC Offset: 0x2c) TC Channel Interrupt Mask Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Timer Counter Interface
@@ -2222,11 +2222,11 @@ typedef struct _AT91S_TC {
 #ifndef __ASSEMBLY__
 typedef struct _AT91S_TCB {
 	AT91S_TC	 TCB_TC0; 	// TC Channel 0
-	AT91_REG	 Reserved0[4]; 	// 
+	AT91_REG	 Reserved0[4]; 	//
 	AT91S_TC	 TCB_TC1; 	// TC Channel 1
-	AT91_REG	 Reserved1[4]; 	// 
+	AT91_REG	 Reserved1[4]; 	//
 	AT91S_TC	 TCB_TC2; 	// TC Channel 2
-	AT91_REG	 Reserved2[4]; 	// 
+	AT91_REG	 Reserved2[4]; 	//
 	AT91_REG	 TCB_BCR; 	// TC Block Control Register
 	AT91_REG	 TCB_BMR; 	// TC Block Mode Register
 } AT91S_TCB, *AT91PS_TCB;
@@ -2235,9 +2235,9 @@ typedef struct _AT91S_TCB {
 #define TCB_BMR         (AT91_CAST(AT91_REG *) 	0x000000C4) // (TCB_BMR) TC Block Mode Register
 
 #endif
-// -------- TCB_BCR : (TCB Offset: 0xc0) TC Block Control Register -------- 
+// -------- TCB_BCR : (TCB Offset: 0xc0) TC Block Control Register --------
 #define AT91C_TCB_SYNC        (0x1 <<  0) // (TCB) Synchro Command
-// -------- TCB_BMR : (TCB Offset: 0xc4) TC Block Mode Register -------- 
+// -------- TCB_BMR : (TCB Offset: 0xc4) TC Block Mode Register --------
 #define AT91C_TCB_TC0XC0S     (0x3 <<  0) // (TCB) External Clock Signal 0 Selection
 #define 	AT91C_TCB_TC0XC0S_TCLK0                (0x0) // (TCB) TCLK0 connected to XC0
 #define 	AT91C_TCB_TC0XC0S_NONE                 (0x1) // (TCB) None signal connected to XC0
@@ -2270,17 +2270,17 @@ typedef struct _AT91S_MCI {
 	AT91_REG	 MCI_RSPR[4]; 	// MCI Response Register
 	AT91_REG	 MCI_RDR; 	// MCI Receive Data Register
 	AT91_REG	 MCI_TDR; 	// MCI Transmit Data Register
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 MCI_SR; 	// MCI Status Register
 	AT91_REG	 MCI_IER; 	// MCI Interrupt Enable Register
 	AT91_REG	 MCI_IDR; 	// MCI Interrupt Disable Register
 	AT91_REG	 MCI_IMR; 	// MCI Interrupt Mask Register
 	AT91_REG	 MCI_DMA; 	// MCI DMA Configuration Register
 	AT91_REG	 MCI_CFG; 	// MCI Configuration Register
-	AT91_REG	 Reserved1[35]; 	// 
+	AT91_REG	 Reserved1[35]; 	//
 	AT91_REG	 MCI_WPCR; 	// MCI Write Protection Control Register
 	AT91_REG	 MCI_WPSR; 	// MCI Write Protection Status Register
-	AT91_REG	 Reserved2[4]; 	// 
+	AT91_REG	 Reserved2[4]; 	//
 	AT91_REG	 MCI_VR; 	// MCI Version Register
 	AT91_REG	 MCI_RPR; 	// Receive Pointer Register
 	AT91_REG	 MCI_RCR; 	// Receive Counter Register
@@ -2292,7 +2292,7 @@ typedef struct _AT91S_MCI {
 	AT91_REG	 MCI_TNCR; 	// Transmit Next Counter Register
 	AT91_REG	 MCI_PTCR; 	// PDC Transfer Control Register
 	AT91_REG	 MCI_PTSR; 	// PDC Transfer Status Register
-	AT91_REG	 Reserved3[54]; 	// 
+	AT91_REG	 Reserved3[54]; 	//
 	AT91_REG	 MCI_FIFO; 	// MCI FIFO Aperture Register
 } AT91S_MCI, *AT91PS_MCI;
 #else
@@ -2319,7 +2319,7 @@ typedef struct _AT91S_MCI {
 #define MCI_FIFO        (AT91_CAST(AT91_REG *) 	0x00000200) // (MCI_FIFO) MCI FIFO Aperture Register
 
 #endif
-// -------- MCI_CR : (MCI Offset: 0x0) MCI Control Register -------- 
+// -------- MCI_CR : (MCI Offset: 0x0) MCI Control Register --------
 #define AT91C_MCI_MCIEN       (0x1 <<  0) // (MCI) Multimedia Interface Enable
 #define 	AT91C_MCI_MCIEN_0                    (0x0) // (MCI) No effect
 #define 	AT91C_MCI_MCIEN_1                    (0x1) // (MCI) Enable the MultiMedia Interface if MCIDIS is 0
@@ -2341,7 +2341,7 @@ typedef struct _AT91S_MCI {
 #define AT91C_MCI_SWRST       (0x1 <<  7) // (MCI) MCI Software reset
 #define 	AT91C_MCI_SWRST_0                    (0x0 <<  7) // (MCI) No effect
 #define 	AT91C_MCI_SWRST_1                    (0x1 <<  7) // (MCI) Resets the MCI
-// -------- MCI_MR : (MCI Offset: 0x4) MCI Mode Register -------- 
+// -------- MCI_MR : (MCI Offset: 0x4) MCI Mode Register --------
 #define AT91C_MCI_CLKDIV      (0xFF <<  0) // (MCI) Clock Divider
 #define AT91C_MCI_PWSDIV      (0x7 <<  8) // (MCI) Power Saving Divider
 #define AT91C_MCI_RDPROOF     (0x1 << 11) // (MCI) Read Proof Enable
@@ -2358,7 +2358,7 @@ typedef struct _AT91S_MCI {
 #define 	AT91C_MCI_PDCMODE_DISABLE              (0x0 << 15) // (MCI) Disables PDC Transfer
 #define 	AT91C_MCI_PDCMODE_ENABLE               (0x1 << 15) // (MCI) Enables PDC Transfer
 #define AT91C_MCI_BLKLEN      (0xFFFF << 16) // (MCI) Data Block Length
-// -------- MCI_DTOR : (MCI Offset: 0x8) MCI Data Timeout Register -------- 
+// -------- MCI_DTOR : (MCI Offset: 0x8) MCI Data Timeout Register --------
 #define AT91C_MCI_DTOCYC      (0xF <<  0) // (MCI) Data Timeout Cycle Number
 #define AT91C_MCI_DTOMUL      (0x7 <<  4) // (MCI) Data Timeout Multiplier
 #define 	AT91C_MCI_DTOMUL_1                    (0x0 <<  4) // (MCI) DTOCYC x 1
@@ -2369,7 +2369,7 @@ typedef struct _AT91S_MCI {
 #define 	AT91C_MCI_DTOMUL_4096                 (0x5 <<  4) // (MCI) DTOCYC x 4096
 #define 	AT91C_MCI_DTOMUL_65536                (0x6 <<  4) // (MCI) DTOCYC x 65536
 #define 	AT91C_MCI_DTOMUL_1048576              (0x7 <<  4) // (MCI) DTOCYC x 1048576
-// -------- MCI_SDCR : (MCI Offset: 0xc) MCI SD Card Register -------- 
+// -------- MCI_SDCR : (MCI Offset: 0xc) MCI SD Card Register --------
 #define AT91C_MCI_SCDSEL      (0x3 <<  0) // (MCI) SD Card/SDIO Selector
 #define 	AT91C_MCI_SCDSEL_SLOTA                (0x0) // (MCI) Slot A selected
 #define 	AT91C_MCI_SCDSEL_SLOTB                (0x1) // (MCI) Slot B selected
@@ -2379,7 +2379,7 @@ typedef struct _AT91S_MCI {
 #define 	AT91C_MCI_SCDBUS_1BIT                 (0x0 <<  6) // (MCI) 1-bit data bus
 #define 	AT91C_MCI_SCDBUS_4BITS                (0x2 <<  6) // (MCI) 4-bits data bus
 #define 	AT91C_MCI_SCDBUS_8BITS                (0x3 <<  6) // (MCI) 8-bits data bus
-// -------- MCI_CMDR : (MCI Offset: 0x14) MCI Command Register -------- 
+// -------- MCI_CMDR : (MCI Offset: 0x14) MCI Command Register --------
 #define AT91C_MCI_CMDNB       (0x3F <<  0) // (MCI) Command Number
 #define AT91C_MCI_RSPTYP      (0x3 <<  6) // (MCI) Response Type
 #define 	AT91C_MCI_RSPTYP_NO                   (0x0 <<  6) // (MCI) No response
@@ -2419,9 +2419,9 @@ typedef struct _AT91S_MCI {
 #define AT91C_MCI_ATACS       (0x1 << 26) // (MCI) ATA with command completion signal
 #define 	AT91C_MCI_ATACS_NORMAL               (0x0 << 26) // (MCI) normal operation mode
 #define 	AT91C_MCI_ATACS_COMPLETION           (0x1 << 26) // (MCI) completion signal is expected within MCI_CSTOR
-// -------- MCI_BLKR : (MCI Offset: 0x18) MCI Block Register -------- 
+// -------- MCI_BLKR : (MCI Offset: 0x18) MCI Block Register --------
 #define AT91C_MCI_BCNT        (0xFFFF <<  0) // (MCI) MMC/SDIO Block Count / SDIO Byte Count
-// -------- MCI_CSTOR : (MCI Offset: 0x1c) MCI Completion Signal Timeout Register -------- 
+// -------- MCI_CSTOR : (MCI Offset: 0x1c) MCI Completion Signal Timeout Register --------
 #define AT91C_MCI_CSTOCYC     (0xF <<  0) // (MCI) Completion Signal Timeout Cycle Number
 #define AT91C_MCI_CSTOMUL     (0x7 <<  4) // (MCI) Completion Signal Timeout Multiplier
 #define 	AT91C_MCI_CSTOMUL_1                    (0x0 <<  4) // (MCI) CSTOCYC x 1
@@ -2432,7 +2432,7 @@ typedef struct _AT91S_MCI {
 #define 	AT91C_MCI_CSTOMUL_4096                 (0x5 <<  4) // (MCI) CSTOCYC x  4096
 #define 	AT91C_MCI_CSTOMUL_65536                (0x6 <<  4) // (MCI) CSTOCYC x  65536
 #define 	AT91C_MCI_CSTOMUL_1048576              (0x7 <<  4) // (MCI) CSTOCYC x  1048576
-// -------- MCI_SR : (MCI Offset: 0x40) MCI Status Register -------- 
+// -------- MCI_SR : (MCI Offset: 0x40) MCI Status Register --------
 #define AT91C_MCI_CMDRDY      (0x1 <<  0) // (MCI) Command Ready flag
 #define AT91C_MCI_RXRDY       (0x1 <<  1) // (MCI) RX Ready flag
 #define AT91C_MCI_TXRDY       (0x1 <<  2) // (MCI) TX Ready flag
@@ -2463,10 +2463,10 @@ typedef struct _AT91S_MCI {
 #define AT91C_MCI_XFRDONE     (0x1 << 27) // (MCI) Transfer Done flag
 #define AT91C_MCI_OVRE        (0x1 << 30) // (MCI) Overrun flag
 #define AT91C_MCI_UNRE        (0x1 << 31) // (MCI) Underrun flag
-// -------- MCI_IER : (MCI Offset: 0x44) MCI Interrupt Enable Register -------- 
-// -------- MCI_IDR : (MCI Offset: 0x48) MCI Interrupt Disable Register -------- 
-// -------- MCI_IMR : (MCI Offset: 0x4c) MCI Interrupt Mask Register -------- 
-// -------- MCI_DMA : (MCI Offset: 0x50) MCI DMA Configuration Register -------- 
+// -------- MCI_IER : (MCI Offset: 0x44) MCI Interrupt Enable Register --------
+// -------- MCI_IDR : (MCI Offset: 0x48) MCI Interrupt Disable Register --------
+// -------- MCI_IMR : (MCI Offset: 0x4c) MCI Interrupt Mask Register --------
+// -------- MCI_DMA : (MCI Offset: 0x50) MCI DMA Configuration Register --------
 #define AT91C_MCI_OFFSET      (0x3 <<  0) // (MCI) DMA Write Buffer Offset
 #define AT91C_MCI_CHKSIZE     (0x7 <<  4) // (MCI) DMA Channel Read/Write Chunk Size
 #define 	AT91C_MCI_CHKSIZE_1                    (0x0 <<  4) // (MCI) Number of data transferred is 1
@@ -2477,7 +2477,7 @@ typedef struct _AT91S_MCI {
 #define AT91C_MCI_DMAEN       (0x1 <<  8) // (MCI) DMA Hardware Handshaking Enable
 #define 	AT91C_MCI_DMAEN_DISABLE              (0x0 <<  8) // (MCI) DMA interface is disabled
 #define 	AT91C_MCI_DMAEN_ENABLE               (0x1 <<  8) // (MCI) DMA interface is enabled
-// -------- MCI_CFG : (MCI Offset: 0x54) MCI Configuration Register -------- 
+// -------- MCI_CFG : (MCI Offset: 0x54) MCI Configuration Register --------
 #define AT91C_MCI_FIFOMODE    (0x1 <<  0) // (MCI) MCI Internal FIFO Control Mode
 #define 	AT91C_MCI_FIFOMODE_AMOUNTDATA           (0x0) // (MCI) A write transfer starts when a sufficient amount of datas is written into the FIFO
 #define 	AT91C_MCI_FIFOMODE_ONEDATA              (0x1) // (MCI) A write transfer starts as soon as one data is written into the FIFO
@@ -2490,12 +2490,12 @@ typedef struct _AT91S_MCI {
 #define AT91C_MCI_LSYNC       (0x1 << 12) // (MCI) Synchronize on last block
 #define 	AT91C_MCI_LSYNC_CURRENT              (0x0 << 12) // (MCI) Pending command sent at end of current data block
 #define 	AT91C_MCI_LSYNC_INFINITE             (0x1 << 12) // (MCI) Pending command sent at end of block transfer when transfer length is not infinite
-// -------- MCI_WPCR : (MCI Offset: 0xe4) Write Protection Control Register -------- 
+// -------- MCI_WPCR : (MCI Offset: 0xe4) Write Protection Control Register --------
 #define AT91C_MCI_WP_EN       (0x1 <<  0) // (MCI) Write Protection Enable
 #define 	AT91C_MCI_WP_EN_DISABLE              (0x0) // (MCI) Write Operation is disabled (if WP_KEY corresponds)
 #define 	AT91C_MCI_WP_EN_ENABLE               (0x1) // (MCI) Write Operation is enabled (if WP_KEY corresponds)
 #define AT91C_MCI_WP_KEY      (0xFFFFFF <<  8) // (MCI) Write Protection Key
-// -------- MCI_WPSR : (MCI Offset: 0xe8) Write Protection Status Register -------- 
+// -------- MCI_WPSR : (MCI Offset: 0xe8) Write Protection Status Register --------
 #define AT91C_MCI_WP_VS       (0xF <<  0) // (MCI) Write Protection Violation Status
 #define 	AT91C_MCI_WP_VS_NO_VIOLATION         (0x0) // (MCI) No Write Protection Violation detected since last read
 #define 	AT91C_MCI_WP_VS_ON_WRITE             (0x1) // (MCI) Write Protection Violation detected since last read
@@ -2521,14 +2521,14 @@ typedef struct _AT91S_TWI {
 	AT91_REG	 TWI_SMR; 	// Slave Mode Register
 	AT91_REG	 TWI_IADR; 	// Internal Address Register
 	AT91_REG	 TWI_CWGR; 	// Clock Waveform Generator Register
-	AT91_REG	 Reserved0[3]; 	// 
+	AT91_REG	 Reserved0[3]; 	//
 	AT91_REG	 TWI_SR; 	// Status Register
 	AT91_REG	 TWI_IER; 	// Interrupt Enable Register
 	AT91_REG	 TWI_IDR; 	// Interrupt Disable Register
 	AT91_REG	 TWI_IMR; 	// Interrupt Mask Register
 	AT91_REG	 TWI_RHR; 	// Receive Holding Register
 	AT91_REG	 TWI_THR; 	// Transmit Holding Register
-	AT91_REG	 Reserved1[50]; 	// 
+	AT91_REG	 Reserved1[50]; 	//
 	AT91_REG	 TWI_RPR; 	// Receive Pointer Register
 	AT91_REG	 TWI_RCR; 	// Receive Counter Register
 	AT91_REG	 TWI_TPR; 	// Transmit Pointer Register
@@ -2554,7 +2554,7 @@ typedef struct _AT91S_TWI {
 #define TWI_THR         (AT91_CAST(AT91_REG *) 	0x00000034) // (TWI_THR) Transmit Holding Register
 
 #endif
-// -------- TWI_CR : (TWI Offset: 0x0) TWI Control Register -------- 
+// -------- TWI_CR : (TWI Offset: 0x0) TWI Control Register --------
 #define AT91C_TWI_START       (0x1 <<  0) // (TWI) Send a START Condition
 #define AT91C_TWI_STOP        (0x1 <<  1) // (TWI) Send a STOP Condition
 #define AT91C_TWI_MSEN        (0x1 <<  2) // (TWI) TWI Master Transfer Enabled
@@ -2562,7 +2562,7 @@ typedef struct _AT91S_TWI {
 #define AT91C_TWI_SVEN        (0x1 <<  4) // (TWI) TWI Slave mode Enabled
 #define AT91C_TWI_SVDIS       (0x1 <<  5) // (TWI) TWI Slave mode Disabled
 #define AT91C_TWI_SWRST       (0x1 <<  7) // (TWI) Software Reset
-// -------- TWI_MMR : (TWI Offset: 0x4) TWI Master Mode Register -------- 
+// -------- TWI_MMR : (TWI Offset: 0x4) TWI Master Mode Register --------
 #define AT91C_TWI_IADRSZ      (0x3 <<  8) // (TWI) Internal Device Address Size
 #define 	AT91C_TWI_IADRSZ_NO                   (0x0 <<  8) // (TWI) No internal device address
 #define 	AT91C_TWI_IADRSZ_1_BYTE               (0x1 <<  8) // (TWI) One-byte internal device address
@@ -2570,13 +2570,13 @@ typedef struct _AT91S_TWI {
 #define 	AT91C_TWI_IADRSZ_3_BYTE               (0x3 <<  8) // (TWI) Three-byte internal device address
 #define AT91C_TWI_MREAD       (0x1 << 12) // (TWI) Master Read Direction
 #define AT91C_TWI_DADR        (0x7F << 16) // (TWI) Device Address
-// -------- TWI_SMR : (TWI Offset: 0x8) TWI Slave Mode Register -------- 
+// -------- TWI_SMR : (TWI Offset: 0x8) TWI Slave Mode Register --------
 #define AT91C_TWI_SADR        (0x7F << 16) // (TWI) Slave Address
-// -------- TWI_CWGR : (TWI Offset: 0x10) TWI Clock Waveform Generator Register -------- 
+// -------- TWI_CWGR : (TWI Offset: 0x10) TWI Clock Waveform Generator Register --------
 #define AT91C_TWI_CLDIV       (0xFF <<  0) // (TWI) Clock Low Divider
 #define AT91C_TWI_CHDIV       (0xFF <<  8) // (TWI) Clock High Divider
 #define AT91C_TWI_CKDIV       (0x7 << 16) // (TWI) Clock Divider
-// -------- TWI_SR : (TWI Offset: 0x20) TWI Status Register -------- 
+// -------- TWI_SR : (TWI Offset: 0x20) TWI Status Register --------
 #define AT91C_TWI_TXCOMP_SLAVE (0x1 <<  0) // (TWI) Transmission Completed
 #define AT91C_TWI_TXCOMP_MASTER (0x1 <<  0) // (TWI) Transmission Completed
 #define AT91C_TWI_RXRDY       (0x1 <<  1) // (TWI) Receive holding register ReaDY
@@ -2595,9 +2595,9 @@ typedef struct _AT91S_TWI {
 #define AT91C_TWI_ENDTX       (0x1 << 13) // (TWI) End of Receiver Transfer
 #define AT91C_TWI_RXBUFF      (0x1 << 14) // (TWI) RXBUFF Interrupt
 #define AT91C_TWI_TXBUFE      (0x1 << 15) // (TWI) TXBUFE Interrupt
-// -------- TWI_IER : (TWI Offset: 0x24) TWI Interrupt Enable Register -------- 
-// -------- TWI_IDR : (TWI Offset: 0x28) TWI Interrupt Disable Register -------- 
-// -------- TWI_IMR : (TWI Offset: 0x2c) TWI Interrupt Mask Register -------- 
+// -------- TWI_IER : (TWI Offset: 0x24) TWI Interrupt Enable Register --------
+// -------- TWI_IDR : (TWI Offset: 0x28) TWI Interrupt Disable Register --------
+// -------- TWI_IMR : (TWI Offset: 0x2c) TWI Interrupt Mask Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Usart
@@ -2615,13 +2615,13 @@ typedef struct _AT91S_USART {
 	AT91_REG	 US_BRGR; 	// Baud Rate Generator Register
 	AT91_REG	 US_RTOR; 	// Receiver Time-out Register
 	AT91_REG	 US_TTGR; 	// Transmitter Time-guard Register
-	AT91_REG	 Reserved0[5]; 	// 
+	AT91_REG	 Reserved0[5]; 	//
 	AT91_REG	 US_FIDI; 	// FI_DI_Ratio Register
 	AT91_REG	 US_NER; 	// Nb Errors Register
-	AT91_REG	 Reserved1[1]; 	// 
+	AT91_REG	 Reserved1[1]; 	//
 	AT91_REG	 US_IF; 	// IRDA_FILTER Register
 	AT91_REG	 US_MAN; 	// Manchester Encoder Decoder Register
-	AT91_REG	 Reserved2[43]; 	// 
+	AT91_REG	 Reserved2[43]; 	//
 	AT91_REG	 US_RPR; 	// Receive Pointer Register
 	AT91_REG	 US_RCR; 	// Receive Counter Register
 	AT91_REG	 US_TPR; 	// Transmit Pointer Register
@@ -2651,7 +2651,7 @@ typedef struct _AT91S_USART {
 #define US_MAN          (AT91_CAST(AT91_REG *) 	0x00000050) // (US_MAN) Manchester Encoder Decoder Register
 
 #endif
-// -------- US_CR : (USART Offset: 0x0) Debug Unit Control Register -------- 
+// -------- US_CR : (USART Offset: 0x0) Debug Unit Control Register --------
 #define AT91C_US_STTBRK       (0x1 <<  9) // (USART) Start Break
 #define AT91C_US_STPBRK       (0x1 << 10) // (USART) Stop Break
 #define AT91C_US_STTTO        (0x1 << 11) // (USART) Start Time-out
@@ -2663,7 +2663,7 @@ typedef struct _AT91S_USART {
 #define AT91C_US_DTRDIS       (0x1 << 17) // (USART) Data Terminal ready Disable
 #define AT91C_US_RTSEN        (0x1 << 18) // (USART) Request to Send enable
 #define AT91C_US_RTSDIS       (0x1 << 19) // (USART) Request to Send Disable
-// -------- US_MR : (USART Offset: 0x4) Debug Unit Mode Register -------- 
+// -------- US_MR : (USART Offset: 0x4) Debug Unit Mode Register --------
 #define AT91C_US_USMODE       (0xF <<  0) // (USART) Usart mode
 #define 	AT91C_US_USMODE_NORMAL               (0x0) // (USART) Normal
 #define 	AT91C_US_USMODE_RS485                (0x1) // (USART) RS485
@@ -2700,7 +2700,7 @@ typedef struct _AT91S_USART {
 #define AT91C_US_MANMODE      (0x1 << 29) // (USART) Manchester Encoder/Decoder Enable
 #define AT91C_US_MODSYNC      (0x1 << 30) // (USART) Manchester Synchronization mode
 #define AT91C_US_ONEBIT       (0x1 << 31) // (USART) Start Frame Delimiter selector
-// -------- US_IER : (USART Offset: 0x8) Debug Unit Interrupt Enable Register -------- 
+// -------- US_IER : (USART Offset: 0x8) Debug Unit Interrupt Enable Register --------
 #define AT91C_US_RXBRK        (0x1 <<  2) // (USART) Break Received/End of Break
 #define AT91C_US_TIMEOUT      (0x1 <<  8) // (USART) Receiver Time-out
 #define AT91C_US_ITERATION    (0x1 << 10) // (USART) Max number of Repetitions Reached
@@ -2710,15 +2710,15 @@ typedef struct _AT91S_USART {
 #define AT91C_US_DCDIC        (0x1 << 18) // (USART) Data Carrier Flag
 #define AT91C_US_CTSIC        (0x1 << 19) // (USART) Clear To Send Input Change Flag
 #define AT91C_US_MANE         (0x1 << 20) // (USART) Manchester Error Interrupt
-// -------- US_IDR : (USART Offset: 0xc) Debug Unit Interrupt Disable Register -------- 
-// -------- US_IMR : (USART Offset: 0x10) Debug Unit Interrupt Mask Register -------- 
-// -------- US_CSR : (USART Offset: 0x14) Debug Unit Channel Status Register -------- 
+// -------- US_IDR : (USART Offset: 0xc) Debug Unit Interrupt Disable Register --------
+// -------- US_IMR : (USART Offset: 0x10) Debug Unit Interrupt Mask Register --------
+// -------- US_CSR : (USART Offset: 0x14) Debug Unit Channel Status Register --------
 #define AT91C_US_RI           (0x1 << 20) // (USART) Image of RI Input
 #define AT91C_US_DSR          (0x1 << 21) // (USART) Image of DSR Input
 #define AT91C_US_DCD          (0x1 << 22) // (USART) Image of DCD Input
 #define AT91C_US_CTS          (0x1 << 23) // (USART) Image of CTS Input
 #define AT91C_US_MANERR       (0x1 << 24) // (USART) Manchester Error
-// -------- US_MAN : (USART Offset: 0x50) Manchester Encoder Decoder Register -------- 
+// -------- US_MAN : (USART Offset: 0x50) Manchester Encoder Decoder Register --------
 #define AT91C_US_TX_PL        (0xF <<  0) // (USART) Transmitter Preamble Length
 #define AT91C_US_TX_PP        (0x3 <<  8) // (USART) Transmitter Preamble Pattern
 #define 	AT91C_US_TX_PP_ALL_ONE              (0x0 <<  8) // (USART) ALL_ONE
@@ -2742,22 +2742,22 @@ typedef struct _AT91S_USART {
 typedef struct _AT91S_SSC {
 	AT91_REG	 SSC_CR; 	// Control Register
 	AT91_REG	 SSC_CMR; 	// Clock Mode Register
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 SSC_RCMR; 	// Receive Clock ModeRegister
 	AT91_REG	 SSC_RFMR; 	// Receive Frame Mode Register
 	AT91_REG	 SSC_TCMR; 	// Transmit Clock Mode Register
 	AT91_REG	 SSC_TFMR; 	// Transmit Frame Mode Register
 	AT91_REG	 SSC_RHR; 	// Receive Holding Register
 	AT91_REG	 SSC_THR; 	// Transmit Holding Register
-	AT91_REG	 Reserved1[2]; 	// 
+	AT91_REG	 Reserved1[2]; 	//
 	AT91_REG	 SSC_RSHR; 	// Receive Sync Holding Register
 	AT91_REG	 SSC_TSHR; 	// Transmit Sync Holding Register
-	AT91_REG	 Reserved2[2]; 	// 
+	AT91_REG	 Reserved2[2]; 	//
 	AT91_REG	 SSC_SR; 	// Status Register
 	AT91_REG	 SSC_IER; 	// Interrupt Enable Register
 	AT91_REG	 SSC_IDR; 	// Interrupt Disable Register
 	AT91_REG	 SSC_IMR; 	// Interrupt Mask Register
-	AT91_REG	 Reserved3[44]; 	// 
+	AT91_REG	 Reserved3[44]; 	//
 	AT91_REG	 SSC_RPR; 	// Receive Pointer Register
 	AT91_REG	 SSC_RCR; 	// Receive Counter Register
 	AT91_REG	 SSC_TPR; 	// Transmit Pointer Register
@@ -2786,13 +2786,13 @@ typedef struct _AT91S_SSC {
 #define SSC_IMR         (AT91_CAST(AT91_REG *) 	0x0000004C) // (SSC_IMR) Interrupt Mask Register
 
 #endif
-// -------- SSC_CR : (SSC Offset: 0x0) SSC Control Register -------- 
+// -------- SSC_CR : (SSC Offset: 0x0) SSC Control Register --------
 #define AT91C_SSC_RXEN        (0x1 <<  0) // (SSC) Receive Enable
 #define AT91C_SSC_RXDIS       (0x1 <<  1) // (SSC) Receive Disable
 #define AT91C_SSC_TXEN        (0x1 <<  8) // (SSC) Transmit Enable
 #define AT91C_SSC_TXDIS       (0x1 <<  9) // (SSC) Transmit Disable
 #define AT91C_SSC_SWRST       (0x1 << 15) // (SSC) Software Reset
-// -------- SSC_RCMR : (SSC Offset: 0x10) SSC Receive Clock Mode Register -------- 
+// -------- SSC_RCMR : (SSC Offset: 0x10) SSC Receive Clock Mode Register --------
 #define AT91C_SSC_CKS         (0x3 <<  0) // (SSC) Receive/Transmit Clock Selection
 #define 	AT91C_SSC_CKS_DIV                  (0x0) // (SSC) Divided Clock
 #define 	AT91C_SSC_CKS_TK                   (0x1) // (SSC) TK Clock signal
@@ -2819,7 +2819,7 @@ typedef struct _AT91S_SSC {
 #define AT91C_SSC_STOP        (0x1 << 12) // (SSC) Receive Stop Selection
 #define AT91C_SSC_STTDLY      (0xFF << 16) // (SSC) Receive/Transmit Start Delay
 #define AT91C_SSC_PERIOD      (0xFF << 24) // (SSC) Receive/Transmit Period Divider Selection
-// -------- SSC_RFMR : (SSC Offset: 0x14) SSC Receive Frame Mode Register -------- 
+// -------- SSC_RFMR : (SSC Offset: 0x14) SSC Receive Frame Mode Register --------
 #define AT91C_SSC_DATLEN      (0x1F <<  0) // (SSC) Data Length
 #define AT91C_SSC_LOOP        (0x1 <<  5) // (SSC) Loop Mode
 #define AT91C_SSC_MSBF        (0x1 <<  7) // (SSC) Most Significant Bit First
@@ -2833,11 +2833,11 @@ typedef struct _AT91S_SSC {
 #define 	AT91C_SSC_FSOS_HIGH                 (0x4 << 20) // (SSC) Selected Receive/Transmit Frame Sync Signal: Driver High during data transfer
 #define 	AT91C_SSC_FSOS_TOGGLE               (0x5 << 20) // (SSC) Selected Receive/Transmit Frame Sync Signal: Toggling at each start of data transfer
 #define AT91C_SSC_FSEDGE      (0x1 << 24) // (SSC) Frame Sync Edge Detection
-// -------- SSC_TCMR : (SSC Offset: 0x18) SSC Transmit Clock Mode Register -------- 
-// -------- SSC_TFMR : (SSC Offset: 0x1c) SSC Transmit Frame Mode Register -------- 
+// -------- SSC_TCMR : (SSC Offset: 0x18) SSC Transmit Clock Mode Register --------
+// -------- SSC_TFMR : (SSC Offset: 0x1c) SSC Transmit Frame Mode Register --------
 #define AT91C_SSC_DATDEF      (0x1 <<  5) // (SSC) Data Default Value
 #define AT91C_SSC_FSDEN       (0x1 << 23) // (SSC) Frame Sync Data Enable
-// -------- SSC_SR : (SSC Offset: 0x40) SSC Status Register -------- 
+// -------- SSC_SR : (SSC Offset: 0x40) SSC Status Register --------
 #define AT91C_SSC_TXRDY       (0x1 <<  0) // (SSC) Transmit Ready
 #define AT91C_SSC_TXEMPTY     (0x1 <<  1) // (SSC) Transmit Empty
 #define AT91C_SSC_ENDTX       (0x1 <<  2) // (SSC) End Of Transmission
@@ -2852,9 +2852,9 @@ typedef struct _AT91S_SSC {
 #define AT91C_SSC_RXSYN       (0x1 << 11) // (SSC) Receive Sync
 #define AT91C_SSC_TXENA       (0x1 << 16) // (SSC) Transmit Enable
 #define AT91C_SSC_RXENA       (0x1 << 17) // (SSC) Receive Enable
-// -------- SSC_IER : (SSC Offset: 0x44) SSC Interrupt Enable Register -------- 
-// -------- SSC_IDR : (SSC Offset: 0x48) SSC Interrupt Disable Register -------- 
-// -------- SSC_IMR : (SSC Offset: 0x4c) SSC Interrupt Mask Register -------- 
+// -------- SSC_IER : (SSC Offset: 0x44) SSC Interrupt Enable Register --------
+// -------- SSC_IDR : (SSC Offset: 0x48) SSC Interrupt Disable Register --------
+// -------- SSC_IMR : (SSC Offset: 0x4c) SSC Interrupt Mask Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR PWMC Channel Interface
@@ -2877,21 +2877,21 @@ typedef struct _AT91S_PWMC_CH {
 #define Reserved        (AT91_CAST(AT91_REG *) 	0x00000014) // (Reserved) Reserved
 
 #endif
-// -------- PWMC_CMR : (PWMC_CH Offset: 0x0) PWMC Channel Mode Register -------- 
+// -------- PWMC_CMR : (PWMC_CH Offset: 0x0) PWMC Channel Mode Register --------
 #define AT91C_PWMC_CPRE       (0xF <<  0) // (PWMC_CH) Channel Pre-scaler : PWMC_CLKx
-#define 	AT91C_PWMC_CPRE_MCK                  (0x0) // (PWMC_CH) 
-#define 	AT91C_PWMC_CPRE_MCKA                 (0xB) // (PWMC_CH) 
-#define 	AT91C_PWMC_CPRE_MCKB                 (0xC) // (PWMC_CH) 
+#define 	AT91C_PWMC_CPRE_MCK                  (0x0) // (PWMC_CH)
+#define 	AT91C_PWMC_CPRE_MCKA                 (0xB) // (PWMC_CH)
+#define 	AT91C_PWMC_CPRE_MCKB                 (0xC) // (PWMC_CH)
 #define AT91C_PWMC_CALG       (0x1 <<  8) // (PWMC_CH) Channel Alignment
 #define AT91C_PWMC_CPOL       (0x1 <<  9) // (PWMC_CH) Channel Polarity
 #define AT91C_PWMC_CPD        (0x1 << 10) // (PWMC_CH) Channel Update Period
-// -------- PWMC_CDTYR : (PWMC_CH Offset: 0x4) PWMC Channel Duty Cycle Register -------- 
+// -------- PWMC_CDTYR : (PWMC_CH Offset: 0x4) PWMC Channel Duty Cycle Register --------
 #define AT91C_PWMC_CDTY       (0x0 <<  0) // (PWMC_CH) Channel Duty Cycle
-// -------- PWMC_CPRDR : (PWMC_CH Offset: 0x8) PWMC Channel Period Register -------- 
+// -------- PWMC_CPRDR : (PWMC_CH Offset: 0x8) PWMC Channel Period Register --------
 #define AT91C_PWMC_CPRD       (0x0 <<  0) // (PWMC_CH) Channel Period
-// -------- PWMC_CCNTR : (PWMC_CH Offset: 0xc) PWMC Channel Counter Register -------- 
+// -------- PWMC_CCNTR : (PWMC_CH Offset: 0xc) PWMC Channel Counter Register --------
 #define AT91C_PWMC_CCNT       (0x0 <<  0) // (PWMC_CH) Channel Counter
-// -------- PWMC_CUPDR : (PWMC_CH Offset: 0x10) PWMC Channel Update Register -------- 
+// -------- PWMC_CUPDR : (PWMC_CH Offset: 0x10) PWMC Channel Update Register --------
 #define AT91C_PWMC_CUPD       (0x0 <<  0) // (PWMC_CH) Channel Update
 
 // *****************************************************************************
@@ -2907,9 +2907,9 @@ typedef struct _AT91S_PWMC {
 	AT91_REG	 PWMC_IDR; 	// PWMC Interrupt Disable Register
 	AT91_REG	 PWMC_IMR; 	// PWMC Interrupt Mask Register
 	AT91_REG	 PWMC_ISR; 	// PWMC Interrupt Status Register
-	AT91_REG	 Reserved0[55]; 	// 
+	AT91_REG	 Reserved0[55]; 	//
 	AT91_REG	 PWMC_VR; 	// PWMC Version Register
-	AT91_REG	 Reserved1[64]; 	// 
+	AT91_REG	 Reserved1[64]; 	//
 	AT91S_PWMC_CH	 PWMC_CH[32]; 	// PWMC Channel
 } AT91S_PWMC, *AT91PS_PWMC;
 #else
@@ -2924,14 +2924,14 @@ typedef struct _AT91S_PWMC {
 #define PWMC_VR         (AT91_CAST(AT91_REG *) 	0x000000FC) // (PWMC_VR) PWMC Version Register
 
 #endif
-// -------- PWMC_MR : (PWMC Offset: 0x0) PWMC Mode Register -------- 
+// -------- PWMC_MR : (PWMC Offset: 0x0) PWMC Mode Register --------
 #define AT91C_PWMC_DIVA       (0xFF <<  0) // (PWMC) CLKA divide factor.
 #define AT91C_PWMC_PREA       (0xF <<  8) // (PWMC) Divider Input Clock Prescaler A
-#define 	AT91C_PWMC_PREA_MCK                  (0x0 <<  8) // (PWMC) 
+#define 	AT91C_PWMC_PREA_MCK                  (0x0 <<  8) // (PWMC)
 #define AT91C_PWMC_DIVB       (0xFF << 16) // (PWMC) CLKB divide factor.
 #define AT91C_PWMC_PREB       (0xF << 24) // (PWMC) Divider Input Clock Prescaler B
-#define 	AT91C_PWMC_PREB_MCK                  (0x0 << 24) // (PWMC) 
-// -------- PWMC_ENA : (PWMC Offset: 0x4) PWMC Enable Register -------- 
+#define 	AT91C_PWMC_PREB_MCK                  (0x0 << 24) // (PWMC)
+// -------- PWMC_ENA : (PWMC Offset: 0x4) PWMC Enable Register --------
 #define AT91C_PWMC_CHID0      (0x1 <<  0) // (PWMC) Channel ID 0
 #define AT91C_PWMC_CHID1      (0x1 <<  1) // (PWMC) Channel ID 1
 #define AT91C_PWMC_CHID2      (0x1 <<  2) // (PWMC) Channel ID 2
@@ -2940,12 +2940,12 @@ typedef struct _AT91S_PWMC {
 #define AT91C_PWMC_CHID5      (0x1 <<  5) // (PWMC) Channel ID 5
 #define AT91C_PWMC_CHID6      (0x1 <<  6) // (PWMC) Channel ID 6
 #define AT91C_PWMC_CHID7      (0x1 <<  7) // (PWMC) Channel ID 7
-// -------- PWMC_DIS : (PWMC Offset: 0x8) PWMC Disable Register -------- 
-// -------- PWMC_SR : (PWMC Offset: 0xc) PWMC Status Register -------- 
-// -------- PWMC_IER : (PWMC Offset: 0x10) PWMC Interrupt Enable Register -------- 
-// -------- PWMC_IDR : (PWMC Offset: 0x14) PWMC Interrupt Disable Register -------- 
-// -------- PWMC_IMR : (PWMC Offset: 0x18) PWMC Interrupt Mask Register -------- 
-// -------- PWMC_ISR : (PWMC Offset: 0x1c) PWMC Interrupt Status Register -------- 
+// -------- PWMC_DIS : (PWMC Offset: 0x8) PWMC Disable Register --------
+// -------- PWMC_SR : (PWMC Offset: 0xc) PWMC Status Register --------
+// -------- PWMC_IER : (PWMC Offset: 0x10) PWMC Interrupt Enable Register --------
+// -------- PWMC_IDR : (PWMC Offset: 0x14) PWMC Interrupt Disable Register --------
+// -------- PWMC_IMR : (PWMC Offset: 0x18) PWMC Interrupt Mask Register --------
+// -------- PWMC_ISR : (PWMC Offset: 0x1c) PWMC Interrupt Status Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Serial Parallel Interface
@@ -2960,9 +2960,9 @@ typedef struct _AT91S_SPI {
 	AT91_REG	 SPI_IER; 	// Interrupt Enable Register
 	AT91_REG	 SPI_IDR; 	// Interrupt Disable Register
 	AT91_REG	 SPI_IMR; 	// Interrupt Mask Register
-	AT91_REG	 Reserved0[4]; 	// 
+	AT91_REG	 Reserved0[4]; 	//
 	AT91_REG	 SPI_CSR[4]; 	// Chip Select Register
-	AT91_REG	 Reserved1[48]; 	// 
+	AT91_REG	 Reserved1[48]; 	//
 	AT91_REG	 SPI_RPR; 	// Receive Pointer Register
 	AT91_REG	 SPI_RCR; 	// Receive Counter Register
 	AT91_REG	 SPI_TPR; 	// Transmit Pointer Register
@@ -2986,12 +2986,12 @@ typedef struct _AT91S_SPI {
 #define SPI_CSR         (AT91_CAST(AT91_REG *) 	0x00000030) // (SPI_CSR) Chip Select Register
 
 #endif
-// -------- SPI_CR : (SPI Offset: 0x0) SPI Control Register -------- 
+// -------- SPI_CR : (SPI Offset: 0x0) SPI Control Register --------
 #define AT91C_SPI_SPIEN       (0x1 <<  0) // (SPI) SPI Enable
 #define AT91C_SPI_SPIDIS      (0x1 <<  1) // (SPI) SPI Disable
 #define AT91C_SPI_SWRST       (0x1 <<  7) // (SPI) SPI Software reset
 #define AT91C_SPI_LASTXFER    (0x1 << 24) // (SPI) SPI Last Transfer
-// -------- SPI_MR : (SPI Offset: 0x4) SPI Mode Register -------- 
+// -------- SPI_MR : (SPI Offset: 0x4) SPI Mode Register --------
 #define AT91C_SPI_MSTR        (0x1 <<  0) // (SPI) Master/Slave Mode
 #define AT91C_SPI_PS          (0x1 <<  1) // (SPI) Peripheral Select
 #define 	AT91C_SPI_PS_FIXED                (0x0 <<  1) // (SPI) Fixed Peripheral Select
@@ -3002,13 +3002,13 @@ typedef struct _AT91S_SPI {
 #define AT91C_SPI_LLB         (0x1 <<  7) // (SPI) Clock Selection
 #define AT91C_SPI_PCS         (0xF << 16) // (SPI) Peripheral Chip Select
 #define AT91C_SPI_DLYBCS      (0xFF << 24) // (SPI) Delay Between Chip Selects
-// -------- SPI_RDR : (SPI Offset: 0x8) Receive Data Register -------- 
+// -------- SPI_RDR : (SPI Offset: 0x8) Receive Data Register --------
 #define AT91C_SPI_RD          (0xFFFF <<  0) // (SPI) Receive Data
 #define AT91C_SPI_RPCS        (0xF << 16) // (SPI) Peripheral Chip Select Status
-// -------- SPI_TDR : (SPI Offset: 0xc) Transmit Data Register -------- 
+// -------- SPI_TDR : (SPI Offset: 0xc) Transmit Data Register --------
 #define AT91C_SPI_TD          (0xFFFF <<  0) // (SPI) Transmit Data
 #define AT91C_SPI_TPCS        (0xF << 16) // (SPI) Peripheral Chip Select Status
-// -------- SPI_SR : (SPI Offset: 0x10) Status Register -------- 
+// -------- SPI_SR : (SPI Offset: 0x10) Status Register --------
 #define AT91C_SPI_RDRF        (0x1 <<  0) // (SPI) Receive Data Register Full
 #define AT91C_SPI_TDRE        (0x1 <<  1) // (SPI) Transmit Data Register Empty
 #define AT91C_SPI_MODF        (0x1 <<  2) // (SPI) Mode Fault Error
@@ -3020,10 +3020,10 @@ typedef struct _AT91S_SPI {
 #define AT91C_SPI_NSSR        (0x1 <<  8) // (SPI) NSSR Interrupt
 #define AT91C_SPI_TXEMPTY     (0x1 <<  9) // (SPI) TXEMPTY Interrupt
 #define AT91C_SPI_SPIENS      (0x1 << 16) // (SPI) Enable Status
-// -------- SPI_IER : (SPI Offset: 0x14) Interrupt Enable Register -------- 
-// -------- SPI_IDR : (SPI Offset: 0x18) Interrupt Disable Register -------- 
-// -------- SPI_IMR : (SPI Offset: 0x1c) Interrupt Mask Register -------- 
-// -------- SPI_CSR : (SPI Offset: 0x30) Chip Select Register -------- 
+// -------- SPI_IER : (SPI Offset: 0x14) Interrupt Enable Register --------
+// -------- SPI_IDR : (SPI Offset: 0x18) Interrupt Disable Register --------
+// -------- SPI_IMR : (SPI Offset: 0x1c) Interrupt Mask Register --------
+// -------- SPI_CSR : (SPI Offset: 0x30) Chip Select Register --------
 #define AT91C_SPI_CPOL        (0x1 <<  0) // (SPI) Clock Polarity
 #define AT91C_SPI_NCPHA       (0x1 <<  1) // (SPI) Clock Phase
 #define AT91C_SPI_CSAAT       (0x1 <<  3) // (SPI) Chip Select Active After Transfer
@@ -3066,7 +3066,7 @@ typedef struct _AT91S_TSADC {
 	AT91_REG	 TSADC_CDR5; 	// Channel Data Register 5
 	AT91_REG	 TSADC_CDR6; 	// Channel Data Register 6
 	AT91_REG	 TSADC_CDR7; 	// Channel Data Register 7
-	AT91_REG	 Reserved0[44]; 	// 
+	AT91_REG	 Reserved0[44]; 	//
 	AT91_REG	 TSADC_RPR; 	// Receive Pointer Register
 	AT91_REG	 TSADC_RCR; 	// Receive Counter Register
 	AT91_REG	 TSADC_TPR; 	// Transmit Pointer Register
@@ -3101,10 +3101,10 @@ typedef struct _AT91S_TSADC {
 #define TSADC_CDR7      (AT91_CAST(AT91_REG *) 	0x0000004C) // (TSADC_CDR7) Channel Data Register 7
 
 #endif
-// -------- TSADC_CR : (TSADC Offset: 0x0) Control Register -------- 
+// -------- TSADC_CR : (TSADC Offset: 0x0) Control Register --------
 #define AT91C_TSADC_SWRST     (0x1 <<  0) // (TSADC) Software Reset
 #define AT91C_TSADC_START     (0x1 <<  1) // (TSADC) Start Conversion
-// -------- TSADC_MR : (TSADC Offset: 0x4) Mode Register -------- 
+// -------- TSADC_MR : (TSADC Offset: 0x4) Mode Register --------
 #define AT91C_TSADC_TSAMOD    (0x3 <<  0) // (TSADC) Touch Screen ADC Mode
 #define 	AT91C_TSADC_TSAMOD_ADC_ONLY_MODE        (0x0) // (TSADC) ADC Mode
 #define 	AT91C_TSADC_TSAMOD_TS_ONLY_MODE         (0x1) // (TSADC) Touch Screen Only Mode
@@ -3115,7 +3115,7 @@ typedef struct _AT91S_TSADC {
 #define AT91C_TSADC_STARTUP   (0x7F << 16) // (TSADC) Startup Time
 #define AT91C_TSADC_SHTIM     (0xF << 24) // (TSADC) Sample and Hold Time for ADC Channels
 #define AT91C_TSADC_PENDBC    (0xF << 28) // (TSADC) Pen Detect Debouncing Period
-// -------- TSADC_TRGR : (TSADC Offset: 0x8) Trigger Register -------- 
+// -------- TSADC_TRGR : (TSADC Offset: 0x8) Trigger Register --------
 #define AT91C_TSADC_TRGMOD    (0x7 <<  0) // (TSADC) Trigger Mode
 #define 	AT91C_TSADC_TRGMOD_NO_TRIGGER           (0x0) // (TSADC) No Trigger
 #define 	AT91C_TSADC_TRGMOD_EXTERNAL_TRIGGER_RE  (0x1) // (TSADC) External Trigger Rising Edge
@@ -3125,9 +3125,9 @@ typedef struct _AT91S_TSADC {
 #define 	AT91C_TSADC_TRGMOD_PERIODIC_TRIGGER     (0x5) // (TSADC) Periodic Trigger (wrt TRGPER)
 #define 	AT91C_TSADC_TRGMOD_CONT_TRIGGER         (0x6) // (TSADC) Continuous Trigger
 #define AT91C_TSADC_TRGPER    (0xFFFF << 16) // (TSADC) Trigger Period
-// -------- TSADC_TSR : (TSADC Offset: 0xc) Touch Screen Register -------- 
+// -------- TSADC_TSR : (TSADC Offset: 0xc) Touch Screen Register --------
 #define AT91C_TSADC_TSSHTIM   (0xF << 24) // (TSADC) Sample and Hold Time for Touch Screen Channels
-// -------- TSADC_CHER : (TSADC Offset: 0x10) Channel Enable Register -------- 
+// -------- TSADC_CHER : (TSADC Offset: 0x10) Channel Enable Register --------
 #define AT91C_TSADC_CHENA0    (0x1 <<  0) // (TSADC) Channel 0 Enable
 #define AT91C_TSADC_CHENA1    (0x1 <<  1) // (TSADC) Channel 1 Enable
 #define AT91C_TSADC_CHENA2    (0x1 <<  2) // (TSADC) Channel 2 Enable
@@ -3136,7 +3136,7 @@ typedef struct _AT91S_TSADC {
 #define AT91C_TSADC_CHENA5    (0x1 <<  5) // (TSADC) Channel 5 Enable
 #define AT91C_TSADC_CHENA6    (0x1 <<  6) // (TSADC) Channel 6 Enable
 #define AT91C_TSADC_CHENA7    (0x1 <<  7) // (TSADC) Channel 7 Enable
-// -------- TSADC_CHDR : (TSADC Offset: 0x14) Channel Disable Register -------- 
+// -------- TSADC_CHDR : (TSADC Offset: 0x14) Channel Disable Register --------
 #define AT91C_TSADC_CHDIS0    (0x1 <<  0) // (TSADC) Channel 0 Disable
 #define AT91C_TSADC_CHDIS1    (0x1 <<  1) // (TSADC) Channel 1 Disable
 #define AT91C_TSADC_CHDIS2    (0x1 <<  2) // (TSADC) Channel 2 Disable
@@ -3145,7 +3145,7 @@ typedef struct _AT91S_TSADC {
 #define AT91C_TSADC_CHDIS5    (0x1 <<  5) // (TSADC) Channel 5 Disable
 #define AT91C_TSADC_CHDIS6    (0x1 <<  6) // (TSADC) Channel 6 Disable
 #define AT91C_TSADC_CHDIS7    (0x1 <<  7) // (TSADC) Channel 7 Disable
-// -------- TSADC_CHSR : (TSADC Offset: 0x18) Channel Status Register -------- 
+// -------- TSADC_CHSR : (TSADC Offset: 0x18) Channel Status Register --------
 #define AT91C_TSADC_CHS0      (0x1 <<  0) // (TSADC) Channel 0 Status
 #define AT91C_TSADC_CHS1      (0x1 <<  1) // (TSADC) Channel 1 Status
 #define AT91C_TSADC_CHS2      (0x1 <<  2) // (TSADC) Channel 2 Status
@@ -3154,7 +3154,7 @@ typedef struct _AT91S_TSADC {
 #define AT91C_TSADC_CHS5      (0x1 <<  5) // (TSADC) Channel 5 Status
 #define AT91C_TSADC_CHS6      (0x1 <<  6) // (TSADC) Channel 6 Status
 #define AT91C_TSADC_CHS7      (0x1 <<  7) // (TSADC) Channel 7 Status
-// -------- TSADC_SR : (TSADC Offset: 0x1c) Status Register -------- 
+// -------- TSADC_SR : (TSADC Offset: 0x1c) Status Register --------
 #define AT91C_TSADC_EOC0      (0x1 <<  0) // (TSADC) Channel 0 End Of Conversion
 #define AT91C_TSADC_EOC1      (0x1 <<  1) // (TSADC) Channel 1 End Of Conversion
 #define AT91C_TSADC_EOC2      (0x1 <<  2) // (TSADC) Channel 2 End Of Conversion
@@ -3177,9 +3177,9 @@ typedef struct _AT91S_TSADC {
 #define AT91C_TSADC_RXBUFF    (0x1 << 19) // (TSADC) RX Buffer Full
 #define AT91C_TSADC_PENCNT    (0x1 << 20) // (TSADC) Pen Contact
 #define AT91C_TSADC_NOCNT     (0x1 << 21) // (TSADC) No Contact
-// -------- TSADC_LCDR : (TSADC Offset: 0x20) Last Converted Data Register -------- 
+// -------- TSADC_LCDR : (TSADC Offset: 0x20) Last Converted Data Register --------
 #define AT91C_TSADC_LDATA     (0x3FF <<  0) // (TSADC) Last Converted Data
-// -------- TSADC_IER : (TSADC Offset: 0x24) Interrupt Enable Register -------- 
+// -------- TSADC_IER : (TSADC Offset: 0x24) Interrupt Enable Register --------
 #define AT91C_TSADC_IENAEOC0  (0x1 <<  0) // (TSADC) Channel 0 End Of Conversion Interrupt Enable
 #define AT91C_TSADC_IENAEOC1  (0x1 <<  1) // (TSADC) Channel 1 End Of Conversion Interrupt Enable
 #define AT91C_TSADC_IENAEOC2  (0x1 <<  2) // (TSADC) Channel 2 End Of Conversion Interrupt Enable
@@ -3202,7 +3202,7 @@ typedef struct _AT91S_TSADC {
 #define AT91C_TSADC_IENARXBUFF (0x1 << 19) // (TSADC) RX Buffer Full Interrupt Enable
 #define AT91C_TSADC_IENAPENCNT (0x1 << 20) // (TSADC) Pen Contact Interrupt Enable
 #define AT91C_TSADC_IENANOCNT (0x1 << 21) // (TSADC) No Contact Interrupt Enable
-// -------- TSADC_IDR : (TSADC Offset: 0x28) Interrupt Disable Register -------- 
+// -------- TSADC_IDR : (TSADC Offset: 0x28) Interrupt Disable Register --------
 #define AT91C_TSADC_IDISEOC0  (0x1 <<  0) // (TSADC) Channel 0 End Of Conversion Interrupt Disable
 #define AT91C_TSADC_IDISEOC1  (0x1 <<  1) // (TSADC) Channel 1 End Of Conversion Interrupt Disable
 #define AT91C_TSADC_IDISEOC2  (0x1 <<  2) // (TSADC) Channel 2 End Of Conversion Interrupt Disable
@@ -3225,7 +3225,7 @@ typedef struct _AT91S_TSADC {
 #define AT91C_TSADC_IDISRXBUFF (0x1 << 19) // (TSADC) RX Buffer Full Interrupt Disable
 #define AT91C_TSADC_IDISPENCNT (0x1 << 20) // (TSADC) Pen Contact Interrupt Disable
 #define AT91C_TSADC_IDISNOCNT (0x1 << 21) // (TSADC) No Contact Interrupt Disable
-// -------- TSADC_IMR : (TSADC Offset: 0x2c) Interrupt Mask Register -------- 
+// -------- TSADC_IMR : (TSADC Offset: 0x2c) Interrupt Mask Register --------
 #define AT91C_TSADC_IMSKEOC0  (0x1 <<  0) // (TSADC) Channel 0 End Of Conversion Interrupt Mask
 #define AT91C_TSADC_IMSKEOC1  (0x1 <<  1) // (TSADC) Channel 1 End Of Conversion Interrupt Mask
 #define AT91C_TSADC_IMSKEOC2  (0x1 <<  2) // (TSADC) Channel 2 End Of Conversion Interrupt Mask
@@ -3248,21 +3248,21 @@ typedef struct _AT91S_TSADC {
 #define AT91C_TSADC_IMSKRXBUFF (0x1 << 19) // (TSADC) RX Buffer Full Interrupt Mask
 #define AT91C_TSADC_IMSKPENCNT (0x1 << 20) // (TSADC) Pen Contact Interrupt Mask
 #define AT91C_TSADC_IMSKNOCNT (0x1 << 21) // (TSADC) No Contact Interrupt Mask
-// -------- TSADC_CDR0 : (TSADC Offset: 0x30) Channel 0 Data Register -------- 
+// -------- TSADC_CDR0 : (TSADC Offset: 0x30) Channel 0 Data Register --------
 #define AT91C_TSADC_DATA0     (0x3FF <<  0) // (TSADC) Channel 0 Data
-// -------- TSADC_CDR1 : (TSADC Offset: 0x34) Channel 1 Data Register -------- 
+// -------- TSADC_CDR1 : (TSADC Offset: 0x34) Channel 1 Data Register --------
 #define AT91C_TSADC_DATA1     (0x3FF <<  0) // (TSADC) Channel 1 Data
-// -------- TSADC_CDR2 : (TSADC Offset: 0x38) Channel 2 Data Register -------- 
+// -------- TSADC_CDR2 : (TSADC Offset: 0x38) Channel 2 Data Register --------
 #define AT91C_TSADC_DATA2     (0x3FF <<  0) // (TSADC) Channel 2 Data
-// -------- TSADC_CDR3 : (TSADC Offset: 0x3c) Channel 3 Data Register -------- 
+// -------- TSADC_CDR3 : (TSADC Offset: 0x3c) Channel 3 Data Register --------
 #define AT91C_TSADC_DATA3     (0x3FF <<  0) // (TSADC) Channel 3 Data
-// -------- TSADC_CDR4 : (TSADC Offset: 0x40) Channel 4 Data Register -------- 
+// -------- TSADC_CDR4 : (TSADC Offset: 0x40) Channel 4 Data Register --------
 #define AT91C_TSADC_DATA4     (0x3FF <<  0) // (TSADC) Channel 4 Data
-// -------- TSADC_CDR5 : (TSADC Offset: 0x44) Channel 5 Data Register -------- 
+// -------- TSADC_CDR5 : (TSADC Offset: 0x44) Channel 5 Data Register --------
 #define AT91C_TSADC_DATA5     (0x3FF <<  0) // (TSADC) Channel 5 Data
-// -------- TSADC_CDR6 : (TSADC Offset: 0x48) Channel 6 Data Register -------- 
+// -------- TSADC_CDR6 : (TSADC Offset: 0x48) Channel 6 Data Register --------
 #define AT91C_TSADC_DATA6     (0x3FF <<  0) // (TSADC) Channel 6 Data
-// -------- TSADC_CDR7 : (TSADC Offset: 0x4c) Channel 7 Data Register -------- 
+// -------- TSADC_CDR7 : (TSADC Offset: 0x4c) Channel 7 Data Register --------
 #define AT91C_TSADC_DATA7     (0x3FF <<  0) // (TSADC) Channel 7 Data
 
 // *****************************************************************************
@@ -3298,7 +3298,7 @@ typedef struct _AT91S_UDPHS_EPT {
 	AT91_REG	 UDPHS_EPTCTLENB; 	// UDPHS Endpoint Control Enable Register
 	AT91_REG	 UDPHS_EPTCTLDIS; 	// UDPHS Endpoint Control Disable Register
 	AT91_REG	 UDPHS_EPTCTL; 	// UDPHS Endpoint Control Register
-	AT91_REG	 Reserved0[1]; 	// 
+	AT91_REG	 Reserved0[1]; 	//
 	AT91_REG	 UDPHS_EPTSETSTA; 	// UDPHS Endpoint Set Status Register
 	AT91_REG	 UDPHS_EPTCLRSTA; 	// UDPHS Endpoint Clear Status Register
 	AT91_REG	 UDPHS_EPTSTA; 	// UDPHS Endpoint Status Register
@@ -3313,7 +3313,7 @@ typedef struct _AT91S_UDPHS_EPT {
 #define UDPHS_EPTSTA    (AT91_CAST(AT91_REG *) 	0x0000001C) // (UDPHS_EPTSTA) UDPHS Endpoint Status Register
 
 #endif
-// -------- UDPHS_EPTCFG : (UDPHS_EPT Offset: 0x0) UDPHS Endpoint Config Register -------- 
+// -------- UDPHS_EPTCFG : (UDPHS_EPT Offset: 0x0) UDPHS Endpoint Config Register --------
 #define AT91C_UDPHS_EPT_SIZE  (0x7 <<  0) // (UDPHS_EPT) Endpoint Size
 #define 	AT91C_UDPHS_EPT_SIZE_8                    (0x0) // (UDPHS_EPT)    8 bytes
 #define 	AT91C_UDPHS_EPT_SIZE_16                   (0x1) // (UDPHS_EPT)   16 bytes
@@ -3338,7 +3338,7 @@ typedef struct _AT91S_UDPHS_EPT {
 #define 	AT91C_UDPHS_BK_NUMBER_3                    (0x3 <<  6) // (UDPHS_EPT) Triple Bank (Bank0 / Bank1 / Bank2) (if possible)
 #define AT91C_UDPHS_NB_TRANS  (0x3 <<  8) // (UDPHS_EPT) Number Of Transaction per Micro-Frame (High-Bandwidth iso only)
 #define AT91C_UDPHS_EPT_MAPD  (0x1 << 31) // (UDPHS_EPT) Endpoint Mapped (read only
-// -------- UDPHS_EPTCTLENB : (UDPHS_EPT Offset: 0x4) UDPHS Endpoint Control Enable Register -------- 
+// -------- UDPHS_EPTCTLENB : (UDPHS_EPT Offset: 0x4) UDPHS Endpoint Control Enable Register --------
 #define AT91C_UDPHS_EPT_ENABL (0x1 <<  0) // (UDPHS_EPT) Endpoint Enable
 #define AT91C_UDPHS_AUTO_VALID (0x1 <<  1) // (UDPHS_EPT) Packet Auto-Valid Enable/Disable
 #define AT91C_UDPHS_INTDIS_DMA (0x1 <<  3) // (UDPHS_EPT) Endpoint Interrupts DMA Request Enable/Disable
@@ -3358,26 +3358,26 @@ typedef struct _AT91S_UDPHS_EPT {
 #define AT91C_UDPHS_NAK_OUT   (0x1 << 15) // (UDPHS_EPT) NAKOUT / Clear / Interrupt Enable/Disable
 #define AT91C_UDPHS_BUSY_BANK (0x1 << 18) // (UDPHS_EPT) Busy Bank Interrupt Enable/Disable
 #define AT91C_UDPHS_SHRT_PCKT (0x1 << 31) // (UDPHS_EPT) Short Packet / Interrupt Enable/Disable
-// -------- UDPHS_EPTCTLDIS : (UDPHS_EPT Offset: 0x8) UDPHS Endpoint Control Disable Register -------- 
+// -------- UDPHS_EPTCTLDIS : (UDPHS_EPT Offset: 0x8) UDPHS Endpoint Control Disable Register --------
 #define AT91C_UDPHS_EPT_DISABL (0x1 <<  0) // (UDPHS_EPT) Endpoint Disable
-// -------- UDPHS_EPTCTL : (UDPHS_EPT Offset: 0xc) UDPHS Endpoint Control Register -------- 
-// -------- UDPHS_EPTSETSTA : (UDPHS_EPT Offset: 0x14) UDPHS Endpoint Set Status Register -------- 
+// -------- UDPHS_EPTCTL : (UDPHS_EPT Offset: 0xc) UDPHS Endpoint Control Register --------
+// -------- UDPHS_EPTSETSTA : (UDPHS_EPT Offset: 0x14) UDPHS Endpoint Set Status Register --------
 #define AT91C_UDPHS_FRCESTALL (0x1 <<  5) // (UDPHS_EPT) Stall Handshake Request Set/Clear/Status
 #define AT91C_UDPHS_KILL_BANK (0x1 <<  9) // (UDPHS_EPT) KILL Bank
-// -------- UDPHS_EPTCLRSTA : (UDPHS_EPT Offset: 0x18) UDPHS Endpoint Clear Status Register -------- 
+// -------- UDPHS_EPTCLRSTA : (UDPHS_EPT Offset: 0x18) UDPHS Endpoint Clear Status Register --------
 #define AT91C_UDPHS_TOGGLESQ  (0x1 <<  6) // (UDPHS_EPT) Data Toggle Clear
-// -------- UDPHS_EPTSTA : (UDPHS_EPT Offset: 0x1c) UDPHS Endpoint Status Register -------- 
+// -------- UDPHS_EPTSTA : (UDPHS_EPT Offset: 0x1c) UDPHS Endpoint Status Register --------
 #define AT91C_UDPHS_TOGGLESQ_STA (0x3 <<  6) // (UDPHS_EPT) Toggle Sequencing
 #define 	AT91C_UDPHS_TOGGLESQ_STA_00                   (0x0 <<  6) // (UDPHS_EPT) Data0
 #define 	AT91C_UDPHS_TOGGLESQ_STA_01                   (0x1 <<  6) // (UDPHS_EPT) Data1
 #define 	AT91C_UDPHS_TOGGLESQ_STA_10                   (0x2 <<  6) // (UDPHS_EPT) Data2 (only for High-Bandwidth Isochronous EndPoint)
 #define 	AT91C_UDPHS_TOGGLESQ_STA_11                   (0x3 <<  6) // (UDPHS_EPT) MData (only for High-Bandwidth Isochronous EndPoint)
-#define AT91C_UDPHS_CONTROL_DIR (0x3 << 16) // (UDPHS_EPT) 
+#define AT91C_UDPHS_CONTROL_DIR (0x3 << 16) // (UDPHS_EPT)
 #define 	AT91C_UDPHS_CONTROL_DIR_00                   (0x0 << 16) // (UDPHS_EPT) Bank 0
 #define 	AT91C_UDPHS_CONTROL_DIR_01                   (0x1 << 16) // (UDPHS_EPT) Bank 1
 #define 	AT91C_UDPHS_CONTROL_DIR_10                   (0x2 << 16) // (UDPHS_EPT) Bank 2
 #define 	AT91C_UDPHS_CONTROL_DIR_11                   (0x3 << 16) // (UDPHS_EPT) Invalid
-#define AT91C_UDPHS_CURRENT_BANK (0x3 << 16) // (UDPHS_EPT) 
+#define AT91C_UDPHS_CURRENT_BANK (0x3 << 16) // (UDPHS_EPT)
 #define 	AT91C_UDPHS_CURRENT_BANK_00                   (0x0 << 16) // (UDPHS_EPT) Bank 0
 #define 	AT91C_UDPHS_CURRENT_BANK_01                   (0x1 << 16) // (UDPHS_EPT) Bank 1
 #define 	AT91C_UDPHS_CURRENT_BANK_10                   (0x2 << 16) // (UDPHS_EPT) Bank 2
@@ -3406,11 +3406,11 @@ typedef struct _AT91S_UDPHS_DMA {
 #define UDPHS_DMASTATUS (AT91_CAST(AT91_REG *) 	0x0000000C) // (UDPHS_DMASTATUS) UDPHS DMA Channel Status Register
 
 #endif
-// -------- UDPHS_DMANXTDSC : (UDPHS_DMA Offset: 0x0) UDPHS DMA Next Descriptor Address Register -------- 
+// -------- UDPHS_DMANXTDSC : (UDPHS_DMA Offset: 0x0) UDPHS DMA Next Descriptor Address Register --------
 #define AT91C_UDPHS_NXT_DSC_ADD (0xFFFFFFF <<  4) // (UDPHS_DMA) next Channel Descriptor
-// -------- UDPHS_DMAADDRESS : (UDPHS_DMA Offset: 0x4) UDPHS DMA Channel Address Register -------- 
+// -------- UDPHS_DMAADDRESS : (UDPHS_DMA Offset: 0x4) UDPHS DMA Channel Address Register --------
 #define AT91C_UDPHS_BUFF_ADD  (0x0 <<  0) // (UDPHS_DMA) starting address of a DMA Channel transfer
-// -------- UDPHS_DMACONTROL : (UDPHS_DMA Offset: 0x8) UDPHS DMA Channel Control Register -------- 
+// -------- UDPHS_DMACONTROL : (UDPHS_DMA Offset: 0x8) UDPHS DMA Channel Control Register --------
 #define AT91C_UDPHS_CHANN_ENB (0x1 <<  0) // (UDPHS_DMA) Channel Enabled
 #define AT91C_UDPHS_LDNXT_DSC (0x1 <<  1) // (UDPHS_DMA) Load Next Channel Transfer Descriptor Enable
 #define AT91C_UDPHS_END_TR_EN (0x1 <<  2) // (UDPHS_DMA) Buffer Close Input Enable
@@ -3420,12 +3420,12 @@ typedef struct _AT91S_UDPHS_DMA {
 #define AT91C_UDPHS_DESC_LD_IT (0x1 <<  6) // (UDPHS_DMA) Descriptor Loaded Interrupt Enable
 #define AT91C_UDPHS_BURST_LCK (0x1 <<  7) // (UDPHS_DMA) Burst Lock Enable
 #define AT91C_UDPHS_BUFF_LENGTH (0xFFFF << 16) // (UDPHS_DMA) Buffer Byte Length (write only)
-// -------- UDPHS_DMASTATUS : (UDPHS_DMA Offset: 0xc) UDPHS DMA Channelx Status Register -------- 
-#define AT91C_UDPHS_CHANN_ACT (0x1 <<  1) // (UDPHS_DMA) 
-#define AT91C_UDPHS_END_TR_ST (0x1 <<  4) // (UDPHS_DMA) 
-#define AT91C_UDPHS_END_BF_ST (0x1 <<  5) // (UDPHS_DMA) 
-#define AT91C_UDPHS_DESC_LDST (0x1 <<  6) // (UDPHS_DMA) 
-#define AT91C_UDPHS_BUFF_COUNT (0xFFFF << 16) // (UDPHS_DMA) 
+// -------- UDPHS_DMASTATUS : (UDPHS_DMA Offset: 0xc) UDPHS DMA Channelx Status Register --------
+#define AT91C_UDPHS_CHANN_ACT (0x1 <<  1) // (UDPHS_DMA)
+#define AT91C_UDPHS_END_TR_ST (0x1 <<  4) // (UDPHS_DMA)
+#define AT91C_UDPHS_END_BF_ST (0x1 <<  5) // (UDPHS_DMA)
+#define AT91C_UDPHS_DESC_LDST (0x1 <<  6) // (UDPHS_DMA)
+#define AT91C_UDPHS_BUFF_COUNT (0xFFFF << 16) // (UDPHS_DMA)
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR UDPHS High Speed Device Interface
@@ -3434,25 +3434,25 @@ typedef struct _AT91S_UDPHS_DMA {
 typedef struct _AT91S_UDPHS {
 	AT91_REG	 UDPHS_CTRL; 	// UDPHS Control Register
 	AT91_REG	 UDPHS_FNUM; 	// UDPHS Frame Number Register
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 UDPHS_IEN; 	// UDPHS Interrupt Enable Register
 	AT91_REG	 UDPHS_INTSTA; 	// UDPHS Interrupt Status Register
 	AT91_REG	 UDPHS_CLRINT; 	// UDPHS Clear Interrupt Register
 	AT91_REG	 UDPHS_EPTRST; 	// UDPHS Endpoints Reset Register
-	AT91_REG	 Reserved1[44]; 	// 
+	AT91_REG	 Reserved1[44]; 	//
 	AT91_REG	 UDPHS_TSTSOFCNT; 	// UDPHS Test SOF Counter Register
 	AT91_REG	 UDPHS_TSTCNTA; 	// UDPHS Test A Counter Register
 	AT91_REG	 UDPHS_TSTCNTB; 	// UDPHS Test B Counter Register
 	AT91_REG	 UDPHS_TSTMODREG; 	// UDPHS Test Mode Register
 	AT91_REG	 UDPHS_TST; 	// UDPHS Test Register
-	AT91_REG	 Reserved2[2]; 	// 
+	AT91_REG	 Reserved2[2]; 	//
 	AT91_REG	 UDPHS_RIPPADDRSIZE; 	// UDPHS PADDRSIZE Register
 	AT91_REG	 UDPHS_RIPNAME1; 	// UDPHS Name1 Register
 	AT91_REG	 UDPHS_RIPNAME2; 	// UDPHS Name2 Register
 	AT91_REG	 UDPHS_IPFEATURES; 	// UDPHS Features Register
 	AT91_REG	 UDPHS_IPVERSION; 	// UDPHS Version Register
 	AT91S_UDPHS_EPT	 UDPHS_EPT[7]; 	// UDPHS Endpoint struct
-	AT91_REG	 Reserved3[72]; 	// 
+	AT91_REG	 Reserved3[72]; 	//
 	AT91S_UDPHS_DMA	 UDPHS_DMA[6]; 	// UDPHS DMA channel struct (not use [0])
 } AT91S_UDPHS, *AT91PS_UDPHS;
 #else
@@ -3474,18 +3474,18 @@ typedef struct _AT91S_UDPHS {
 #define UDPHS_IPVERSION (AT91_CAST(AT91_REG *) 	0x000000FC) // (UDPHS_IPVERSION) UDPHS Version Register
 
 #endif
-// -------- UDPHS_CTRL : (UDPHS Offset: 0x0) UDPHS Control Register -------- 
+// -------- UDPHS_CTRL : (UDPHS Offset: 0x0) UDPHS Control Register --------
 #define AT91C_UDPHS_DEV_ADDR  (0x7F <<  0) // (UDPHS) UDPHS Address
 #define AT91C_UDPHS_FADDR_EN  (0x1 <<  7) // (UDPHS) Function Address Enable
 #define AT91C_UDPHS_EN_UDPHS  (0x1 <<  8) // (UDPHS) UDPHS Enable
 #define AT91C_UDPHS_DETACH    (0x1 <<  9) // (UDPHS) Detach Command
 #define AT91C_UDPHS_REWAKEUP  (0x1 << 10) // (UDPHS) Send Remote Wake Up
 #define AT91C_UDPHS_PULLD_DIS (0x1 << 11) // (UDPHS) PullDown Disable
-// -------- UDPHS_FNUM : (UDPHS Offset: 0x4) UDPHS Frame Number Register -------- 
+// -------- UDPHS_FNUM : (UDPHS Offset: 0x4) UDPHS Frame Number Register --------
 #define AT91C_UDPHS_MICRO_FRAME_NUM (0x7 <<  0) // (UDPHS) Micro Frame Number
 #define AT91C_UDPHS_FRAME_NUMBER (0x7FF <<  3) // (UDPHS) Frame Number as defined in the Packet Field Formats
 #define AT91C_UDPHS_FNUM_ERR  (0x1 << 31) // (UDPHS) Frame Number CRC Error
-// -------- UDPHS_IEN : (UDPHS Offset: 0x10) UDPHS Interrupt Enable Register -------- 
+// -------- UDPHS_IEN : (UDPHS Offset: 0x10) UDPHS Interrupt Enable Register --------
 #define AT91C_UDPHS_DET_SUSPD (0x1 <<  1) // (UDPHS) Suspend Interrupt Enable/Clear/Status
 #define AT91C_UDPHS_MICRO_SOF (0x1 <<  2) // (UDPHS) Micro-SOF Interrupt Enable/Clear/Status
 #define AT91C_UDPHS_IEN_SOF   (0x1 <<  3) // (UDPHS) SOF Interrupt Enable/Clear/Status
@@ -3506,10 +3506,10 @@ typedef struct _AT91S_UDPHS {
 #define AT91C_UDPHS_DMA_INT_4 (0x1 << 28) // (UDPHS) DMA Channel 4 Interrupt Enable/Status
 #define AT91C_UDPHS_DMA_INT_5 (0x1 << 29) // (UDPHS) DMA Channel 5 Interrupt Enable/Status
 #define AT91C_UDPHS_DMA_INT_6 (0x1 << 30) // (UDPHS) DMA Channel 6 Interrupt Enable/Status
-// -------- UDPHS_INTSTA : (UDPHS Offset: 0x14) UDPHS Interrupt Status Register -------- 
+// -------- UDPHS_INTSTA : (UDPHS Offset: 0x14) UDPHS Interrupt Status Register --------
 #define AT91C_UDPHS_SPEED     (0x1 <<  0) // (UDPHS) Speed Status
-// -------- UDPHS_CLRINT : (UDPHS Offset: 0x18) UDPHS Clear Interrupt Register -------- 
-// -------- UDPHS_EPTRST : (UDPHS Offset: 0x1c) UDPHS Endpoints Reset Register -------- 
+// -------- UDPHS_CLRINT : (UDPHS Offset: 0x18) UDPHS Clear Interrupt Register --------
+// -------- UDPHS_EPTRST : (UDPHS Offset: 0x1c) UDPHS Endpoints Reset Register --------
 #define AT91C_UDPHS_RST_EPT_0 (0x1 <<  0) // (UDPHS) Endpoint Reset 0
 #define AT91C_UDPHS_RST_EPT_1 (0x1 <<  1) // (UDPHS) Endpoint Reset 1
 #define AT91C_UDPHS_RST_EPT_2 (0x1 <<  2) // (UDPHS) Endpoint Reset 2
@@ -3517,18 +3517,18 @@ typedef struct _AT91S_UDPHS {
 #define AT91C_UDPHS_RST_EPT_4 (0x1 <<  4) // (UDPHS) Endpoint Reset 4
 #define AT91C_UDPHS_RST_EPT_5 (0x1 <<  5) // (UDPHS) Endpoint Reset 5
 #define AT91C_UDPHS_RST_EPT_6 (0x1 <<  6) // (UDPHS) Endpoint Reset 6
-// -------- UDPHS_TSTSOFCNT : (UDPHS Offset: 0xd0) UDPHS Test SOF Counter Register -------- 
+// -------- UDPHS_TSTSOFCNT : (UDPHS Offset: 0xd0) UDPHS Test SOF Counter Register --------
 #define AT91C_UDPHS_SOFCNTMAX (0x3 <<  0) // (UDPHS) SOF Counter Max Value
 #define AT91C_UDPHS_SOFCTLOAD (0x1 <<  7) // (UDPHS) SOF Counter Load
-// -------- UDPHS_TSTCNTA : (UDPHS Offset: 0xd4) UDPHS Test A Counter Register -------- 
+// -------- UDPHS_TSTCNTA : (UDPHS Offset: 0xd4) UDPHS Test A Counter Register --------
 #define AT91C_UDPHS_CNTAMAX   (0x7FFF <<  0) // (UDPHS) A Counter Max Value
 #define AT91C_UDPHS_CNTALOAD  (0x1 << 15) // (UDPHS) A Counter Load
-// -------- UDPHS_TSTCNTB : (UDPHS Offset: 0xd8) UDPHS Test B Counter Register -------- 
+// -------- UDPHS_TSTCNTB : (UDPHS Offset: 0xd8) UDPHS Test B Counter Register --------
 #define AT91C_UDPHS_CNTBMAX   (0x7FFF <<  0) // (UDPHS) B Counter Max Value
 #define AT91C_UDPHS_CNTBLOAD  (0x1 << 15) // (UDPHS) B Counter Load
-// -------- UDPHS_TSTMODREG : (UDPHS Offset: 0xdc) UDPHS Test Mode Register -------- 
+// -------- UDPHS_TSTMODREG : (UDPHS Offset: 0xdc) UDPHS Test Mode Register --------
 #define AT91C_UDPHS_TSTMODE   (0x1F <<  1) // (UDPHS) UDPHS Core TestModeReg
-// -------- UDPHS_TST : (UDPHS Offset: 0xe0) UDPHS Test Register -------- 
+// -------- UDPHS_TST : (UDPHS Offset: 0xe0) UDPHS Test Register --------
 #define AT91C_UDPHS_SPEED_CFG (0x3 <<  0) // (UDPHS) Speed Configuration
 #define 	AT91C_UDPHS_SPEED_CFG_NM                   (0x0) // (UDPHS) Normal Mode
 #define 	AT91C_UDPHS_SPEED_CFG_RS                   (0x1) // (UDPHS) Reserved
@@ -3538,13 +3538,13 @@ typedef struct _AT91S_UDPHS {
 #define AT91C_UDPHS_TST_K     (0x1 <<  3) // (UDPHS) TestKMode
 #define AT91C_UDPHS_TST_PKT   (0x1 <<  4) // (UDPHS) TestPacketMode
 #define AT91C_UDPHS_OPMODE2   (0x1 <<  5) // (UDPHS) OpMode2
-// -------- UDPHS_RIPPADDRSIZE : (UDPHS Offset: 0xec) UDPHS PADDRSIZE Register -------- 
+// -------- UDPHS_RIPPADDRSIZE : (UDPHS Offset: 0xec) UDPHS PADDRSIZE Register --------
 #define AT91C_UDPHS_IPPADDRSIZE (0x0 <<  0) // (UDPHS) 2^UDPHSDEV_PADDR_SIZE
-// -------- UDPHS_RIPNAME1 : (UDPHS Offset: 0xf0) UDPHS Name Register -------- 
+// -------- UDPHS_RIPNAME1 : (UDPHS Offset: 0xf0) UDPHS Name Register --------
 #define AT91C_UDPHS_IPNAME1   (0x0 <<  0) // (UDPHS) ASCII string HUSB
-// -------- UDPHS_RIPNAME2 : (UDPHS Offset: 0xf4) UDPHS Name Register -------- 
+// -------- UDPHS_RIPNAME2 : (UDPHS Offset: 0xf4) UDPHS Name Register --------
 #define AT91C_UDPHS_IPNAME2   (0x0 <<  0) // (UDPHS) ASCII string 2DEV
-// -------- UDPHS_IPFEATURES : (UDPHS Offset: 0xf8) UDPHS Features Register -------- 
+// -------- UDPHS_IPFEATURES : (UDPHS Offset: 0xf8) UDPHS Features Register --------
 #define AT91C_UDPHS_EPT_NBR_MAX (0xF <<  0) // (UDPHS) Max Number of Endpoints
 #define AT91C_UDPHS_DMA_CHANNEL_NBR (0x7 <<  4) // (UDPHS) Number of DMA Channels
 #define AT91C_UDPHS_DMA_B_SIZ (0x1 <<  7) // (UDPHS) DMA Buffer Size
@@ -3556,7 +3556,7 @@ typedef struct _AT91S_UDPHS {
 #define AT91C_UDPHS_ISO_EPT_2 (0x1 << 18) // (UDPHS) Endpoint 2 High Bandwidth Isochronous Capability
 #define AT91C_UDPHS_ISO_EPT_5 (0x1 << 21) // (UDPHS) Endpoint 5 High Bandwidth Isochronous Capability
 #define AT91C_UDPHS_ISO_EPT_6 (0x1 << 22) // (UDPHS) Endpoint 6 High Bandwidth Isochronous Capability
-// -------- UDPHS_IPVERSION : (UDPHS Offset: 0xfc) UDPHS Version Register -------- 
+// -------- UDPHS_IPVERSION : (UDPHS Offset: 0xfc) UDPHS Version Register --------
 #define AT91C_UDPHS_VERSION_NUM (0xFFFF <<  0) // (UDPHS) Give the IP version
 #define AT91C_UDPHS_METAL_FIX_NUM (0x7 << 16) // (UDPHS) Give the number of metal fixes
 
@@ -3565,12 +3565,12 @@ typedef struct _AT91S_UDPHS {
 // *****************************************************************************
 #ifndef __ASSEMBLY__
 typedef struct _AT91S_AC97C {
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 AC97C_MR; 	// Mode Register
-	AT91_REG	 Reserved1[1]; 	// 
+	AT91_REG	 Reserved1[1]; 	//
 	AT91_REG	 AC97C_ICA; 	// Input Channel AssignementRegister
 	AT91_REG	 AC97C_OCA; 	// Output Channel Assignement Register
-	AT91_REG	 Reserved2[2]; 	// 
+	AT91_REG	 Reserved2[2]; 	//
 	AT91_REG	 AC97C_CARHR; 	// Channel A Receive Holding Register
 	AT91_REG	 AC97C_CATHR; 	// Channel A Transmit Holding Register
 	AT91_REG	 AC97C_CASR; 	// Channel A Status Register
@@ -3587,7 +3587,7 @@ typedef struct _AT91S_AC97C {
 	AT91_REG	 AC97C_IER; 	// Interrupt Enable Register
 	AT91_REG	 AC97C_IDR; 	// Interrupt Disable Register
 	AT91_REG	 AC97C_IMR; 	// Interrupt Mask Register
-	AT91_REG	 Reserved3[39]; 	// 
+	AT91_REG	 Reserved3[39]; 	//
 	AT91_REG	 AC97C_VERSION; 	// Version Register
 	AT91_REG	 AC97C_RPR; 	// Receive Pointer Register
 	AT91_REG	 AC97C_RCR; 	// Receive Counter Register
@@ -3623,11 +3623,11 @@ typedef struct _AT91S_AC97C {
 #define AC97C_VERSION   (AT91_CAST(AT91_REG *) 	0x000000FC) // (AC97C_VERSION) Version Register
 
 #endif
-// -------- AC97C_MR : (AC97C Offset: 0x8) AC97C Mode Register -------- 
+// -------- AC97C_MR : (AC97C Offset: 0x8) AC97C Mode Register --------
 #define AT91C_AC97C_ENA       (0x1 <<  0) // (AC97C) AC97 Controller Global Enable
 #define AT91C_AC97C_WRST      (0x1 <<  1) // (AC97C) Warm Reset
 #define AT91C_AC97C_VRA       (0x1 <<  2) // (AC97C) Variable RAte (for Data Slots)
-// -------- AC97C_ICA : (AC97C Offset: 0x10) AC97C Input Channel Assignement Register -------- 
+// -------- AC97C_ICA : (AC97C Offset: 0x10) AC97C Input Channel Assignement Register --------
 #define AT91C_AC97C_CHID3     (0x7 <<  0) // (AC97C) Channel Id for the input slot 3
 #define 	AT91C_AC97C_CHID3_NONE                 (0x0) // (AC97C) No data will be transmitted during this slot
 #define 	AT91C_AC97C_CHID3_CA                   (0x1) // (AC97C) Channel A data will be transmitted during this slot
@@ -3678,51 +3678,51 @@ typedef struct _AT91S_AC97C {
 #define 	AT91C_AC97C_CHID12_CA                   (0x1 << 27) // (AC97C) Channel A data will be transmitted during this slot
 #define 	AT91C_AC97C_CHID12_CB                   (0x2 << 27) // (AC97C) Channel B data will be transmitted during this slot
 #define 	AT91C_AC97C_CHID12_CC                   (0x3 << 27) // (AC97C) Channel C data will be transmitted during this slot
-// -------- AC97C_OCA : (AC97C Offset: 0x14) AC97C Output Channel Assignement Register -------- 
-// -------- AC97C_CARHR : (AC97C Offset: 0x20) AC97C Channel A Receive Holding Register -------- 
+// -------- AC97C_OCA : (AC97C Offset: 0x14) AC97C Output Channel Assignement Register --------
+// -------- AC97C_CARHR : (AC97C Offset: 0x20) AC97C Channel A Receive Holding Register --------
 #define AT91C_AC97C_RDATA     (0xFFFFF <<  0) // (AC97C) Receive data
-// -------- AC97C_CATHR : (AC97C Offset: 0x24) AC97C Channel A Transmit Holding Register -------- 
+// -------- AC97C_CATHR : (AC97C Offset: 0x24) AC97C Channel A Transmit Holding Register --------
 #define AT91C_AC97C_TDATA     (0xFFFFF <<  0) // (AC97C) Transmit data
-// -------- AC97C_CASR : (AC97C Offset: 0x28) AC97C Channel A Status Register -------- 
-#define AT91C_AC97C_TXRDY     (0x1 <<  0) // (AC97C) 
-#define AT91C_AC97C_TXEMPTY   (0x1 <<  1) // (AC97C) 
-#define AT91C_AC97C_UNRUN     (0x1 <<  2) // (AC97C) 
-#define AT91C_AC97C_RXRDY     (0x1 <<  4) // (AC97C) 
-#define AT91C_AC97C_OVRUN     (0x1 <<  5) // (AC97C) 
-#define AT91C_AC97C_ENDTX     (0x1 << 10) // (AC97C) 
-#define AT91C_AC97C_TXBUFE    (0x1 << 11) // (AC97C) 
-#define AT91C_AC97C_ENDRX     (0x1 << 14) // (AC97C) 
-#define AT91C_AC97C_RXBUFF    (0x1 << 15) // (AC97C) 
-// -------- AC97C_CAMR : (AC97C Offset: 0x2c) AC97C Channel A Mode Register -------- 
-#define AT91C_AC97C_SIZE      (0x3 << 16) // (AC97C) 
+// -------- AC97C_CASR : (AC97C Offset: 0x28) AC97C Channel A Status Register --------
+#define AT91C_AC97C_TXRDY     (0x1 <<  0) // (AC97C)
+#define AT91C_AC97C_TXEMPTY   (0x1 <<  1) // (AC97C)
+#define AT91C_AC97C_UNRUN     (0x1 <<  2) // (AC97C)
+#define AT91C_AC97C_RXRDY     (0x1 <<  4) // (AC97C)
+#define AT91C_AC97C_OVRUN     (0x1 <<  5) // (AC97C)
+#define AT91C_AC97C_ENDTX     (0x1 << 10) // (AC97C)
+#define AT91C_AC97C_TXBUFE    (0x1 << 11) // (AC97C)
+#define AT91C_AC97C_ENDRX     (0x1 << 14) // (AC97C)
+#define AT91C_AC97C_RXBUFF    (0x1 << 15) // (AC97C)
+// -------- AC97C_CAMR : (AC97C Offset: 0x2c) AC97C Channel A Mode Register --------
+#define AT91C_AC97C_SIZE      (0x3 << 16) // (AC97C)
 #define 	AT91C_AC97C_SIZE_20_BITS              (0x0 << 16) // (AC97C) Data size is 20 bits
 #define 	AT91C_AC97C_SIZE_18_BITS              (0x1 << 16) // (AC97C) Data size is 18 bits
 #define 	AT91C_AC97C_SIZE_16_BITS              (0x2 << 16) // (AC97C) Data size is 16 bits
 #define 	AT91C_AC97C_SIZE_10_BITS              (0x3 << 16) // (AC97C) Data size is 10 bits
-#define AT91C_AC97C_CEM       (0x1 << 18) // (AC97C) 
-#define AT91C_AC97C_CEN       (0x1 << 21) // (AC97C) 
-#define AT91C_AC97C_PDCEN     (0x1 << 22) // (AC97C) 
-// -------- AC97C_CBRHR : (AC97C Offset: 0x30) AC97C Channel B Receive Holding Register -------- 
-// -------- AC97C_CBTHR : (AC97C Offset: 0x34) AC97C Channel B Transmit Holding Register -------- 
-// -------- AC97C_CBSR : (AC97C Offset: 0x38) AC97C Channel B Status Register -------- 
-// -------- AC97C_CBMR : (AC97C Offset: 0x3c) AC97C Channel B Mode Register -------- 
-// -------- AC97C_CORHR : (AC97C Offset: 0x40) AC97C Codec Channel Receive Holding Register -------- 
+#define AT91C_AC97C_CEM       (0x1 << 18) // (AC97C)
+#define AT91C_AC97C_CEN       (0x1 << 21) // (AC97C)
+#define AT91C_AC97C_PDCEN     (0x1 << 22) // (AC97C)
+// -------- AC97C_CBRHR : (AC97C Offset: 0x30) AC97C Channel B Receive Holding Register --------
+// -------- AC97C_CBTHR : (AC97C Offset: 0x34) AC97C Channel B Transmit Holding Register --------
+// -------- AC97C_CBSR : (AC97C Offset: 0x38) AC97C Channel B Status Register --------
+// -------- AC97C_CBMR : (AC97C Offset: 0x3c) AC97C Channel B Mode Register --------
+// -------- AC97C_CORHR : (AC97C Offset: 0x40) AC97C Codec Channel Receive Holding Register --------
 #define AT91C_AC97C_SDATA     (0xFFFF <<  0) // (AC97C) Status Data
-// -------- AC97C_COTHR : (AC97C Offset: 0x44) AC97C Codec Channel Transmit Holding Register -------- 
+// -------- AC97C_COTHR : (AC97C Offset: 0x44) AC97C Codec Channel Transmit Holding Register --------
 #define AT91C_AC97C_CDATA     (0xFFFF <<  0) // (AC97C) Command Data
 #define AT91C_AC97C_CADDR     (0x7F << 16) // (AC97C) COdec control register index
 #define AT91C_AC97C_READ      (0x1 << 23) // (AC97C) Read/Write command
-// -------- AC97C_COSR : (AC97C Offset: 0x48) AC97C CODEC Status Register -------- 
-// -------- AC97C_COMR : (AC97C Offset: 0x4c) AC97C CODEC Mode Register -------- 
-// -------- AC97C_SR : (AC97C Offset: 0x50) AC97C Status Register -------- 
-#define AT91C_AC97C_SOF       (0x1 <<  0) // (AC97C) 
-#define AT91C_AC97C_WKUP      (0x1 <<  1) // (AC97C) 
-#define AT91C_AC97C_COEVT     (0x1 <<  2) // (AC97C) 
-#define AT91C_AC97C_CAEVT     (0x1 <<  3) // (AC97C) 
-#define AT91C_AC97C_CBEVT     (0x1 <<  4) // (AC97C) 
-// -------- AC97C_IER : (AC97C Offset: 0x54) AC97C Interrupt Enable Register -------- 
-// -------- AC97C_IDR : (AC97C Offset: 0x58) AC97C Interrupt Disable Register -------- 
-// -------- AC97C_IMR : (AC97C Offset: 0x5c) AC97C Interrupt Mask Register -------- 
+// -------- AC97C_COSR : (AC97C Offset: 0x48) AC97C CODEC Status Register --------
+// -------- AC97C_COMR : (AC97C Offset: 0x4c) AC97C CODEC Mode Register --------
+// -------- AC97C_SR : (AC97C Offset: 0x50) AC97C Status Register --------
+#define AT91C_AC97C_SOF       (0x1 <<  0) // (AC97C)
+#define AT91C_AC97C_WKUP      (0x1 <<  1) // (AC97C)
+#define AT91C_AC97C_COEVT     (0x1 <<  2) // (AC97C)
+#define AT91C_AC97C_CAEVT     (0x1 <<  3) // (AC97C)
+#define AT91C_AC97C_CBEVT     (0x1 <<  4) // (AC97C)
+// -------- AC97C_IER : (AC97C Offset: 0x54) AC97C Interrupt Enable Register --------
+// -------- AC97C_IDR : (AC97C Offset: 0x58) AC97C Interrupt Disable Register --------
+// -------- AC97C_IMR : (AC97C Offset: 0x5c) AC97C Interrupt Mask Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR LCD Controller
@@ -3738,7 +3738,7 @@ typedef struct _AT91S_LCDC {
 	AT91_REG	 LCDC_FRMCFG; 	// DMA Frame Configuration Register
 	AT91_REG	 LCDC_DMACON; 	// DMA Control Register
 	AT91_REG	 LCDC_DMA2DCFG; 	// DMA 2D addressing configuration
-	AT91_REG	 Reserved0[503]; 	// 
+	AT91_REG	 Reserved0[503]; 	//
 	AT91_REG	 LCDC_LCDCON1; 	// LCD Control 1 Register
 	AT91_REG	 LCDC_LCDCON2; 	// LCD Control 2 Register
 	AT91_REG	 LCDC_TIM1; 	// LCD Timing Config 1 Register
@@ -3765,7 +3765,7 @@ typedef struct _AT91S_LCDC {
 	AT91_REG	 LCDC_GPR; 	// General Purpose Register
 	AT91_REG	 LCDC_ITR; 	// Interrupts Test Register
 	AT91_REG	 LCDC_IRR; 	// Interrupts Raw Status Register
-	AT91_REG	 Reserved1[230]; 	// 
+	AT91_REG	 Reserved1[230]; 	//
 	AT91_REG	 LCDC_LUT_ENTRY[256]; 	// LUT Entries Register
 } AT91S_LCDC, *AT91PS_LCDC;
 #else
@@ -3807,27 +3807,27 @@ typedef struct _AT91S_LCDC {
 #define LCDC_LUT_ENTRY  (AT91_CAST(AT91_REG *) 	0x00000C00) // (LCDC_LUT_ENTRY) LUT Entries Register
 
 #endif
-// -------- LCDC_FRMP1 : (LCDC Offset: 0x8) DMA Frame Pointer 1 Register -------- 
+// -------- LCDC_FRMP1 : (LCDC Offset: 0x8) DMA Frame Pointer 1 Register --------
 #define AT91C_LCDC_FRMPT1     (0x3FFFFF <<  0) // (LCDC) Frame Pointer Address 1
-// -------- LCDC_FRMP2 : (LCDC Offset: 0xc) DMA Frame Pointer 2 Register -------- 
+// -------- LCDC_FRMP2 : (LCDC Offset: 0xc) DMA Frame Pointer 2 Register --------
 #define AT91C_LCDC_FRMPT2     (0x1FFFFF <<  0) // (LCDC) Frame Pointer Address 2
-// -------- LCDC_FRMCFG : (LCDC Offset: 0x18) DMA Frame Config Register -------- 
+// -------- LCDC_FRMCFG : (LCDC Offset: 0x18) DMA Frame Config Register --------
 #define AT91C_LCDC_FRSIZE     (0x3FFFFF <<  0) // (LCDC) FRAME SIZE
 #define AT91C_LCDC_BLENGTH    (0x7F << 24) // (LCDC) BURST LENGTH
-// -------- LCDC_DMACON : (LCDC Offset: 0x1c) DMA Control Register -------- 
+// -------- LCDC_DMACON : (LCDC Offset: 0x1c) DMA Control Register --------
 #define AT91C_LCDC_DMAEN      (0x1 <<  0) // (LCDC) DAM Enable
 #define AT91C_LCDC_DMARST     (0x1 <<  1) // (LCDC) DMA Reset (WO)
 #define AT91C_LCDC_DMABUSY    (0x1 <<  2) // (LCDC) DMA Reset (WO)
 #define AT91C_LCDC_DMAUPDT    (0x1 <<  3) // (LCDC) DMA Configuration Update
 #define AT91C_LCDC_DMA2DEN    (0x1 <<  4) // (LCDC) 2D Addressing Enable
-// -------- LCDC_DMA2DCFG : (LCDC Offset: 0x20) DMA 2D addressing configuration Register -------- 
+// -------- LCDC_DMA2DCFG : (LCDC Offset: 0x20) DMA 2D addressing configuration Register --------
 #define AT91C_LCDC_ADDRINC    (0xFFFF <<  0) // (LCDC) Number of 32b words that the DMA must jump when going to the next line
 #define AT91C_LCDC_PIXELOFF   (0x1F << 24) // (LCDC) Offset (in bits) of the first pixel of the screen in the memory word which contain it
-// -------- LCDC_LCDCON1 : (LCDC Offset: 0x800) LCD Control 1 Register -------- 
+// -------- LCDC_LCDCON1 : (LCDC Offset: 0x800) LCD Control 1 Register --------
 #define AT91C_LCDC_BYPASS     (0x1 <<  0) // (LCDC) Bypass lcd_pccklk divider
 #define AT91C_LCDC_CLKVAL     (0x1FF << 12) // (LCDC) 9-bit Divider for pixel clock frequency
 #define AT91C_LCDC_LINCNT     (0x7FF << 21) // (LCDC) Line Counter (RO)
-// -------- LCDC_LCDCON2 : (LCDC Offset: 0x804) LCD Control 2 Register -------- 
+// -------- LCDC_LCDCON2 : (LCDC Offset: 0x804) LCD Control 2 Register --------
 #define AT91C_LCDC_DISTYPE    (0x3 <<  0) // (LCDC) Display Type
 #define 	AT91C_LCDC_DISTYPE_STNMONO              (0x0) // (LCDC) STN Mono
 #define 	AT91C_LCDC_DISTYPE_STNCOLOR             (0x1) // (LCDC) STN Color
@@ -3867,48 +3867,48 @@ typedef struct _AT91S_LCDC {
 #define AT91C_LCDC_MEMOR      (0x3 << 30) // (LCDC) Memory Ordering Format
 #define 	AT91C_LCDC_MEMOR_BIGIND               (0x0 << 30) // (LCDC) Big Endian
 #define 	AT91C_LCDC_MEMOR_LITTLEIND            (0x2 << 30) // (LCDC) Little Endian
-// -------- LCDC_TIM1 : (LCDC Offset: 0x808) LCDC Timing Config 1 Register -------- 
+// -------- LCDC_TIM1 : (LCDC Offset: 0x808) LCDC Timing Config 1 Register --------
 #define AT91C_LCDC_VFP        (0xFF <<  0) // (LCDC) Vertical Front Porch
 #define AT91C_LCDC_VBP        (0xFF <<  8) // (LCDC) Vertical Back Porch
 #define AT91C_LCDC_VPW        (0x3F << 16) // (LCDC) Vertical Synchronization Pulse Width
 #define AT91C_LCDC_VHDLY      (0xF << 24) // (LCDC) Vertical to Horizontal Delay
-// -------- LCDC_TIM2 : (LCDC Offset: 0x80c) LCDC Timing Config 2 Register -------- 
+// -------- LCDC_TIM2 : (LCDC Offset: 0x80c) LCDC Timing Config 2 Register --------
 #define AT91C_LCDC_HBP        (0xFF <<  0) // (LCDC) Horizontal Back Porch
 #define AT91C_LCDC_HPW        (0x3F <<  8) // (LCDC) Horizontal Synchronization Pulse Width
 #define AT91C_LCDC_HFP        (0x7FF << 21) // (LCDC) Horizontal Front Porch
-// -------- LCDC_LCDFRCFG : (LCDC Offset: 0x810) LCD Frame Config Register -------- 
+// -------- LCDC_LCDFRCFG : (LCDC Offset: 0x810) LCD Frame Config Register --------
 #define AT91C_LCDC_LINEVAL    (0x7FF <<  0) // (LCDC) Vertical Size of LCD Module
 #define AT91C_LCDC_HOZVAL     (0x7FF << 21) // (LCDC) Horizontal Size of LCD Module
-// -------- LCDC_FIFO : (LCDC Offset: 0x814) LCD FIFO Register -------- 
+// -------- LCDC_FIFO : (LCDC Offset: 0x814) LCD FIFO Register --------
 #define AT91C_LCDC_FIFOTH     (0xFFFF <<  0) // (LCDC) FIFO Threshold
-// -------- LCDC_MVAL : (LCDC Offset: 0x818) LCD Mode Toggle Rate Value Register -------- 
+// -------- LCDC_MVAL : (LCDC Offset: 0x818) LCD Mode Toggle Rate Value Register --------
 #define AT91C_LCDC_MVALUE     (0xFF <<  0) // (LCDC) Toggle Rate Value
 #define AT91C_LCDC_MMODE      (0x1 << 31) // (LCDC) Toggle Rate Sel
 #define 	AT91C_LCDC_MMODE_EACHFRAME            (0x0 << 31) // (LCDC) Each Frame
 #define 	AT91C_LCDC_MMODE_MVALDEFINED          (0x1 << 31) // (LCDC) Defined by MVAL
-// -------- LCDC_DP1_2 : (LCDC Offset: 0x81c) Dithering Pattern 1/2 -------- 
+// -------- LCDC_DP1_2 : (LCDC Offset: 0x81c) Dithering Pattern 1/2 --------
 #define AT91C_LCDC_DP1_2_FIELD (0xFF <<  0) // (LCDC) Ratio
-// -------- LCDC_DP4_7 : (LCDC Offset: 0x820) Dithering Pattern 4/7 -------- 
+// -------- LCDC_DP4_7 : (LCDC Offset: 0x820) Dithering Pattern 4/7 --------
 #define AT91C_LCDC_DP4_7_FIELD (0xFFFFFFF <<  0) // (LCDC) Ratio
-// -------- LCDC_DP3_5 : (LCDC Offset: 0x824) Dithering Pattern 3/5 -------- 
+// -------- LCDC_DP3_5 : (LCDC Offset: 0x824) Dithering Pattern 3/5 --------
 #define AT91C_LCDC_DP3_5_FIELD (0xFFFFF <<  0) // (LCDC) Ratio
-// -------- LCDC_DP2_3 : (LCDC Offset: 0x828) Dithering Pattern 2/3 -------- 
+// -------- LCDC_DP2_3 : (LCDC Offset: 0x828) Dithering Pattern 2/3 --------
 #define AT91C_LCDC_DP2_3_FIELD (0xFFF <<  0) // (LCDC) Ratio
-// -------- LCDC_DP5_7 : (LCDC Offset: 0x82c) Dithering Pattern 5/7 -------- 
+// -------- LCDC_DP5_7 : (LCDC Offset: 0x82c) Dithering Pattern 5/7 --------
 #define AT91C_LCDC_DP5_7_FIELD (0xFFFFFFF <<  0) // (LCDC) Ratio
-// -------- LCDC_DP3_4 : (LCDC Offset: 0x830) Dithering Pattern 3/4 -------- 
+// -------- LCDC_DP3_4 : (LCDC Offset: 0x830) Dithering Pattern 3/4 --------
 #define AT91C_LCDC_DP3_4_FIELD (0xFFFF <<  0) // (LCDC) Ratio
-// -------- LCDC_DP4_5 : (LCDC Offset: 0x834) Dithering Pattern 4/5 -------- 
+// -------- LCDC_DP4_5 : (LCDC Offset: 0x834) Dithering Pattern 4/5 --------
 #define AT91C_LCDC_DP4_5_FIELD (0xFFFFF <<  0) // (LCDC) Ratio
-// -------- LCDC_DP6_7 : (LCDC Offset: 0x838) Dithering Pattern 6/7 -------- 
+// -------- LCDC_DP6_7 : (LCDC Offset: 0x838) Dithering Pattern 6/7 --------
 #define AT91C_LCDC_DP6_7_FIELD (0xFFFFFFF <<  0) // (LCDC) Ratio
-// -------- LCDC_PWRCON : (LCDC Offset: 0x83c) LCDC Power Control Register -------- 
+// -------- LCDC_PWRCON : (LCDC Offset: 0x83c) LCDC Power Control Register --------
 #define AT91C_LCDC_PWR        (0x1 <<  0) // (LCDC) LCD Module Power Control
 #define AT91C_LCDC_GUARDT     (0x7F <<  1) // (LCDC) Delay in Frame Period
 #define AT91C_LCDC_BUSY       (0x1 << 31) // (LCDC) Read Only : 1 indicates that LCDC is busy
 #define 	AT91C_LCDC_BUSY_LCDNOTBUSY           (0x0 << 31) // (LCDC) LCD is Not Busy
 #define 	AT91C_LCDC_BUSY_LCDBUSY              (0x1 << 31) // (LCDC) LCD is Busy
-// -------- LCDC_CTRSTCON : (LCDC Offset: 0x840) LCDC Contrast Control Register -------- 
+// -------- LCDC_CTRSTCON : (LCDC Offset: 0x840) LCDC Contrast Control Register --------
 #define AT91C_LCDC_PS         (0x3 <<  0) // (LCDC) LCD Contrast Counter Prescaler
 #define 	AT91C_LCDC_PS_NOTDIVIDED           (0x0) // (LCDC) Counter Freq is System Freq.
 #define 	AT91C_LCDC_PS_DIVIDEDBYTWO         (0x1) // (LCDC) Counter Freq is System Freq divided by 2.
@@ -3920,23 +3920,23 @@ typedef struct _AT91S_LCDC {
 #define AT91C_LCDC_ENA        (0x1 <<  3) // (LCDC) PWM generator Control
 #define 	AT91C_LCDC_ENA_PWMGEMDISABLED       (0x0 <<  3) // (LCDC) PWM Generator Disabled
 #define 	AT91C_LCDC_ENA_PWMGEMENABLED        (0x1 <<  3) // (LCDC) PWM Generator Disabled
-// -------- LCDC_CTRSTVAL : (LCDC Offset: 0x844) Contrast Value Register -------- 
+// -------- LCDC_CTRSTVAL : (LCDC Offset: 0x844) Contrast Value Register --------
 #define AT91C_LCDC_CVAL       (0xFF <<  0) // (LCDC) PWM Compare Value
-// -------- LCDC_IER : (LCDC Offset: 0x848) LCDC Interrupt Enable Register -------- 
+// -------- LCDC_IER : (LCDC Offset: 0x848) LCDC Interrupt Enable Register --------
 #define AT91C_LCDC_LNI        (0x1 <<  0) // (LCDC) Line Interrupt
 #define AT91C_LCDC_LSTLNI     (0x1 <<  1) // (LCDC) Last Line Interrupt
 #define AT91C_LCDC_EOFI       (0x1 <<  2) // (LCDC) End Of Frame Interrupt
 #define AT91C_LCDC_UFLWI      (0x1 <<  4) // (LCDC) FIFO Underflow Interrupt
 #define AT91C_LCDC_OWRI       (0x1 <<  5) // (LCDC) Over Write Interrupt
 #define AT91C_LCDC_MERI       (0x1 <<  6) // (LCDC) Memory Error  Interrupt
-// -------- LCDC_IDR : (LCDC Offset: 0x84c) LCDC Interrupt Disable Register -------- 
-// -------- LCDC_IMR : (LCDC Offset: 0x850) LCDC Interrupt Mask Register -------- 
-// -------- LCDC_ISR : (LCDC Offset: 0x854) LCDC Interrupt Status Register -------- 
-// -------- LCDC_ICR : (LCDC Offset: 0x858) LCDC Interrupt Clear Register -------- 
-// -------- LCDC_GPR : (LCDC Offset: 0x85c) LCDC General Purpose Register -------- 
+// -------- LCDC_IDR : (LCDC Offset: 0x84c) LCDC Interrupt Disable Register --------
+// -------- LCDC_IMR : (LCDC Offset: 0x850) LCDC Interrupt Mask Register --------
+// -------- LCDC_ISR : (LCDC Offset: 0x854) LCDC Interrupt Status Register --------
+// -------- LCDC_ICR : (LCDC Offset: 0x858) LCDC Interrupt Clear Register --------
+// -------- LCDC_GPR : (LCDC Offset: 0x85c) LCDC General Purpose Register --------
 #define AT91C_LCDC_GPRBUS     (0xFF <<  0) // (LCDC) 8 bits available
-// -------- LCDC_ITR : (LCDC Offset: 0x860) Interrupts Test Register -------- 
-// -------- LCDC_IRR : (LCDC Offset: 0x864) Interrupts Raw Status Register -------- 
+// -------- LCDC_ITR : (LCDC Offset: 0x860) Interrupts Test Register --------
+// -------- LCDC_IRR : (LCDC Offset: 0x864) Interrupts Raw Status Register --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR HDMA Channel structure
@@ -3967,18 +3967,18 @@ typedef struct _AT91S_HDMA_CH {
 #define HDMA_CADDR      (AT91_CAST(AT91_REG *) 	0x00000024) // (HDMA_CADDR) HDMA Reserved
 
 #endif
-// -------- HDMA_SADDR : (HDMA_CH Offset: 0x0)  -------- 
-#define AT91C_SADDR           (0x0 <<  0) // (HDMA_CH) 
-// -------- HDMA_DADDR : (HDMA_CH Offset: 0x4)  -------- 
-#define AT91C_DADDR           (0x0 <<  0) // (HDMA_CH) 
-// -------- HDMA_DSCR : (HDMA_CH Offset: 0x8)  -------- 
+// -------- HDMA_SADDR : (HDMA_CH Offset: 0x0)  --------
+#define AT91C_SADDR           (0x0 <<  0) // (HDMA_CH)
+// -------- HDMA_DADDR : (HDMA_CH Offset: 0x4)  --------
+#define AT91C_DADDR           (0x0 <<  0) // (HDMA_CH)
+// -------- HDMA_DSCR : (HDMA_CH Offset: 0x8)  --------
 #define AT91C_HDMA_DSCR_IF    (0x3 <<  0) // (HDMA_CH) Select AHB-Lite Interface for current channel
 #define 	AT91C_HDMA_DSCR_IF_0                    (0x0) // (HDMA_CH) The Buffer Transfer descriptor is fetched via AHB-Lite Interface 0.
 #define 	AT91C_HDMA_DSCR_IF_1                    (0x1) // (HDMA_CH) The Buffer Transfer descriptor is fetched via AHB-Lite Interface 1.
 #define 	AT91C_HDMA_DSCR_IF_2                    (0x2) // (HDMA_CH) The Buffer Transfer descriptor is fetched via AHB-Lite Interface 2.
 #define 	AT91C_HDMA_DSCR_IF_3                    (0x3) // (HDMA_CH) The Buffer Transfer descriptor is fetched via AHB-Lite Interface 3.
 #define AT91C_HDMA_DSCR       (0x3FFFFFFF <<  2) // (HDMA_CH) Buffer Transfer descriptor address. This address is word aligned.
-// -------- HDMA_CTRLA : (HDMA_CH Offset: 0xc)  -------- 
+// -------- HDMA_CTRLA : (HDMA_CH Offset: 0xc)  --------
 #define AT91C_HDMA_BTSIZE     (0xFFFF <<  0) // (HDMA_CH) Buffer Transfer Size.
 #define AT91C_HDMA_SCSIZE     (0x7 << 16) // (HDMA_CH) Source Chunk Transfer Size.
 #define 	AT91C_HDMA_SCSIZE_1                    (0x0 << 16) // (HDMA_CH) 1.
@@ -4006,8 +4006,8 @@ typedef struct _AT91S_HDMA_CH {
 #define 	AT91C_HDMA_DST_WIDTH_BYTE                 (0x0 << 28) // (HDMA_CH) BYTE.
 #define 	AT91C_HDMA_DST_WIDTH_HALFWORD             (0x1 << 28) // (HDMA_CH) HALF-WORD.
 #define 	AT91C_HDMA_DST_WIDTH_WORD                 (0x2 << 28) // (HDMA_CH) WORD.
-#define AT91C_HDMA_DONE       (0x1 << 31) // (HDMA_CH) 
-// -------- HDMA_CTRLB : (HDMA_CH Offset: 0x10)  -------- 
+#define AT91C_HDMA_DONE       (0x1 << 31) // (HDMA_CH)
+// -------- HDMA_CTRLB : (HDMA_CH Offset: 0x10)  --------
 #define AT91C_HDMA_SIF        (0x3 <<  0) // (HDMA_CH) Source Interface Selection Field.
 #define 	AT91C_HDMA_SIF_0                    (0x0) // (HDMA_CH) The Source Transfer is done via AHB-Lite Interface 0.
 #define 	AT91C_HDMA_SIF_1                    (0x1) // (HDMA_CH) The Source Transfer is done via AHB-Lite Interface 1.
@@ -4049,7 +4049,7 @@ typedef struct _AT91S_HDMA_CH {
 #define AT91C_HDMA_AUTO       (0x1 << 31) // (HDMA_CH) Automatic multiple buffer transfer enable
 #define 	AT91C_HDMA_AUTO_DISABLE              (0x0 << 31) // (HDMA_CH) Automatic multiple buffer transfer is disabled.
 #define 	AT91C_HDMA_AUTO_ENABLE               (0x1 << 31) // (HDMA_CH) Automatic multiple buffer transfer is enabled. This enables replay mode or contiguous mode when several buffers are transferred.
-// -------- HDMA_CFG : (HDMA_CH Offset: 0x14)  -------- 
+// -------- HDMA_CFG : (HDMA_CH Offset: 0x14)  --------
 #define AT91C_HDMA_SRC_PER    (0xF <<  0) // (HDMA_CH) Channel Source Request is associated with peripheral identifier coded SRC_PER handshaking interface.
 #define 	AT91C_HDMA_SRC_PER_0                    (0x0) // (HDMA_CH) HW Handshaking Interface number 0.
 #define 	AT91C_HDMA_SRC_PER_1                    (0x1) // (HDMA_CH) HW Handshaking Interface number 1.
@@ -4113,14 +4113,14 @@ typedef struct _AT91S_HDMA_CH {
 #define 	AT91C_HDMA_FIFOCFG_LARGESTBURST         (0x0 << 28) // (HDMA_CH) The largest defined length AHB burst is performed on the destination AHB interface.
 #define 	AT91C_HDMA_FIFOCFG_HALFFIFO             (0x1 << 28) // (HDMA_CH) When half fifo size is available/filled a source/destination request is serviced.
 #define 	AT91C_HDMA_FIFOCFG_ENOUGHSPACE          (0x2 << 28) // (HDMA_CH) When there is enough space/data available to perfom a single AHB access then the request is serviced.
-// -------- HDMA_SPIP : (HDMA_CH Offset: 0x18)  -------- 
+// -------- HDMA_SPIP : (HDMA_CH Offset: 0x18)  --------
 #define AT91C_SPIP_HOLE       (0xFFFF <<  0) // (HDMA_CH) This field indicates the value to add to the address when the programmable boundary has been reached.
 #define AT91C_SPIP_BOUNDARY   (0x3FF << 16) // (HDMA_CH) This field indicates the number of source transfers to perform before the automatic address increment operation.
-// -------- HDMA_DPIP : (HDMA_CH Offset: 0x1c)  -------- 
+// -------- HDMA_DPIP : (HDMA_CH Offset: 0x1c)  --------
 #define AT91C_DPIP_HOLE       (0xFFFF <<  0) // (HDMA_CH) This field indicates the value to add to the address when the programmable boundary has been reached.
 #define AT91C_DPIP_BOUNDARY   (0x3FF << 16) // (HDMA_CH) This field indicates the number of source transfers to perform before the automatic address increment operation.
-// -------- HDMA_BDSCR : (HDMA_CH Offset: 0x20)  -------- 
-// -------- HDMA_CADDR : (HDMA_CH Offset: 0x24)  -------- 
+// -------- HDMA_BDSCR : (HDMA_CH Offset: 0x20)  --------
+// -------- HDMA_CADDR : (HDMA_CH Offset: 0x24)  --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR HDMA controller
@@ -4162,7 +4162,7 @@ typedef struct _AT91S_HDMA {
 #define HDMA_RSVD1      (AT91_CAST(AT91_REG *) 	0x00000038) // (HDMA_RSVD1) HDMA Reserved
 
 #endif
-// -------- HDMA_GCFG : (HDMA Offset: 0x0)  -------- 
+// -------- HDMA_GCFG : (HDMA Offset: 0x0)  --------
 #define AT91C_HDMA_IF0_BIGEND (0x1 <<  0) // (HDMA) AHB-Lite Interface 0 endian mode.
 #define 	AT91C_HDMA_IF0_BIGEND_IS_LITTLE_ENDIAN     (0x0) // (HDMA) AHB-Lite Interface 0 is little endian.
 #define 	AT91C_HDMA_IF0_BIGEND_IS_BIG_ENDIAN        (0x1) // (HDMA) AHB-Lite Interface 0 is big endian.
@@ -4178,11 +4178,11 @@ typedef struct _AT91S_HDMA {
 #define AT91C_HDMA_ARB_CFG    (0x1 <<  4) // (HDMA) Arbiter mode.
 #define 	AT91C_HDMA_ARB_CFG_FIXED                (0x0 <<  4) // (HDMA) Fixed priority arbiter.
 #define 	AT91C_HDMA_ARB_CFG_ROUND_ROBIN          (0x1 <<  4) // (HDMA) Modified round robin arbiter.
-// -------- HDMA_EN : (HDMA Offset: 0x4)  -------- 
-#define AT91C_HDMA_ENABLE     (0x1 <<  0) // (HDMA) 
+// -------- HDMA_EN : (HDMA Offset: 0x4)  --------
+#define AT91C_HDMA_ENABLE     (0x1 <<  0) // (HDMA)
 #define 	AT91C_HDMA_ENABLE_DISABLE              (0x0) // (HDMA) Disables HDMA.
 #define 	AT91C_HDMA_ENABLE_ENABLE               (0x1) // (HDMA) Enables HDMA.
-// -------- HDMA_SREQ : (HDMA Offset: 0x8)  -------- 
+// -------- HDMA_SREQ : (HDMA Offset: 0x8)  --------
 #define AT91C_HDMA_SSREQ0     (0x1 <<  0) // (HDMA) Request a source single transfer on channel 0
 #define 	AT91C_HDMA_SSREQ0_0                    (0x0) // (HDMA) No effect.
 #define 	AT91C_HDMA_SSREQ0_1                    (0x1) // (HDMA) Request a source single transfer on channel 0.
@@ -4228,7 +4228,7 @@ typedef struct _AT91S_HDMA {
 #define AT91C_HDMA_DSREQ7     (0x1 << 15) // (HDMA) Request a destination single transfer on channel 7
 #define 	AT91C_HDMA_DSREQ7_0                    (0x0 << 15) // (HDMA) No effect.
 #define 	AT91C_HDMA_DSREQ7_1                    (0x1 << 15) // (HDMA) Request a destination single transfer on channel 7.
-// -------- HDMA_CREQ : (HDMA Offset: 0xc)  -------- 
+// -------- HDMA_CREQ : (HDMA Offset: 0xc)  --------
 #define AT91C_HDMA_SCREQ0     (0x1 <<  0) // (HDMA) Request a source chunk transfer on channel 0
 #define 	AT91C_HDMA_SCREQ0_0                    (0x0) // (HDMA) No effect.
 #define 	AT91C_HDMA_SCREQ0_1                    (0x1) // (HDMA) Request a source chunk transfer on channel 0.
@@ -4274,7 +4274,7 @@ typedef struct _AT91S_HDMA {
 #define AT91C_HDMA_DCREQ7     (0x1 << 15) // (HDMA) Request a destination chunk transfer on channel 7
 #define 	AT91C_HDMA_DCREQ7_0                    (0x0 << 15) // (HDMA) No effect.
 #define 	AT91C_HDMA_DCREQ7_1                    (0x1 << 15) // (HDMA) Request a destination chunk transfer on channel 7.
-// -------- HDMA_LAST : (HDMA Offset: 0x10)  -------- 
+// -------- HDMA_LAST : (HDMA Offset: 0x10)  --------
 #define AT91C_HDMA_SLAST0     (0x1 <<  0) // (HDMA) Indicates that this source request is the last transfer of the buffer on channel 0
 #define 	AT91C_HDMA_SLAST0_0                    (0x0) // (HDMA) No effect.
 #define 	AT91C_HDMA_SLAST0_1                    (0x1) // (HDMA) Writing one to SLASTx prior to writing one to SSREQx or SCREQx indicates that this source request is the last transfer of the buffer on channel 0.
@@ -4320,9 +4320,9 @@ typedef struct _AT91S_HDMA {
 #define AT91C_HDMA_DLAST7     (0x1 << 15) // (HDMA) Indicates that this destination request is the last transfer of the buffer on channel 7
 #define 	AT91C_HDMA_DLAST7_0                    (0x0 << 15) // (HDMA) No effect.
 #define 	AT91C_HDMA_DLAST7_1                    (0x1 << 15) // (HDMA) Writing one to DLASTx prior to writing one to DSREQx or DCREQx indicates that this destination request is the last transfer of the buffer on channel 7.
-// -------- HDMA_SYNC : (HDMA Offset: 0x14)  -------- 
-#define AT91C_SYNC_REQ        (0xFFFF <<  0) // (HDMA) 
-// -------- HDMA_EBCIER : (HDMA Offset: 0x18) Buffer Transfer Completed/Chained Buffer Transfer Completed/Access Error Interrupt Enable Register -------- 
+// -------- HDMA_SYNC : (HDMA Offset: 0x14)  --------
+#define AT91C_SYNC_REQ        (0xFFFF <<  0) // (HDMA)
+// -------- HDMA_EBCIER : (HDMA Offset: 0x18) Buffer Transfer Completed/Chained Buffer Transfer Completed/Access Error Interrupt Enable Register --------
 #define AT91C_HDMA_BTC0       (0x1 <<  0) // (HDMA) Buffer Transfer Completed Interrupt Enable/Disable/Status Register
 #define AT91C_HDMA_BTC1       (0x1 <<  1) // (HDMA) Buffer Transfer Completed Interrupt Enable/Disable/Status Register
 #define AT91C_HDMA_BTC2       (0x1 <<  2) // (HDMA) Buffer Transfer Completed Interrupt Enable/Disable/Status Register
@@ -4347,10 +4347,10 @@ typedef struct _AT91S_HDMA {
 #define AT91C_HDMA_ERR5       (0x1 << 21) // (HDMA) Access HDMA_Error Interrupt Enable/Disable/Status Register
 #define AT91C_HDMA_ERR6       (0x1 << 22) // (HDMA) Access HDMA_Error Interrupt Enable/Disable/Status Register
 #define AT91C_HDMA_ERR7       (0x1 << 23) // (HDMA) Access HDMA_Error Interrupt Enable/Disable/Status Register
-// -------- HDMA_EBCIDR : (HDMA Offset: 0x1c)  -------- 
-// -------- HDMA_EBCIMR : (HDMA Offset: 0x20)  -------- 
-// -------- HDMA_EBCISR : (HDMA Offset: 0x24)  -------- 
-// -------- HDMA_CHER : (HDMA Offset: 0x28)  -------- 
+// -------- HDMA_EBCIDR : (HDMA Offset: 0x1c)  --------
+// -------- HDMA_EBCIMR : (HDMA Offset: 0x20)  --------
+// -------- HDMA_EBCISR : (HDMA Offset: 0x24)  --------
+// -------- HDMA_CHER : (HDMA Offset: 0x28)  --------
 #define AT91C_HDMA_ENA0       (0x1 <<  0) // (HDMA) When set, channel 0 enabled.
 #define 	AT91C_HDMA_ENA0_0                    (0x0) // (HDMA) No effect.
 #define 	AT91C_HDMA_ENA0_1                    (0x1) // (HDMA) Channel 0 enabled.
@@ -4423,7 +4423,7 @@ typedef struct _AT91S_HDMA {
 #define AT91C_HDMA_KEEP7      (0x1 << 31) // (HDMA) When set, it resumes the channel 7 from an automatic stall state.
 #define 	AT91C_HDMA_KEEP7_0                    (0x0 << 31) // (HDMA) No effect.
 #define 	AT91C_HDMA_KEEP7_1                    (0x1 << 31) // (HDMA) Resumes the channel 7.
-// -------- HDMA_CHDR : (HDMA Offset: 0x2c)  -------- 
+// -------- HDMA_CHDR : (HDMA Offset: 0x2c)  --------
 #define AT91C_HDMA_DIS0       (0x1 <<  0) // (HDMA) Write one to this field to disable the channel 0.
 #define 	AT91C_HDMA_DIS0_0                    (0x0) // (HDMA) No effect.
 #define 	AT91C_HDMA_DIS0_1                    (0x1) // (HDMA) Disables the channel 0.
@@ -4472,7 +4472,7 @@ typedef struct _AT91S_HDMA {
 #define AT91C_HDMA_RES7       (0x1 << 15) // (HDMA) Write one to this field to resume the channel 7 transfer restoring its context.
 #define 	AT91C_HDMA_RES7_0                    (0x0 << 15) // (HDMA) No effect.
 #define 	AT91C_HDMA_RES7_1                    (0x1 << 15) // (HDMA) Resumes the channel 7.
-// -------- HDMA_CHSR : (HDMA Offset: 0x30)  -------- 
+// -------- HDMA_CHSR : (HDMA Offset: 0x30)  --------
 #define AT91C_HDMA_EMPT0      (0x1 << 16) // (HDMA) When set, channel 0 is empty.
 #define 	AT91C_HDMA_EMPT0_0                    (0x0 << 16) // (HDMA) No effect.
 #define 	AT91C_HDMA_EMPT0_1                    (0x1 << 16) // (HDMA) Channel 0 empty.
@@ -4521,8 +4521,8 @@ typedef struct _AT91S_HDMA {
 #define AT91C_HDMA_STAL7      (0x1 << 31) // (HDMA) When set, channel 7 is stalled.
 #define 	AT91C_HDMA_STAL7_0                    (0x0 << 31) // (HDMA) No effect.
 #define 	AT91C_HDMA_STAL7_1                    (0x1 << 31) // (HDMA) Channel 7 stalled.
-// -------- HDMA_RSVD : (HDMA Offset: 0x34)  -------- 
-// -------- HDMA_RSVD : (HDMA Offset: 0x38)  -------- 
+// -------- HDMA_RSVD : (HDMA Offset: 0x34)  --------
+// -------- HDMA_RSVD : (HDMA Offset: 0x38)  --------
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Error Correction Code controller
@@ -4534,7 +4534,7 @@ typedef struct _AT91S_ECC {
 	AT91_REG	 ECC_SR; 	//  ECC Status register
 	AT91_REG	 ECC_PR; 	//  ECC Parity register
 	AT91_REG	 ECC_NPR; 	//  ECC Parity N register
-	AT91_REG	 Reserved0[58]; 	// 
+	AT91_REG	 Reserved0[58]; 	//
 	AT91_REG	 ECC_VR; 	//  ECC Version register
 } AT91S_ECC, *AT91PS_ECC;
 #else
@@ -4546,20 +4546,20 @@ typedef struct _AT91S_ECC {
 #define ECC_VR          (AT91_CAST(AT91_REG *) 	0x000000FC) // (ECC_VR)  ECC Version register
 
 #endif
-// -------- ECC_CR : (ECC Offset: 0x0) ECC reset register -------- 
+// -------- ECC_CR : (ECC Offset: 0x0) ECC reset register --------
 #define AT91C_ECC_RST         (0x1 <<  0) // (ECC) ECC reset parity
-// -------- ECC_MR : (ECC Offset: 0x4) ECC page size register -------- 
+// -------- ECC_MR : (ECC Offset: 0x4) ECC page size register --------
 #define AT91C_ECC_PAGE_SIZE   (0x3 <<  0) // (ECC) Nand Flash page size
-// -------- ECC_SR : (ECC Offset: 0x8) ECC status register -------- 
+// -------- ECC_SR : (ECC Offset: 0x8) ECC status register --------
 #define AT91C_ECC_RECERR      (0x1 <<  0) // (ECC) ECC error
 #define AT91C_ECC_ECCERR      (0x1 <<  1) // (ECC) ECC single error
 #define AT91C_ECC_MULERR      (0x1 <<  2) // (ECC) ECC_MULERR
-// -------- ECC_PR : (ECC Offset: 0xc) ECC parity register -------- 
+// -------- ECC_PR : (ECC Offset: 0xc) ECC parity register --------
 #define AT91C_ECC_BITADDR     (0xF <<  0) // (ECC) Bit address error
 #define AT91C_ECC_WORDADDR    (0xFFF <<  4) // (ECC) address of the failing bit
-// -------- ECC_NPR : (ECC Offset: 0x10) ECC N parity register -------- 
-#define AT91C_ECC_NPARITY     (0xFFFF <<  0) // (ECC) ECC parity N 
-// -------- ECC_VR : (ECC Offset: 0xfc) ECC version register -------- 
+// -------- ECC_NPR : (ECC Offset: 0x10) ECC N parity register --------
+#define AT91C_ECC_NPARITY     (0xFFFF <<  0) // (ECC) ECC parity N
+// -------- ECC_VR : (ECC Offset: 0xfc) ECC version register --------
 #define AT91C_ECC_VR          (0xF <<  0) // (ECC) ECC version register
 
 // *****************************************************************************
@@ -4570,7 +4570,7 @@ typedef struct _AT91S_EMAC {
 	AT91_REG	 EMAC_NCR; 	// Network Control Register
 	AT91_REG	 EMAC_NCFGR; 	// Network Configuration Register
 	AT91_REG	 EMAC_NSR; 	// Network Status Register
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 EMAC_TSR; 	// Transmit Status Register
 	AT91_REG	 EMAC_RBQP; 	// Receive Buffer Queue Pointer
 	AT91_REG	 EMAC_TBQP; 	// Transmit Buffer Queue Pointer
@@ -4616,7 +4616,7 @@ typedef struct _AT91S_EMAC {
 	AT91_REG	 EMAC_TPQ; 	// Transmit Pause Quantum Register
 	AT91_REG	 EMAC_USRIO; 	// USER Input/Output Register
 	AT91_REG	 EMAC_WOL; 	// Wake On LAN Register
-	AT91_REG	 Reserved1[13]; 	// 
+	AT91_REG	 Reserved1[13]; 	//
 	AT91_REG	 EMAC_REV; 	// Revision Register
 } AT91S_EMAC, *AT91PS_EMAC;
 #else
@@ -4671,98 +4671,98 @@ typedef struct _AT91S_EMAC {
 #define EMAC_REV        (AT91_CAST(AT91_REG *) 	0x000000FC) // (EMAC_REV) Revision Register
 
 #endif
-// -------- EMAC_NCR : (EMAC Offset: 0x0)  -------- 
+// -------- EMAC_NCR : (EMAC Offset: 0x0)  --------
 #define AT91C_EMAC_LB         (0x1 <<  0) // (EMAC) Loopback. Optional. When set, loopback signal is at high level.
-#define AT91C_EMAC_LLB        (0x1 <<  1) // (EMAC) Loopback local. 
-#define AT91C_EMAC_RE         (0x1 <<  2) // (EMAC) Receive enable. 
-#define AT91C_EMAC_TE         (0x1 <<  3) // (EMAC) Transmit enable. 
-#define AT91C_EMAC_MPE        (0x1 <<  4) // (EMAC) Management port enable. 
-#define AT91C_EMAC_CLRSTAT    (0x1 <<  5) // (EMAC) Clear statistics registers. 
-#define AT91C_EMAC_INCSTAT    (0x1 <<  6) // (EMAC) Increment statistics registers. 
-#define AT91C_EMAC_WESTAT     (0x1 <<  7) // (EMAC) Write enable for statistics registers. 
-#define AT91C_EMAC_BP         (0x1 <<  8) // (EMAC) Back pressure. 
-#define AT91C_EMAC_TSTART     (0x1 <<  9) // (EMAC) Start Transmission. 
-#define AT91C_EMAC_THALT      (0x1 << 10) // (EMAC) Transmission Halt. 
-#define AT91C_EMAC_TPFR       (0x1 << 11) // (EMAC) Transmit pause frame 
+#define AT91C_EMAC_LLB        (0x1 <<  1) // (EMAC) Loopback local.
+#define AT91C_EMAC_RE         (0x1 <<  2) // (EMAC) Receive enable.
+#define AT91C_EMAC_TE         (0x1 <<  3) // (EMAC) Transmit enable.
+#define AT91C_EMAC_MPE        (0x1 <<  4) // (EMAC) Management port enable.
+#define AT91C_EMAC_CLRSTAT    (0x1 <<  5) // (EMAC) Clear statistics registers.
+#define AT91C_EMAC_INCSTAT    (0x1 <<  6) // (EMAC) Increment statistics registers.
+#define AT91C_EMAC_WESTAT     (0x1 <<  7) // (EMAC) Write enable for statistics registers.
+#define AT91C_EMAC_BP         (0x1 <<  8) // (EMAC) Back pressure.
+#define AT91C_EMAC_TSTART     (0x1 <<  9) // (EMAC) Start Transmission.
+#define AT91C_EMAC_THALT      (0x1 << 10) // (EMAC) Transmission Halt.
+#define AT91C_EMAC_TPFR       (0x1 << 11) // (EMAC) Transmit pause frame
 #define AT91C_EMAC_TZQ        (0x1 << 12) // (EMAC) Transmit zero quantum pause frame
-// -------- EMAC_NCFGR : (EMAC Offset: 0x4) Network Configuration Register -------- 
-#define AT91C_EMAC_SPD        (0x1 <<  0) // (EMAC) Speed. 
-#define AT91C_EMAC_FD         (0x1 <<  1) // (EMAC) Full duplex. 
-#define AT91C_EMAC_JFRAME     (0x1 <<  3) // (EMAC) Jumbo Frames. 
-#define AT91C_EMAC_CAF        (0x1 <<  4) // (EMAC) Copy all frames. 
-#define AT91C_EMAC_NBC        (0x1 <<  5) // (EMAC) No broadcast. 
+// -------- EMAC_NCFGR : (EMAC Offset: 0x4) Network Configuration Register --------
+#define AT91C_EMAC_SPD        (0x1 <<  0) // (EMAC) Speed.
+#define AT91C_EMAC_FD         (0x1 <<  1) // (EMAC) Full duplex.
+#define AT91C_EMAC_JFRAME     (0x1 <<  3) // (EMAC) Jumbo Frames.
+#define AT91C_EMAC_CAF        (0x1 <<  4) // (EMAC) Copy all frames.
+#define AT91C_EMAC_NBC        (0x1 <<  5) // (EMAC) No broadcast.
 #define AT91C_EMAC_MTI        (0x1 <<  6) // (EMAC) Multicast hash event enable
-#define AT91C_EMAC_UNI        (0x1 <<  7) // (EMAC) Unicast hash enable. 
-#define AT91C_EMAC_BIG        (0x1 <<  8) // (EMAC) Receive 1522 bytes. 
-#define AT91C_EMAC_EAE        (0x1 <<  9) // (EMAC) External address match enable. 
-#define AT91C_EMAC_CLK        (0x3 << 10) // (EMAC) 
+#define AT91C_EMAC_UNI        (0x1 <<  7) // (EMAC) Unicast hash enable.
+#define AT91C_EMAC_BIG        (0x1 <<  8) // (EMAC) Receive 1522 bytes.
+#define AT91C_EMAC_EAE        (0x1 <<  9) // (EMAC) External address match enable.
+#define AT91C_EMAC_CLK        (0x3 << 10) // (EMAC)
 #define 	AT91C_EMAC_CLK_HCLK_8               (0x0 << 10) // (EMAC) HCLK divided by 8
 #define 	AT91C_EMAC_CLK_HCLK_16              (0x1 << 10) // (EMAC) HCLK divided by 16
 #define 	AT91C_EMAC_CLK_HCLK_32              (0x2 << 10) // (EMAC) HCLK divided by 32
 #define 	AT91C_EMAC_CLK_HCLK_64              (0x3 << 10) // (EMAC) HCLK divided by 64
-#define AT91C_EMAC_RTY        (0x1 << 12) // (EMAC) 
-#define AT91C_EMAC_PAE        (0x1 << 13) // (EMAC) 
-#define AT91C_EMAC_RBOF       (0x3 << 14) // (EMAC) 
+#define AT91C_EMAC_RTY        (0x1 << 12) // (EMAC)
+#define AT91C_EMAC_PAE        (0x1 << 13) // (EMAC)
+#define AT91C_EMAC_RBOF       (0x3 << 14) // (EMAC)
 #define 	AT91C_EMAC_RBOF_OFFSET_0             (0x0 << 14) // (EMAC) no offset from start of receive buffer
 #define 	AT91C_EMAC_RBOF_OFFSET_1             (0x1 << 14) // (EMAC) one byte offset from start of receive buffer
 #define 	AT91C_EMAC_RBOF_OFFSET_2             (0x2 << 14) // (EMAC) two bytes offset from start of receive buffer
 #define 	AT91C_EMAC_RBOF_OFFSET_3             (0x3 << 14) // (EMAC) three bytes offset from start of receive buffer
 #define AT91C_EMAC_RLCE       (0x1 << 16) // (EMAC) Receive Length field Checking Enable
 #define AT91C_EMAC_DRFCS      (0x1 << 17) // (EMAC) Discard Receive FCS
-#define AT91C_EMAC_EFRHD      (0x1 << 18) // (EMAC) 
+#define AT91C_EMAC_EFRHD      (0x1 << 18) // (EMAC)
 #define AT91C_EMAC_IRXFCS     (0x1 << 19) // (EMAC) Ignore RX FCS
-// -------- EMAC_NSR : (EMAC Offset: 0x8) Network Status Register -------- 
-#define AT91C_EMAC_LINKR      (0x1 <<  0) // (EMAC) 
-#define AT91C_EMAC_MDIO       (0x1 <<  1) // (EMAC) 
-#define AT91C_EMAC_IDLE       (0x1 <<  2) // (EMAC) 
-// -------- EMAC_TSR : (EMAC Offset: 0x14) Transmit Status Register -------- 
-#define AT91C_EMAC_UBR        (0x1 <<  0) // (EMAC) 
-#define AT91C_EMAC_COL        (0x1 <<  1) // (EMAC) 
-#define AT91C_EMAC_RLES       (0x1 <<  2) // (EMAC) 
+// -------- EMAC_NSR : (EMAC Offset: 0x8) Network Status Register --------
+#define AT91C_EMAC_LINKR      (0x1 <<  0) // (EMAC)
+#define AT91C_EMAC_MDIO       (0x1 <<  1) // (EMAC)
+#define AT91C_EMAC_IDLE       (0x1 <<  2) // (EMAC)
+// -------- EMAC_TSR : (EMAC Offset: 0x14) Transmit Status Register --------
+#define AT91C_EMAC_UBR        (0x1 <<  0) // (EMAC)
+#define AT91C_EMAC_COL        (0x1 <<  1) // (EMAC)
+#define AT91C_EMAC_RLES       (0x1 <<  2) // (EMAC)
 #define AT91C_EMAC_TGO        (0x1 <<  3) // (EMAC) Transmit Go
 #define AT91C_EMAC_BEX        (0x1 <<  4) // (EMAC) Buffers exhausted mid frame
-#define AT91C_EMAC_COMP       (0x1 <<  5) // (EMAC) 
-#define AT91C_EMAC_UND        (0x1 <<  6) // (EMAC) 
-// -------- EMAC_RSR : (EMAC Offset: 0x20) Receive Status Register -------- 
-#define AT91C_EMAC_BNA        (0x1 <<  0) // (EMAC) 
-#define AT91C_EMAC_REC        (0x1 <<  1) // (EMAC) 
-#define AT91C_EMAC_OVR        (0x1 <<  2) // (EMAC) 
-// -------- EMAC_ISR : (EMAC Offset: 0x24) Interrupt Status Register -------- 
-#define AT91C_EMAC_MFD        (0x1 <<  0) // (EMAC) 
-#define AT91C_EMAC_RCOMP      (0x1 <<  1) // (EMAC) 
-#define AT91C_EMAC_RXUBR      (0x1 <<  2) // (EMAC) 
-#define AT91C_EMAC_TXUBR      (0x1 <<  3) // (EMAC) 
-#define AT91C_EMAC_TUNDR      (0x1 <<  4) // (EMAC) 
-#define AT91C_EMAC_RLEX       (0x1 <<  5) // (EMAC) 
-#define AT91C_EMAC_TXERR      (0x1 <<  6) // (EMAC) 
-#define AT91C_EMAC_TCOMP      (0x1 <<  7) // (EMAC) 
-#define AT91C_EMAC_LINK       (0x1 <<  9) // (EMAC) 
-#define AT91C_EMAC_ROVR       (0x1 << 10) // (EMAC) 
-#define AT91C_EMAC_HRESP      (0x1 << 11) // (EMAC) 
-#define AT91C_EMAC_PFRE       (0x1 << 12) // (EMAC) 
-#define AT91C_EMAC_PTZ        (0x1 << 13) // (EMAC) 
-#define AT91C_EMAC_WOLEV      (0x1 << 14) // (EMAC) 
-// -------- EMAC_IER : (EMAC Offset: 0x28) Interrupt Enable Register -------- 
-// -------- EMAC_IDR : (EMAC Offset: 0x2c) Interrupt Disable Register -------- 
-// -------- EMAC_IMR : (EMAC Offset: 0x30) Interrupt Mask Register -------- 
-// -------- EMAC_MAN : (EMAC Offset: 0x34) PHY Maintenance Register -------- 
-#define AT91C_EMAC_DATA       (0xFFFF <<  0) // (EMAC) 
-#define AT91C_EMAC_CODE       (0x3 << 16) // (EMAC) 
-#define AT91C_EMAC_REGA       (0x1F << 18) // (EMAC) 
-#define AT91C_EMAC_PHYA       (0x1F << 23) // (EMAC) 
-#define AT91C_EMAC_RW         (0x3 << 28) // (EMAC) 
-#define AT91C_EMAC_SOF        (0x3 << 30) // (EMAC) 
-// -------- EMAC_USRIO : (EMAC Offset: 0xc0) USER Input Output Register -------- 
+#define AT91C_EMAC_COMP       (0x1 <<  5) // (EMAC)
+#define AT91C_EMAC_UND        (0x1 <<  6) // (EMAC)
+// -------- EMAC_RSR : (EMAC Offset: 0x20) Receive Status Register --------
+#define AT91C_EMAC_BNA        (0x1 <<  0) // (EMAC)
+#define AT91C_EMAC_REC        (0x1 <<  1) // (EMAC)
+#define AT91C_EMAC_OVR        (0x1 <<  2) // (EMAC)
+// -------- EMAC_ISR : (EMAC Offset: 0x24) Interrupt Status Register --------
+#define AT91C_EMAC_MFD        (0x1 <<  0) // (EMAC)
+#define AT91C_EMAC_RCOMP      (0x1 <<  1) // (EMAC)
+#define AT91C_EMAC_RXUBR      (0x1 <<  2) // (EMAC)
+#define AT91C_EMAC_TXUBR      (0x1 <<  3) // (EMAC)
+#define AT91C_EMAC_TUNDR      (0x1 <<  4) // (EMAC)
+#define AT91C_EMAC_RLEX       (0x1 <<  5) // (EMAC)
+#define AT91C_EMAC_TXERR      (0x1 <<  6) // (EMAC)
+#define AT91C_EMAC_TCOMP      (0x1 <<  7) // (EMAC)
+#define AT91C_EMAC_LINK       (0x1 <<  9) // (EMAC)
+#define AT91C_EMAC_ROVR       (0x1 << 10) // (EMAC)
+#define AT91C_EMAC_HRESP      (0x1 << 11) // (EMAC)
+#define AT91C_EMAC_PFRE       (0x1 << 12) // (EMAC)
+#define AT91C_EMAC_PTZ        (0x1 << 13) // (EMAC)
+#define AT91C_EMAC_WOLEV      (0x1 << 14) // (EMAC)
+// -------- EMAC_IER : (EMAC Offset: 0x28) Interrupt Enable Register --------
+// -------- EMAC_IDR : (EMAC Offset: 0x2c) Interrupt Disable Register --------
+// -------- EMAC_IMR : (EMAC Offset: 0x30) Interrupt Mask Register --------
+// -------- EMAC_MAN : (EMAC Offset: 0x34) PHY Maintenance Register --------
+#define AT91C_EMAC_DATA       (0xFFFF <<  0) // (EMAC)
+#define AT91C_EMAC_CODE       (0x3 << 16) // (EMAC)
+#define AT91C_EMAC_REGA       (0x1F << 18) // (EMAC)
+#define AT91C_EMAC_PHYA       (0x1F << 23) // (EMAC)
+#define AT91C_EMAC_RW         (0x3 << 28) // (EMAC)
+#define AT91C_EMAC_SOF        (0x3 << 30) // (EMAC)
+// -------- EMAC_USRIO : (EMAC Offset: 0xc0) USER Input Output Register --------
 #define AT91C_EMAC_RMII       (0x1 <<  0) // (EMAC) Reduce MII
 #define AT91C_EMAC_CLKEN      (0x1 <<  1) // (EMAC) Clock Enable
-// -------- EMAC_WOL : (EMAC Offset: 0xc4) Wake On LAN Register -------- 
+// -------- EMAC_WOL : (EMAC Offset: 0xc4) Wake On LAN Register --------
 #define AT91C_EMAC_IP         (0xFFFF <<  0) // (EMAC) ARP request IP address
 #define AT91C_EMAC_MAG        (0x1 << 16) // (EMAC) Magic packet event enable
 #define AT91C_EMAC_ARP        (0x1 << 17) // (EMAC) ARP request event enable
 #define AT91C_EMAC_SA1        (0x1 << 18) // (EMAC) Specific address register 1 event enable
-// -------- EMAC_REV : (EMAC Offset: 0xfc) Revision Register -------- 
-#define AT91C_EMAC_REVREF     (0xFFFF <<  0) // (EMAC) 
-#define AT91C_EMAC_PARTREF    (0xFFFF << 16) // (EMAC) 
+// -------- EMAC_REV : (EMAC Offset: 0xfc) Revision Register --------
+#define AT91C_EMAC_REVREF     (0xFFFF <<  0) // (EMAC)
+#define AT91C_EMAC_PARTREF    (0xFFFF << 16) // (EMAC)
 
 // *****************************************************************************
 //              SOFTWARE API DEFINITION  FOR Image Sensor Interface
@@ -4792,10 +4792,10 @@ typedef struct _AT91S_ISI {
 	AT91_REG	 ISI_DMACADDR; 	// DMA Codec Base Address Register
 	AT91_REG	 ISI_DMACCTRL; 	// DMA Codec Control Register
 	AT91_REG	 ISI_DMACDSCR; 	// DMA Codec Descriptor Address Register
-	AT91_REG	 Reserved0[34]; 	// 
+	AT91_REG	 Reserved0[34]; 	//
 	AT91_REG	 ISI_WPCR; 	// Write Protection Control Register
 	AT91_REG	 ISI_WPSR; 	// Write Protection Status Register
-	AT91_REG	 Reserved1[4]; 	// 
+	AT91_REG	 Reserved1[4]; 	//
 	AT91_REG	 ISI_VER; 	// Version Register
 } AT91S_ISI, *AT91PS_ISI;
 #else
@@ -4827,7 +4827,7 @@ typedef struct _AT91S_ISI {
 #define ISI_VER         (AT91_CAST(AT91_REG *) 	0x000000FC) // (ISI_VER) Version Register
 
 #endif
-// -------- ISI_CFG1 : (ISI Offset: 0x0) ISI Configuration Register 1 -------- 
+// -------- ISI_CFG1 : (ISI Offset: 0x0) ISI Configuration Register 1 --------
 #define AT91C_ISI_HSYNC_POL   (0x1 <<  2) // (ISI) Horizontal synchronization polarity
 #define 	AT91C_ISI_HSYNC_POL_ACTIVE_HIGH          (0x0 <<  2) // (ISI) HSYNC active high.
 #define 	AT91C_ISI_HSYNC_POL_ACTIVE_LOW           (0x1 <<  2) // (ISI) HSYNC active low.
@@ -4853,7 +4853,7 @@ typedef struct _AT91S_ISI {
 #define 	AT91C_ISI_THMASK_4_8_16_BURST         (0x2 << 13) // (ISI) 4, 8 and 16 beats AHB bursts are allowed
 #define AT91C_ISI_SLD         (0xFF << 16) // (ISI) Start of Line Delay
 #define AT91C_ISI_SFD         (0xFF << 24) // (ISI) Start of frame Delay
-// -------- ISI_CFG2 : (ISI Offset: 0x4) ISI Control Register 2 -------- 
+// -------- ISI_CFG2 : (ISI Offset: 0x4) ISI Control Register 2 --------
 #define AT91C_ISI_IM_VSIZE    (0x7FF <<  0) // (ISI) Vertical size of the Image sensor [0..2047]
 #define AT91C_ISI_GS_MODE     (0x1 << 11) // (ISI) Grayscale Memory Mode
 #define 	AT91C_ISI_GS_MODE_2_PIXELS             (0x0 << 11) // (ISI) 2 pixels per word.
@@ -4881,17 +4881,17 @@ typedef struct _AT91S_ISI {
 #define 	AT91C_ISI_RGB_CFG_RGB_MODE1            (0x1 << 30) // (ISI) B/G(MSB)  G(LSB)/R  B/G(MSB)  G(LSB)/R
 #define 	AT91C_ISI_RGB_CFG_RGB_MODE2            (0x2 << 30) // (ISI) G(LSB)/R  B/G(MSB)  G(LSB)/R  B/G(MSB)
 #define 	AT91C_ISI_RGB_CFG_RGB_MODE3            (0x3 << 30) // (ISI) G(LSB)/B  R/G(MSB)  G(LSB)/B  R/G(MSB)
-// -------- ISI_PSIZE : (ISI Offset: 0x8) ISI Preview Register -------- 
+// -------- ISI_PSIZE : (ISI Offset: 0x8) ISI Preview Register --------
 #define AT91C_ISI_PREV_VSIZE  (0x3FF <<  0) // (ISI) Vertical size for the preview path
 #define AT91C_ISI_PREV_HSIZE  (0x3FF << 16) // (ISI) Horizontal size for the preview path
-// -------- ISI_PDECF : (ISI Offset: 0xc) ISI Preview Decimation Factor Register -------- 
+// -------- ISI_PDECF : (ISI Offset: 0xc) ISI Preview Decimation Factor Register --------
 #define AT91C_ISI_DEC_FACTOR  (0xFF <<  0) // (ISI) Decimation factor
-// -------- ISI_Y2RSET0 : (ISI Offset: 0x10) Color Space Conversion YCrCb to RGB Register -------- 
+// -------- ISI_Y2RSET0 : (ISI Offset: 0x10) Color Space Conversion YCrCb to RGB Register --------
 #define AT91C_ISI_Y2R_C0      (0xFF <<  0) // (ISI) Color Space Conversion Matrix Coefficient C0
 #define AT91C_ISI_Y2R_C1      (0xFF <<  8) // (ISI) Color Space Conversion Matrix Coefficient C1
 #define AT91C_ISI_Y2R_C2      (0xFF << 16) // (ISI) Color Space Conversion Matrix Coefficient C2
 #define AT91C_ISI_Y2R_C3      (0xFF << 24) // (ISI) Color Space Conversion Matrix Coefficient C3
-// -------- ISI_Y2RSET1 : (ISI Offset: 0x14) ISI Color Space Conversion YCrCb to RGB set 1 Register -------- 
+// -------- ISI_Y2RSET1 : (ISI Offset: 0x14) ISI Color Space Conversion YCrCb to RGB set 1 Register --------
 #define AT91C_ISI_Y2R_C4      (0x1FF <<  0) // (ISI) Color Space Conversion Matrix Coefficient C4
 #define AT91C_ISI_Y2R_YOFF    (0x1 << 12) // (ISI) Color Space Conversion Luninance default offset
 #define 	AT91C_ISI_Y2R_YOFF_0                    (0x0 << 12) // (ISI) Offset is 0
@@ -4902,28 +4902,28 @@ typedef struct _AT91S_ISI {
 #define AT91C_ISI_Y2R_CBOFF   (0x1 << 14) // (ISI) Color Space Conversion Blue Chrominance default offset
 #define 	AT91C_ISI_Y2R_CBOFF_0                    (0x0 << 14) // (ISI) Offset is 0
 #define 	AT91C_ISI_Y2R_CBOFF_16                   (0x1 << 14) // (ISI) Offset is 16
-// -------- ISI_R2YSET0 : (ISI Offset: 0x18) Color Space Conversion RGB to YCrCb set 0 register -------- 
+// -------- ISI_R2YSET0 : (ISI Offset: 0x18) Color Space Conversion RGB to YCrCb set 0 register --------
 #define AT91C_ISI_R2Y_C0      (0x7F <<  0) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C0
 #define AT91C_ISI_R2Y_C1      (0x7F <<  8) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C1
 #define AT91C_ISI_R2Y_C2      (0x7F << 16) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C2
 #define AT91C_ISI_R2Y_ROFF    (0x1 << 24) // (ISI) Color Space Conversion Red component offset
 #define 	AT91C_ISI_R2Y_ROFF_0                    (0x0 << 24) // (ISI) Offset is 0
 #define 	AT91C_ISI_R2Y_ROFF_16                   (0x1 << 24) // (ISI) Offset is 16
-// -------- ISI_R2YSET1 : (ISI Offset: 0x1c) Color Space Conversion RGB to YCrCb set 1 register -------- 
+// -------- ISI_R2YSET1 : (ISI Offset: 0x1c) Color Space Conversion RGB to YCrCb set 1 register --------
 #define AT91C_ISI_R2Y_C3      (0x7F <<  0) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C3
 #define AT91C_ISI_R2Y_C4      (0x7F <<  8) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C4
 #define AT91C_ISI_R2Y_C5      (0x7F << 16) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C5
 #define AT91C_ISI_R2Y_GOFF    (0x1 << 24) // (ISI) Color Space Conversion Green component offset
 #define 	AT91C_ISI_R2Y_GOFF_0                    (0x0 << 24) // (ISI) Offset is 0
 #define 	AT91C_ISI_R2Y_GOFF_128                  (0x1 << 24) // (ISI) Offset is 128
-// -------- ISI_R2YSET2 : (ISI Offset: 0x20) Color Space Conversion RGB to YCrCb set 2 register -------- 
+// -------- ISI_R2YSET2 : (ISI Offset: 0x20) Color Space Conversion RGB to YCrCb set 2 register --------
 #define AT91C_ISI_R2Y_C6      (0x7F <<  0) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C6
 #define AT91C_ISI_R2Y_C7      (0x7F <<  8) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C7
 #define AT91C_ISI_R2Y_C8      (0x7F << 16) // (ISI) Color Space Conversion RGB to YCrCb Matrix coefficient C8
 #define AT91C_ISI_R2Y_BOFF    (0x1 << 24) // (ISI) Color Space Conversion Blue component offset
 #define 	AT91C_ISI_R2Y_BOFF_0                    (0x0 << 24) // (ISI) Offset is 0
 #define 	AT91C_ISI_R2Y_BOFF_128                  (0x1 << 24) // (ISI) Offset is 128
-// -------- ISI_CTRL : (ISI Offset: 0x24) ISI Control Register -------- 
+// -------- ISI_CTRL : (ISI Offset: 0x24) ISI Control Register --------
 #define AT91C_ISI_EN          (0x1 <<  0) // (ISI) Image Sensor Interface Enable Request
 #define 	AT91C_ISI_EN_0                    (0x0) // (ISI) No effect
 #define 	AT91C_ISI_EN_1                    (0x1) // (ISI) Enable the module and the capture
@@ -4936,7 +4936,7 @@ typedef struct _AT91S_ISI {
 #define AT91C_ISI_CDC         (0x1 <<  8) // (ISI) Codec Request
 #define 	AT91C_ISI_CDC_0                    (0x0 <<  8) // (ISI) No effect
 #define 	AT91C_ISI_CDC_1                    (0x1 <<  8) // (ISI) Enable the Codec
-// -------- ISI_SR : (ISI Offset: 0x28) ISI Status Register -------- 
+// -------- ISI_SR : (ISI Offset: 0x28) ISI Status Register --------
 #define AT91C_ISI_VSYNC       (0x1 << 10) // (ISI) Vertical Synchronization
 #define 	AT91C_ISI_VSYNC_0                    (0x0 << 10) // (ISI) No effect
 #define 	AT91C_ISI_VSYNC_1                    (0x1 << 10) // (ISI) Indicates that a Vertical Synchronization has been detected since last read
@@ -4949,10 +4949,10 @@ typedef struct _AT91S_ISI {
 #define AT91C_ISI_SIP         (0x1 << 19) // (ISI) Synchronization In Progress
 #define 	AT91C_ISI_SIP_0                    (0x0 << 19) // (ISI) No effect
 #define 	AT91C_ISI_SIP_1                    (0x1 << 19) // (ISI) Indicates that Synchronization is in progress
-#define AT91C_ISI_P_OVR       (0x1 << 24) // (ISI) Fifo Preview Overflow 
+#define AT91C_ISI_P_OVR       (0x1 << 24) // (ISI) Fifo Preview Overflow
 #define 	AT91C_ISI_P_OVR_0                    (0x0 << 24) // (ISI) No error
 #define 	AT91C_ISI_P_OVR_1                    (0x1 << 24) // (ISI) An overrun condition has occurred in input FIFO on the preview path
-#define AT91C_ISI_C_OVR       (0x1 << 25) // (ISI) Fifo Codec Overflow 
+#define AT91C_ISI_C_OVR       (0x1 << 25) // (ISI) Fifo Codec Overflow
 #define 	AT91C_ISI_C_OVR_0                    (0x0 << 25) // (ISI) No error
 #define 	AT91C_ISI_C_OVR_1                    (0x1 << 25) // (ISI) An overrun condition has occurred in input FIFO on the codec path
 #define AT91C_ISI_CRC_ERR     (0x1 << 26) // (ISI) CRC synchronisation error
@@ -4961,50 +4961,50 @@ typedef struct _AT91S_ISI {
 #define AT91C_ISI_FR_OVR      (0x1 << 27) // (ISI) Frame rate overun
 #define 	AT91C_ISI_FR_OVR_0                    (0x0 << 27) // (ISI) No error
 #define 	AT91C_ISI_FR_OVR_1                    (0x1 << 27) // (ISI) Frame overrun, the current frame is being skipped because a vsync signal has been detected while flushing FIFOs.
-// -------- ISI_IER : (ISI Offset: 0x2c) ISI Interrupt Enable Register -------- 
-// -------- ISI_IDR : (ISI Offset: 0x30) ISI Interrupt Disable Register -------- 
-// -------- ISI_IMR : (ISI Offset: 0x34) ISI Interrupt Mask Register -------- 
-// -------- ISI_DMACHER : (ISI Offset: 0x38) DMA Channel Enable Register -------- 
+// -------- ISI_IER : (ISI Offset: 0x2c) ISI Interrupt Enable Register --------
+// -------- ISI_IDR : (ISI Offset: 0x30) ISI Interrupt Disable Register --------
+// -------- ISI_IMR : (ISI Offset: 0x34) ISI Interrupt Mask Register --------
+// -------- ISI_DMACHER : (ISI Offset: 0x38) DMA Channel Enable Register --------
 #define AT91C_ISI_P_CH_EN     (0x1 <<  0) // (ISI) Preview Channel Enable
 #define 	AT91C_ISI_P_CH_EN_0                    (0x0) // (ISI) No effect
 #define 	AT91C_ISI_P_CH_EN_1                    (0x1) // (ISI) Enable the Preview Channel
 #define AT91C_ISI_C_CH_EN     (0x1 <<  1) // (ISI) Codec Channel Enable
 #define 	AT91C_ISI_C_CH_EN_0                    (0x0 <<  1) // (ISI) No effect
 #define 	AT91C_ISI_C_CH_EN_1                    (0x1 <<  1) // (ISI) Enable the Codec Channel
-// -------- ISI_DMACHDR : (ISI Offset: 0x3c) DMA Channel Enable Register -------- 
+// -------- ISI_DMACHDR : (ISI Offset: 0x3c) DMA Channel Enable Register --------
 #define AT91C_ISI_P_CH_DIS    (0x1 <<  0) // (ISI) Preview Channel Disable
 #define 	AT91C_ISI_P_CH_DIS_0                    (0x0) // (ISI) No effect
 #define 	AT91C_ISI_P_CH_DIS_1                    (0x1) // (ISI) Disable the Preview Channel
 #define AT91C_ISI_C_CH_DIS    (0x1 <<  1) // (ISI) Codec Channel Disable
 #define 	AT91C_ISI_C_CH_DIS_0                    (0x0 <<  1) // (ISI) No effect
 #define 	AT91C_ISI_C_CH_DIS_1                    (0x1 <<  1) // (ISI) Disable the Codec Channel
-// -------- ISI_DMACHSR : (ISI Offset: 0x40) DMA Channel Status Register -------- 
+// -------- ISI_DMACHSR : (ISI Offset: 0x40) DMA Channel Status Register --------
 #define AT91C_ISI_P_CH_S      (0x1 <<  0) // (ISI) Preview Channel Disable
 #define 	AT91C_ISI_P_CH_S_0                    (0x0) // (ISI) Preview Channel is disabled
 #define 	AT91C_ISI_P_CH_S_1                    (0x1) // (ISI) Preview Channel is enabled
 #define AT91C_ISI_C_CH_S      (0x1 <<  1) // (ISI) Codec Channel Disable
 #define 	AT91C_ISI_C_CH_S_0                    (0x0 <<  1) // (ISI) Codec Channel is disabled
 #define 	AT91C_ISI_C_CH_S_1                    (0x1 <<  1) // (ISI) Codec Channel is enabled
-// -------- ISI_DMAPCTRL : (ISI Offset: 0x48) DMA Preview Control Register -------- 
+// -------- ISI_DMAPCTRL : (ISI Offset: 0x48) DMA Preview Control Register --------
 #define AT91C_ISI_P_FETCH     (0x1 <<  0) // (ISI) Preview Descriptor Fetch Control Field
 #define 	AT91C_ISI_P_FETCH_DISABLE              (0x0) // (ISI) Preview Channel Fetch Operation is disabled
 #define 	AT91C_ISI_P_FETCH_ENABLE               (0x1) // (ISI) Preview Channel Fetch Operation is enabled
 #define AT91C_ISI_P_DONE      (0x1 <<  1) // (ISI) Preview Transfer Done Flag
 #define 	AT91C_ISI_P_DONE_0                    (0x0 <<  1) // (ISI) Preview Transfer has not been performed
 #define 	AT91C_ISI_P_DONE_1                    (0x1 <<  1) // (ISI) Preview Transfer has completed
-// -------- ISI_DMACCTRL : (ISI Offset: 0x54) DMA Codec Control Register -------- 
+// -------- ISI_DMACCTRL : (ISI Offset: 0x54) DMA Codec Control Register --------
 #define AT91C_ISI_C_FETCH     (0x1 <<  0) // (ISI) Codec Descriptor Fetch Control Field
 #define 	AT91C_ISI_C_FETCH_DISABLE              (0x0) // (ISI) Codec Channel Fetch Operation is disabled
 #define 	AT91C_ISI_C_FETCH_ENABLE               (0x1) // (ISI) Codec Channel Fetch Operation is enabled
 #define AT91C_ISI_C_DONE      (0x1 <<  1) // (ISI) Codec Transfer Done Flag
 #define 	AT91C_ISI_C_DONE_0                    (0x0 <<  1) // (ISI) Codec Transfer has not been performed
 #define 	AT91C_ISI_C_DONE_1                    (0x1 <<  1) // (ISI) Codec Transfer has completed
-// -------- ISI_WPCR : (ISI Offset: 0xe4) Write Protection Control Register -------- 
+// -------- ISI_WPCR : (ISI Offset: 0xe4) Write Protection Control Register --------
 #define AT91C_ISI_WP_EN       (0x1 <<  0) // (ISI) Write Protection Enable
 #define 	AT91C_ISI_WP_EN_DISABLE              (0x0) // (ISI) Write Operation is disabled (if WP_KEY corresponds)
 #define 	AT91C_ISI_WP_EN_ENABLE               (0x1) // (ISI) Write Operation is enabled (if WP_KEY corresponds)
 #define AT91C_ISI_WP_KEY      (0xFFFFFF <<  8) // (ISI) Write Protection Key
-// -------- ISI_WPSR : (ISI Offset: 0xe8) Write Protection Status Register -------- 
+// -------- ISI_WPSR : (ISI Offset: 0xe8) Write Protection Status Register --------
 #define AT91C_ISI_WP_VS       (0xF <<  0) // (ISI) Write Protection Violation Status
 #define 	AT91C_ISI_WP_VS_NO_VIOLATION         (0x0) // (ISI) No Write Protection Violation detected since last read
 #define 	AT91C_ISI_WP_VS_ON_WRITE             (0x1) // (ISI) Write Protection Violation detected since last read
@@ -5037,9 +5037,9 @@ typedef struct _AT91S_VDEC {
 #define VDEC_DCR        (AT91_CAST(AT91_REG *) 	0x00000008) // (VDEC_DCR) Device Configuration Register
 
 #endif
-// -------- VDEC_IDR : (VDEC Offset: 0x0) VDEC ID Register -------- 
+// -------- VDEC_IDR : (VDEC Offset: 0x0) VDEC ID Register --------
 #define AT91C_VDEC_ID         (0x0 <<  0) // (VDEC) VDEC identification number
-// -------- VDEC_ISR : (VDEC Offset: 0x4) VDEC Interrupt Status Register -------- 
+// -------- VDEC_ISR : (VDEC Offset: 0x4) VDEC Interrupt Status Register --------
 #define AT91C_VDEC_DEC_E      (0x1 <<  0) // (VDEC) VDEC Decoder Enable
 #define AT91C_VDEC_DEC_IRQ_DIS (0x1 <<  4) // (VDEC) VDEC IRQ disable
 #define AT91C_VDEC_DEC_IRQ    (0x1 <<  8) // (VDEC) VDEC Interrupt Request
@@ -5050,17 +5050,17 @@ typedef struct _AT91S_VDEC {
 #define AT91C_VDEC_DEC_ERROR_INT (0x1 << 16) // (VDEC) VDEC Input Data Stream Error
 #define AT91C_VDEC_DEC_SLICE_INT (0x1 << 17) // (VDEC) VDEC JPEG Slice Decoded Interrupt
 #define AT91C_VDEC_DEC_TIMEOUT (0x1 << 18) // (VDEC) VDEC Decoder Timeout
-// -------- VDEC_DCR : (VDEC Offset: 0x8) VDEC Device Configuration Register -------- 
+// -------- VDEC_DCR : (VDEC Offset: 0x8) VDEC Device Configuration Register --------
 #define AT91C_VDEC_DEC_MAX_BURST (0x1F <<  0) // (VDEC) VDEC maximum burst length
 #define 	AT91C_VDEC_DEC_MAX_BURST_4                    (0x4) // (VDEC) INCR4
 #define 	AT91C_VDEC_DEC_MAX_BURST_8                    (0x8) // (VDEC) INCR8
 #define 	AT91C_VDEC_DEC_MAX_BURST_16                   (0x10) // (VDEC) INCR16
 #define AT91C_VDEC_PRIORITY_MODE (0x7 <<  5) // (VDEC) VDEC priority mode
-#define 	AT91C_VDEC_PRIORITY_MODE_HW                   (0x0 <<  5) // (VDEC) 
-#define 	AT91C_VDEC_PRIORITY_MODE_WRITE_FT             (0x1 <<  5) // (VDEC) 
-#define 	AT91C_VDEC_PRIORITY_MODE_WRITE_PP             (0x2 <<  5) // (VDEC) 
-#define 	AT91C_VDEC_PRIORITY_MODE_READ_FT              (0x3 <<  5) // (VDEC) 
-#define 	AT91C_VDEC_PRIORITY_MODE_READ_PP              (0x4 <<  5) // (VDEC) 
+#define 	AT91C_VDEC_PRIORITY_MODE_HW                   (0x0 <<  5) // (VDEC)
+#define 	AT91C_VDEC_PRIORITY_MODE_WRITE_FT             (0x1 <<  5) // (VDEC)
+#define 	AT91C_VDEC_PRIORITY_MODE_WRITE_PP             (0x2 <<  5) // (VDEC)
+#define 	AT91C_VDEC_PRIORITY_MODE_READ_FT              (0x3 <<  5) // (VDEC)
+#define 	AT91C_VDEC_PRIORITY_MODE_READ_PP              (0x4 <<  5) // (VDEC)
 #define AT91C_VDEC_DEC_OUT_ENDIAN (0x1 <<  8) // (VDEC) VDEC decoder output endian mode
 #define 	AT91C_VDEC_DEC_OUT_ENDIAN_BIG                  (0x0 <<  8) // (VDEC) BIG ENDIAN
 #define 	AT91C_VDEC_DEC_OUT_ENDIAN_LIT                  (0x1 <<  8) // (VDEC) LITTLE ENDIAN
@@ -5138,51 +5138,51 @@ typedef struct _AT91S_UHPHS_OHCI {
 // *****************************************************************************
 #ifndef __ASSEMBLY__
 typedef struct _AT91S_UHPHS_EHCI {
-	AT91_REG	 UHPHS_EHCI_VERSION; 	// 
-	AT91_REG	 UHPHS_EHCI_HCSPARAMS; 	// 
-	AT91_REG	 UHPHS_EHCI_HCCPARAMS; 	// 
-	AT91_REG	 UHPHS_EHCI_HCSPPORTROUTE; 	// 
-	AT91_REG	 UHPHS_EHCI_USBCMD; 	// 
-	AT91_REG	 UHPHS_EHCI_USBSTS; 	// 
-	AT91_REG	 UHPHS_EHCI_USBINTR; 	// 
-	AT91_REG	 UHPHS_EHCI_FRINDEX; 	// 
-	AT91_REG	 UHPHS_EHCI_CTRLDSSEGMENT; 	// 
-	AT91_REG	 UHPHS_EHCI_PERIODICLISTBASE; 	// 
-	AT91_REG	 UHPHS_EHCI_ASYNCLISTADDR; 	// 
-	AT91_REG	 Reserved0[9]; 	// 
-	AT91_REG	 UHPHS_EHCI_CONFIGFLAG; 	// 
-	AT91_REG	 UHPHS_EHCI_PORTSC[2]; 	// 
-	AT91_REG	 Reserved1[13]; 	// 
-	AT91_REG	 UHPHS_EHCI_INSNREG00; 	// 
-	AT91_REG	 UHPHS_EHCI_INSNREG01; 	// 
-	AT91_REG	 UHPHS_EHCI_INSNREG02; 	// 
-	AT91_REG	 UHPHS_EHCI_INSNREG03; 	// 
-	AT91_REG	 UHPHS_EHCI_INSNREG04; 	// 
-	AT91_REG	 UHPHS_EHCI_INSNREG05; 	// 
+	AT91_REG	 UHPHS_EHCI_VERSION; 	//
+	AT91_REG	 UHPHS_EHCI_HCSPARAMS; 	//
+	AT91_REG	 UHPHS_EHCI_HCCPARAMS; 	//
+	AT91_REG	 UHPHS_EHCI_HCSPPORTROUTE; 	//
+	AT91_REG	 UHPHS_EHCI_USBCMD; 	//
+	AT91_REG	 UHPHS_EHCI_USBSTS; 	//
+	AT91_REG	 UHPHS_EHCI_USBINTR; 	//
+	AT91_REG	 UHPHS_EHCI_FRINDEX; 	//
+	AT91_REG	 UHPHS_EHCI_CTRLDSSEGMENT; 	//
+	AT91_REG	 UHPHS_EHCI_PERIODICLISTBASE; 	//
+	AT91_REG	 UHPHS_EHCI_ASYNCLISTADDR; 	//
+	AT91_REG	 Reserved0[9]; 	//
+	AT91_REG	 UHPHS_EHCI_CONFIGFLAG; 	//
+	AT91_REG	 UHPHS_EHCI_PORTSC[2]; 	//
+	AT91_REG	 Reserved1[13]; 	//
+	AT91_REG	 UHPHS_EHCI_INSNREG00; 	//
+	AT91_REG	 UHPHS_EHCI_INSNREG01; 	//
+	AT91_REG	 UHPHS_EHCI_INSNREG02; 	//
+	AT91_REG	 UHPHS_EHCI_INSNREG03; 	//
+	AT91_REG	 UHPHS_EHCI_INSNREG04; 	//
+	AT91_REG	 UHPHS_EHCI_INSNREG05; 	//
 } AT91S_UHPHS_EHCI, *AT91PS_UHPHS_EHCI;
 #else
-#define VERSION         (AT91_CAST(AT91_REG *) 	0x00000000) // (VERSION) 
-#define HCSPARAMS       (AT91_CAST(AT91_REG *) 	0x00000004) // (HCSPARAMS) 
-#define HCCPARAMS       (AT91_CAST(AT91_REG *) 	0x00000008) // (HCCPARAMS) 
-#define HCSPPORTROUTE   (AT91_CAST(AT91_REG *) 	0x0000000C) // (HCSPPORTROUTE) 
-#define USBCMD          (AT91_CAST(AT91_REG *) 	0x00000010) // (USBCMD) 
-#define USBSTS          (AT91_CAST(AT91_REG *) 	0x00000014) // (USBSTS) 
-#define USBINTR         (AT91_CAST(AT91_REG *) 	0x00000018) // (USBINTR) 
-#define FRINDEX         (AT91_CAST(AT91_REG *) 	0x0000001C) // (FRINDEX) 
-#define CTRLDSSEGMENT   (AT91_CAST(AT91_REG *) 	0x00000020) // (CTRLDSSEGMENT) 
-#define PERIODICLISTBASE (AT91_CAST(AT91_REG *) 	0x00000024) // (PERIODICLISTBASE) 
-#define ASYNCLISTADDR   (AT91_CAST(AT91_REG *) 	0x00000028) // (ASYNCLISTADDR) 
-#define CONFIGFLAG      (AT91_CAST(AT91_REG *) 	0x00000050) // (CONFIGFLAG) 
-#define PORTSC          (AT91_CAST(AT91_REG *) 	0x00000054) // (PORTSC) 
-#define INSNREG00       (AT91_CAST(AT91_REG *) 	0x00000090) // (INSNREG00) 
-#define INSNREG01       (AT91_CAST(AT91_REG *) 	0x00000094) // (INSNREG01) 
-#define INSNREG02       (AT91_CAST(AT91_REG *) 	0x00000098) // (INSNREG02) 
-#define INSNREG03       (AT91_CAST(AT91_REG *) 	0x0000009C) // (INSNREG03) 
-#define INSNREG04       (AT91_CAST(AT91_REG *) 	0x000000A0) // (INSNREG04) 
-#define INSNREG05       (AT91_CAST(AT91_REG *) 	0x000000A4) // (INSNREG05) 
+#define VERSION         (AT91_CAST(AT91_REG *) 	0x00000000) // (VERSION)
+#define HCSPARAMS       (AT91_CAST(AT91_REG *) 	0x00000004) // (HCSPARAMS)
+#define HCCPARAMS       (AT91_CAST(AT91_REG *) 	0x00000008) // (HCCPARAMS)
+#define HCSPPORTROUTE   (AT91_CAST(AT91_REG *) 	0x0000000C) // (HCSPPORTROUTE)
+#define USBCMD          (AT91_CAST(AT91_REG *) 	0x00000010) // (USBCMD)
+#define USBSTS          (AT91_CAST(AT91_REG *) 	0x00000014) // (USBSTS)
+#define USBINTR         (AT91_CAST(AT91_REG *) 	0x00000018) // (USBINTR)
+#define FRINDEX         (AT91_CAST(AT91_REG *) 	0x0000001C) // (FRINDEX)
+#define CTRLDSSEGMENT   (AT91_CAST(AT91_REG *) 	0x00000020) // (CTRLDSSEGMENT)
+#define PERIODICLISTBASE (AT91_CAST(AT91_REG *) 	0x00000024) // (PERIODICLISTBASE)
+#define ASYNCLISTADDR   (AT91_CAST(AT91_REG *) 	0x00000028) // (ASYNCLISTADDR)
+#define CONFIGFLAG      (AT91_CAST(AT91_REG *) 	0x00000050) // (CONFIGFLAG)
+#define PORTSC          (AT91_CAST(AT91_REG *) 	0x00000054) // (PORTSC)
+#define INSNREG00       (AT91_CAST(AT91_REG *) 	0x00000090) // (INSNREG00)
+#define INSNREG01       (AT91_CAST(AT91_REG *) 	0x00000094) // (INSNREG01)
+#define INSNREG02       (AT91_CAST(AT91_REG *) 	0x00000098) // (INSNREG02)
+#define INSNREG03       (AT91_CAST(AT91_REG *) 	0x0000009C) // (INSNREG03)
+#define INSNREG04       (AT91_CAST(AT91_REG *) 	0x000000A0) // (INSNREG04)
+#define INSNREG05       (AT91_CAST(AT91_REG *) 	0x000000A4) // (INSNREG05)
 
 #endif
-// -------- VERSION : (UHPHS_EHCI Offset: 0x0)  -------- 
+// -------- VERSION : (UHPHS_EHCI Offset: 0x0)  --------
 #define AT91C_UHPHS_CAPLENGTH (0xFF <<  0) // (UHPHS_EHCI) CapLength : Offset for control registers
 #define AT91C_UHPHS_HCIVERSION (0xFF << 16) // (UHPHS_EHCI) Hci Version
 
@@ -5193,7 +5193,7 @@ typedef struct _AT91S_UHPHS_EHCI {
 typedef struct _AT91S_AES {
 	AT91_REG	 AES_CR; 	// Control Register
 	AT91_REG	 AES_MR; 	// Mode Register
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 AES_IER; 	// Interrupt Enable Register
 	AT91_REG	 AES_IDR; 	// Interrupt Disable Register
 	AT91_REG	 AES_IMR; 	// Interrupt Mask Register
@@ -5202,7 +5202,7 @@ typedef struct _AT91S_AES {
 	AT91_REG	 AES_IDATAxR[4]; 	// Input Data x Register
 	AT91_REG	 AES_ODATAxR[4]; 	// Output Data x Register
 	AT91_REG	 AES_IVxR[4]; 	// Initialization Vector x Register
-	AT91_REG	 Reserved1[35]; 	// 
+	AT91_REG	 Reserved1[35]; 	//
 	AT91_REG	 AES_VR; 	// AES Version Register
 	AT91_REG	 AES_RPR; 	// Receive Pointer Register
 	AT91_REG	 AES_RCR; 	// Receive Counter Register
@@ -5229,11 +5229,11 @@ typedef struct _AT91S_AES {
 #define AES_VR          (AT91_CAST(AT91_REG *) 	0x000000FC) // (AES_VR) AES Version Register
 
 #endif
-// -------- AES_CR : (AES Offset: 0x0) Control Register -------- 
+// -------- AES_CR : (AES Offset: 0x0) Control Register --------
 #define AT91C_AES_START       (0x1 <<  0) // (AES) Starts Processing
 #define AT91C_AES_SWRST       (0x1 <<  8) // (AES) Software Reset
 #define AT91C_AES_LOADSEED    (0x1 << 16) // (AES) Random Number Generator Seed Loading
-// -------- AES_MR : (AES Offset: 0x4) Mode Register -------- 
+// -------- AES_MR : (AES Offset: 0x4) Mode Register --------
 #define AT91C_AES_CIPHER      (0x1 <<  0) // (AES) Processing Mode
 #define AT91C_AES_PROCDLY     (0xF <<  4) // (AES) Processing Delay
 #define AT91C_AES_SMOD        (0x3 <<  8) // (AES) Start Mode
@@ -5264,16 +5264,16 @@ typedef struct _AT91S_AES {
 #define 	AT91C_AES_CTYPE_TYPE3_EN             (0x4 << 24) // (AES) Countermeasure type 3 is enabled.
 #define 	AT91C_AES_CTYPE_TYPE4_EN             (0x8 << 24) // (AES) Countermeasure type 4 is enabled.
 #define 	AT91C_AES_CTYPE_TYPE5_EN             (0x10 << 24) // (AES) Countermeasure type 5 is enabled.
-// -------- AES_IER : (AES Offset: 0x10) Interrupt Enable Register -------- 
+// -------- AES_IER : (AES Offset: 0x10) Interrupt Enable Register --------
 #define AT91C_AES_DATRDY      (0x1 <<  0) // (AES) DATRDY
 #define AT91C_AES_ENDRX       (0x1 <<  1) // (AES) PDC Read Buffer End
 #define AT91C_AES_ENDTX       (0x1 <<  2) // (AES) PDC Write Buffer End
 #define AT91C_AES_RXBUFF      (0x1 <<  3) // (AES) PDC Read Buffer Full
 #define AT91C_AES_TXBUFE      (0x1 <<  4) // (AES) PDC Write Buffer Empty
 #define AT91C_AES_URAD        (0x1 <<  8) // (AES) Unspecified Register Access Detection
-// -------- AES_IDR : (AES Offset: 0x14) Interrupt Disable Register -------- 
-// -------- AES_IMR : (AES Offset: 0x18) Interrupt Mask Register -------- 
-// -------- AES_ISR : (AES Offset: 0x1c) Interrupt Status Register -------- 
+// -------- AES_IDR : (AES Offset: 0x14) Interrupt Disable Register --------
+// -------- AES_IMR : (AES Offset: 0x18) Interrupt Mask Register --------
+// -------- AES_ISR : (AES Offset: 0x1c) Interrupt Status Register --------
 #define AT91C_AES_URAT        (0x7 << 12) // (AES) Unspecified Register Access Type Status
 #define 	AT91C_AES_URAT_IN_DAT_WRITE_DATPROC (0x0 << 12) // (AES) Input data register written during the data processing in PDC mode.
 #define 	AT91C_AES_URAT_OUT_DAT_READ_DATPROC (0x1 << 12) // (AES) Output data register read during the data processing.
@@ -5289,7 +5289,7 @@ typedef struct _AT91S_AES {
 typedef struct _AT91S_TDES {
 	AT91_REG	 TDES_CR; 	// Control Register
 	AT91_REG	 TDES_MR; 	// Mode Register
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 TDES_IER; 	// Interrupt Enable Register
 	AT91_REG	 TDES_IDR; 	// Interrupt Disable Register
 	AT91_REG	 TDES_IMR; 	// Interrupt Mask Register
@@ -5297,13 +5297,13 @@ typedef struct _AT91S_TDES {
 	AT91_REG	 TDES_KEY1WxR[2]; 	// Key 1 Word x Register
 	AT91_REG	 TDES_KEY2WxR[2]; 	// Key 2 Word x Register
 	AT91_REG	 TDES_KEY3WxR[2]; 	// Key 3 Word x Register
-	AT91_REG	 Reserved1[2]; 	// 
+	AT91_REG	 Reserved1[2]; 	//
 	AT91_REG	 TDES_IDATAxR[2]; 	// Input Data x Register
-	AT91_REG	 Reserved2[2]; 	// 
+	AT91_REG	 Reserved2[2]; 	//
 	AT91_REG	 TDES_ODATAxR[2]; 	// Output Data x Register
-	AT91_REG	 Reserved3[2]; 	// 
+	AT91_REG	 Reserved3[2]; 	//
 	AT91_REG	 TDES_IVxR[2]; 	// Initialization Vector x Register
-	AT91_REG	 Reserved4[37]; 	// 
+	AT91_REG	 Reserved4[37]; 	//
 	AT91_REG	 TDES_VR; 	// TDES Version Register
 	AT91_REG	 TDES_RPR; 	// Receive Pointer Register
 	AT91_REG	 TDES_RCR; 	// Receive Counter Register
@@ -5332,10 +5332,10 @@ typedef struct _AT91S_TDES {
 #define TDES_VR         (AT91_CAST(AT91_REG *) 	0x000000FC) // (TDES_VR) TDES Version Register
 
 #endif
-// -------- TDES_CR : (TDES Offset: 0x0) Control Register -------- 
+// -------- TDES_CR : (TDES Offset: 0x0) Control Register --------
 #define AT91C_TDES_START      (0x1 <<  0) // (TDES) Starts Processing
 #define AT91C_TDES_SWRST      (0x1 <<  8) // (TDES) Software Reset
-// -------- TDES_MR : (TDES Offset: 0x4) Mode Register -------- 
+// -------- TDES_MR : (TDES Offset: 0x4) Mode Register --------
 #define AT91C_TDES_CIPHER     (0x1 <<  0) // (TDES) Processing Mode
 #define AT91C_TDES_TDESMOD    (0x1 <<  1) // (TDES) Single or Triple DES Mode
 #define AT91C_TDES_KEYMOD     (0x1 <<  4) // (TDES) Key Mode
@@ -5354,16 +5354,16 @@ typedef struct _AT91S_TDES {
 #define 	AT91C_TDES_CFBS_32_BIT               (0x1 << 16) // (TDES) 32-bit.
 #define 	AT91C_TDES_CFBS_16_BIT               (0x2 << 16) // (TDES) 16-bit.
 #define 	AT91C_TDES_CFBS_8_BIT                (0x3 << 16) // (TDES) 8-bit.
-// -------- TDES_IER : (TDES Offset: 0x10) Interrupt Enable Register -------- 
+// -------- TDES_IER : (TDES Offset: 0x10) Interrupt Enable Register --------
 #define AT91C_TDES_DATRDY     (0x1 <<  0) // (TDES) DATRDY
 #define AT91C_TDES_ENDRX      (0x1 <<  1) // (TDES) PDC Read Buffer End
 #define AT91C_TDES_ENDTX      (0x1 <<  2) // (TDES) PDC Write Buffer End
 #define AT91C_TDES_RXBUFF     (0x1 <<  3) // (TDES) PDC Read Buffer Full
 #define AT91C_TDES_TXBUFE     (0x1 <<  4) // (TDES) PDC Write Buffer Empty
 #define AT91C_TDES_URAD       (0x1 <<  8) // (TDES) Unspecified Register Access Detection
-// -------- TDES_IDR : (TDES Offset: 0x14) Interrupt Disable Register -------- 
-// -------- TDES_IMR : (TDES Offset: 0x18) Interrupt Mask Register -------- 
-// -------- TDES_ISR : (TDES Offset: 0x1c) Interrupt Status Register -------- 
+// -------- TDES_IDR : (TDES Offset: 0x14) Interrupt Disable Register --------
+// -------- TDES_IMR : (TDES Offset: 0x18) Interrupt Mask Register --------
+// -------- TDES_ISR : (TDES Offset: 0x1c) Interrupt Status Register --------
 #define AT91C_TDES_URAT       (0x3 << 12) // (TDES) Unspecified Register Access Type Status
 #define 	AT91C_TDES_URAT_IN_DAT_WRITE_DATPROC (0x0 << 12) // (TDES) Input data register written during the data processing in PDC mode.
 #define 	AT91C_TDES_URAT_OUT_DAT_READ_DATPROC (0x1 << 12) // (TDES) Output data register read during the data processing.
@@ -5377,15 +5377,15 @@ typedef struct _AT91S_TDES {
 typedef struct _AT91S_SHA {
 	AT91_REG	 SHA_CR; 	// Control Register
 	AT91_REG	 SHA_MR; 	// Mode Register
-	AT91_REG	 Reserved0[2]; 	// 
+	AT91_REG	 Reserved0[2]; 	//
 	AT91_REG	 SHA_IER; 	// Interrupt Enable Register
 	AT91_REG	 SHA_IDR; 	// Interrupt Disable Register
 	AT91_REG	 SHA_IMR; 	// Interrupt Mask Register
 	AT91_REG	 SHA_ISR; 	// Interrupt Status Register
-	AT91_REG	 Reserved1[8]; 	// 
+	AT91_REG	 Reserved1[8]; 	//
 	AT91_REG	 SHA_IDATAxR[16]; 	// Input Data x Register
 	AT91_REG	 SHA_ODATAxR[8]; 	// Output Data x Register
-	AT91_REG	 Reserved2[23]; 	// 
+	AT91_REG	 Reserved2[23]; 	//
 	AT91_REG	 SHA_VR; 	// SHA Version Register
 	AT91_REG	 SHA_RPR; 	// Receive Pointer Register
 	AT91_REG	 SHA_RCR; 	// Receive Counter Register
@@ -5410,25 +5410,25 @@ typedef struct _AT91S_SHA {
 #define SHA_VR          (AT91_CAST(AT91_REG *) 	0x000000FC) // (SHA_VR) SHA Version Register
 
 #endif
-// -------- SHA_CR : (SHA Offset: 0x0) Control Register -------- 
+// -------- SHA_CR : (SHA Offset: 0x0) Control Register --------
 #define AT91C_SHA_START       (0x1 <<  0) // (SHA) Starts Processing
 #define AT91C_SHA_FIRST       (0x1 <<  4) // (SHA) First Block of a Message
 #define AT91C_SHA_SWRST       (0x1 <<  8) // (SHA) Software Reset
-// -------- SHA_MR : (SHA Offset: 0x4) Mode Register -------- 
+// -------- SHA_MR : (SHA Offset: 0x4) Mode Register --------
 #define AT91C_SHA_SMOD        (0x3 <<  0) // (SHA) Start Mode
 #define 	AT91C_SHA_SMOD_MANUAL               (0x0) // (SHA) Manual Mode.
 #define 	AT91C_SHA_SMOD_AUTO                 (0x1) // (SHA) Auto Mode.
 #define 	AT91C_SHA_SMOD_PDC                  (0x2) // (SHA) PDC Mode.
 #define AT91C_SHA_PROCDLY     (0x1 <<  4) // (SHA) Processing Delay
 #define AT91C_SHA_ALGO        (0x1 <<  8) // (SHA) Start Mode
-// -------- SHA_IER : (SHA Offset: 0x10) Interrupt Enable Register -------- 
+// -------- SHA_IER : (SHA Offset: 0x10) Interrupt Enable Register --------
 #define AT91C_SHA_DATRDY      (0x1 <<  0) // (SHA) DATRDY
 #define AT91C_SHA_ENDTX       (0x1 <<  1) // (SHA) PDC Write Buffer End
 #define AT91C_SHA_TXBUFE      (0x1 <<  2) // (SHA) PDC Write Buffer Empty
 #define AT91C_SHA_URAD        (0x1 <<  8) // (SHA) Unspecified Register Access Detection
-// -------- SHA_IDR : (SHA Offset: 0x14) Interrupt Disable Register -------- 
-// -------- SHA_IMR : (SHA Offset: 0x18) Interrupt Mask Register -------- 
-// -------- SHA_ISR : (SHA Offset: 0x1c) Interrupt Status Register -------- 
+// -------- SHA_IDR : (SHA Offset: 0x14) Interrupt Disable Register --------
+// -------- SHA_IMR : (SHA Offset: 0x18) Interrupt Mask Register --------
+// -------- SHA_ISR : (SHA Offset: 0x1c) Interrupt Status Register --------
 #define AT91C_SHA_URAT        (0x7 << 12) // (SHA) Unspecified Register Access Type Status
 #define 	AT91C_SHA_URAT_IN_DAT_WRITE_DATPROC (0x0 << 12) // (SHA) Input data register written during the data processing in PDC mode.
 #define 	AT91C_SHA_URAT_OUT_DAT_READ_DATPROC (0x1 << 12) // (SHA) Output data register read during the data processing.
@@ -5443,14 +5443,14 @@ typedef struct _AT91S_SHA {
 #ifndef __ASSEMBLY__
 typedef struct _AT91S_TRNG {
 	AT91_REG	 TRNG_CR; 	// Control Register
-	AT91_REG	 Reserved0[3]; 	// 
+	AT91_REG	 Reserved0[3]; 	//
 	AT91_REG	 TRNG_IER; 	// Interrupt Enable Register
 	AT91_REG	 TRNG_IDR; 	// Interrupt Disable Register
 	AT91_REG	 TRNG_IMR; 	// Interrupt Mask Register
 	AT91_REG	 TRNG_ISR; 	// Interrupt Status Register
-	AT91_REG	 Reserved1[12]; 	// 
+	AT91_REG	 Reserved1[12]; 	//
 	AT91_REG	 TRNG_ODATA; 	// Output Data Register
-	AT91_REG	 Reserved2[42]; 	// 
+	AT91_REG	 Reserved2[42]; 	//
 	AT91_REG	 TRNG_VERSION; 	// TRNG Version Register
 } AT91S_TRNG, *AT91PS_TRNG;
 #else
@@ -5463,30 +5463,30 @@ typedef struct _AT91S_TRNG {
 #define TRNG_VERSION    (AT91_CAST(AT91_REG *) 	0x000000FC) // (TRNG_VERSION) TRNG Version Register
 
 #endif
-// -------- TRNG_CR : (TRNG Offset: 0x0) Control Register -------- 
+// -------- TRNG_CR : (TRNG Offset: 0x0) Control Register --------
 #define AT91C_TRNG_ENABLE     (0x1 <<  0) // (TRNG) Enable TRNG
-// -------- TRNG_IER : (TRNG Offset: 0x10) Interrupt Enable Register -------- 
+// -------- TRNG_IER : (TRNG Offset: 0x10) Interrupt Enable Register --------
 #define AT91C_TRNG_DATRDY     (0x1 <<  0) // (TRNG) DATRDY
-// -------- TRNG_IDR : (TRNG Offset: 0x14) Interrupt Disable Register -------- 
-// -------- TRNG_IMR : (TRNG Offset: 0x18) Interrupt Mask Register -------- 
-// -------- TRNG_ISR : (TRNG Offset: 0x1c) Interrupt Status Register -------- 
+// -------- TRNG_IDR : (TRNG Offset: 0x14) Interrupt Disable Register --------
+// -------- TRNG_IMR : (TRNG Offset: 0x18) Interrupt Mask Register --------
+// -------- TRNG_ISR : (TRNG Offset: 0x1c) Interrupt Status Register --------
 
 // *****************************************************************************
 //               REGISTER ADDRESS DEFINITION FOR AT91SAM9M10
 // *****************************************************************************
-// ========== Register definition for SFR peripheral ========== 
+// ========== Register definition for SFR peripheral ==========
 #define AT91C_SFR_INT   (AT91_CAST(AT91_REG *) 	0xFFF74014) // (SFR) OHCI suspend Interrupt status
 #define AT91C_SFR_DDRCFG (AT91_CAST(AT91_REG *) 	0xFFF74004) // (SFR) DDR2 SSTL18 control
 #define AT91C_SFR_UTMICFG (AT91_CAST(AT91_REG *) 	0xFFF74010) // (SFR) UTMI Software Reset, and OHCI suspend interrupt control
 #define AT91C_SFR_EBIDELAY (AT91_CAST(AT91_REG *) 	0xFFF7400C) // (SFR) EBI DDR controller clock delay
 #define AT91C_SFR_DDRDELAY (AT91_CAST(AT91_REG *) 	0xFFF74008) // (SFR) DDR2 controller clock delay
 #define AT91C_SFR_EMA   (AT91_CAST(AT91_REG *) 	0xFFF74000) // (SFR) memory Extra Margin Adjustment control
-// ========== Register definition for SYS peripheral ========== 
+// ========== Register definition for SYS peripheral ==========
 #define AT91C_SYS_SLCKSEL (AT91_CAST(AT91_REG *) 	0xFFFFFD50) // (SYS) Slow Clock Selection Register
 #define AT91C_SYS_GPBR  (AT91_CAST(AT91_REG *) 	0xFFFFFD60) // (SYS) General Purpose Register
-// ========== Register definition for EBI peripheral ========== 
+// ========== Register definition for EBI peripheral ==========
 #define AT91C_EBI_DUMMY (AT91_CAST(AT91_REG *) 	0xFFFFE200) // (EBI) Dummy register - Do not use
-// ========== Register definition for DDR2CP1 peripheral ========== 
+// ========== Register definition for DDR2CP1 peripheral ==========
 #define AT91C_DDR2CP1_DELAY2 (AT91_CAST(AT91_REG *) 	0xFFFFE434) // (DDR2CP1) Pad delay2 Register
 #define AT91C_DDR2CP1_T3PR (AT91_CAST(AT91_REG *) 	0xFFFFE418) // (DDR2CP1) Timing3 Register
 #define AT91C_DDR2CP1_RTR (AT91_CAST(AT91_REG *) 	0xFFFFE404) // (DDR2CP1) Refresh Timer Register
@@ -5510,7 +5510,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_DDR2CP1_DELAY3 (AT91_CAST(AT91_REG *) 	0xFFFFE438) // (DDR2CP1) Pad delay3 Register
 #define AT91C_DDR2CP1_VERSION (AT91_CAST(AT91_REG *) 	0xFFFFE4FC) // (DDR2CP1) Version Register
 #define AT91C_DDR2CP1_T1PR (AT91_CAST(AT91_REG *) 	0xFFFFE410) // (DDR2CP1) Timing1 Register
-// ========== Register definition for DDR2C peripheral ========== 
+// ========== Register definition for DDR2C peripheral ==========
 #define AT91C_DDR2C_DELAY8 (AT91_CAST(AT91_REG *) 	0xFFFFE64C) // (DDR2C) Pad delay8 Register
 #define AT91C_DDR2C_VER (AT91_CAST(AT91_REG *) 	0xFFFFE628) // (DDR2C) DLL Version Register
 #define AT91C_DDR2C_RTR (AT91_CAST(AT91_REG *) 	0xFFFFE604) // (DDR2C) Refresh Timer Register
@@ -5534,7 +5534,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_DDR2C_WPSR (AT91_CAST(AT91_REG *) 	0xFFFFE6E8) // (DDR2C) High Speed Register
 #define AT91C_DDR2C_DELAY7 (AT91_CAST(AT91_REG *) 	0xFFFFE648) // (DDR2C) Pad delay7 Register
 #define AT91C_DDR2C_T3PR (AT91_CAST(AT91_REG *) 	0xFFFFE618) // (DDR2C) Timing3 Register
-// ========== Register definition for SMC peripheral ========== 
+// ========== Register definition for SMC peripheral ==========
 #define AT91C_SMC_PULSE7 (AT91_CAST(AT91_REG *) 	0xFFFFE874) // (SMC)  Pulse Register for CS 7
 #define AT91C_SMC_DELAY1 (AT91_CAST(AT91_REG *) 	0xFFFFE8C0) // (SMC) SMC Delay Control Register
 #define AT91C_SMC_CYCLE2 (AT91_CAST(AT91_REG *) 	0xFFFFE828) // (SMC)  Cycle Register for CS 2
@@ -5575,9 +5575,9 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SMC_PULSE0 (AT91_CAST(AT91_REG *) 	0xFFFFE804) // (SMC)  Pulse Register for CS 0
 #define AT91C_SMC_CTRL6 (AT91_CAST(AT91_REG *) 	0xFFFFE86C) // (SMC)  Control Register for CS 6
 #define AT91C_SMC_CTRL7 (AT91_CAST(AT91_REG *) 	0xFFFFE87C) // (SMC)  Control Register for CS 7
-// ========== Register definition for MATRIX peripheral ========== 
+// ========== Register definition for MATRIX peripheral ==========
 #define AT91C_MATRIX_SCFG1 (AT91_CAST(AT91_REG *) 	0xFFFFEA44) // (MATRIX)  Slave Configuration Register 1 : SRAM S1
-#define AT91C_MATRIX_MRCR (AT91_CAST(AT91_REG *) 	0xFFFFEB00) // (MATRIX)  Master Remap Control Register 
+#define AT91C_MATRIX_MRCR (AT91_CAST(AT91_REG *) 	0xFFFFEB00) // (MATRIX)  Master Remap Control Register
 #define AT91C_MATRIX_PRAS2 (AT91_CAST(AT91_REG *) 	0xFFFFEA90) // (MATRIX)  PRAS2 : SRAM S2
 #define AT91C_MATRIX_PRAS1 (AT91_CAST(AT91_REG *) 	0xFFFFEA88) // (MATRIX)  PRAS1 : SRAM S1
 #define AT91C_MATRIX_PRAS0 (AT91_CAST(AT91_REG *) 	0xFFFFEA80) // (MATRIX)  PRAS0 : SRAM S0
@@ -5591,7 +5591,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_MATRIX_SCFG7 (AT91_CAST(AT91_REG *) 	0xFFFFEA5C) // (MATRIX)  Slave Configuration Register 7 : DDR2 S2
 #define AT91C_MATRIX_PRAS7 (AT91_CAST(AT91_REG *) 	0xFFFFEAB8) // (MATRIX)  PRAS7 : DDR2 S2
 #define AT91C_MATRIX_SCFG2 (AT91_CAST(AT91_REG *) 	0xFFFFEA48) // (MATRIX)  Slave Configuration Register 2 : SRAM S2
-#define AT91C_MATRIX_WRPROTST (AT91_CAST(AT91_REG *) 	0xFFFFEBE8) // (MATRIX)  Write Protection Status Register 
+#define AT91C_MATRIX_WRPROTST (AT91_CAST(AT91_REG *) 	0xFFFFEBE8) // (MATRIX)  Write Protection Status Register
 #define AT91C_MATRIX_PRBS0 (AT91_CAST(AT91_REG *) 	0xFFFFEA84) // (MATRIX)  PRBS0 : SRAM S0
 #define AT91C_MATRIX_PRBS2 (AT91_CAST(AT91_REG *) 	0xFFFFEA94) // (MATRIX)  PRBS2 : SRAM S2
 #define AT91C_MATRIX_MCFG4 (AT91_CAST(AT91_REG *) 	0xFFFFEA10) // (MATRIX)  Master Configuration Register 4 : DMA0
@@ -5602,7 +5602,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_MATRIX_SCFG4 (AT91_CAST(AT91_REG *) 	0xFFFFEA50) // (MATRIX)  Slave Configuration Register 4 ; ROM + USB Dev + USB EHCI + USB OHCI + LCD + Video Decoder
 #define AT91C_MATRIX_PRBS1 (AT91_CAST(AT91_REG *) 	0xFFFFEA8C) // (MATRIX)  PRBS1 : SRAM S1
 #define AT91C_MATRIX_PRBS3 (AT91_CAST(AT91_REG *) 	0xFFFFEA9C) // (MATRIX)  PRBS3 : SRAM S3
-#define AT91C_MATRIX_WRPROTEN (AT91_CAST(AT91_REG *) 	0xFFFFEBE4) // (MATRIX)  Write Protection Control Register 
+#define AT91C_MATRIX_WRPROTEN (AT91_CAST(AT91_REG *) 	0xFFFFEBE4) // (MATRIX)  Write Protection Control Register
 #define AT91C_MATRIX_MCFG11 (AT91_CAST(AT91_REG *) 	0xFFFFEA2C) // (MATRIX)  Master Configuration Register 11 : Video Decoder
 #define AT91C_MATRIX_MCFG0 (AT91_CAST(AT91_REG *) 	0xFFFFEA00) // (MATRIX)  Master Configuration Register 0 : ARM-I
 #define AT91C_MATRIX_PRAS5 (AT91_CAST(AT91_REG *) 	0xFFFFEAA8) // (MATRIX)  PRAS5 : DDR2 S0
@@ -5615,13 +5615,13 @@ typedef struct _AT91S_TRNG {
 #define AT91C_MATRIX_MCFG10 (AT91_CAST(AT91_REG *) 	0xFFFFEA28) // (MATRIX)  Master Configuration Register 10 : USB Host EHCI
 #define AT91C_MATRIX_PRAS3 (AT91_CAST(AT91_REG *) 	0xFFFFEA98) // (MATRIX)  PRAS3 : SRAM S3
 #define AT91C_MATRIX_SCFG3 (AT91_CAST(AT91_REG *) 	0xFFFFEA4C) // (MATRIX)  Slave Configuration Register 3 : SRAM S3
-// ========== Register definition for CCFG peripheral ========== 
+// ========== Register definition for CCFG peripheral ==========
 #define AT91C_CCFG_TCMR (AT91_CAST(AT91_REG *) 	0xFFFFEB10) // (CCFG)  TCM configuration
 #define AT91C_CCFG_VIDEO (AT91_CAST(AT91_REG *) 	0xFFFFEB18) // (CCFG)  Video Mode configuration
 #define AT91C_CCFG_MATRIXVERSION (AT91_CAST(AT91_REG *) 	0xFFFFEBFC) // (CCFG)  Version Register
 #define AT91C_CCFG_UDPHS (AT91_CAST(AT91_REG *) 	0xFFFFEB14) // (CCFG)  USB HS configuration
 #define AT91C_CCFG_EBICSA (AT91_CAST(AT91_REG *) 	0xFFFFEB28) // (CCFG)  EBI Chip Select Assignement Register
-// ========== Register definition for AIC peripheral ========== 
+// ========== Register definition for AIC peripheral ==========
 #define AT91C_AIC_IVR   (AT91_CAST(AT91_REG *) 	0xFFFFF100) // (AIC) IRQ Vector Register
 #define AT91C_AIC_SMR   (AT91_CAST(AT91_REG *) 	0xFFFFF000) // (AIC) Source Mode Register
 #define AT91C_AIC_FVR   (AT91_CAST(AT91_REG *) 	0xFFFFF104) // (AIC) FIQ Vector Register
@@ -5640,7 +5640,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_AIC_CISR  (AT91_CAST(AT91_REG *) 	0xFFFFF114) // (AIC) Core Interrupt Status Register
 #define AT91C_AIC_IDCR  (AT91_CAST(AT91_REG *) 	0xFFFFF124) // (AIC) Interrupt Disable Command Register
 #define AT91C_AIC_SPU   (AT91_CAST(AT91_REG *) 	0xFFFFF134) // (AIC) Spurious Vector Register
-// ========== Register definition for PDC_DBGU peripheral ========== 
+// ========== Register definition for PDC_DBGU peripheral ==========
 #define AT91C_DBGU_PTCR (AT91_CAST(AT91_REG *) 	0xFFFFEF20) // (PDC_DBGU) PDC Transfer Control Register
 #define AT91C_DBGU_RCR  (AT91_CAST(AT91_REG *) 	0xFFFFEF04) // (PDC_DBGU) Receive Counter Register
 #define AT91C_DBGU_TCR  (AT91_CAST(AT91_REG *) 	0xFFFFEF0C) // (PDC_DBGU) Transmit Counter Register
@@ -5651,7 +5651,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_DBGU_RPR  (AT91_CAST(AT91_REG *) 	0xFFFFEF00) // (PDC_DBGU) Receive Pointer Register
 #define AT91C_DBGU_TPR  (AT91_CAST(AT91_REG *) 	0xFFFFEF08) // (PDC_DBGU) Transmit Pointer Register
 #define AT91C_DBGU_TNCR (AT91_CAST(AT91_REG *) 	0xFFFFEF1C) // (PDC_DBGU) Transmit Next Counter Register
-// ========== Register definition for DBGU peripheral ========== 
+// ========== Register definition for DBGU peripheral ==========
 #define AT91C_DBGU_BRGR (AT91_CAST(AT91_REG *) 	0xFFFFEE20) // (DBGU) Baud Rate Generator Register
 #define AT91C_DBGU_CR   (AT91_CAST(AT91_REG *) 	0xFFFFEE00) // (DBGU) Control Register
 #define AT91C_DBGU_THR  (AT91_CAST(AT91_REG *) 	0xFFFFEE1C) // (DBGU) Transmitter Holding Register
@@ -5664,7 +5664,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_DBGU_MR   (AT91_CAST(AT91_REG *) 	0xFFFFEE04) // (DBGU) Mode Register
 #define AT91C_DBGU_RHR  (AT91_CAST(AT91_REG *) 	0xFFFFEE18) // (DBGU) Receiver Holding Register
 #define AT91C_DBGU_CIDR (AT91_CAST(AT91_REG *) 	0xFFFFEE40) // (DBGU) Chip ID Register
-// ========== Register definition for PIOA peripheral ========== 
+// ========== Register definition for PIOA peripheral ==========
 #define AT91C_PIOA_OWDR (AT91_CAST(AT91_REG *) 	0xFFFFF2A4) // (PIOA) Output Write Disable Register
 #define AT91C_PIOA_DELAY3 (AT91_CAST(AT91_REG *) 	0xFFFFF2C8) // (PIOA) PIO Delay Control Register
 #define AT91C_PIOA_ISR  (AT91_CAST(AT91_REG *) 	0xFFFFF24C) // (PIOA) Interrupt Status Register
@@ -5700,7 +5700,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PIOA_MDSR (AT91_CAST(AT91_REG *) 	0xFFFFF258) // (PIOA) Multi-driver Status Register
 #define AT91C_PIOA_DELAY4 (AT91_CAST(AT91_REG *) 	0xFFFFF2CC) // (PIOA) PIO Delay Control Register
 #define AT91C_PIOA_PSR  (AT91_CAST(AT91_REG *) 	0xFFFFF208) // (PIOA) PIO Status Register
-// ========== Register definition for PIOB peripheral ========== 
+// ========== Register definition for PIOB peripheral ==========
 #define AT91C_PIOB_ODR  (AT91_CAST(AT91_REG *) 	0xFFFFF414) // (PIOB) Output Disable Registerr
 #define AT91C_PIOB_DELAY4 (AT91_CAST(AT91_REG *) 	0xFFFFF4CC) // (PIOB) PIO Delay Control Register
 #define AT91C_PIOB_SODR (AT91_CAST(AT91_REG *) 	0xFFFFF430) // (PIOB) Set Output Data Register
@@ -5736,7 +5736,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PIOB_OER  (AT91_CAST(AT91_REG *) 	0xFFFFF410) // (PIOB) Output Enable Register
 #define AT91C_PIOB_VERSION (AT91_CAST(AT91_REG *) 	0xFFFFF4FC) // (PIOB) PIO Version Register
 #define AT91C_PIOB_DELAY1 (AT91_CAST(AT91_REG *) 	0xFFFFF4C0) // (PIOB) PIO Delay Control Register
-// ========== Register definition for PIOC peripheral ========== 
+// ========== Register definition for PIOC peripheral ==========
 #define AT91C_PIOC_OWDR (AT91_CAST(AT91_REG *) 	0xFFFFF6A4) // (PIOC) Output Write Disable Register
 #define AT91C_PIOC_IMR  (AT91_CAST(AT91_REG *) 	0xFFFFF648) // (PIOC) Interrupt Mask Register
 #define AT91C_PIOC_ASR  (AT91_CAST(AT91_REG *) 	0xFFFFF670) // (PIOC) Select A Register
@@ -5772,7 +5772,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PIOC_MDDR (AT91_CAST(AT91_REG *) 	0xFFFFF654) // (PIOC) Multi-driver Disable Register
 #define AT91C_PIOC_BSR  (AT91_CAST(AT91_REG *) 	0xFFFFF674) // (PIOC) Select B Register
 #define AT91C_PIOC_PER  (AT91_CAST(AT91_REG *) 	0xFFFFF600) // (PIOC) PIO Enable Register
-// ========== Register definition for PIOD peripheral ========== 
+// ========== Register definition for PIOD peripheral ==========
 #define AT91C_PIOD_DELAY1 (AT91_CAST(AT91_REG *) 	0xFFFFF8C0) // (PIOD) PIO Delay Control Register
 #define AT91C_PIOD_OWDR (AT91_CAST(AT91_REG *) 	0xFFFFF8A4) // (PIOD) Output Write Disable Register
 #define AT91C_PIOD_SODR (AT91_CAST(AT91_REG *) 	0xFFFFF830) // (PIOD) Set Output Data Register
@@ -5808,7 +5808,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PIOD_OSR  (AT91_CAST(AT91_REG *) 	0xFFFFF818) // (PIOD) Output Status Register
 #define AT91C_PIOD_IFER (AT91_CAST(AT91_REG *) 	0xFFFFF820) // (PIOD) Input Filter Enable Register
 #define AT91C_PIOD_SLEWRATE1 (AT91_CAST(AT91_REG *) 	0xFFFFF8B0) // (PIOD) PIO Slewrate Control Register
-// ========== Register definition for PIOE peripheral ========== 
+// ========== Register definition for PIOE peripheral ==========
 #define AT91C_PIOE_ODSR (AT91_CAST(AT91_REG *) 	0xFFFFFA38) // (PIOE) Output Data Status Register
 #define AT91C_PIOE_ABSR (AT91_CAST(AT91_REG *) 	0xFFFFFA78) // (PIOE) AB Select Status Register
 #define AT91C_PIOE_PSR  (AT91_CAST(AT91_REG *) 	0xFFFFFA08) // (PIOE) PIO Status Register
@@ -5844,17 +5844,17 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PIOE_IMR  (AT91_CAST(AT91_REG *) 	0xFFFFFA48) // (PIOE) Interrupt Mask Register
 #define AT91C_PIOE_OWER (AT91_CAST(AT91_REG *) 	0xFFFFFAA0) // (PIOE) Output Write Enable Register
 #define AT91C_PIOE_MDER (AT91_CAST(AT91_REG *) 	0xFFFFFA50) // (PIOE) Multi-driver Enable Register
-// ========== Register definition for PMC peripheral ========== 
-#define AT91C_PMC_ADDRSIZE (AT91_CAST(AT91_REG *) 	0xFFFFFCEC) // (PMC) 
+// ========== Register definition for PMC peripheral ==========
+#define AT91C_PMC_ADDRSIZE (AT91_CAST(AT91_REG *) 	0xFFFFFCEC) // (PMC)
 #define AT91C_PMC_PCER  (AT91_CAST(AT91_REG *) 	0xFFFFFC10) // (PMC) Peripheral Clock Enable Register
 #define AT91C_PMC_PCKR  (AT91_CAST(AT91_REG *) 	0xFFFFFC40) // (PMC) Programmable Clock 0 Register
 #define AT91C_PMC_MCKR  (AT91_CAST(AT91_REG *) 	0xFFFFFC30) // (PMC) Master Clock Register
 #define AT91C_PMC_PLLAR (AT91_CAST(AT91_REG *) 	0xFFFFFC28) // (PMC) PLL A Register
-#define AT91C_PMC_NAME2 (AT91_CAST(AT91_REG *) 	0xFFFFFCF4) // (PMC) 
+#define AT91C_PMC_NAME2 (AT91_CAST(AT91_REG *) 	0xFFFFFCF4) // (PMC)
 #define AT91C_PMC_PCDR  (AT91_CAST(AT91_REG *) 	0xFFFFFC14) // (PMC) Peripheral Clock Disable Register
 #define AT91C_PMC_SCSR  (AT91_CAST(AT91_REG *) 	0xFFFFFC08) // (PMC) System Clock Status Register
 #define AT91C_PMC_MCFR  (AT91_CAST(AT91_REG *) 	0xFFFFFC24) // (PMC) Main Clock  Frequency Register
-#define AT91C_PMC_FEATURES (AT91_CAST(AT91_REG *) 	0xFFFFFCF8) // (PMC) 
+#define AT91C_PMC_FEATURES (AT91_CAST(AT91_REG *) 	0xFFFFFCF8) // (PMC)
 #define AT91C_PMC_PLLICPR (AT91_CAST(AT91_REG *) 	0xFFFFFC80) // (PMC) PLL Charge Pump Current Register
 #define AT91C_PMC_IMR   (AT91_CAST(AT91_REG *) 	0xFFFFFC6C) // (PMC) Interrupt Mask Register
 #define AT91C_PMC_IER   (AT91_CAST(AT91_REG *) 	0xFFFFFC60) // (PMC) Interrupt Enable Register
@@ -5862,40 +5862,40 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PMC_USB   (AT91_CAST(AT91_REG *) 	0xFFFFFC38) // (PMC) USB clock register
 #define AT91C_PMC_MOR   (AT91_CAST(AT91_REG *) 	0xFFFFFC20) // (PMC) Main Oscillator Register
 #define AT91C_PMC_IDR   (AT91_CAST(AT91_REG *) 	0xFFFFFC64) // (PMC) Interrupt Disable Register
-#define AT91C_PMC_NAME1 (AT91_CAST(AT91_REG *) 	0xFFFFFCF0) // (PMC) 
+#define AT91C_PMC_NAME1 (AT91_CAST(AT91_REG *) 	0xFFFFFCF0) // (PMC)
 #define AT91C_PMC_SCDR  (AT91_CAST(AT91_REG *) 	0xFFFFFC04) // (PMC) System Clock Disable Register
 #define AT91C_PMC_PCSR  (AT91_CAST(AT91_REG *) 	0xFFFFFC18) // (PMC) Peripheral Clock Status Register
 #define AT91C_PMC_SCER  (AT91_CAST(AT91_REG *) 	0xFFFFFC00) // (PMC) System Clock Enable Register
-#define AT91C_PMC_VERSION (AT91_CAST(AT91_REG *) 	0xFFFFFCFC) // (PMC) 
+#define AT91C_PMC_VERSION (AT91_CAST(AT91_REG *) 	0xFFFFFCFC) // (PMC)
 #define AT91C_PMC_SR    (AT91_CAST(AT91_REG *) 	0xFFFFFC68) // (PMC) Status Register
-// ========== Register definition for CKGR peripheral ========== 
+// ========== Register definition for CKGR peripheral ==========
 #define AT91C_CKGR_MOR  (AT91_CAST(AT91_REG *) 	0xFFFFFC20) // (CKGR) Main Oscillator Register
 #define AT91C_CKGR_MCFR (AT91_CAST(AT91_REG *) 	0xFFFFFC24) // (CKGR) Main Clock  Frequency Register
 #define AT91C_CKGR_PLLAR (AT91_CAST(AT91_REG *) 	0xFFFFFC28) // (CKGR) PLL A Register
 #define AT91C_CKGR_UCKR (AT91_CAST(AT91_REG *) 	0xFFFFFC1C) // (CKGR) UTMI Clock Configuration Register
-// ========== Register definition for RSTC peripheral ========== 
+// ========== Register definition for RSTC peripheral ==========
 #define AT91C_RSTC_RCR  (AT91_CAST(AT91_REG *) 	0xFFFFFD00) // (RSTC) Reset Control Register
 #define AT91C_RSTC_RMR  (AT91_CAST(AT91_REG *) 	0xFFFFFD08) // (RSTC) Reset Mode Register
 #define AT91C_RSTC_RSR  (AT91_CAST(AT91_REG *) 	0xFFFFFD04) // (RSTC) Reset Status Register
-// ========== Register definition for SHDWC peripheral ========== 
+// ========== Register definition for SHDWC peripheral ==========
 #define AT91C_SHDWC_SHSR (AT91_CAST(AT91_REG *) 	0xFFFFFD18) // (SHDWC) Shut Down Status Register
 #define AT91C_SHDWC_SHMR (AT91_CAST(AT91_REG *) 	0xFFFFFD14) // (SHDWC) Shut Down Mode Register
 #define AT91C_SHDWC_SHCR (AT91_CAST(AT91_REG *) 	0xFFFFFD10) // (SHDWC) Shut Down Control Register
-// ========== Register definition for RTTC peripheral ========== 
+// ========== Register definition for RTTC peripheral ==========
 #define AT91C_RTTC_RTSR (AT91_CAST(AT91_REG *) 	0xFFFFFD2C) // (RTTC) Real-time Status Register
 #define AT91C_RTTC_RTMR (AT91_CAST(AT91_REG *) 	0xFFFFFD20) // (RTTC) Real-time Mode Register
 #define AT91C_RTTC_RTVR (AT91_CAST(AT91_REG *) 	0xFFFFFD28) // (RTTC) Real-time Value Register
 #define AT91C_RTTC_RTAR (AT91_CAST(AT91_REG *) 	0xFFFFFD24) // (RTTC) Real-time Alarm Register
-// ========== Register definition for PITC peripheral ========== 
+// ========== Register definition for PITC peripheral ==========
 #define AT91C_PITC_PIVR (AT91_CAST(AT91_REG *) 	0xFFFFFD38) // (PITC) Period Interval Value Register
 #define AT91C_PITC_PISR (AT91_CAST(AT91_REG *) 	0xFFFFFD34) // (PITC) Period Interval Status Register
 #define AT91C_PITC_PIIR (AT91_CAST(AT91_REG *) 	0xFFFFFD3C) // (PITC) Period Interval Image Register
 #define AT91C_PITC_PIMR (AT91_CAST(AT91_REG *) 	0xFFFFFD30) // (PITC) Period Interval Mode Register
-// ========== Register definition for WDTC peripheral ========== 
+// ========== Register definition for WDTC peripheral ==========
 #define AT91C_WDTC_WDCR (AT91_CAST(AT91_REG *) 	0xFFFFFD40) // (WDTC) Watchdog Control Register
 #define AT91C_WDTC_WDSR (AT91_CAST(AT91_REG *) 	0xFFFFFD48) // (WDTC) Watchdog Status Register
 #define AT91C_WDTC_WDMR (AT91_CAST(AT91_REG *) 	0xFFFFFD44) // (WDTC) Watchdog Mode Register
-// ========== Register definition for RTC peripheral ========== 
+// ========== Register definition for RTC peripheral ==========
 #define AT91C_RTC_IDR   (AT91_CAST(AT91_REG *) 	0xFFFFFDD4) // (RTC) Interrupt Disable Register
 #define AT91C_RTC_SR    (AT91_CAST(AT91_REG *) 	0xFFFFFDC8) // (RTC) Status Register
 #define AT91C_RTC_MR    (AT91_CAST(AT91_REG *) 	0xFFFFFDB4) // (RTC) Mode Register
@@ -5908,7 +5908,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_RTC_VER   (AT91_CAST(AT91_REG *) 	0xFFFFFDDC) // (RTC) Valid Entry Register
 #define AT91C_RTC_SCCR  (AT91_CAST(AT91_REG *) 	0xFFFFFDCC) // (RTC) Status Clear Command Register
 #define AT91C_RTC_IMR   (AT91_CAST(AT91_REG *) 	0xFFFFFDD8) // (RTC) Interrupt Mask Register
-// ========== Register definition for TC0 peripheral ========== 
+// ========== Register definition for TC0 peripheral ==========
 #define AT91C_TC0_IER   (AT91_CAST(AT91_REG *) 	0xFFF7C024) // (TC0) Interrupt Enable Register
 #define AT91C_TC0_IMR   (AT91_CAST(AT91_REG *) 	0xFFF7C02C) // (TC0) Interrupt Mask Register
 #define AT91C_TC0_CCR   (AT91_CAST(AT91_REG *) 	0xFFF7C000) // (TC0) Channel Control Register
@@ -5919,7 +5919,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TC0_RA    (AT91_CAST(AT91_REG *) 	0xFFF7C014) // (TC0) Register A
 #define AT91C_TC0_RC    (AT91_CAST(AT91_REG *) 	0xFFF7C01C) // (TC0) Register C
 #define AT91C_TC0_IDR   (AT91_CAST(AT91_REG *) 	0xFFF7C028) // (TC0) Interrupt Disable Register
-// ========== Register definition for TC1 peripheral ========== 
+// ========== Register definition for TC1 peripheral ==========
 #define AT91C_TC1_IER   (AT91_CAST(AT91_REG *) 	0xFFF7C064) // (TC1) Interrupt Enable Register
 #define AT91C_TC1_SR    (AT91_CAST(AT91_REG *) 	0xFFF7C060) // (TC1) Status Register
 #define AT91C_TC1_RC    (AT91_CAST(AT91_REG *) 	0xFFF7C05C) // (TC1) Register C
@@ -5930,7 +5930,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TC1_RB    (AT91_CAST(AT91_REG *) 	0xFFF7C058) // (TC1) Register B
 #define AT91C_TC1_IMR   (AT91_CAST(AT91_REG *) 	0xFFF7C06C) // (TC1) Interrupt Mask Register
 #define AT91C_TC1_CCR   (AT91_CAST(AT91_REG *) 	0xFFF7C040) // (TC1) Channel Control Register
-// ========== Register definition for TC2 peripheral ========== 
+// ========== Register definition for TC2 peripheral ==========
 #define AT91C_TC2_SR    (AT91_CAST(AT91_REG *) 	0xFFF7C0A0) // (TC2) Status Register
 #define AT91C_TC2_IMR   (AT91_CAST(AT91_REG *) 	0xFFF7C0AC) // (TC2) Interrupt Mask Register
 #define AT91C_TC2_IER   (AT91_CAST(AT91_REG *) 	0xFFF7C0A4) // (TC2) Interrupt Enable Register
@@ -5941,7 +5941,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TC2_RA    (AT91_CAST(AT91_REG *) 	0xFFF7C094) // (TC2) Register A
 #define AT91C_TC2_IDR   (AT91_CAST(AT91_REG *) 	0xFFF7C0A8) // (TC2) Interrupt Disable Register
 #define AT91C_TC2_RC    (AT91_CAST(AT91_REG *) 	0xFFF7C09C) // (TC2) Register C
-// ========== Register definition for TC3 peripheral ========== 
+// ========== Register definition for TC3 peripheral ==========
 #define AT91C_TC3_SR    (AT91_CAST(AT91_REG *) 	0xFFFD4020) // (TC3) Status Register
 #define AT91C_TC3_RC    (AT91_CAST(AT91_REG *) 	0xFFFD401C) // (TC3) Register C
 #define AT91C_TC3_IER   (AT91_CAST(AT91_REG *) 	0xFFFD4024) // (TC3) Interrupt Enable Register
@@ -5952,7 +5952,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TC3_RB    (AT91_CAST(AT91_REG *) 	0xFFFD4018) // (TC3) Register B
 #define AT91C_TC3_CCR   (AT91_CAST(AT91_REG *) 	0xFFFD4000) // (TC3) Channel Control Register
 #define AT91C_TC3_RA    (AT91_CAST(AT91_REG *) 	0xFFFD4014) // (TC3) Register A
-// ========== Register definition for TC4 peripheral ========== 
+// ========== Register definition for TC4 peripheral ==========
 #define AT91C_TC4_CV    (AT91_CAST(AT91_REG *) 	0xFFFD4050) // (TC4) Counter Value
 #define AT91C_TC4_RA    (AT91_CAST(AT91_REG *) 	0xFFFD4054) // (TC4) Register A
 #define AT91C_TC4_IDR   (AT91_CAST(AT91_REG *) 	0xFFFD4068) // (TC4) Interrupt Disable Register
@@ -5963,7 +5963,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TC4_RC    (AT91_CAST(AT91_REG *) 	0xFFFD405C) // (TC4) Register C
 #define AT91C_TC4_IER   (AT91_CAST(AT91_REG *) 	0xFFFD4064) // (TC4) Interrupt Enable Register
 #define AT91C_TC4_IMR   (AT91_CAST(AT91_REG *) 	0xFFFD406C) // (TC4) Interrupt Mask Register
-// ========== Register definition for TC5 peripheral ========== 
+// ========== Register definition for TC5 peripheral ==========
 #define AT91C_TC5_IER   (AT91_CAST(AT91_REG *) 	0xFFFD40A4) // (TC5) Interrupt Enable Register
 #define AT91C_TC5_IDR   (AT91_CAST(AT91_REG *) 	0xFFFD40A8) // (TC5) Interrupt Disable Register
 #define AT91C_TC5_RA    (AT91_CAST(AT91_REG *) 	0xFFFD4094) // (TC5) Register A
@@ -5974,13 +5974,13 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TC5_RC    (AT91_CAST(AT91_REG *) 	0xFFFD409C) // (TC5) Register C
 #define AT91C_TC5_IMR   (AT91_CAST(AT91_REG *) 	0xFFFD40AC) // (TC5) Interrupt Mask Register
 #define AT91C_TC5_CMR   (AT91_CAST(AT91_REG *) 	0xFFFD4084) // (TC5) Channel Mode Register (Capture Mode / Waveform Mode)
-// ========== Register definition for TCB0 peripheral ========== 
+// ========== Register definition for TCB0 peripheral ==========
 #define AT91C_TCB0_BCR  (AT91_CAST(AT91_REG *) 	0xFFF7C0C0) // (TCB0) TC Block Control Register
 #define AT91C_TCB0_BMR  (AT91_CAST(AT91_REG *) 	0xFFF7C0C4) // (TCB0) TC Block Mode Register
-// ========== Register definition for TCB1 peripheral ========== 
+// ========== Register definition for TCB1 peripheral ==========
 #define AT91C_TCB1_BMR  (AT91_CAST(AT91_REG *) 	0xFFFD40C4) // (TCB1) TC Block Mode Register
 #define AT91C_TCB1_BCR  (AT91_CAST(AT91_REG *) 	0xFFFD40C0) // (TCB1) TC Block Control Register
-// ========== Register definition for MCI0 peripheral ========== 
+// ========== Register definition for MCI0 peripheral ==========
 #define AT91C_MCI0_IMR  (AT91_CAST(AT91_REG *) 	0xFFF8004C) // (MCI0) MCI Interrupt Mask Register
 #define AT91C_MCI0_MR   (AT91_CAST(AT91_REG *) 	0xFFF80004) // (MCI0) MCI Mode Register
 #define AT91C_MCI0_CR   (AT91_CAST(AT91_REG *) 	0xFFF80000) // (MCI0) MCI Control Register
@@ -6002,7 +6002,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_MCI0_RSPR (AT91_CAST(AT91_REG *) 	0xFFF80020) // (MCI0) MCI Response Register
 #define AT91C_MCI0_WPCR (AT91_CAST(AT91_REG *) 	0xFFF800E4) // (MCI0) MCI Write Protection Control Register
 #define AT91C_MCI0_IDR  (AT91_CAST(AT91_REG *) 	0xFFF80048) // (MCI0) MCI Interrupt Disable Register
-// ========== Register definition for MCI1 peripheral ========== 
+// ========== Register definition for MCI1 peripheral ==========
 #define AT91C_MCI1_IDR  (AT91_CAST(AT91_REG *) 	0xFFFD0048) // (MCI1) MCI Interrupt Disable Register
 #define AT91C_MCI1_MR   (AT91_CAST(AT91_REG *) 	0xFFFD0004) // (MCI1) MCI Mode Register
 #define AT91C_MCI1_SR   (AT91_CAST(AT91_REG *) 	0xFFFD0040) // (MCI1) MCI Status Register
@@ -6024,7 +6024,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_MCI1_CMDR (AT91_CAST(AT91_REG *) 	0xFFFD0014) // (MCI1) MCI Command Register
 #define AT91C_MCI1_TDR  (AT91_CAST(AT91_REG *) 	0xFFFD0034) // (MCI1) MCI Transmit Data Register
 #define AT91C_MCI1_VR   (AT91_CAST(AT91_REG *) 	0xFFFD00FC) // (MCI1) MCI Version Register
-// ========== Register definition for TWI0 peripheral ========== 
+// ========== Register definition for TWI0 peripheral ==========
 #define AT91C_TWI0_RHR  (AT91_CAST(AT91_REG *) 	0xFFF84030) // (TWI0) Receive Holding Register
 #define AT91C_TWI0_IMR  (AT91_CAST(AT91_REG *) 	0xFFF8402C) // (TWI0) Interrupt Mask Register
 #define AT91C_TWI0_SR   (AT91_CAST(AT91_REG *) 	0xFFF84020) // (TWI0) Status Register
@@ -6036,7 +6036,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TWI0_THR  (AT91_CAST(AT91_REG *) 	0xFFF84034) // (TWI0) Transmit Holding Register
 #define AT91C_TWI0_CR   (AT91_CAST(AT91_REG *) 	0xFFF84000) // (TWI0) Control Register
 #define AT91C_TWI0_MMR  (AT91_CAST(AT91_REG *) 	0xFFF84004) // (TWI0) Master Mode Register
-// ========== Register definition for TWI1 peripheral ========== 
+// ========== Register definition for TWI1 peripheral ==========
 #define AT91C_TWI1_IDR  (AT91_CAST(AT91_REG *) 	0xFFF88028) // (TWI1) Interrupt Disable Register
 #define AT91C_TWI1_RHR  (AT91_CAST(AT91_REG *) 	0xFFF88030) // (TWI1) Receive Holding Register
 #define AT91C_TWI1_IMR  (AT91_CAST(AT91_REG *) 	0xFFF8802C) // (TWI1) Interrupt Mask Register
@@ -6048,7 +6048,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TWI1_CR   (AT91_CAST(AT91_REG *) 	0xFFF88000) // (TWI1) Control Register
 #define AT91C_TWI1_SR   (AT91_CAST(AT91_REG *) 	0xFFF88020) // (TWI1) Status Register
 #define AT91C_TWI1_CWGR (AT91_CAST(AT91_REG *) 	0xFFF88010) // (TWI1) Clock Waveform Generator Register
-// ========== Register definition for PDC_US0 peripheral ========== 
+// ========== Register definition for PDC_US0 peripheral ==========
 #define AT91C_US0_TNPR  (AT91_CAST(AT91_REG *) 	0xFFF8C118) // (PDC_US0) Transmit Next Pointer Register
 #define AT91C_US0_PTSR  (AT91_CAST(AT91_REG *) 	0xFFF8C124) // (PDC_US0) PDC Transfer Status Register
 #define AT91C_US0_PTCR  (AT91_CAST(AT91_REG *) 	0xFFF8C120) // (PDC_US0) PDC Transfer Control Register
@@ -6059,7 +6059,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_US0_RNPR  (AT91_CAST(AT91_REG *) 	0xFFF8C110) // (PDC_US0) Receive Next Pointer Register
 #define AT91C_US0_RPR   (AT91_CAST(AT91_REG *) 	0xFFF8C100) // (PDC_US0) Receive Pointer Register
 #define AT91C_US0_TPR   (AT91_CAST(AT91_REG *) 	0xFFF8C108) // (PDC_US0) Transmit Pointer Register
-// ========== Register definition for US0 peripheral ========== 
+// ========== Register definition for US0 peripheral ==========
 #define AT91C_US0_RTOR  (AT91_CAST(AT91_REG *) 	0xFFF8C024) // (US0) Receiver Time-out Register
 #define AT91C_US0_MAN   (AT91_CAST(AT91_REG *) 	0xFFF8C050) // (US0) Manchester Encoder Decoder Register
 #define AT91C_US0_NER   (AT91_CAST(AT91_REG *) 	0xFFF8C044) // (US0) Nb Errors Register
@@ -6075,7 +6075,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_US0_TTGR  (AT91_CAST(AT91_REG *) 	0xFFF8C028) // (US0) Transmitter Time-guard Register
 #define AT91C_US0_BRGR  (AT91_CAST(AT91_REG *) 	0xFFF8C020) // (US0) Baud Rate Generator Register
 #define AT91C_US0_IF    (AT91_CAST(AT91_REG *) 	0xFFF8C04C) // (US0) IRDA_FILTER Register
-// ========== Register definition for PDC_US1 peripheral ========== 
+// ========== Register definition for PDC_US1 peripheral ==========
 #define AT91C_US1_PTCR  (AT91_CAST(AT91_REG *) 	0xFFF90120) // (PDC_US1) PDC Transfer Control Register
 #define AT91C_US1_TNCR  (AT91_CAST(AT91_REG *) 	0xFFF9011C) // (PDC_US1) Transmit Next Counter Register
 #define AT91C_US1_RCR   (AT91_CAST(AT91_REG *) 	0xFFF90104) // (PDC_US1) Receive Counter Register
@@ -6086,7 +6086,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_US1_TNPR  (AT91_CAST(AT91_REG *) 	0xFFF90118) // (PDC_US1) Transmit Next Pointer Register
 #define AT91C_US1_RNCR  (AT91_CAST(AT91_REG *) 	0xFFF90114) // (PDC_US1) Receive Next Counter Register
 #define AT91C_US1_PTSR  (AT91_CAST(AT91_REG *) 	0xFFF90124) // (PDC_US1) PDC Transfer Status Register
-// ========== Register definition for US1 peripheral ========== 
+// ========== Register definition for US1 peripheral ==========
 #define AT91C_US1_NER   (AT91_CAST(AT91_REG *) 	0xFFF90044) // (US1) Nb Errors Register
 #define AT91C_US1_RHR   (AT91_CAST(AT91_REG *) 	0xFFF90018) // (US1) Receiver Holding Register
 #define AT91C_US1_RTOR  (AT91_CAST(AT91_REG *) 	0xFFF90024) // (US1) Receiver Time-out Register
@@ -6102,7 +6102,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_US1_CSR   (AT91_CAST(AT91_REG *) 	0xFFF90014) // (US1) Channel Status Register
 #define AT91C_US1_THR   (AT91_CAST(AT91_REG *) 	0xFFF9001C) // (US1) Transmitter Holding Register
 #define AT91C_US1_BRGR  (AT91_CAST(AT91_REG *) 	0xFFF90020) // (US1) Baud Rate Generator Register
-// ========== Register definition for PDC_US2 peripheral ========== 
+// ========== Register definition for PDC_US2 peripheral ==========
 #define AT91C_US2_RNCR  (AT91_CAST(AT91_REG *) 	0xFFF94114) // (PDC_US2) Receive Next Counter Register
 #define AT91C_US2_PTCR  (AT91_CAST(AT91_REG *) 	0xFFF94120) // (PDC_US2) PDC Transfer Control Register
 #define AT91C_US2_TNPR  (AT91_CAST(AT91_REG *) 	0xFFF94118) // (PDC_US2) Transmit Next Pointer Register
@@ -6113,7 +6113,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_US2_TCR   (AT91_CAST(AT91_REG *) 	0xFFF9410C) // (PDC_US2) Transmit Counter Register
 #define AT91C_US2_RPR   (AT91_CAST(AT91_REG *) 	0xFFF94100) // (PDC_US2) Receive Pointer Register
 #define AT91C_US2_RNPR  (AT91_CAST(AT91_REG *) 	0xFFF94110) // (PDC_US2) Receive Next Pointer Register
-// ========== Register definition for US2 peripheral ========== 
+// ========== Register definition for US2 peripheral ==========
 #define AT91C_US2_TTGR  (AT91_CAST(AT91_REG *) 	0xFFF94028) // (US2) Transmitter Time-guard Register
 #define AT91C_US2_RHR   (AT91_CAST(AT91_REG *) 	0xFFF94018) // (US2) Receiver Holding Register
 #define AT91C_US2_IMR   (AT91_CAST(AT91_REG *) 	0xFFF94010) // (US2) Interrupt Mask Register
@@ -6129,7 +6129,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_US2_BRGR  (AT91_CAST(AT91_REG *) 	0xFFF94020) // (US2) Baud Rate Generator Register
 #define AT91C_US2_CSR   (AT91_CAST(AT91_REG *) 	0xFFF94014) // (US2) Channel Status Register
 #define AT91C_US2_RTOR  (AT91_CAST(AT91_REG *) 	0xFFF94024) // (US2) Receiver Time-out Register
-// ========== Register definition for PDC_US3 peripheral ========== 
+// ========== Register definition for PDC_US3 peripheral ==========
 #define AT91C_US3_PTSR  (AT91_CAST(AT91_REG *) 	0xFFF98124) // (PDC_US3) PDC Transfer Status Register
 #define AT91C_US3_TCR   (AT91_CAST(AT91_REG *) 	0xFFF9810C) // (PDC_US3) Transmit Counter Register
 #define AT91C_US3_RNPR  (AT91_CAST(AT91_REG *) 	0xFFF98110) // (PDC_US3) Receive Next Pointer Register
@@ -6140,7 +6140,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_US3_RCR   (AT91_CAST(AT91_REG *) 	0xFFF98104) // (PDC_US3) Receive Counter Register
 #define AT91C_US3_TNCR  (AT91_CAST(AT91_REG *) 	0xFFF9811C) // (PDC_US3) Transmit Next Counter Register
 #define AT91C_US3_PTCR  (AT91_CAST(AT91_REG *) 	0xFFF98120) // (PDC_US3) PDC Transfer Control Register
-// ========== Register definition for US3 peripheral ========== 
+// ========== Register definition for US3 peripheral ==========
 #define AT91C_US3_CSR   (AT91_CAST(AT91_REG *) 	0xFFF98014) // (US3) Channel Status Register
 #define AT91C_US3_BRGR  (AT91_CAST(AT91_REG *) 	0xFFF98020) // (US3) Baud Rate Generator Register
 #define AT91C_US3_TTGR  (AT91_CAST(AT91_REG *) 	0xFFF98028) // (US3) Transmitter Time-guard Register
@@ -6156,7 +6156,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_US3_IMR   (AT91_CAST(AT91_REG *) 	0xFFF98010) // (US3) Interrupt Mask Register
 #define AT91C_US3_THR   (AT91_CAST(AT91_REG *) 	0xFFF9801C) // (US3) Transmitter Holding Register
 #define AT91C_US3_RHR   (AT91_CAST(AT91_REG *) 	0xFFF98018) // (US3) Receiver Holding Register
-// ========== Register definition for PDC_SSC0 peripheral ========== 
+// ========== Register definition for PDC_SSC0 peripheral ==========
 #define AT91C_SSC0_TNPR (AT91_CAST(AT91_REG *) 	0xFFF9C118) // (PDC_SSC0) Transmit Next Pointer Register
 #define AT91C_SSC0_PTSR (AT91_CAST(AT91_REG *) 	0xFFF9C124) // (PDC_SSC0) PDC Transfer Status Register
 #define AT91C_SSC0_TNCR (AT91_CAST(AT91_REG *) 	0xFFF9C11C) // (PDC_SSC0) Transmit Next Counter Register
@@ -6167,7 +6167,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SSC0_RNPR (AT91_CAST(AT91_REG *) 	0xFFF9C110) // (PDC_SSC0) Receive Next Pointer Register
 #define AT91C_SSC0_TCR  (AT91_CAST(AT91_REG *) 	0xFFF9C10C) // (PDC_SSC0) Transmit Counter Register
 #define AT91C_SSC0_RPR  (AT91_CAST(AT91_REG *) 	0xFFF9C100) // (PDC_SSC0) Receive Pointer Register
-// ========== Register definition for SSC0 peripheral ========== 
+// ========== Register definition for SSC0 peripheral ==========
 #define AT91C_SSC0_CMR  (AT91_CAST(AT91_REG *) 	0xFFF9C004) // (SSC0) Clock Mode Register
 #define AT91C_SSC0_SR   (AT91_CAST(AT91_REG *) 	0xFFF9C040) // (SSC0) Status Register
 #define AT91C_SSC0_TSHR (AT91_CAST(AT91_REG *) 	0xFFF9C034) // (SSC0) Transmit Sync Holding Register
@@ -6182,7 +6182,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SSC0_THR  (AT91_CAST(AT91_REG *) 	0xFFF9C024) // (SSC0) Transmit Holding Register
 #define AT91C_SSC0_RFMR (AT91_CAST(AT91_REG *) 	0xFFF9C014) // (SSC0) Receive Frame Mode Register
 #define AT91C_SSC0_TFMR (AT91_CAST(AT91_REG *) 	0xFFF9C01C) // (SSC0) Transmit Frame Mode Register
-// ========== Register definition for PDC_SSC1 peripheral ========== 
+// ========== Register definition for PDC_SSC1 peripheral ==========
 #define AT91C_SSC1_RNPR (AT91_CAST(AT91_REG *) 	0xFFFA0110) // (PDC_SSC1) Receive Next Pointer Register
 #define AT91C_SSC1_TCR  (AT91_CAST(AT91_REG *) 	0xFFFA010C) // (PDC_SSC1) Transmit Counter Register
 #define AT91C_SSC1_TNCR (AT91_CAST(AT91_REG *) 	0xFFFA011C) // (PDC_SSC1) Transmit Next Counter Register
@@ -6193,7 +6193,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SSC1_RPR  (AT91_CAST(AT91_REG *) 	0xFFFA0100) // (PDC_SSC1) Receive Pointer Register
 #define AT91C_SSC1_PTSR (AT91_CAST(AT91_REG *) 	0xFFFA0124) // (PDC_SSC1) PDC Transfer Status Register
 #define AT91C_SSC1_TNPR (AT91_CAST(AT91_REG *) 	0xFFFA0118) // (PDC_SSC1) Transmit Next Pointer Register
-// ========== Register definition for SSC1 peripheral ========== 
+// ========== Register definition for SSC1 peripheral ==========
 #define AT91C_SSC1_SR   (AT91_CAST(AT91_REG *) 	0xFFFA0040) // (SSC1) Status Register
 #define AT91C_SSC1_RHR  (AT91_CAST(AT91_REG *) 	0xFFFA0020) // (SSC1) Receive Holding Register
 #define AT91C_SSC1_TFMR (AT91_CAST(AT91_REG *) 	0xFFFA001C) // (SSC1) Transmit Frame Mode Register
@@ -6208,35 +6208,35 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SSC1_RFMR (AT91_CAST(AT91_REG *) 	0xFFFA0014) // (SSC1) Receive Frame Mode Register
 #define AT91C_SSC1_IDR  (AT91_CAST(AT91_REG *) 	0xFFFA0048) // (SSC1) Interrupt Disable Register
 #define AT91C_SSC1_RCMR (AT91_CAST(AT91_REG *) 	0xFFFA0010) // (SSC1) Receive Clock ModeRegister
-// ========== Register definition for PWMC_CH0 peripheral ========== 
+// ========== Register definition for PWMC_CH0 peripheral ==========
 #define AT91C_PWMC_CH0_CCNTR (AT91_CAST(AT91_REG *) 	0xFFFB820C) // (PWMC_CH0) Channel Counter Register
 #define AT91C_PWMC_CH0_CPRDR (AT91_CAST(AT91_REG *) 	0xFFFB8208) // (PWMC_CH0) Channel Period Register
 #define AT91C_PWMC_CH0_CUPDR (AT91_CAST(AT91_REG *) 	0xFFFB8210) // (PWMC_CH0) Channel Update Register
 #define AT91C_PWMC_CH0_CDTYR (AT91_CAST(AT91_REG *) 	0xFFFB8204) // (PWMC_CH0) Channel Duty Cycle Register
 #define AT91C_PWMC_CH0_CMR (AT91_CAST(AT91_REG *) 	0xFFFB8200) // (PWMC_CH0) Channel Mode Register
 #define AT91C_PWMC_CH0_Reserved (AT91_CAST(AT91_REG *) 	0xFFFB8214) // (PWMC_CH0) Reserved
-// ========== Register definition for PWMC_CH1 peripheral ========== 
+// ========== Register definition for PWMC_CH1 peripheral ==========
 #define AT91C_PWMC_CH1_CCNTR (AT91_CAST(AT91_REG *) 	0xFFFB822C) // (PWMC_CH1) Channel Counter Register
 #define AT91C_PWMC_CH1_CDTYR (AT91_CAST(AT91_REG *) 	0xFFFB8224) // (PWMC_CH1) Channel Duty Cycle Register
 #define AT91C_PWMC_CH1_CMR (AT91_CAST(AT91_REG *) 	0xFFFB8220) // (PWMC_CH1) Channel Mode Register
 #define AT91C_PWMC_CH1_CPRDR (AT91_CAST(AT91_REG *) 	0xFFFB8228) // (PWMC_CH1) Channel Period Register
 #define AT91C_PWMC_CH1_Reserved (AT91_CAST(AT91_REG *) 	0xFFFB8234) // (PWMC_CH1) Reserved
 #define AT91C_PWMC_CH1_CUPDR (AT91_CAST(AT91_REG *) 	0xFFFB8230) // (PWMC_CH1) Channel Update Register
-// ========== Register definition for PWMC_CH2 peripheral ========== 
+// ========== Register definition for PWMC_CH2 peripheral ==========
 #define AT91C_PWMC_CH2_CUPDR (AT91_CAST(AT91_REG *) 	0xFFFB8250) // (PWMC_CH2) Channel Update Register
 #define AT91C_PWMC_CH2_CMR (AT91_CAST(AT91_REG *) 	0xFFFB8240) // (PWMC_CH2) Channel Mode Register
 #define AT91C_PWMC_CH2_Reserved (AT91_CAST(AT91_REG *) 	0xFFFB8254) // (PWMC_CH2) Reserved
 #define AT91C_PWMC_CH2_CPRDR (AT91_CAST(AT91_REG *) 	0xFFFB8248) // (PWMC_CH2) Channel Period Register
 #define AT91C_PWMC_CH2_CDTYR (AT91_CAST(AT91_REG *) 	0xFFFB8244) // (PWMC_CH2) Channel Duty Cycle Register
 #define AT91C_PWMC_CH2_CCNTR (AT91_CAST(AT91_REG *) 	0xFFFB824C) // (PWMC_CH2) Channel Counter Register
-// ========== Register definition for PWMC_CH3 peripheral ========== 
+// ========== Register definition for PWMC_CH3 peripheral ==========
 #define AT91C_PWMC_CH3_CPRDR (AT91_CAST(AT91_REG *) 	0xFFFB8268) // (PWMC_CH3) Channel Period Register
 #define AT91C_PWMC_CH3_Reserved (AT91_CAST(AT91_REG *) 	0xFFFB8274) // (PWMC_CH3) Reserved
 #define AT91C_PWMC_CH3_CUPDR (AT91_CAST(AT91_REG *) 	0xFFFB8270) // (PWMC_CH3) Channel Update Register
 #define AT91C_PWMC_CH3_CDTYR (AT91_CAST(AT91_REG *) 	0xFFFB8264) // (PWMC_CH3) Channel Duty Cycle Register
 #define AT91C_PWMC_CH3_CCNTR (AT91_CAST(AT91_REG *) 	0xFFFB826C) // (PWMC_CH3) Channel Counter Register
 #define AT91C_PWMC_CH3_CMR (AT91_CAST(AT91_REG *) 	0xFFFB8260) // (PWMC_CH3) Channel Mode Register
-// ========== Register definition for PWMC peripheral ========== 
+// ========== Register definition for PWMC peripheral ==========
 #define AT91C_PWMC_IDR  (AT91_CAST(AT91_REG *) 	0xFFFB8014) // (PWMC) PWMC Interrupt Disable Register
 #define AT91C_PWMC_MR   (AT91_CAST(AT91_REG *) 	0xFFFB8000) // (PWMC) PWMC Mode Register
 #define AT91C_PWMC_VR   (AT91_CAST(AT91_REG *) 	0xFFFB80FC) // (PWMC) PWMC Version Register
@@ -6246,7 +6246,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PWMC_ENA  (AT91_CAST(AT91_REG *) 	0xFFFB8004) // (PWMC) PWMC Enable Register
 #define AT91C_PWMC_IER  (AT91_CAST(AT91_REG *) 	0xFFFB8010) // (PWMC) PWMC Interrupt Enable Register
 #define AT91C_PWMC_DIS  (AT91_CAST(AT91_REG *) 	0xFFFB8008) // (PWMC) PWMC Disable Register
-// ========== Register definition for PDC_SPI0 peripheral ========== 
+// ========== Register definition for PDC_SPI0 peripheral ==========
 #define AT91C_SPI0_TPR  (AT91_CAST(AT91_REG *) 	0xFFFA4108) // (PDC_SPI0) Transmit Pointer Register
 #define AT91C_SPI0_PTCR (AT91_CAST(AT91_REG *) 	0xFFFA4120) // (PDC_SPI0) PDC Transfer Control Register
 #define AT91C_SPI0_RNPR (AT91_CAST(AT91_REG *) 	0xFFFA4110) // (PDC_SPI0) Receive Next Pointer Register
@@ -6257,7 +6257,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SPI0_TNPR (AT91_CAST(AT91_REG *) 	0xFFFA4118) // (PDC_SPI0) Transmit Next Pointer Register
 #define AT91C_SPI0_RPR  (AT91_CAST(AT91_REG *) 	0xFFFA4100) // (PDC_SPI0) Receive Pointer Register
 #define AT91C_SPI0_PTSR (AT91_CAST(AT91_REG *) 	0xFFFA4124) // (PDC_SPI0) PDC Transfer Status Register
-// ========== Register definition for PDC_SPI1 peripheral ========== 
+// ========== Register definition for PDC_SPI1 peripheral ==========
 #define AT91C_SPI1_RNCR (AT91_CAST(AT91_REG *) 	0xFFFA8114) // (PDC_SPI1) Receive Next Counter Register
 #define AT91C_SPI1_TCR  (AT91_CAST(AT91_REG *) 	0xFFFA810C) // (PDC_SPI1) Transmit Counter Register
 #define AT91C_SPI1_RCR  (AT91_CAST(AT91_REG *) 	0xFFFA8104) // (PDC_SPI1) Receive Counter Register
@@ -6268,7 +6268,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SPI1_TPR  (AT91_CAST(AT91_REG *) 	0xFFFA8108) // (PDC_SPI1) Transmit Pointer Register
 #define AT91C_SPI1_PTSR (AT91_CAST(AT91_REG *) 	0xFFFA8124) // (PDC_SPI1) PDC Transfer Status Register
 #define AT91C_SPI1_PTCR (AT91_CAST(AT91_REG *) 	0xFFFA8120) // (PDC_SPI1) PDC Transfer Control Register
-// ========== Register definition for SPI0 peripheral ========== 
+// ========== Register definition for SPI0 peripheral ==========
 #define AT91C_SPI0_MR   (AT91_CAST(AT91_REG *) 	0xFFFA4004) // (SPI0) Mode Register
 #define AT91C_SPI0_RDR  (AT91_CAST(AT91_REG *) 	0xFFFA4008) // (SPI0) Receive Data Register
 #define AT91C_SPI0_CR   (AT91_CAST(AT91_REG *) 	0xFFFA4000) // (SPI0) Control Register
@@ -6278,7 +6278,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SPI0_CSR  (AT91_CAST(AT91_REG *) 	0xFFFA4030) // (SPI0) Chip Select Register
 #define AT91C_SPI0_SR   (AT91_CAST(AT91_REG *) 	0xFFFA4010) // (SPI0) Status Register
 #define AT91C_SPI0_IMR  (AT91_CAST(AT91_REG *) 	0xFFFA401C) // (SPI0) Interrupt Mask Register
-// ========== Register definition for SPI1 peripheral ========== 
+// ========== Register definition for SPI1 peripheral ==========
 #define AT91C_SPI1_CSR  (AT91_CAST(AT91_REG *) 	0xFFFA8030) // (SPI1) Chip Select Register
 #define AT91C_SPI1_IER  (AT91_CAST(AT91_REG *) 	0xFFFA8014) // (SPI1) Interrupt Enable Register
 #define AT91C_SPI1_RDR  (AT91_CAST(AT91_REG *) 	0xFFFA8008) // (SPI1) Receive Data Register
@@ -6288,7 +6288,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SPI1_SR   (AT91_CAST(AT91_REG *) 	0xFFFA8010) // (SPI1) Status Register
 #define AT91C_SPI1_TDR  (AT91_CAST(AT91_REG *) 	0xFFFA800C) // (SPI1) Transmit Data Register
 #define AT91C_SPI1_IMR  (AT91_CAST(AT91_REG *) 	0xFFFA801C) // (SPI1) Interrupt Mask Register
-// ========== Register definition for PDC_TSADC peripheral ========== 
+// ========== Register definition for PDC_TSADC peripheral ==========
 #define AT91C_TSADC_TCR (AT91_CAST(AT91_REG *) 	0xFFFB010C) // (PDC_TSADC) Transmit Counter Register
 #define AT91C_TSADC_PTCR (AT91_CAST(AT91_REG *) 	0xFFFB0120) // (PDC_TSADC) PDC Transfer Control Register
 #define AT91C_TSADC_RNCR (AT91_CAST(AT91_REG *) 	0xFFFB0114) // (PDC_TSADC) Receive Next Counter Register
@@ -6299,7 +6299,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TSADC_TPR (AT91_CAST(AT91_REG *) 	0xFFFB0108) // (PDC_TSADC) Transmit Pointer Register
 #define AT91C_TSADC_TNPR (AT91_CAST(AT91_REG *) 	0xFFFB0118) // (PDC_TSADC) Transmit Next Pointer Register
 #define AT91C_TSADC_RPR (AT91_CAST(AT91_REG *) 	0xFFFB0100) // (PDC_TSADC) Receive Pointer Register
-// ========== Register definition for TSADC peripheral ========== 
+// ========== Register definition for TSADC peripheral ==========
 #define AT91C_TSADC_CHSR (AT91_CAST(AT91_REG *) 	0xFFFB0018) // (TSADC) Channel Status Register
 #define AT91C_TSADC_CDR5 (AT91_CAST(AT91_REG *) 	0xFFFB0044) // (TSADC) Channel Data Register 5
 #define AT91C_TSADC_CR  (AT91_CAST(AT91_REG *) 	0xFFFB0000) // (TSADC) Control Register
@@ -6320,7 +6320,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TSADC_MR  (AT91_CAST(AT91_REG *) 	0xFFFB0004) // (TSADC) Mode Register
 #define AT91C_TSADC_CDR7 (AT91_CAST(AT91_REG *) 	0xFFFB004C) // (TSADC) Channel Data Register 7
 #define AT91C_TSADC_CDR1 (AT91_CAST(AT91_REG *) 	0xFFFB0034) // (TSADC) Channel Data Register 1
-// ========== Register definition for UDPHS_EPTFIFO peripheral ========== 
+// ========== Register definition for UDPHS_EPTFIFO peripheral ==========
 #define AT91C_UDPHS_EPTFIFO_READEPT3 (AT91_CAST(AT91_REG *) 	0x00630000) // (UDPHS_EPTFIFO) FIFO Endpoint Data Register 3
 #define AT91C_UDPHS_EPTFIFO_READEPT5 (AT91_CAST(AT91_REG *) 	0x00650000) // (UDPHS_EPTFIFO) FIFO Endpoint Data Register 5
 #define AT91C_UDPHS_EPTFIFO_READEPT1 (AT91_CAST(AT91_REG *) 	0x00610000) // (UDPHS_EPTFIFO) FIFO Endpoint Data Register 1
@@ -6328,7 +6328,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_EPTFIFO_READEPT6 (AT91_CAST(AT91_REG *) 	0x00660000) // (UDPHS_EPTFIFO) FIFO Endpoint Data Register 6
 #define AT91C_UDPHS_EPTFIFO_READEPT2 (AT91_CAST(AT91_REG *) 	0x00620000) // (UDPHS_EPTFIFO) FIFO Endpoint Data Register 2
 #define AT91C_UDPHS_EPTFIFO_READEPT4 (AT91_CAST(AT91_REG *) 	0x00640000) // (UDPHS_EPTFIFO) FIFO Endpoint Data Register 4
-// ========== Register definition for UDPHS_EPT_0 peripheral ========== 
+// ========== Register definition for UDPHS_EPT_0 peripheral ==========
 #define AT91C_UDPHS_EPT_0_EPTSTA (AT91_CAST(AT91_REG *) 	0xFFF7811C) // (UDPHS_EPT_0) UDPHS Endpoint Status Register
 #define AT91C_UDPHS_EPT_0_EPTCTL (AT91_CAST(AT91_REG *) 	0xFFF7810C) // (UDPHS_EPT_0) UDPHS Endpoint Control Register
 #define AT91C_UDPHS_EPT_0_EPTCTLDIS (AT91_CAST(AT91_REG *) 	0xFFF78108) // (UDPHS_EPT_0) UDPHS Endpoint Control Disable Register
@@ -6336,7 +6336,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_EPT_0_EPTCLRSTA (AT91_CAST(AT91_REG *) 	0xFFF78118) // (UDPHS_EPT_0) UDPHS Endpoint Clear Status Register
 #define AT91C_UDPHS_EPT_0_EPTSETSTA (AT91_CAST(AT91_REG *) 	0xFFF78114) // (UDPHS_EPT_0) UDPHS Endpoint Set Status Register
 #define AT91C_UDPHS_EPT_0_EPTCTLENB (AT91_CAST(AT91_REG *) 	0xFFF78104) // (UDPHS_EPT_0) UDPHS Endpoint Control Enable Register
-// ========== Register definition for UDPHS_EPT_1 peripheral ========== 
+// ========== Register definition for UDPHS_EPT_1 peripheral ==========
 #define AT91C_UDPHS_EPT_1_EPTCTLENB (AT91_CAST(AT91_REG *) 	0xFFF78124) // (UDPHS_EPT_1) UDPHS Endpoint Control Enable Register
 #define AT91C_UDPHS_EPT_1_EPTCFG (AT91_CAST(AT91_REG *) 	0xFFF78120) // (UDPHS_EPT_1) UDPHS Endpoint Config Register
 #define AT91C_UDPHS_EPT_1_EPTCTL (AT91_CAST(AT91_REG *) 	0xFFF7812C) // (UDPHS_EPT_1) UDPHS Endpoint Control Register
@@ -6344,7 +6344,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_EPT_1_EPTCLRSTA (AT91_CAST(AT91_REG *) 	0xFFF78138) // (UDPHS_EPT_1) UDPHS Endpoint Clear Status Register
 #define AT91C_UDPHS_EPT_1_EPTSETSTA (AT91_CAST(AT91_REG *) 	0xFFF78134) // (UDPHS_EPT_1) UDPHS Endpoint Set Status Register
 #define AT91C_UDPHS_EPT_1_EPTCTLDIS (AT91_CAST(AT91_REG *) 	0xFFF78128) // (UDPHS_EPT_1) UDPHS Endpoint Control Disable Register
-// ========== Register definition for UDPHS_EPT_2 peripheral ========== 
+// ========== Register definition for UDPHS_EPT_2 peripheral ==========
 #define AT91C_UDPHS_EPT_2_EPTCLRSTA (AT91_CAST(AT91_REG *) 	0xFFF78158) // (UDPHS_EPT_2) UDPHS Endpoint Clear Status Register
 #define AT91C_UDPHS_EPT_2_EPTCTLDIS (AT91_CAST(AT91_REG *) 	0xFFF78148) // (UDPHS_EPT_2) UDPHS Endpoint Control Disable Register
 #define AT91C_UDPHS_EPT_2_EPTSTA (AT91_CAST(AT91_REG *) 	0xFFF7815C) // (UDPHS_EPT_2) UDPHS Endpoint Status Register
@@ -6352,7 +6352,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_EPT_2_EPTCTL (AT91_CAST(AT91_REG *) 	0xFFF7814C) // (UDPHS_EPT_2) UDPHS Endpoint Control Register
 #define AT91C_UDPHS_EPT_2_EPTCFG (AT91_CAST(AT91_REG *) 	0xFFF78140) // (UDPHS_EPT_2) UDPHS Endpoint Config Register
 #define AT91C_UDPHS_EPT_2_EPTCTLENB (AT91_CAST(AT91_REG *) 	0xFFF78144) // (UDPHS_EPT_2) UDPHS Endpoint Control Enable Register
-// ========== Register definition for UDPHS_EPT_3 peripheral ========== 
+// ========== Register definition for UDPHS_EPT_3 peripheral ==========
 #define AT91C_UDPHS_EPT_3_EPTCTL (AT91_CAST(AT91_REG *) 	0xFFF7816C) // (UDPHS_EPT_3) UDPHS Endpoint Control Register
 #define AT91C_UDPHS_EPT_3_EPTCLRSTA (AT91_CAST(AT91_REG *) 	0xFFF78178) // (UDPHS_EPT_3) UDPHS Endpoint Clear Status Register
 #define AT91C_UDPHS_EPT_3_EPTCTLDIS (AT91_CAST(AT91_REG *) 	0xFFF78168) // (UDPHS_EPT_3) UDPHS Endpoint Control Disable Register
@@ -6360,7 +6360,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_EPT_3_EPTSETSTA (AT91_CAST(AT91_REG *) 	0xFFF78174) // (UDPHS_EPT_3) UDPHS Endpoint Set Status Register
 #define AT91C_UDPHS_EPT_3_EPTCTLENB (AT91_CAST(AT91_REG *) 	0xFFF78164) // (UDPHS_EPT_3) UDPHS Endpoint Control Enable Register
 #define AT91C_UDPHS_EPT_3_EPTCFG (AT91_CAST(AT91_REG *) 	0xFFF78160) // (UDPHS_EPT_3) UDPHS Endpoint Config Register
-// ========== Register definition for UDPHS_EPT_4 peripheral ========== 
+// ========== Register definition for UDPHS_EPT_4 peripheral ==========
 #define AT91C_UDPHS_EPT_4_EPTCLRSTA (AT91_CAST(AT91_REG *) 	0xFFF78198) // (UDPHS_EPT_4) UDPHS Endpoint Clear Status Register
 #define AT91C_UDPHS_EPT_4_EPTCTL (AT91_CAST(AT91_REG *) 	0xFFF7818C) // (UDPHS_EPT_4) UDPHS Endpoint Control Register
 #define AT91C_UDPHS_EPT_4_EPTCTLENB (AT91_CAST(AT91_REG *) 	0xFFF78184) // (UDPHS_EPT_4) UDPHS Endpoint Control Enable Register
@@ -6368,7 +6368,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_EPT_4_EPTSETSTA (AT91_CAST(AT91_REG *) 	0xFFF78194) // (UDPHS_EPT_4) UDPHS Endpoint Set Status Register
 #define AT91C_UDPHS_EPT_4_EPTCFG (AT91_CAST(AT91_REG *) 	0xFFF78180) // (UDPHS_EPT_4) UDPHS Endpoint Config Register
 #define AT91C_UDPHS_EPT_4_EPTCTLDIS (AT91_CAST(AT91_REG *) 	0xFFF78188) // (UDPHS_EPT_4) UDPHS Endpoint Control Disable Register
-// ========== Register definition for UDPHS_EPT_5 peripheral ========== 
+// ========== Register definition for UDPHS_EPT_5 peripheral ==========
 #define AT91C_UDPHS_EPT_5_EPTSTA (AT91_CAST(AT91_REG *) 	0xFFF781BC) // (UDPHS_EPT_5) UDPHS Endpoint Status Register
 #define AT91C_UDPHS_EPT_5_EPTCLRSTA (AT91_CAST(AT91_REG *) 	0xFFF781B8) // (UDPHS_EPT_5) UDPHS Endpoint Clear Status Register
 #define AT91C_UDPHS_EPT_5_EPTCTLENB (AT91_CAST(AT91_REG *) 	0xFFF781A4) // (UDPHS_EPT_5) UDPHS Endpoint Control Enable Register
@@ -6376,7 +6376,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_EPT_5_EPTCTLDIS (AT91_CAST(AT91_REG *) 	0xFFF781A8) // (UDPHS_EPT_5) UDPHS Endpoint Control Disable Register
 #define AT91C_UDPHS_EPT_5_EPTCFG (AT91_CAST(AT91_REG *) 	0xFFF781A0) // (UDPHS_EPT_5) UDPHS Endpoint Config Register
 #define AT91C_UDPHS_EPT_5_EPTCTL (AT91_CAST(AT91_REG *) 	0xFFF781AC) // (UDPHS_EPT_5) UDPHS Endpoint Control Register
-// ========== Register definition for UDPHS_EPT_6 peripheral ========== 
+// ========== Register definition for UDPHS_EPT_6 peripheral ==========
 #define AT91C_UDPHS_EPT_6_EPTCLRSTA (AT91_CAST(AT91_REG *) 	0xFFF781D8) // (UDPHS_EPT_6) UDPHS Endpoint Clear Status Register
 #define AT91C_UDPHS_EPT_6_EPTCTLENB (AT91_CAST(AT91_REG *) 	0xFFF781C4) // (UDPHS_EPT_6) UDPHS Endpoint Control Enable Register
 #define AT91C_UDPHS_EPT_6_EPTCTL (AT91_CAST(AT91_REG *) 	0xFFF781CC) // (UDPHS_EPT_6) UDPHS Endpoint Control Register
@@ -6384,37 +6384,37 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_EPT_6_EPTCTLDIS (AT91_CAST(AT91_REG *) 	0xFFF781C8) // (UDPHS_EPT_6) UDPHS Endpoint Control Disable Register
 #define AT91C_UDPHS_EPT_6_EPTSTA (AT91_CAST(AT91_REG *) 	0xFFF781DC) // (UDPHS_EPT_6) UDPHS Endpoint Status Register
 #define AT91C_UDPHS_EPT_6_EPTCFG (AT91_CAST(AT91_REG *) 	0xFFF781C0) // (UDPHS_EPT_6) UDPHS Endpoint Config Register
-// ========== Register definition for UDPHS_DMA_1 peripheral ========== 
+// ========== Register definition for UDPHS_DMA_1 peripheral ==========
 #define AT91C_UDPHS_DMA_1_DMASTATUS (AT91_CAST(AT91_REG *) 	0xFFF7831C) // (UDPHS_DMA_1) UDPHS DMA Channel Status Register
 #define AT91C_UDPHS_DMA_1_DMANXTDSC (AT91_CAST(AT91_REG *) 	0xFFF78310) // (UDPHS_DMA_1) UDPHS DMA Channel Next Descriptor Address
 #define AT91C_UDPHS_DMA_1_DMACONTROL (AT91_CAST(AT91_REG *) 	0xFFF78318) // (UDPHS_DMA_1) UDPHS DMA Channel Control Register
 #define AT91C_UDPHS_DMA_1_DMAADDRESS (AT91_CAST(AT91_REG *) 	0xFFF78314) // (UDPHS_DMA_1) UDPHS DMA Channel Address Register
-// ========== Register definition for UDPHS_DMA_2 peripheral ========== 
+// ========== Register definition for UDPHS_DMA_2 peripheral ==========
 #define AT91C_UDPHS_DMA_2_DMACONTROL (AT91_CAST(AT91_REG *) 	0xFFF78328) // (UDPHS_DMA_2) UDPHS DMA Channel Control Register
 #define AT91C_UDPHS_DMA_2_DMASTATUS (AT91_CAST(AT91_REG *) 	0xFFF7832C) // (UDPHS_DMA_2) UDPHS DMA Channel Status Register
 #define AT91C_UDPHS_DMA_2_DMAADDRESS (AT91_CAST(AT91_REG *) 	0xFFF78324) // (UDPHS_DMA_2) UDPHS DMA Channel Address Register
 #define AT91C_UDPHS_DMA_2_DMANXTDSC (AT91_CAST(AT91_REG *) 	0xFFF78320) // (UDPHS_DMA_2) UDPHS DMA Channel Next Descriptor Address
-// ========== Register definition for UDPHS_DMA_3 peripheral ========== 
+// ========== Register definition for UDPHS_DMA_3 peripheral ==========
 #define AT91C_UDPHS_DMA_3_DMAADDRESS (AT91_CAST(AT91_REG *) 	0xFFF78334) // (UDPHS_DMA_3) UDPHS DMA Channel Address Register
 #define AT91C_UDPHS_DMA_3_DMANXTDSC (AT91_CAST(AT91_REG *) 	0xFFF78330) // (UDPHS_DMA_3) UDPHS DMA Channel Next Descriptor Address
 #define AT91C_UDPHS_DMA_3_DMACONTROL (AT91_CAST(AT91_REG *) 	0xFFF78338) // (UDPHS_DMA_3) UDPHS DMA Channel Control Register
 #define AT91C_UDPHS_DMA_3_DMASTATUS (AT91_CAST(AT91_REG *) 	0xFFF7833C) // (UDPHS_DMA_3) UDPHS DMA Channel Status Register
-// ========== Register definition for UDPHS_DMA_4 peripheral ========== 
+// ========== Register definition for UDPHS_DMA_4 peripheral ==========
 #define AT91C_UDPHS_DMA_4_DMANXTDSC (AT91_CAST(AT91_REG *) 	0xFFF78340) // (UDPHS_DMA_4) UDPHS DMA Channel Next Descriptor Address
 #define AT91C_UDPHS_DMA_4_DMAADDRESS (AT91_CAST(AT91_REG *) 	0xFFF78344) // (UDPHS_DMA_4) UDPHS DMA Channel Address Register
 #define AT91C_UDPHS_DMA_4_DMACONTROL (AT91_CAST(AT91_REG *) 	0xFFF78348) // (UDPHS_DMA_4) UDPHS DMA Channel Control Register
 #define AT91C_UDPHS_DMA_4_DMASTATUS (AT91_CAST(AT91_REG *) 	0xFFF7834C) // (UDPHS_DMA_4) UDPHS DMA Channel Status Register
-// ========== Register definition for UDPHS_DMA_5 peripheral ========== 
+// ========== Register definition for UDPHS_DMA_5 peripheral ==========
 #define AT91C_UDPHS_DMA_5_DMASTATUS (AT91_CAST(AT91_REG *) 	0xFFF7835C) // (UDPHS_DMA_5) UDPHS DMA Channel Status Register
 #define AT91C_UDPHS_DMA_5_DMACONTROL (AT91_CAST(AT91_REG *) 	0xFFF78358) // (UDPHS_DMA_5) UDPHS DMA Channel Control Register
 #define AT91C_UDPHS_DMA_5_DMANXTDSC (AT91_CAST(AT91_REG *) 	0xFFF78350) // (UDPHS_DMA_5) UDPHS DMA Channel Next Descriptor Address
 #define AT91C_UDPHS_DMA_5_DMAADDRESS (AT91_CAST(AT91_REG *) 	0xFFF78354) // (UDPHS_DMA_5) UDPHS DMA Channel Address Register
-// ========== Register definition for UDPHS_DMA_6 peripheral ========== 
+// ========== Register definition for UDPHS_DMA_6 peripheral ==========
 #define AT91C_UDPHS_DMA_6_DMANXTDSC (AT91_CAST(AT91_REG *) 	0xFFF78360) // (UDPHS_DMA_6) UDPHS DMA Channel Next Descriptor Address
 #define AT91C_UDPHS_DMA_6_DMACONTROL (AT91_CAST(AT91_REG *) 	0xFFF78368) // (UDPHS_DMA_6) UDPHS DMA Channel Control Register
 #define AT91C_UDPHS_DMA_6_DMASTATUS (AT91_CAST(AT91_REG *) 	0xFFF7836C) // (UDPHS_DMA_6) UDPHS DMA Channel Status Register
 #define AT91C_UDPHS_DMA_6_DMAADDRESS (AT91_CAST(AT91_REG *) 	0xFFF78364) // (UDPHS_DMA_6) UDPHS DMA Channel Address Register
-// ========== Register definition for UDPHS peripheral ========== 
+// ========== Register definition for UDPHS peripheral ==========
 #define AT91C_UDPHS_IEN (AT91_CAST(AT91_REG *) 	0xFFF78010) // (UDPHS) UDPHS Interrupt Enable Register
 #define AT91C_UDPHS_TSTSOFCNT (AT91_CAST(AT91_REG *) 	0xFFF780D0) // (UDPHS) UDPHS Test SOF Counter Register
 #define AT91C_UDPHS_IPFEATURES (AT91_CAST(AT91_REG *) 	0xFFF780F8) // (UDPHS) UDPHS Features Register
@@ -6431,7 +6431,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_UDPHS_CLRINT (AT91_CAST(AT91_REG *) 	0xFFF78018) // (UDPHS) UDPHS Clear Interrupt Register
 #define AT91C_UDPHS_IPVERSION (AT91_CAST(AT91_REG *) 	0xFFF780FC) // (UDPHS) UDPHS Version Register
 #define AT91C_UDPHS_CTRL (AT91_CAST(AT91_REG *) 	0xFFF78000) // (UDPHS) UDPHS Control Register
-// ========== Register definition for PDC_AC97C peripheral ========== 
+// ========== Register definition for PDC_AC97C peripheral ==========
 #define AT91C_AC97C_PTSR (AT91_CAST(AT91_REG *) 	0xFFFAC124) // (PDC_AC97C) PDC Transfer Status Register
 #define AT91C_AC97C_RPR (AT91_CAST(AT91_REG *) 	0xFFFAC100) // (PDC_AC97C) Receive Pointer Register
 #define AT91C_AC97C_RNCR (AT91_CAST(AT91_REG *) 	0xFFFAC114) // (PDC_AC97C) Receive Next Counter Register
@@ -6442,7 +6442,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_AC97C_TNPR (AT91_CAST(AT91_REG *) 	0xFFFAC118) // (PDC_AC97C) Transmit Next Pointer Register
 #define AT91C_AC97C_TCR (AT91_CAST(AT91_REG *) 	0xFFFAC10C) // (PDC_AC97C) Transmit Counter Register
 #define AT91C_AC97C_TNCR (AT91_CAST(AT91_REG *) 	0xFFFAC11C) // (PDC_AC97C) Transmit Next Counter Register
-// ========== Register definition for AC97C peripheral ========== 
+// ========== Register definition for AC97C peripheral ==========
 #define AT91C_AC97C_IER (AT91_CAST(AT91_REG *) 	0xFFFAC054) // (AC97C) Interrupt Enable Register
 #define AT91C_AC97C_COTHR (AT91_CAST(AT91_REG *) 	0xFFFAC044) // (AC97C) COdec Transmit Holding Register
 #define AT91C_AC97C_IDR (AT91_CAST(AT91_REG *) 	0xFFFAC058) // (AC97C) Interrupt Disable Register
@@ -6463,7 +6463,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_AC97C_CARHR (AT91_CAST(AT91_REG *) 	0xFFFAC020) // (AC97C) Channel A Receive Holding Register
 #define AT91C_AC97C_VERSION (AT91_CAST(AT91_REG *) 	0xFFFAC0FC) // (AC97C) Version Register
 #define AT91C_AC97C_CBMR (AT91_CAST(AT91_REG *) 	0xFFFAC03C) // (AC97C) Channel B Mode Register
-// ========== Register definition for LCDC peripheral ========== 
+// ========== Register definition for LCDC peripheral ==========
 #define AT91C_LCDC_MVAL (AT91_CAST(AT91_REG *) 	0x00500818) // (LCDC) LCD Mode Toggle Rate Value Register
 #define AT91C_LCDC_PWRCON (AT91_CAST(AT91_REG *) 	0x0050083C) // (LCDC) Power Control Register
 #define AT91C_LCDC_ISR  (AT91_CAST(AT91_REG *) 	0x00500854) // (LCDC) Interrupt Enable Register
@@ -6500,7 +6500,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_LCDC_BA2  (AT91_CAST(AT91_REG *) 	0x00500004) // (LCDC) DMA Base Address Register 2
 #define AT91C_LCDC_LCDCON2 (AT91_CAST(AT91_REG *) 	0x00500804) // (LCDC) LCD Control 2 Register
 #define AT91C_LCDC_GPR  (AT91_CAST(AT91_REG *) 	0x0050085C) // (LCDC) General Purpose Register
-// ========== Register definition for LCDC_16B_TFT peripheral ========== 
+// ========== Register definition for LCDC_16B_TFT peripheral ==========
 #define AT91C_TFT_MVAL  (AT91_CAST(AT91_REG *) 	0x00500818) // (LCDC_16B_TFT) LCD Mode Toggle Rate Value Register
 #define AT91C_TFT_PWRCON (AT91_CAST(AT91_REG *) 	0x0050083C) // (LCDC_16B_TFT) Power Control Register
 #define AT91C_TFT_ISR   (AT91_CAST(AT91_REG *) 	0x00500854) // (LCDC_16B_TFT) Interrupt Enable Register
@@ -6537,7 +6537,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TFT_BA2   (AT91_CAST(AT91_REG *) 	0x00500004) // (LCDC_16B_TFT) DMA Base Address Register 2
 #define AT91C_TFT_LCDCON2 (AT91_CAST(AT91_REG *) 	0x00500804) // (LCDC_16B_TFT) LCD Control 2 Register
 #define AT91C_TFT_GPR   (AT91_CAST(AT91_REG *) 	0x0050085C) // (LCDC_16B_TFT) General Purpose Register
-// ========== Register definition for HDMA_CH_0 peripheral ========== 
+// ========== Register definition for HDMA_CH_0 peripheral ==========
 #define AT91C_HDMA_CH_0_BDSCR (AT91_CAST(AT91_REG *) 	0xFFFFEC5C) // (HDMA_CH_0) HDMA Reserved
 #define AT91C_HDMA_CH_0_DADDR (AT91_CAST(AT91_REG *) 	0xFFFFEC40) // (HDMA_CH_0) HDMA Channel Destination Address Register
 #define AT91C_HDMA_CH_0_DPIP (AT91_CAST(AT91_REG *) 	0xFFFFEC58) // (HDMA_CH_0) HDMA Channel Destination Picture in Picture Configuration Register
@@ -6548,7 +6548,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_CH_0_CTRLA (AT91_CAST(AT91_REG *) 	0xFFFFEC48) // (HDMA_CH_0) HDMA Channel Control A Register
 #define AT91C_HDMA_CH_0_CTRLB (AT91_CAST(AT91_REG *) 	0xFFFFEC4C) // (HDMA_CH_0) HDMA Channel Control B Register
 #define AT91C_HDMA_CH_0_SADDR (AT91_CAST(AT91_REG *) 	0xFFFFEC3C) // (HDMA_CH_0) HDMA Channel Source Address Register
-// ========== Register definition for HDMA_CH_1 peripheral ========== 
+// ========== Register definition for HDMA_CH_1 peripheral ==========
 #define AT91C_HDMA_CH_1_CADDR (AT91_CAST(AT91_REG *) 	0xFFFFEC88) // (HDMA_CH_1) HDMA Reserved
 #define AT91C_HDMA_CH_1_DPIP (AT91_CAST(AT91_REG *) 	0xFFFFEC80) // (HDMA_CH_1) HDMA Channel Destination Picture in Picture Configuration Register
 #define AT91C_HDMA_CH_1_CTRLB (AT91_CAST(AT91_REG *) 	0xFFFFEC74) // (HDMA_CH_1) HDMA Channel Control B Register
@@ -6559,7 +6559,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_CH_1_DADDR (AT91_CAST(AT91_REG *) 	0xFFFFEC68) // (HDMA_CH_1) HDMA Channel Destination Address Register
 #define AT91C_HDMA_CH_1_CTRLA (AT91_CAST(AT91_REG *) 	0xFFFFEC70) // (HDMA_CH_1) HDMA Channel Control A Register
 #define AT91C_HDMA_CH_1_SPIP (AT91_CAST(AT91_REG *) 	0xFFFFEC7C) // (HDMA_CH_1) HDMA Channel Source Picture in Picture Configuration Register
-// ========== Register definition for HDMA_CH_2 peripheral ========== 
+// ========== Register definition for HDMA_CH_2 peripheral ==========
 #define AT91C_HDMA_CH_2_SADDR (AT91_CAST(AT91_REG *) 	0xFFFFEC8C) // (HDMA_CH_2) HDMA Channel Source Address Register
 #define AT91C_HDMA_CH_2_BDSCR (AT91_CAST(AT91_REG *) 	0xFFFFECAC) // (HDMA_CH_2) HDMA Reserved
 #define AT91C_HDMA_CH_2_DPIP (AT91_CAST(AT91_REG *) 	0xFFFFECA8) // (HDMA_CH_2) HDMA Channel Destination Picture in Picture Configuration Register
@@ -6570,7 +6570,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_CH_2_CADDR (AT91_CAST(AT91_REG *) 	0xFFFFECB0) // (HDMA_CH_2) HDMA Reserved
 #define AT91C_HDMA_CH_2_CFG (AT91_CAST(AT91_REG *) 	0xFFFFECA0) // (HDMA_CH_2) HDMA Channel Configuration Register
 #define AT91C_HDMA_CH_2_CTRLB (AT91_CAST(AT91_REG *) 	0xFFFFEC9C) // (HDMA_CH_2) HDMA Channel Control B Register
-// ========== Register definition for HDMA_CH_3 peripheral ========== 
+// ========== Register definition for HDMA_CH_3 peripheral ==========
 #define AT91C_HDMA_CH_3_SPIP (AT91_CAST(AT91_REG *) 	0xFFFFECCC) // (HDMA_CH_3) HDMA Channel Source Picture in Picture Configuration Register
 #define AT91C_HDMA_CH_3_CTRLA (AT91_CAST(AT91_REG *) 	0xFFFFECC0) // (HDMA_CH_3) HDMA Channel Control A Register
 #define AT91C_HDMA_CH_3_DPIP (AT91_CAST(AT91_REG *) 	0xFFFFECD0) // (HDMA_CH_3) HDMA Channel Destination Picture in Picture Configuration Register
@@ -6581,7 +6581,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_CH_3_CFG (AT91_CAST(AT91_REG *) 	0xFFFFECC8) // (HDMA_CH_3) HDMA Channel Configuration Register
 #define AT91C_HDMA_CH_3_DADDR (AT91_CAST(AT91_REG *) 	0xFFFFECB8) // (HDMA_CH_3) HDMA Channel Destination Address Register
 #define AT91C_HDMA_CH_3_SADDR (AT91_CAST(AT91_REG *) 	0xFFFFECB4) // (HDMA_CH_3) HDMA Channel Source Address Register
-// ========== Register definition for HDMA_CH_4 peripheral ========== 
+// ========== Register definition for HDMA_CH_4 peripheral ==========
 #define AT91C_HDMA_CH_4_CFG (AT91_CAST(AT91_REG *) 	0xFFFFECF0) // (HDMA_CH_4) HDMA Channel Configuration Register
 #define AT91C_HDMA_CH_4_BDSCR (AT91_CAST(AT91_REG *) 	0xFFFFECFC) // (HDMA_CH_4) HDMA Reserved
 #define AT91C_HDMA_CH_4_CADDR (AT91_CAST(AT91_REG *) 	0xFFFFED00) // (HDMA_CH_4) HDMA Reserved
@@ -6592,7 +6592,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_CH_4_DSCR (AT91_CAST(AT91_REG *) 	0xFFFFECE4) // (HDMA_CH_4) HDMA Channel Descriptor Address Register
 #define AT91C_HDMA_CH_4_SPIP (AT91_CAST(AT91_REG *) 	0xFFFFECF4) // (HDMA_CH_4) HDMA Channel Source Picture in Picture Configuration Register
 #define AT91C_HDMA_CH_4_DPIP (AT91_CAST(AT91_REG *) 	0xFFFFECF8) // (HDMA_CH_4) HDMA Channel Destination Picture in Picture Configuration Register
-// ========== Register definition for HDMA_CH_5 peripheral ========== 
+// ========== Register definition for HDMA_CH_5 peripheral ==========
 #define AT91C_HDMA_CH_5_CTRLB (AT91_CAST(AT91_REG *) 	0xFFFFED14) // (HDMA_CH_5) HDMA Channel Control B Register
 #define AT91C_HDMA_CH_5_DADDR (AT91_CAST(AT91_REG *) 	0xFFFFED08) // (HDMA_CH_5) HDMA Channel Destination Address Register
 #define AT91C_HDMA_CH_5_SPIP (AT91_CAST(AT91_REG *) 	0xFFFFED1C) // (HDMA_CH_5) HDMA Channel Source Picture in Picture Configuration Register
@@ -6603,7 +6603,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_CH_5_SADDR (AT91_CAST(AT91_REG *) 	0xFFFFED04) // (HDMA_CH_5) HDMA Channel Source Address Register
 #define AT91C_HDMA_CH_5_BDSCR (AT91_CAST(AT91_REG *) 	0xFFFFED24) // (HDMA_CH_5) HDMA Reserved
 #define AT91C_HDMA_CH_5_CTRLA (AT91_CAST(AT91_REG *) 	0xFFFFED10) // (HDMA_CH_5) HDMA Channel Control A Register
-// ========== Register definition for HDMA_CH_6 peripheral ========== 
+// ========== Register definition for HDMA_CH_6 peripheral ==========
 #define AT91C_HDMA_CH_6_SADDR (AT91_CAST(AT91_REG *) 	0xFFFFED2C) // (HDMA_CH_6) HDMA Channel Source Address Register
 #define AT91C_HDMA_CH_6_BDSCR (AT91_CAST(AT91_REG *) 	0xFFFFED4C) // (HDMA_CH_6) HDMA Reserved
 #define AT91C_HDMA_CH_6_CADDR (AT91_CAST(AT91_REG *) 	0xFFFFED50) // (HDMA_CH_6) HDMA Reserved
@@ -6614,7 +6614,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_CH_6_DPIP (AT91_CAST(AT91_REG *) 	0xFFFFED48) // (HDMA_CH_6) HDMA Channel Destination Picture in Picture Configuration Register
 #define AT91C_HDMA_CH_6_DADDR (AT91_CAST(AT91_REG *) 	0xFFFFED30) // (HDMA_CH_6) HDMA Channel Destination Address Register
 #define AT91C_HDMA_CH_6_CTRLA (AT91_CAST(AT91_REG *) 	0xFFFFED38) // (HDMA_CH_6) HDMA Channel Control A Register
-// ========== Register definition for HDMA_CH_7 peripheral ========== 
+// ========== Register definition for HDMA_CH_7 peripheral ==========
 #define AT91C_HDMA_CH_7_CADDR (AT91_CAST(AT91_REG *) 	0xFFFFED78) // (HDMA_CH_7) HDMA Reserved
 #define AT91C_HDMA_CH_7_CFG (AT91_CAST(AT91_REG *) 	0xFFFFED68) // (HDMA_CH_7) HDMA Channel Configuration Register
 #define AT91C_HDMA_CH_7_DADDR (AT91_CAST(AT91_REG *) 	0xFFFFED58) // (HDMA_CH_7) HDMA Channel Destination Address Register
@@ -6625,7 +6625,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_CH_7_BDSCR (AT91_CAST(AT91_REG *) 	0xFFFFED74) // (HDMA_CH_7) HDMA Reserved
 #define AT91C_HDMA_CH_7_SPIP (AT91_CAST(AT91_REG *) 	0xFFFFED6C) // (HDMA_CH_7) HDMA Channel Source Picture in Picture Configuration Register
 #define AT91C_HDMA_CH_7_SADDR (AT91_CAST(AT91_REG *) 	0xFFFFED54) // (HDMA_CH_7) HDMA Channel Source Address Register
-// ========== Register definition for HDMA peripheral ========== 
+// ========== Register definition for HDMA peripheral ==========
 #define AT91C_HDMA_EBCIDR (AT91_CAST(AT91_REG *) 	0xFFFFEC1C) // (HDMA) HDMA Error, Chained Buffer transfer completed and Buffer transfer completed Interrupt Disable register
 #define AT91C_HDMA_LAST (AT91_CAST(AT91_REG *) 	0xFFFFEC10) // (HDMA) HDMA Software Last Transfer Flag Register
 #define AT91C_HDMA_SREQ (AT91_CAST(AT91_REG *) 	0xFFFFEC08) // (HDMA) HDMA Software Single Request Register
@@ -6641,14 +6641,14 @@ typedef struct _AT91S_TRNG {
 #define AT91C_HDMA_EN   (AT91_CAST(AT91_REG *) 	0xFFFFEC04) // (HDMA) HDMA Controller Enable Register
 #define AT91C_HDMA_EBCISR (AT91_CAST(AT91_REG *) 	0xFFFFEC24) // (HDMA) HDMA Error, Chained Buffer transfer completed and Buffer transfer completed Status Register
 #define AT91C_HDMA_CHSR (AT91_CAST(AT91_REG *) 	0xFFFFEC30) // (HDMA) HDMA Channel Handler Status Register
-// ========== Register definition for HECC peripheral ========== 
+// ========== Register definition for HECC peripheral ==========
 #define AT91C_HECC_VR   (AT91_CAST(AT91_REG *) 	0xFFFFE2FC) // (HECC)  ECC Version register
 #define AT91C_HECC_SR   (AT91_CAST(AT91_REG *) 	0xFFFFE208) // (HECC)  ECC Status register
 #define AT91C_HECC_CR   (AT91_CAST(AT91_REG *) 	0xFFFFE200) // (HECC)  ECC reset register
 #define AT91C_HECC_NPR  (AT91_CAST(AT91_REG *) 	0xFFFFE210) // (HECC)  ECC Parity N register
 #define AT91C_HECC_PR   (AT91_CAST(AT91_REG *) 	0xFFFFE20C) // (HECC)  ECC Parity register
 #define AT91C_HECC_MR   (AT91_CAST(AT91_REG *) 	0xFFFFE204) // (HECC)  ECC Page size register
-// ========== Register definition for EMACB peripheral ========== 
+// ========== Register definition for EMACB peripheral ==========
 #define AT91C_EMACB_ALE (AT91_CAST(AT91_REG *) 	0xFFFBC054) // (EMACB) Alignment Error Register
 #define AT91C_EMACB_RRE (AT91_CAST(AT91_REG *) 	0xFFFBC06C) // (EMACB) Receive Ressource Error Register
 #define AT91C_EMACB_SA4H (AT91_CAST(AT91_REG *) 	0xFFFBC0B4) // (EMACB) Specific Address 4 Top, Last 2 bytes
@@ -6698,7 +6698,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_EMACB_NSR (AT91_CAST(AT91_REG *) 	0xFFFBC008) // (EMACB) Network Status Register
 #define AT91C_EMACB_RBQP (AT91_CAST(AT91_REG *) 	0xFFFBC018) // (EMACB) Receive Buffer Queue Pointer
 #define AT91C_EMACB_REV (AT91_CAST(AT91_REG *) 	0xFFFBC0FC) // (EMACB) Revision Register
-// ========== Register definition for ISI peripheral ========== 
+// ========== Register definition for ISI peripheral ==========
 #define AT91C_ISI_DMACHDR (AT91_CAST(AT91_REG *) 	0xFFFB403C) // (ISI) DMA Channel Disable Register
 #define AT91C_ISI_IMR   (AT91_CAST(AT91_REG *) 	0xFFFB4034) // (ISI) Interrupt Mask Register
 #define AT91C_ISI_R2YSET1 (AT91_CAST(AT91_REG *) 	0xFFFB401C) // (ISI) Color Space Conversion RGB to YCrCb Register
@@ -6725,11 +6725,11 @@ typedef struct _AT91S_TRNG {
 #define AT91C_ISI_DMAPDSCR (AT91_CAST(AT91_REG *) 	0xFFFB404C) // (ISI) DMA Preview Descriptor Address Register
 #define AT91C_ISI_DMAPADDR (AT91_CAST(AT91_REG *) 	0xFFFB4044) // (ISI) DMA Preview Base Address Register
 #define AT91C_ISI_DMAPCTRL (AT91_CAST(AT91_REG *) 	0xFFFB4048) // (ISI) DMA Preview Control Register
-// ========== Register definition for VDEC peripheral ========== 
+// ========== Register definition for VDEC peripheral ==========
 #define AT91C_VDEC_DCR  (AT91_CAST(AT91_REG *) 	0x00900008) // (VDEC) Device Configuration Register
 #define AT91C_VDEC_IDR  (AT91_CAST(AT91_REG *) 	0x00900000) // (VDEC) ID Register
 #define AT91C_VDEC_ISR  (AT91_CAST(AT91_REG *) 	0x00900004) // (VDEC) Interrupt Status Register
-// ========== Register definition for UHPHS_OHCI peripheral ========== 
+// ========== Register definition for UHPHS_OHCI peripheral ==========
 #define AT91C_OHCI_HcRhPortStatus (AT91_CAST(AT91_REG *) 	0x00700054) // (UHPHS_OHCI) Root Hub Port Status Register
 #define AT91C_OHCI_HcFmRemaining (AT91_CAST(AT91_REG *) 	0x00700038) // (UHPHS_OHCI) Bit time remaining in the current Frame
 #define AT91C_OHCI_HcInterruptEnable (AT91_CAST(AT91_REG *) 	0x00700010) // (UHPHS_OHCI) Interrupt Enable Register
@@ -6752,27 +6752,27 @@ typedef struct _AT91S_TRNG {
 #define AT91C_OHCI_HcHCCA (AT91_CAST(AT91_REG *) 	0x00700018) // (UHPHS_OHCI) Pointer to the Host Controller Communication Area
 #define AT91C_OHCI_HcCommandStatus (AT91_CAST(AT91_REG *) 	0x00700008) // (UHPHS_OHCI) Command & status Register
 #define AT91C_OHCI_HcControlCurrentED (AT91_CAST(AT91_REG *) 	0x00700024) // (UHPHS_OHCI) Endpoint Control and Status Register
-// ========== Register definition for UHPHS_EHCI peripheral ========== 
-#define AT91C_EHCI_USBSTS (AT91_CAST(AT91_REG *) 	0x00800014) // (UHPHS_EHCI) 
-#define AT91C_EHCI_INSNREG03 (AT91_CAST(AT91_REG *) 	0x0080009C) // (UHPHS_EHCI) 
-#define AT91C_EHCI_INSNREG00 (AT91_CAST(AT91_REG *) 	0x00800090) // (UHPHS_EHCI) 
-#define AT91C_EHCI_HCSPPORTROUTE (AT91_CAST(AT91_REG *) 	0x0080000C) // (UHPHS_EHCI) 
-#define AT91C_EHCI_FRINDEX (AT91_CAST(AT91_REG *) 	0x0080001C) // (UHPHS_EHCI) 
-#define AT91C_EHCI_CONFIGFLAG (AT91_CAST(AT91_REG *) 	0x00800050) // (UHPHS_EHCI) 
-#define AT91C_EHCI_HCCPARAMS (AT91_CAST(AT91_REG *) 	0x00800008) // (UHPHS_EHCI) 
-#define AT91C_EHCI_USBINTR (AT91_CAST(AT91_REG *) 	0x00800018) // (UHPHS_EHCI) 
-#define AT91C_EHCI_PORTSC (AT91_CAST(AT91_REG *) 	0x00800054) // (UHPHS_EHCI) 
-#define AT91C_EHCI_CTRLDSSEGMENT (AT91_CAST(AT91_REG *) 	0x00800020) // (UHPHS_EHCI) 
-#define AT91C_EHCI_VERSION (AT91_CAST(AT91_REG *) 	0x00800000) // (UHPHS_EHCI) 
-#define AT91C_EHCI_USBCMD (AT91_CAST(AT91_REG *) 	0x00800010) // (UHPHS_EHCI) 
-#define AT91C_EHCI_INSNREG04 (AT91_CAST(AT91_REG *) 	0x008000A0) // (UHPHS_EHCI) 
-#define AT91C_EHCI_PERIODICLISTBASE (AT91_CAST(AT91_REG *) 	0x00800024) // (UHPHS_EHCI) 
-#define AT91C_EHCI_INSNREG01 (AT91_CAST(AT91_REG *) 	0x00800094) // (UHPHS_EHCI) 
-#define AT91C_EHCI_HCSPARAMS (AT91_CAST(AT91_REG *) 	0x00800004) // (UHPHS_EHCI) 
-#define AT91C_EHCI_INSNREG05 (AT91_CAST(AT91_REG *) 	0x008000A4) // (UHPHS_EHCI) 
-#define AT91C_EHCI_ASYNCLISTADDR (AT91_CAST(AT91_REG *) 	0x00800028) // (UHPHS_EHCI) 
-#define AT91C_EHCI_INSNREG02 (AT91_CAST(AT91_REG *) 	0x00800098) // (UHPHS_EHCI) 
-// ========== Register definition for AES peripheral ========== 
+// ========== Register definition for UHPHS_EHCI peripheral ==========
+#define AT91C_EHCI_USBSTS (AT91_CAST(AT91_REG *) 	0x00800014) // (UHPHS_EHCI)
+#define AT91C_EHCI_INSNREG03 (AT91_CAST(AT91_REG *) 	0x0080009C) // (UHPHS_EHCI)
+#define AT91C_EHCI_INSNREG00 (AT91_CAST(AT91_REG *) 	0x00800090) // (UHPHS_EHCI)
+#define AT91C_EHCI_HCSPPORTROUTE (AT91_CAST(AT91_REG *) 	0x0080000C) // (UHPHS_EHCI)
+#define AT91C_EHCI_FRINDEX (AT91_CAST(AT91_REG *) 	0x0080001C) // (UHPHS_EHCI)
+#define AT91C_EHCI_CONFIGFLAG (AT91_CAST(AT91_REG *) 	0x00800050) // (UHPHS_EHCI)
+#define AT91C_EHCI_HCCPARAMS (AT91_CAST(AT91_REG *) 	0x00800008) // (UHPHS_EHCI)
+#define AT91C_EHCI_USBINTR (AT91_CAST(AT91_REG *) 	0x00800018) // (UHPHS_EHCI)
+#define AT91C_EHCI_PORTSC (AT91_CAST(AT91_REG *) 	0x00800054) // (UHPHS_EHCI)
+#define AT91C_EHCI_CTRLDSSEGMENT (AT91_CAST(AT91_REG *) 	0x00800020) // (UHPHS_EHCI)
+#define AT91C_EHCI_VERSION (AT91_CAST(AT91_REG *) 	0x00800000) // (UHPHS_EHCI)
+#define AT91C_EHCI_USBCMD (AT91_CAST(AT91_REG *) 	0x00800010) // (UHPHS_EHCI)
+#define AT91C_EHCI_INSNREG04 (AT91_CAST(AT91_REG *) 	0x008000A0) // (UHPHS_EHCI)
+#define AT91C_EHCI_PERIODICLISTBASE (AT91_CAST(AT91_REG *) 	0x00800024) // (UHPHS_EHCI)
+#define AT91C_EHCI_INSNREG01 (AT91_CAST(AT91_REG *) 	0x00800094) // (UHPHS_EHCI)
+#define AT91C_EHCI_HCSPARAMS (AT91_CAST(AT91_REG *) 	0x00800004) // (UHPHS_EHCI)
+#define AT91C_EHCI_INSNREG05 (AT91_CAST(AT91_REG *) 	0x008000A4) // (UHPHS_EHCI)
+#define AT91C_EHCI_ASYNCLISTADDR (AT91_CAST(AT91_REG *) 	0x00800028) // (UHPHS_EHCI)
+#define AT91C_EHCI_INSNREG02 (AT91_CAST(AT91_REG *) 	0x00800098) // (UHPHS_EHCI)
+// ========== Register definition for AES peripheral ==========
 #define AT91C_AES_IVxR  (AT91_CAST(AT91_REG *) 	0xFFFC0060) // (AES) Initialization Vector x Register
 #define AT91C_AES_KEYWxR (AT91_CAST(AT91_REG *) 	0xFFFC0020) // (AES) Key Word x Register
 #define AT91C_AES_CR    (AT91_CAST(AT91_REG *) 	0xFFFC0000) // (AES) Control Register
@@ -6784,7 +6784,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_AES_ODATAxR (AT91_CAST(AT91_REG *) 	0xFFFC0050) // (AES) Output Data x Register
 #define AT91C_AES_ISR   (AT91_CAST(AT91_REG *) 	0xFFFC001C) // (AES) Interrupt Status Register
 #define AT91C_AES_VR    (AT91_CAST(AT91_REG *) 	0xFFFC00FC) // (AES) AES Version Register
-// ========== Register definition for TDES peripheral ========== 
+// ========== Register definition for TDES peripheral ==========
 #define AT91C_TDES_IDR  (AT91_CAST(AT91_REG *) 	0xFFFC4014) // (TDES) Interrupt Disable Register
 #define AT91C_TDES_ISR  (AT91_CAST(AT91_REG *) 	0xFFFC401C) // (TDES) Interrupt Status Register
 #define AT91C_TDES_KEY2WxR (AT91_CAST(AT91_REG *) 	0xFFFC4028) // (TDES) Key 2 Word x Register
@@ -6798,7 +6798,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TDES_CR   (AT91_CAST(AT91_REG *) 	0xFFFC4000) // (TDES) Control Register
 #define AT91C_TDES_MR   (AT91_CAST(AT91_REG *) 	0xFFFC4004) // (TDES) Mode Register
 #define AT91C_TDES_ODATAxR (AT91_CAST(AT91_REG *) 	0xFFFC4050) // (TDES) Output Data x Register
-// ========== Register definition for PDC_TDES peripheral ========== 
+// ========== Register definition for PDC_TDES peripheral ==========
 #define AT91C_TDES_RNCR (AT91_CAST(AT91_REG *) 	0xFFFC4114) // (PDC_TDES) Receive Next Counter Register
 #define AT91C_TDES_PTCR (AT91_CAST(AT91_REG *) 	0xFFFC4120) // (PDC_TDES) PDC Transfer Control Register
 #define AT91C_TDES_TCR  (AT91_CAST(AT91_REG *) 	0xFFFC410C) // (PDC_TDES) Transmit Counter Register
@@ -6809,7 +6809,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_TDES_RPR  (AT91_CAST(AT91_REG *) 	0xFFFC4100) // (PDC_TDES) Receive Pointer Register
 #define AT91C_TDES_TNCR (AT91_CAST(AT91_REG *) 	0xFFFC411C) // (PDC_TDES) Transmit Next Counter Register
 #define AT91C_TDES_TPR  (AT91_CAST(AT91_REG *) 	0xFFFC4108) // (PDC_TDES) Transmit Pointer Register
-// ========== Register definition for SHA peripheral ========== 
+// ========== Register definition for SHA peripheral ==========
 #define AT91C_SHA_IMR   (AT91_CAST(AT91_REG *) 	0xFFFC8018) // (SHA) Interrupt Mask Register
 #define AT91C_SHA_IER   (AT91_CAST(AT91_REG *) 	0xFFFC8010) // (SHA) Interrupt Enable Register
 #define AT91C_SHA_VR    (AT91_CAST(AT91_REG *) 	0xFFFC80FC) // (SHA) SHA Version Register
@@ -6819,7 +6819,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SHA_ISR   (AT91_CAST(AT91_REG *) 	0xFFFC801C) // (SHA) Interrupt Status Register
 #define AT91C_SHA_IDATAxR (AT91_CAST(AT91_REG *) 	0xFFFC8040) // (SHA) Input Data x Register
 #define AT91C_SHA_ODATAxR (AT91_CAST(AT91_REG *) 	0xFFFC8080) // (SHA) Output Data x Register
-// ========== Register definition for PDC_SHA peripheral ========== 
+// ========== Register definition for PDC_SHA peripheral ==========
 #define AT91C_SHA_PTCR  (AT91_CAST(AT91_REG *) 	0xFFFC8120) // (PDC_SHA) PDC Transfer Control Register
 #define AT91C_SHA_TCR   (AT91_CAST(AT91_REG *) 	0xFFFC810C) // (PDC_SHA) Transmit Counter Register
 #define AT91C_SHA_RPR   (AT91_CAST(AT91_REG *) 	0xFFFC8100) // (PDC_SHA) Receive Pointer Register
@@ -6830,7 +6830,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_SHA_RCR   (AT91_CAST(AT91_REG *) 	0xFFFC8104) // (PDC_SHA) Receive Counter Register
 #define AT91C_SHA_RNPR  (AT91_CAST(AT91_REG *) 	0xFFFC8110) // (PDC_SHA) Receive Next Pointer Register
 #define AT91C_SHA_TNCR  (AT91_CAST(AT91_REG *) 	0xFFFC811C) // (PDC_SHA) Transmit Next Counter Register
-// ========== Register definition for TRNG peripheral ========== 
+// ========== Register definition for TRNG peripheral ==========
 #define AT91C_TRNG_IDR  (AT91_CAST(AT91_REG *) 	0xFFFCC014) // (TRNG) Interrupt Disable Register
 #define AT91C_TRNG_IER  (AT91_CAST(AT91_REG *) 	0xFFFCC010) // (TRNG) Interrupt Enable Register
 #define AT91C_TRNG_VERSION (AT91_CAST(AT91_REG *) 	0xFFFCC0FC) // (TRNG) TRNG Version Register
@@ -6843,11 +6843,11 @@ typedef struct _AT91S_TRNG {
 //               PIO DEFINITIONS FOR AT91SAM9M10
 // *****************************************************************************
 #define AT91C_PIO_PA0        (1 <<  0) // Pin Controlled by PA0
-#define AT91C_PA0_MCI0_CK  (AT91C_PIO_PA0) //  
-#define AT91C_PA0_TCLK3    (AT91C_PIO_PA0) //  
+#define AT91C_PA0_MCI0_CK  (AT91C_PIO_PA0) //
+#define AT91C_PA0_TCLK3    (AT91C_PIO_PA0) //
 #define AT91C_PIO_PA1        (1 <<  1) // Pin Controlled by PA1
-#define AT91C_PA1_MCI0_CDA (AT91C_PIO_PA1) //  
-#define AT91C_PA1_TIOA3    (AT91C_PIO_PA1) //  
+#define AT91C_PA1_MCI0_CDA (AT91C_PIO_PA1) //
+#define AT91C_PA1_TIOA3    (AT91C_PIO_PA1) //
 #define AT91C_PIO_PA10       (1 << 10) // Pin Controlled by PA10
 #define AT91C_PA10_ETX0     (AT91C_PIO_PA10) //  Ethernet MAC Transmit Data 0
 #define AT91C_PIO_PA11       (1 << 11) // Pin Controlled by PA11
@@ -6869,123 +6869,123 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PIO_PA19       (1 << 19) // Pin Controlled by PA19
 #define AT91C_PA19_EMDIO    (AT91C_PIO_PA19) //  Ethernet MAC Management Data Input/Output
 #define AT91C_PIO_PA2        (1 <<  2) // Pin Controlled by PA2
-#define AT91C_PA2_MCI0_DA0 (AT91C_PIO_PA2) //  
-#define AT91C_PA2_TIOB3    (AT91C_PIO_PA2) //  
+#define AT91C_PA2_MCI0_DA0 (AT91C_PIO_PA2) //
+#define AT91C_PA2_TIOB3    (AT91C_PIO_PA2) //
 #define AT91C_PIO_PA20       (1 << 20) // Pin Controlled by PA20
 #define AT91C_PA20_TWD0     (AT91C_PIO_PA20) //  TWI Two-wire Serial Data
 #define AT91C_PIO_PA21       (1 << 21) // Pin Controlled by PA21
 #define AT91C_PA21_TWCK0    (AT91C_PIO_PA21) //  TWI Two-wire Serial Clock
 #define AT91C_PIO_PA22       (1 << 22) // Pin Controlled by PA22
-#define AT91C_PA22_MCI1_CDA (AT91C_PIO_PA22) //  
-#define AT91C_PA22_SCK3     (AT91C_PIO_PA22) //  
+#define AT91C_PA22_MCI1_CDA (AT91C_PIO_PA22) //
+#define AT91C_PA22_SCK3     (AT91C_PIO_PA22) //
 #define AT91C_PIO_PA23       (1 << 23) // Pin Controlled by PA23
-#define AT91C_PA23_MCI1_DA0 (AT91C_PIO_PA23) //  
-#define AT91C_PA23_RTS3     (AT91C_PIO_PA23) //  
+#define AT91C_PA23_MCI1_DA0 (AT91C_PIO_PA23) //
+#define AT91C_PA23_RTS3     (AT91C_PIO_PA23) //
 #define AT91C_PIO_PA24       (1 << 24) // Pin Controlled by PA24
-#define AT91C_PA24_MCI1_DA1 (AT91C_PIO_PA24) //  
-#define AT91C_PA24_CTS3     (AT91C_PIO_PA24) //  
+#define AT91C_PA24_MCI1_DA1 (AT91C_PIO_PA24) //
+#define AT91C_PA24_CTS3     (AT91C_PIO_PA24) //
 #define AT91C_PIO_PA25       (1 << 25) // Pin Controlled by PA25
-#define AT91C_PA25_MCI1_DA2 (AT91C_PIO_PA25) //  
-#define AT91C_PA25_PWM3     (AT91C_PIO_PA25) //  
+#define AT91C_PA25_MCI1_DA2 (AT91C_PIO_PA25) //
+#define AT91C_PA25_PWM3     (AT91C_PIO_PA25) //
 #define AT91C_PIO_PA26       (1 << 26) // Pin Controlled by PA26
-#define AT91C_PA26_MCI1_DA3 (AT91C_PIO_PA26) //  
-#define AT91C_PA26_TIOB2    (AT91C_PIO_PA26) //  
+#define AT91C_PA26_MCI1_DA3 (AT91C_PIO_PA26) //
+#define AT91C_PA26_TIOB2    (AT91C_PIO_PA26) //
 #define AT91C_PIO_PA27       (1 << 27) // Pin Controlled by PA27
-#define AT91C_PA27_MCI1_DA4 (AT91C_PIO_PA27) //  
+#define AT91C_PA27_MCI1_DA4 (AT91C_PIO_PA27) //
 #define AT91C_PA27_ETXER    (AT91C_PIO_PA27) //  Ethernet MAC Transmikt Coding Error
 #define AT91C_PIO_PA28       (1 << 28) // Pin Controlled by PA28
-#define AT91C_PA28_MCI1_DA5 (AT91C_PIO_PA28) //  
+#define AT91C_PA28_MCI1_DA5 (AT91C_PIO_PA28) //
 #define AT91C_PA28_ERXCK    (AT91C_PIO_PA28) //  Ethernet MAC Receive Clock
 #define AT91C_PIO_PA29       (1 << 29) // Pin Controlled by PA29
-#define AT91C_PA29_MCI1_DA6 (AT91C_PIO_PA29) //  
+#define AT91C_PA29_MCI1_DA6 (AT91C_PIO_PA29) //
 #define AT91C_PA29_ECRS     (AT91C_PIO_PA29) //  Ethernet MAC Carrier Sense/Carrier Sense and Data Valid
 #define AT91C_PIO_PA3        (1 <<  3) // Pin Controlled by PA3
-#define AT91C_PA3_MCI0_DA1 (AT91C_PIO_PA3) //  
-#define AT91C_PA3_TCLK4    (AT91C_PIO_PA3) //  
+#define AT91C_PA3_MCI0_DA1 (AT91C_PIO_PA3) //
+#define AT91C_PA3_TCLK4    (AT91C_PIO_PA3) //
 #define AT91C_PIO_PA30       (1 << 30) // Pin Controlled by PA30
-#define AT91C_PA30_MCI1_DA7 (AT91C_PIO_PA30) //  
+#define AT91C_PA30_MCI1_DA7 (AT91C_PIO_PA30) //
 #define AT91C_PA30_ECOL     (AT91C_PIO_PA30) //  Ethernet MAC Collision Detected
 #define AT91C_PIO_PA31       (1 << 31) // Pin Controlled by PA31
-#define AT91C_PA31_MCI1_CK  (AT91C_PIO_PA31) //  
-#define AT91C_PA31_PCK0     (AT91C_PIO_PA31) //  
+#define AT91C_PA31_MCI1_CK  (AT91C_PIO_PA31) //
+#define AT91C_PA31_PCK0     (AT91C_PIO_PA31) //
 #define AT91C_PIO_PA4        (1 <<  4) // Pin Controlled by PA4
-#define AT91C_PA4_MCI0_DA2 (AT91C_PIO_PA4) //  
-#define AT91C_PA4_TIOA4    (AT91C_PIO_PA4) //  
+#define AT91C_PA4_MCI0_DA2 (AT91C_PIO_PA4) //
+#define AT91C_PA4_TIOA4    (AT91C_PIO_PA4) //
 #define AT91C_PIO_PA5        (1 <<  5) // Pin Controlled by PA5
-#define AT91C_PA5_MCI0_DA3 (AT91C_PIO_PA5) //  
-#define AT91C_PA5_TIOB4    (AT91C_PIO_PA5) //  
+#define AT91C_PA5_MCI0_DA3 (AT91C_PIO_PA5) //
+#define AT91C_PA5_TIOB4    (AT91C_PIO_PA5) //
 #define AT91C_PIO_PA6        (1 <<  6) // Pin Controlled by PA6
-#define AT91C_PA6_MCI0_DA4 (AT91C_PIO_PA6) //  
+#define AT91C_PA6_MCI0_DA4 (AT91C_PIO_PA6) //
 #define AT91C_PA6_ETX2     (AT91C_PIO_PA6) //  Ethernet MAC Transmit Data 2
 #define AT91C_PIO_PA7        (1 <<  7) // Pin Controlled by PA7
-#define AT91C_PA7_MCI0_DA5 (AT91C_PIO_PA7) //  
+#define AT91C_PA7_MCI0_DA5 (AT91C_PIO_PA7) //
 #define AT91C_PA7_ETX3     (AT91C_PIO_PA7) //  Ethernet MAC Transmit Data 3
 #define AT91C_PIO_PA8        (1 <<  8) // Pin Controlled by PA8
-#define AT91C_PA8_MCI0_DA6 (AT91C_PIO_PA8) //  
+#define AT91C_PA8_MCI0_DA6 (AT91C_PIO_PA8) //
 #define AT91C_PA8_ERX2     (AT91C_PIO_PA8) //  Ethernet MAC Receive Data 2
 #define AT91C_PIO_PA9        (1 <<  9) // Pin Controlled by PA9
-#define AT91C_PA9_MCI0_DA7 (AT91C_PIO_PA9) //  
+#define AT91C_PA9_MCI0_DA7 (AT91C_PIO_PA9) //
 #define AT91C_PA9_ERX3     (AT91C_PIO_PA9) //  Ethernet MAC Receive Data 3
 #define AT91C_PIO_PB0        (1 <<  0) // Pin Controlled by PB0
 #define AT91C_PB0_SPI0_MISO (AT91C_PIO_PB0) //  SPI 0 Master In Slave
 #define AT91C_PIO_PB1        (1 <<  1) // Pin Controlled by PB1
 #define AT91C_PB1_SPI0_MOSI (AT91C_PIO_PB1) //  SPI 0 Master Out Slave
 #define AT91C_PIO_PB10       (1 << 10) // Pin Controlled by PB10
-#define AT91C_PB10_TWD1     (AT91C_PIO_PB10) //  
-#define AT91C_PB10_ISI_D10  (AT91C_PIO_PB10) //  
+#define AT91C_PB10_TWD1     (AT91C_PIO_PB10) //
+#define AT91C_PB10_ISI_D10  (AT91C_PIO_PB10) //
 #define AT91C_PIO_PB11       (1 << 11) // Pin Controlled by PB11
-#define AT91C_PB11_TWCK1    (AT91C_PIO_PB11) //  
-#define AT91C_PB11_ISI_D11  (AT91C_PIO_PB11) //  
+#define AT91C_PB11_TWCK1    (AT91C_PIO_PB11) //
+#define AT91C_PB11_ISI_D11  (AT91C_PIO_PB11) //
 #define AT91C_PIO_PB12       (1 << 12) // Pin Controlled by PB12
-#define AT91C_PB12_DRXD     (AT91C_PIO_PB12) //  
+#define AT91C_PB12_DRXD     (AT91C_PIO_PB12) //
 #define AT91C_PIO_PB13       (1 << 13) // Pin Controlled by PB13
-#define AT91C_PB13_DTXD     (AT91C_PIO_PB13) //  
+#define AT91C_PB13_DTXD     (AT91C_PIO_PB13) //
 #define AT91C_PIO_PB14       (1 << 14) // Pin Controlled by PB14
-#define AT91C_PB14_SPI1_MISO (AT91C_PIO_PB14) //  
+#define AT91C_PB14_SPI1_MISO (AT91C_PIO_PB14) //
 #define AT91C_PIO_PB15       (1 << 15) // Pin Controlled by PB15
-#define AT91C_PB15_SPI1_MOSI (AT91C_PIO_PB15) //  
-#define AT91C_PB15_CTS0     (AT91C_PIO_PB15) //  
+#define AT91C_PB15_SPI1_MOSI (AT91C_PIO_PB15) //
+#define AT91C_PB15_CTS0     (AT91C_PIO_PB15) //
 #define AT91C_PIO_PB16       (1 << 16) // Pin Controlled by PB16
-#define AT91C_PB16_SPI1_SPCK (AT91C_PIO_PB16) //  
-#define AT91C_PB16_SCK0     (AT91C_PIO_PB16) //  
+#define AT91C_PB16_SPI1_SPCK (AT91C_PIO_PB16) //
+#define AT91C_PB16_SCK0     (AT91C_PIO_PB16) //
 #define AT91C_PIO_PB17       (1 << 17) // Pin Controlled by PB17
-#define AT91C_PB17_SPI1_NPCS0 (AT91C_PIO_PB17) //  
-#define AT91C_PB17_RTS0     (AT91C_PIO_PB17) //  
+#define AT91C_PB17_SPI1_NPCS0 (AT91C_PIO_PB17) //
+#define AT91C_PB17_RTS0     (AT91C_PIO_PB17) //
 #define AT91C_PIO_PB18       (1 << 18) // Pin Controlled by PB18
-#define AT91C_PB18_RXD0     (AT91C_PIO_PB18) //  
-#define AT91C_PB18_SPI0_NPCS1 (AT91C_PIO_PB18) //  
+#define AT91C_PB18_RXD0     (AT91C_PIO_PB18) //
+#define AT91C_PB18_SPI0_NPCS1 (AT91C_PIO_PB18) //
 #define AT91C_PIO_PB19       (1 << 19) // Pin Controlled by PB19
-#define AT91C_PB19_TXD0     (AT91C_PIO_PB19) //  
-#define AT91C_PB19_SPI0_NPCS2 (AT91C_PIO_PB19) //  
+#define AT91C_PB19_TXD0     (AT91C_PIO_PB19) //
+#define AT91C_PB19_SPI0_NPCS2 (AT91C_PIO_PB19) //
 #define AT91C_PIO_PB2        (1 <<  2) // Pin Controlled by PB2
 #define AT91C_PB2_SPI0_SPCK (AT91C_PIO_PB2) //  SPI 0 Serial Clock
 #define AT91C_PIO_PB20       (1 << 20) // Pin Controlled by PB20
-#define AT91C_PB20_ISI_D0   (AT91C_PIO_PB20) //  
+#define AT91C_PB20_ISI_D0   (AT91C_PIO_PB20) //
 #define AT91C_PIO_PB21       (1 << 21) // Pin Controlled by PB21
-#define AT91C_PB21_ISI_D1   (AT91C_PIO_PB21) //  
+#define AT91C_PB21_ISI_D1   (AT91C_PIO_PB21) //
 #define AT91C_PIO_PB22       (1 << 22) // Pin Controlled by PB22
-#define AT91C_PB22_ISI_D2   (AT91C_PIO_PB22) //  
+#define AT91C_PB22_ISI_D2   (AT91C_PIO_PB22) //
 #define AT91C_PIO_PB23       (1 << 23) // Pin Controlled by PB23
-#define AT91C_PB23_ISI_D3   (AT91C_PIO_PB23) //  
+#define AT91C_PB23_ISI_D3   (AT91C_PIO_PB23) //
 #define AT91C_PIO_PB24       (1 << 24) // Pin Controlled by PB24
-#define AT91C_PB24_ISI_D4   (AT91C_PIO_PB24) //  
+#define AT91C_PB24_ISI_D4   (AT91C_PIO_PB24) //
 #define AT91C_PIO_PB25       (1 << 25) // Pin Controlled by PB25
-#define AT91C_PB25_ISI_D5   (AT91C_PIO_PB25) //  
+#define AT91C_PB25_ISI_D5   (AT91C_PIO_PB25) //
 #define AT91C_PIO_PB26       (1 << 26) // Pin Controlled by PB26
-#define AT91C_PB26_ISI_D6   (AT91C_PIO_PB26) //  
+#define AT91C_PB26_ISI_D6   (AT91C_PIO_PB26) //
 #define AT91C_PIO_PB27       (1 << 27) // Pin Controlled by PB27
-#define AT91C_PB27_ISI_D7   (AT91C_PIO_PB27) //  
+#define AT91C_PB27_ISI_D7   (AT91C_PIO_PB27) //
 #define AT91C_PIO_PB28       (1 << 28) // Pin Controlled by PB28
-#define AT91C_PB28_ISI_PCK  (AT91C_PIO_PB28) //  
+#define AT91C_PB28_ISI_PCK  (AT91C_PIO_PB28) //
 #define AT91C_PIO_PB29       (1 << 29) // Pin Controlled by PB29
-#define AT91C_PB29_ISI_VSYNC (AT91C_PIO_PB29) //  
+#define AT91C_PB29_ISI_VSYNC (AT91C_PIO_PB29) //
 #define AT91C_PIO_PB3        (1 <<  3) // Pin Controlled by PB3
 #define AT91C_PB3_SPI0_NPCS0 (AT91C_PIO_PB3) //  SPI 0 Peripheral Chip Select 0
 #define AT91C_PIO_PB30       (1 << 30) // Pin Controlled by PB30
-#define AT91C_PB30_ISI_HSYNC (AT91C_PIO_PB30) //  
+#define AT91C_PB30_ISI_HSYNC (AT91C_PIO_PB30) //
 #define AT91C_PIO_PB31       (1 << 31) // Pin Controlled by PB31
-#define AT91C_PB31_         (AT91C_PIO_PB31) //  
-#define AT91C_PB31_PCK1     (AT91C_PIO_PB31) //  
+#define AT91C_PB31_         (AT91C_PIO_PB31) //
+#define AT91C_PB31_PCK1     (AT91C_PIO_PB31) //
 #define AT91C_PIO_PB4        (1 <<  4) // Pin Controlled by PB4
 #define AT91C_PB4_TXD1     (AT91C_PIO_PB4) //  USART 1 Transmit Data
 #define AT91C_PIO_PB5        (1 <<  5) // Pin Controlled by PB5
@@ -6996,240 +6996,240 @@ typedef struct _AT91S_TRNG {
 #define AT91C_PB7_RXD2     (AT91C_PIO_PB7) //  USART 2 Receive Data
 #define AT91C_PIO_PB8        (1 <<  8) // Pin Controlled by PB8
 #define AT91C_PB8_TXD3     (AT91C_PIO_PB8) //  USART 3 Transmit Data
-#define AT91C_PB8_ISI_D8   (AT91C_PIO_PB8) //  
+#define AT91C_PB8_ISI_D8   (AT91C_PIO_PB8) //
 #define AT91C_PIO_PB9        (1 <<  9) // Pin Controlled by PB9
 #define AT91C_PB9_RXD3     (AT91C_PIO_PB9) //  USART 3 Receive Data
-#define AT91C_PB9_ISI_D9   (AT91C_PIO_PB9) //  
+#define AT91C_PB9_ISI_D9   (AT91C_PIO_PB9) //
 #define AT91C_PIO_PC0        (1 <<  0) // Pin Controlled by PC0
 #define AT91C_PC0_DQM2     (AT91C_PIO_PC0) //  DQM2
 #define AT91C_PIO_PC1        (1 <<  1) // Pin Controlled by PC1
 #define AT91C_PC1_DQM3     (AT91C_PIO_PC1) //  DQM3
 #define AT91C_PIO_PC10       (1 << 10) // Pin Controlled by PC10
-#define AT91C_PC10_NCS4_CFCS0 (AT91C_PIO_PC10) //  
-#define AT91C_PC10_TCLK2    (AT91C_PIO_PC10) //  
+#define AT91C_PC10_NCS4_CFCS0 (AT91C_PIO_PC10) //
+#define AT91C_PC10_TCLK2    (AT91C_PIO_PC10) //
 #define AT91C_PIO_PC11       (1 << 11) // Pin Controlled by PC11
-#define AT91C_PC11_NCS5_CFCS1 (AT91C_PIO_PC11) //  
-#define AT91C_PC11_CTS2     (AT91C_PIO_PC11) //  
+#define AT91C_PC11_NCS5_CFCS1 (AT91C_PIO_PC11) //
+#define AT91C_PC11_CTS2     (AT91C_PIO_PC11) //
 #define AT91C_PIO_PC12       (1 << 12) // Pin Controlled by PC12
-#define AT91C_PC12_A25_CFRNW (AT91C_PIO_PC12) //  
+#define AT91C_PC12_A25_CFRNW (AT91C_PIO_PC12) //
 #define AT91C_PIO_PC13       (1 << 13) // Pin Controlled by PC13
-#define AT91C_PC13_NCS2     (AT91C_PIO_PC13) //  
+#define AT91C_PC13_NCS2     (AT91C_PIO_PC13) //
 #define AT91C_PIO_PC14       (1 << 14) // Pin Controlled by PC14
-#define AT91C_PC14_NCS3_NANDCS (AT91C_PIO_PC14) //  
+#define AT91C_PC14_NCS3_NANDCS (AT91C_PIO_PC14) //
 #define AT91C_PIO_PC15       (1 << 15) // Pin Controlled by PC15
-#define AT91C_PC15_NWAIT    (AT91C_PIO_PC15) //  
+#define AT91C_PC15_NWAIT    (AT91C_PIO_PC15) //
 #define AT91C_PIO_PC16       (1 << 16) // Pin Controlled by PC16
-#define AT91C_PC16_D16      (AT91C_PIO_PC16) //  
+#define AT91C_PC16_D16      (AT91C_PIO_PC16) //
 #define AT91C_PIO_PC17       (1 << 17) // Pin Controlled by PC17
-#define AT91C_PC17_D17      (AT91C_PIO_PC17) //  
+#define AT91C_PC17_D17      (AT91C_PIO_PC17) //
 #define AT91C_PIO_PC18       (1 << 18) // Pin Controlled by PC18
-#define AT91C_PC18_D18      (AT91C_PIO_PC18) //  
+#define AT91C_PC18_D18      (AT91C_PIO_PC18) //
 #define AT91C_PIO_PC19       (1 << 19) // Pin Controlled by PC19
-#define AT91C_PC19_D19      (AT91C_PIO_PC19) //  
+#define AT91C_PC19_D19      (AT91C_PIO_PC19) //
 #define AT91C_PIO_PC2        (1 <<  2) // Pin Controlled by PC2
-#define AT91C_PC2_A19      (AT91C_PIO_PC2) //  
+#define AT91C_PC2_A19      (AT91C_PIO_PC2) //
 #define AT91C_PIO_PC20       (1 << 20) // Pin Controlled by PC20
-#define AT91C_PC20_D20      (AT91C_PIO_PC20) //  
+#define AT91C_PC20_D20      (AT91C_PIO_PC20) //
 #define AT91C_PIO_PC21       (1 << 21) // Pin Controlled by PC21
-#define AT91C_PC21_D21      (AT91C_PIO_PC21) //  
+#define AT91C_PC21_D21      (AT91C_PIO_PC21) //
 #define AT91C_PIO_PC22       (1 << 22) // Pin Controlled by PC22
-#define AT91C_PC22_D22      (AT91C_PIO_PC22) //  
+#define AT91C_PC22_D22      (AT91C_PIO_PC22) //
 #define AT91C_PIO_PC23       (1 << 23) // Pin Controlled by PC23
-#define AT91C_PC23_D23      (AT91C_PIO_PC23) //  
+#define AT91C_PC23_D23      (AT91C_PIO_PC23) //
 #define AT91C_PIO_PC24       (1 << 24) // Pin Controlled by PC24
-#define AT91C_PC24_D24      (AT91C_PIO_PC24) //  
+#define AT91C_PC24_D24      (AT91C_PIO_PC24) //
 #define AT91C_PIO_PC25       (1 << 25) // Pin Controlled by PC25
-#define AT91C_PC25_D25      (AT91C_PIO_PC25) //  
+#define AT91C_PC25_D25      (AT91C_PIO_PC25) //
 #define AT91C_PIO_PC26       (1 << 26) // Pin Controlled by PC26
-#define AT91C_PC26_D26      (AT91C_PIO_PC26) //  
+#define AT91C_PC26_D26      (AT91C_PIO_PC26) //
 #define AT91C_PIO_PC27       (1 << 27) // Pin Controlled by PC27
-#define AT91C_PC27_D27      (AT91C_PIO_PC27) //  
+#define AT91C_PC27_D27      (AT91C_PIO_PC27) //
 #define AT91C_PIO_PC28       (1 << 28) // Pin Controlled by PC28
-#define AT91C_PC28_D28      (AT91C_PIO_PC28) //  
+#define AT91C_PC28_D28      (AT91C_PIO_PC28) //
 #define AT91C_PIO_PC29       (1 << 29) // Pin Controlled by PC29
-#define AT91C_PC29_D29      (AT91C_PIO_PC29) //  
+#define AT91C_PC29_D29      (AT91C_PIO_PC29) //
 #define AT91C_PIO_PC3        (1 <<  3) // Pin Controlled by PC3
-#define AT91C_PC3_A20      (AT91C_PIO_PC3) //  
+#define AT91C_PC3_A20      (AT91C_PIO_PC3) //
 #define AT91C_PIO_PC30       (1 << 30) // Pin Controlled by PC30
-#define AT91C_PC30_D30      (AT91C_PIO_PC30) //  
+#define AT91C_PC30_D30      (AT91C_PIO_PC30) //
 #define AT91C_PIO_PC31       (1 << 31) // Pin Controlled by PC31
-#define AT91C_PC31_D31      (AT91C_PIO_PC31) //  
+#define AT91C_PC31_D31      (AT91C_PIO_PC31) //
 #define AT91C_PIO_PC4        (1 <<  4) // Pin Controlled by PC4
-#define AT91C_PC4_A21_NANDALE (AT91C_PIO_PC4) //  
+#define AT91C_PC4_A21_NANDALE (AT91C_PIO_PC4) //
 #define AT91C_PIO_PC5        (1 <<  5) // Pin Controlled by PC5
-#define AT91C_PC5_A22_NANDCLE (AT91C_PIO_PC5) //  
+#define AT91C_PC5_A22_NANDCLE (AT91C_PIO_PC5) //
 #define AT91C_PIO_PC6        (1 <<  6) // Pin Controlled by PC6
-#define AT91C_PC6_A23      (AT91C_PIO_PC6) //  
+#define AT91C_PC6_A23      (AT91C_PIO_PC6) //
 #define AT91C_PIO_PC7        (1 <<  7) // Pin Controlled by PC7
-#define AT91C_PC7_A24      (AT91C_PIO_PC7) //  
+#define AT91C_PC7_A24      (AT91C_PIO_PC7) //
 #define AT91C_PIO_PC8        (1 <<  8) // Pin Controlled by PC8
-#define AT91C_PC8_CFCE1    (AT91C_PIO_PC8) //  
+#define AT91C_PC8_CFCE1    (AT91C_PIO_PC8) //
 #define AT91C_PIO_PC9        (1 <<  9) // Pin Controlled by PC9
-#define AT91C_PC9_CFCE2    (AT91C_PIO_PC9) //  
-#define AT91C_PC9_RTS2     (AT91C_PIO_PC9) //  
+#define AT91C_PC9_CFCE2    (AT91C_PIO_PC9) //
+#define AT91C_PC9_RTS2     (AT91C_PIO_PC9) //
 #define AT91C_PIO_PD0        (1 <<  0) // Pin Controlled by PD0
-#define AT91C_PD0_TK0      (AT91C_PIO_PD0) //  
-#define AT91C_PD0_PWM3     (AT91C_PIO_PD0) //  
+#define AT91C_PD0_TK0      (AT91C_PIO_PD0) //
+#define AT91C_PD0_PWM3     (AT91C_PIO_PD0) //
 #define AT91C_PIO_PD1        (1 <<  1) // Pin Controlled by PD1
-#define AT91C_PD1_TF0      (AT91C_PIO_PD1) //  
+#define AT91C_PD1_TF0      (AT91C_PIO_PD1) //
 #define AT91C_PIO_PD10       (1 << 10) // Pin Controlled by PD10
-#define AT91C_PD10_TD1      (AT91C_PIO_PD10) //  
+#define AT91C_PD10_TD1      (AT91C_PIO_PD10) //
 #define AT91C_PIO_PD11       (1 << 11) // Pin Controlled by PD11
-#define AT91C_PD11_RD1      (AT91C_PIO_PD11) //  
+#define AT91C_PD11_RD1      (AT91C_PIO_PD11) //
 #define AT91C_PIO_PD12       (1 << 12) // Pin Controlled by PD12
-#define AT91C_PD12_TK1      (AT91C_PIO_PD12) //  
-#define AT91C_PD12_PCK0     (AT91C_PIO_PD12) //  
+#define AT91C_PD12_TK1      (AT91C_PIO_PD12) //
+#define AT91C_PD12_PCK0     (AT91C_PIO_PD12) //
 #define AT91C_PIO_PD13       (1 << 13) // Pin Controlled by PD13
-#define AT91C_PD13_RK1      (AT91C_PIO_PD13) //  
+#define AT91C_PD13_RK1      (AT91C_PIO_PD13) //
 #define AT91C_PIO_PD14       (1 << 14) // Pin Controlled by PD14
-#define AT91C_PD14_TF1      (AT91C_PIO_PD14) //  
+#define AT91C_PD14_TF1      (AT91C_PIO_PD14) //
 #define AT91C_PIO_PD15       (1 << 15) // Pin Controlled by PD15
-#define AT91C_PD15_RF1      (AT91C_PIO_PD15) //  
+#define AT91C_PD15_RF1      (AT91C_PIO_PD15) //
 #define AT91C_PIO_PD16       (1 << 16) // Pin Controlled by PD16
-#define AT91C_PD16_RTS1     (AT91C_PIO_PD16) //  
+#define AT91C_PD16_RTS1     (AT91C_PIO_PD16) //
 #define AT91C_PIO_PD17       (1 << 17) // Pin Controlled by PD17
-#define AT91C_PD17_CTS1     (AT91C_PIO_PD17) //  
+#define AT91C_PD17_CTS1     (AT91C_PIO_PD17) //
 #define AT91C_PIO_PD18       (1 << 18) // Pin Controlled by PD18
-#define AT91C_PD18_SPI1_NPCS2 (AT91C_PIO_PD18) //  
-#define AT91C_PD18_IRQ      (AT91C_PIO_PD18) //  
+#define AT91C_PD18_SPI1_NPCS2 (AT91C_PIO_PD18) //
+#define AT91C_PD18_IRQ      (AT91C_PIO_PD18) //
 #define AT91C_PIO_PD19       (1 << 19) // Pin Controlled by PD19
-#define AT91C_PD19_SPI1_NPCS3 (AT91C_PIO_PD19) //  
-#define AT91C_PD19_FIQ      (AT91C_PIO_PD19) //  
+#define AT91C_PD19_SPI1_NPCS3 (AT91C_PIO_PD19) //
+#define AT91C_PD19_FIQ      (AT91C_PIO_PD19) //
 #define AT91C_PIO_PD2        (1 <<  2) // Pin Controlled by PD2
-#define AT91C_PD2_TD0      (AT91C_PIO_PD2) //  
+#define AT91C_PD2_TD0      (AT91C_PIO_PD2) //
 #define AT91C_PIO_PD20       (1 << 20) // Pin Controlled by PD20
-#define AT91C_PD20_TIOA0    (AT91C_PIO_PD20) //  
+#define AT91C_PD20_TIOA0    (AT91C_PIO_PD20) //
 #define AT91C_PIO_PD21       (1 << 21) // Pin Controlled by PD21
-#define AT91C_PD21_TIOA1    (AT91C_PIO_PD21) //  
+#define AT91C_PD21_TIOA1    (AT91C_PIO_PD21) //
 #define AT91C_PIO_PD22       (1 << 22) // Pin Controlled by PD22
-#define AT91C_PD22_TIOA2    (AT91C_PIO_PD22) //  
+#define AT91C_PD22_TIOA2    (AT91C_PIO_PD22) //
 #define AT91C_PIO_PD23       (1 << 23) // Pin Controlled by PD23
-#define AT91C_PD23_TCLK0    (AT91C_PIO_PD23) //  
+#define AT91C_PD23_TCLK0    (AT91C_PIO_PD23) //
 #define AT91C_PIO_PD24       (1 << 24) // Pin Controlled by PD24
-#define AT91C_PD24_SPI0_NPCS1 (AT91C_PIO_PD24) //  
-#define AT91C_PD24_PWM0     (AT91C_PIO_PD24) //  
+#define AT91C_PD24_SPI0_NPCS1 (AT91C_PIO_PD24) //
+#define AT91C_PD24_PWM0     (AT91C_PIO_PD24) //
 #define AT91C_PIO_PD25       (1 << 25) // Pin Controlled by PD25
-#define AT91C_PD25_SPI0_NPCS2 (AT91C_PIO_PD25) //  
-#define AT91C_PD25_PWM1     (AT91C_PIO_PD25) //  
+#define AT91C_PD25_SPI0_NPCS2 (AT91C_PIO_PD25) //
+#define AT91C_PD25_PWM1     (AT91C_PIO_PD25) //
 #define AT91C_PIO_PD26       (1 << 26) // Pin Controlled by PD26
-#define AT91C_PD26_PCK0     (AT91C_PIO_PD26) //  
-#define AT91C_PD26_PWM2     (AT91C_PIO_PD26) //  
+#define AT91C_PD26_PCK0     (AT91C_PIO_PD26) //
+#define AT91C_PD26_PWM2     (AT91C_PIO_PD26) //
 #define AT91C_PIO_PD27       (1 << 27) // Pin Controlled by PD27
-#define AT91C_PD27_PCK1     (AT91C_PIO_PD27) //  
-#define AT91C_PD27_SPI0_NPCS3 (AT91C_PIO_PD27) //  
+#define AT91C_PD27_PCK1     (AT91C_PIO_PD27) //
+#define AT91C_PD27_SPI0_NPCS3 (AT91C_PIO_PD27) //
 #define AT91C_PIO_PD28       (1 << 28) // Pin Controlled by PD28
-#define AT91C_PD28_TSADTRG  (AT91C_PIO_PD28) //  
-#define AT91C_PD28_SPI1_NPCS1 (AT91C_PIO_PD28) //  
+#define AT91C_PD28_TSADTRG  (AT91C_PIO_PD28) //
+#define AT91C_PD28_SPI1_NPCS1 (AT91C_PIO_PD28) //
 #define AT91C_PIO_PD29       (1 << 29) // Pin Controlled by PD29
-#define AT91C_PD29_TCLK1    (AT91C_PIO_PD29) //  
-#define AT91C_PD29_SCK1     (AT91C_PIO_PD29) //  
+#define AT91C_PD29_TCLK1    (AT91C_PIO_PD29) //
+#define AT91C_PD29_SCK1     (AT91C_PIO_PD29) //
 #define AT91C_PIO_PD3        (1 <<  3) // Pin Controlled by PD3
-#define AT91C_PD3_RD0      (AT91C_PIO_PD3) //  
+#define AT91C_PD3_RD0      (AT91C_PIO_PD3) //
 #define AT91C_PIO_PD30       (1 << 30) // Pin Controlled by PD30
-#define AT91C_PD30_TIOB0    (AT91C_PIO_PD30) //  
-#define AT91C_PD30_SCK2     (AT91C_PIO_PD30) //  
+#define AT91C_PD30_TIOB0    (AT91C_PIO_PD30) //
+#define AT91C_PD30_SCK2     (AT91C_PIO_PD30) //
 #define AT91C_PIO_PD31       (1 << 31) // Pin Controlled by PD31
-#define AT91C_PD31_TIOB1    (AT91C_PIO_PD31) //  
-#define AT91C_PD31_PWM1     (AT91C_PIO_PD31) //  
+#define AT91C_PD31_TIOB1    (AT91C_PIO_PD31) //
+#define AT91C_PD31_PWM1     (AT91C_PIO_PD31) //
 #define AT91C_PIO_PD4        (1 <<  4) // Pin Controlled by PD4
-#define AT91C_PD4_RK0      (AT91C_PIO_PD4) //  
+#define AT91C_PD4_RK0      (AT91C_PIO_PD4) //
 #define AT91C_PIO_PD5        (1 <<  5) // Pin Controlled by PD5
-#define AT91C_PD5_RF0      (AT91C_PIO_PD5) //  
+#define AT91C_PD5_RF0      (AT91C_PIO_PD5) //
 #define AT91C_PIO_PD6        (1 <<  6) // Pin Controlled by PD6
-#define AT91C_PD6_AC97RX   (AT91C_PIO_PD6) //  
+#define AT91C_PD6_AC97RX   (AT91C_PIO_PD6) //
 #define AT91C_PIO_PD7        (1 <<  7) // Pin Controlled by PD7
-#define AT91C_PD7_AC97TX   (AT91C_PIO_PD7) //  
-#define AT91C_PD7_TIOA5    (AT91C_PIO_PD7) //  
+#define AT91C_PD7_AC97TX   (AT91C_PIO_PD7) //
+#define AT91C_PD7_TIOA5    (AT91C_PIO_PD7) //
 #define AT91C_PIO_PD8        (1 <<  8) // Pin Controlled by PD8
-#define AT91C_PD8_AC97FS   (AT91C_PIO_PD8) //  
-#define AT91C_PD8_TIOB5    (AT91C_PIO_PD8) //  
+#define AT91C_PD8_AC97FS   (AT91C_PIO_PD8) //
+#define AT91C_PD8_TIOB5    (AT91C_PIO_PD8) //
 #define AT91C_PIO_PD9        (1 <<  9) // Pin Controlled by PD9
-#define AT91C_PD9_AC97CK   (AT91C_PIO_PD9) //  
-#define AT91C_PD9_TCLK5    (AT91C_PIO_PD9) //  
+#define AT91C_PD9_AC97CK   (AT91C_PIO_PD9) //
+#define AT91C_PD9_TCLK5    (AT91C_PIO_PD9) //
 #define AT91C_PIO_PE0        (1 <<  0) // Pin Controlled by PE0
-#define AT91C_PE0_LCDPWR   (AT91C_PIO_PE0) //  
-#define AT91C_PE0_PCK0     (AT91C_PIO_PE0) //  
+#define AT91C_PE0_LCDPWR   (AT91C_PIO_PE0) //
+#define AT91C_PE0_PCK0     (AT91C_PIO_PE0) //
 #define AT91C_PIO_PE1        (1 <<  1) // Pin Controlled by PE1
-#define AT91C_PE1_LCDMOD   (AT91C_PIO_PE1) //  
+#define AT91C_PE1_LCDMOD   (AT91C_PIO_PE1) //
 #define AT91C_PIO_PE10       (1 << 10) // Pin Controlled by PE10
-#define AT91C_PE10_LCDD3    (AT91C_PIO_PE10) //  
-#define AT91C_PE10_LCDD5    (AT91C_PIO_PE10) //  
+#define AT91C_PE10_LCDD3    (AT91C_PIO_PE10) //
+#define AT91C_PE10_LCDD5    (AT91C_PIO_PE10) //
 #define AT91C_PIO_PE11       (1 << 11) // Pin Controlled by PE11
-#define AT91C_PE11_LCDD4    (AT91C_PIO_PE11) //  
-#define AT91C_PE11_LCDD6    (AT91C_PIO_PE11) //  
+#define AT91C_PE11_LCDD4    (AT91C_PIO_PE11) //
+#define AT91C_PE11_LCDD6    (AT91C_PIO_PE11) //
 #define AT91C_PIO_PE12       (1 << 12) // Pin Controlled by PE12
-#define AT91C_PE12_LCDD5    (AT91C_PIO_PE12) //  
-#define AT91C_PE12_LCDD7    (AT91C_PIO_PE12) //  
+#define AT91C_PE12_LCDD5    (AT91C_PIO_PE12) //
+#define AT91C_PE12_LCDD7    (AT91C_PIO_PE12) //
 #define AT91C_PIO_PE13       (1 << 13) // Pin Controlled by PE13
-#define AT91C_PE13_LCDD6    (AT91C_PIO_PE13) //  
-#define AT91C_PE13_LCDD10   (AT91C_PIO_PE13) //  
+#define AT91C_PE13_LCDD6    (AT91C_PIO_PE13) //
+#define AT91C_PE13_LCDD10   (AT91C_PIO_PE13) //
 #define AT91C_PIO_PE14       (1 << 14) // Pin Controlled by PE14
-#define AT91C_PE14_LCDD7    (AT91C_PIO_PE14) //  
-#define AT91C_PE14_LCDD11   (AT91C_PIO_PE14) //  
+#define AT91C_PE14_LCDD7    (AT91C_PIO_PE14) //
+#define AT91C_PE14_LCDD11   (AT91C_PIO_PE14) //
 #define AT91C_PIO_PE15       (1 << 15) // Pin Controlled by PE15
-#define AT91C_PE15_LCDD8    (AT91C_PIO_PE15) //  
-#define AT91C_PE15_LCDD12   (AT91C_PIO_PE15) //  
+#define AT91C_PE15_LCDD8    (AT91C_PIO_PE15) //
+#define AT91C_PE15_LCDD12   (AT91C_PIO_PE15) //
 #define AT91C_PIO_PE16       (1 << 16) // Pin Controlled by PE16
-#define AT91C_PE16_LCDD9    (AT91C_PIO_PE16) //  
-#define AT91C_PE16_LCDD13   (AT91C_PIO_PE16) //  
+#define AT91C_PE16_LCDD9    (AT91C_PIO_PE16) //
+#define AT91C_PE16_LCDD13   (AT91C_PIO_PE16) //
 #define AT91C_PIO_PE17       (1 << 17) // Pin Controlled by PE17
-#define AT91C_PE17_LCDD10   (AT91C_PIO_PE17) //  
-#define AT91C_PE17_LCDD14   (AT91C_PIO_PE17) //  
+#define AT91C_PE17_LCDD10   (AT91C_PIO_PE17) //
+#define AT91C_PE17_LCDD14   (AT91C_PIO_PE17) //
 #define AT91C_PIO_PE18       (1 << 18) // Pin Controlled by PE18
-#define AT91C_PE18_LCDD11   (AT91C_PIO_PE18) //  
-#define AT91C_PE18_LCDD15   (AT91C_PIO_PE18) //  
+#define AT91C_PE18_LCDD11   (AT91C_PIO_PE18) //
+#define AT91C_PE18_LCDD15   (AT91C_PIO_PE18) //
 #define AT91C_PIO_PE19       (1 << 19) // Pin Controlled by PE19
-#define AT91C_PE19_LCDD12   (AT91C_PIO_PE19) //  
-#define AT91C_PE19_LCDD18   (AT91C_PIO_PE19) //  
+#define AT91C_PE19_LCDD12   (AT91C_PIO_PE19) //
+#define AT91C_PE19_LCDD18   (AT91C_PIO_PE19) //
 #define AT91C_PIO_PE2        (1 <<  2) // Pin Controlled by PE2
-#define AT91C_PE2_LCDCC    (AT91C_PIO_PE2) //  
+#define AT91C_PE2_LCDCC    (AT91C_PIO_PE2) //
 #define AT91C_PIO_PE20       (1 << 20) // Pin Controlled by PE20
-#define AT91C_PE20_LCDD13   (AT91C_PIO_PE20) //  
-#define AT91C_PE20_LCDD19   (AT91C_PIO_PE20) //  
+#define AT91C_PE20_LCDD13   (AT91C_PIO_PE20) //
+#define AT91C_PE20_LCDD19   (AT91C_PIO_PE20) //
 #define AT91C_PIO_PE21       (1 << 21) // Pin Controlled by PE21
-#define AT91C_PE21_LCDD14   (AT91C_PIO_PE21) //  
-#define AT91C_PE21_LCDD20   (AT91C_PIO_PE21) //  
+#define AT91C_PE21_LCDD14   (AT91C_PIO_PE21) //
+#define AT91C_PE21_LCDD20   (AT91C_PIO_PE21) //
 #define AT91C_PIO_PE22       (1 << 22) // Pin Controlled by PE22
-#define AT91C_PE22_LCDD15   (AT91C_PIO_PE22) //  
-#define AT91C_PE22_LCDD21   (AT91C_PIO_PE22) //  
+#define AT91C_PE22_LCDD15   (AT91C_PIO_PE22) //
+#define AT91C_PE22_LCDD21   (AT91C_PIO_PE22) //
 #define AT91C_PIO_PE23       (1 << 23) // Pin Controlled by PE23
-#define AT91C_PE23_LCDD16   (AT91C_PIO_PE23) //  
-#define AT91C_PE23_LCDD22   (AT91C_PIO_PE23) //  
+#define AT91C_PE23_LCDD16   (AT91C_PIO_PE23) //
+#define AT91C_PE23_LCDD22   (AT91C_PIO_PE23) //
 #define AT91C_PIO_PE24       (1 << 24) // Pin Controlled by PE24
-#define AT91C_PE24_LCDD17   (AT91C_PIO_PE24) //  
-#define AT91C_PE24_LCDD23   (AT91C_PIO_PE24) //  
+#define AT91C_PE24_LCDD17   (AT91C_PIO_PE24) //
+#define AT91C_PE24_LCDD23   (AT91C_PIO_PE24) //
 #define AT91C_PIO_PE25       (1 << 25) // Pin Controlled by PE25
-#define AT91C_PE25_LCDD18   (AT91C_PIO_PE25) //  
+#define AT91C_PE25_LCDD18   (AT91C_PIO_PE25) //
 #define AT91C_PIO_PE26       (1 << 26) // Pin Controlled by PE26
-#define AT91C_PE26_LCDD19   (AT91C_PIO_PE26) //  
+#define AT91C_PE26_LCDD19   (AT91C_PIO_PE26) //
 #define AT91C_PIO_PE27       (1 << 27) // Pin Controlled by PE27
-#define AT91C_PE27_LCDD20   (AT91C_PIO_PE27) //  
+#define AT91C_PE27_LCDD20   (AT91C_PIO_PE27) //
 #define AT91C_PIO_PE28       (1 << 28) // Pin Controlled by PE28
-#define AT91C_PE28_LCDD21   (AT91C_PIO_PE28) //  
+#define AT91C_PE28_LCDD21   (AT91C_PIO_PE28) //
 #define AT91C_PIO_PE29       (1 << 29) // Pin Controlled by PE29
-#define AT91C_PE29_LCDD22   (AT91C_PIO_PE29) //  
+#define AT91C_PE29_LCDD22   (AT91C_PIO_PE29) //
 #define AT91C_PIO_PE3        (1 <<  3) // Pin Controlled by PE3
-#define AT91C_PE3_LCDVSYNC (AT91C_PIO_PE3) //  
+#define AT91C_PE3_LCDVSYNC (AT91C_PIO_PE3) //
 #define AT91C_PIO_PE30       (1 << 30) // Pin Controlled by PE30
-#define AT91C_PE30_LCDD23   (AT91C_PIO_PE30) //  
+#define AT91C_PE30_LCDD23   (AT91C_PIO_PE30) //
 #define AT91C_PIO_PE31       (1 << 31) // Pin Controlled by PE31
-#define AT91C_PE31_PWM2     (AT91C_PIO_PE31) //  
-#define AT91C_PE31_PCK1     (AT91C_PIO_PE31) //  
+#define AT91C_PE31_PWM2     (AT91C_PIO_PE31) //
+#define AT91C_PE31_PCK1     (AT91C_PIO_PE31) //
 #define AT91C_PIO_PE4        (1 <<  4) // Pin Controlled by PE4
-#define AT91C_PE4_LCDHSYNC (AT91C_PIO_PE4) //  
+#define AT91C_PE4_LCDHSYNC (AT91C_PIO_PE4) //
 #define AT91C_PIO_PE5        (1 <<  5) // Pin Controlled by PE5
-#define AT91C_PE5_LCDDOTCK (AT91C_PIO_PE5) //  
+#define AT91C_PE5_LCDDOTCK (AT91C_PIO_PE5) //
 #define AT91C_PIO_PE6        (1 <<  6) // Pin Controlled by PE6
-#define AT91C_PE6_LCDDEN   (AT91C_PIO_PE6) //  
+#define AT91C_PE6_LCDDEN   (AT91C_PIO_PE6) //
 #define AT91C_PIO_PE7        (1 <<  7) // Pin Controlled by PE7
-#define AT91C_PE7_LCDD0    (AT91C_PIO_PE7) //  
-#define AT91C_PE7_LCDD2    (AT91C_PIO_PE7) //  
+#define AT91C_PE7_LCDD0    (AT91C_PIO_PE7) //
+#define AT91C_PE7_LCDD2    (AT91C_PIO_PE7) //
 #define AT91C_PIO_PE8        (1 <<  8) // Pin Controlled by PE8
-#define AT91C_PE8_LCDD1    (AT91C_PIO_PE8) //  
-#define AT91C_PE8_LCDD3    (AT91C_PIO_PE8) //  
+#define AT91C_PE8_LCDD1    (AT91C_PIO_PE8) //
+#define AT91C_PE8_LCDD3    (AT91C_PIO_PE8) //
 #define AT91C_PIO_PE9        (1 <<  9) // Pin Controlled by PE9
-#define AT91C_PE9_LCDD2    (AT91C_PIO_PE9) //  
-#define AT91C_PE9_LCDD4    (AT91C_PIO_PE9) //  
+#define AT91C_PE9_LCDD2    (AT91C_PIO_PE9) //
+#define AT91C_PE9_LCDD4    (AT91C_PIO_PE9) //
 
 // *****************************************************************************
 //               PERIPHERAL ID DEFINITIONS FOR AT91SAM9M10
@@ -7240,7 +7240,7 @@ typedef struct _AT91S_TRNG {
 #define AT91C_ID_PIOB   ( 3) // Parallel IO Controller B
 #define AT91C_ID_PIOC   ( 4) // Parallel IO Controller C
 #define AT91C_ID_PIOD_E ( 5) // Parallel IO Controller D and E
-#define AT91C_ID_TRNG   ( 6) // 
+#define AT91C_ID_TRNG   ( 6) //
 #define AT91C_ID_US0    ( 7) // USART 0
 #define AT91C_ID_US1    ( 8) // USART 1
 #define AT91C_ID_US2    ( 9) // USART 2

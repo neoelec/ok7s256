@@ -31,7 +31,7 @@
 /// \page "sdcard sd mode initialization and identification"
 ///
 /// !Purpose
-/// 
+///
 /// sdcard sd mode initialization and identification sequence
 ///
 /// !Description
@@ -44,30 +44,30 @@
 ///       - refer to "If Cmd8 response fail" branch for the initialize of sdcard 1.x, mmc card, sdcard2.0
 ///          with invalid voltage.
 /// - If Cmd8 response ok
-///       - Host sends ACmd41* with argument "HCS" equal to "1". 
-///       - If the response to ACmd41 failed, it means the card does not match the voltage 
+///       - Host sends ACmd41* with argument "HCS" equal to "1".
+///       - If the response to ACmd41 failed, it means the card does not match the voltage
 ///          desired by the host, the card will be put into inactive state, initialize ends.
-///       - If the response with "CCS" equal to "1", the card is a version 2.0 high capacity sdcard, 
+///       - If the response with "CCS" equal to "1", the card is a version 2.0 high capacity sdcard,
 ///          refer to "Card Initialize" for the succeeding initialize sequence.
 ///       - If the response with "CCS" equal to "0", the card is a version 2.0 standard capacity sdcard.
 ///          refer to "Card Initialize" for the succeeding initialize sequence.
 /// - If Cmd8 response fail
 ///       - Host sends ACmd41* argument "HCS" equal to "0".
-///       - If the response to ACmd41 ok, the card is a version 1.x sdcard, refer to "Card Initialize" for 
+///       - If the response to ACmd41 ok, the card is a version 1.x sdcard, refer to "Card Initialize" for
 ///          the succeeding initialize sequence.
 ///       - If the response to ACmd41 fails
 ///          - Host sends Cmd0 to reset card.
 ///          - Host sends Cmd1 to card.
-///          - If card has response to Cmd1, the card is a MMC card, refer to "Card Initialize" for the 
+///          - If card has response to Cmd1, the card is a MMC card, refer to "Card Initialize" for the
 ///             succeeding initialize sequence.
-///          - If card has no response to Cmd1, the card is either an unknown card or a card does 
+///          - If card has no response to Cmd1, the card is either an unknown card or a card does
 ///             not match host's voltage, the initialize ends.
 /// - Card Initialize
 ///       - Host sends Cmd2 to get the its unique card identification number (CID).
-///       - Host sends Cmd3 to ask the card to publish a new relative card address (RCA), once the 
+///       - Host sends Cmd3 to ask the card to publish a new relative card address (RCA), once the
 ///          RCA is received the card state changes to the "stand-by state".
 ///       - Host sends Cmd9 to get the Card Specific Data (CSD).
-///       - At this stage, the initialization and identification process is over, the following steps are done 
+///       - At this stage, the initialization and identification process is over, the following steps are done
 ///          for the sdcard's succeeding operation.
 ///       - Host sends Cmd13 to obtain the card status, make sure the card is "ready-for-data".
 ///       - Host sends Cmd7 to transit card in "transfer state".
@@ -82,7 +82,7 @@
 /// \page "sdcard sd mode write"
 ///
 /// !Purpose
-/// 
+///
 /// sdcard sd mode write process
 ///
 /// !Description
@@ -98,7 +98,7 @@
 /// \page "sdcard sd mode read"
 ///
 /// !Purpose
-/// 
+///
 /// sdcard sd mode read process
 ///
 /// !Description
@@ -114,14 +114,14 @@
 /// \page "sdhc"
 ///
 /// !Purpose
-/// 
+///
 /// highlight of sdhc
 ///
 /// !Sdhc initialization and identification
 ///
 ///   - Refer to page "sdcard sd mode initialization and identification" for the initialization and identification
 ///       sequence of a sdhc.
-/// 
+///
 /// !Functional difference between sdhc and standard capacity sdcard
 ///
 /// - Command argument is different:
@@ -131,7 +131,7 @@
 /// - Partial access and misalign access are disabled in sdhc as the block address is used.
 /// - Sdhc does not support write-protected commands (Cmd28, Cmd29, Cmd30).
 ///
-/// \note Memory access commands means block read commands (CMD17, CMD18), block write commands 
+/// \note Memory access commands means block read commands (CMD17, CMD18), block write commands
 ///   (CMD24, CMD25), and block erase commands (CMD32, CMD33).
 ///
 //------------------------------------------------------------------------------
@@ -140,7 +140,7 @@
 /// \page "sdmmc_mci"
 ///
 /// !Purpose
-/// 
+///
 /// Implementation for sdcard sd mode physical layer driver. Supply a set of sdcard sd mode's
 /// interface.
 ///

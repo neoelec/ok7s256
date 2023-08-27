@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91SAM7S-EK characteristics, AT91SAM7S-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Contents
 /// This file provide a large number of definitions, which are of three
 /// different types.
@@ -62,7 +62,7 @@
 /// prefixed with #BOARD_FLASH_#.
 //------------------------------------------------------------------------------
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 //------------------------------------------------------------------------------
@@ -136,7 +136,7 @@
 
 /// Returns the maximum packet size of the given endpoint.
 /// \param i  Endpoint number.
-/// \return Maximum packet size in bytes of endpoint. 
+/// \return Maximum packet size in bytes of endpoint.
 #define BOARD_USB_ENDPOINTS_MAXPACKETSIZE(i)    ((i == 0) ? 8 : 64)
 
 /// Returns the number of FIFO banks for the given endpoint.
@@ -256,9 +256,9 @@
 
 /// !SD Card SPI
 /// - BOARD_SD_SPI_BASE
-/// - BOARD_SD_SPI_ID  
+/// - BOARD_SD_SPI_ID
 /// - BOARD_SD_SPI_PINS
-/// - BOARD_SD_NPCS    
+/// - BOARD_SD_NPCS
 
 /// Not define in our board, but customer can add this feature
 /// Base address of the SPI peripheral connected to the SD card.
@@ -283,7 +283,7 @@
 /// \page "SAM7S-EK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the SAM7S-EK.
-/// 
+///
 /// !ISO7816
 /// - PIN_SMARTCARD_CONNECT
 /// - PIN_ISO7816_RSTMC

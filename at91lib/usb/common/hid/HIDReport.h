@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -70,7 +70,7 @@
 /// End of collection item.
 #define HIDReport_ENDCOLLECTION                 0xC0
 //------------------------------------------------------------------------------
-                                                
+
 //------------------------------------------------------------------------------
 /// \page "HID Items for Data Fields"
 /// This page lists defintions for HID Input, Output and Feature items that

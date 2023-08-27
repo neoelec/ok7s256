@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -101,7 +101,7 @@
 ///
 /// -# http://support.microsoft.com/kb/814560
 /// -# http://support.microsoft.com/kb/918365
-/// 
+///
 /// !!!Description
 ///
 /// When an EK running this program connected to a host (PC for example), with
@@ -277,7 +277,7 @@ unsigned char msdBuffer[BLOCK_SIZE];
 
 //------------------------------------------------------------------------------
 //         Remote wake-up support (optional)
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 #if (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_BUSPOWERED_RWAKEUP) \
     || (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_SELFPOWERED_RWAKEUP)
 
@@ -432,7 +432,7 @@ static void VBus_Configure( void )
     }
     else {
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else
@@ -735,17 +735,17 @@ static void HIDDKeyboardProcessKeys(void)
     unsigned char pressedKeysSize = 0;
     unsigned char releasedKeys[NUM_KEYS];
     unsigned char releasedKeysSize = 0;
-    
+
     // Monitor buttons
     for (i=0; i < PIO_LISTSIZE(pinsPushButtons); i++) {
-    
+
         // Check if button state has changed
         unsigned char isButtonPressed = PIO_Get(&(pinsPushButtons[i]));
         if (isButtonPressed != keyStatus[i]) {
-    
+
             // Update button state
             if (!isButtonPressed) {
-    
+
                 // Key has been pressed
                 TRACE_INFO("-I- Key %u has been pressed\n\r", i);
                 keyStatus[i] = 0;
@@ -754,7 +754,7 @@ static void HIDDKeyboardProcessKeys(void)
                 HIDDKeyboardDriver_RemoteWakeUp();
             }
             else {
-    
+
                 // Key has been released
                 TRACE_INFO("-I- Key %u has been released\n\r", i);
                 keyStatus[i] = 1;
@@ -763,14 +763,14 @@ static void HIDDKeyboardProcessKeys(void)
             }
         }
     }
-    
+
     // Update key status in the HID driver if necessary
     if ((pressedKeysSize != 0) || (releasedKeysSize != 0)) {
-    
+
         unsigned char status;
 
         do {
-        
+
             status = HIDDKeyboardDriver_ChangeKeys(pressedKeys,
                                                    pressedKeysSize,
                                                    releasedKeys,
@@ -800,7 +800,7 @@ void MSDDInitialize()
 #if !defined(sdram)
     BOARD_ConfigureSdram(16);
 #endif
-    
+
     MEDSdram_Initialize(&(medias[numMedias]),
                         (unsigned int) AT91C_EBI_SDRAM + CODE_SIZE,
                         10*1024*1024); // 10Mb used for R/W testing
@@ -813,7 +813,7 @@ void MSDDInitialize()
 #if defined(AT91C_BASE_EFC) && !defined(flash)
     TRACE_INFO("LUN Flash\n\r");
     if (numMedias == 0) {
- 
+
         FLA_Initialize(&(medias[numMedias]), AT91C_BASE_EFC);
         LUN_Init(&(luns[numMedias]), &(medias[numMedias]),
             msdBuffer, 30*1024, 34*1024, BLOCK_SIZE);

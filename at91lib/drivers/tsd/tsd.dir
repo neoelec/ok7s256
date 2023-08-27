@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,11 +31,11 @@
 /// \dir
 ///
 /// !!!Contents
-/// 
+///
 /// This directory contains the source code of the touchscreen driver. tsd.h
-/// contains all the interface functions definitions. tsd_tsadc.c contains the 
+/// contains all the interface functions definitions. tsd_tsadc.c contains the
 /// implementation of the driver for the chip that have the peripheral ip TSADC.
-/// tsd_ads7843.c contains the driver implementation for board that have the 
+/// tsd_ads7843.c contains the driver implementation for board that have the
 /// external component ads7843 (the chip has not the peripheral ip TSDADC).
 /// tds_com.c contains all the common function for the two driver implementations
 /// (calibration functions).

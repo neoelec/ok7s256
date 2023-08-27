@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -33,7 +33,7 @@
 ///
 /// Definitions, structs, functions  required by a Mass Storage device driver
 /// state machine..
-/// 
+///
 /// !Usage
 ///
 /// - For a USB device:
@@ -41,7 +41,7 @@
 ///        usage in the state machine procedure.
 ///
 ///     -# MSDD_StateMachine is invoked to run the MSD state machine.
-///        
+///
 //-----------------------------------------------------------------------------
 
 #ifndef MSDDSTATEMACHINE_H
@@ -115,7 +115,7 @@
 /// This page lists actions to perform during the post-processing phase of a
 /// command.
 ///
-/// !Actions 
+/// !Actions
 /// - MSDD_CASE_PHASE_ERROR
 /// - MSDD_CASE_STALL_IN
 /// - MSDD_CASE_STALL_OUT

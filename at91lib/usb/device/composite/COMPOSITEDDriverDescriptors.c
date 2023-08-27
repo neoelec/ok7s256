@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -423,7 +423,7 @@ const CompositeDriverConfigurationDescriptors configurationDescriptors = {
     },
     // Notification endpoint standard descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(USBEndpointDescriptor_IN,
                                       CDCD_Descriptors_NOTIFICATION0),
@@ -446,7 +446,7 @@ const CompositeDriverConfigurationDescriptors configurationDescriptors = {
     },
     // Bulk-OUT endpoint standard descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(USBEndpointDescriptor_OUT,
                                       CDCD_Descriptors_DATAOUT0),
@@ -729,7 +729,7 @@ const CompositeDriverConfigurationDescriptors configurationDescriptors = {
     },
     // Notification endpoint standard descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(USBEndpointDescriptor_IN,
                                       CDCD_Descriptors_NOTIFICATION1),
@@ -752,7 +752,7 @@ const CompositeDriverConfigurationDescriptors configurationDescriptors = {
     },
     // Bulk-OUT endpoint standard descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(USBEndpointDescriptor_OUT,
                                       CDCD_Descriptors_DATAOUT1),
@@ -782,14 +782,14 @@ const CompositeDriverConfigurationDescriptors configurationDescriptors = {
         MSDD_Descriptors_INTERFACENUM,
         0, // This is alternate setting #0.
         2, // Interface uses two endpoints.
-        MSInterfaceDescriptor_CLASS,            
-        MSInterfaceDescriptor_SCSI,                 
-        MSInterfaceDescriptor_BULKONLY,            
+        MSInterfaceDescriptor_CLASS,
+        MSInterfaceDescriptor_SCSI,
+        MSInterfaceDescriptor_BULKONLY,
         0 // No string descriptor for interface.
     },
     // Bulk-OUT endpoint descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(
             USBEndpointDescriptor_OUT,

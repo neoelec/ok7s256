@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,7 +30,7 @@
 /*!
     Functions for OTGHS peripheral usage.
 */
- 
+
 //------------------------------------------------------------------------------
 //      Headers
 //------------------------------------------------------------------------------
@@ -95,7 +95,7 @@ static AT91PS_OTGHS OTGHS_GetDriverInterface(const S_usb *pUsb)
 // \fn      OTGHS_GetInterfaceEPT
 // \brief   Returns OTGHS endpoint FIFO interface from S_usb structure
 //------------------------------------------------------------------------------
-static AT91PS_OTGHS_EPTFIFO OTGHS_GetInterfaceEPT(const S_usb *pUsb) 
+static AT91PS_OTGHS_EPTFIFO OTGHS_GetInterfaceEPT(const S_usb *pUsb)
 {
     return (AT91PS_OTGHS_EPTFIFO) pUsb->pDriver->pEndpointFIFO;
 }
@@ -368,7 +368,7 @@ static void OTGHS_EndpointHandler(const S_usb *pUsb, unsigned char bEndpoint)
         }
 
         if ((!pEndpoint->isDataSent) || (pEndpoint->dBytesRemaining > 0)) {
-            
+
             OTGHS_WritePayload(pUsb, bEndpoint);
             pEndpoint->isDataSent = true;
 
@@ -382,7 +382,7 @@ static void OTGHS_EndpointHandler(const S_usb *pUsb, unsigned char bEndpoint)
             }
         }
         else {
-            
+
             pInterface->OTGHS_DEVEPTCDR[bEndpoint] = AT91C_OTGHS_TXINI;
 
             // Disable interrupt if this is not a control endpoint
@@ -798,7 +798,7 @@ static void OTGHS_Handler(const S_usb *pUsb)
         }
 
         // Don't treat others interrupt for this time
-        pInterface->OTGHS_SCR = AT91C_OTGHS_IDT    | AT91C_OTGHS_SRP 
+        pInterface->OTGHS_SCR = AT91C_OTGHS_IDT    | AT91C_OTGHS_SRP
                               | AT91C_OTGHS_VBERR  | AT91C_OTGHS_BCERR
                               | AT91C_OTGHS_ROLEEX | AT91C_OTGHS_HNPERR
                               | AT91C_OTGHS_STO;
@@ -880,7 +880,7 @@ static void OTGHS_Handler(const S_usb *pUsb)
 
                 CLEAR(*(pUsb->pState), USB_STATE_SUSPENDED);
             }
-            pInterface->OTGHS_DEVICR = 
+            pInterface->OTGHS_DEVICR =
                 (AT91C_OTGHS_WAKEUP | AT91C_OTGHS_EORSM | AT91C_OTGHS_SUSP);
 
             pInterface->OTGHS_DEVIER = (AT91C_OTGHS_EORST | AT91C_OTGHS_SUSP);
@@ -1024,7 +1024,7 @@ static char OTGHS_Write(const S_usb   *pUsb,
     pEndpoint->fCallback = fCallback;
     pEndpoint->pArgument = pArgument;
     pEndpoint->isDataSent = false;
-    
+
     // Send one packet
     pEndpoint->dState = endpointStateWrite;
 
@@ -1049,7 +1049,7 @@ static char OTGHS_Write(const S_usb   *pUsb,
         // Enable IT DMA
         pInterface->OTGHS_DEVIER = (1<<SHIFT_DMA<<bEndpoint);
 
-        pInterface->OTGHS_DEVDMA[bEndpoint].OTGHS_DEVDMACONTROL = 
+        pInterface->OTGHS_DEVDMA[bEndpoint].OTGHS_DEVDMACONTROL =
              (((pEndpoint->dBytesBuffered<<16)&AT91C_OTGHS_BUFF_LENGTH)
                | AT91C_OTGHS_END_B_EN
                | AT91C_OTGHS_END_BUFFIT
@@ -1306,7 +1306,7 @@ static bool OTGHS_Attach(const S_usb *pUsb)
 
         // Enable interrupt
         pInterface->OTGHS_DEVIER = AT91C_OTGHS_EORST | AT91C_OTGHS_WAKEUP | AT91C_OTGHS_EORSM;
-    
+
         // The device is in Powered state
         SET(*(pUsb->pState), USB_STATE_POWERED);
 

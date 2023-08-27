@@ -8,7 +8,7 @@ Module Name:
 
 Abstract:
 
-    This module contains the code for handling HClient's main dialog box and 
+    This module contains the code for handling HClient's main dialog box and
     for performing/calling the appropriate other routines.
 
 Environment:
@@ -17,7 +17,7 @@ Environment:
 
 Revision History:
 
-    Nov-97 : Created 
+    Nov-97 : Created
 
 --*/
 
@@ -57,7 +57,7 @@ Revision History:
 #define FEATURE_VALUE   6
 #define HID_CAPS        7
 #define DEVICE_ATTRIBUTES 8
-                           
+
 #define MAX_LB_ITEMS 200
 
 #define MAX_WRITE_ELEMENTS 100
@@ -105,7 +105,7 @@ typedef struct rGetWriteDataParams_type
 {
         prWriteDataStruct   prItems;
         int                 iCount;
-        
+
 } rGetWriteDataParams, *prGetWriteDataParams;
 
 typedef struct _DEVICE_LIST_NODE
@@ -122,10 +122,10 @@ typedef struct _DEVICE_LIST_NODE
 //****************************************************************************
 
 //
-// Pointers to the HID.DLL functions that were added into the Win98 OSR and 
-//  Windows 2000 but we're not included in the original implementation of 
+// Pointers to the HID.DLL functions that were added into the Win98 OSR and
+//  Windows 2000 but we're not included in the original implementation of
 //  HID.DLL in Windows 98.  By getting pointers to these functions instead of
-//  statically linking with them, we can avoid the link error that would 
+//  statically linking with them, we can avoid the link error that would
 //  occur when this runs on Windows 98.  The typedefs to make this easier to
 //  declare are also included below.
 //
@@ -134,7 +134,7 @@ PGETEXTATTRIB pfnHidP_GetExtendedAttributes = NULL;
 
 PINITREPORT   pfnHidP_InitializeReportForID = NULL;
 
-   
+
 //****************************************************************************
 // Global module variables
 //****************************************************************************
@@ -145,7 +145,7 @@ static HANDLE             HIDDLLModuleHandle;
 //
 // Variables for handling the two different types of devices that can be loaded
 //   into the system.  PhysicalDeviceList contains all the actual HID devices
-//   attached via the USB bus. 
+//   attached via the USB bus.
 //
 
 static LIST               PhysicalDeviceList;
@@ -154,7 +154,7 @@ static LIST               PhysicalDeviceList;
 // Local data routine declarations
 //****************************************************************************
 
-VOID 
+VOID
 vReadDataFromControls(
     HWND hDlg,
     prWriteDataStruct prData,
@@ -162,99 +162,99 @@ vReadDataFromControls(
     int iCount
 );
 
-INT_PTR CALLBACK 
+INT_PTR CALLBACK
 bGetDataDlgProc(
-    HWND hDlg, 
-    UINT message, 
-    WPARAM wParam, 
+    HWND hDlg,
+    UINT message,
+    WPARAM wParam,
     LPARAM lParam
 );
 
-INT_PTR CALLBACK 
+INT_PTR CALLBACK
 bMainDlgProc(
-    HWND hDlg, 
-    UINT message, 
-    WPARAM wParam, 
+    HWND hDlg,
+    UINT message,
+    WPARAM wParam,
     LPARAM lParam
 );
 
-INT_PTR CALLBACK 
+INT_PTR CALLBACK
 bFeatureDlgProc(
-    HWND hDlg, 
-    UINT message, 
-    WPARAM wParam, 
+    HWND hDlg,
+    UINT message,
+    WPARAM wParam,
     LPARAM lParam
 );
 
-INT_PTR CALLBACK 
+INT_PTR CALLBACK
 bReadDlgProc(
-    HWND hDlg, 
-    UINT message, 
-    WPARAM wParam, 
+    HWND hDlg,
+    UINT message,
+    WPARAM wParam,
     LPARAM lParam
 );
 
-VOID 
+VOID
 vLoadItemTypes(
     HWND hItemTypes
 );
 
-BOOL 
+BOOL
 bGetData(
     prWriteDataStruct,
     int iCount,
-    HWND hParent, 
+    HWND hParent,
     char *pszDialogName
 );
 
-VOID 
+VOID
 vLoadDevices(
     HWND hDeviceCombo
 );
 
-VOID 
+VOID
 vFreeDeviceList(
     PHID_DEVICE  DeviceList,
     ULONG nDevices
 );
 
-VOID 
+VOID
 vDisplayInputButtons(
     PHID_DEVICE pDevice,
     HWND hControl
 );
 
-VOID 
+VOID
 vDisplayInputValues(
     PHID_DEVICE pDevice,
     HWND hControl
 );
 
-VOID 
+VOID
 vDisplayOutputButtons(
     PHID_DEVICE pDevice,
     HWND hControl
 );
 
-VOID 
+VOID
 vDisplayOutputValues(
     PHID_DEVICE pDevice,
     HWND hControl
 );
 
-VOID 
+VOID
 vDisplayFeatureButtons(
     PHID_DEVICE pDevice,
     HWND hControl
 );
 
-VOID 
+VOID
 vDisplayFeatureValues(
     PHID_DEVICE pDevice,
     HWND hControl
 );
 
-VOID 
+VOID
 vWriteDataToControls(
     HWND hDlg,
     prWriteDataStruct prData,
@@ -262,15 +262,15 @@ vWriteDataToControls(
     int iCount
 );
 
-int 
+int
 iPrepareDataFields(
-    PHID_DATA pData, 
-    ULONG ulDataLength, 
+    PHID_DATA pData,
+    ULONG ulDataLength,
     rWriteDataStruct rWriteData[],
     int iMaxElements
 );
 
-BOOL 
+BOOL
 bParseData(
     PHID_DATA pData,
     rWriteDataStruct rWriteData[],
@@ -278,7 +278,7 @@ bParseData(
     INT *piErrorLine
 );
 
-BOOL 
+BOOL
 bSetButtonUsages(
     PHID_DATA pCap,
     PCHAR     pszInputString
@@ -329,7 +329,7 @@ Hex2Int(
 /*******************************
 *WinMain: Windows Entry point  *
 *******************************/
-int PASCAL 
+int PASCAL
 WinMain(
     HINSTANCE hInstance,
     HINSTANCE hPrevInstance,
@@ -344,24 +344,24 @@ WinMain(
     hGInstance = hInstance;
 
     //
-    // Attempt to load HID.DLL...This should already be loaded due to the 
+    // Attempt to load HID.DLL...This should already be loaded due to the
     //  static linking of HID.DLL to this app on compilation.  However,
     //  to insure that this application runs on Windows 98 gold, we cannot
-    //  directly reference the new functions HidP_GetExtendedAttributes and 
+    //  directly reference the new functions HidP_GetExtendedAttributes and
     //  HidP_InitializeReportForID so to use them, we'll get pointers to their
     //  functions instead.
     //
 
     HIDDLLModuleHandle = LoadLibrary("HID.DLL");
 
-    if (NULL == HIDDLLModuleHandle) 
+    if (NULL == HIDDLLModuleHandle)
     {
         //
         // Something really bad happened here...Throw up and error dialog
         //  and bolt.
         //
 
-        MessageBox(NULL, 
+        MessageBox(NULL,
                    "Unable to open HID.DLL\n"
                    "This should never occur",
                    HCLIENT_ERROR,
@@ -384,7 +384,7 @@ WinMain(
     // Try to create the main dialog box.  Cannot do much else if it fails
     //   so we'll throw up a message box and then exit the app
     //
-    if (-1 == DialogBox(hInstance, "MAIN_DIALOG", NULL, bMainDlgProc)) 
+    if (-1 == DialogBox(hInstance, "MAIN_DIALOG", NULL, bMainDlgProc))
     {
         MessageBox(NULL,
                    "Unable to create root dialog!",
@@ -396,7 +396,7 @@ WinMain(
 
     return (0);
 }
- 
+
 /*************************************************
  * Main Dialog proc                              *
  *************************************************/
@@ -405,11 +405,11 @@ WinMain(
 // This the dialog box procedure for the main dialog display.
 //
 
-INT_PTR CALLBACK 
+INT_PTR CALLBACK
 bMainDlgProc(
-    HWND hDlg, 
-    UINT message, 
-    WPARAM wParam, 
+    HWND hDlg,
+    UINT message,
+    WPARAM wParam,
     LPARAM lParam
 )
 {
@@ -420,7 +420,7 @@ bMainDlgProc(
 	static HID_DEVICE           hidDevice;
     static READ_THREAD_CONTEXT  readContext;
     static HANDLE               readThread;
-    
+
            INT                              iIndex;
            INT                              iCount;
            CHAR                             szTempBuff[SMALL_BUFF];
@@ -447,25 +447,25 @@ bMainDlgProc(
             //  -- PhysicalDeviceList is for devices that are actually attached
             //     to the HID bus
             //
-            
+
             InitializeList(&PhysicalDeviceList);
-            
+
             //
             // Begin by finding all the Physical HID devices currently attached to
-            //  the system. If that fails, exit the dialog box.  
+            //  the system. If that fails, exit the dialog box.
             //
-            
-            if (!FindKnownHidDevices(&tempDeviceList, &numberDevices)) 
+
+            if (!FindKnownHidDevices(&tempDeviceList, &numberDevices))
             {
                 EndDialog(hDlg, 0);
-                return FALSE;                
+                return FALSE;
             }
-          
+
             //
             // For each device in the newly acquired list, create a device list
-            //  node and add it the the list of physical device on the system  
+            //  node and add it the the list of physical device on the system
             //
-            
+
             pDevice = tempDeviceList;
             for (iIndex = 0; (ULONG) iIndex < numberDevices; iIndex++, pDevice++)
             {
@@ -478,13 +478,13 @@ bMainDlgProc(
                     //  already in the Physical Device List and close
                     //  that have not been added yet in the enumerated list
                     //
-                    
+
                     DestroyListWithCallback(&PhysicalDeviceList, DestroyDeviceListCallback);
 
                     CloseHidDevices(pDevice, numberDevices - iIndex);
 
                     free(tempDeviceList);
-                    
+
                     EndDialog(hDlg, 0);
                     return FALSE;
                 }
@@ -496,8 +496,8 @@ bMainDlgProc(
                 // Register this device node with the PnP system so the dialog
                 //  window can recieve notification if this device is unplugged.
                 //
-                
-                if (!RegisterHidDevice(hDlg, listNode)) 
+
+                if (!RegisterHidDevice(hDlg, listNode))
                 {
                     DestroyListWithCallback(&PhysicalDeviceList, DestroyDeviceListCallback);
 
@@ -505,10 +505,10 @@ bMainDlgProc(
 
                     free(tempDeviceList);
                     free(listNode);
-                    
+
                     EndDialog(hDlg, 0);
                     return FALSE;
-                }                    
+                }
 
                 InsertTail(&PhysicalDeviceList, listNode);
             }
@@ -516,14 +516,14 @@ bMainDlgProc(
             //
             // Free the temporary device list...It is no longer needed
             //
-            
+
             free(tempDeviceList);
-            
+
             //
-            // Register for notification from the HidDevice class.  Doing so 
-            //  allows the dialog box to receive device change notifications 
+            // Register for notification from the HidDevice class.  Doing so
+            //  allows the dialog box to receive device change notifications
             //  whenever a new HID device is added to the system
-            //  
+            //
 
             broadcastInterface.dbcc_size = sizeof(DEV_BROADCAST_DEVICEINTERFACE);
             broadcastInterface.dbcc_devicetype = DBT_DEVTYP_DEVICEINTERFACE;
@@ -537,14 +537,14 @@ bMainDlgProc(
             if (NULL == diNotifyHandle)
             {
                 DestroyListWithCallback(&PhysicalDeviceList, DestroyDeviceListCallback);
-                           
+
                 EndDialog(hDlg, 0);
                 return FALSE;
             }
-                    
+
             //
             // Update the device list box...
-            // 
+            //
             //
 
             vLoadDevices(GetDlgItem(hDlg, IDC_DEVICES));
@@ -552,9 +552,9 @@ bMainDlgProc(
             //
             // Load the types box
             //
-            
+
             vLoadItemTypes(GetDlgItem(hDlg, IDC_TYPE));
-                          
+
             //
             // Post a message that the device changed so the appropriate
             //   data for the first device in the system can be displayed
@@ -576,7 +576,7 @@ bMainDlgProc(
 
             //
             // LParam is the device that was read from
-            // 
+            //
 
             pDevice = (PHID_DEVICE) lParam;
 
@@ -595,7 +595,7 @@ bMainDlgProc(
                 //
                 // For a read, simply get the current device instance
                 //   from the DEVICES combo box and call the read procedure
-                //   with the HID_DEVICE block 
+                //   with the HID_DEVICE block
                 //
 
                 case IDC_READ:
@@ -608,7 +608,7 @@ bMainDlgProc(
                                                       hDlg,
                                                       bReadDlgProc,
                                                       (LPARAM) pDevice);
-                    } 
+                    }
                     break;
 
                 //
@@ -626,7 +626,7 @@ bMainDlgProc(
 
                     GET_CURRENT_DEVICE(hDlg, pDevice);
 
-                    if (NULL != pDevice) 
+                    if (NULL != pDevice)
                     {
                         //
                         // In order to write to the device, need to get a
@@ -635,22 +635,22 @@ bMainDlgProc(
                         //  trying to open a second instance of this device with
                         //  write access
                         //
-                        
-                        status = OpenHidDevice(pDevice -> DevicePath, 
+
+                        status = OpenHidDevice(pDevice -> DevicePath,
                                                 FALSE,
                                                 TRUE,
                                                 FALSE,
                                                 FALSE,
                                                 &writeDevice);
-                                            
-                        if (!status) 
+
+                        if (!status)
                         {
                             MessageBox(hDlg,
                                        "Couldn't open device for write access",
                                        HCLIENT_ERROR,
                                        MB_ICONEXCLAMATION);
                         }
-                        else 
+                        else
                         {
                             iCount = iPrepareDataFields(writeDevice.OutputData,
                                                         writeDevice.OutputDataLength,
@@ -678,11 +678,11 @@ bMainDlgProc(
                                 }
                             }
                             CloseHidDevice(&writeDevice);
-                        }                            
-                        
-                    } 
+                        }
+
+                    }
                     break; //end case IDC_WRITE//
-                                          
+
                 //
                 // If there was a device change, issue an IDC_TYPE
                 //   change to insure that the currently displayed types are
@@ -691,45 +691,45 @@ bMainDlgProc(
                 //
 
                 case IDC_DEVICES:
-                    switch (HIWORD(wParam)) 
+                    switch (HIWORD(wParam))
                     {
                         case CBN_SELCHANGE:
 
                             GET_CURRENT_DEVICE(hDlg, pDevice);
 
-                            EnableWindow(GetDlgItem(hDlg, IDC_READ), 
-                                         (pDevice != NULL) && 
+                            EnableWindow(GetDlgItem(hDlg, IDC_READ),
+                                         (pDevice != NULL) &&
                                          (pDevice -> Caps.InputReportByteLength));
 
-                            EnableWindow(GetDlgItem(hDlg, IDC_WRITE), 
-                                         (pDevice != NULL) && 
+                            EnableWindow(GetDlgItem(hDlg, IDC_WRITE),
+                                         (pDevice != NULL) &&
                                          (pDevice -> Caps.OutputReportByteLength));
-                                         
+
                             EnableWindow(GetDlgItem(hDlg, IDC_FEATURES),
-                                         (pDevice != NULL) && 
+                                         (pDevice != NULL) &&
                                          (pDevice -> Caps.FeatureReportByteLength));
-                                         
+
                             PostMessage(hDlg,
                                         WM_COMMAND,
                                         IDC_TYPE + (CBN_SELCHANGE<<16),
                                         (LPARAM) GetDlgItem(hDlg,IDC_TYPE));
                             break;
 
-                    } 
+                    }
                     break;
 
                 //
                 // On a type change, retrieve the currently active device
-                //   from the IDC_DEVICES box and display the data that 
+                //   from the IDC_DEVICES box and display the data that
                 //   corresponds to the item just selected
                 //
-                
+
                 case IDC_TYPE:
                     switch (HIWORD(wParam))
                     {
                         case CBN_SELCHANGE:
                             GET_CURRENT_DEVICE(hDlg, pDevice);
-                            
+
                             SendDlgItemMessage(hDlg,
                                                IDC_ITEMS,
                                                LB_RESETCONTENT,
@@ -741,7 +741,7 @@ bMainDlgProc(
                                                LB_RESETCONTENT,
                                                0,
                                                0);
-                            
+
                             if (NULL != pDevice)
                             {
                                 iIndex = (INT) SendDlgItemMessage(hDlg,
@@ -781,13 +781,13 @@ bMainDlgProc(
                                     case FEATURE_VALUE:
                                         vDisplayFeatureValues(pDevice,GetDlgItem(hDlg,IDC_ITEMS));
                                         break;
-                                } 
+                                }
 
                                 PostMessage(hDlg,
                                             WM_COMMAND,
                                             IDC_ITEMS + (LBN_SELCHANGE << 16),
                                             (LPARAM) GetDlgItem(hDlg,IDC_ITEMS));
-                            } 
+                            }
                             break; // case CBN_SELCHANGE
 
                     } //end switch HIWORD wParam
@@ -862,7 +862,7 @@ bMainDlgProc(
 
                                     SendDlgItemMessage(hDlg, IDC_ATTRIBUTES, LB_RESETCONTENT, 0, 0);
 
-                                    if (NULL != pValueCaps) 
+                                    if (NULL != pValueCaps)
                                     {
                                         vDisplayValueAttributes(pValueCaps,GetDlgItem(hDlg,IDC_ATTRIBUTES));
                                     }
@@ -880,7 +880,7 @@ bMainDlgProc(
                                 case DEVICE_ATTRIBUTES:
                                     GET_CURRENT_DEVICE(hDlg, pDevice);
 
-                                    if (NULL != pDevice) 
+                                    if (NULL != pDevice)
                                     {
                                         SendDlgItemMessage(hDlg, IDC_ATTRIBUTES, LB_RESETCONTENT, 0, 0);
 
@@ -938,7 +938,7 @@ bMainDlgProc(
 						BYTE tmpBuffer[64 * 6];
 						DWORD     bytesWritten;
 						int i;
-						if (!OpenHidDevice(pDevice -> DevicePath, 
+						if (!OpenHidDevice(pDevice -> DevicePath,
 									        FALSE,
 											TRUE,
 											FALSE,
@@ -972,7 +972,7 @@ bMainDlgProc(
 
 							GET_CURRENT_DEVICE(hDlg, pDevice);
 							if (NULL == pDevice) break;
-							
+
 							if (!OpenHidDevice(pDevice->DevicePath,
 												TRUE, FALSE, FALSE, FALSE, &hidDevice)) {
 								MessageBox(hDlg, "Can not open HID device!", "Err Monitor", MB_ICONSTOP);
@@ -1014,7 +1014,7 @@ bMainDlgProc(
 
                     if (NULL != pDevice)
                     {
-						if (!OpenHidDevice(pDevice -> DevicePath, 
+						if (!OpenHidDevice(pDevice -> DevicePath,
 									        TRUE,
 											FALSE,
 											FALSE,
@@ -1074,7 +1074,7 @@ bMainDlgProc(
 							}
 						}
 						CloseHidDevice(&hidDevice);
-                    } 
+                    }
                     break;
 
 				case IDC_BUTTON_SET:
@@ -1083,7 +1083,7 @@ bMainDlgProc(
                     if (NULL != pDevice)
                     {
 						BYTE tmpBuffer[64 * 6];
-						if (!OpenHidDevice(pDevice -> DevicePath, 
+						if (!OpenHidDevice(pDevice -> DevicePath,
 									        FALSE,
 											TRUE,
 											FALSE,
@@ -1112,7 +1112,7 @@ bMainDlgProc(
                     if (NULL != pDevice)
                     {
 						BYTE tmpBuffer[66];
-						if (!OpenHidDevice(pDevice -> DevicePath, 
+						if (!OpenHidDevice(pDevice -> DevicePath,
 									        TRUE,
 											FALSE,
 											FALSE,
@@ -1121,7 +1121,7 @@ bMainDlgProc(
 							MessageBox(hDlg, "Can not open HID device!", "Err GetReport", MB_ICONSTOP);
 							break;
 						}
-						
+
 						tmpBuffer[0] = 0;
 						if (!HidD_GetInputReport(hidDevice.HidDevice,
 												 tmpBuffer,
@@ -1143,7 +1143,7 @@ bMainDlgProc(
 							SendDlgItemMessage(hDlg, IDC_EDIT_IN, WM_SETTEXT, 0, (LPARAM)szTempBuff);
 						}
 						CloseHidDevice(&hidDevice);
-                    } 
+                    }
 					break;
 
                 case IDC_ABOUT:
@@ -1171,15 +1171,15 @@ bMainDlgProc(
             break;
 
         //
-        // For a device change message, we are only concerned about the 
+        // For a device change message, we are only concerned about the
         //    DBT_DEVICEREMOVECOMPLETE and DBT_DEVICEARRIVAL events. I have
         //    yet to determine how to process the device change message
         //    only for HID devices.  Therefore, there are two problems
         //    with the below implementation.  First of all, we must reload
-        //    the device list any time a device is added to the system.  
-        //    Secondly, at least two DEVICEARRIVAL messages are received 
+        //    the device list any time a device is added to the system.
+        //    Secondly, at least two DEVICEARRIVAL messages are received
         //    per HID.  One corresponds to the physical device.  The second
-        //    change and any more correspond to each collection on the 
+        //    change and any more correspond to each collection on the
         //    physical device so a system that has one HID device with
         //    two top level collections (a keyboard and a mouse) will receive
         //    three DEVICEARRIVAL/REMOVALs causing the program to reload it's
@@ -1188,17 +1188,17 @@ bMainDlgProc(
 
         //
         // To handle dynamic changing of devices, we have already registered
-        //    notification for both HID class changes and for notification 
+        //    notification for both HID class changes and for notification
         //    for our open file objects.  Since we are only concerned about
         //    arrival/removal of devices, we only need to process those wParam.
         //    lParam points to some sort of DEV_BROADCAST_HDR struct.  For device
-        //    arrival, we only deal with the message if that struct is a 
+        //    arrival, we only deal with the message if that struct is a
         //    DEV_BROADCAST_DEVICEINTERFACE structure.  For device removal, we're
         //    only concerned if the struct is a DEV_BROADCAST_HANDLE structure.
         //
 
         case WM_DEVICECHANGE:
-            switch (wParam) 
+            switch (wParam)
             {
                 PDEV_BROADCAST_HDR broadcastHdr;
 
@@ -1210,7 +1210,7 @@ bMainDlgProc(
                     {
                         PDEV_BROADCAST_DEVICEINTERFACE  pbroadcastInterface;
                         PDEVICE_LIST_NODE               currNode, lastNode;
-                        
+
                         pbroadcastInterface = (PDEV_BROADCAST_DEVICEINTERFACE) lParam;
 
                         //
@@ -1221,25 +1221,25 @@ bMainDlgProc(
                         //  showing up in the dialog box.
                         //
 
-                        if (!IsListEmpty(&PhysicalDeviceList)) 
+                        if (!IsListEmpty(&PhysicalDeviceList))
                         {
                             currNode = (PDEVICE_LIST_NODE) GetListHead(&PhysicalDeviceList);
                             lastNode = (PDEVICE_LIST_NODE) GetListTail(&PhysicalDeviceList);
-                            
+
                             //
-                            // This loop should always terminate since the device 
+                            // This loop should always terminate since the device
                             //  handle should be somewhere in the physical device list
                             //
-                            
+
                             while (1)
                             {
-                                if (0 == strcmp(currNode -> HidDeviceInfo.DevicePath, 
-                                                pbroadcastInterface -> dbcc_name)) 
+                                if (0 == strcmp(currNode -> HidDeviceInfo.DevicePath,
+                                                pbroadcastInterface -> dbcc_name))
                                 {
                                     return (TRUE);
                                 }
-                                
-                                if (currNode == lastNode) 
+
+                                if (currNode == lastNode)
                                 {
                                     break;
                                 }
@@ -1250,7 +1250,7 @@ bMainDlgProc(
 
                         //
                         // In this structure, we are given the name of the device
-                        //    to open.  So all that needs to be done is open 
+                        //    to open.  So all that needs to be done is open
                         //    a new hid device with the string
                         //
 
@@ -1266,11 +1266,11 @@ bMainDlgProc(
                             break;
 
                         }
-                       
+
                         //
                         // Open the hid device for query access
                         //
-                        
+
                         if (!OpenHidDevice (pbroadcastInterface -> dbcc_name,
                                             FALSE,
                                             FALSE,
@@ -1283,7 +1283,7 @@ bMainDlgProc(
                                "Error -- Couldn't open HID device",
                                HCLIENT_ERROR,
                                MB_ICONEXCLAMATION | MB_OK | MB_TASKMODAL);
-                            
+
                             free(listNode);
 
                             break;
@@ -1302,7 +1302,7 @@ bMainDlgProc(
 
                             break;
 
-                        }                         
+                        }
 
                         listNode -> DeviceOpened = TRUE;
 
@@ -1314,7 +1314,7 @@ bMainDlgProc(
                                    WM_COMMAND,
                                    IDC_DEVICES + (CBN_SELCHANGE << 16),
                                    (LPARAM) GetDlgItem(hDlg,IDC_DEVICES));
-                                   
+
                     }
                     break;
 
@@ -1334,14 +1334,14 @@ bMainDlgProc(
                         PDEV_BROADCAST_HANDLE broadcastHandle;
                         PDEVICE_LIST_NODE     currNode;
                         HANDLE                deviceHandle;
-                        
+
                         broadcastHandle = (PDEV_BROADCAST_HANDLE) lParam;
 
                         //
                         // Get the file handle of the device that was removed
                         //  from the system
                         //
-                        
+
                         deviceHandle = (HANDLE) broadcastHandle -> dbch_handle;
 
                         //
@@ -1352,10 +1352,10 @@ bMainDlgProc(
                         currNode = (PDEVICE_LIST_NODE) GetListHead(&PhysicalDeviceList);
 
                         //
-                        // This loop should always terminate since the device 
+                        // This loop should always terminate since the device
                         //  handle should be somewhere in the physical device list
                         //
-                        
+
                         while (currNode -> HidDeviceInfo.HidDevice != deviceHandle)
                         {
                             currNode = (PDEVICE_LIST_NODE) GetNextEntry(currNode);
@@ -1371,15 +1371,15 @@ bMainDlgProc(
                 case DBT_DEVICEREMOVECOMPLETE:
 
                     //
-                    // Do the same steps for DBT_DEVICEREMOVEPENDING and 
-                    //   DBT_DEVICEREMOVECOMPLETE.  We do not receive the 
+                    // Do the same steps for DBT_DEVICEREMOVEPENDING and
+                    //   DBT_DEVICEREMOVECOMPLETE.  We do not receive the
                     //   remove complete request for a device if it is
                     //   disabled or removed via Device Manager.  However,
-                    //   in that case will receive the remove pending.  
+                    //   in that case will receive the remove pending.
                     //   We remove the device from our currently displayed
                     //   list of devices and unregister notification.
                     //
-                    
+
                     broadcastHdr = (PDEV_BROADCAST_HDR) lParam;
 
                     if (DBT_DEVTYP_HANDLE == broadcastHdr -> dbch_devicetype)
@@ -1387,14 +1387,14 @@ bMainDlgProc(
                         PDEV_BROADCAST_HANDLE broadcastHandle;
                         PDEVICE_LIST_NODE     currNode;
                         HANDLE                deviceHandle;
-                        
+
                         broadcastHandle = (PDEV_BROADCAST_HANDLE) lParam;
 
                         //
                         // Get the file handle of the device that was removed
                         //  from the system
                         //
-                        
+
                         deviceHandle = (HANDLE) broadcastHandle -> dbch_handle;
 
                         //
@@ -1405,10 +1405,10 @@ bMainDlgProc(
                         currNode = (PDEVICE_LIST_NODE) GetListHead(&PhysicalDeviceList);
 
                         //
-                        // This loop should always terminate since the device 
+                        // This loop should always terminate since the device
                         //  handle should be somewhere in the physical device list
                         //
-                        
+
                         while (currNode -> HidDeviceInfo.HidDevice != deviceHandle)
                         {
                             currNode = (PDEVICE_LIST_NODE) GetNextEntry(currNode);
@@ -1420,20 +1420,20 @@ bMainDlgProc(
                         //  2) Close the hid device
                         //  3) Remove the entry from the list
                         //  4) Free the memory for the entry
-                        // 
+                        //
                         //
 
-                        PostMessage(hDlg, 
-                                    WM_UNREGISTER_HANDLE, 
-                                    0, 
+                        PostMessage(hDlg,
+                                    WM_UNREGISTER_HANDLE,
+                                    0,
                                     (LPARAM) currNode -> NotificationHandle);
 
                         //
-                        // Close the device if still opened...This would 
+                        // Close the device if still opened...This would
                         //  occur on surprise removal.
                         //
 
-                        if (currNode -> DeviceOpened) 
+                        if (currNode -> DeviceOpened)
                         {
                             CloseHidDevice(&(currNode -> HidDeviceInfo));
                         }
@@ -1441,11 +1441,11 @@ bMainDlgProc(
                         RemoveNode(currNode);
 
                         free(currNode);
-                
+
                         //
                         // Reload the device list
                         //
-                        
+
                         vLoadDevices(GetDlgItem(hDlg,IDC_DEVICES));
 
                         PostMessage(hDlg,
@@ -1454,39 +1454,39 @@ bMainDlgProc(
                                    (LPARAM) GetDlgItem(hDlg,IDC_DEVICES));
                     }
                     break;
-    
+
                 default:
                     break;
             }
             break;
 
         //
-        // Application specific message used to defer the unregistering of a 
+        // Application specific message used to defer the unregistering of a
         //  file object for device change notification.  This separte message
         //  is sent when a WM_DEVICECHANGE (DBT_DEVICEREMOVECOMPLETE) has been
         //  received.  The Unregistering of the notification must be deferred
-        //  until after the WM_DEVICECHANGE message has been processed or the 
+        //  until after the WM_DEVICECHANGE message has been processed or the
         //  system will deadlock.  The handle that is to be freed will be passed
         //  in as lParam for this message
         //
-        
+
         case WM_UNREGISTER_HANDLE:
-            UnregisterDeviceNotification ( (HDEVNOTIFY) lParam ); 
+            UnregisterDeviceNotification ( (HDEVNOTIFY) lParam );
             break;
-                           
+
    } // end switch message
    return FALSE;
 } // end MainDlgProc
 
 
-BOOL 
+BOOL
 bParseData(
     PHID_DATA           pData,
     rWriteDataStruct    rWriteData[],
     int                 iCount,
     int                 *piErrorLine
 )
-{  
+{
     INT       iCap;
     PHID_DATA pWalk;
     BOOL      noError = TRUE;
@@ -1502,7 +1502,7 @@ bParseData(
         if (!pWalk->IsButtonData)
         {
             pWalk -> ValueData.Value = atol(rWriteData[iCap].szValue);
-        } 
+        }
         else
         {
             if (!bSetButtonUsages(pWalk, rWriteData[iCap].szValue) )
@@ -1510,14 +1510,14 @@ bParseData(
                *piErrorLine = iCap;
 
                noError = FALSE;
-            } 
-        } 
+            }
+        }
         pWalk++;
     }
     return (noError);
 }
 
-BOOL 
+BOOL
 bSetButtonUsages(
     PHID_DATA pCap,
     PCHAR     pszInputString
@@ -1534,7 +1534,7 @@ bSetButtonUsages(
     stringReturn = StringCbCopy(szTempString, SMALL_BUFF, pszInputString);
 
     pszToken = strtok(szTempString, pszDelimiter);
-    
+
     pUsageWalk = pCap -> ButtonData.Usages;
 
     memset(pUsageWalk, 0, pCap->ButtonData.MaxUsageLength * sizeof(USAGE));
@@ -1546,16 +1546,16 @@ bSetButtonUsages(
         pszToken = strtok(NULL, pszDelimiter);
 
         pUsageWalk++;
-    } 
+    }
 
      return bNoError;
 } //end function bSetButtonUsages//
 
 
-INT 
+INT
 iPrepareDataFields(
     PHID_DATA           pData,
-    ULONG               ulDataLength, 
+    ULONG               ulDataLength,
     rWriteDataStruct    rWriteData[],
     int                 iMaxElements
 )
@@ -1568,7 +1568,7 @@ iPrepareDataFields(
 
     for (i = 0; (i < iMaxElements) && ((unsigned) i < ulDataLength); i++)
     {
-        if (!pWalk->IsButtonData) 
+        if (!pWalk->IsButtonData)
         {
             stringReturn = StringCbPrintf(rWriteData[i].szLabel,
                            MAX_LABEL,
@@ -1588,16 +1588,16 @@ iPrepareDataFields(
                            pWalk->ButtonData.UsageMax);
         }
         pWalk++;
-     } 
+     }
      return i;
 }  //end function iPrepareDataFields//
 
 
-INT_PTR CALLBACK 
+INT_PTR CALLBACK
 bReadDlgProc(
-    HWND hDlg, 
-    UINT message, 
-    WPARAM wParam, 
+    HWND hDlg,
+    UINT message,
+    WPARAM wParam,
     LPARAM lParam
 )
 {
@@ -1622,10 +1622,10 @@ bReadDlgProc(
         case WM_INITDIALOG:
 
             //
-            // Initialize the list box counter, the readThread, and the 
+            // Initialize the list box counter, the readThread, and the
             //  readContext.DisplayEvent.
             //
-            
+
             iLbCounter = 0;
             readThread = NULL;
             readContext.DisplayEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
@@ -1633,13 +1633,13 @@ bReadDlgProc(
             if (NULL == readContext.DisplayEvent)
             {
                 EndDialog(hDlg, 0);
-            } 
-            
+            }
+
             //
             // Get the opened device information for the device to perform
             //  reads upon
             //
-            
+
             pDevice = (PHID_DEVICE) lParam;
 
             //
@@ -1649,8 +1649,8 @@ bReadDlgProc(
             //  was not opened for reading.  Therefore, two more devices will
             //  be opened, one for async reads and one for sync reads.
             //
-            
-            doSyncReads = OpenHidDevice(pDevice -> DevicePath, 
+
+            doSyncReads = OpenHidDevice(pDevice -> DevicePath,
                                        TRUE,
                                        FALSE,
                                        FALSE,
@@ -1659,7 +1659,7 @@ bReadDlgProc(
 
             if (!doSyncReads)
             {
-                MessageBox(hDlg, 
+                MessageBox(hDlg,
                            "Unable to open device for synchronous reading",
                            HCLIENT_ERROR,
                            MB_ICONEXCLAMATION);
@@ -1668,40 +1668,40 @@ bReadDlgProc(
             //
             // For asynchronous read, default to using the same information
             //    passed in as the lParam.  This is because data related to
-            //    Ppd and such cannot be retrieved using the standard HidD_ 
+            //    Ppd and such cannot be retrieved using the standard HidD_
             //    functions.  However, it is necessary to parse future reports.
             //
-            
-            doAsyncReads = OpenHidDevice(pDevice -> DevicePath, 
+
+            doAsyncReads = OpenHidDevice(pDevice -> DevicePath,
                                        TRUE,
                                        FALSE,
                                        TRUE,
                                        FALSE,
                                        &asyncDevice);
 
-            if (!doAsyncReads) 
+            if (!doAsyncReads)
             {
-                MessageBox(hDlg, 
+                MessageBox(hDlg,
                            "Unable to open device for asynchronous reading",
                            HCLIENT_ERROR,
                            MB_ICONEXCLAMATION);
             }
 
             PostMessage(hDlg, WM_READ_DONE, 0, 0);
-            break; 
+            break;
 
         case WM_DISPLAY_READ_DATA:
 
             //
             // LParam is the device that was read from
-            // 
+            //
 
             pDevice = (PHID_DEVICE) lParam;
 
             //
             // Display all the data stored in the Input data field for the device
             //
-            
+
             pData = pDevice -> InputData;
 
             SendDlgItemMessage(hDlg,
@@ -1709,7 +1709,7 @@ bReadDlgProc(
                                LB_ADDSTRING,
                                0,
                                (LPARAM)"-------------------------------------------");
-                               
+
             iLbCounter++;
 
             if (iLbCounter > MAX_LB_ITEMS)
@@ -1724,7 +1724,7 @@ bReadDlgProc(
             for (uLoop = 0; uLoop < pDevice->InputDataLength; uLoop++)
             {
                 ReportToString(pData, szTempBuff, sizeof(szTempBuff));
-          
+
                 iIndex = (INT) SendDlgItemMessage(hDlg,
                                                   IDC_OUTPUT,
                                                   LB_ADDSTRING,
@@ -1758,15 +1758,15 @@ bReadDlgProc(
             EnableWindow(GetDlgItem(hDlg, IDC_READ_ASYNCH_ONCE), doAsyncReads);
             EnableWindow(GetDlgItem(hDlg, IDC_READ_ASYNCH_CONT), doAsyncReads);
 
-            SetWindowText(GetDlgItem(hDlg, IDC_READ_ASYNCH_ONCE), 
-                          "One Asynchronous Read");       
+            SetWindowText(GetDlgItem(hDlg, IDC_READ_ASYNCH_ONCE),
+                          "One Asynchronous Read");
 
             SetWindowText(GetDlgItem(hDlg, IDC_READ_ASYNCH_CONT),
-                          "Continuous Asynchronous Read");       
+                          "Continuous Asynchronous Read");
 
             readThread = NULL;
             break;
-            
+
         case WM_COMMAND:
             switch(LOWORD(wParam))
             {
@@ -1775,7 +1775,7 @@ bReadDlgProc(
                     EnableWindow(GetDlgItem(hDlg, IDOK), FALSE);
                     EnableWindow(GetDlgItem(hDlg, IDC_READ_SYNCH), FALSE);
                     EnableWindow(GetDlgItem(hDlg, IDC_READ_ASYNCH_ONCE), FALSE);
-                    EnableWindow(GetDlgItem(hDlg, IDC_READ_ASYNCH_CONT), FALSE);                    
+                    EnableWindow(GetDlgItem(hDlg, IDC_READ_ASYNCH_CONT), FALSE);
 
                     Read(&syncDevice);
 
@@ -1792,8 +1792,8 @@ bReadDlgProc(
                     //  1) Start a new asynch read thread (readThread == NULL)
                     //  2) Stop a previous asych read thread
                     //
-                    
-                    if (NULL == readThread) 
+
+                    if (NULL == readThread)
                     {
                         //
                         // Start a new read thread
@@ -1803,7 +1803,7 @@ bReadDlgProc(
                         readContext.TerminateThread = FALSE;
                         readContext.DoOneRead = (IDC_READ_ASYNCH_ONCE == LOWORD(wParam));
                         readContext.DisplayWindow = hDlg;
-                        
+
                         readThread = CreateThread(  NULL,
                                                     0,
                                                     AsynchReadThreadProc,
@@ -1826,9 +1826,9 @@ bReadDlgProc(
                                          IDC_READ_ASYNCH_ONCE == LOWORD(wParam));
 
                             EnableWindow(GetDlgItem(hDlg, IDC_READ_ASYNCH_CONT),
-                                         IDC_READ_ASYNCH_CONT == LOWORD(wParam));                                     
+                                         IDC_READ_ASYNCH_CONT == LOWORD(wParam));
 
-                            SetWindowText(GetDlgItem(hDlg, LOWORD(wParam)), 
+                            SetWindowText(GetDlgItem(hDlg, LOWORD(wParam)),
                                           "Stop Asynchronous Read");
                         }
                     }
@@ -1838,26 +1838,26 @@ bReadDlgProc(
                         // Signal the terminate thread variable and
                         //  wait for the read thread to complete.
                         //
-                        
+
                         readContext.TerminateThread = TRUE;
                         WaitForSingleObject(readThread, INFINITE);
-                    }                        
+                    }
                     break;
-                        
+
                 case IDCANCEL:
                     readContext.TerminateThread = TRUE;
                     WaitForSingleObject(readThread, INFINITE);
 					//Fall through!!!
 
-				case IDOK:                
-                    CloseHidDevice(&asyncDevice);                    
+				case IDOK:
+                    CloseHidDevice(&asyncDevice);
                     EndDialog(hDlg,0);
                     break;
             }
             break;
-     } // end switch message 
+     } // end switch message
      return FALSE;
-} // end bReadDlgProc 
+} // end bReadDlgProc
 
 VOID
 ReportToString(
@@ -1876,7 +1876,7 @@ ReportToString(
     //
     // For button data, all the usages in the usage list are to be displayed
     //
-    
+
     if (pData -> IsButtonData)
     {
         stringReturn = StringCbPrintf (szBuff,
@@ -1891,11 +1891,11 @@ ReportToString(
 		{
 			iRemainingBuffer = iBuffSize - iStringLength;
 		}
-		
+
 
         for (i = 0, pUsage = pData -> ButtonData.Usages;
                      i < pData -> ButtonData.MaxUsageLength;
-                         i++, pUsage++) 
+                         i++, pUsage++)
         {
             if (0 == *pUsage)
             {
@@ -1904,7 +1904,7 @@ ReportToString(
             stringReturn = StringCbPrintf (pszWalk, iRemainingBuffer, " 0x%x", *pUsage);
 			iRemainingBuffer -= strlen(pszWalk);
 			pszWalk += strlen(pszWalk);
-        }   
+        }
     }
     else
     {
@@ -1918,11 +1918,11 @@ ReportToString(
     }
 }
 
-INT_PTR CALLBACK 
+INT_PTR CALLBACK
 bFeatureDlgProc(
-    HWND hDlg, 
-    UINT message, 
-    WPARAM wParam, 
+    HWND hDlg,
+    UINT message,
+    WPARAM wParam,
     LPARAM lParam
 )
 {
@@ -1942,7 +1942,7 @@ bFeatureDlgProc(
         case WM_INITDIALOG:
             iLbCounter = 0;
             pDevice = (PHID_DEVICE) lParam;
-            break; 
+            break;
 
         case WM_COMMAND:
             switch(LOWORD(wParam))
@@ -1961,7 +1961,7 @@ bFeatureDlgProc(
 
                     iLbCounter++;
 
-                    if (iLbCounter > MAX_LB_ITEMS) 
+                    if (iLbCounter > MAX_LB_ITEMS)
                     {
                         SendDlgItemMessage(hDlg,
                                            IDC_OUTPUT,
@@ -1979,7 +1979,7 @@ bFeatureDlgProc(
                                                           LB_ADDSTRING,
                                                           0,
                                                           (LPARAM) szTempBuff);
-                                                   
+
                         SendDlgItemMessage(hDlg,
                                            IDC_OUTPUT,
                                            LB_SETCURSEL,
@@ -1996,24 +1996,24 @@ bFeatureDlgProc(
                                                0);
                         }
                         pData++;
-                    } 
+                    }
                     break;
 
                 case IDC_WRITE:
-                    iCount = iPrepareDataFields(pDevice -> FeatureData, 
+                    iCount = iPrepareDataFields(pDevice -> FeatureData,
                                                 pDevice -> FeatureDataLength,
                                                 rWriteData,
                                                 MAX_OUTPUT_ELEMENTS);
 
                     if (bGetData(rWriteData, iCount, hDlg, "WRITEFEATURE"))
                     {
-                        if (!bParseData(pDevice -> FeatureData, rWriteData,iCount, &iErrorLine)) 
+                        if (!bParseData(pDevice -> FeatureData, rWriteData,iCount, &iErrorLine))
                         {
                             stringReturn = StringCbPrintf(szTempBuff,
                                            sizeof(szTempBuff),
                                            "Unable to parse line %x of output data",
                                            iErrorLine);
-                            
+
                             MessageBox(hDlg,
                                         szTempBuff,
                                         HCLIENT_ERROR,
@@ -2027,7 +2027,7 @@ bFeatureDlgProc(
                                                    IDC_OUTPUT,
                                                    LB_ADDSTRING,
                                                    0,
-                                                   (LPARAM)"------------ Write Feature ---------------");                                             
+                                                   (LPARAM)"------------ Write Feature ---------------");
                             }
                             else
                             {
@@ -2035,12 +2035,12 @@ bFeatureDlgProc(
                                                     IDC_OUTPUT,
                                                     LB_ADDSTRING,
                                                     0,
-                                                    (LPARAM)"------------ Write Feature Error ---------------");                                             
-                            }                                                             
+                                                    (LPARAM)"------------ Write Feature Error ---------------");
+                            }
                         }
                      }
                      break;
-                      
+
                  case IDOK:
                  case IDCANCEL:
                      EndDialog(hDlg,0);
@@ -2051,7 +2051,7 @@ bFeatureDlgProc(
    return FALSE;
 } //end bReadDlgProc//
 
-VOID 
+VOID
 vDisplayDeviceCaps(
     IN PHIDP_CAPS pCaps,
     IN HWND hControl
@@ -2106,8 +2106,8 @@ vDisplayDeviceAttributes(
 
 VOID
 vDisplayDataAttributes(
-    PHIDP_DATA pData, 
-    BOOL IsButton, 
+    PHIDP_DATA pData,
+    BOOL IsButton,
     HWND hControl
 )
 {
@@ -2118,11 +2118,11 @@ vDisplayDataAttributes(
 
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Index: 0x%x", pData -> DataIndex);
     SendMessage(hControl,LB_ADDSTRING, 0, (LPARAM) szTempBuff);
-    
+
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "IsButton: %s", IsButton ? "TRUE" : "FALSE");
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-    if (IsButton) 
+    if (IsButton)
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Button pressed: %s", pData -> On ? "TRUE" : "FALSE");
         SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
@@ -2134,7 +2134,7 @@ vDisplayDataAttributes(
     }
 }
 
-VOID 
+VOID
 vDisplayButtonAttributes(
     IN PHIDP_BUTTON_CAPS pButton,
     IN HWND hControl
@@ -2142,34 +2142,34 @@ vDisplayButtonAttributes(
 {
     static CHAR szTempBuff[SMALL_BUFF];
 	HRESULT		stringReturn;
-   
+
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Report ID: 0x%x", pButton->ReportID);
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
-     
+
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Usage Page: 0x%x", pButton->UsagePage);
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
-        
+
     stringReturn = StringCbPrintf(szTempBuff,
-                   SMALL_BUFF, 
+                   SMALL_BUFF,
                    "Alias: %s",
                    pButton -> IsAlias ? "TRUE" : "FALSE");
-    
+
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
-   
+
     stringReturn = StringCbPrintf(szTempBuff,
                    SMALL_BUFF,
                    "Link Collection: %hu",
                    pButton -> LinkCollection);
 
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
-   
+
     stringReturn = StringCbPrintf(szTempBuff,
                    SMALL_BUFF,
                    "Link Usage Page: 0x%x",
                    pButton -> LinkUsagePage);
- 
-    SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);        
-   
+
+    SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
+
     stringReturn = StringCbPrintf(szTempBuff,
                    SMALL_BUFF,
                    "Link Usage: 0x%x",
@@ -2177,19 +2177,19 @@ vDisplayButtonAttributes(
 
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-    if (pButton->IsRange) 
+    if (pButton->IsRange)
     {
         stringReturn = StringCbPrintf(szTempBuff,
                        SMALL_BUFF,
                        "Usage Min: 0x%x, Usage Max: 0x%x",
-                       pButton->Range.UsageMin, 
+                       pButton->Range.UsageMin,
                        pButton->Range.UsageMax);
-    } 
+    }
     else
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Usage: 0x%x",pButton->NotRange.Usage);
 
-    } 
+    }
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
     if (pButton->IsRange)
@@ -2197,14 +2197,14 @@ vDisplayButtonAttributes(
          stringReturn = StringCbPrintf(szTempBuff,
                         SMALL_BUFF,
                         "Data Index Min: 0x%x, Data Index Max: 0x%x",
-                        pButton->Range.DataIndexMin, 
+                        pButton->Range.DataIndexMin,
                         pButton->Range.DataIndexMax);
 
-    } 
-    else 
+    }
+    else
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "DataIndex: 0x%x",pButton->NotRange.DataIndex);
-    } 
+    }
 
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
@@ -2213,31 +2213,31 @@ vDisplayButtonAttributes(
         stringReturn = StringCbPrintf(szTempBuff,
                        SMALL_BUFF,
                        "String Min: 0x%x, String Max: 0x%x",
-                       pButton->Range.StringMin, 
+                       pButton->Range.StringMin,
                        pButton->Range.StringMax);
-    } 
+    }
     else
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "String Index: 0x%x",pButton->NotRange.StringIndex);
-    } 
+    }
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-    if (pButton->IsDesignatorRange) 
+    if (pButton->IsDesignatorRange)
     {
         stringReturn = StringCbPrintf(szTempBuff,
                        SMALL_BUFF,
                        "Designator Min: 0x%x, Designator Max: 0x%x",
-                       pButton->Range.DesignatorMin, 
+                       pButton->Range.DesignatorMin,
                        pButton->Range.DesignatorMax);
 
-    } 
+    }
     else
     {
         stringReturn = StringCbPrintf(szTempBuff,
                        SMALL_BUFF,
                        "Designator Index: 0x%x",
                        pButton->NotRange.DesignatorIndex);
-    } 
+    }
     SendMessage(hControl, LB_ADDSTRING, 0,(LPARAM) szTempBuff);
 
     if (pButton->IsAbsolute)
@@ -2249,7 +2249,7 @@ vDisplayButtonAttributes(
         SendMessage(hControl, LB_ADDSTRING,0, (LPARAM) "Absolute: No");
     }
     return;
-} 
+}
 
 VOID
 vDisplayValueAttributes(
@@ -2262,7 +2262,7 @@ vDisplayValueAttributes(
 
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Report ID 0x%x", pValue->ReportID);
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
- 
+
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Usage Page: 0x%x", pValue->UsagePage);
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
@@ -2276,14 +2276,14 @@ vDisplayValueAttributes(
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Has Null: 0x%x", pValue->HasNull);
-    SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);    
+    SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
- 
+
     if (pValue->IsAlias)
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Alias");
     }
-    else 
+    else
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "=====");
     }
@@ -2294,13 +2294,13 @@ vDisplayValueAttributes(
         stringReturn = StringCbPrintf(szTempBuff,
                        SMALL_BUFF,
                        "Usage Min: 0x%x, Usage Max 0x%x",
-                       pValue->Range.UsageMin, 
+                       pValue->Range.UsageMin,
                        pValue->Range.UsageMax);
-    } 
+    }
     else
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Usage: 0x%x", pValue -> NotRange.Usage);
-    } 
+    }
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
     if (pValue->IsRange)
@@ -2308,19 +2308,19 @@ vDisplayValueAttributes(
         stringReturn = StringCbPrintf(szTempBuff,
                        SMALL_BUFF,
                        "Data Index Min: 0x%x, Data Index Max: 0x%x",
-                       pValue->Range.DataIndexMin, 
+                       pValue->Range.DataIndexMin,
                        pValue->Range.DataIndexMax);
-    } 
+    }
     else
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "DataIndex: 0x%x", pValue->NotRange.DataIndex);
-    } 
+    }
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
     stringReturn = StringCbPrintf(szTempBuff,
                    SMALL_BUFF,
                    "Physical Minimum: %d, Physical Maximum: %d",
-                   pValue->PhysicalMin, 
+                   pValue->PhysicalMin,
                    pValue->PhysicalMax);
 
     SendMessage(hControl, LB_ADDSTRING, 0,(LPARAM) szTempBuff);
@@ -2333,36 +2333,36 @@ vDisplayValueAttributes(
 
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-    if (pValue->IsStringRange) 
+    if (pValue->IsStringRange)
     {
        stringReturn = StringCbPrintf(szTempBuff,
                       SMALL_BUFF,
                       "String  Min: 0x%x String Max 0x%x",
                       pValue->Range.StringMin,
                       pValue->Range.StringMax);
-    } 
+    }
     else
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "String Index: 0x%x",pValue->NotRange.StringIndex);
-    } 
+    }
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-    if (pValue->IsDesignatorRange) 
+    if (pValue->IsDesignatorRange)
     {
         stringReturn = StringCbPrintf(szTempBuff,
                        SMALL_BUFF,
                        "Designator Minimum: 0x%x, Max: 0x%x",
-                       pValue->Range.DesignatorMin, 
+                       pValue->Range.DesignatorMin,
                        pValue->Range.DesignatorMax);
-    } 
-    else 
+    }
+    else
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Designator Index: 0x%x",pValue->NotRange.DesignatorIndex);
-    } 
+    }
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
- 
-    if (pValue->IsAbsolute) 
-    { 
+
+    if (pValue->IsAbsolute)
+    {
         SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) "Absolute: Yes");
     }
     else
@@ -2372,7 +2372,7 @@ vDisplayValueAttributes(
     return;
 }
 
-VOID 
+VOID
 vDisplayInputButtons(
     IN PHID_DEVICE pDevice,
     IN HWND hControl
@@ -2387,7 +2387,7 @@ vDisplayInputButtons(
     SendMessage(hControl, LB_RESETCONTENT, 0, (LPARAM) 0);
 
     pButtonCaps = pDevice->InputButtonCaps;
-    for (iLoop = 0; iLoop < pDevice->Caps.NumberInputButtonCaps; iLoop++) 
+    for (iLoop = 0; iLoop < pDevice->Caps.NumberInputButtonCaps; iLoop++)
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Input button cap # %d", iLoop);
 
@@ -2399,11 +2399,11 @@ vDisplayInputButtons(
         }
 
         pButtonCaps++;
-    } 
+    }
     SendMessage(hControl, LB_SETCURSEL, 0, 0 );
 }
 
-VOID 
+VOID
 vDisplayOutputButtons(
    IN PHID_DEVICE pDevice,
    IN HWND hControl
@@ -2419,7 +2419,7 @@ vDisplayOutputButtons(
 
     pButtonCaps = pDevice -> OutputButtonCaps;
 
-    for (iLoop = 0; iLoop < pDevice->Caps.NumberOutputButtonCaps; iLoop++) 
+    for (iLoop = 0; iLoop < pDevice->Caps.NumberOutputButtonCaps; iLoop++)
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Output button cap # %d", iLoop);
         iIndex = (INT) SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
@@ -2435,7 +2435,7 @@ vDisplayOutputButtons(
     return;
 }
 
-VOID 
+VOID
 vDisplayInputValues(
     IN PHID_DEVICE pDevice,
     IN HWND hControl
@@ -2451,12 +2451,12 @@ vDisplayInputValues(
 
     pValueCaps = pDevice -> InputValueCaps;
 
-    for (iLoop=0; iLoop < pDevice->Caps.NumberInputValueCaps; iLoop++) 
+    for (iLoop=0; iLoop < pDevice->Caps.NumberInputValueCaps; iLoop++)
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Input value cap # %d",iLoop);
         iIndex = (INT) SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-        if (-1 != iIndex) 
+        if (-1 != iIndex)
         {
            SendMessage(hControl, LB_SETITEMDATA, iIndex,(LPARAM) pValueCaps);
         }
@@ -2477,19 +2477,19 @@ vDisplayOutputValues(
     INT              iIndex;
     PHIDP_VALUE_CAPS pValueCaps;
 	HRESULT			 stringReturn;
-   
+
     SendMessage(hControl, LB_RESETCONTENT, 0, 0);
     pValueCaps = pDevice -> OutputValueCaps;
-   
-    for (iLoop = 0; iLoop < pDevice->Caps.NumberOutputValueCaps; iLoop++) 
+
+    for (iLoop = 0; iLoop < pDevice->Caps.NumberOutputValueCaps; iLoop++)
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Output value cap # %d", iLoop);
-        iIndex = (INT) SendMessage(hControl, 
-                                   LB_ADDSTRING, 
-                                   0, 
+        iIndex = (INT) SendMessage(hControl,
+                                   LB_ADDSTRING,
+                                   0,
                                    (LPARAM) szTempBuff);
-       
-        if (-1 != iIndex) 
+
+        if (-1 != iIndex)
         {
             SendMessage(hControl, LB_SETITEMDATA, iIndex, (LPARAM) pValueCaps);
         }
@@ -2517,17 +2517,17 @@ vDisplayFeatureButtons(
 
     pButtonCaps = pDevice -> FeatureButtonCaps;
 
-    for (iLoop = 0; iLoop < pDevice->Caps.NumberFeatureButtonCaps; iLoop++) 
+    for (iLoop = 0; iLoop < pDevice->Caps.NumberFeatureButtonCaps; iLoop++)
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Feature button cap # %d", iLoop);
         iIndex = (INT) SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-        if (-1 != iIndex) 
+        if (-1 != iIndex)
         {
             SendMessage(hControl, LB_SETITEMDATA, iIndex, (LPARAM) pButtonCaps);
         }
         pButtonCaps++;
-    } 
+    }
     SendMessage(hControl, LB_SETCURSEL, 0, 0);
     return;
 }
@@ -2547,18 +2547,18 @@ vDisplayFeatureValues(
     SendMessage(hControl, LB_RESETCONTENT, 0, 0);
     pValueCaps = pDevice ->FeatureValueCaps;
 
-    for (iLoop = 0; iLoop < pDevice->Caps.NumberFeatureValueCaps; iLoop++) 
+    for (iLoop = 0; iLoop < pDevice->Caps.NumberFeatureValueCaps; iLoop++)
     {
         stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Feature value cap # %d", iLoop);
         iIndex = (INT) SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-        if (-1 != iIndex) 
+        if (-1 != iIndex)
         {
             SendMessage(hControl, LB_SETITEMDATA, iIndex, (LPARAM) pValueCaps);
         }
 
         pValueCaps++;
-    } 
+    }
     SendMessage(hControl, LB_SETCURSEL, 0, 0);
     return;
 }
@@ -2572,12 +2572,12 @@ vLoadItemTypes(
 
     iIndex = (INT) SendMessage(hItemTypes, CB_ADDSTRING, 0, (LPARAM) "INPUT BUTTON");
 
-    if (-1 != iIndex) 
+    if (-1 != iIndex)
     {
         SendMessage(hItemTypes, CB_SETITEMDATA, iIndex, INPUT_BUTTON);
 
         iIndex = (INT) SendMessage(hItemTypes, CB_ADDSTRING, 0 ,(LPARAM) "INPUT VALUE");
-        if (-1 != iIndex) 
+        if (-1 != iIndex)
         {
             SendMessage(hItemTypes, CB_SETITEMDATA, iIndex, INPUT_VALUE);
         }
@@ -2595,7 +2595,7 @@ vLoadItemTypes(
         }
 
         iIndex = (INT) SendMessage(hItemTypes, CB_ADDSTRING, 0, (LPARAM) "FEATURE BUTTON");
-        if (-1 != iIndex) 
+        if (-1 != iIndex)
         {
             SendMessage(hItemTypes, CB_SETITEMDATA, iIndex, FEATURE_BUTTON);
         }
@@ -2620,14 +2620,14 @@ vLoadItemTypes(
 
         SendMessage(hItemTypes, CB_SETCURSEL, 0, 0);
     }
-} 
+}
 
 VOID vLoadDevices(
     HWND    hDeviceCombo
 )
 {
     PDEVICE_LIST_NODE   currNode;
-    
+
     static CHAR szTempBuff[SMALL_BUFF];
     INT         iIndex;
 	HRESULT		stringReturn;
@@ -2642,7 +2642,7 @@ VOID vLoadDevices(
     if (!IsListEmpty(&PhysicalDeviceList))
     {
         currNode = (PDEVICE_LIST_NODE) GetListHead(&PhysicalDeviceList);
-          
+
         do
         {
             stringReturn = StringCbPrintf(szTempBuff,
@@ -2654,20 +2654,20 @@ VOID vLoadDevices(
 
             iIndex = (INT) SendMessage(hDeviceCombo, CB_ADDSTRING, 0, (LPARAM) szTempBuff);
 
-            if (CB_ERR != iIndex) 
+            if (CB_ERR != iIndex)
             {
                 SendMessage(hDeviceCombo, CB_SETITEMDATA, iIndex, (LPARAM) &(currNode -> HidDeviceInfo));
             }
 
             currNode = (PDEVICE_LIST_NODE) GetNextEntry(currNode);
-            
-        } while ((PLIST) currNode != &PhysicalDeviceList);
-       
-    } 
 
-   
+        } while ((PLIST) currNode != &PhysicalDeviceList);
+
+    }
+
+
     SendMessage(hDeviceCombo, CB_SETCURSEL, 0, 0);
-  
+
     return;
 }
 
@@ -2675,7 +2675,7 @@ BOOL
 bGetData(
     prWriteDataStruct pItems,
     INT               iCount,
-    HWND              hParent, 
+    HWND              hParent,
     PCHAR             pszDialogName
 )
 {
@@ -2684,7 +2684,7 @@ bGetData(
     INT                        iResult;
 
 
-    if (iCount > MAX_WRITE_ELEMENTS) 
+    if (iCount > MAX_WRITE_ELEMENTS)
     {
         iCount = MAX_WRITE_ELEMENTS;
     }
@@ -2699,18 +2699,18 @@ bGetData(
                                    hParent,
                                    bGetDataDlgProc,
                                    (LPARAM) &rParams);
-    if (iResult) 
+    if (iResult)
     {
        memcpy(pItems, arTempItems, sizeof(rWriteDataStruct)*iCount);
     }
     return iResult;
-} 
+}
 
-INT_PTR CALLBACK 
+INT_PTR CALLBACK
 bGetDataDlgProc(
-    HWND hDlg, 
-    UINT message, 
-    WPARAM wParam, 
+    HWND hDlg,
+    UINT message,
+    WPARAM wParam,
     LPARAM lParam
 )
 {
@@ -2724,7 +2724,7 @@ bGetDataDlgProc(
            SCROLLINFO           rScrollInfo;
            INT                  iReturn;
 
-    switch(message) 
+    switch(message)
     {
         case WM_INITDIALOG:
 
@@ -2732,7 +2732,7 @@ bGetDataDlgProc(
             prData = pParams -> prItems;
             hScrollBar = GetDlgItem(hDlg, IDC_SCROLLBAR);
 
-            if (pParams -> iCount > CONTROL_COUNT) 
+            if (pParams -> iCount > CONTROL_COUNT)
             {
                 iDisplayCount = CONTROL_COUNT;
                 iScrollRange = pParams -> iCount - CONTROL_COUNT;
@@ -2753,7 +2753,7 @@ bGetDataDlgProc(
             break;
 
         case WM_COMMAND:
-            switch(LOWORD(wParam)) 
+            switch(LOWORD(wParam))
             {
                 case IDOK:
                 case ID_SEND:
@@ -2764,13 +2764,13 @@ bGetDataDlgProc(
                 case IDCANCEL:
                     EndDialog(hDlg,0);
                     break;
-             } 
+             }
              break;
 
         case WM_VSCROLL:
             vReadDataFromControls(hDlg, prData, iCurrentScrollPos, iDisplayCount);
 
-            switch(LOWORD(wParam)) 
+            switch(LOWORD(wParam))
             {
                 case SB_LINEDOWN:
                     ++iCurrentScrollPos;
@@ -2792,14 +2792,14 @@ bGetDataDlgProc(
                     break;
             }
 
-            if (iCurrentScrollPos < 0) 
+            if (iCurrentScrollPos < 0)
             {
                 iCurrentScrollPos = 0;
             }
-             
+
             if (iCurrentScrollPos > iScrollRange)
             {
-                iCurrentScrollPos = iScrollRange; 
+                iCurrentScrollPos = iScrollRange;
             }
 
             SendMessage(hScrollBar, SBM_SETPOS, iCurrentScrollPos, TRUE);
@@ -2809,8 +2809,8 @@ bGetDataDlgProc(
             {
                 vWriteDataToControls(hDlg, prData, iCurrentScrollPos, iDisplayCount);
             }
-            break; 
-    } 
+            break;
+    }
     return FALSE;
 } //end function bGetDataDlgProc//
 
@@ -2828,7 +2828,7 @@ vReadDataFromControls(
     HWND              hValueWnd;
 
     pDataWalk = prData + iOffset;
-    for (iLoop = 0; (iLoop < iCount) && (iLoop < CONTROL_COUNT); iLoop++) 
+    for (iLoop = 0; (iLoop < iCount) && (iLoop < CONTROL_COUNT); iLoop++)
     {
         hValueWnd = GetDlgItem(hDlg, iValueControlID);
 
@@ -2837,10 +2837,10 @@ vReadDataFromControls(
         iValueControlID++;
 
         pDataWalk++;
-    } 
+    }
 
     return;
-} 
+}
 
 VOID
 vWriteDataToControls(
@@ -2858,38 +2858,38 @@ vWriteDataToControls(
 
     pDataWalk = prData + iOffset;
 
-    for (iLoop = 0; (iLoop < iCount) && (iLoop < CONTROL_COUNT); iLoop++) 
+    for (iLoop = 0; (iLoop < iCount) && (iLoop < CONTROL_COUNT); iLoop++)
     {
          hLabelWnd = GetDlgItem(hDlg, iLabelControlID);
          hValueWnd = GetDlgItem(hDlg, iValueControlID);
-         
+
          ShowWindow(hLabelWnd, SW_SHOW);
          ShowWindow(hValueWnd, SW_SHOW);
-         
+
          SetWindowText(hLabelWnd, pDataWalk -> szLabel);
          SetWindowText(hValueWnd, pDataWalk -> szValue);
-         
+
          iLabelControlID++;
          iValueControlID++;
          pDataWalk++;
-    }     
-     
+    }
+
     //
     // Hide the controls
     //
 
-    for (; iLoop < CONTROL_COUNT; iLoop++) 
+    for (; iLoop < CONTROL_COUNT; iLoop++)
     {
         hLabelWnd = GetDlgItem(hDlg,iLabelControlID);
         hValueWnd = GetDlgItem(hDlg,iValueControlID);
-        
+
         ShowWindow(hLabelWnd,SW_HIDE);
         ShowWindow(hValueWnd,SW_HIDE);
-        
+
         iLabelControlID++;
         iValueControlID++;
-     } 
-} 
+     }
+}
 
 VOID
 vCreateUsageString(
@@ -2898,7 +2898,7 @@ vCreateUsageString(
 )
 {
     HRESULT stringReturn;
-	
+
 	stringReturn = StringCbPrintf(szString,
                    SMALL_BUFF,
                    "Usage: %#04x",
@@ -2914,7 +2914,7 @@ vCreateUsageAndPageString(
 )
 {
     HRESULT stringReturn;
-	
+
 	stringReturn = StringCbPrintf(szString,
                    SMALL_BUFF,
                    "Usage Page: %#04x  Usage: %#04x",
@@ -2936,7 +2936,7 @@ vDisplayLinkCollectionNode(
 
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Index: 0x%x", ulLinkIndex);
     SendMessage(hControl, LB_ADDSTRING, 0, (LPARAM) szTempBuff);
-    
+
     stringReturn = StringCbPrintf(szTempBuff, SMALL_BUFF, "Usage Page: 0x%x", pLCNode -> LinkUsagePage);
     SendMessage(hControl, LB_ADDSTRING,0, (LPARAM)szTempBuff);
 
@@ -2985,7 +2985,7 @@ Routine Description:
     // Calculate the byte and byte offset into the buffer for the given
     //   index value
     //
-    
+
     iByteIndex = (UsageIndex * BitSize) >> 3;
     iByteOffset = (UsageIndex * BitSize) & 7;
 
@@ -2993,61 +2993,61 @@ Routine Description:
     // Extract the 32-bit value beginning at ByteIndex.  This value
     //   will contain some or all of the value we are attempting to retrieve
     //
-    
+
     ulValue = *(PULONG) (pBuffer + iByteIndex);
 
     //
     // Shift that value to the right by our byte offset..
     //
-    
+
     ulValue = ulValue >> iByteOffset;
 
     //
     // At this point, ulValue contains the first 32-iByteOffset bits beginning
-    //    the appropriate offset in the buffer.  There are now two cases to 
+    //    the appropriate offset in the buffer.  There are now two cases to
     //    look at:
-    //      
+    //
     //    1) BitSize > 32-iByteOffset -- In which case, we need to extract
     //                                   iByteOffset bits from the next
     //                                   byte in the array and OR them as
     //                                   the MSBs of ulValue
     //
     //    2) BitSize < 32-iByteOffset -- Need to get only the BitSize LSBs
-    //                                   
+    //
     //
 
     //
     // Case #1
     //
-    
-    if (BitSize > sizeof(ULONG)*8 - iByteOffset) 
+
+    if (BitSize > sizeof(ULONG)*8 - iByteOffset)
     {
         //
         // Get the next byte of the report following the four bytes we
         //   retrieved earlier for ulValue
         //
-        
+
         ucLeftoverBits =  *(pBuffer+iByteIndex+4);
 
         //
         // Shift those bits to the left for anding to our previous value
         //
-        
+
         ulMask = ucLeftoverBits << (24 + (8 - iByteOffset));
         ulValue |= ulMask;
 
     }
-    else if (BitSize < sizeof(ULONG)*8 - iByteOffset) 
+    else if (BitSize < sizeof(ULONG)*8 - iByteOffset)
     {
         //
         // Need to mask the most significant bits that are part of another
         //    value(s), not the one we are currently working with.
         //
-        
+
         ulMask = (1 << BitSize) - 1;
         ulValue &= ulMask;
     }
-    
+
     //
     // We've now got the correct value, now output to the string
     //
@@ -3065,18 +3065,18 @@ RegisterHidDevice(
 )
 {
     DEV_BROADCAST_HANDLE broadcastHandle;
-    
+
     broadcastHandle.dbch_size = sizeof(DEV_BROADCAST_HANDLE);
     broadcastHandle.dbch_devicetype = DBT_DEVTYP_HANDLE;
     broadcastHandle.dbch_handle = DeviceNode -> HidDeviceInfo.HidDevice;
 
-    DeviceNode -> NotificationHandle = RegisterDeviceNotification( 
+    DeviceNode -> NotificationHandle = RegisterDeviceNotification(
                                                 WindowHandle,
                                                 &broadcastHandle,
                                                 DEVICE_NOTIFY_WINDOW_HANDLE);
 
     return (NULL != DeviceNode -> NotificationHandle);
-}   
+}
 
 VOID
 DestroyDeviceListCallback(
@@ -3086,7 +3086,7 @@ DestroyDeviceListCallback(
     PDEVICE_LIST_NODE   deviceNode;
 
     deviceNode = (PDEVICE_LIST_NODE) ListNode;
-    
+
     //
     // The callback function needs to do the following steps...
     //   1) Close the HidDevice
@@ -3096,7 +3096,7 @@ DestroyDeviceListCallback(
 
     CloseHidDevice(&(deviceNode -> HidDeviceInfo));
 
-    if (NULL != deviceNode -> NotificationHandle) 
+    if (NULL != deviceNode -> NotificationHandle)
     {
         UnregisterDeviceNotification(deviceNode -> NotificationHandle);
     }
@@ -3107,14 +3107,14 @@ DestroyDeviceListCallback(
 }
 
 DWORD WINAPI
-AsynchReadThreadProc( 
+AsynchReadThreadProc(
     PREAD_THREAD_CONTEXT    Context
 )
 {
     HANDLE  completionEvent;
     BOOL    readStatus;
     DWORD   waitStatus;
-    
+
     //
     // Create the completion event to send to the the OverlappedRead routine
     //
@@ -3122,11 +3122,11 @@ AsynchReadThreadProc(
     completionEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
 
     //
-    // If NULL returned, then we cannot proceed any farther so we just exit the 
+    // If NULL returned, then we cannot proceed any farther so we just exit the
     //  the thread
     //
-    
-    if (NULL == completionEvent) 
+
+    if (NULL == completionEvent)
     {
         goto AsyncRead_End;
     }
@@ -3134,7 +3134,7 @@ AsynchReadThreadProc(
     //
     // Now we enter the main read loop, which does the following:
     //  1) Calls ReadOverlapped()
-    //  2) Waits for read completion with a timeout just to check if 
+    //  2) Waits for read completion with a timeout just to check if
     //      the main thread wants us to terminate our the read request
     //  3) If the read fails, we simply break out of the loop
     //      and exit the thread
@@ -3147,7 +3147,7 @@ AsynchReadThreadProc(
     //      and the main thread has yet to want us to terminate
     //
 
-    do 
+    do
     {
         //
         // Call ReadOverlapped() and if the return status is TRUE, the ReadFile
@@ -3157,27 +3157,27 @@ AsynchReadThreadProc(
 
         readStatus = ReadOverlapped( Context -> HidDevice, completionEvent );
 
-    
-        if (!readStatus) 
+
+        if (!readStatus)
         {
            break;
         }
 
-        while (!Context -> TerminateThread) 
+        while (!Context -> TerminateThread)
         {
             //
             // Wait for the completion event to be signaled or a timeout
             //
-            
+
             waitStatus = WaitForSingleObject (completionEvent, READ_THREAD_TIMEOUT );
 
             //
             // If completionEvent was signaled, then a read just completed
             //   so let's leave this loop and process the data
             //
-            
+
             if ( WAIT_OBJECT_0 == waitStatus)
-            { 
+            {
                 break;
             }
         }
@@ -3188,8 +3188,8 @@ AsynchReadThreadProc(
         //  input info and then send a message to the main thread to display
         //  the new data.
         //
-        
-        if (!Context -> TerminateThread) 
+
+        if (!Context -> TerminateThread)
         {
             UnpackReport(Context -> HidDevice -> InputReportBuffer,
                           Context -> HidDevice -> Caps.InputReportByteLength,
@@ -3197,9 +3197,9 @@ AsynchReadThreadProc(
                           Context -> HidDevice -> InputData,
                           Context -> HidDevice -> InputDataLength,
                           Context -> HidDevice -> Ppd);
-            
-            if (NULL != Context -> DisplayEvent) 
-            { 
+
+            if (NULL != Context -> DisplayEvent)
+            {
                 PostMessage(Context -> DisplayWindow,
                             WM_DISPLAY_READ_DATA,
                             0,
@@ -3223,7 +3223,7 @@ SynchReadThreadProc(
     PREAD_THREAD_CONTEXT    Context
 )
 {
-    do 
+    do
     {
         Read(Context -> HidDevice);
 
@@ -3234,7 +3234,7 @@ SynchReadThreadProc(
                      Context -> HidDevice -> InputDataLength,
                      Context -> HidDevice -> Ppd);
 
-        if (NULL != Context -> DisplayEvent) 
+        if (NULL != Context -> DisplayEvent)
         {
             PostMessage(Context -> DisplayWindow,
                         WM_DISPLAY_READ_DATA,
@@ -3248,7 +3248,7 @@ SynchReadThreadProc(
     PostMessage( Context -> DisplayWindow, WM_READ_DONE, 0, 0);
     ExitThread(0);
     return (0);
-}  
+}
 
 DWORD WINAPI
 MyReadThreadProc(
@@ -3261,7 +3261,7 @@ MyReadThreadProc(
 		Sleep(100);
 	} while ( !Context->TerminateThread && !Context->DoOneRead );
 #else
-    do 
+    do
     {
         Read(Context -> HidDevice);
 
@@ -3272,7 +3272,7 @@ MyReadThreadProc(
                      Context -> HidDevice -> InputDataLength,
                      Context -> HidDevice -> Ppd);
 
-        if (NULL != Context -> DisplayEvent) 
+        if (NULL != Context -> DisplayEvent)
         {
             PostMessage(Context -> DisplayWindow,
                         WM_DISPLAY_READ_DATA,
@@ -3285,7 +3285,7 @@ MyReadThreadProc(
 #endif
     ExitThread(0);
     return (0);
-}  
+}
 
 char
 HalfBtoHex(IN BYTE chr)
@@ -3299,7 +3299,7 @@ HalfBtoHex(IN BYTE chr)
 	}
 }
 
-int 
+int
 Hex2Int(IN char* str)
 {
 	int result = 0;

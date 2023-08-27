@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -202,8 +202,8 @@ void MEDSdram_Initialize(Media *media,
                          unsigned int baseAddress,
                          unsigned int size)
 {
-    unsigned int value;  
-  
+    unsigned int value;
+
     TRACE_INFO("MEDSdram init\n\r");
 
     // Initialize SDRAM if not already done
@@ -217,13 +217,13 @@ void MEDSdram_Initialize(Media *media,
         *((volatile unsigned int *) AT91C_EBI_SDRAM) = value;
     }
     else {
-    
+
         TRACE_INFO("Initializing the SDRAM ...\n\r");
         BOARD_ConfigureSdram(BOARD_SDRAM_BUSWIDTH);
     }
-    
+
     // Initialize media fields
-    //--------------------------------------------------------------------------        
+    //--------------------------------------------------------------------------
     media->write = MEDSdram_Write;
     media->read = MEDSdram_Read;
     media->handler = 0;

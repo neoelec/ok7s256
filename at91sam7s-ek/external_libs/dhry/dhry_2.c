@@ -1,5 +1,5 @@
 /*
- * The 'old-style' K&R function declarations have been replaced with 
+ * The 'old-style' K&R function declarations have been replaced with
  * 'ANSI-C-style' function declarations (in dhry_1.c and dhry_2,c)
  */
 
@@ -8,9 +8,9 @@
  *
  *                   "DHRYSTONE" Benchmark Program
  *                   -----------------------------
- *                                                                            
+ *
  *  Version:    C, Version 2.1
- *                                                                            
+ *
  *  File:       dhry_2.c (part 3 of 3)
  *
  *  Date:       May 25, 1988
@@ -64,13 +64,13 @@ void Proc_6 ( Enumeration Enum_Val_Par, Enumeration *Enum_Ref_Par)
         case Ident_2:
             if (Int_Glob > 100)
                 *Enum_Ref_Par = Ident_1;
-            else 
+            else
                 *Enum_Ref_Par = Ident_4;
             break;
         case Ident_3: /* executed */
             *Enum_Ref_Par = Ident_2;
             break;
-        case Ident_4: 
+        case Ident_4:
             break;
         case Ident_5:
             *Enum_Ref_Par = Ident_3;
@@ -79,8 +79,8 @@ void Proc_6 ( Enumeration Enum_Val_Par, Enumeration *Enum_Ref_Par)
 } /* Proc_6 */
 
 
-void Proc_7 ( One_Fifty Int_1_Par_Val, 
-              One_Fifty Int_2_Par_Val, 
+void Proc_7 ( One_Fifty Int_1_Par_Val,
+              One_Fifty Int_2_Par_Val,
               One_Fifty *Int_Par_Ref )
 /**********************************************/
     /* executed three times                                      */
@@ -98,9 +98,9 @@ void Proc_7 ( One_Fifty Int_1_Par_Val,
 } /* Proc_7 */
 
 
-void Proc_8 ( Arr_1_Dim Arr_1_Par_Ref, 
-              Arr_2_Dim Arr_2_Par_Ref, 
-              int Int_1_Par_Val, 
+void Proc_8 ( Arr_1_Dim Arr_1_Par_Ref,
+              Arr_2_Dim Arr_2_Par_Ref,
+              int Int_1_Par_Val,
               int Int_2_Par_Val)
 /*********************************************************************/
     /* executed once      */

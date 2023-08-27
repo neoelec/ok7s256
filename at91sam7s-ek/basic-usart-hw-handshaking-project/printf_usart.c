@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -59,7 +59,7 @@
 signed int fputc(signed int c, FILE *pStream)
 {
     if ((pStream == stdout) || (pStream == stderr)) {
-    
+
         USART_Write(AT91C_BASE_US0, c, 0);
         return c;
     }
@@ -108,13 +108,13 @@ signed int putchar(signed int c)
 #else
 
 //------------------------------------------------------------------------------
-/// Re-implement DBGU_PutChar function to outputs a character through the 
+/// Re-implement DBGU_PutChar function to outputs a character through the
 /// USART0 peripheral
 /// \param c  Character to send.
 //------------------------------------------------------------------------------
 
 void DBGU_PutChar(unsigned char ch)
-{ 
+{
     USART_Write(AT91C_BASE_US0, ch, 0);
 }
 

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -54,7 +54,7 @@
 void NorFlash_CFI_DumpConfigruation(struct NorFlashCFI *pNorFlashCFI)
 {
     unsigned char i;
-    
+
     TRACE_DEBUG("Common Flash Interface Definition Table\n\r");
     TRACE_DEBUG("Addr. Data   Description \n\r");
     TRACE_DEBUG("0x10  %04Xh  Query Unique ASCII string\n\r",
@@ -95,7 +95,7 @@ void NorFlash_CFI_DumpConfigruation(struct NorFlashCFI *pNorFlashCFI)
     pNorFlashCFI->norFlashCfiQueryInfo.maxTimeOutBlockErase);
     TRACE_DEBUG("0x26  %04Xh  Max. timeout for full chip erase\n\r",
     pNorFlashCFI->norFlashCfiQueryInfo.maxTimeOutChipErase);
-    
+
     TRACE_DEBUG("0x27  %04Xh  Device Size = 2N byte\n\r",
     pNorFlashCFI->norFlashCfiDeviceGeometry.deviceSize);
     TRACE_DEBUG("0x28  %04Xh  Flash Device Interface description\n\r",
@@ -127,9 +127,9 @@ unsigned int NorFlash_GetDeviceNumOfBlocks(
     unsigned char i;
     unsigned int blocks = 0;
     unsigned short numBlockRegion;
-    
+
     numBlockRegion = pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.numEraseRegion;
-   
+
     for (i = 0; i < numBlockRegion; i++) {
         blocks += (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[i]).Y + 1;
     }
@@ -147,9 +147,9 @@ unsigned int NorFlash_GetDeviceMinBlockSize(
     unsigned short numBlockRegion;
     unsigned long size ;
     numBlockRegion = pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.numEraseRegion;
-    
+
     size = (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[0].Z) * 256;
-    
+
     for (i = 1; i < numBlockRegion; i++) {
         if (size > (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[i].Z) * 256) {
             size = (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[i].Z) * 256 ;
@@ -169,9 +169,9 @@ unsigned int NorFlash_GetDeviceMaxBlockSize(
     unsigned short numBlockRegion;
     unsigned long size ;
     numBlockRegion = pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.numEraseRegion;
-    
+
     size = (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[0].Z) * 256;
-    
+
     for (i = 1; i < numBlockRegion; i++) {
         if (size < (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[i].Z) * 256) {
             size = (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[i].Z) * 256 ;
@@ -193,7 +193,7 @@ unsigned int NorFlash_GetDeviceBlockSize(
     unsigned short j;
     unsigned short numBlockRegion,numBlockPerRegion;
     unsigned int block = 0;
-    
+
     numBlockRegion = pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.numEraseRegion;
     for (i = 0; i < numBlockRegion; i++) {
         numBlockPerRegion = (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[i]).Y + 1;
@@ -221,9 +221,9 @@ unsigned short NorFlash_GetDeviceSectorInRegion(
     unsigned int size = 0;
     unsigned char done = 0;
     unsigned short i , j;
-    
+
     numBlockRegion = pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.numEraseRegion;
-    
+
     for (i = 0; i < numBlockRegion; i++) {
         numBlockPerRegion = (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[i]).Y + 1;
         for (j = 0; j < numBlockPerRegion; j++) {
@@ -236,7 +236,7 @@ unsigned short NorFlash_GetDeviceSectorInRegion(
         }
         if (done) break;
     }
-    
+
     return sectorId;
 }
 
@@ -254,7 +254,7 @@ unsigned int NorFlash_GetDeviceSectorAddress(
     unsigned int address = 0;
     unsigned char done = 0;
     unsigned short i , j;
-    
+
     numBlockRegion = pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.numEraseRegion;
     for (i = 0; i < numBlockRegion; i++) {
         numBlockPerRegion = (pNorFlashInfo->cfiDescription.norFlashCfiDeviceGeometry.eraseRegionInfo[i]).Y + 1;
@@ -268,7 +268,7 @@ unsigned int NorFlash_GetDeviceSectorAddress(
         }
         if (done) break;
     }
-    
+
     return address;
 }
 
@@ -313,9 +313,9 @@ unsigned char NorFlash_GetDataBusWidth( struct NorFlashInfo *pNorFlashInfo)
 {
     return (pNorFlashInfo->deviceChipWidth * 8);
 }
-    
+
 //------------------------------------------------------------------------------
-/// Returns the size of the whole device in bytes 
+/// Returns the size of the whole device in bytes
 /// \param pNorFlashInfo  Pointer to a NorFlashInfo instance.
 //------------------------------------------------------------------------------
 unsigned long  NorFlash_GetDeviceSizeInBytes(
@@ -331,14 +331,14 @@ unsigned long  NorFlash_GetDeviceSizeInBytes(
 /// returns NorCommon_ERROR_UNKNOWNMODEL.
 //------------------------------------------------------------------------------
 unsigned char NorFlash_CFI_Detect(
-    struct NorFlash *pNorFlash, 
+    struct NorFlash *pNorFlash,
     unsigned char hardwareBusWidth)
 {
-    
+
     unsigned char i;
     unsigned char *pCfi = (unsigned char*)(&(pNorFlash->norFlashInfo.cfiDescription));
     unsigned int address;
-    
+
     pNorFlash->norFlashInfo.cfiCompatible = 0;
     pNorFlash->norFlashInfo.deviceChipWidth = hardwareBusWidth;
     address = CFI_QUERY_OFFSET;
@@ -347,16 +347,16 @@ unsigned char NorFlash_CFI_Detect(
         ReadRawData(8, NorFlash_GetByteAddressInChip(&(pNorFlash->norFlashInfo), address), pCfi);
         address++;
         pCfi++;
-        
+
     }
     // Check the query-unique ASCII string "QRY"
     if( (pNorFlash->norFlashInfo.cfiDescription.norFlashCfiQueryInfo.queryUniqueString[0] != 'Q' )
-        || (pNorFlash->norFlashInfo.cfiDescription.norFlashCfiQueryInfo.queryUniqueString[1] != 'R') 
+        || (pNorFlash->norFlashInfo.cfiDescription.norFlashCfiQueryInfo.queryUniqueString[1] != 'R')
         || (pNorFlash->norFlashInfo.cfiDescription.norFlashCfiQueryInfo.queryUniqueString[2] != 'Y') ) {
         return NorCommon_ERROR_UNKNOWNMODEL;
     }
-    
-#ifdef DUMP_CFI    
+
+#ifdef DUMP_CFI
     NorFlash_CFI_DumpConfigruation(&(pNorFlash->norFlashInfo.cfiDescription));
 #endif
 
@@ -369,7 +369,7 @@ unsigned char NorFlash_CFI_Detect(
     else {
         return NorCommon_ERROR_UNKNOWNMODEL;
     }
-    
+
     pNorFlash->norFlashInfo.cfiCompatible = 1;
     NORFLASH_Reset(pNorFlash, 0);
     return 0;

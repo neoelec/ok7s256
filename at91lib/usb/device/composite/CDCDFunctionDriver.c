@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -205,7 +205,7 @@ unsigned char CDCDFunctionDriver_RequestHandler(
     switch (USBGenericRequest_GetRequest(request)) {
 
         case CDCGenericRequest_SETLINECODING:
-            
+
             CDCD_SetLineCoding(request);
             break;
 

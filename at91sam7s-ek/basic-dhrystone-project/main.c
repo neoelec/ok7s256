@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -32,14 +32,14 @@
 ///
 /// !!!Purpose
 ///
-/// This application measures how many dhrystone per second  that the chip can produce under several different configurations. 
+/// This application measures how many dhrystone per second  that the chip can produce under several different configurations.
 ///
 /// !!!Description
 ///
-/// When launched, this program displays a menu on the DBGU, enabling the user to choose between several options: 
-///   - Change the processor & master clock frequencies 
-///   - Enable or disable the processor instruction cache (SAM9 only) 
-///   - Start a dhrystone measurement 
+/// When launched, this program displays a menu on the DBGU, enabling the user to choose between several options:
+///   - Change the processor & master clock frequencies
+///   - Enable or disable the processor instruction cache (SAM9 only)
+///   - Start a dhrystone measurement
 ///
 ///
 /// !!!Usage
@@ -75,7 +75,7 @@
 ///    m: Perform measurements
 ///    h: Display this menu again
 ///    \endcode
-/// -# Select one or more options to set the configuration of the device, then start a measurement by typing 'm'. 
+/// -# Select one or more options to set the configuration of the device, then start a measurement by typing 'm'.
 ///
 //-----------------------------------------------------------------------------
 
@@ -91,7 +91,7 @@
 ///
 /// The code can be roughly broken down as follows:
 ///    - Init RTT
-///    - Testing the loop 
+///    - Testing the loop
 ///    - Print out the dhrystones per second
 ///
 /// Please refer to the list of functions in the #Overview# tab of this unit
@@ -355,13 +355,13 @@ static const struct ClockConfiguration clockConfigurations[] = {
     //{60, 60, 0x000C3F02, 0x00000007},
     {60, 60, ((0x0 << AT91C_CKGR_USBDIV_SHIFT) | (0x6a << AT91C_CKGR_MUL_SHIFT) \
         | (0x0 << AT91C_CKGR_OUT_SHIFT) |(0x3f << AT91C_CKGR_PLLCOUNT_SHIFT) \
-        | (0x2 << AT91C_CKGR_DIV_SHIFT)), 
+        | (0x2 << AT91C_CKGR_DIV_SHIFT)),
         ( AT91C_PMC_PRES_CLK_2 | AT91C_PMC_CSS_PLL_CLK)},
     // PCK = 48 MHz, MCK = 48 MHz
     //{48, 48, 0x00483F0E, 0x00000007}
     {48, 48, ((0x0 << AT91C_CKGR_USBDIV_SHIFT) | (0x48 << AT91C_CKGR_MUL_SHIFT) \
         | (0x0 << AT91C_CKGR_OUT_SHIFT) |(0x3f << AT91C_CKGR_PLLCOUNT_SHIFT) \
-        | (0x12 << AT91C_CKGR_DIV_SHIFT)), 
+        | (0x12 << AT91C_CKGR_DIV_SHIFT)),
         ( AT91C_PMC_PRES_CLK_2 | AT91C_PMC_CSS_PLL_CLK)}
 };
 
@@ -395,21 +395,21 @@ static void ComputeDhrystonesPerSecond(void)
 
     // Perform measures
     for (i=0; i < 4; i++) {
-    
-        dhrystonesPerSecond = 0;  
-        
+
+        dhrystonesPerSecond = 0;
+
         // Wait for the next second
         startTime = RTT_GetTime(AT91C_BASE_RTTC);
         while (startTime == RTT_GetTime(AT91C_BASE_RTTC));
-    
+
         // Go through test loop
         startTime = RTT_GetTime(AT91C_BASE_RTTC);
         while (RTT_GetTime(AT91C_BASE_RTTC) == startTime) {
-    
+
             DHRY_testloop(NUM_RUNS);
             dhrystonesPerSecond += NUM_RUNS;
         }
-    
+
         printf(" - %u dhrystones per second\n\r", dhrystonesPerSecond);
     }
     printf("Finished\n\r");
@@ -467,7 +467,7 @@ static void InitMMU(unsigned int *pTranslationTable)
     pTranslationTable[0x0] =   (0x00000000)| // Physical Address
                                  ( 1 << 10)| // Access in supervisor mode
                                  (15 <<  5)| // Domain
-                                 ( 1 <<  4)|  
+                                 ( 1 <<  4)|
                                  ( 0 <<  3)| // No D cache
                                      0x2;    // Set as 1 Mbyte section
     // SRAM adress (with D cache)
@@ -540,7 +540,7 @@ static void ToggleDataCache(void)
     else {
 
         printf("  Enable DCache\n\r");
-        // Enable 
+        // Enable
         CP15_Enable_D_Cache();
     }
 }
@@ -588,9 +588,9 @@ static void display_I_D_MMU(void)
     }
     else {
         printf("    MMU disabled\n\r");
-    }                
+    }
 }
-#endif 
+#endif
 
 //------------------------------------------------------------------------------
 /// Sets the specified clock configuration.
@@ -631,7 +631,7 @@ static void SetClockConfiguration(unsigned char configuration)
 int main(void)
 {
     unsigned char key;
-    
+
     // DBGU configuration
     TRACE_CONFIGURE(DBGU_STANDARD, 115200, BOARD_MCK);
     printf("-- Basic Dhrystone Project %s --\n\r", SOFTPACK_VERSION);

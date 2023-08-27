@@ -321,67 +321,67 @@ void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
     WRITE(AT91C_BASE_SDDRC, SDDRC_HS, 0x00);
 
     sleep_time(200);                      // --------- WAIT ---------
-   
+
 }
 
 //------------------------------------------------------------------------------
 /// Initialize and configure the BCRAM
 //------------------------------------------------------------------------------
 void BOARD_ConfigureBcram(unsigned char busWidth)
-{  
-    volatile unsigned int *pBcram = (unsigned int *) AT91C_EBI_BCRAM;  
-  
+{
+    volatile unsigned int *pBcram = (unsigned int *) AT91C_EBI_BCRAM;
+
     // Configure EBI
     AT91C_BASE_CCFG->CCFG_EBICSA |= AT91C_EBI_CS1A_BCRAMC;
-  
+
     // Configure A23 and A24 PIO as Periph A
     AT91C_BASE_PIOD->PIO_PDR = AT91C_PIO_PD12 | AT91C_PIO_PD13;
     AT91C_BASE_PIOD->PIO_ASR = AT91C_PIO_PD12 | AT91C_PIO_PD13;
-    
+
     // 2. The Cellular Ram  memory type must be set in the BCRAMC Memory Device Register.
     // -------------------------------------------------------------------------
-    // Burst CellularRAM Version 1.5 
+    // Burst CellularRAM Version 1.5
     // (BCRAMC_MDR = 0x00000001)
-    AT91C_BASE_BCRAMC->BCRAMC_MDR = AT91C_BCRAMC_MD_BCRAM_V15;            
+    AT91C_BASE_BCRAMC->BCRAMC_MDR = AT91C_BCRAMC_MD_BCRAM_V15;
 
-    // 3. Temperature compensated self refresh (TCSR) and partial array 
-    //    refresh (PAR) must be set in the BCRAMC Low Power register.    
-    // -------------------------------------------------------------------------    
+    // 3. Temperature compensated self refresh (TCSR) and partial array
+    //    refresh (PAR) must be set in the BCRAMC Low Power register.
+    // -------------------------------------------------------------------------
     // Low power register => Low-power is inhibited, Internal Temperature Sensor choosen
     // PAR[2:0]      : Partial Array Refresh = 000 (Full Array)
     // TCR_TCSR[5:4] : Temperature Compensated Refresh/Self-refresh = 00 (Internal sensor or 70°C)
     // LPCB[9:8]     : Low Power Command Bit = 00 (Low power Feature inhibited)
     // (BCRAMC_LPR    = 0x00000000)
-     AT91C_BASE_BCRAMC->BCRAMC_LPR = AT91C_BCRAMC_PAR_FULL | 
-                                     //AT91C_BCRAMC_TCR_INTERNAL_OR_70C | 
+     AT91C_BASE_BCRAMC->BCRAMC_LPR = AT91C_BCRAMC_PAR_FULL |
+                                     //AT91C_BCRAMC_TCR_INTERNAL_OR_70C |
                                      AT91C_BCRAMC_LPCB_DISABLE;
-       
+
     // High Speed Register
     // DA(0) Decode Cycle = 0 (No decode cycle added)
     // (BCRAMC_HSR    = 0x00000000)
-    AT91C_BASE_BCRAMC->BCRAMC_HSR = AT91C_BCRAMC_DA_DISABLE;            
+    AT91C_BASE_BCRAMC->BCRAMC_HSR = AT91C_BCRAMC_DA_DISABLE;
 
-    // 4. Asynchronous timings (TCKA, TCRE..) must be set in the BCRAMC Timing Register.    
-    // -------------------------------------------------------------------------    
-    // TCW[3:0]   : Chip Enable to End of Write = 3 
-    // TCRES[5:4] : Control Register Enable Setup = 2 
-    // TCKA[11:8] : BCWE High to BCCK Valid = 0 
+    // 4. Asynchronous timings (TCKA, TCRE..) must be set in the BCRAMC Timing Register.
+    // -------------------------------------------------------------------------
+    // TCW[3:0]   : Chip Enable to End of Write = 3
+    // TCRES[5:4] : Control Register Enable Setup = 2
+    // TCKA[11:8] : BCWE High to BCCK Valid = 0
     // (BCRAMC_TPR = 0x00000023)
     AT91C_BASE_BCRAMC->BCRAMC_TPR = AT91C_BCRAMC_TCW_3 |
                                     AT91C_BCRAMC_TCRES_2 |
                                     AT91C_BCRAMC_TCKA_0;
-                                      
+
     // 5. Cellular Ram  features must be set in the HBCRAMC Configuration Register:
-    // – number rows, latency, drive strength (DS), the data bus width and cram_enabled bit must be high.    
-    // -------------------------------------------------------------------------        
+    // – number rows, latency, drive strength (DS), the data bus width and cram_enabled bit must be high.
+    // -------------------------------------------------------------------------
     // CRAM_EN(0)            : BCRAM enabled = 0
     // LM[6:4]               : Latency Mode = 011 = 3 cycles (reset value)
     // DBW[8]                : Data Bus Width = 1 (0->32bits / 1->16bits)
-    // BOUNDARY_WORD[13:12]  : Number of Words in Row = 01 = 128 words by row   
+    // BOUNDARY_WORD[13:12]  : Number of Words in Row = 01 = 128 words by row
     // ADDRDATA_MUX[16]      : Address and Data bus Multiplexed ? = 0 => NO
     // DS[21:20]             : Drive Strength = 00 => FULL
     // VAR_FIX_LAT[24]       : Variable or Fixed latency ? = 0 => VARIABLE
-    // 3 latency cycles, dbw = 16 bits, 128 words per row, address & data bus 
+    // 3 latency cycles, dbw = 16 bits, 128 words per row, address & data bus
     // not muxed, full drive strength, variable latency
     // (BCRAMC_CR    = 0x00001130)
     AT91C_BASE_BCRAMC->BCRAMC_CR = AT91C_BCRAMC_CAS_3 |
@@ -391,23 +391,23 @@ void BOARD_ConfigureBcram(unsigned char busWidth)
                                    AT91C_BCRAM_VFLAT_VARIABLE;
     switch (busWidth) {
         case 16:
-            AT91C_BASE_BCRAMC->BCRAMC_CR |= AT91C_BCRAMC_DBW_16_BITS; 
+            AT91C_BASE_BCRAMC->BCRAMC_CR |= AT91C_BCRAMC_DBW_16_BITS;
             break;
 
         case 32:
         default:
-            AT91C_BASE_BCRAMC->BCRAMC_CR |= AT91C_BCRAMC_DBW_32_BITS; 
+            AT91C_BASE_BCRAMC->BCRAMC_CR |= AT91C_BCRAMC_DBW_32_BITS;
             break;
 
     }
-    
+
     // + BCRAMC enabled
-    AT91C_BASE_BCRAMC->BCRAMC_CR |= AT91C_BCRAMC_EN;    
-    
-    // Perform a write to the Cellular Ram  device and the Bus Configuration Register (BCR) and 
-    // Refresh Configuration Register (RCR) are programmed automatically.         
+    AT91C_BASE_BCRAMC->BCRAMC_CR |= AT91C_BCRAMC_EN;
+
+    // Perform a write to the Cellular Ram  device and the Bus Configuration Register (BCR) and
+    // Refresh Configuration Register (RCR) are programmed automatically.
     // Dummy write to access BCRAM : validate preceeding command
-    pBcram[0]    = 0x12345678;//00000000;     
+    pBcram[0]    = 0x12345678;//00000000;
 }
 
 //------------------------------------------------------------------------------

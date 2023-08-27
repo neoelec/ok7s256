@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -159,7 +159,7 @@ void USBDCallbacks_RequestReceived(const USBGenericRequest *request)
 void CDCDSerialDriver_Initialize()
 {
     TRACE_INFO("CDCDSerialDriver_Initialize\n\r");
-    
+
     // Initialize Abstract Control Model attributes
     CDCLineCoding_Initialize(&(cdcdSerialDriver.lineCoding),
                              115200,
@@ -191,7 +191,7 @@ void CDCDSerialDriver_RequestHandler(const USBGenericRequest *request)
     switch (USBGenericRequest_GetRequest(request)) {
 
         case CDCGenericRequest_SETLINECODING:
-            
+
             CDCDSerialDriver_SetLineCoding();
             break;
 

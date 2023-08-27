@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -61,7 +61,7 @@
 /// \page "USB Audio Control selector values"
 ///
 /// This page lists the available control selectors for a Feature Unit request.
-/// 
+///
 /// !Controls
 /// - AUDFeatureUnitRequest_MUTE
 

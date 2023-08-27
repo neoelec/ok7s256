@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -103,7 +103,7 @@
 ///
 /// -# http://support.microsoft.com/kb/814560
 /// -# http://support.microsoft.com/kb/918365
-/// 
+///
 /// !!!Description
 ///
 /// When an EK running this program connected to a host (PC for example), with
@@ -270,7 +270,7 @@ static unsigned char keyStatus[NUM_KEYS];
 
 //------------------------------------------------------------------------------
 //         Remote wake-up support (optional)
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 #if (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_BUSPOWERED_RWAKEUP) \
     || (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_SELFPOWERED_RWAKEUP)
 
@@ -425,7 +425,7 @@ static void VBus_Configure( void )
     }
     else {
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else
@@ -701,7 +701,7 @@ static void ISR_Timer0()
     unsigned int status = AT91C_BASE_TC0->TC_SR;
 
     if ((status & AT91C_TC_CPCS) != 0) {
-    
+
         // Flush PDC buffer
         size = DATABUFFERSIZE - AT91C_BASE_US0->US_RCR;
         if (size == 0) {
@@ -710,11 +710,11 @@ static void ISR_Timer0()
             return;
         }
         AT91C_BASE_US0->US_RCR = 0;
-    
+
         // Send current buffer through the USB
         while (CDCDSerialDriver_Write(0, usartBuffers[usartCurrentBuffer],
                                       size, 0, 0) != USBD_STATUS_SUCCESS);
-    
+
         // Restart read on buffer
         USART_ReadBuffer(AT91C_BASE_US0,
                          usartBuffers[usartCurrentBuffer],
@@ -856,17 +856,17 @@ static void HIDDKeyboardProcessKeys(void)
     unsigned char pressedKeysSize = 0;
     unsigned char releasedKeys[NUM_KEYS];
     unsigned char releasedKeysSize = 0;
-    
+
     // Monitor buttons
     for (i=0; i < PIO_LISTSIZE(pinsPushButtons); i++) {
-    
+
         // Check if button state has changed
         unsigned char isButtonPressed = PIO_Get(&(pinsPushButtons[i]));
         if (isButtonPressed != keyStatus[i]) {
-    
+
             // Update button state
             if (!isButtonPressed) {
-    
+
                 // Key has been pressed
                 TRACE_INFO("-I- Key %u has been pressed\n\r", i);
                 keyStatus[i] = 0;
@@ -875,7 +875,7 @@ static void HIDDKeyboardProcessKeys(void)
                 HIDDKeyboardDriver_RemoteWakeUp();
             }
             else {
-    
+
                 // Key has been released
                 TRACE_INFO("-I- Key %u has been released\n\r", i);
                 keyStatus[i] = 1;
@@ -884,14 +884,14 @@ static void HIDDKeyboardProcessKeys(void)
             }
         }
     }
-    
+
     // Update key status in the HID driver if necessary
     if ((pressedKeysSize != 0) || (releasedKeysSize != 0)) {
-    
+
         unsigned char status;
 
         do {
-        
+
             status = HIDDKeyboardDriver_ChangeKeys(pressedKeys,
                                                    pressedKeysSize,
                                                    releasedKeys,

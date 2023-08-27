@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -294,23 +294,23 @@ unsigned char TranslatedNandFlash_ReadPage(
 
         // Try to read the page from the logical block
         error = MappedNandFlash_ReadPage(MAPPED(translated), block, page, data, spare);
-    
+
         // Block was not mapped
         if (error == NandCommon_ERROR_BLOCKNOTMAPPED) {
-    
+
             ASSERT(!spare, "Cannot read the spare information of an unmapped block\n\r");
-    
+
             // Check if a block can be allocated
             if (BlockCanBeAllocated(translated)) {
-    
+
                 // Return 0xFF in buffers with no error
                 TRACE_DEBUG("Block #%d is not mapped but can be allocated, filling buffer with 0xFF\n\r", block);
                 if (data) {
-    
+
                     memset(data, 0xFF, NandFlashModel_GetPageDataSize(MODEL(translated)));
                 }
                 if (spare) {
-    
+
                     memset(spare, 0xFF, NandFlashModel_GetPageSpareSize(MODEL(translated)));
                 }
             }
@@ -322,7 +322,7 @@ unsigned char TranslatedNandFlash_ReadPage(
         }
         // Error
         else if (error) {
-    
+
             return error;
         }
     }
@@ -507,7 +507,7 @@ unsigned char TranslatedNandFlash_SaveLogicalMapping(
         TranslatedNandFlash_Flush(translated);
         error = ManagedNandFlash_EraseDirtyBlocks(MANAGED(translated));
         if (error) {
-        
+
             TRACE_FATAL("TranslatedNandFlash_Flush: Could not erase dirty blocks\n\r");
             return error;
         }

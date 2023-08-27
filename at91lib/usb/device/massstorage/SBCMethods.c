@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -85,7 +85,7 @@ static unsigned char SBC_Write10(MSDLun          *lun,
         commandState->state = SBC_STATE_READ;
     }
 
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
     // Convert length from bytes to blocks
     commandState->length /= lun->blockSize;
 #endif
@@ -104,7 +104,7 @@ static unsigned char SBC_Write10(MSDLun          *lun,
         case SBC_STATE_READ:
         //------------------
             TRACE_INFO_WP("Receive ");
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
             // Read one block of data sent by the host
             status = MSDD_Read((void*)lun->readWriteBuffer,
                                lun->blockSize,
@@ -166,7 +166,7 @@ static unsigned char SBC_Write10(MSDLun          *lun,
             }
             else {
 
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
                 // Write the block to the media
                 status = LUN_Write(lun,
                                     DWORDB(command->pLogicalBlockAddress),
@@ -229,7 +229,7 @@ static unsigned char SBC_Write10(MSDLun          *lun,
             else {
 
                 // Update transfer length and block address
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
                 commandState->length--;
 #else
                 commandState->length = 0;
@@ -251,7 +251,7 @@ static unsigned char SBC_Write10(MSDLun          *lun,
         }
     }
 
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
     // Convert length from blocks to bytes
     commandState->length *= lun->blockSize;
 #endif
@@ -286,7 +286,7 @@ static unsigned char SBC_Read10(MSDLun          *lun,
         commandState->state = SBC_STATE_READ;
     }
 
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
     // Convert length from bytes to blocks
     commandState->length /= lun->blockSize;
 #endif
@@ -304,7 +304,7 @@ static unsigned char SBC_Read10(MSDLun          *lun,
         case SBC_STATE_READ:
         //------------------
             // Read one block of data from the media
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
             status = LUN_Read(lun,
                                DWORDB(command->pLogicalBlockAddress),
                                lun->readWriteBuffer,
@@ -364,7 +364,7 @@ static unsigned char SBC_Read10(MSDLun          *lun,
             else {
 
                 // Send the block to the host
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
                 status = MSDD_Write((void*)lun->readWriteBuffer,
                                     lun->blockSize,
                                     (TransferCallback) MSDDriver_Callback,
@@ -435,7 +435,7 @@ static unsigned char SBC_Read10(MSDLun          *lun,
                 // Update transfer length and block address
                 STORE_DWORDB(DWORDB(command->pLogicalBlockAddress) + 1,
                              command->pLogicalBlockAddress);
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
                 commandState->length--;
 #else
                 commandState->length = 0;
@@ -455,7 +455,7 @@ static unsigned char SBC_Read10(MSDLun          *lun,
         }
     }
 
-#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS) 
+#if !defined(AT91C_EBI_SDRAM) && !defined(BOARD_USB_UDPHS)
     // Convert length from blocks to bytes
     commandState->length *= lun->blockSize;
 #endif

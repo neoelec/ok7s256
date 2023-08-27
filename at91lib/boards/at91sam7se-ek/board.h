@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definition and functions for using AT91SAM7SE-related features, such
 /// has PIO pins, memories, etc.
-/// 
+///
 /// !Usage
 /// -# The code for booting the board is provided by board_cstartup.S and
 ///    board_lowlevel.c.
@@ -41,14 +41,14 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91SAM7SE-EK characteristics, AT91SAM7SE-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Usage
 /// -# For operating frequency information, see "SAM7SE-EK - Operating frequencies".
 /// -# For using portable PIO definitions, see "SAM7SE-EK - PIO definitions".
@@ -57,7 +57,7 @@
 /// -# For memory-related definitions, see "SAM7SE-EK - Memories".
 //------------------------------------------------------------------------------
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 //------------------------------------------------------------------------------
@@ -97,7 +97,7 @@
 /// \page "SAM7SE-EK - Operating frequencies"
 /// This page lists several definition related to the board operating frequency
 /// (when using the initialization done by board_lowlevel.c).
-/// 
+///
 /// !Definitions
 /// - BOARD_MAINOSC
 /// - BOARD_MCK
@@ -126,7 +126,7 @@
 /// \page "SAM7SE-EK - USB device"
 /// This page lists constants describing several characteristics (controller
 /// type, D+ pull-up type, etc.) of the USB device controller of the chip/board.
-/// 
+///
 /// !Constants
 /// - BOARD_USB_UDP
 /// - BOARD_USB_PULLUP_INTERNAL
@@ -163,10 +163,10 @@
 ///
 /// !Clocks
 /// - PIN_PCK2
-/// 
+///
 /// !DBGU
 /// - PINS_DBGU
-/// 
+///
 /// !LEDs
 /// - PIN_LED_0
 /// - PIN_LED_1
@@ -175,7 +175,7 @@
 /// - LED_DS1
 /// - LED_DS2
 /// - LED_POWER
-/// 
+///
 /// !Push buttons
 /// - PIN_PUSHBUTTON_1
 /// - PIN_PUSHBUTTON_2
@@ -197,12 +197,12 @@
 /// - JOYSTICK_RIGHT
 /// - JOYSTICK_LCLIC, JOYSTICK_PUSH
 /// - JOYSTICK_RCLIC
-/// 
+///
 /// !USART0
 /// - PIN_USART0_RXD
 /// - PIN_USART0_TXD
 /// - PIN_USART0_SCK
-/// 
+///
 /// !SPI
 /// - PIN_SPI_MISO
 /// - PIN_SPI_MOSI
@@ -210,7 +210,7 @@
 /// - PINS_SPI
 /// - PIN_SPI_NPCS0
 /// - PIN_SPI_NPCS1
-/// 
+///
 /// !SSC
 /// - PIN_SSC_TRANSMITTER
 ///
@@ -228,7 +228,7 @@
 ///
 /// !TWI
 /// - PINS_TWI
-/// 
+///
 /// !USB
 /// - PIN_USB_VBUS
 
@@ -251,7 +251,7 @@
 /// DS2 LED index.
 #define LED_DS2          2
 /// Power LED index.
-#define LED_POWER        0 
+#define LED_POWER        0
 
 /// Push button #1 definition.
 #define PIN_PUSHBUTTON_1  {1 << 25, AT91C_BASE_PIOB, AT91C_ID_PIOB, PIO_INPUT, PIO_PULLUP}
@@ -372,7 +372,7 @@
 /// \page "SAM7SE-EK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the AT91SAM7SE-EK.
-/// 
+///
 /// !AT45 Dataflash (serial onboard DataFlash)
 /// - BOARD_AT45_A_SPI_BASE
 /// - BOARD_AT45_A_SPI_ID
@@ -381,7 +381,7 @@
 /// - BOARD_AT45_A_NPCS
 /// - BOARD_AT45_A_NPCS_PIN
 ///
-/// !AT26 Serialflash 
+/// !AT26 Serialflash
 /// - BOARD_AT26_A_SPI_BASE
 /// - BOARD_AT26_A_SPI_ID
 /// - BOARD_AT26_A_SPI_PINS
@@ -399,9 +399,9 @@
 ///
 /// !SD Card SPI
 /// - BOARD_SD_SPI_BASE
-/// - BOARD_SD_SPI_ID  
+/// - BOARD_SD_SPI_ID
 /// - BOARD_SD_SPI_PINS
-/// - BOARD_SD_NPCS    
+/// - BOARD_SD_NPCS
 
 /// Base address of SPI peripheral connected to the dataflash.
 #define BOARD_AT45_A_SPI_BASE         AT91C_BASE_SPI
@@ -470,7 +470,7 @@
 /// - BOARD_SDRAM_SIZE
 /// - PINS_SDRAM
 /// - BOARD_SDRAM_BUSWIDTH
-/// 
+///
 /// !Nandflash
 /// - BOARD_NF_COMMAND_ADDR
 /// - BOARD_NF_ADDRESS_ADDR
@@ -526,7 +526,7 @@
 /// \page "SAM7SE-EK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the SAM7SE-EK.
-/// 
+///
 /// !ISO7816
 /// - PIN_SMARTCARD_CONNECT
 /// - PIN_ISO7816_RSTMC

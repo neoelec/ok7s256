@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -42,7 +42,7 @@
 ///   standard requests in USBD callbacks, to read/write through assigned USB
 ///   endpoints,
 /// - Create the audio-speaker device's descriptors that should be passed to
-///   the USBDDriver instance on initialization, so that the host can 
+///   the USBDDriver instance on initialization, so that the host can
 ///   recognize the device as a USB audio "desktop speaker" device.
 ///
 /// For more information about what a particular group contains, please refer to
@@ -395,7 +395,7 @@ const AUDDSpeakerDriverConfigurationDescriptors configurationDescriptors;
                 and\n
                 AudioControl Interface (AUDDSpeakerDriverDescriptors_CONTROL).
 |6|wLength|2|0x0001|Paramter Block Length
- 
+
  The one-byte Parameter Block contains the new bMuted value for Feature
  Control.
 
@@ -411,7 +411,7 @@ const AUDDSpeakerDriverConfigurationDescriptors configurationDescriptors;
                 and\n
                 AudioControl Interface (AUDDSpeakerDriverDescriptors_CONTROL).
 |6|wLength|2|0x0001|Paramter Block Length
- 
+
  The one-byte Parameter Block contains the new bMuted value for Feature
  Control.
 

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,11 +31,11 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// Interface for configuration the Omnivision captor.
-/// 
+///
 /// !!!Usage
-/// 
+///
 /// -# Initialize captor
 /// -# Write Omnivision configuration
 //------------------------------------------------------------------------------

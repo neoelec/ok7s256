@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -71,7 +71,7 @@ typedef struct {
     USBDDriver usbdDriver;
     /// Idle rate (in milliseconds) of the input report.
     unsigned char inputReportIdleRate;
-    /// 
+    ///
     unsigned char inputProtocol;
     /// Input report instance.
     HIDDMouseInputReport inputReport;
@@ -215,7 +215,7 @@ static void HIDDMouseDriver_SetReport(unsigned char type,
 
     // Check report type
     switch (type) {
-    
+
         case HIDReportRequest_INPUT:
             // SET_REPORT requests on input reports are ignored
             USBD_Stall(0);
@@ -253,7 +253,7 @@ void USBDCallbacks_RequestReceived(const USBGenericRequest *request)
 void USBDDriverCallbacks_ConfigurationChanged(unsigned char cfgnum)
 {
     if (cfgnum > 0) {
-    
+
     }
 }
 
@@ -287,7 +287,7 @@ void HIDDMouseDriver_RequestHandler(const USBGenericRequest *request)
 
         // This is a standard request
         switch (USBGenericRequest_GetRequest(request)) {
-        
+
             case USBGenericRequest_GETDESCRIPTOR:
                 // Check if this is a HID descriptor, otherwise forward it to
                 // the standard driver

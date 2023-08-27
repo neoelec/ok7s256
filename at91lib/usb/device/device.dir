@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -68,7 +68,7 @@
 
  Several specific structures are used by the USBD API to perform various
  operations, such as invoking callbacks or accessing the USBD controller.
- 
+
  There are two %main structures:
  - USBDDriver:
  It is the %main structure of the USB API. It should be instanciated
@@ -79,7 +79,7 @@
  user application and passed to USBD by USBDDriver_Initialize.
 
  !!!USBD API Methods
- 
+
  The USB API provides serveral methods to perform the following operations:
  - Changing the %device state
     - USBD_Init
@@ -114,7 +114,7 @@
 
  Several specific structures are used by the USBD API to perform various
  operations, such as invoking callbacks or accessing the USBD controller.
- 
+
  There are two %main structures:
  - USBDDriver:
  It is the %main structure of the USB API. It should be instanciated
@@ -130,7 +130,7 @@
  \page "USBD API Methods"
 
  !!!USB API methods
- 
+
  The USB API provides serveral methods to perform the following operations:
  - Changing the %device state
     - USBD_Init
@@ -191,10 +191,10 @@
  SETUP packet to either change the %device state from Default to
  Address or from Address to Default. The difference is made
  depending on the value of the wValue field of the request.
- 
+
  This method must only be called right after the SET_ADDRESS
  request is received.
- 
+
  !!USBD_SetConfiguration
 
  This function operates in a way similar to USBD_SetAddress. When the SETUP
@@ -568,7 +568,7 @@
  - Endpoint Halt state
  Three requests can be used to either set, clear or get the status of these two
  features: SET_FEATURE, CLEAR_FEATURE and GET_STATUS.
- 
+
  The USBDDriver_RequestHandler method answers a Halt state operation by calling
  the USBD_Halt method on the endpoint with the request.
 

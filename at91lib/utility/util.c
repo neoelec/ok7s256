@@ -112,7 +112,7 @@ void UTIL_DbguDumpMemory(unsigned char *pBuffer, unsigned int size)
         printf("\n\r");
     }
 }
-    
+
 //------------------------------------------------------------------------------
 /// Reads an integer
 //------------------------------------------------------------------------------
@@ -130,16 +130,16 @@ unsigned char UTIL_DbguGetInteger(unsigned int *pValue)
         }
         else if(key == 0x0D || key == ' ') {
             if(nbNb == 0) {
-                printf("\n\rWrite a number and press ENTER or SPACE!\n\r");       
-                return 0; 
+                printf("\n\rWrite a number and press ENTER or SPACE!\n\r");
+                return 0;
             } else {
-                printf("\n\r"); 
+                printf("\n\r");
                 *pValue = value;
                 return 1;
             }
         } else {
             printf("\n\r'%c' not a number!\n\r", key);
-            return 0;  
+            return 0;
         }
     }
 }
@@ -148,8 +148,8 @@ unsigned char UTIL_DbguGetInteger(unsigned int *pValue)
 /// Reads an integer and check the value
 //------------------------------------------------------------------------------
 unsigned char UTIL_DbguGetIntegerMinMax(
-    unsigned int *pValue, 
-    unsigned int min, 
+    unsigned int *pValue,
+    unsigned int min,
     unsigned int max
     )
 {
@@ -158,13 +158,13 @@ unsigned char UTIL_DbguGetIntegerMinMax(
     if( UTIL_DbguGetInteger(&value) == 0) {
         return 0;
     }
-    
+
     if(value < min || value > max) {
         printf("\n\rThe number have to be between %d and %d\n\r", min, max);
-        return 0; 
+        return 0;
     }
 
-    printf("\n\r"); 
+    printf("\n\r");
     *pValue = value;
     return 1;
 }
@@ -188,14 +188,14 @@ unsigned char UTIL_DbguGetHexa32(unsigned int *pValue)
         }
         else if(key >= 'a' &&  key <= 'f' ) {
             value = (value * 16) + (key - 'a' + 10) ;
-        }        
+        }
         else {
-            printf("\n\rIt is not a hexa character!\n\r");       
-            return 0; 
+            printf("\n\rIt is not a hexa character!\n\r");
+            return 0;
         }
     }
 
-    printf("\n\r");    
-    *pValue = value;     
+    printf("\n\r");
+    *pValue = value;
     return 1;
 }

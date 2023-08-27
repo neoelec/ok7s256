@@ -1,5 +1,5 @@
 ; * ----------------------------------------------------------------------------
-; *         ATMEL Microcontroller Software Support 
+; *         ATMEL Microcontroller Software Support
 ; * ----------------------------------------------------------------------------
 ; * Copyright (c) 2008, Atmel Corporation
 ; *
@@ -29,22 +29,22 @@
 ; *------------------------------------------------------------------------------
 ; *      Linker scatter for running in internal FLASH on the AT91SAM7XE256
 ; *----------------------------------------------------------------------------*/
- 
+
 Load_region 0x200000 0x40000 {
 
     Fixed_region 0x200000 0x40000 {
         *(cstartup +First)
        .ANY (+RO)
     }
-  
+
     Relocate_region 0x300000 {
-        *.o (VECTOR, +First)   
+        *.o (VECTOR, +First)
        .ANY (+RW +ZI)
     }
-    
+
     ARM_LIB_HEAP 0x306000 EMPTY 0x1000 {
     }
-    
+
     ARM_LIB_STACK 0x308000 EMPTY -0x1000 {
     }
 }

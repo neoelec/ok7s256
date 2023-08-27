@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,11 +30,11 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Specialization of the Media class for interfacing with the internal Flash.
-/// 
+///
 /// !Usage
-/// 
+///
 /// TODO
 //------------------------------------------------------------------------------
 
@@ -77,7 +77,7 @@
 //------------------------------------------------------------------------------
 
 extern void FLA_Initialize(Media *media, AT91S_EFC *efc);
- 
+
 #endif //#if defined(AT91C_BASE_EFC)
 #endif //#ifndef MEDFLASH_H
 

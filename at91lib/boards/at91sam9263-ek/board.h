@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definition and functions for using AT91SAM9263-related features, such
 /// has PIO pins, memories, etc.
-/// 
+///
 /// !Usage
 /// -# The code for booting the board is provided by board_cstartup.S and
 ///    board_lowlevel.c.
@@ -41,14 +41,14 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91SAM9263-EK characteristics, AT91SAM9263-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Usage
 /// -# For operating frequency information, see "SAM9263-EK - Operating frequencies".
 /// -# For using portable PIO definitions, see "SAM9263-EK - PIO definitions".
@@ -57,7 +57,7 @@
 /// -# For memory-related definitions, see "SAM79263-EK - Memories".
 //------------------------------------------------------------------------------
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 //------------------------------------------------------------------------------
@@ -95,7 +95,7 @@
 /// \page "SAM9263-EK - Operating frequencies"
 /// This page lists several definition related to the board operating frequency
 /// (when using the initialization done by board_lowlevel.c).
-/// 
+///
 /// !Definitions
 /// - BOARD_MAINOSC
 /// - BOARD_MCK
@@ -110,7 +110,7 @@
 /// \page "SAM9263-EK - USB device"
 /// This page lists constants describing several characteristics (controller
 /// type, D+ pull-up type, etc.) of the USB device controller of the chip/board.
-/// 
+///
 /// !Constants
 /// - BOARD_USB_UDP
 /// - BOARD_USB_PULLUP_INTERNAL
@@ -144,10 +144,10 @@
 /// are named using the following convention: PIN_* for a constant which defines
 /// a single Pin instance (but may include several PIOs sharing the same
 /// controller), and PINS_* for a list of Pin instances.
-/// 
+///
 /// !DBGU
 /// - PINS_DBGU
-/// 
+///
 /// !LEDs
 /// - PIN_LED_0
 /// - PIN_LED_1
@@ -156,7 +156,7 @@
 /// - LED_POWER
 /// - LED_DS1
 /// - LED_DS2
-/// 
+///
 /// !Push buttons
 /// - PIN_PUSHBUTTON_1
 /// - PIN_PUSHBUTTON_2
@@ -165,12 +165,12 @@
 /// - PUSHBUTTON_BP2
 /// - JOYSTICK_LEFT
 /// - JOYSTICK_RIGHT
-/// 
+///
 /// !USART0
 /// - PIN_USART0_RXD
 /// - PIN_USART0_TXD
 /// - PIN_USART0_SCK
-/// 
+///
 /// !SPI0
 /// - PIN_SPI0_MISO
 /// - PIN_SPI0_MOSI
@@ -178,19 +178,19 @@
 /// - PINS_SPI0
 /// - PIN_SPI0_NPCS0
 /// - PIN_SPI0_NPCS3
-/// 
+///
 /// !SSC
 /// - PINS_SSC_TX
-/// 
+///
 /// !AC97
 /// - PINS_AC97
-/// 
+///
 /// !USB
 /// - PIN_USB_VBUS
-/// 
+///
 /// !MCI
 /// - PINS_MCI
-/// 
+///
 /// !PWMC
 /// - PIN_PWMC_PWM0
 /// - PIN_PWMC_PWM1
@@ -273,7 +273,7 @@
 #define PIN_USB_VBUS    {1 << 25, AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_INPUT, PIO_DEFAULT}
 
 /// List of MCI peripheral pins definitions.
-#define PINS_MCI     {0x0000103B, AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_A, PIO_DEFAULT}	
+#define PINS_MCI     {0x0000103B, AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_A, PIO_DEFAULT}
 
 /// AC97 pins definition.
 #define PINS_AC97   {0x0000000F, AT91C_BASE_PIOB, AT91C_ID_PIOB, PIO_PERIPH_A, PIO_DEFAULT}
@@ -325,7 +325,7 @@
 /// - BOARD_AT26_A_SPI
 /// - BOARD_AT26_A_NPCS
 /// - BOARD_AT26_A_NPCS_PIN
-/// 
+///
 /// !LCD
 /// - PINS_LCD
 /// - BOARD_LCD_WIDTH
@@ -360,7 +360,7 @@
 /// - BOARD_TSC_SPI_PINS
 /// - BOARD_TSC_NPCS
 /// - BOARD_TSC_NPCS_PIN
-/// 
+///
 /// !SD Card
 /// - BOARD_SD_MCI_BASE
 /// - BOARD_SD_MCI_ID
@@ -566,13 +566,13 @@
 //------------------------------------------------------------------------------
 /// \page "SAM9263-EK - Memories"
 /// This page lists definitions related to external on-board memories.
-/// 
+///
 /// !SDRAM
 /// - AT91C_EBI_SDRAM
 /// - BOARD_SDRAM_SIZE
 /// - PIN_SDRAM
 /// - BOARD_SDRAM_BUSWIDTH
-/// 
+///
 /// !Nandflash
 /// - PINS_NANDFLASH
 /// - BOARD_NF_COMMAND_ADDR
@@ -617,7 +617,7 @@
 /// \page "SAM9263-EK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the SAM9263-EK.
-/// 
+///
 /// !ISO7816
 /// - PIN_SMARTCARD_CONNECT
 /// - PIN_ISO7816_RSTMC

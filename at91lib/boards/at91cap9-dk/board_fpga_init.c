@@ -57,27 +57,27 @@ void init_mpbs_revB(volatile unsigned int* mpbs,char pun,char lp,char sup);
 unsigned int BOARD_FPGA_InitMPBlock(void)
 {
     int i;
-  
-    if (!(RSTC_SR_REG&0x00000600)){          
-        TRACE_INFO("Tempo before FPGA init...\n\r");        
-        
+
+    if (!(RSTC_SR_REG&0x00000600)){
+        TRACE_INFO("Tempo before FPGA init...\n\r");
+
         for(i=0;i<20000;i++) {// if POR, wait until FPGA is ready
-           printf(" \r");              
+           printf(" \r");
         }
-      
+
       }
 
-  
+
     if(CAP9_CHECK_REVISION_REG == REV_B_CHECK_VALUE) {
-        TRACE_INFO("Init MPBlock rev B\n\r");        
+        TRACE_INFO("Init MPBlock rev B\n\r");
         return(init_mpblock_revB()); // CAP9 revB detected
     }
     else {
         if(EXTENDED_CHIP_ID_REG) {
-            TRACE_INFO("No init MPBlock : it is not a dev chip\n\r");            
+            TRACE_INFO("No init MPBlock : it is not a dev chip\n\r");
             return(NOT_A_DEV_CHIP_ERROR); // not a dev chip
         }
-        else {    
+        else {
             TRACE_INFO("Init MPBlock rev C\n\r");
             return(init_mpblock_revC()); // CAP9 revC detected
         }
@@ -91,12 +91,12 @@ unsigned int init_mpblock_revC(void)
 {
 //  AT91PS_CCFG   pCCFG   = (AT91PS_CCFG) AT91C_BASE_CCFG; //not used
   unsigned int ret_value;
-  
+
   // Enable clk
   *((unsigned int*)0xFFFFFC00)|=0x4;
   init_mpbs_revC(MPBS0,PULLUP_ON,MPIO_LP,MPIO_SUPPLY);
 
-  // User IF pad config 
+  // User IF pad config
   /*
   *((unsigned int*)0xFDF00028)&=0xFFFFFFFD; // Drive pad by user if
   *((unsigned int*)0xFDF00034)=0x01000000; // MPIOB SUP
@@ -110,8 +110,8 @@ unsigned int init_mpblock_revC(void)
   *((unsigned int*)0xFDF00054)=0x00000000; // MPIOA PU
   */
 
-  TRACE_INFO("FPGA IF synchro loop...\n\r");  
-  
+  TRACE_INFO("FPGA IF synchro loop...\n\r");
+
   #ifdef __FPGA_IF_TYPE_DIV3
     FPGA_IF_TYPE_REG = 0x01;
   #endif
@@ -125,7 +125,7 @@ unsigned int init_mpblock_revC(void)
   if ((ret_value&0xFFFF0000) == 0xCACA0000)return(ret_value);
 
   TRACE_INFO("Synchro done\n\r");
-  
+
   // Switch to functionnal mode
   //outi(0x30DC00, 0xDC00);
   INIT_ARG_REG = 0x4C727354; // INIT_ARG = INIT_CMD_START_INIT
@@ -144,7 +144,7 @@ unsigned int fpga_synchro_revC(void)
   unsigned char clk_out_delay_mean;
   unsigned char clk_out_delay = 0;
   unsigned int time = 0;
-  
+
   INIT_ARG_REG = 0x5C00;
   INIT_CMD_REG = 0x01;       // INIT_CMD = INIT_CMD_START_INIT
 
@@ -162,7 +162,7 @@ unsigned int fpga_synchro_revC(void)
 
   // Setup to middle match value
   DELAY_CTRL_REG = (clk_out_delay_mean << 8) | 0x1;
-  
+
   // Cycle index select
   time = 0;
   while((CYCLE_IDX_RESP_R_LSB_REG != 0x0A7014E0)&&time++<FPGA_SYNCHRO_TIMEOUT3) {
@@ -170,7 +170,7 @@ unsigned int fpga_synchro_revC(void)
     INIT_CMD_REG = 0x02; // INIT_CMD = INIT_CMD_ADD_CYCLE
     }
   if(time>FPGA_SYNCHRO_TIMEOUT3)return(FPGA_SYNCHRO_ERROR3);
-  
+
   // Return the programmed clock_out_delay value
   return ((unsigned int)clk_out_delay_mean);
 }
@@ -206,12 +206,12 @@ unsigned int init_mpblock_revB(void)
 {
 //  AT91PS_CCFG   pCCFG   = (AT91PS_CCFG) AT91C_BASE_CCFG; // not used
   unsigned int ret_value;
-  
+
   // Enable clk
   init_mpbs_revB(MPBS0,PULLUP_ON,MPIO_LP,MPIO_SUPPLY);
 
   TRACE_INFO("FPGA IF synchro loop...\n\r");
-  
+
   #ifdef __FPGA_IF_TYPE_DIV3
     FPGA_IF_TYPE_REG = 0x01;
   #endif
@@ -225,7 +225,7 @@ unsigned int init_mpblock_revB(void)
   if ((ret_value&0xFFFF0000) == 0xCACA0000)return(ret_value);
 
   TRACE_INFO("Synchro done\n\r");
-  
+
   // Switch to functionnal mode
   //outi(0x30DC00, 0xDC00);
   INIT_ARG_REG = 0x4C727354; // INIT_ARG = INIT_CMD_START_INIT
@@ -244,7 +244,7 @@ unsigned int fpga_synchro_revB(void)
   unsigned char clk_out_delay_mean;
   unsigned char clk_out_delay = 0;
   unsigned int time = 0;
-  
+
   INIT_ARG_REG = 0x5C00;
   INIT_CMD_REG = 0x01;       // INIT_CMD = INIT_CMD_START_INIT
 
@@ -262,7 +262,7 @@ unsigned int fpga_synchro_revB(void)
 
   // Setup to middle match value
   DELAY_CTRL_REG = (clk_out_delay_mean << 8) | 0x1;
-  
+
   // Cycle index select
   time = 0;
   while((CYCLE_IDX_RESP_R_LSB_REG != 0x0A7014E0)&&time++<FPGA_SYNCHRO_TIMEOUT3) {
@@ -270,7 +270,7 @@ unsigned int fpga_synchro_revB(void)
     INIT_CMD_REG = 0x02; // INIT_CMD = INIT_CMD_ADD_CYCLE
     }
   if(time>FPGA_SYNCHRO_TIMEOUT3)return(FPGA_SYNCHRO_ERROR3);
-  
+
   // Return the programmed clock_out_delay value
   return ((unsigned int)clk_out_delay_mean);
 }

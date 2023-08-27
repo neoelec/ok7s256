@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -77,7 +77,7 @@ typedef struct {
    /// Number of possible configurations for the device.
    unsigned char bNumConfigurations;
    /// Reserved.
-   unsigned char bReserved;         
+   unsigned char bReserved;
 
 } __attribute__ ((packed)) USBDeviceQualifierDescriptor; // GCC
 

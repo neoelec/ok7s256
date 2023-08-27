@@ -9,7 +9,7 @@ Module Name:
 Abstract:
 
     This module contains the code for handling the display of HID report
-    buffers for the extended calls dialog box.  
+    buffers for the extended calls dialog box.
 
 Environment:
 
@@ -17,7 +17,7 @@ Environment:
 
 Revision History:
 
-    May-98 : Created 
+    May-98 : Created
 
 --*/
 
@@ -46,10 +46,10 @@ Routine Description:
 
     The display mechanism maintains a list of list of nBuffers, where is each
     is buffer is of iBufferSize and hCB and hEB are handles to the combo box and
-    edit box for displaying the buffer. 
+    edit box for displaying the buffer.
 
     The variable ppBufferDisplay is allocated block which is passed into other
-    buffer routines and contains information about the buffer for the other 
+    buffer routines and contains information about the buffer for the other
     routines.
 
     This function will return FALSE if there was a problem allocating memory
@@ -72,13 +72,13 @@ Routine Description:
 
     pNewDisplay -> ReportBuffers = (PREPORT_BUFFER) malloc(sizeof(REPORT_BUFFER) * nBuffers);
 
-    if (NULL == pNewDisplay -> ReportBuffers) 
+    if (NULL == pNewDisplay -> ReportBuffers)
     {
         free(pNewDisplay);
 
         return (FALSE);
     }
-    
+
     memset(pNewDisplay -> ReportBuffers, 0x00, sizeof(REPORT_BUFFER) * nBuffers);
 
     pNewDisplay -> hBufferComboBox = hCB;
@@ -87,7 +87,7 @@ Routine Description:
     pNewDisplay -> iBufferSize = iBufferSize;
     pNewDisplay -> ReportType = RType;
 
-    switch (pNewDisplay -> ReportType) 
+    switch (pNewDisplay -> ReportType)
     {
         case HidP_Input:
             pszBufferHeader = "Input";
@@ -106,16 +106,16 @@ Routine Description:
             break;
     }
 
-    for (iIndex = 0; iIndex < pNewDisplay -> nReportBuffers; iIndex++) 
+    for (iIndex = 0; iIndex < pNewDisplay -> nReportBuffers; iIndex++)
     {
         wsprintf(szBufferName, "%s Buffer #%d", pszBufferHeader, iIndex);
 
         iCBIndex = (INT) SendMessage(pNewDisplay -> hBufferComboBox,
                                      CB_ADDSTRING,
-                                     0, 
+                                     0,
                                      (LPARAM) szBufferName);
 
-        if (CB_ERR == iCBIndex || CB_ERRSPACE == iCBIndex) 
+        if (CB_ERR == iCBIndex || CB_ERRSPACE == iCBIndex)
         {
             BufferDisplay_Destroy(pNewDisplay);
             return (FALSE);
@@ -126,7 +126,7 @@ Routine Description:
                                      iCBIndex,
                                      iIndex);
 
-        if (CB_ERR == iCBIndex || CB_ERRSPACE == iCBIndex)  
+        if (CB_ERR == iCBIndex || CB_ERRSPACE == iCBIndex)
         {
             BufferDisplay_Destroy(pNewDisplay);
             return (FALSE);
@@ -153,9 +153,9 @@ Routine Description:
 {
     INT     iIndex;
 
-    for (iIndex = 0; iIndex < pBufferDisplay -> nReportBuffers; iIndex++) 
+    for (iIndex = 0; iIndex < pBufferDisplay -> nReportBuffers; iIndex++)
     {
-        if (NULL != pBufferDisplay -> ReportBuffers[iIndex].pBuffer) 
+        if (NULL != pBufferDisplay -> ReportBuffers[iIndex].pBuffer)
         {
             free(pBufferDisplay -> ReportBuffers[iIndex].pBuffer);
         }
@@ -178,7 +178,7 @@ Routine Description:
     INT     iNewIndex;
 
     iNewIndex = (INT) SendMessage(pBufferDisplay -> hBufferComboBox,
-                                  CB_GETCURSEL, 
+                                  CB_GETCURSEL,
                                   0,
                                   0);
 
@@ -217,24 +217,24 @@ Routine Description:
 {
     PCHAR           BufferString;
 
-    if (0 == pReportBuffer -> iBufferSize || NULL == pReportBuffer -> pBuffer) 
+    if (0 == pReportBuffer -> iBufferSize || NULL == pReportBuffer -> pBuffer)
     {
         SetWindowText(hEditBox, "");
     }
-    else 
+    else
     {
         /*
-        // Create a buffer string the size of the buffer and display 
+        // Create a buffer string the size of the buffer and display
         //   as bytes
         */
-        
+
         Strings_CreateDataBufferString(pReportBuffer -> pBuffer,
                                        pReportBuffer -> iBufferSize,
                                        pReportBuffer -> iBufferSize,
                                        1,
                                        &BufferString);
 
-        if (NULL == BufferString) 
+        if (NULL == BufferString)
         {
             SetWindowText(hEditBox, "");
         }
@@ -255,7 +255,7 @@ BufferDisplay_UpdateBuffer(
 /*++
 Routine Description:
     This routine changes the data of the currently active report buffer for the
-    given buffer display structure.  
+    given buffer display structure.
 
     It returns FALSE if it needed to allocate a new buffer and the memory allocation
     failed.
@@ -264,8 +264,8 @@ Routine Description:
     PREPORT_BUFFER          pCurrentReport;
 
     pCurrentReport = CURRENT_REPORT(pBufferDisplay);
-    
-    if (NULL == pCurrentReport -> pBuffer) 
+
+    if (NULL == pCurrentReport -> pBuffer)
     {
         pCurrentReport -> pBuffer = malloc(pBufferDisplay -> iBufferSize);
         if ((NULL == pCurrentReport) || (NULL == pCurrentReport -> pBuffer))
@@ -313,7 +313,7 @@ Routine Description:
 
     pCurrentReport = CURRENT_REPORT(pBufferDisplay);
 
-    if (NULL == pCurrentReport -> pBuffer) 
+    if (NULL == pCurrentReport -> pBuffer)
     {
         memset(pCopyBuffer, 0x0, pBufferDisplay -> iBufferSize);
     }
@@ -365,7 +365,7 @@ Routine Description:
 
     pCurrentReport = CURRENT_REPORT(pBufferDisplay);
 
-    if (NULL != pCurrentReport -> pBuffer) 
+    if (NULL != pCurrentReport -> pBuffer)
     {
         free(pCurrentReport -> pBuffer);
 
@@ -377,5 +377,5 @@ Routine Description:
     BufferDisplay_OutputBuffer(pBufferDisplay -> hBufferEditBox,
                                pCurrentReport);
     return;
-}    
+}
 

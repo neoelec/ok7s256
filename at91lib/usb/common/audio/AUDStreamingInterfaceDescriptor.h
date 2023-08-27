@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -54,7 +54,7 @@
 ///
 /// This page lists the class, subclass and protocol codes that an Audio
 /// Streaming interface should display in its descriptor.
-/// 
+///
 /// !Codes
 /// - AUDStreamingInterfaceDescriptor_CLASS
 /// - AUDStreamingInterfaceDescriptor_SUBCLASS
@@ -75,7 +75,7 @@
 ///
 /// This page lists the possible subtypes for audio-specific descriptor appended
 /// to an Audio Streaming interface.
-/// 
+///
 /// !Subtypes
 /// - AUDStreamingInterfaceDescriptor_GENERAL
 /// - AUDStreamingInterfaceDescriptor_FORMATTYPE

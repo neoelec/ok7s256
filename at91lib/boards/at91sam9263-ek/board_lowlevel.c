@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -42,7 +42,7 @@
     Constants: Clock and PLL settings
 
         BOARD_OSCOUNT - Startup time of main oscillator (in number of slow clock
-                        ticks). 
+                        ticks).
         BOARD_USBDIV - USB PLL divisor value to obtain a 48MHz clock.
         BOARD_CKGR_PLL - PLL frequency range.
         BOARD_PLLCOUNT - PLL startup time (in number of slow clock ticks).

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -297,9 +297,9 @@ static void VBus_Configure( void )
         USBD_Connect();
     }
     else {
-        TRACE_INFO("VBUS discon\n\r");        
+        TRACE_INFO("VBUS discon\n\r");
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -139,10 +139,10 @@ void BOARD_ConfigureSdram(unsigned char busWidth)
 
     // Enable corresponding PIOs
     PIO_Configure(pinsSdram, PIO_LISTSIZE(pinsSdram));
-    
+
     // Enable EBI chip select for the SDRAM
     WRITE(AT91C_BASE_EBI, EBI_CSA, AT91C_EBI_CS1A_SDRAMC);
-    
+
 #define AT91C_SDRC_NC_9           (0x1)
 #define AT91C_SDRC_NR_13          (0x2 << 2)
 #define AT91C_SDRC_CAS_2          (0x2 << 5)
@@ -165,7 +165,7 @@ void BOARD_ConfigureSdram(unsigned char busWidth)
                                     | AT91C_SDRC_TRCD_2
                                     | AT91C_SDRC_TRAS_3
                                     | AT91C_SDRC_TXSR_4);
-            
+
     for (i = 0; i < 1000; i++);
 
     WRITE(AT91C_BASE_SDRC, SDRC_MR, sdrc_dbw | AT91C_SDRC_MODE_NOP_CMD); // Perform NOP
@@ -236,14 +236,14 @@ void BOARD_ConfigureNandFlash(unsigned char busWidth)
        | AT91C_SMC2_ACSS_STANDARD   // Standard address to chip select
        | AT91C_SMC2_RWSETUP_0_CYCLE // 0 Read/Write Setup time required by the Nand Flash Device
        | AT91C_SMC2_RWHOLD_1_CYCLE; // 1 Read/Write Setup time required by the ECC controller
-    
+
     if (busWidth == 8) {
         AT91C_BASE_SMC->SMC2_CSR[3] |=  AT91C_SMC2_DBW_8;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC2_CSR[3] |=  AT91C_SMC2_DBW_16;
-    }       
+    }
 }
 
 //------------------------------------------------------------------------------
@@ -269,11 +269,11 @@ void BOARD_ConfigureFlash48MHz(void)
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NorFlash access at 48MHz.
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNorFlash(unsigned char busWidth)
 {
-    
+
     // Configure SMC
     AT91C_BASE_SMC->SMC2_CSR[0] =
          ((unsigned int) 2 <<  0)       // 2 wait states required required by the NOR Flash device
@@ -287,7 +287,7 @@ void BOARD_ConfigureNorFlash(unsigned char busWidth)
         AT91C_BASE_SMC->SMC2_CSR[0] |=  AT91C_SMC2_DBW_8;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC2_CSR[0] |=  AT91C_SMC2_DBW_16;
     }
 }

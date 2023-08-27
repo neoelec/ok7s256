@@ -65,24 +65,24 @@ Routine Description:
     //
     // Take a wild guess to start
     //
-    
+
     *NumberDevices = 4;
     done = FALSE;
     deviceInfoData.cbSize = sizeof (SP_DEVICE_INTERFACE_DATA);
 
     i=0;
-    while (!done) 
+    while (!done)
     {
         *NumberDevices *= 2;
 
-        if (*HidDevices) 
+        if (*HidDevices)
         {
             newHidDevices =
                realloc (*HidDevices, (*NumberDevices * sizeof (HID_DEVICE)));
 
             if (NULL == newHidDevices)
 			{
-				free(*HidDevices);				
+				free(*HidDevices);
 			}
 
             *HidDevices = newHidDevices;
@@ -92,7 +92,7 @@ Routine Description:
             *HidDevices = calloc (*NumberDevices, sizeof (HID_DEVICE));
         }
 
-        if (NULL == *HidDevices) 
+        if (NULL == *HidDevices)
         {
             SetupDiDestroyDeviceInfoList (hardwareDeviceInfo);
             return FALSE;
@@ -100,7 +100,7 @@ Routine Description:
 
         hidDeviceInst = *HidDevices + i;
 
-        for (; i < *NumberDevices; i++, hidDeviceInst++) 
+        for (; i < *NumberDevices; i++, hidDeviceInst++)
         {
             if (SetupDiEnumDeviceInterfaces (hardwareDeviceInfo,
                                              0, // No care about specific PDOs
@@ -145,7 +145,7 @@ Routine Description:
                            functionClassDeviceData,
                            predictedLength,
                            &requiredLength,
-                           NULL)) 
+                           NULL))
                 {
                     SetupDiDestroyDeviceInfoList (hardwareDeviceInfo);
 					free(functionClassDeviceData);
@@ -155,8 +155,8 @@ Routine Description:
                 //
                 // Open device with just generic query abilities to begin with
                 //
-                
-                if (! OpenHidDevice (functionClassDeviceData -> DevicePath, 
+
+                if (! OpenHidDevice (functionClassDeviceData -> DevicePath,
                                FALSE,      // ReadAccess - none
                                FALSE,      // WriteAccess - none
                                FALSE,       // Overlapped - no
@@ -168,10 +168,10 @@ Routine Description:
                     return FALSE;
                 }
 
-            } 
+            }
             else
             {
-                if (ERROR_NO_MORE_ITEMS == GetLastError()) 
+                if (ERROR_NO_MORE_ITEMS == GetLastError())
                 {
                     done = TRUE;
                     break;
@@ -214,16 +214,16 @@ RoutineDescription:
 	HRESULT stringReturn;
 
     iDevicePathSize = strlen(DevicePath) + 1;
-    
+
     HidDevice -> DevicePath = malloc(iDevicePathSize);
 
-    if (NULL == HidDevice -> DevicePath) 
+    if (NULL == HidDevice -> DevicePath)
     {
         return (FALSE);
     }
 
     stringReturn = StringCbCopy(HidDevice -> DevicePath, iDevicePathSize, DevicePath);
-    
+
     if (HasReadAccess)
     {
         accessFlags |= GENERIC_READ;
@@ -238,14 +238,14 @@ RoutineDescription:
     {
         sharingFlags = FILE_SHARE_READ | FILE_SHARE_WRITE;
     }
-    
+
     //
 	//  The hid.dll api's do not pass the overlapped structure into deviceiocontrol
 	//  so to use them we must have a non overlapped device.  If the request is for
 	//  an overlapped device we will close the device below and get a handle to an
 	//  overlapped device
 	//
-	
+
 	HidDevice->HidDevice = CreateFile (DevicePath,
                                        accessFlags,
                                        sharingFlags,
@@ -254,7 +254,7 @@ RoutineDescription:
                                        0,   // Open device as non-overlapped so we can get data
                                        NULL);       // No template file
 
-    if (INVALID_HANDLE_VALUE == HidDevice->HidDevice) 
+    if (INVALID_HANDLE_VALUE == HidDevice->HidDevice)
     {
         free(HidDevice -> DevicePath);
 		HidDevice -> DevicePath = INVALID_HANDLE_VALUE ;
@@ -265,7 +265,7 @@ RoutineDescription:
     HidDevice -> OpenedForWrite = HasWriteAccess;
     HidDevice -> OpenedOverlapped = IsOverlapped;
     HidDevice -> OpenedExclusive = IsExclusive;
-    
+
     //
     // If the device was not opened as overlapped, then fill in the rest of the
     //  HidDevice structure.  However, if opened as overlapped, this handle cannot
@@ -273,7 +273,7 @@ RoutineDescription:
     //  functions does synchronous I/O.
     //
 
-	if (!HidD_GetPreparsedData (HidDevice->HidDevice, &HidDevice->Ppd)) 
+	if (!HidD_GetPreparsedData (HidDevice->HidDevice, &HidDevice->Ppd))
 	{
 		free(HidDevice -> DevicePath);
 		HidDevice -> DevicePath = NULL ;
@@ -282,7 +282,7 @@ RoutineDescription:
 		return FALSE;
 	}
 
-	if (!HidD_GetAttributes (HidDevice->HidDevice, &HidDevice->Attributes)) 
+	if (!HidD_GetAttributes (HidDevice->HidDevice, &HidDevice->Attributes))
 	{
 		free(HidDevice -> DevicePath);
 		HidDevice -> DevicePath = NULL;
@@ -327,7 +327,7 @@ RoutineDescription:
 		CloseHidDevice(HidDevice);
 		return (FALSE);
 	}
-    
+
 	if (IsOverlapped)
 	{
 		CloseHandle(HidDevice->HidDevice);
@@ -339,8 +339,8 @@ RoutineDescription:
                                        OPEN_EXISTING, // No special create flags
                                        FILE_FLAG_OVERLAPPED, // Now we open the device as overlapped
                                        NULL);       // No template file
-	
-	    if (INVALID_HANDLE_VALUE == HidDevice->HidDevice) 
+
+	    if (INVALID_HANDLE_VALUE == HidDevice->HidDevice)
 		{
 			CloseHidDevice(HidDevice);
 			return FALSE;
@@ -371,7 +371,7 @@ FillDeviceInfo(
     // Allocate memory to hold on input report
     //
 
-    HidDevice->InputReportBuffer = (PCHAR) 
+    HidDevice->InputReportBuffer = (PCHAR)
         calloc (HidDevice->Caps.InputReportByteLength, sizeof (CHAR));
 
 
@@ -379,7 +379,7 @@ FillDeviceInfo(
     // Allocate memory to hold the button and value capabilities.
     // NumberXXCaps is in terms of array elements.
     //
-    
+
     HidDevice->InputButtonCaps = buttonCaps = (PHIDP_BUTTON_CAPS)
         calloc (HidDevice->Caps.NumberInputButtonCaps, sizeof (HIDP_BUTTON_CAPS));
 
@@ -426,11 +426,11 @@ FillDeviceInfo(
     // for range if it is a range then UsageMax and UsageMin describe the
     // usages for this range INCLUSIVE.
     //
-    
+
     numValues = 0;
-    for (i = 0; i < HidDevice->Caps.NumberInputValueCaps; i++, valueCaps++) 
+    for (i = 0; i < HidDevice->Caps.NumberInputValueCaps; i++, valueCaps++)
     {
-        if (valueCaps->IsRange) 
+        if (valueCaps->IsRange)
         {
             numValues += valueCaps->Range.UsageMax - valueCaps->Range.UsageMin + 1;
         }
@@ -465,12 +465,12 @@ FillDeviceInfo(
 
     for (i = 0;
          i < HidDevice->Caps.NumberInputButtonCaps;
-         i++, data++, buttonCaps++) 
+         i++, data++, buttonCaps++)
     {
         data->IsButtonData = TRUE;
         data->Status = HIDP_STATUS_SUCCESS;
         data->UsagePage = buttonCaps->UsagePage;
-        if (buttonCaps->IsRange) 
+        if (buttonCaps->IsRange)
         {
             data->ButtonData.UsageMin = buttonCaps -> Range.UsageMin;
             data->ButtonData.UsageMax = buttonCaps -> Range.UsageMax;
@@ -479,7 +479,7 @@ FillDeviceInfo(
         {
             data -> ButtonData.UsageMin = data -> ButtonData.UsageMax = buttonCaps -> NotRange.Usage;
         }
-        
+
         data->ButtonData.MaxUsageLength = HidP_MaxUsageListLength (
                                                 HidP_Input,
                                                 buttonCaps->UsagePage,
@@ -496,11 +496,11 @@ FillDeviceInfo(
 
     for (i = 0; i < numValues; i++, valueCaps++)
     {
-        if (valueCaps->IsRange) 
+        if (valueCaps->IsRange)
         {
             for (usage = valueCaps->Range.UsageMin;
                  usage <= valueCaps->Range.UsageMax;
-                 usage++) 
+                 usage++)
             {
                 data->IsButtonData = FALSE;
                 data->Status = HIDP_STATUS_SUCCESS;
@@ -509,7 +509,7 @@ FillDeviceInfo(
                 data->ReportID = valueCaps -> ReportID;
                 data++;
             }
-        } 
+        }
         else
         {
             data->IsButtonData = FALSE;
@@ -534,7 +534,7 @@ FillDeviceInfo(
     if (NULL == buttonCaps)
     {
         return (FALSE);
-    }    
+    }
 
     HidDevice->OutputValueCaps = valueCaps = (PHIDP_VALUE_CAPS)
         calloc (HidDevice->Caps.NumberOutputValueCaps, sizeof (HIDP_VALUE_CAPS));
@@ -557,13 +557,13 @@ FillDeviceInfo(
                        HidDevice->Ppd);
 
     numValues = 0;
-    for (i = 0; i < HidDevice->Caps.NumberOutputValueCaps; i++, valueCaps++) 
+    for (i = 0; i < HidDevice->Caps.NumberOutputValueCaps; i++, valueCaps++)
     {
-        if (valueCaps->IsRange) 
+        if (valueCaps->IsRange)
         {
             numValues += valueCaps->Range.UsageMax
                        - valueCaps->Range.UsageMin + 1;
-        } 
+        }
         else
         {
             numValues++;
@@ -584,7 +584,7 @@ FillDeviceInfo(
 
     for (i = 0;
          i < HidDevice->Caps.NumberOutputButtonCaps;
-         i++, data++, buttonCaps++) 
+         i++, data++, buttonCaps++)
     {
         data->IsButtonData = TRUE;
         data->Status = HIDP_STATUS_SUCCESS;
@@ -617,7 +617,7 @@ FillDeviceInfo(
         {
             for (usage = valueCaps->Range.UsageMin;
                  usage <= valueCaps->Range.UsageMax;
-                 usage++) 
+                 usage++)
             {
                 data->IsButtonData = FALSE;
                 data->Status = HIDP_STATUS_SUCCESS;
@@ -674,9 +674,9 @@ FillDeviceInfo(
                        HidDevice->Ppd);
 
     numValues = 0;
-    for (i = 0; i < HidDevice->Caps.NumberFeatureValueCaps; i++, valueCaps++) 
+    for (i = 0; i < HidDevice->Caps.NumberFeatureValueCaps; i++, valueCaps++)
     {
-        if (valueCaps->IsRange) 
+        if (valueCaps->IsRange)
         {
             numValues += valueCaps->Range.UsageMax
                        - valueCaps->Range.UsageMin + 1;
@@ -702,7 +702,7 @@ FillDeviceInfo(
 
     for (i = 0;
          i < HidDevice->Caps.NumberFeatureButtonCaps;
-         i++, data++, buttonCaps++) 
+         i++, data++, buttonCaps++)
     {
         data->IsButtonData = TRUE;
         data->Status = HIDP_STATUS_SUCCESS;
@@ -717,7 +717,7 @@ FillDeviceInfo(
         {
             data -> ButtonData.UsageMin = data -> ButtonData.UsageMax = buttonCaps -> NotRange.Usage;
         }
-        
+
         data->ButtonData.MaxUsageLength = HidP_MaxUsageListLength (
                                                 HidP_Feature,
                                                 buttonCaps->UsagePage,
@@ -728,7 +728,7 @@ FillDeviceInfo(
         data->ReportID = buttonCaps -> ReportID;
     }
 
-    for (i = 0; i < numValues; i++, valueCaps++) 
+    for (i = 0; i < numValues; i++, valueCaps++)
     {
         if (valueCaps->IsRange)
         {
@@ -743,7 +743,7 @@ FillDeviceInfo(
                 data->ReportID = valueCaps -> ReportID;
                 data++;
             }
-        } 
+        }
         else
         {
             data->IsButtonData = FALSE;
@@ -766,7 +766,7 @@ CloseHidDevices(
 {
     ULONG   Index;
 
-    for (Index = 0; Index < NumberDevices; Index++) 
+    for (Index = 0; Index < NumberDevices; Index++)
     {
         CloseHidDevice(HidDevices+Index);
     }
@@ -780,13 +780,13 @@ CloseHidDevice (
 )
 {
     free(HidDevice -> DevicePath);
-    
+
     if (INVALID_HANDLE_VALUE != HidDevice -> HidDevice)
     {
         CloseHandle(HidDevice -> HidDevice);
 		HidDevice -> HidDevice = INVALID_HANDLE_VALUE;
     }
-    
+
     if (NULL != HidDevice -> Ppd)
     {
         HidD_FreePreparsedData(HidDevice -> Ppd);
@@ -829,7 +829,7 @@ CloseHidDevice (
 		HidDevice -> OutputData = NULL;
     }
 
-    if (NULL != HidDevice -> OutputButtonCaps) 
+    if (NULL != HidDevice -> OutputButtonCaps)
     {
         free(HidDevice -> OutputButtonCaps);
 		HidDevice -> OutputButtonCaps = NULL;
@@ -847,19 +847,19 @@ CloseHidDevice (
 		HidDevice -> FeatureReportBuffer = NULL;
     }
 
-    if (NULL != HidDevice -> FeatureData) 
+    if (NULL != HidDevice -> FeatureData)
     {
         free(HidDevice -> FeatureData);
 		HidDevice -> FeatureData = NULL;
     }
 
-    if (NULL != HidDevice -> FeatureButtonCaps) 
+    if (NULL != HidDevice -> FeatureButtonCaps)
     {
         free(HidDevice -> FeatureButtonCaps);
 		HidDevice -> FeatureButtonCaps = NULL;
     }
 
-    if (NULL != HidDevice -> FeatureValueCaps) 
+    if (NULL != HidDevice -> FeatureValueCaps)
     {
         free(HidDevice -> FeatureValueCaps);
 		HidDevice -> FeatureValueCaps = NULL;

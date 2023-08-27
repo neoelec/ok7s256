@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,7 +31,7 @@
     Title: USBSetAddressRequest implementation
 
     About: Purpose
-        Implementation of the USBSetAddressRequest class.    
+        Implementation of the USBSetAddressRequest class.
 */
 
 //------------------------------------------------------------------------------

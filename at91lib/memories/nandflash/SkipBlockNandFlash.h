@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,15 +31,15 @@
 /// \page "SkipBlockNandFlash"
 ///
 /// !!!Purpose
-/// 
-/// SkipBlockNandFlash layer supplies application a set of interface to operate nandflash, which include 
-/// initialize, block erase, block write/read, page write/read. This layer is called by upper layer 
+///
+/// SkipBlockNandFlash layer supplies application a set of interface to operate nandflash, which include
+/// initialize, block erase, block write/read, page write/read. This layer is called by upper layer
 /// applications, and it will call lower layer drivers, such as EccNandFlash, RawNandFlash.
 ///
 /// !!!Usage
-/// -# SkipBlockNandFlash_Initialize is used to initializes a SkipBlockNandFlash instance. Scans 
+/// -# SkipBlockNandFlash_Initialize is used to initializes a SkipBlockNandFlash instance. Scans
 ///      the device to retrieve or create block status information.
-/// -# SkipBlockNandFlash_EraseBlock is used to erase a certain block in the device, user can 
+/// -# SkipBlockNandFlash_EraseBlock is used to erase a certain block in the device, user can
 ///      select "check block status before erase" or "erase without check"
 /// -# User can use SkipBlockNandFlash_WriteBlock to write a certain block and SkipBlockNandFlash_WritePage
 ///      to write a certain page. The functions will check the block status before write, if the block
@@ -47,7 +47,7 @@
 /// -# User can use SkipBlockNandFlash_ReadBlock to read a certain block and SkipBlockNandFlash_ReadPage
 ///      to read a certain page. The functions will check the block status before read, if the block
 ///      is not a good block, the read command will not be issued. ECC is also checked after read
-///      operation is finished, an error will be reported if ecc check got errors.  
+///      operation is finished, an error will be reported if ecc check got errors.
 //------------------------------------------------------------------------------
 
 #ifndef SKIPBLOCKNANDFLASH_H

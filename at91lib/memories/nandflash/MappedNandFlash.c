@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -77,7 +77,7 @@ static unsigned char FindLogicalMappingBlock(
     unsigned char error;
     unsigned char data[NandCommon_MAXPAGEDATASIZE];
     unsigned int i;
-    
+
     TRACE_DEBUG("FindLogicalMappingBlock()\n\r");
 
     // Search each LIVE block
@@ -87,37 +87,37 @@ static unsigned char FindLogicalMappingBlock(
 
         // Check that block is LIVE
         if (MANAGED(mapped)->blockStatuses[block].status == NandBlockStatus_LIVE) {
-        
+
             // Read block
             TRACE_DEBUG("Checking LIVE block #%d\n\r", block);
             error = ManagedNandFlash_ReadPage(MANAGED(mapped), block, 0, data, 0);
             if (!error) {
-    
+
                 // Compare data with logical mapping pattern
                 i = 0;
                 found = 1;
                 while ((i < pageDataSize) && found) {
-    
+
                     if (data[i] != PATTERN(i)) {
-    
+
                         found = 0;
                     }
                     i++;
                 }
-    
+
                 // If this is the mapping, stop looking
                 if (found) {
-    
+
                     TRACE_FATAL("Logical mapping found in block #%d\n\r", block);
                     if (logicalMappingBlock) {
-    
+
                         *logicalMappingBlock = block;
                     }
                     return 0;
                 }
             }
             else if (error != NandCommon_ERROR_WRONGSTATUS) {
-    
+
                 TRACE_ERROR(
                           "FindLogicalMappingBlock: Failed to scan block #%d\n\r",
                           block);
@@ -301,7 +301,7 @@ unsigned char MappedNandFlash_Initialize(
         }
     }
     else {
-        
+
         TRACE_ERROR("MappedNandFlash_Initialize: Failed to initialize device\n\r");
         return error;
     }
@@ -424,7 +424,7 @@ unsigned char MappedNandFlash_Map(
         if (error) {
 
             return error;
-        }                                      
+        }
     }
 
     // Set mapping
@@ -435,7 +435,7 @@ unsigned char MappedNandFlash_Map(
 }
 
 //------------------------------------------------------------------------------
-/// Unmaps a logical block by releasing the corresponding physical block (if 
+/// Unmaps a logical block by releasing the corresponding physical block (if
 /// any).
 /// Returns 0 if successful; otherwise returns a NandCommon_ERROR code.
 /// \param mapped  Pointer to a MappedNandFlash instance.

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -33,9 +33,9 @@
 /// !Purpose
 ///
 /// Definition of methods for ISO7816 driver.
-/// 
+///
 /// !Usage
-/// 
+///
 /// -# ISO7816_Init
 /// -# ISO7816_IccPowerOff
 /// -# ISO7816_XfrBlockTPDU_T0
@@ -69,8 +69,8 @@
 //------------------------------------------------------------------------------
 extern void ISO7816_Init( const Pin pPinIso7816RstMC );
 extern void ISO7816_IccPowerOff(void);
-extern unsigned short ISO7816_XfrBlockTPDU_T0(const unsigned char *pAPDU, 
-                                        unsigned char *pMessage, 
+extern unsigned short ISO7816_XfrBlockTPDU_T0(const unsigned char *pAPDU,
+                                        unsigned char *pMessage,
                                         unsigned short wLength );
 extern void ISO7816_Escape( void );
 extern void ISO7816_RestartClock(void);

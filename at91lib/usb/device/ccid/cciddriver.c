@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,11 +31,11 @@
 /// \unit
 ///
 /// !Purpose
-/// 
+///
 /// CCID driver
-/// 
+///
 /// !Usage
-/// 
+///
 /// Explanation on the usage of the code made available through the header file.
 //------------------------------------------------------------------------------
 
@@ -230,7 +230,7 @@ static const CCIDDriverConfigurationDescriptors configurationDescriptorsFS = {
         USBEndpointDescriptor_INTERRUPT,
         MIN(BOARD_USB_ENDPOINTS_MAXPACKETSIZE(CCID_EPT_NOTIFICATION),
             USBEndpointDescriptor_MAXINTERRUPTSIZE_FS),
-        0x10                              
+        0x10
     }
 };
 
@@ -315,7 +315,7 @@ static const CCIDDriverConfigurationDescriptors configurationDescriptorsHS = {
         USBEndpointDescriptor_INTERRUPT,
         MIN(BOARD_USB_ENDPOINTS_MAXPACKETSIZE(CCID_EPT_NOTIFICATION),
             USBEndpointDescriptor_MAXINTERRUPTSIZE_HS),
-        0x10                              
+        0x10
     }
 };
 
@@ -328,7 +328,7 @@ const USBDeviceQualifierDescriptor deviceQualifierDescriptor = {
     0x00,                                  // Class is specified in interface
     0x00,                                  // Subclass is specified in interface
     0x00,                                  // Protocol is specified in interface
-    BOARD_USB_ENDPOINTS_MAXPACKETSIZE(0),    
+    BOARD_USB_ENDPOINTS_MAXPACKETSIZE(0),
     0x01,                                  // One possible configuration
     0x00                                   // Reserved for future use, must be zero
 };
@@ -414,7 +414,7 @@ static const CCIDDriverConfigurationDescriptors sOtherSpeedConfigurationFS = {
         USBEndpointDescriptor_INTERRUPT,
         MIN(BOARD_USB_ENDPOINTS_MAXPACKETSIZE(CCID_EPT_NOTIFICATION),
             USBEndpointDescriptor_MAXINTERRUPTSIZE_FS),
-        0x10                              
+        0x10
     }
 };
 
@@ -499,7 +499,7 @@ static const CCIDDriverConfigurationDescriptors sOtherSpeedConfigurationHS = {
         USBEndpointDescriptor_INTERRUPT,
         MIN(BOARD_USB_ENDPOINTS_MAXPACKETSIZE(CCID_EPT_NOTIFICATION),
             USBEndpointDescriptor_MAXINTERRUPTSIZE_HS),
-        0x10                              
+        0x10
     }
 };
 #endif
@@ -667,7 +667,7 @@ static void RDRtoPCDatablock_ATR( void )
     // B1 – Convention used (b1=0 for direct, b1=1 for inverse)
 
     // bGuardTimeT0
-    // Extra Guardtime between two characters. Add 0 to 254 etu to the normal 
+    // Extra Guardtime between two characters. Add 0 to 254 etu to the normal
     // guardtime of 12etu. FFh is the same as 00h.
     ccidDriver.ProtocolDataStructure[2] = Atr[4];     // TC(1)
     // AT91C_BASE_US0->US_TTGR = 0;  // TC1
@@ -703,8 +703,8 @@ static void RDRtoPCDatablock_ATR( void )
 
 //------------------------------------------------------------------------------
 /// Response Pipe, Bulk-IN Messages
-/// In other cases, the response message has the following format: 
-/// The response data will contain the optional data returned by the ICC, 
+/// In other cases, the response message has the following format:
+/// The response data will contain the optional data returned by the ICC,
 /// followed by the 2 byte-size status words SW1-SW2.
 ///
 /// Answer to:
@@ -794,10 +794,10 @@ static void RDRtoPCEscape( unsigned char length, unsigned char *data_send_from_C
 
 //------------------------------------------------------------------------------
 /// Response Pipe, Bulk-IN Messages
-/// Answer to: 
+/// Answer to:
 ///   PC_to_RDR_SetDataRateAndClockFrequency
 //------------------------------------------------------------------------------
-static void RDRtoPCDataRateAndClockFrequency( unsigned int dwClockFrequency, 
+static void RDRtoPCDataRateAndClockFrequency( unsigned int dwClockFrequency,
                                        unsigned int dwDataRate )
 {
     TRACE_DEBUG("RDRtoPCDataRateAndClockFrequency\n\r");
@@ -813,13 +813,13 @@ static void RDRtoPCDataRateAndClockFrequency( unsigned int dwClockFrequency,
     ccidDriver.sCcidMessage.bSpecific = 0;  // bRFU
 
     ccidDriver.sCcidMessage.abData[0] = dwClockFrequency;
-    
+
     ccidDriver.sCcidMessage.abData[4] = dwDataRate;
 }
 
 //------------------------------------------------------------------------------
 /// Command Pipe, Bulk-OUT Messages
-/// Power On Command - Cold Reset & Warm Reset 
+/// Power On Command - Cold Reset & Warm Reset
 /// Return the ATR to the host
 //------------------------------------------------------------------------------
 static void PCtoRDRIccPowerOn( void )
@@ -834,7 +834,7 @@ static void PCtoRDRIccPowerOn( void )
 
     ISO7816_cold_reset();
 
-    // for emulation only //JCB 
+    // for emulation only //JCB
     if ( ccidDriver.sCcidCommand.bSpecific_0 != VOLTS_5_0 ) {
 
         TRACE_ERROR("POWER_NOT_SUPPORTED\n\r");
@@ -916,15 +916,15 @@ static void PCtoRDRXfrBlock( void )
     else {
 
         // APDU or TPDU
-        switch(configurationDescriptorsFS.ccid.dwFeatures 
+        switch(configurationDescriptorsFS.ccid.dwFeatures
               & (CCID_FEATURES_EXC_TPDU|CCID_FEATURES_EXC_SAPDU|CCID_FEATURES_EXC_APDU)) {
 
             case CCID_FEATURES_EXC_TPDU:
                 if (ccidDriver.ProtocolDataStructure[1] == PROTOCOL_TO) {
 
                     // Send commande APDU
-                    indexMessage = ISO7816_XfrBlockTPDU_T0( ccidDriver.sCcidCommand.APDU , 
-                                            ccidDriver.sCcidMessage.abData, 
+                    indexMessage = ISO7816_XfrBlockTPDU_T0( ccidDriver.sCcidCommand.APDU ,
+                                            ccidDriver.sCcidMessage.abData,
                                             ccidDriver.sCcidCommand.wLength );
                 }
                 else {
@@ -948,9 +948,9 @@ static void PCtoRDRXfrBlock( void )
     }
 
     ccidDriver.sCcidMessage.wLength = indexMessage;
-    TRACE_DEBUG("USB: 0x%X, 0x%X, 0x%X, 0x%X, 0x%X\n\r", ccidDriver.sCcidMessage.abData[0], 
-                                                                    ccidDriver.sCcidMessage.abData[1], 
-                                                                    ccidDriver.sCcidMessage.abData[2], 
+    TRACE_DEBUG("USB: 0x%X, 0x%X, 0x%X, 0x%X, 0x%X\n\r", ccidDriver.sCcidMessage.abData[0],
+                                                                    ccidDriver.sCcidMessage.abData[1],
+                                                                    ccidDriver.sCcidMessage.abData[2],
                                                                     ccidDriver.sCcidMessage.abData[3],
                                                                     ccidDriver.sCcidMessage.abData[4] );
      RDRtoPCDatablock();
@@ -1011,8 +1011,8 @@ static void PCtoRDRSetParameters( void )
 
 //------------------------------------------------------------------------------
 /// Command Pipe, Bulk-OUT Messages
-/// This command allows the CCID manufacturer to define and access extended 
-/// features. 
+/// This command allows the CCID manufacturer to define and access extended
+/// features.
 /// Information sent via this command is processed by the CCID control logic.
 //------------------------------------------------------------------------------
 static void PCtoRDREscape( void )
@@ -1023,7 +1023,7 @@ static void PCtoRDREscape( void )
     ISO7816_Escape();
 
     // stub, return all value send
-    RDRtoPCEscape( ccidDriver.sCcidCommand.wLength, ccidDriver.sCcidCommand.APDU);    
+    RDRtoPCEscape( ccidDriver.sCcidCommand.wLength, ccidDriver.sCcidCommand.APDU);
 }
 
 //------------------------------------------------------------------------------
@@ -1043,13 +1043,13 @@ static void PCtoRDRICCClock( void )
         ISO7816_StopClock();
     }
 
-    RDRtoPCSlotStatus( );    
+    RDRtoPCSlotStatus( );
 }
 
 //------------------------------------------------------------------------------
 /// Command Pipe, Bulk-OUT Messages
-/// This command changes the parameters used to perform the transportation of 
-/// APDU messages by the T=0 protocol. 
+/// This command changes the parameters used to perform the transportation of
+/// APDU messages by the T=0 protocol.
 //------------------------------------------------------------------------------
 static void PCtoRDRtoAPDU( void )
 {
@@ -1068,7 +1068,7 @@ static void PCtoRDRtoAPDU( void )
         ISO7816_toAPDU();
     }
 
-    RDRtoPCSlotStatus();    
+    RDRtoPCSlotStatus();
 }
 
 //------------------------------------------------------------------------------
@@ -1085,10 +1085,10 @@ static void PCtoRDRSecure( void )
 
 //------------------------------------------------------------------------------
 /// Command Pipe, Bulk-OUT Messages
-/// This command is used to manage motorized type CCID functionality. 
-/// The Lock Card function is used to hold the ICC. 
-/// This prevents an ICC from being easily removed from the CCID. 
-/// The Unlock Card function is used to remove the hold initiated by the Lock 
+/// This command is used to manage motorized type CCID functionality.
+/// The Lock Card function is used to hold the ICC.
+/// This prevents an ICC from being easily removed from the CCID.
+/// The Unlock Card function is used to remove the hold initiated by the Lock
 /// Card function
 //------------------------------------------------------------------------------
 static void PCtoRDRMechanical( void )
@@ -1101,8 +1101,8 @@ static void PCtoRDRMechanical( void )
 
 //------------------------------------------------------------------------------
 /// Command Pipe, Bulk-OUT Messages
-/// This command is used with the Control pipe Abort request to tell the CCID 
-/// to stop any current transfer at the specified slot and return to a state 
+/// This command is used with the Control pipe Abort request to tell the CCID
+/// to stop any current transfer at the specified slot and return to a state
 /// where the slot is ready to accept a new command pipe Bulk-OUT message.
 //------------------------------------------------------------------------------
 static void PCtoRDRAbort( void )
@@ -1114,7 +1114,7 @@ static void PCtoRDRAbort( void )
 
 //------------------------------------------------------------------------------
 /// Command Pipe, Bulk-OUT Messages
-/// This command is used to manually set the data rate and clock frequency of 
+/// This command is used to manually set the data rate and clock frequency of
 /// a specific slot.
 //------------------------------------------------------------------------------
 static void PCtoRDRSetDataRateAndClockFrequency( void )
@@ -1169,7 +1169,7 @@ static void vCCIDSendResponse( void )
     unsigned char bStatus;
 
     do {
-        bStatus = USBD_Write( CCID_EPT_DATA_IN, (void*)&ccidDriver.sCcidMessage, 
+        bStatus = USBD_Write( CCID_EPT_DATA_IN, (void*)&ccidDriver.sCcidMessage,
                               ccidDriver.sCcidMessage.bSizeToSend, 0, 0 );
     }
     while (bStatus != USBD_STATUS_SUCCESS);
@@ -1257,7 +1257,7 @@ static void CCIDCommandDispatcher( void )
             break;
 
         case PC_TO_RDR_T0APDU:
-            // Only CCIDs reporting a short or extended APDU level in the dwFeatures 
+            // Only CCIDs reporting a short or extended APDU level in the dwFeatures
             // field of the CCID class descriptor may take this command into account.
             if( (CCID_FEATURES_EXC_SAPDU == (CCID_FEATURES_EXC_SAPDU&configurationDescriptorsFS.ccid.dwFeatures))
             || (CCID_FEATURES_EXC_APDU  == (CCID_FEATURES_EXC_APDU &configurationDescriptorsFS.ccid.dwFeatures)) ) {
@@ -1327,13 +1327,13 @@ static void CCID_RequestHandler(const USBGenericRequest *pRequest)
 
             case CCIDGenericRequest_GET_CLOCK_FREQUENCIES:
                 TRACE_DEBUG("Not supported\n\r");
-                // A CCID with bNumClockSupported equal to 00h does not have 
+                // A CCID with bNumClockSupported equal to 00h does not have
                 // to support this request
                 break;
 
             case CCIDGenericRequest_GET_DATA_RATES:
                 TRACE_DEBUG("Not supported\n\r");
-                // A CCID with bNumDataRatesSupported equal to 00h does not have 
+                // A CCID with bNumDataRatesSupported equal to 00h does not have
                 // to support this request.
                 break;
 
@@ -1388,7 +1388,7 @@ void CCID_SmartCardRequest( void )
                              sizeof(S_ccid_bulk_out_header),
                              (TransferCallback)&CCIDCommandDispatcher,
                              (void*)0 );
-    } 
+    }
     while (bStatus != USBD_STATUS_SUCCESS);
 
 }
@@ -1475,8 +1475,8 @@ unsigned char CCID_Removal( void )
 
 //------------------------------------------------------------------------------
 /// Interrupt-IN Messages
-/// This message is sent when any bit in the bHardwareErrorCode field is set. 
-/// If this message is sent when there is no “outstanding” command, the bSeq 
+/// This message is sent when any bit in the bHardwareErrorCode field is set.
+/// If this message is sent when there is no “outstanding” command, the bSeq
 /// field will be undefined.
 /// \param bSlot ICC slot number
 /// \param bSeq  Sequence number of the bulk OUT command when the hardware error
@@ -1484,8 +1484,8 @@ unsigned char CCID_Removal( void )
 /// \param bHardwareErrorCode Hardware error code
 /// \return USBD_STATUS_LOCKED or USBD_STATUS_SUCCESS
 //------------------------------------------------------------------------------
-unsigned char RDRtoPCHardwareError( unsigned char bSlot, 
-                                    unsigned char bSeq, 
+unsigned char RDRtoPCHardwareError( unsigned char bSlot,
+                                    unsigned char bSeq,
                                     unsigned char bHardwareErrorCode )
 {
     TRACE_DEBUG("RDRtoPCHardwareError\n\r");

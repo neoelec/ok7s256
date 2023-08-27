@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -53,7 +53,7 @@
 
             .align      4
             .arm
-        
+
 /* Exception vectors
  *******************/
             .section    .vectors, "a", %progbits
@@ -80,7 +80,7 @@ fiqVector:
 //------------------------------------------------------------------------------
 fiqHandler:
         b       fiqHandler
-	
+
 //------------------------------------------------------------------------------
 /// Handles incoming interrupt requests by branching to the corresponding
 /// handler, as defined in the AIC. Supports interrupt nesting.
@@ -102,9 +102,9 @@ irqHandler:
         msr     CPSR_c, #ARM_MODE_SVC
         stmfd   sp!, {r1-r3, r4, r12, lr}
         blx     r0
-        
+
 /* Restore scratch/used registers and LR from User Stack */
-/* Disable Interrupt and switch back in IRQ mode */      
+/* Disable Interrupt and switch back in IRQ mode */
         ldmia   sp!, {r1-r3, r4, r12, lr}
         msr     CPSR_c, #ARM_MODE_IRQ | I_BIT
 

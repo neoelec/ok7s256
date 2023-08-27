@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definition and functions for using AT91SAM9261-related features, such
 /// has PIO pins, memories, etc.
-/// 
+///
 /// !Usage
 /// -# The code for booting the board is provided by board_cstartup.S and
 ///    board_lowlevel.c.
@@ -41,14 +41,14 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91SAM9261-EK characteristics, AT91SAM9261-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Usage
 /// -# For operating frequency information, see "SAM9261-EK - Operating frequencies".
 /// -# For using portable PIO definitions, see "SAM9261-EK - PIO definitions".
@@ -57,7 +57,7 @@
 /// -# For memory-related definitions, see "SAM79261-EK - Memories".
 //------------------------------------------------------------------------------
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 //------------------------------------------------------------------------------
@@ -95,7 +95,7 @@
 /// \page "SAM9260-EK - Operating frequencies"
 /// This page lists several definition related to the board operating frequency
 /// (when using the initialization done by board_lowlevel.c).
-/// 
+///
 /// !Definitions
 /// - BOARD_MAINOSC
 /// - BOARD_MCK
@@ -111,7 +111,7 @@
 /// \page "SAM9261-EK - USB device"
 /// This page lists constants describing several characteristics (controller
 /// type, D+ pull-up type, etc.) of the USB device controller of the chip/board.
-/// 
+///
 /// !Constants
 /// - BOARD_USB_UDP
 /// - BOARD_USB_PULLUP_INTERNAL
@@ -148,7 +148,7 @@
 ///
 /// !DBGU
 /// - PINS_DBGU
-/// 
+///
 /// !LEDs
 /// - PIN_LED_0
 /// - PIN_LED_1
@@ -157,7 +157,7 @@
 /// - LED_POWER
 /// - LED_DS1
 /// - LED_DS2
-/// 
+///
 /// !Push buttons
 /// - PIN_PUSHBUTTON_1
 /// - PIN_PUSHBUTTON_2
@@ -170,7 +170,7 @@
 /// - PUSHBUTTON_BP4
 /// - JOYSTICK_LEFT
 /// - JOYSTICK_RIGHT
-/// 
+///
 /// !SPI0
 /// - PIN_SPI0_MISO
 /// - PIN_SPI0_MOSI
@@ -179,10 +179,10 @@
 /// - PIN_SPI0_NPCS0
 /// - PIN_SPI0_NPCS2
 /// - PIN_SPI0_NPCS3
-/// 
+///
 /// !SSC
 /// - PINS_SSC_TX
-/// 
+///
 /// !USB
 /// - PIN_USB_VBUS
 
@@ -250,7 +250,7 @@
 #define PIN_USB_VBUS  {1 << 29, AT91C_BASE_PIOB, AT91C_ID_PIOB, PIO_INPUT, PIO_DEFAULT}
 
 /// MCI peripheral pins definition.
-#define PINS_MCI {0x00000077, AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_B, PIO_DEFAULT}	
+#define PINS_MCI {0x00000077, AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_B, PIO_DEFAULT}
 
 /// TWI pins definition.
 #define PINS_TWI {0x00000180, AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_A, PIO_DEFAULT}
@@ -260,7 +260,7 @@
 /// \page "SAM9261-EK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the AT91SAM9260-EK.
-/// 
+///
 /// !AT45 Dataflash
 /// - BOARD_AT45_A_SPI_BASE
 /// - BOARD_AT45_A_SPI_ID
@@ -321,10 +321,10 @@
 /// - BOARD_SD_SLOT
 ///
 /// !SD Card SPI
-/// - BOARD_SD_SPI_BASE 
-/// - BOARD_SD_SPI_ID   
-/// - BOARD_SD_SPI_PINS 
-/// - BOARD_SD_NPCS     
+/// - BOARD_SD_SPI_BASE
+/// - BOARD_SD_SPI_ID
+/// - BOARD_SD_SPI_PINS
+/// - BOARD_SD_NPCS
 ///
 
 /// Base address of SPI peripheral connected to the dataflash.
@@ -445,12 +445,12 @@
 //------------------------------------------------------------------------------
 /// \page "SAM9261-EK - Memories"
 /// This page lists definitions related to external on-board memories.
-/// 
+///
 /// !SDRAM
 /// - BOARD_SDRAM_SIZE
 /// - PIN_SDRAM
 /// - BOARD_SDRAM_BUSWIDTH
-/// 
+///
 /// !Nandflash
 /// - PINS_NANDFLASH
 /// - PIN_NF_OE

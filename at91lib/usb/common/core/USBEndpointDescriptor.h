@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -59,7 +59,7 @@
 /// This page lists definitions and macro for endpoint descriptors.
 ///
 /// - USB Endpoint directions
-///    - USBEndpointDescriptor_OUT 
+///    - USBEndpointDescriptor_OUT
 ///    - USBEndpointDescriptor_IN
 ///
 /// - USB Endpoint types

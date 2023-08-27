@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -66,7 +66,7 @@ void defaultIrqHandler( void )
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
-/// Initialization in already done in the chip. 
+/// Initialization in already done in the chip.
 /// Initialize watchdog, remap if needed.
 //------------------------------------------------------------------------------
 void LowLevelInit( void )

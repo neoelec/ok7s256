@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,7 +30,7 @@
 /**
  \unit
  !!!Purpose
- 
+
     Definitions and methods for USB configuration descriptor structures
     described by the USB specification.
 
@@ -113,14 +113,14 @@ typedef struct {
    /// Number of interfaces in this configuration.
    unsigned char bNumInterfaces;
    /// Value for selecting this configuration.
-   unsigned char bConfigurationValue; 
+   unsigned char bConfigurationValue;
    /// Index of the configuration string descriptor.
    unsigned char iConfiguration;
    /// Configuration characteristics.
    unsigned char bmAttributes;
    /// Maximum power consumption of the device when in this configuration.
-   unsigned char bMaxPower;           
-                                       
+   unsigned char bMaxPower;
+
 } __attribute__ ((packed)) USBConfigurationDescriptor; // GCC
 
 #ifdef __ICCARM__          // IAR

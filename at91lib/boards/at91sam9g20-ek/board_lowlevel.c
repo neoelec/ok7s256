@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -55,7 +55,7 @@
     Constants: Clock and PLL settings
 
         BOARD_OSCOUNT - Startup time of main oscillator (in number of slow clock
-                        ticks). 
+                        ticks).
         BOARD_USBDIV - USB PLL divisor value to obtain a 48MHz clock.
         BOARD_CKGR_PLL - PLL frequency range.
         BOARD_PLLCOUNT - PLL startup time (in number of slow clock ticks).
@@ -68,7 +68,7 @@
 #define BOARD_PLLACOUNT         (0x3F << 8)
 #define BOARD_MULA              (AT91C_CKGR_MULA & (0x2A << 16))
 #define BOARD_DIVA              (AT91C_CKGR_DIVA & 1)
-#define BOARD_PRESCALER         (0x00001300) 
+#define BOARD_PRESCALER         (0x00001300)
 
 #define BOARD_USBDIV            AT91C_CKGR_USBDIV_1
 #define BOARD_CKGR_PLLB         AT91C_CKGR_OUTB_0
@@ -108,15 +108,15 @@ void defaultIrqHandler( void )
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 /// Performs the low-level initialization of the chip. Initialisation depends
-/// on where the application is executed: 
+/// on where the application is executed:
 /// - in sdram: it means that sdram has previously been initialized. No further
 ///             initialization is required.
-/// - in sram:  PLL shall be initialized in LowLevelInit. Other initializations 
+/// - in sram:  PLL shall be initialized in LowLevelInit. Other initializations
 ///             can be done later by the application.
-/// - in norflash: LowLevelInit can't be executed in norflash because SMC 
+/// - in norflash: LowLevelInit can't be executed in norflash because SMC
 ///             settings can't be changed while executing in external flash.
 ///             LowLevelInit shall be executed in internal sram. It initializes
-///             PLL and SMC. 
+///             PLL and SMC.
 /// This function also reset the AIC and disable RTT and PIT interrupts
 //------------------------------------------------------------------------------
 void LowLevelInit(void)
@@ -190,9 +190,9 @@ void LowLevelInit(void)
     // from the RTT will still occur since they both use AT91C_ID_SYS)
     AT91C_BASE_RTTC->RTTC_RTMR &= ~(AT91C_RTTC_ALMIEN | AT91C_RTTC_RTTINCIEN);
     AT91C_BASE_PITC->PITC_PIMR &= ~AT91C_PITC_PITIEN;
-    
+
 #if defined(norflash)
     BOARD_ConfigureNorFlash(BOARD_NORFLASH_DFT_BUS_SIZE);
-#endif    
+#endif
 }
 

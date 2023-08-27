@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -53,7 +53,7 @@
 /// \page "USB Audio descriptor types"
 ///
 /// This page lists the available types for USB audio-specific descriptors.
-/// 
+///
 /// !Types
 /// - AUDGenericDescriptor_DEVICE
 /// - AUDGenericDescriptor_CONFIGURATION
@@ -81,7 +81,7 @@
 /// \page "USB Audio descriptor subtypes"
 ///
 /// This page lists the possible subtypes for USB audio-specific descriptors.
-/// 
+///
 /// !Subtypes
 /// - AUDGenericDescriptor_HEADER
 /// - AUDGenericDescriptor_INPUTTERMINAL

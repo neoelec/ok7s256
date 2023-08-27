@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,17 +30,17 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definitions and methods for using a single external AT73C213 DAC. Several
 /// constants must be declared at the board.h level for that:
 /// - BOARD_AT73C213_SPI
-/// - BOARD_AT73C213_SPI_ID 
+/// - BOARD_AT73C213_SPI_ID
 /// - BOARD_AT73C213_NPCS
 /// - BOARD_AT73C213_SSC
 /// - BOARD_AT73C213_SSC_ID
 ///
 /// !Usage
-/// 
+///
 /// -# Configure the mode register of the SPI associated with the DAC and
 ///    enable the SPI peripheral (see spi.h).
 /// -# Enable the master clock of the DAC (usually, it will be connected to

@@ -17,7 +17,7 @@ Environment:
 
 Revision History:
 
-    May-98 : Created 
+    May-98 : Created
 
 --*/
 
@@ -37,7 +37,7 @@ typedef struct {
     PVOID                     List;
     ULONG                     ListLength;
     ULONG                     Index;
-    union {              
+    union {
         struct {
             USHORT            ReportCount;
             USHORT            BitSize;
@@ -58,7 +58,7 @@ typedef struct {
 typedef struct {
     BOOL                IsHidError;
     NTSTATUS            HidErrorCode;
-    
+
 } EXTCALL_STATUS, *PEXTCALL_STATUS;
 
 
@@ -70,7 +70,7 @@ LRESULT CALLBACK
 bExtCallDlgProc(
     HWND   hDlg,
     UINT   message,
-    WPARAM wParam, 
+    WPARAM wParam,
     LPARAM lParam
 );
 

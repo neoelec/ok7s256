@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -33,7 +33,7 @@
 /// !!!Purpose
 ///
 /// This example program demonstrates how to use the TWI peripheral of an AT91
-/// microcontroller to access an external serial EEPROM chip. 
+/// microcontroller to access an external serial EEPROM chip.
 ///
 /// !See
 /// - aic: Advanced interrupt controller driver
@@ -41,47 +41,47 @@
 ///
 /// !!!Requirements
 ///
-/// An external serial EEPROM must be connected to the TWI bus of the 
-/// microcontroller. For further information on this topic, please refer to 
-/// the following application note: 
+/// An external serial EEPROM must be connected to the TWI bus of the
+/// microcontroller. For further information on this topic, please refer to
+/// the following application note:
 /// <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6327.pdf">
 /// Using the Two-wire interface (TWI) in Master Mode on AT91 Microcontrollers. </a>
 ///
 /// Pay particular attention to the fact that on some boards, such as the
-/// AT91SAM7S-EK, there is no pull-up on the TWI bus: they must be 
-/// added externally. 
+/// AT91SAM7S-EK, there is no pull-up on the TWI bus: they must be
+/// added externally.
 ///
 /// !!!Description
 ///
-/// This software performs simple tests on the first and second page of the EEPROM: 
-/// - Sets both pages to all zeroes 
-/// - Writes pattern in page #0 (polling) 
-/// - Reads back data in page #0 and compare with original pattern (polling) 
-/// - Writes pattern in page #1 (interrupts) 
-/// - Reads back data in page #1 and compare with original pattern (interrupts) 
+/// This software performs simple tests on the first and second page of the EEPROM:
+/// - Sets both pages to all zeroes
+/// - Writes pattern in page #0 (polling)
+/// - Reads back data in page #0 and compare with original pattern (polling)
+/// - Writes pattern in page #1 (interrupts)
+/// - Reads back data in page #1 and compare with original pattern (interrupts)
 ///
 /// !!!Usage
 ///
-/// -# Compile the application. 
-/// -# Connect the DBGU port of the evaluation board to the computer and open 
+/// -# Compile the application.
+/// -# Connect the DBGU port of the evaluation board to the computer and open
 /// it in a terminal.
-///    - Settings: 115200 bauds, 8 bits, 1 stop bit, no parity, no flow control. 
+///    - Settings: 115200 bauds, 8 bits, 1 stop bit, no parity, no flow control.
 /// -# Download the program inside the evaluation board and run it. Please refer to
 ///    <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6132.pdf">
-///    the SAM-BA User Guide, 
+///    the SAM-BA User Guide,
 ///    <a href="http://www.atmel.com/dyn/resources/prod_documents/doc6310.pdf">
-///    the GNU-Based Software Development</a> application note or to the 
+///    the GNU-Based Software Development</a> application note or to the
 ///    <a href="http://www.iar.se/website1/1.0.1.0/78/1/index.php?">
-///    IAR EWARM User Guide</a>, 
-///    depending on your chosen solution. 
-/// -# Upon startup, the application will output the following line on the DBGU: 
+///    IAR EWARM User Guide</a>,
+///    depending on your chosen solution.
+/// -# Upon startup, the application will output the following line on the DBGU:
 ///    \code
 ///     -- Basic TWI EEPROM Project xxx --
 ///     -- AT91xxxxxx-xx
 ///     -- Compiled: xxx xx xxxx xx:xx:xx --
 ///    \endcode
-/// -# The following traces detail operations on the EEPROM, displaying success 
-///    or error messages depending on the results of the commands. 
+/// -# The following traces detail operations on the EEPROM, displaying success
+///    or error messages depending on the results of the commands.
 ///
 //------------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@
 ///
 /// !Purpose
 ///
-/// This file contains all the specific code for the 
+/// This file contains all the specific code for the
 /// basic-twi-eeprom-project.
 ///
 /// !Contents
@@ -99,10 +99,10 @@
 ///    - The main function, which implements the program behavior
 ///       - Configure TWI
 ///       - Sets the first and second page of the EEPROM to all zeroes
-///       - Writes pattern in page 0; 
-///          Reads back data in page 0 and compare with original pattern (polling). 
-///       - Writes pattern in page 1; 
-///          Reads back data in page 1 and compare with original pattern (interrupts). 
+///       - Writes pattern in page 0;
+///          Reads back data in page 0 and compare with original pattern (polling).
+///       - Writes pattern in page 1;
+///          Reads back data in page 1 and compare with original pattern (interrupts).
 ///
 /// Please refer to the list of functions in the #Overview# tab of this unit
 /// for more detailed information.
@@ -230,7 +230,7 @@ int main()
 
         // Even
         if ((i & 1) == 0) {
-        
+
             pData[i] = 0xA5;
         }
         // Odd
@@ -275,7 +275,7 @@ int main()
 
         // Even
         if ((i & 1) == 0) {
-        
+
             pData[i] = 0xA5;
         }
         // Odd

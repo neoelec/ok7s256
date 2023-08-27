@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -43,9 +43,9 @@
 //-----------------------------------------------------------------------------
 /// \page "MS interface & endpoint descriptor settings"
 /// This page lists the definition used by the Mass Storage driver.
-/// 
+///
 /// !Settings
-/// 
+///
 /// - MSDD_Descriptors_INTERFACENUM
 /// - MSDD_Descriptors_BULKOUT
 /// - MSDD_Descriptors_BULKIN

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,12 +30,12 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Generic Media type, which provides transparent access to all types of
 /// memories.
-/// 
+///
 /// !Usage
-/// 
+///
 /// TODO
 //------------------------------------------------------------------------------
 
@@ -137,7 +137,7 @@ extern unsigned int numMedias;
 //------------------------------------------------------------------------------
 static inline unsigned char MED_Write(Media         *media,
                                       unsigned int  address,
-                                      void          *data,                                      
+                                      void          *data,
                                       unsigned int  length,
                                       MediaCallback callback,
                                       void          *argument)
@@ -160,7 +160,7 @@ static inline unsigned char MED_Write(Media         *media,
 //------------------------------------------------------------------------------
 static inline unsigned char MED_Read(Media          *media,
                                      unsigned int   address,
-                                     void           *data,                                     
+                                     void           *data,
                                      unsigned int   length,
                                      MediaCallback  callback,
                                      void           *argument)
@@ -169,13 +169,13 @@ static inline unsigned char MED_Read(Media          *media,
 }
 
 //------------------------------------------------------------------------------
-//! \brief  
+//! \brief
 //! \param  media Pointer to the Media instance to use
 //------------------------------------------------------------------------------
 static inline unsigned char MED_Flush(Media *media)
 {
     if (media->flush) {
-    
+
         return media->flush(media);
     }
     else {
@@ -191,7 +191,7 @@ static inline unsigned char MED_Flush(Media *media)
 static inline void MED_Handler(Media *media)
 {
     if (media->handler) {
-    
+
         media->handler(media);
     }
 }

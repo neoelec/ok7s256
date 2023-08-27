@@ -1,5 +1,5 @@
 ; * ----------------------------------------------------------------------------
-; *         ATMEL Microcontroller Software Support 
+; *         ATMEL Microcontroller Software Support
 ; * ----------------------------------------------------------------------------
 ; * Copyright (c) 2008, Atmel Corporation
 ; *
@@ -36,18 +36,18 @@ Load_region 0x10000000 0x10000000 {
        *(cstartup +First)
        .ANY (+RO)
     }
-   
+
     Relocate_region 0x300000 0x18000 {
-        *.o (VECTOR, +First)   
+        *.o (VECTOR, +First)
         board_lowlevel.o (+RO)
         board_memories.o (+RO)
         .ANY (+RW +ZI)
     }
-    
+
     ARM_LIB_HEAP 0x312000 EMPTY 0x1000 {
     }
-    
+
     ARM_LIB_STACK 0x318000 EMPTY -0x1000 {
     }
-    
+
 }

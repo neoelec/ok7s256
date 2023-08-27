@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,8 +31,8 @@
 /// \page "ManagedNandFlash"
 ///
 /// !!!Purpose
-/// 
-/// The lower layer of nandflash block management, it is called by MappedNandFlash layer, and 
+///
+/// The lower layer of nandflash block management, it is called by MappedNandFlash layer, and
 /// it will call EccNandFlash layer.
 //------------------------------------------------------------------------------
 

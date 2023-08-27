@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -81,7 +81,7 @@ extern void DM9161_SetupTimeout(Dm9161 *pDm, unsigned int toMax);
 
 extern void DM9161_Init(Dm9161 *pDm, unsigned char phyAddress);
 
-extern unsigned char DM9161_InitPhy(Dm9161 *pDm, 
+extern unsigned char DM9161_InitPhy(Dm9161 *pDm,
                                     unsigned int mck,
                                     const Pin *pResetPins,
                                     unsigned int nbResetPins,

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -97,7 +97,7 @@
 ///     -- AT91xxxxxx-xx
 ///     -- Compiled: xxx xx xxxx xx:xx:xx --
 ///     \endcode
-/// -# When connecting USB cable to windows, the LED blinks. 
+/// -# When connecting USB cable to windows, the LED blinks.
 ///    Then new "HID Transfer Device" appears in the
 ///    hardware %device list.
 /// -# You can run hyperterminal to send data to the port. And it can be seen
@@ -183,7 +183,7 @@ static Pin pinsJoystick[] = {PINS_JOYSTICK};
 
 //------------------------------------------------------------------------------
 //         Remote wake-up support (optional)
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 #if (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_BUSPOWERED_RWAKEUP) \
     || (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_SELFPOWERED_RWAKEUP)
 
@@ -338,7 +338,7 @@ static void VBus_Configure( void )
     }
     else {
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else
@@ -655,7 +655,7 @@ int main(void)
     // connect if needed
     VBUS_CONFIGURE();
     while (USBD_GetState() < USBD_STATE_CONFIGURED);
-    
+
     // Infinite loop
     while (1) {
 

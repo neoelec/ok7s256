@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,7 +31,7 @@
 /// \page "TranslatedNandFlash"
 ///
 /// !!!Purpose
-/// 
+///
 /// Translate a nandflash physical block to logical block, it will call lower layer such as MappedNandFlash
 //------------------------------------------------------------------------------
 

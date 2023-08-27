@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,13 +31,13 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// This unit provides a very powerful touchscreen driver which handles all the
 /// complexity. This includes touchscreen calibration, retrieving measurements,
 /// configuring the TSADC, etc.
-/// 
+///
 /// !!!Usage
-/// 
+///
 /// -# Call TSD_Initialize() whenever the touchscreen should start the
 ///    calibration process (as it is done in the function).
 /// -# Declare a global TSD_PenPressed function anywhere in your code. This

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -243,7 +243,7 @@ static void VBus_Configure( void )
     }
     else {
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else
@@ -489,7 +489,7 @@ static void ISR_Timer0()
     unsigned int status = AT91C_BASE_TC0->TC_SR;
 
     if ((status & AT91C_TC_CPCS) != 0) {
-    
+
         // Flush PDC buffer
         size = DATABUFFERSIZE - AT91C_BASE_US0->US_RCR;
         if (size == 0) {
@@ -498,11 +498,11 @@ static void ISR_Timer0()
             return;
         }
         AT91C_BASE_US0->US_RCR = 0;
-    
+
         // Send current buffer through the USB
         while (CDCDSerialDriver_Write(usartBuffers[usartCurrentBuffer],
                                       size, 0, 0) != USBD_STATUS_SUCCESS);
-    
+
         // Restart read on buffer
         USART_ReadBuffer(AT91C_BASE_US0,
                          usartBuffers[usartCurrentBuffer],

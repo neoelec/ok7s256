@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -50,7 +50,7 @@ void srand(unsigned int seed)
 /// Return a random number, maxinum assumed to be 65536
 //------------------------------------------------------------------------------
 
-int rand(void) 
+int rand(void)
 {
     next = next * 1103515245 + 12345;
     return (unsigned int)(next/131072) % 65536;

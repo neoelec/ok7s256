@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -85,14 +85,14 @@ void BOARD_ConfigureSdram(unsigned char busWidth)
             break;
 
     }
-    
+
     // Enable corresponding PIOs
     PIO_Configure(pinsSdram, 1);
-    
+
     // Enable EBI chip select for the SDRAM
     WRITE(AT91C_BASE_CCFG, CCFG_EBICSA, AT91C_EBI_CS1A_SDRAMC);
-    
-    
+
+
     // CFG Control Register
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_CR, AT91C_SDRAMC_NC_9
                                         | AT91C_SDRAMC_NR_13
@@ -105,46 +105,46 @@ void BOARD_ConfigureSdram(unsigned char busWidth)
                                         | AT91C_SDRAMC_TRCD_2
                                         | AT91C_SDRAMC_TRAS_5
                                         | AT91C_SDRAMC_TXSR_8);
-    
+
     for (i = 0; i < 1000; i++);
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_NOP_CMD); // Perform NOP
     pSdram[0] = 0x00000000;
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_PRCGALL_CMD);     // Set PRCHG AL
     pSdram[0] = 0x00000000;                                         // Perform PRCHG
-    
+
     for (i = 0; i < 10000; i++);
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 1st CBR
     pSdram[1] = 0x00000001;                                         // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 2 CBR
     pSdram[2] = 0x00000002;                                         // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 3 CBR
     pSdram[3] = 0x00000003;                                    // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 4 CBR
     pSdram[4] = 0x00000004;                                   // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 5 CBR
     pSdram[5] = 0x00000005;                                   // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 6 CBR
     pSdram[6] = 0x00000006;                                 // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 7 CBR
     pSdram[7] = 0x00000007;                                 // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 8 CBR
     pSdram[8] = 0x00000008;                                 // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_LMR_CMD);         // Set LMR operation
     pSdram[9] = 0xcafedede;                                 // Perform LMR burst=1, lat=2
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_TR, (BOARD_MCK * 7) / 1000000);         // Set Refresh Timer
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_NORMAL_CMD);      // Set Normal mode
     pSdram[0] = 0x00000000;                                         // Perform Normal mode
 }
@@ -173,11 +173,11 @@ void BOARD_ConfigureSdram48MHz(unsigned char busWidth)
 
     // Enable corresponding PIOs
     PIO_Configure(pinsSdram, 1);
-    
+
     // Enable EBI chip select for the SDRAM
     WRITE(AT91C_BASE_CCFG, CCFG_EBICSA, AT91C_EBI_CS1A_SDRAMC);
-    
-    
+
+
     // CFG Control Register
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_CR, AT91C_SDRAMC_NC_9
                                         | AT91C_SDRAMC_NR_13
@@ -190,46 +190,46 @@ void BOARD_ConfigureSdram48MHz(unsigned char busWidth)
                                         | AT91C_SDRAMC_TRCD_1
                                         | AT91C_SDRAMC_TRAS_2
                                         | AT91C_SDRAMC_TXSR_3);
-    
+
     for (i = 0; i < 1000; i++);
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_NOP_CMD); // Perform NOP
     pSdram[0] = 0x00000000;
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_PRCGALL_CMD);     // Set PRCHG AL
     pSdram[0] = 0x00000000;                                         // Perform PRCHG
-    
+
     for (i = 0; i < 10000; i++);
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 1st CBR
     pSdram[1] = 0x00000001;                                         // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 2 CBR
     pSdram[2] = 0x00000002;                                         // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 3 CBR
     pSdram[3] = 0x00000003;                                    // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 4 CBR
     pSdram[4] = 0x00000004;                                   // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 5 CBR
     pSdram[5] = 0x00000005;                                   // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 6 CBR
     pSdram[6] = 0x00000006;                                 // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 7 CBR
     pSdram[7] = 0x00000007;                                 // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_RFSH_CMD);        // Set 8 CBR
     pSdram[8] = 0x00000008;                                 // Perform CBR
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_LMR_CMD);         // Set LMR operation
     pSdram[9] = 0xcafedede;                                 // Perform LMR burst=1, lat=2
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_TR, (48000000 * 7) / 1000000);          // Set Refresh Timer
-    
+
     WRITE(AT91C_BASE_SDRAMC, SDRAMC_MR, AT91C_SDRAMC_MODE_NORMAL_CMD);      // Set Normal mode
     pSdram[0] = 0x00000000;                                         // Perform Normal mode
 }
@@ -254,7 +254,7 @@ void BOARD_ConfigureNandFlash(unsigned char busWidth)
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
 }
@@ -276,20 +276,20 @@ void BOARD_ConfigureNandFlash48MHz(unsigned char busWidth)
                                   | AT91C_SMC_WRITEMODE
                                   | AT91C_SMC_NWAITM_NWAIT_DISABLE
                                   | ((0x1 << 16) & AT91C_SMC_TDF));
-    
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
 }
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NorFlash access
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNorFlash(unsigned char busWidth)
 {
@@ -316,7 +316,7 @@ void BOARD_ConfigureNorFlash(unsigned char busWidth)
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NorFlash access at 48MHz.
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNorFlash48MHz(unsigned char busWidth)
 {
@@ -328,17 +328,17 @@ void BOARD_ConfigureNorFlash48MHz(unsigned char busWidth)
                                   | AT91C_SMC_WRITEMODE
                                   | AT91C_SMC_NWAITM_NWAIT_DISABLE
                                   | ((0x1 << 16) & AT91C_SMC_TDF));
-                           
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
     else if (busWidth == 32) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_THIRTY_TWO_BITS;
     }
 }

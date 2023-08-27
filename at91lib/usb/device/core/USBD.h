@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,12 +31,12 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// Collection of methods for using the USB device controller on AT91
 /// microcontrollers.
-/// 
+///
 /// !!!Usage
-/// 
+///
 /// Please refer to the corresponding application note.
 /// - "AT91 USB device framework"
 /// - "USBD API" . "USBD API Methods"
@@ -66,7 +66,7 @@
 /// - USBD_STATUS_LOCKED
 /// - USBD_STATUS_ABORTED
 /// - USBD_STATUS_RESET
-           
+
 /// Indicates the operation was successful.
 #define USBD_STATUS_SUCCESS             0
 /// Endpoint/device is already busy.

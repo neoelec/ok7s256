@@ -64,14 +64,14 @@ SECTIONS
         . = ALIGN(4);
         _erelocate = .;
     } >romcodesram
-    
+
     .bss (NOLOAD) : {
         _szero = .;
         *(.bss)
         . = ALIGN(4);
         _ezero = .;
     } >sram
-    
+
     _sstack = 0x204000;
 }
 end = .;

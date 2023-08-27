@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,8 +31,8 @@
 /// \page "NandSpareScheme"
 ///
 /// !!!Purpose
-/// 
-/// NandSpareScheme layer is used to do Nandflash device's spare area operations. It is called by 
+///
+/// NandSpareScheme layer is used to do Nandflash device's spare area operations. It is called by
 /// upper layer drivers, such as SkipBlockNandFlash layer.
 ///
 /// !!!Usage

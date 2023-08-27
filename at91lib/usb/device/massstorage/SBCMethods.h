@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,11 +30,11 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// SCSI commands implementation.
-/// 
+///
 /// !Usage
-/// 
+///
 /// -# After a CBW is received from host, use SBC_GetCommandInformation to check
 ///    if the command is supported, and get the command length and type
 ///    information before processing it.

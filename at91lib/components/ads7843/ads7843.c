@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -62,7 +62,7 @@
 
 #define DELAY_BEFORE_SPCK          (200 << 16) // 2us min (tCSS) <=> 200/100 000 000 = 2us
 #define DELAY_BETWEEN_CONS_COM     (0xf << 24) // 5us min (tCSH) <=> (32 * 15) / (100 000 000) = 5us
-  
+
 //------------------------------------------------------------------------------
 //         Local variables
 //------------------------------------------------------------------------------
@@ -84,29 +84,29 @@ static unsigned int SendCommand(unsigned char bCmd)
     unsigned int  uResult = 0;
     unsigned int  uTimeout = 0;
     // (volatile declaration needed for code optimisation by compiler)
-    volatile unsigned char bufferRX[3]; 
+    volatile unsigned char bufferRX[3];
     volatile unsigned char bufferTX[3];
-    
+
     AT91PS_PDC pPdc = (AT91PS_PDC) &(AT91C_BASE_SPI0->SPI_RPR);
-    unsigned int dStatus;  
-  
+    unsigned int dStatus;
+
     bufferRX[0] = 0;
     bufferRX[1] = 0;
     bufferRX[2] = 0;
-    
+
     bufferTX[0] = bCmd;
     bufferTX[1] = 0;
     bufferTX[2] = 0;//bCmd;
-    
+
     // Send Command and data through the SPI
     pPdc->PDC_PTCR = AT91C_PDC_RXTDIS;
     pPdc->PDC_RPR = (unsigned int) bufferRX;
-    pPdc->PDC_RCR = 3;    
-    
+    pPdc->PDC_RCR = 3;
+
     pPdc->PDC_PTCR = AT91C_PDC_TXTDIS;
     pPdc->PDC_TPR = (unsigned int) bufferTX;
     pPdc->PDC_TCR = 3;
-    
+
     pPdc->PDC_PTCR = AT91C_PDC_RXTEN;
     pPdc->PDC_PTCR = AT91C_PDC_TXTEN;
 
@@ -116,12 +116,12 @@ static unsigned int SendCommand(unsigned char bCmd)
     }
     while ((( dStatus & AT91C_SPI_RXBUFF) != AT91C_SPI_RXBUFF) && (uTimeout < AT91C_TOUCHSCREEN_TIMEOUT));
 
-    pPdc->PDC_PTCR = AT91C_PDC_RXTDIS;   
-    pPdc->PDC_PTCR = AT91C_PDC_TXTDIS;    
-    
+    pPdc->PDC_PTCR = AT91C_PDC_RXTDIS;
+    pPdc->PDC_PTCR = AT91C_PDC_TXTDIS;
+
     uResult = ((unsigned int)bufferRX[1] << 8) | (unsigned int)bufferRX[2];
-    uResult = uResult >> 4; 
-    
+    uResult = uResult >> 4;
+
     return uResult;
 }
 
@@ -151,27 +151,27 @@ void ADS7843_GetPosition(unsigned int* px_pos, unsigned int* py_pos)
 void ADS7843_Initialize(void)
 {
     volatile unsigned int uDummy;
-      
+
     // Configure pins
     PIO_Configure(pinsSPI, PIO_LISTSIZE(pinsSPI));
 
-    SPI_Configure(AT91C_BASE_SPI0, 
+    SPI_Configure(AT91C_BASE_SPI0,
                   AT91C_ID_SPI0,
                   AT91C_SPI_MSTR | AT91C_SPI_MODFDIS | SPI_PCS(BOARD_TSC_NPCS) // Value of the SPI configuration register.
-    );    
-    
-    SPI_ConfigureNPCS(AT91C_BASE_SPI0, BOARD_TSC_NPCS, 
+    );
+
+    SPI_ConfigureNPCS(AT91C_BASE_SPI0, BOARD_TSC_NPCS,
                       AT91C_SPI_NCPHA | (AT91C_SPI_DLYBS & DELAY_BEFORE_SPCK) |
                       (AT91C_SPI_DLYBCT & DELAY_BETWEEN_CONS_COM) | (0xC8 << 8) );
-    
+
     SPI_Enable(AT91C_BASE_SPI0);
 
     for (uDummy=0; uDummy<100000; uDummy++);
 
-    uDummy = AT91C_BASE_SPI0->SPI_SR;    
-    uDummy = AT91C_BASE_SPI0->SPI_RDR;  
-    
-    SendCommand(CMD_ENABLE_PENIRQ);    
+    uDummy = AT91C_BASE_SPI0->SPI_SR;
+    uDummy = AT91C_BASE_SPI0->SPI_RDR;
+
+    SendCommand(CMD_ENABLE_PENIRQ);
 }
 
 //-----------------------------------------------------------------------------

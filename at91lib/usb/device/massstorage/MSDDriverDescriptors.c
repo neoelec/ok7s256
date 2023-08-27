@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -97,15 +97,15 @@ typedef struct {
 static const USBDeviceDescriptor deviceDescriptor = {
 
     sizeof(USBDeviceDescriptor),
-    USBGenericDescriptor_DEVICE,          
-    USBDeviceDescriptor_USB2_00,                        
-    MSDeviceDescriptor_CLASS,                           
-    MSDeviceDescriptor_SUBCLASS,                           
-    MSDeviceDescriptor_PROTOCOL,                           
-    BOARD_USB_ENDPOINTS_MAXPACKETSIZE(0),    
-    MSDDriverDescriptors_VENDORID,               
-    MSDDriverDescriptors_PRODUCTID,                 
-    MSDDriverDescriptors_RELEASE,                         
+    USBGenericDescriptor_DEVICE,
+    USBDeviceDescriptor_USB2_00,
+    MSDeviceDescriptor_CLASS,
+    MSDeviceDescriptor_SUBCLASS,
+    MSDeviceDescriptor_PROTOCOL,
+    BOARD_USB_ENDPOINTS_MAXPACKETSIZE(0),
+    MSDDriverDescriptors_VENDORID,
+    MSDDriverDescriptors_PRODUCTID,
+    MSDDriverDescriptors_RELEASE,
     1, // Manufacturer string descriptor index.
     2, // Product string descriptor index.
     3, // Serial number string descriptor index.
@@ -119,10 +119,10 @@ static const USBDeviceQualifierDescriptor qualifierDescriptor = {
     sizeof(USBDeviceQualifierDescriptor),
     USBGenericDescriptor_DEVICEQUALIFIER,
     USBDeviceDescriptor_USB2_00,
-    MSDeviceDescriptor_CLASS,            
-    MSDeviceDescriptor_SUBCLASS,                           
-    MSDeviceDescriptor_PROTOCOL,                           
-    BOARD_USB_ENDPOINTS_MAXPACKETSIZE(0),    
+    MSDeviceDescriptor_CLASS,
+    MSDeviceDescriptor_SUBCLASS,
+    MSDeviceDescriptor_PROTOCOL,
+    BOARD_USB_ENDPOINTS_MAXPACKETSIZE(0),
     1, // Device has one possible configuration.
     0x00
 };
@@ -134,7 +134,7 @@ static const MSDConfigurationDescriptors configurationDescriptorsFS = {
     // Standard configuration descriptor.
     {
         sizeof(USBConfigurationDescriptor),
-        USBGenericDescriptor_CONFIGURATION,          
+        USBGenericDescriptor_CONFIGURATION,
         sizeof(MSDConfigurationDescriptors),
         1, // Configuration has one interface.
         1, // This is configuration #1.
@@ -149,14 +149,14 @@ static const MSDConfigurationDescriptors configurationDescriptorsFS = {
         0, // This is interface #0.
         0, // This is alternate setting #0.
         2, // Interface uses two endpoints.
-        MSInterfaceDescriptor_CLASS,            
-        MSInterfaceDescriptor_SCSI,                 
-        MSInterfaceDescriptor_BULKONLY,            
+        MSInterfaceDescriptor_CLASS,
+        MSInterfaceDescriptor_SCSI,
+        MSInterfaceDescriptor_BULKONLY,
         0 // No string descriptor for interface.
     },
     // Bulk-OUT endpoint descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(
             USBEndpointDescriptor_OUT,
@@ -187,7 +187,7 @@ static const MSDConfigurationDescriptors otherSpeedDescriptorsFS = {
     // Standard configuration descriptor.
     {
         sizeof(USBConfigurationDescriptor),
-        USBGenericDescriptor_OTHERSPEEDCONFIGURATION,          
+        USBGenericDescriptor_OTHERSPEEDCONFIGURATION,
         sizeof(MSDConfigurationDescriptors),
         1, // Configuration has one interface.
         1, // This is configuration #1.
@@ -202,14 +202,14 @@ static const MSDConfigurationDescriptors otherSpeedDescriptorsFS = {
         0, // This is interface #0.
         0, // This is alternate setting #0.
         2, // Interface uses two endpoints.
-        MSInterfaceDescriptor_CLASS,            
-        MSInterfaceDescriptor_SCSI,                 
-        MSInterfaceDescriptor_BULKONLY,            
+        MSInterfaceDescriptor_CLASS,
+        MSInterfaceDescriptor_SCSI,
+        MSInterfaceDescriptor_BULKONLY,
         0 // No string descriptor for interface.
     },
     // Bulk-OUT endpoint descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(
             USBEndpointDescriptor_OUT,
@@ -239,7 +239,7 @@ static const MSDConfigurationDescriptors configurationDescriptorsHS = {
     // Standard configuration descriptor.
     {
         sizeof(USBConfigurationDescriptor),
-        USBGenericDescriptor_CONFIGURATION,          
+        USBGenericDescriptor_CONFIGURATION,
         sizeof(MSDConfigurationDescriptors),
         1, // Configuration has one interface.
         1, // This is configuration #1.
@@ -254,14 +254,14 @@ static const MSDConfigurationDescriptors configurationDescriptorsHS = {
         0, // This is interface #0.
         0, // This is alternate setting #0.
         2, // Interface uses two endpoints.
-        MSInterfaceDescriptor_CLASS,            
-        MSInterfaceDescriptor_SCSI,                 
-        MSInterfaceDescriptor_BULKONLY,            
+        MSInterfaceDescriptor_CLASS,
+        MSInterfaceDescriptor_SCSI,
+        MSInterfaceDescriptor_BULKONLY,
         0 // No string descriptor for interface.
     },
     // Bulk-OUT endpoint descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(
             USBEndpointDescriptor_OUT,
@@ -291,7 +291,7 @@ static const MSDConfigurationDescriptors otherSpeedDescriptorsHS = {
     // Standard configuration descriptor.
     {
         sizeof(USBConfigurationDescriptor),
-        USBGenericDescriptor_OTHERSPEEDCONFIGURATION,          
+        USBGenericDescriptor_OTHERSPEEDCONFIGURATION,
         sizeof(MSDConfigurationDescriptors),
         1, // Configuration has one interface.
         1, // This is configuration #1.
@@ -306,14 +306,14 @@ static const MSDConfigurationDescriptors otherSpeedDescriptorsHS = {
         0, // This is interface #0.
         0, // This is alternate setting #0.
         2, // Interface uses two endpoints.
-        MSInterfaceDescriptor_CLASS,            
-        MSInterfaceDescriptor_SCSI,                 
-        MSInterfaceDescriptor_BULKONLY,            
+        MSInterfaceDescriptor_CLASS,
+        MSInterfaceDescriptor_SCSI,
+        MSInterfaceDescriptor_BULKONLY,
         0 // No string descriptor for interface.
     },
     // Bulk-OUT endpoint descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(
             USBEndpointDescriptor_OUT,

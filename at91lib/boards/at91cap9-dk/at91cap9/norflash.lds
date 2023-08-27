@@ -37,8 +37,8 @@ ENTRY(entry)
 
 MEMORY
 {
-    sram     (W!RX) : ORIGIN = 0x00100000, LENGTH = 32K 
-    ebi_cs0    (RX) : ORIGIN = 0x10000000, LENGTH = 8M  
+    sram     (W!RX) : ORIGIN = 0x00100000, LENGTH = 32K
+    ebi_cs0    (RX) : ORIGIN = 0x10000000, LENGTH = 8M
 }
 
 SECTIONS

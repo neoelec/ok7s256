@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -48,7 +48,7 @@
 //   CCID_EPT_DATA_IN endpoint data in bulk       2
 //   CCID_EPT_NOTIFICATION endpoint data interupt 3
 //------------------------------------------------------------------------------
-#define CCID_EPT_DATA_OUT       1  
+#define CCID_EPT_DATA_OUT       1
 #define CCID_EPT_DATA_IN        2
 #define CCID_EPT_NOTIFICATION   3
 

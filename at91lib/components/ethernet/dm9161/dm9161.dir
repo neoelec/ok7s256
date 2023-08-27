@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -32,7 +32,7 @@
 /// !Purpose
 ///
 ///     Definition of methods and structures for using PHY DM9161
-///     
+///
 /// !Usage
 ///
 //-----------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -98,11 +98,11 @@
 ///     -- AT91xxxxxx-xx
 ///     -- Compiled: xxx xx xxxx xx:xx:xx --
 ///     \endcode
-/// -# When connecting USB cable to windows, the LED blinks. 
+/// -# When connecting USB cable to windows, the LED blinks.
 ///    Then new "HID Keyboard Device" appears in the
 ///    hardware %device list.
-/// -# Once the device is connected and configured, pressing any of the board buttons 
-///    should send characters to the host PC. Pressing num. lock should also make the third 
+/// -# Once the device is connected and configured, pressing any of the board buttons
+///    should send characters to the host PC. Pressing num. lock should also make the third
 ///    LED toggle its state (on/off).
 ///
 //-----------------------------------------------------------------------------
@@ -205,7 +205,7 @@ static unsigned char keyStatus[NUM_KEYS];
 
 //------------------------------------------------------------------------------
 //         Remote wake-up support (optional)
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 #if (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_BUSPOWERED_RWAKEUP) \
     || (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_SELFPOWERED_RWAKEUP)
 
@@ -358,7 +358,7 @@ static void VBus_Configure( void )
     }
     else {
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else
@@ -668,7 +668,7 @@ int main()
 #if defined(at91cap9dk)
     const Pin pinRow0 = PIN_KEYBOARD_ROW0;
     PIO_Configure(&pinRow0, 1);
-#endif    
+#endif
     PIO_Configure(pinsPushButtons, PIO_LISTSIZE(pinsPushButtons));
     memset(keyStatus, 1, NUM_KEYS);
 
@@ -681,7 +681,7 @@ int main()
     // connect if needed
     VBUS_CONFIGURE();
     while (USBD_GetState() < USBD_STATE_CONFIGURED);
-    
+
     // Infinite loop
     while (1) {
 
@@ -689,17 +689,17 @@ int main()
         unsigned char pressedKeysSize = 0;
         unsigned char releasedKeys[NUM_KEYS];
         unsigned char releasedKeysSize = 0;
-        
+
         // Monitor buttons
         for (i=0; i < PIO_LISTSIZE(pinsPushButtons); i++) {
-        
+
             // Check if button state has changed
             unsigned char isButtonPressed = PIO_Get(&(pinsPushButtons[i]));
             if (isButtonPressed != keyStatus[i]) {
-        
+
                 // Update button state
                 if (!isButtonPressed) {
-        
+
                     // Key has been pressed
                     TRACE_INFO("Key %u has been pressed\n\r", i);
                     keyStatus[i] = 0;
@@ -708,7 +708,7 @@ int main()
                     HIDDKeyboardDriver_RemoteWakeUp();
                 }
                 else {
-        
+
                     // Key has been released
                     TRACE_INFO("Key %u has been released\n\r", i);
                     keyStatus[i] = 1;
@@ -717,14 +717,14 @@ int main()
                 }
             }
         }
-        
+
         // Update key status in the HID driver if necessary
         if ((pressedKeysSize != 0) || (releasedKeysSize != 0)) {
-        
+
             unsigned char status;
 
             do {
-            
+
                 status = HIDDKeyboardDriver_ChangeKeys(pressedKeys,
                                                        pressedKeysSize,
                                                        releasedKeys,

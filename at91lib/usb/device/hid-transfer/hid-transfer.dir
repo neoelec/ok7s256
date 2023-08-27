@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -44,7 +44,7 @@
 ///   standard requests in USBD callbacks, to read/write through assigned USB
 ///   endpoints,
 /// - Create the HID Transfer device's descriptors that should be passed to
-///   the USBDDriver instance on initialization, so that the host can 
+///   the USBDDriver instance on initialization, so that the host can
 ///   recognize the %device as a USB Transfer %device.
 /// - Implement methods to read/write data through interrupt endpoints, so that
 ///   host and device can exchange data.
@@ -400,7 +400,7 @@ case HIDGenericRequest_SETREPORT:
         USBD_Stall(0);
       }
       else {
-      
+
         USBD_Read(0, // Endpoint #0
           &(hiddKeyboardDriver.outputReport),
           length,

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -214,62 +214,62 @@
  with the framework to view the end result.
 
  !!!Including the Necessary Headers
- 
+
  Prior to using the framework, several header files have to be included. Please
  refer to "USB Device Framework Usage" for more information.
- 
+
  !!!Declaring Global Varibles
- 
+
  Several object instances are necessary to use the various functions and methods
  of the USB framework. As following.
- 
+
  !!USBD Driver
  The very first step is declare the USB driver which is then used by the Class
  driver. The USBDDriver structure is used as a container for several variables,
  which must therefore be created first.
- 
+
  !Endpoints
  Depending on the application, a particular number of endpoints have to be
  defined. For example, an MSD driver needs three endpoints whereas a CDC driver
  needs four. Refer to the corresponding specification for more information
  about the required number of endpoints. Since this example should only perform
  the USB enumeration, it will declare only one endpoint: Control endpoint 0.
- 
+
  Endpoints is configrued by USBEndpointDescriptor in USBDDriverDescriptors for
  the driver. The FIFO banks is automatically set to its maximum value.
- 
+
  !Callbacks
  To replace the default callback, you should remove the default callback file
  from makefile and add your own function defintion.
- 
+
 ||callback function file||callback function
 |USBDCallbacks_Initialized.o|USBDCallbacks_Initialized
 |USBDCallbacks_Reset.o|USBDCallbacks_Reset
 |USBDCallbacks_Suspended.o|USBDCallbacks_Suspended
 |USBDCallbacks_Resumed.o|USBDCallbacks_Resumed
 |- #MUST# be defined|USBDCallbacks_RequestReceived
- 
+
  !Driver
  Depending on the chip used, there may or may not be a need to declare a low-
  level driver variable.
- 
+
  The default driver global variable is simply called usbdDriver, and will
  sufficient for this example.
  \code
 USBDDriver usbdDriver;
  \endcode
- 
+
  !!Descriptors
  The USB specification 2.0 defines a set of descriptors used to give
  information about the %device. Depending on the USB class implemented,
  different descriptors have to be used with varying values.
- 
+
  In this example program, only a few descriptors are required,. The %device
  descriptor is always mandatory, so it will have to be defined. At least one
  configuration descriptor is required, so one is implemented. The described
  configuration must have at least one interface, so one more descriptor is
  needed. Finally, no string descriptors are used:
- 
+
  !Device Descriptor
  The device descriptor used by this example looks like this:
  \code
@@ -295,15 +295,15 @@ const USBDeviceDescriptor usbDeviceDescriptor = {
  The values are nothing special here. Note that the first three fields have the
  same data in them (unless using USB 1.1). It is also very common to define the
  class, subclass and protocol values at the interface level.
- 
+
  - Note: The }vendor ID} value is provided by the USB-IF organization. The
  }product ID} is vendor-specific and can be assigned any value.
- 
+
  !Configuration & Interface
  When the configuration descriptor is requested by the host, via the
  GET_DESCRIPTOR command, the device must not only transmit this descriptor but
  also all the necessary interface and endpoint descriptors.
- 
+
  In order to do that easily, a structure must be defined for holding all the
  information. This way, the data to send is contiguous, making the request
  much simpler to fulfill. In the current example, the configuration descriptor
@@ -350,17 +350,17 @@ const struct SimpleConfigurationDescriptors configurationDescriptors = {
  Again, those are very generic values. For the interface descriptor, most of
  them are zeroed. This is because this example does not implement any
  functionality other than doing the USB enumeration.
- 
+
  !!Class Driver
  The demonstration program is going to use the standard request handler
  discussed in "USBD Standard Request Handler" to perform the USB enumeration.
  To be able to do that, several structures must be declared.
- 
+
  !Descriptors List
  The USBDDriver object needs a pointer to a list of descriptors. This is
  necessary to be able to answer the GET_DESCRIPTOR request. A
  USBDDriverDescriptors can be used to do that.
- 
+
  The actual descriptors list can be instantiated:
  \code
 // List of descriptors used by the device.
@@ -390,7 +390,7 @@ const USBDDriverDescriptors usbdDriverDescriptors = {
  The core configuration descriptor, which is actually made up of the
  configuation descriptor and the first interface descriptor, has to be cast to
  the USBConfigurationDescriptor type.
- 
+
  !!!Interrupt Service Routines
 
  .
@@ -416,7 +416,7 @@ void USBDCallbacks_Initialized()
  \endcode
  So the only thing you should do to initialize the interrupt service is to call
  USBD_Init() in main().
- 
+
  !!VBus PIO Interrupt
  The Vbus power line can be monitored (if a PIO pin is connected to it) by the
  user application to enable or disable the USB controller peripheral when the
@@ -435,12 +435,12 @@ void ISR_Vbus(const Pin *pPin)
     }
 }
  \endcode
- 
+
  !!!Callbacks
  A typical application based on this USB framework needs to instantiate most of
  the callbacks available. This section describes how to do that for a simple
  enumeration program.
- 
+
  !!Init
  When an OS is not being used, the primary function that the {Init{ callback
  must perform is interrupt handler installation. The previously defined ISR
@@ -454,7 +454,7 @@ void USBDCallbacks_Initialized()
 }
  \endcode
  The default callback is defined in USBDCallbacks_Initialized.c.
- 
+
  !!Suspend & Resume
  The Suspend callback is used by the USBD API to notify the device that it
  should enter low-power mode if required. The default callback is defined
@@ -479,7 +479,7 @@ void USBDCallbacks_Resumed(void)
     LED_Clear(USBD_LEDUSB);
 }
  \endcode
- 
+
  - Note: }It is not necessary to disable the USB controller logic (transceiver,
  clocks, %peripheral) here. This is done directly by the USBD_InterruptHandler
  function prior to triggering the callback. Typically, the callback must carry
@@ -487,7 +487,7 @@ void USBDCallbacks_Resumed(void)
     - Disable the PLL
     - Switch to the slow 32 KHz clock
     - Turn off the clocks of used peripherals}
- 
+
  !!NewRequest
  Since this example software should only perform the USB enumeration, the
  NewRequest callback can simply forward the call to the standard request
@@ -503,11 +503,11 @@ void USBDCallbacks_RequestReceived(const USBGenericRequest *request)
  The Main function of the program is used for PIO and driver (Class and USB)
  initialization, software connections of the device (by using USBD_Connect),
  and implementation of the product functionality.
- 
+
  In this case, the Main performs the first two steps. After that, since the
  enumeration is done through the event handler and the device does not do
  anything, it can simply enter an infinite loop:
- 
+
  \code
 int main()
 {
@@ -521,7 +521,7 @@ int main()
     // connect if needed
     VBUS_CONFIGURE();
     while (USBD_GetState() < USBD_STATE_CONFIGURED);
-    
+
     // Main loop
     while(1)
     {

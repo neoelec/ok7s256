@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -369,7 +369,7 @@ static void UDPHS_ResetEndpoints( void )
 
 
 //------------------------------------------------------------------------------
-/// Disable all endpoints (except control endpoint 0), aborting current 
+/// Disable all endpoints (except control endpoint 0), aborting current
 /// transfers if necessary
 //------------------------------------------------------------------------------
 static void UDPHS_DisableEndpoints( void )
@@ -611,13 +611,13 @@ static void UDPHS_DmaHandler( unsigned char bEndpoint )
             // Prepare an other transfer
             if( pTransfer->remaining > DMA_MAX_FIFO_SIZE ) {
 
-                pTransfer->buffered = DMA_MAX_FIFO_SIZE;    
+                pTransfer->buffered = DMA_MAX_FIFO_SIZE;
             }
             else {
                 pTransfer->buffered = pTransfer->remaining;
             }
 
-            AT91C_BASE_UDPHS->UDPHS_DMA[bEndpoint].UDPHS_DMAADDRESS = 
+            AT91C_BASE_UDPHS->UDPHS_DMA[bEndpoint].UDPHS_DMAADDRESS =
                 (unsigned int)((pTransfer->pData) + (pTransfer->transferred));
 
             // Clear unwanted interrupts
@@ -670,7 +670,7 @@ static void UDPHS_DmaHandler( unsigned char bEndpoint )
 
 //------------------------------------------------------------------------------
 /// USB interrupt handler
-/// Manages device resume, suspend, end of bus reset. 
+/// Manages device resume, suspend, end of bus reset.
 /// Forwards endpoint interrupts to the appropriate handler.
 //------------------------------------------------------------------------------
 void USBD_InterruptHandler(void)
@@ -943,7 +943,7 @@ void USBD_ConfigureEndpoint(const USBEndpointDescriptor *pDescriptor)
     // Configure endpoint
     if( pEndpoint->size <= 8 )  {
         bSizeEpt = 0;
-    } 
+    }
     else if ( pEndpoint->size <= 16 ) {
         bSizeEpt = 1;
     }
@@ -976,9 +976,9 @@ void USBD_ConfigureEndpoint(const USBEndpointDescriptor *pDescriptor)
     }
 
 
-    AT91C_BASE_UDPHS->UDPHS_EPT[bEndpoint].UDPHS_EPTCFG = bSizeEpt 
-                                                        | (bEndpointDir << 3) 
-                                                        | (bType << 4) 
+    AT91C_BASE_UDPHS->UDPHS_EPT[bEndpoint].UDPHS_EPTCFG = bSizeEpt
+                                                        | (bEndpointDir << 3)
+                                                        | (bType << 4)
                                                         | ((pEndpoint->bank) << 6);
 
     while( (signed int)AT91C_UDPHS_EPT_MAPD != (signed int)((AT91C_BASE_UDPHS->UDPHS_EPT[bEndpoint].UDPHS_EPTCFG) & AT91C_UDPHS_EPT_MAPD) ) {
@@ -995,7 +995,7 @@ void USBD_ConfigureEndpoint(const USBEndpointDescriptor *pDescriptor)
 
     if (bType == USBEndpointDescriptor_CONTROL) {
 
-        AT91C_BASE_UDPHS->UDPHS_EPT[bEndpoint].UDPHS_EPTCTLENB = AT91C_UDPHS_RX_BK_RDY 
+        AT91C_BASE_UDPHS->UDPHS_EPT[bEndpoint].UDPHS_EPTCTLENB = AT91C_UDPHS_RX_BK_RDY
                                                                | AT91C_UDPHS_RX_SETUP
                                                                | AT91C_UDPHS_EPT_ENABL;
     }
@@ -1003,7 +1003,7 @@ void USBD_ConfigureEndpoint(const USBEndpointDescriptor *pDescriptor)
 #ifndef DMA
         AT91C_BASE_UDPHS->UDPHS_EPT[bEndpoint].UDPHS_EPTCTLENB = AT91C_UDPHS_EPT_ENABL;
 #else
-        AT91C_BASE_UDPHS->UDPHS_EPT[bEndpoint].UDPHS_EPTCTLENB = AT91C_UDPHS_AUTO_VALID 
+        AT91C_BASE_UDPHS->UDPHS_EPT[bEndpoint].UDPHS_EPTCTLENB = AT91C_UDPHS_AUTO_VALID
                                                                | AT91C_UDPHS_EPT_ENABL;
 #endif
     }
@@ -1075,7 +1075,7 @@ char USBD_Write( unsigned char    bEndpoint,
             if( pTransfer->remaining > DMA_MAX_FIFO_SIZE ) {
 
                 // Transfer the max
-                pTransfer->buffered = DMA_MAX_FIFO_SIZE;    
+                pTransfer->buffered = DMA_MAX_FIFO_SIZE;
             }
             else {
                 // Transfer the good size
@@ -1123,7 +1123,7 @@ char USBD_Read( unsigned char    bEndpoint,
 {
     Endpoint *pEndpoint = &(endpoints[bEndpoint]);
     Transfer *pTransfer = &(pEndpoint->transfer);
-  
+
     // Return if the endpoint is not in IDLE state
     if (pEndpoint->state != UDP_ENDPOINT_IDLE) {
 
@@ -1161,7 +1161,7 @@ char USBD_Read( unsigned char    bEndpoint,
         if( pTransfer->remaining > DMA_MAX_FIFO_SIZE ) {
 
             // Transfer the max
-            pTransfer->buffered = DMA_MAX_FIFO_SIZE;    
+            pTransfer->buffered = DMA_MAX_FIFO_SIZE;
         }
         else {
             // Transfer the good size
@@ -1291,7 +1291,7 @@ unsigned char USBD_IsHighSpeed( void )
     }
     return( status );
 }
- 
+
 
 //------------------------------------------------------------------------------
 /// Causes the endpoint to acknowledge the next received packet with a STALL
@@ -1370,9 +1370,9 @@ void USBD_SetAddress( unsigned char address )
 }
 
 //------------------------------------------------------------------------------
-/// Changes the device state from Address to Configured, or from Configured 
+/// Changes the device state from Address to Configured, or from Configured
 /// to Address.
-/// This method directly access the last received SETUP packet to decide on 
+/// This method directly access the last received SETUP packet to decide on
 /// what to do.
 /// \param cfgnum configuration number
 //------------------------------------------------------------------------------
@@ -1470,7 +1470,7 @@ void USBD_Disconnect( void )
 #endif
 
     // Device returns to the Powered state
-    if (deviceState > USBD_STATE_POWERED) {    
+    if (deviceState > USBD_STATE_POWERED) {
 
         deviceState = USBD_STATE_POWERED;
     }
@@ -1650,7 +1650,7 @@ void USBD_Init( void )
                                    | AT91C_UDPHS_IEN_SOF
                                    | AT91C_UDPHS_MICRO_SOF
                                    | AT91C_UDPHS_DET_SUSPD;
-    
+
     // Device is in the Attached state
     deviceState = USBD_STATE_SUSPENDED;
     previousDeviceState = USBD_STATE_POWERED;

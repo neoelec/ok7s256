@@ -358,51 +358,51 @@ static unsigned char ButtonsMonitor(unsigned char *pBtnStatus,
 #if defined(PINS_JOYSTICK)
     // Left Click
     if (PIO_Get(&pinsJoystick[JOYSTICK_LCLIC]) == 0) {
-  
+
         if ((*pBtnStatus & HIDDMouse_LEFT_BUTTON) == 0) {
-  
+
             printf("LDn ");
             *pBtnStatus |= HIDDMouse_LEFT_BUTTON;
             isChanged = 1;
         }
     }
     else if (*pBtnStatus & HIDDMouse_LEFT_BUTTON) {
-  
+
         printf("Lup ");
         *pBtnStatus &= ~HIDDMouse_LEFT_BUTTON;
         isChanged = 1;
     }
-    
+
   #if  defined(JOYSTICK_RCLIC)
       // Right Click
       if (PIO_Get(&pinsJoystick[JOYSTICK_RCLIC]) == 0) {
-    
+
           if ((*pBtnStatus & HIDDMouse_RIGHT_BUTTON) == 0) {
-    
+
               printf("RDn ");
               *pBtnStatus |= HIDDMouse_RIGHT_BUTTON;
               isChanged = 1;
           }
       }
       else if (*pBtnStatus & HIDDMouse_RIGHT_BUTTON) {
-    
+
           printf("Rup ");
           *pBtnStatus &= ~HIDDMouse_RIGHT_BUTTON;
           isChanged = 1;
       }
   #endif
 #endif
-    
+
       // - Movment buttons, Joystick or Push buttons
       // Left
       if (PIO_Get(&pinsJoystick[JOYSTICK_LEFT]) == 0) {
-    
+
           *pDx = -SPEED_X;
           isChanged = 1;
       }
       // Right
       else if (PIO_Get(&pinsJoystick[JOYSTICK_RIGHT]) == 0) {
-    
+
           *pDx = SPEED_X;
           isChanged = 1;
       }
@@ -413,18 +413,18 @@ static unsigned char ButtonsMonitor(unsigned char *pBtnStatus,
 #if defined (PINS_JOYSTICK)
       // Up
       if (PIO_Get(&pinsJoystick[JOYSTICK_UP]) == 0) {
-    
+
           *pDy = -SPEED_Y;
           isChanged = 1;
       }
       // Down
       else if (PIO_Get(&pinsJoystick[JOYSTICK_DOWN]) == 0) {
-    
+
           *pDy = SPEED_Y;
           isChanged = 1;
       }
       else {
-    
+
           *pDy = 0;
       }
 #endif
@@ -720,14 +720,14 @@ int main(void)
     // connect if needed
     VBUS_CONFIGURE();
     while (USBD_GetState() < USBD_STATE_CONFIGURED);
-    
+
     // Infinite loop
     while (1) {
 
         isChanged = ButtonsMonitor(&bmButtons, &dX, &dY);
 
         if (isChanged) {
-        
+
             unsigned char status;
 
             do {
@@ -737,7 +737,7 @@ int main(void)
 
             } while (status != USBD_STATUS_SUCCESS);
         }
-        
+
         if( USBState == STATE_SUSPEND ) {
             TRACE_DEBUG("suspend  !\n\r");
             LowPowerMode();

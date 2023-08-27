@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -73,7 +73,7 @@ unsigned int CALINT(unsigned int result, unsigned int input)
 {
 	unsigned int i=0;
 	unsigned int tmpInput=0;
-        
+
     while(1)
     {
     	tmpInput +=input;
@@ -149,7 +149,7 @@ unsigned char NandFlashModel_Find(
                     model->blockSizeInKBytes = (64) << ((id4 & 0x30) >>4);
 					#endif
                 }
-                
+
             }
             TRACE_DEBUG("NAND Model found:\r\n");
             TRACE_DEBUG(" * deviceId = 0x%02X\r\n", model->deviceId);

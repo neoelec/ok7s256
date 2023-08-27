@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -76,7 +76,7 @@ typedef struct {
    unsigned char bInterfaceProtocol;
    /// Index of the interface string descriptor.
    unsigned char iInterface;
-                                    
+
 } __attribute__ ((packed)) USBInterfaceDescriptor; // GCC
 
 #ifdef __ICCARM__          // IAR

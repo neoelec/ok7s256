@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Logical Unit Number (LUN) used by the Mass Storage driver and the SCSI
 /// protocol. Represents a logical hard-drive.
-/// 
+///
 /// !Usage
 /// -# Initialize Memory related pins (see pio & board.h).
 /// -# Initialize a Media instance for the LUN (see memories).

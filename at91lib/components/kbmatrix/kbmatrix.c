@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -72,7 +72,7 @@ static void KEYSTATE_SetKeyState(
     SANITY_CHECK(key < KBMATRIX_MAX_NUMKEYS);
 
     if (state) {
-    
+
         pKeyState->pState[byte] |= (1 << bit);
     }
     else {
@@ -185,10 +185,10 @@ unsigned char Debounce(KbMatrix *pKbMatrix)
 
     // Compare with existing status
     KEYSTATE_Xor(&new, &(pKbMatrix->currentKeyState), &changed);
-    
+
     // Process each pending event
     for (i=0; i < (pKbMatrix->numRows * pKbMatrix->numCols); i++) {
-    
+
         if (KEYSTATE_GetKeyState(&changed, i)) {
 
             event = 1;
@@ -237,7 +237,7 @@ void Fetch(KbMatrix *pKbMatrix)
 
         // Disable row (and wait for level to become 1)
         PIO_Set(&(pKbMatrix->pRows[row]));
-        for (i=0; i < 100; i++); // Dirty but works    
+        for (i=0; i < 100; i++); // Dirty but works
     }
 
     // Update sample index

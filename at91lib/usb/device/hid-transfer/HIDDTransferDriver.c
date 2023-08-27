@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -245,7 +245,7 @@ void HIDDTransferDriver_RequestHandler(const USBGenericRequest *request)
 
         // This is a standard request
         switch (USBGenericRequest_GetRequest(request)) {
-        
+
             case USBGenericRequest_GETDESCRIPTOR:
                 // Check if this is a HID descriptor, otherwise forward it to
                 // the standard driver

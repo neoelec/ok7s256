@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,31 +30,31 @@
 /// \unit
 ///
 /// !Purpose
-/// 
+///
 /// The Hardware Adaptation Layer manages the hardware functions of the %NORFLASH
-/// %Flash. It implements a low level driver to manage the hardware functionality 
+/// %Flash. It implements a low level driver to manage the hardware functionality
 /// of %NORFLASH.
-/// 
+///
 /// !Usage
-///  
+///
 /// -# WriteRawData() is used to write data to the %NorFlash device.
 /// -# ReadRawData() is used to read data from the %NorFlash device.
 /// -# The specified address for read/write opertion is an linear byte
-///    address of targer application byte address space represented by 
-///    WORD((8-bit, 16-bit, 32-bit). The start (base) address of the 
-///    flash memory in this address space is defined in board.h file 
+///    address of targer application byte address space represented by
+///    WORD((8-bit, 16-bit, 32-bit). The start (base) address of the
+///    flash memory in this address space is defined in board.h file
 ///    as BOARD_NORFLASH_ADDR and users might need to change it.
-/// -# WriteCommand() is used to write a command to specified command 
+/// -# WriteCommand() is used to write a command to specified command
 ///    address.
-/// 
+///
 ///  ! NorFlash Error Codes
 ///
-/// It provides detailed error codes to describe the various errors 
+/// It provides detailed error codes to describe the various errors
 /// that may occur during the operation. Some functions return an error
 /// number directly as the function value. These functions return a value
 /// of zero (NorCommon_ERROR_NONE) to indicate a success.
 //------------------------------------------------------------------------------
- 
+
 
 #ifndef NORFLASHCOMMON_H
 #define NORFLASHCOMMON_H
@@ -84,18 +84,18 @@
 //         Exported functions
 //------------------------------------------------------------------------------
 extern unsigned char WriteCommand(
-    unsigned char portWidth, 
-    unsigned int commandAddress, 
+    unsigned char portWidth,
+    unsigned int commandAddress,
     unsigned int command);
-    
+
 extern void ReadRawData(
     unsigned char portWidth,
     unsigned int  dataAddress,
     unsigned char *buffer);
-        
+
 extern void WriteRawData(
     unsigned char portWidth,
     unsigned int  dataAddress,
     unsigned char *buffer);
-    
+
 #endif //#ifndef NORFLASHCOMMON_H

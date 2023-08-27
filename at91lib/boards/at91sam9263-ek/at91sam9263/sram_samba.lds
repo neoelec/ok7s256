@@ -41,7 +41,7 @@ ENTRY(entry)
 
 MEMORY
 {
-    romcodesram (W!RX) : ORIGIN = 0x300000, LENGTH = 0x1000    
+    romcodesram (W!RX) : ORIGIN = 0x300000, LENGTH = 0x1000
     sram (W!RX)  : ORIGIN = 0x301000, LENGTH = 0x17000
 }
 
@@ -83,7 +83,7 @@ SECTIONS
         . = ALIGN(4);
         _ezero = .;
     } >sram
-    
+
     _sstack = 0x318000;
 }
 end = .;

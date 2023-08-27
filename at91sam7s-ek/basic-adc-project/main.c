@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -52,7 +52,7 @@
 /// !!!Description
 ///
 /// After launching the program, the device will display the voltage on four
-/// of his ADC pins. Somes boards have more than four accessible pins, so the 
+/// of his ADC pins. Somes boards have more than four accessible pins, so the
 /// software can be easily update for that.
 ///
 /// !!!Usage
@@ -64,13 +64,13 @@
 ///
 /// -# For AT91SAM7S-EK board:
 /// The measured pins are J7, J8, J9 and J10
-/// 
+///
 /// -# For AT91SAM7SE-EK board:
 /// The measured pins are J17 pins 29, 30, 31 and 32
 ///
 /// -# For AT91SAM7X-EK board:
 /// The measured pins are J16 pins C29 and C30, and J26 pins 1 and 2
-/// 
+///
 /// -# For AT91SAM7XC-EK board:
 /// The measured pins are J16 pins C29 and C30, and J26 pins 1 and 2
 ///
@@ -233,7 +233,7 @@ static void ISR_Adc(void)
 //------------------------------------------------------------------------------
 int main(void)
 {
-    unsigned int id_channel;	
+    unsigned int id_channel;
 
     TRACE_CONFIGURE(DBGU_STANDARD, 115200, BOARD_MCK);
     printf("-- Basic ADC Project %s --\n\r", SOFTPACK_VERSION);

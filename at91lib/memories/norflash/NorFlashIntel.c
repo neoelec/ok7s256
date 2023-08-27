@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -38,8 +38,8 @@
 //------------------------------------------------------------------------------
 //        Local defination
 //------------------------------------------------------------------------------
- 
-/// Command for vendor command set CMD_SET_INTEL. Device commands are written 
+
+/// Command for vendor command set CMD_SET_INTEL. Device commands are written
 /// to the Command User Interface (CUI) to control all flash memory device operations.
 #define INTEL_CMD_IDIN             0x0090
 #define INTEL_CMD_BLOCK_ERASE_1    0x0020
@@ -93,25 +93,25 @@ void intel_Reset(struct NorFlashInfo *pNorFlashInfo, unsigned int address)
 
 //------------------------------------------------------------------------------
 /// The Read Device Identifier command instructs the device to output manufacturer
-/// code, device identifier code, block-lock status, protection register data, 
+/// code, device identifier code, block-lock status, protection register data,
 /// or configuration register data by giving offset.
 /// \param pNorFlashInfo  Pointer to an struct NorFlashInfo instance.
 /// \param offset 0: Identifier address offset.
 //------------------------------------------------------------------------------
 unsigned int intel_ReadIdentification(
-    struct NorFlashInfo *pNorFlashInfo, 
+    struct NorFlashInfo *pNorFlashInfo,
     unsigned int offset)
 {
     unsigned int data;
     unsigned char busWidth;
     unsigned int address;
-    
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
     // Issue the Read Device Identifier command at specified address.
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, 0), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, 0),
                  INTEL_CMD_IDIN);
-    
+
     if(offset >= INTEL_LOCKSTATUS) {
         // Block base address.
         address = NorFlash_GetAddressInChip (pNorFlashInfo, offset);
@@ -134,9 +134,9 @@ unsigned char intel_ReadStatus(struct NorFlashInfo *pNorFlashInfo, unsigned int 
     unsigned char busWidth;
     unsigned int budAddress;
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
-    
+
     // Issue the Read Status Register command at any address.
-    budAddress = NorFlash_GetAddressInChip(pNorFlashInfo, address), 
+    budAddress = NorFlash_GetAddressInChip(pNorFlashInfo, address),
     WriteCommand(busWidth, budAddress, INTEL_CMD_READ_STATUS);
     ReadRawData(busWidth, budAddress, (unsigned char*)&status);
     return status;
@@ -151,14 +151,14 @@ void intel_ClearStatus(struct NorFlashInfo *pNorFlashInfo)
     unsigned char busWidth;
     unsigned int address;
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
-    
+
     // Issue the Clear Status Register command at any address
-    address = NorFlash_GetAddressInChip(pNorFlashInfo, 0), 
+    address = NorFlash_GetAddressInChip(pNorFlashInfo, 0),
     WriteCommand(busWidth, address, INTEL_CMD_CLEAR_STATUS);
 }
 
 //------------------------------------------------------------------------------
-/// Unlocks the specified block of the device. 
+/// Unlocks the specified block of the device.
 /// \param pNorFlashInfo  Pointer to an struct NorFlashInfo instance.
 /// \param address Address in sector.
 //------------------------------------------------------------------------------
@@ -167,17 +167,17 @@ void intel_UnlockSector(struct NorFlashInfo *pNorFlashInfo, unsigned int address
     unsigned int busAddress;
     unsigned char busWidth;
     // Clear the status register first.
-   
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
     busAddress = NorFlash_GetAddressInChip(pNorFlashInfo,address);
-    
+
     WriteCommand(busWidth, busAddress, INTEL_CMD_BLOCK_LOCKSTART);
     WriteCommand(busWidth, busAddress, INTEL_CMD_BLOCK_UNLOCK);
     intel_Reset(pNorFlashInfo, 0);
 }
 
 //------------------------------------------------------------------------------
-/// The Read Device Identifier command instructs the device to output block-lock 
+/// The Read Device Identifier command instructs the device to output block-lock
 /// status.
 /// \param pNorFlashInfo  Pointer to an struct NorFlashInfo instance.
 /// \param address 0: Address in sector/block.
@@ -193,7 +193,7 @@ unsigned int intel_GetBlockLockStatus(struct NorFlashInfo *pNorFlashInfo, unsign
 /// \param pNorFlashInfo  Pointer to an struct NorFlashInfo instance.
 /// \param address Start address offset to be wrote.
 /// \param data word to be written.
-//------------------------------------------------------------------------------    
+//------------------------------------------------------------------------------
 unsigned char intel_Program(
     struct NorFlashInfo *pNorFlashInfo,
     unsigned int address,
@@ -205,24 +205,24 @@ unsigned char intel_Program(
     volatile unsigned int busAddress;
     unsigned char done = 0;
     unsigned char busWidth;
-    
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
-    
+
     intel_Reset(pNorFlashInfo, address);
     busAddress = NorFlash_GetAddressInChip(pNorFlashInfo, address);
-    
+
     // Check if the data already have been erased.
     ReadRawData(busWidth, busAddress, (unsigned char*)&datain);
     if((datain & data)!= data) {
         return NorCommon_ERROR_CANNOTWRITE;
     }
-    
+
     // Word programming operations are initiated by writing the Word Program Setup command to the device.
     WriteCommand(busWidth, busAddress, INTEL_CMD_PROGRAM_WORD);
     // This is followed by a second write to the device with the address and data to be programmed.
     WriteRawData(busWidth, busAddress, (unsigned char*)&data);
-    
-    // Status register polling 
+
+    // Status register polling
     do {
         status = intel_ReadStatus(pNorFlashInfo,address);
         // Check if the device is ready.
@@ -231,7 +231,7 @@ unsigned char intel_Program(
             if ((status & INTEL_STATUS_VPPS) == INTEL_STATUS_VPPS ) {
                 return NorCommon_ERROR_CANNOTWRITE;
             }
-            // Check if the erase block operation is completed. 
+            // Check if the erase block operation is completed.
             if ((status & INTEL_STATUS_PS) == INTEL_STATUS_PS ) {
                 return NorCommon_ERROR_CANNOTWRITE;
             }
@@ -244,7 +244,7 @@ unsigned char intel_Program(
             }
         }
     } while (!done);
-    
+
     intel_ClearStatus(pNorFlashInfo);
     intel_Reset(pNorFlashInfo, address);
     return 0;
@@ -289,14 +289,14 @@ unsigned int INTEL_ReadDeviceID(struct NorFlashInfo *pNorFlashInfo)
 /// \param address Address offset to be erase.
 //------------------------------------------------------------------------------
 unsigned char INTEL_EraseSector(
-    struct NorFlashInfo *pNorFlashInfo, 
+    struct NorFlashInfo *pNorFlashInfo,
     unsigned int address)
 {
     unsigned int status;
     unsigned int busAddress;
     unsigned char busWidth;
     unsigned char done = 0;
-    
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
     // Check the lock status is locked.
     status = intel_GetBlockLockStatus(pNorFlashInfo, address);
@@ -311,12 +311,12 @@ unsigned char INTEL_EraseSector(
     // Next, the Block Erase Confirm command is written to the address of the block to be erased.
     WriteCommand(busWidth, busAddress, INTEL_CMD_BLOCK_ERASE_2);
 
-    // Status register polling 
+    // Status register polling
     do {
         status = intel_ReadStatus(pNorFlashInfo,address);
         // Check if the device is ready.
         if ((status & INTEL_STATUS_DWS) == INTEL_STATUS_DWS ) {
-            // Check if the erase block operation is completed. 
+            // Check if the erase block operation is completed.
             if ((status & INTEL_STATUS_ES) == 0 ) {
                 done = 1;
             }
@@ -371,9 +371,9 @@ unsigned char INTEL_Write_Data(
 {
     unsigned int i;
     unsigned char busWidth;
-    
+
     busWidth = pNorFlashInfo->deviceChipWidth;
-    if (busWidth == FLASH_CHIP_WIDTH_8BITS ){ 
+    if (busWidth == FLASH_CHIP_WIDTH_8BITS ){
         for(i=0; i < size; i++) {
             if(intel_Program(pNorFlashInfo, address, buffer[i])) {
                 return NorCommon_ERROR_CANNOTWRITE;
@@ -385,7 +385,7 @@ unsigned char INTEL_Write_Data(
         unsigned short *buffer16 = (unsigned short *) buffer;
         size >>= 1;
         for(i=0; i < size; i++) {
-            
+
             if(intel_Program(pNorFlashInfo, address, buffer16[i])){
                 return NorCommon_ERROR_CANNOTWRITE;
             }

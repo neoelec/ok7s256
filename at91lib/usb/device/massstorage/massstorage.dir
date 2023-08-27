@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -43,7 +43,7 @@
 ///   standard requests in USBD callbacks, to read/write through assigned USB
 ///   %endpoints,
 /// - Create the MSD device's descriptors that should be passed to
-///   the USBDDriver instance on initialization, so that the host can 
+///   the USBDDriver instance on initialization, so that the host can
 ///   recognize the %device as a USB Mass Storage %device.
 /// - Implement state machine for MSD command/data/status handling.
 /// - Implement storage media interface for MSD disk accessing.
@@ -795,18 +795,18 @@ typedef struct {
 
  The Thirteen Cases
 ||\#||Case||Length||Residue||Direction||STALL IN?||STALL OUT?||Phase Error?
-|1|Hn = Dn|0|0|Irrelevant| | | 
+|1|Hn = Dn|0|0|Irrelevant| | |
 |2|Hn < Di|0|Ld - Lh|Irrelevant| | |X
 |3|Hn < Do|0|Ld - Lh|Irrelevant| | |X
-|4|Hi > Dn|0|Lh|Irrelevant|X| | 
-|5|Hi > Di|Ld|Lh - Ld|In|X| | 
-|6|Hi = Di|Ld|0|In| | | 
+|4|Hi > Dn|0|Lh|Irrelevant|X| |
+|5|Hi > Di|Ld|Lh - Ld|In|X| |
+|6|Hi = Di|Ld|0|In| | |
 |7|Hi < Di|Lh|Ld - Lh|In| | |X
 |8|Hi <> Do|0|0|Irrelevant|X| |X
-|9|Ho > Dn|0|Lh|Irrelevant| |X| 
+|9|Ho > Dn|0|Lh|Irrelevant| |X|
 |10|Ho <> Di|0|0|Irrelevant| |X|X
-|11|Ho > Do|Ld|Lh - Ld|Out| |X| 
-|12|Ho = Do|Ld|0|Out| | | 
+|11|Ho > Do|Ld|Lh - Ld|Out| |X|
+|12|Ho = Do|Ld|0|Out| | |
 |13|Ho < Do|Lh|Lh - Ld|Out| | |X
 
  !!Main Application

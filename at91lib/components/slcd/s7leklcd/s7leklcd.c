@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -47,7 +47,7 @@ static const unsigned short pLcdUpperChars[26] = {
     S7LEKLCD_M, S7LEKLCD_N, S7LEKLCD_O, S7LEKLCD_P,
     S7LEKLCD_Q, S7LEKLCD_R, S7LEKLCD_S, S7LEKLCD_T,
     S7LEKLCD_U, S7LEKLCD_V, S7LEKLCD_W, S7LEKLCD_X,
-    S7LEKLCD_Y, S7LEKLCD_Z 
+    S7LEKLCD_Y, S7LEKLCD_Z
 };
 
 /// List of the 26 SLCD lower chars ( a ~ z )
@@ -58,7 +58,7 @@ static const unsigned short pLcdLowerChars[26] = {
     S7LEKLCD_m, S7LEKLCD_n, S7LEKLCD_o, S7LEKLCD_p,
     S7LEKLCD_q, S7LEKLCD_r, S7LEKLCD_s, S7LEKLCD_t,
     S7LEKLCD_u, S7LEKLCD_v, S7LEKLCD_w, S7LEKLCD_x,
-    S7LEKLCD_y, S7LEKLCD_z 
+    S7LEKLCD_y, S7LEKLCD_z
 };
 
 /// List of the 10 SLCD numbers ( 0 ~ 9 )
@@ -90,27 +90,27 @@ static unsigned short GetSLcdChar(unsigned char c, unsigned char dot)
     // Find corresponding symbol for character
     // Space
     if (c == ' ') {
-    
+
         symbol |= S7LEKLCD_NONE;
     }
     // Single dot
     else if (c == '.') {
-    
+
         symbol |= S7LEKLCD_NONE | S7LEKLCD_DOT;
     }
     // Number
     else if ((c >= '0') && (c <= '9')) {
-    
+
         symbol |= pLcdNumbers[c - '0'];
     }
     // Lower-case letter
     else if ((c >= 'a') && (c <= 'z')) {
-    
+
         symbol |= pLcdLowerChars[c - 'a'];
     }
     // Upper case letter
     else if ((c >= 'A') && (c <= 'Z')) {
-    
+
         symbol |= pLcdUpperChars[c - 'A'];
     }
     // Special characters
@@ -150,7 +150,7 @@ void S7LEKLCD_Symbol(unsigned short symbol, unsigned char set)
     unsigned int common = symbol / 40;
     unsigned int reg = (symbol % 40) / 32;
     unsigned int bit = (symbol % 40) % 32;
-    
+
     if (set) {
 
         AT91C_BASE_SLCDC->SLCDC_MEM[common * 2 + reg] |= 1 << bit;

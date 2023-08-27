@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,31 +30,31 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
-/// The API layer consists of several functions that allow user to do 
-/// operations with flash in a unified way. As a result, future device changes 
+///
+/// The API layer consists of several functions that allow user to do
+/// operations with flash in a unified way. As a result, future device changes
 /// will not necessarily lead to the code changes in the application environments.
 /// In this %norflash library we support AMD and INTEL command set.
-/// The API layar code accesses the Flash memory by calling the low-level code, 
-/// so users do not have to concern themselves with the details of the special 
+/// The API layar code accesses the Flash memory by calling the low-level code,
+/// so users do not have to concern themselves with the details of the special
 /// command sequences.
-/// 
+///
 /// !!!Usage
-/// 
+///
 /// !!!Usage
 /// -# Flash program using NORFLASH_WriteData().
-///    - The Program command is used to modify the data stored at the 
-///      specified device address. 
+///    - The Program command is used to modify the data stored at the
+///      specified device address.
 /// -# erase a block within the flash using NORFLASH_EraseSector().
-///    - Flash erase is performed on a block basis. An entire block is 
-///      erased each time an erase command sequence is given. 
+///    - Flash erase is performed on a block basis. An entire block is
+///      erased each time an erase command sequence is given.
 /// -# erase whole blocks within the flash using NORFLASH_EraseChip().
-/// -# NORFLASH_Reset() function can be issued, between Bus Write cycles 
-///    before the start of a program or erase operation, to return the 
+/// -# NORFLASH_Reset() function can be issued, between Bus Write cycles
+///    before the start of a program or erase operation, to return the
 ///    device to read mode.
-/// -# NORFLASH_ReadDeviceID() is used to retrieve information 
+/// -# NORFLASH_ReadDeviceID() is used to retrieve information
 ///    about the Flash Device type.
-/// -# NORFLASH_ReadManufactoryID() is used to retrieve information 
+/// -# NORFLASH_ReadManufactoryID() is used to retrieve information
 ///    about the Flash Device Manufactory ID.
 //------------------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ extern unsigned int NORFLASH_ReadManufactoryID(struct  NorFlash *norFlash);
 extern unsigned int NORFLASH_ReadDeviceID(struct  NorFlash *norFlash);
 
 extern unsigned char NORFLASH_EraseSector(
-    struct NorFlash *norFlash, 
+    struct NorFlash *norFlash,
     unsigned int sectorAddr);
 
 extern unsigned char NORFLASH_EraseChip(

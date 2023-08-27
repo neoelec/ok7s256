@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -155,7 +155,7 @@ unsigned char FLASHD_Write(
     unsigned char error;
 
     unsigned int sizeTmp;
-    unsigned int *pAlignedDestination; 
+    unsigned int *pAlignedDestination;
     unsigned int *pAlignedSource;
 
     SANITY_CHECK(address >= AT91C_IFLASH);
@@ -183,7 +183,7 @@ unsigned char FLASHD_Write(
         memcpy(pPageBuffer + offset + writeSize, (void *) (pageAddress + offset + writeSize), padding);
 
         // Write page
-        // Writing 8-bit and 16-bit data is not allowed 
+        // Writing 8-bit and 16-bit data is not allowed
         // and may lead to unpredictable data corruption
 #ifdef EFC_EVEN_ODD_PROG
         // Write even words first with auto erase
@@ -232,16 +232,16 @@ unsigned char FLASHD_Write(
         EFC_SetEraseBeforeProgramming(AT91C_BASE_EFC1, 1);
 #endif
 
-#else 
+#else
         pAlignedDestination = (unsigned int*)pageAddress;
-        pAlignedSource = (unsigned int*)pPageBuffer;        
+        pAlignedSource = (unsigned int*)pPageBuffer;
         sizeTmp = AT91C_IFLASH_PAGE_SIZE;
         while (sizeTmp >= 4) {
 
             *pAlignedDestination++ = *pAlignedSource++;
             sizeTmp -= 4;
-        }        
-        
+        }
+
         // Send writing command
         error = EFC_PerformCommand(pEfc, AT91C_MC_FCMD_START_PROG, page);
         if (error) {
@@ -358,7 +358,7 @@ unsigned char FLASHD_Unlock(
     unsigned short startPage, endPage;
     unsigned char error;
     unsigned short numPagesInRegion = AT91C_IFLASH_LOCK_REGION_SIZE / AT91C_IFLASH_PAGE_SIZE;
-    
+
     // Compute actual unlock range and store it
     ComputeLockRange(start, end, &actualStart, &actualEnd);
     if (pActualStart) {
@@ -420,7 +420,7 @@ unsigned char FLASHD_IsLocked(unsigned int start, unsigned int end)
     unsigned int numPagesInRegion;
     unsigned int numLockedRegions = 0;
     unsigned int status;
-    
+
     // Get EFC & page values
     EFC_TranslateAddress(start, &pStartEfc, &startPage, 0);
     EFC_TranslateAddress(end, &pEndEfc, &endPage, 0);
@@ -572,7 +572,7 @@ unsigned char FLASHD_IsSecurityBitSet(void)
 
     status = EFC_GetStatus(pEfc);
     return ( ((status & AT91C_MC_SECURITY) != 0)?1:0 );
-    
+
 }
 
 //------------------------------------------------------------------------------
@@ -582,7 +582,7 @@ unsigned char FLASHD_IsSecurityBitSet(void)
 unsigned char FLASHD_SetSecurityBit(void)
 {
     AT91S_EFC *pEfc = AT91C_BASE_EFC0;
- 
+
     if( FLASHD_IsSecurityBitSet() == 0) {
         return EFC_PerformCommand(pEfc, AT91C_MC_FCMD_SET_SECURITY, 0);
     }

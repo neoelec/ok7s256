@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -33,9 +33,9 @@
 /// !Purpose
 ///
 ///   Definitions and methods for USB composite device implement.
-/// 
+///
 /// !Usage
-/// 
+///
 /// -# Initialize USB function specified driver ( for MSD currently )
 ///  - MSDDFunctionDriver_Initialize
 ///

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -43,7 +43,7 @@
     Constants: Clock and PLL settings
 
         BOARD_OSCOUNT - Startup time of main oscillator (in number of slow clock
-                        ticks). 
+                        ticks).
         BOARD_USBDIV - USB PLL divisor value to obtain a 48MHz clock.
         BOARD_CKGR_PLL - PLL frequency range.
         BOARD_PLLCOUNT - PLL startup time (in number of slow clock ticks).
@@ -98,21 +98,21 @@ void defaultIrqHandler( void )
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 /// Performs the low-level initialization of the chip. Initialisation depends
-/// on where the application is executed: 
+/// on where the application is executed:
 /// - in sdram: it means that sdram has previously been initialized. No further
 ///             initialization is required.
-/// - in sram:  PLL shall be initialized in LowLevelInit. Other initializations 
+/// - in sram:  PLL shall be initialized in LowLevelInit. Other initializations
 ///             can be done later by the application.
-/// - in norflash: LowLevelInit can't be executed in norflash because SMC 
+/// - in norflash: LowLevelInit can't be executed in norflash because SMC
 ///             settings can't be changed while executing in external flash.
 ///             LowLevelInit shall be executed in internal sram. It initializes
-///             PLL and SMC. 
+///             PLL and SMC.
 /// This function also reset the AIC and disable RTT and PIT interrupts
 //------------------------------------------------------------------------------
 void LowLevelInit( void )
 {
     unsigned char i;
-    // If already running in external ram, PLL settings have already been done 
+    // If already running in external ram, PLL settings have already been done
 #if !defined(sdram) && !defined(ddram) && !defined(bcram)
 
     /* Initialize main oscillator
@@ -134,16 +134,16 @@ void LowLevelInit( void )
                                     | BOARD_PLLBCOUNT
                                     | BOARD_MULB
                                     | BOARD_DIVB;
-        while (!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_LOCKB));  
+        while (!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_LOCKB));
     }
 
     /* Switch to fast clock
      **********************/
-     
+
     /* Wait for the master clock if it was already initialized */
     while (!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_MCKRDY));
-     
-    /* Switch to main oscillator + prescaler */ 
+
+    /* Switch to main oscillator + prescaler */
     AT91C_BASE_PMC->PMC_MCKR = AT91C_PMC_CSS_SLOW_CLK | AT91C_PMC_PRES_CLK | AT91C_PMC_MDIV_2;
     while (!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_MCKRDY));
 
@@ -174,18 +174,18 @@ void LowLevelInit( void )
 
     /* Remap
      *******/
-    BOARD_RemapRam(); 
-    
+    BOARD_RemapRam();
+
     /* User reset is deleted (workaround Issue 5387) */
-    AT91C_BASE_RSTC->RSTC_RMR = 0xA5000000;          
-    
+    AT91C_BASE_RSTC->RSTC_RMR = 0xA5000000;
+
     // Disable RTT and PIT interrupts (potential problem when program A
     // configures RTT, then program B wants to use PIT only, interrupts
     // from the RTT will still occur since they both use AT91C_ID_SYS)
     AT91C_BASE_RTTC->RTTC_RTMR &= ~(AT91C_RTTC_ALMIEN | AT91C_RTTC_RTTINCIEN);
-    AT91C_BASE_PITC->PITC_PIMR &= ~AT91C_PITC_PITIEN;    
+    AT91C_BASE_PITC->PITC_PIMR &= ~AT91C_PITC_PITIEN;
 
-     
+
 #if defined(norflash)
     BOARD_ConfigureNorFlash(BOARD_NORFLASH_DFT_BUS_SIZE);
 #endif

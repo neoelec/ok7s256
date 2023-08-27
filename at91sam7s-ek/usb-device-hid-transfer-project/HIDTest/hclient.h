@@ -10,14 +10,14 @@ Abstract:
 
     This module contains the public declarations and definitions that are
     defined in hclient.c and available to other modules outside of it.
-              
+
 Environment:
 
     User mode
 
 Revision History:
 
-    Nov-97 : Created 
+    Nov-97 : Created
 
 --*/
 
@@ -32,7 +32,7 @@ Revision History:
 
 #define HCLIENT_ERROR           "HClient Error"
 
-typedef struct _READ_THREAD_CONTEXT 
+typedef struct _READ_THREAD_CONTEXT
 {
     PHID_DEVICE HidDevice;
 
@@ -82,8 +82,8 @@ vDisplayButtonAttributes(
 
 VOID
 vDisplayDataAttributes(
-    PHIDP_DATA pData, 
-    BOOL IsButton, 
+    PHIDP_DATA pData,
+    BOOL IsButton,
     HWND hControl
 );
 
@@ -105,7 +105,7 @@ vDisplayDeviceCaps(
     IN HWND       hControl
 );
 
-VOID 
+VOID
 vDisplayValueAttributes(
     IN PHIDP_VALUE_CAPS pValue,
     IN HWND             hControl
@@ -126,7 +126,7 @@ vCreateUsageValueStringFromArray(
     CHAR        szString[]
 );
 
-VOID 
+VOID
 vDisplayValueAttributes(
     IN PHIDP_VALUE_CAPS pValue,
     IN HWND hControl
