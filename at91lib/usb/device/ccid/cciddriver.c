@@ -171,7 +171,7 @@ static const CCIDDriverConfigurationDescriptors configurationDescriptorsFS = {
         USBGenericDescriptor_INTERFACE,
         0,                       // Interface 0
         0,                       // No alternate settings
-        3,                       // uses bulk-IN, bulk-OUT and interruptñIN
+        3,                       // uses bulk-IN, bulk-OUT and interrupt‚ÄìIN
         SMART_CARD_DEVICE_CLASS,
         0,                       // Subclass code
         0,                       // bulk transfers optional interrupt-IN
@@ -256,7 +256,7 @@ static const CCIDDriverConfigurationDescriptors configurationDescriptorsHS = {
         USBGenericDescriptor_INTERFACE,
         0,                       // Interface 0
         0,                       // No alternate settings
-        3,                       // uses bulk-IN, bulk-OUT and interruptñIN
+        3,                       // uses bulk-IN, bulk-OUT and interrupt‚ÄìIN
         SMART_CARD_DEVICE_CLASS,
         0,                       // Subclass code
         0,                       // bulk transfers optional interrupt-IN
@@ -355,7 +355,7 @@ static const CCIDDriverConfigurationDescriptors sOtherSpeedConfigurationFS = {
         USBGenericDescriptor_INTERFACE,
         0,                       // Interface 0
         0,                       // No alternate settings
-        3,                       // uses bulk-IN, bulk-OUT and interruptñIN
+        3,                       // uses bulk-IN, bulk-OUT and interrupt‚ÄìIN
         SMART_CARD_DEVICE_CLASS,
         0,                       // Subclass code
         0,                       // bulk transfers optional interrupt-IN
@@ -440,7 +440,7 @@ static const CCIDDriverConfigurationDescriptors sOtherSpeedConfigurationHS = {
         USBGenericDescriptor_INTERFACE,
         0,                       // Interface 0
         0,                       // No alternate settings
-        3,                       // uses bulk-IN, bulk-OUT and interruptñIN
+        3,                       // uses bulk-IN, bulk-OUT and interrupt‚ÄìIN
         SMART_CARD_DEVICE_CLASS,
         0,                       // Subclass code
         0,                       // bulk transfers optional interrupt-IN
@@ -663,8 +663,8 @@ static void RDRtoPCDatablock_ATR( void )
     ccidDriver.ProtocolDataStructure[0] = Atr[2];     // TA(1)
 
     // bmTCCKST0
-    // For T=0 ,B0 ñ 0b, B7-2 ñ 000000b
-    // B1 ñ Convention used (b1=0 for direct, b1=1 for inverse)
+    // For T=0 ,B0 ‚Äì 0b, B7-2 ‚Äì 000000b
+    // B1 ‚Äì Convention used (b1=0 for direct, b1=1 for inverse)
 
     // bGuardTimeT0
     // Extra Guardtime between two characters. Add 0 to 254 etu to the normal 
@@ -1476,7 +1476,7 @@ unsigned char CCID_Removal( void )
 //------------------------------------------------------------------------------
 /// Interrupt-IN Messages
 /// This message is sent when any bit in the bHardwareErrorCode field is set. 
-/// If this message is sent when there is no ìoutstandingî command, the bSeq 
+/// If this message is sent when there is no ‚Äúoutstanding‚Äù command, the bSeq 
 /// field will be undefined.
 /// \param bSlot ICC slot number
 /// \param bSeq  Sequence number of the bulk OUT command when the hardware error

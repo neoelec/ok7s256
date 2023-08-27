@@ -35,11 +35,11 @@
 /// Methods to manage the Coprocessor 15. Coprocessor 15, or System Control 
 /// Coprocessor CP15, is used to configure and control all the items in the 
 /// list below:
-/// • ARM core
-/// • Caches (ICache, DCache and write buffer)
-/// • TCM
-/// • MMU
-/// • Other system options
+/// â€¢ ARM core
+/// â€¢ Caches (ICache, DCache and write buffer)
+/// â€¢ TCM
+/// â€¢ MMU
+/// â€¢ Other system options
 /// 
 /// !Usage
 ///

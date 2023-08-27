@@ -1317,7 +1317,7 @@ unsigned char SD_Init(SdCard *pSd, SdDriver *pSdDriver)
     memset(&(pSd->command), 0, sizeof(SdCmd));
 
     // Initialization delay: The maximum of 1 msec, 74 clock cycles and supply ramp up time
-    // ‘Supply ramp up time’ provides the time that the power is built up to the operating level (the bus
+    // â€˜Supply ramp up timeâ€™ provides the time that the power is built up to the operating level (the bus
     // master supply voltage) and the time to wait until the SD card can accept the first command
 
     // Power On Init Special Command
@@ -1328,7 +1328,7 @@ unsigned char SD_Init(SdCard *pSd, SdDriver *pSdDriver)
         return error;
     }
 
-    // After power-on or CMD0, all cards’ CMD lines are in input mode, waiting for start bit of the next command.
+    // After power-on or CMD0, all cardsâ€™ CMD lines are in input mode, waiting for start bit of the next command.
     // The cards are initialized with a default relative card address (RCA=0x0000) and with a default
     // driver stage register setting (lowest speed, highest driving current capability).
 
