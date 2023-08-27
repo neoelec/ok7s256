@@ -62,7 +62,7 @@
 ///    C3: Clock: 7816_CLK   C7: 7816_IO
 ///    An other pin must be connected on the card reader for detecting the 
 ///    insertion and removal: 7816_IRQ.
-///    On Atmel’s boards, all this pins can be easily connecting with jumpers.
+///    On Atmelâ€™s boards, all this pins can be easily connecting with jumpers.
 /// -# Start the application. The following traces shall appear on the terminal:
 ///    \code
 ///     -- Basic ISO7816 Project xxx -- 

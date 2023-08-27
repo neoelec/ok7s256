@@ -349,7 +349,7 @@ void BOARD_ConfigureBcram(unsigned char busWidth)
     // -------------------------------------------------------------------------    
     // Low power register => Low-power is inhibited, Internal Temperature Sensor choosen
     // PAR[2:0]      : Partial Array Refresh = 000 (Full Array)
-    // TCR_TCSR[5:4] : Temperature Compensated Refresh/Self-refresh = 00 (Internal sensor or 70°C)
+    // TCR_TCSR[5:4] : Temperature Compensated Refresh/Self-refresh = 00 (Internal sensor or 70Â°C)
     // LPCB[9:8]     : Low Power Command Bit = 00 (Low power Feature inhibited)
     // (BCRAMC_LPR    = 0x00000000)
      AT91C_BASE_BCRAMC->BCRAMC_LPR = AT91C_BCRAMC_PAR_FULL | 
@@ -372,7 +372,7 @@ void BOARD_ConfigureBcram(unsigned char busWidth)
                                     AT91C_BCRAMC_TCKA_0;
                                       
     // 5. Cellular Ram  features must be set in the HBCRAMC Configuration Register:
-    // – number rows, latency, drive strength (DS), the data bus width and cram_enabled bit must be high.    
+    // â€“ number rows, latency, drive strength (DS), the data bus width and cram_enabled bit must be high.    
     // -------------------------------------------------------------------------        
     // CRAM_EN(0)            : BCRAM enabled = 0
     // LM[6:4]               : Latency Mode = 011 = 3 cycles (reset value)

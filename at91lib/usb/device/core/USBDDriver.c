@@ -384,8 +384,8 @@ static void USBDDriver_Test(unsigned char test)
             //patterns, jitter, and any other dynamic waveform specifications.
             //The test packet is made up by concatenating the following strings. 
             //(Note: For J/K NRZI data, and for NRZ data, the bit on the left is the first one 
-            //transmitted. ìSî indicates that a bit stuff occurs, which inserts an ìextraî NRZI data bit. 
-            //ì* Nî is used to indicate N occurrences of a string of bits or symbols.)
+            //transmitted. ‚ÄúS‚Äù indicates that a bit stuff occurs, which inserts an ‚Äúextra‚Äù NRZI data bit. 
+            //‚Äú* N‚Äù is used to indicate N occurrences of a string of bits or symbols.)
             //A port in Test_Packet mode must send this packet repetitively. The inter-packet timing 
             //must be no less than the minimum allowable inter-packet gap as defined in Section 7.1.18 and 
             //no greater than 125 us.
@@ -398,7 +398,7 @@ static void USBDDriver_Test(unsigned char test)
 
         case USBFeatureRequest_TESTJ:
             //Test mode Test_J:
-            //Upon command, a portís transceiver must enter the high-speed J state and remain in that
+            //Upon command, a port‚Äôs transceiver must enter the high-speed J state and remain in that
             //state until the exit action is taken. This enables the testing of the high output drive
             //level on the D+ line.
             // Send ZLP
@@ -410,7 +410,7 @@ static void USBDDriver_Test(unsigned char test)
 
         case USBFeatureRequest_TESTK:
             //Test mode Test_K:
-            //Upon command, a portís transceiver must enter the high-speed K state and remain in
+            //Upon command, a port‚Äôs transceiver must enter the high-speed K state and remain in
             //that state until the exit action is taken. This enables the testing of the high output drive
             //level on the D- line.
             // Send a ZLP
@@ -421,7 +421,7 @@ static void USBDDriver_Test(unsigned char test)
 
         case USBFeatureRequest_TESTSE0NAK:
             //Test mode Test_SE0_NAK:
-            //Upon command, a portís transceiver must enter the high-speed receive mode
+            //Upon command, a port‚Äôs transceiver must enter the high-speed receive mode
             //and remain in that mode until the exit action is taken. This enables the testing
             //of output impedance, low level output voltage, and loading characteristics.
             //In addition, while in this mode, upstream facing ports (and only upstream facing ports)
