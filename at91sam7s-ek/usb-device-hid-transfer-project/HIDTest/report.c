@@ -8,8 +8,8 @@ Module Name:
 
 Abstract:
 
-    This module contains the code for reading/writing hid reports and 
-    translating those HID reports into useful information. 
+    This module contains the code for reading/writing hid reports and
+    translating those HID reports into useful information.
 
 Environment:
 
@@ -58,7 +58,7 @@ RoutineDescription:
                   HidDevice->InputReportBuffer,
                   HidDevice->Caps.InputReportByteLength,
                   &bytesRead,
-                  NULL)) 
+                  NULL))
     {
         return FALSE;
     }
@@ -98,11 +98,11 @@ RoutineDescription:
     */
 
     memset(&overlap, 0, sizeof(OVERLAPPED));
-    
+
     overlap.hEvent = CompletionEvent;
-    
+
     /*
-    // Execute the read call saving the return code to determine how to 
+    // Execute the read call saving the return code to determine how to
     //  proceed (ie. the read completed synchronously or not).
     */
 
@@ -111,19 +111,19 @@ RoutineDescription:
                             HidDevice -> Caps.InputReportByteLength,
                             &bytesRead,
                             &overlap);
-                          
+
     /*
-    // If the readStatus is FALSE, then one of two cases occurred.  
+    // If the readStatus is FALSE, then one of two cases occurred.
     //  1) ReadFile call succeeded but the Read is an overlapped one.  Here,
     //      we should return TRUE to indicate that the Read succeeded.  However,
     //      the calling thread should be blocked on the completion event
     //      which means it won't continue until the read actually completes
-    //    
+    //
     //  2) The ReadFile call failed for some unknown reason...In this case,
     //      the return code will be FALSE
-    */        
+    */
 
-    if (!readStatus) 
+    if (!readStatus)
     {
         return (ERROR_IO_PENDING == GetLastError());
     }
@@ -134,7 +134,7 @@ RoutineDescription:
     //   event, signal the event so it knows it can continue.
     */
 
-    else 
+    else
     {
         SetEvent(CompletionEvent);
         return (TRUE);
@@ -165,29 +165,29 @@ RoutineDescription:
 
     pData = HidDevice -> OutputData;
 
-    for (Index = 0; Index < HidDevice -> OutputDataLength; Index++, pData++) 
+    for (Index = 0; Index < HidDevice -> OutputDataLength; Index++, pData++)
     {
         pData -> IsDataSet = FALSE;
     }
 
     /*
     // In setting all the data in the reports, we need to pack a report buffer
-    //   and call WriteFile for each report ID that is represented by the 
-    //   device structure.  To do so, the IsDataSet field will be used to 
+    //   and call WriteFile for each report ID that is represented by the
+    //   device structure.  To do so, the IsDataSet field will be used to
     //   determine if a given report field has already been set.
     */
 
     Status = TRUE;
 
     pData = HidDevice -> OutputData;
-    for (Index = 0; Index < HidDevice -> OutputDataLength; Index++, pData++) 
+    for (Index = 0; Index < HidDevice -> OutputDataLength; Index++, pData++)
     {
 
-        if (!pData -> IsDataSet) 
+        if (!pData -> IsDataSet)
         {
             /*
             // Package the report for this data structure.  PackReport will
-            //    set the IsDataSet fields of this structure and any other 
+            //    set the IsDataSet fields of this structure and any other
             //    structures that it includes in the report with this structure
             */
 
@@ -208,7 +208,7 @@ RoutineDescription:
                                   &bytesWritten,
                                   NULL) && (bytesWritten == HidDevice -> Caps.OutputReportByteLength);
 
-            Status = Status && WriteStatus;                         
+            Status = Status && WriteStatus;
         }
     }
     return (Status);
@@ -236,28 +236,28 @@ pack it into multiple reports and send it to the hid device via HidD_SetFeature(
 
     pData = HidDevice -> FeatureData;
 
-    for (Index = 0; Index < HidDevice -> FeatureDataLength; Index++, pData++) 
+    for (Index = 0; Index < HidDevice -> FeatureDataLength; Index++, pData++)
     {
         pData -> IsDataSet = FALSE;
     }
 
     /*
     // In setting all the data in the reports, we need to pack a report buffer
-    //   and call WriteFile for each report ID that is represented by the 
-    //   device structure.  To do so, the IsDataSet field will be used to 
+    //   and call WriteFile for each report ID that is represented by the
+    //   device structure.  To do so, the IsDataSet field will be used to
     //   determine if a given report field has already been set.
     */
 
     Status = TRUE;
 
     pData = HidDevice -> FeatureData;
-    for (Index = 0; Index < HidDevice -> FeatureDataLength; Index++, pData++) 
+    for (Index = 0; Index < HidDevice -> FeatureDataLength; Index++, pData++)
     {
-        if (!pData -> IsDataSet) 
+        if (!pData -> IsDataSet)
         {
             /*
             // Package the report for this data structure.  PackReport will
-            //    set the IsDataSet fields of this structure and any other 
+            //    set the IsDataSet fields of this structure and any other
             //    structures that it includes in the report with this structure
             */
 
@@ -305,21 +305,21 @@ RoutineDescription:
 
     pData = HidDevice -> FeatureData;
 
-    for (Index = 0; Index < HidDevice -> FeatureDataLength; Index++, pData++) 
+    for (Index = 0; Index < HidDevice -> FeatureDataLength; Index++, pData++)
     {
         pData -> IsDataSet = FALSE;
     }
 
     /*
     // Next, each structure in the HID_DATA buffer is filled in with a value
-    //   that is retrieved from one or more calls to HidD_GetFeature.  The 
+    //   that is retrieved from one or more calls to HidD_GetFeature.  The
     //   number of calls is equal to the number of reportIDs on the device
     */
 
-    Status = TRUE; 
+    Status = TRUE;
     pData = HidDevice -> FeatureData;
 
-    for (Index = 0; Index < HidDevice -> FeatureDataLength; Index++, pData++) 
+    for (Index = 0; Index < HidDevice -> FeatureDataLength; Index++, pData++)
     {
         /*
         // If a value has yet to have been set for this structure, build a report
@@ -329,7 +329,7 @@ RoutineDescription:
         //    The rest of the buffer should be zeroed before the call
         */
 
-        if (!pData -> IsDataSet) 
+        if (!pData -> IsDataSet)
         {
             memset(HidDevice -> FeatureReportBuffer, 0x00, HidDevice->Caps.FeatureReportByteLength);
 
@@ -345,7 +345,7 @@ RoutineDescription:
             */
 
 
-            if (FeatureStatus) 
+            if (FeatureStatus)
             {
                 FeatureStatus = UnpackReport ( HidDevice->FeatureReportBuffer,
                                            HidDevice->Caps.FeatureReportByteLength,
@@ -387,11 +387,11 @@ Routine Description:
 
     reportID = ReportBuffer[0];
 
-    for (i = 0; i < DataLength; i++, Data++) 
+    for (i = 0; i < DataLength; i++, Data++)
     {
-        if (reportID == Data->ReportID) 
+        if (reportID == Data->ReportID)
         {
-            if (Data->IsButtonData) 
+            if (Data->IsButtonData)
             {
                 numUsages = Data->ButtonData.MaxUsageLength;
 
@@ -421,34 +421,34 @@ Routine Description:
                 //          Caps2 has UsagePage 07 and UsageRange of 0xe0 - 0xe7
                 //
                 //        However, calling GetUsages for each of the data structs
-                //          will return the same list of usages.  It is the 
+                //          will return the same list of usages.  It is the
                 //          responsibility of the caller to set in the HID_DEVICE
                 //          structure which usages actually are valid for the
-                //          that structure. 
-                //      
+                //          that structure.
+                //
 
                 /*
-                // Search through the usage list and remove those that 
+                // Search through the usage list and remove those that
                 //    correspond to usages outside the define ranged for this
                 //    data structure.
                 */
-                
-                for (Index = 0, nextUsage = 0; Index < numUsages; Index++) 
+
+                for (Index = 0, nextUsage = 0; Index < numUsages; Index++)
                 {
                     if (Data -> ButtonData.UsageMin <= Data -> ButtonData.Usages[Index] &&
-                            Data -> ButtonData.Usages[Index] <= Data -> ButtonData.UsageMax) 
+                            Data -> ButtonData.Usages[Index] <= Data -> ButtonData.UsageMax)
                     {
                         Data -> ButtonData.Usages[nextUsage++] = Data -> ButtonData.Usages[Index];
-                        
+
                     }
                 }
 
-                if (nextUsage < Data -> ButtonData.MaxUsageLength) 
+                if (nextUsage < Data -> ButtonData.MaxUsageLength)
                 {
                     Data->ButtonData.Usages[nextUsage] = 0;
                 }
             }
-            else 
+            else
             {
                 Data->Status = HidP_GetUsageValue (
                                                 ReportType,
@@ -474,7 +474,7 @@ Routine Description:
                                                        Ppd,
                                                        ReportBuffer,
                                                        ReportBufferLength);
-            } 
+            }
             Data -> IsDataSet = TRUE;
         }
     }
@@ -493,12 +493,12 @@ PackReport (
    )
 /*++
 Routine Description:
-   This routine takes in a list of HID_DATA structures (DATA) and builds 
-      in ReportBuffer the given report for all data values in the list that 
-      correspond to the report ID of the first item in the list.  
+   This routine takes in a list of HID_DATA structures (DATA) and builds
+      in ReportBuffer the given report for all data values in the list that
+      correspond to the report ID of the first item in the list.
 
    For every data structure in the list that has the same report ID as the first
-      item in the list will be set in the report.  Every data item that is 
+      item in the list will be set in the report.  Every data item that is
       set will also have it's IsDataSet field marked with TRUE.
 
    A return value of FALSE indicates an unexpected error occurred when setting
@@ -521,31 +521,31 @@ Routine Description:
 
     /*
     // Go through the data structures and set all the values that correspond to
-    //   the CurrReportID which is obtained from the first data structure 
+    //   the CurrReportID which is obtained from the first data structure
     //   in the list
     */
 
     CurrReportID = Data -> ReportID;
 
-    for (i = 0; i < DataLength; i++, Data++) 
+    for (i = 0; i < DataLength; i++, Data++)
     {
         /*
         // There are two different ways to determine if we set the current data
-        //    structure: 
+        //    structure:
         //    1) Store the report ID were using and only attempt to set those
         //        data structures that correspond to the given report ID.  This
         //        example shows this implementation.
         //
-        //    2) Attempt to set all of the data structures and look for the 
-        //        returned status value of HIDP_STATUS_INVALID_REPORT_ID.  This 
-        //        error code indicates that the given usage exists but has a 
-        //        different report ID than the report ID in the current report 
+        //    2) Attempt to set all of the data structures and look for the
+        //        returned status value of HIDP_STATUS_INVALID_REPORT_ID.  This
+        //        error code indicates that the given usage exists but has a
+        //        different report ID than the report ID in the current report
         //        buffer
         */
 
-        if (Data -> ReportID == CurrReportID) 
+        if (Data -> ReportID == CurrReportID)
         {
-            if (Data->IsButtonData) 
+            if (Data->IsButtonData)
             {
                 numUsages = Data->ButtonData.MaxUsageLength;
                 Data->Status = HidP_SetUsages (ReportType,
@@ -574,16 +574,16 @@ Routine Description:
                 return FALSE;
             }
         }
-    }   
+    }
 
     /*
     // At this point, all data structures that have the same ReportID as the
-    //    first one will have been set in the given report.  Time to loop 
+    //    first one will have been set in the given report.  Time to loop
     //    through the structure again and mark all of those data structures as
     //    having been set.
     */
 
-    for (i = 0; i < DataLength; i++, Data++) 
+    for (i = 0; i < DataLength; i++, Data++)
     {
         if (CurrReportID == Data -> ReportID)
         {

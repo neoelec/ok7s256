@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,18 +31,18 @@
 ///
 /// !!!Purpose
 ///
-/// This basic demonstrates the features of the Embedded Flash Controller 
-/// (EFC/EEFC) present on Atmel AT91 microcontrollers. The EFC enables 
-/// in-application programming of the internal %flash, as well as protecting 
-/// memory regions or the whole chip. 
+/// This basic demonstrates the features of the Embedded Flash Controller
+/// (EFC/EEFC) present on Atmel AT91 microcontrollers. The EFC enables
+/// in-application programming of the internal %flash, as well as protecting
+/// memory regions or the whole chip.
 ///
 /// You can find following information depends on your needs:
-/// - FLASHD driver provides the unified interface of functions and operations 
+/// - FLASHD driver provides the unified interface of functions and operations
 ///   for all supported Embedded %Flash Memory Devices.
 /// - EFC(EEFC) peripheral interface for configuration the EFC(EEFC) peripheral
 /// - Example code for internal %Flash operations.
 ///
-/// !See 
+/// !See
 ///    - flash: FLASHD interface driver.
 ///    - efc: EFC peripheral interface.
 ///    - eefc: EEFC peripheral interface.
@@ -54,16 +54,16 @@
 ///
 /// !!!Description
 ///
-/// The program performs the following set of commands: 
-/// - First, it unlocks the whole %flash 
-/// - It writes a pattern in the last page of the %flash, and checks it back 
-/// - It locks the last region of the %flash, and verifies that the status is 
-///   updated accordingly 
-/// - It unlocks the last region and verifies that it the status is updated 
-///   accordingly 
-/// - Lastly, GPNVM 1 is cleared and set, the status being checked for update 
-///   between the operations (the original state of the GPNVM is restored 
-///   after this step) 
+/// The program performs the following set of commands:
+/// - First, it unlocks the whole %flash
+/// - It writes a pattern in the last page of the %flash, and checks it back
+/// - It locks the last region of the %flash, and verifies that the status is
+///   updated accordingly
+/// - It unlocks the last region and verifies that it the status is updated
+///   accordingly
+/// - Lastly, GPNVM 1 is cleared and set, the status being checked for update
+///   between the operations (the original state of the GPNVM is restored
+///   after this step)
 ///
 /// !!!Usage
 ///
@@ -80,8 +80,8 @@
 ///   - 1 stop bit
 ///   - No flow control
 /// -# Start the application.
-/// -# The application will display the various tests it is executing and the 
-///    results (example shown for the SAM9XE256): 
+/// -# The application will display the various tests it is executing and the
+///    results (example shown for the SAM9XE256):
 ///    \code
 ///     -- Basic Internal Flash Project xxx --
 ///     -- AT91xxxxxx-xx
@@ -102,7 +102,7 @@
 ///     -I- Clearing GPNVM #1
 ///     -I- All tests ok
 ///    \endcode
-/// -# As soon as a dataflash is connected, the tests will start. Eventually, 
+/// -# As soon as a dataflash is connected, the tests will start. Eventually,
 ///    the test result (pass or fail) will be output on the DBGU.
 //------------------------------------------------------------------------------
 
@@ -114,20 +114,20 @@
 /// This file contains all the specific code for the basic-internal-project.
 /// It tests the embedded %flash present on the evaluation kit by unlock and
 /// writing last page of internal %flash.
-/// 
+///
 /// !Contents
 /// The code can be roughly broken down as follows:
 ///    - The main() function, which implements the program behavior.
 ///       - Initializes an FLash driver.
 ///       - Unlock the whole page of the %flash.
-///       - It writes a pattern in the last page of the %flash, and checks it back. 
-///       - It locks the last region of the %flash, and verifies that 
+///       - It writes a pattern in the last page of the %flash, and checks it back.
+///       - It locks the last region of the %flash, and verifies that
 ///         the status is updated accordingly.
-///       - It unlocks the last region and verifies that it the status 
-///         is updated accordingly 
-///       - Lastly, GPNVM 1 is cleared and set, the status being checked 
-///         for update between the operations (the original state of the 
-///         GPNVM is restored after this step) 
+///       - It unlocks the last region and verifies that it the status
+///         is updated accordingly
+///       - Lastly, GPNVM 1 is cleared and set, the status being checked
+///         for update between the operations (the original state of the
+///         GPNVM is restored after this step)
 ///
 /// !See also
 ///    - flash: FLASHD interface driver.

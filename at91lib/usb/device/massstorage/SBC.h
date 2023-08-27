@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,11 +30,11 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// SCSI definitions.
-/// 
+///
 /// !Usage
-/// 
+///
 /// -# After command block received, Access and decode the SCSI command block
 ///    with SBCCommand structure.
 //------------------------------------------------------------------------------

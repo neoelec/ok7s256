@@ -46,7 +46,7 @@ MEMORY
 }
 
 SECTIONS
-{  
+{
     .fixed0 :
     {
         . = ALIGN(4);
@@ -93,7 +93,7 @@ SECTIONS
         . = ALIGN(4);
         _ezero = .;
     } >sram
-    
+
     _sstack = 0x328000;
 }
 end = .;

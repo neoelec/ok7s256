@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -253,7 +253,7 @@ void AT73C213_Enable(unsigned int  Fs,
 
     // Select master clock speed
     if (isClock384) {
-    
+
         AT73C213_Write(AT73C213_DAC_CSFC, AT73C213_DAC_CSFC_OVRSEL);
     }
 

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definition and functions for using AT91SAM7L-related features, such
 /// has PIO pins, memories, etc.
-/// 
+///
 /// !Usage
 /// -# The code for booting the board is provided by board_cstartup.S and
 ///    board_lowlevel.c.
@@ -41,20 +41,20 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91SAM7L-VB characteristics, AT91SAM7L-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Usage
 /// -# For operating frequency information, see "SAM7L-VB - Operating frequencies".
 /// -# For using portable PIO definitions, see "SAM7L-VB - PIO definitions".
 //------------------------------------------------------------------------------
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 //------------------------------------------------------------------------------
@@ -88,7 +88,7 @@
 /// \page "SAM7l-VB - Operating frequencies"
 /// This page lists several definition related to the board operating frequency
 /// (when using the initialization done by board_lowlevel.c).
-/// 
+///
 /// !Definitions
 /// - BOARD_MAINOSC
 /// - BOARD_MCK
@@ -107,10 +107,10 @@
 /// are named using the following convention: PIN_* for a constant which defines
 /// a single Pin instance (but may include several PIOs sharing the same
 /// controller), and PINS_* for a list of Pin instances.
-///  
+///
 /// !DBGU
 /// - PINS_DBGU
-/// 
+///
 /// !LEDs
 /// - PIN_LED_DS1
 /// - PIN_LED_DS2
@@ -191,7 +191,7 @@
 /// \page "SAM7L-VB - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the AT91SAM7L-VB.
-/// 
+///
 /// !IRDA
 /// - PIN_IRDA_SD
 

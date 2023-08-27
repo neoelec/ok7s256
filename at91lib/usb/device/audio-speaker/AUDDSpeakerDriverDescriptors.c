@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -166,7 +166,7 @@ typedef struct {
     /// Streaming out endpoint descriptor.
     AUDEndpointDescriptor streamingOutEndpoint;
     /// Audio class descriptor for the streaming out endpoint.
-    AUDDataEndpointDescriptor streamingOutDataEndpoint; 
+    AUDDataEndpointDescriptor streamingOutDataEndpoint;
 
 } __attribute__ ((packed)) AUDDSpeakerDriverConfigurationDescriptors; // GCC
 

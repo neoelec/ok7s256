@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -73,7 +73,7 @@ const struct NandSpareScheme nandSpareScheme2048 = {
     // Bad block marker is at position #0
     0,
     // 24 ecc bytes
-    24, 
+    24,
     // Ecc bytes positions
     {40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58,
      59, 60, 61, 62, 63},
@@ -150,7 +150,7 @@ void NandSpareScheme_WriteEcc(
     for (i=0; i < scheme->numEccBytes; i++) {
 
         spare[scheme->eccBytesPositions[i]] = ecc[i];
-    } 
+    }
 }
 
 //------------------------------------------------------------------------------

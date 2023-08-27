@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -34,6 +34,6 @@
 /// The #rtt# directory stores a collection of basic APIs to build Real Time Timer
 /// applications with Atmel AT91 microcontrollers.
 ///
-/// 
+///
 //------------------------------------------------------------------------------
 

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -228,10 +228,10 @@ void ISR_Bp2(void)
                 pLedStates[1] = 0;
                 LED_Clear(1);
                 AT91C_BASE_TC0->TC_CCR = AT91C_TC_CLKDIS;
-            }   
+            }
             // Enable LED#2 and TC0 if there were disabled
             else {
-                
+
                 pLedStates[1] = 1;
                 LED_Set(1);
                 AT91C_BASE_TC0->TC_CCR = AT91C_TC_CLKEN | AT91C_TC_SWTRG;
@@ -349,19 +349,19 @@ int main(void)
     printf("-- Getting Started Project %s --\n\r", SOFTPACK_VERSION);
     printf("-- %s\n\r", BOARD_NAME);
     printf("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
-         
+
     // Configuration
     ConfigurePit();
     ConfigureTc();
     ConfigureButtons();
     ConfigureLeds();
-    
+
     // Main loop
     while (1) {
 
         // Wait for LED to be active
         while (!pLedStates[0]);
-        
+
         // Toggle LED state if active
         if (pLedStates[0]) {
 

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -60,7 +60,7 @@
 /// \page "USB Audio request codes"
 ///
 /// This page lists the codes of the existing Audio requests.
-/// 
+///
 /// !Requests
 /// - AUDGenericRequest_SETCUR
 /// - AUDGenericRequest_GETCUR

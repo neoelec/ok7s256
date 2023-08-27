@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,10 +31,10 @@
 /// \page "RawNandflash"
 ///
 /// !!!Purpose
-/// 
-/// RawNandflash is a bl Nandflash driver, it directly interacts with hardware's register to 
+///
+/// RawNandflash is a bl Nandflash driver, it directly interacts with hardware's register to
 /// operate Nandflash interface, and it is called by upper layer drivers, such as EccNandFlash
-///  
+///
 /// !!!Usage
 ///
 /// -# RawNandFlash_Initialize is used to initializes a RawNandFlash instance based on the given

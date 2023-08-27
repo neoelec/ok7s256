@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definition and functions for using AT91SAM7A3-related features, such
 /// has PIO pins, memories, etc.
-/// 
+///
 /// !Usage
 /// -# The code for booting the board is provided by board_cstartup.S and
 ///    board_lowlevel.c.
@@ -41,21 +41,21 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91SAM7A3-EK characteristics, AT91SAM7A3-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Usage
 /// -# For operating frequency information, see "SAM7A3-EK - Operating frequencies".
 /// -# For using portable PIO definitions, see "SAM7A3-EK - PIO definitions".
 /// -# Several USB definitions are included here (see "SAM7A3-EK - USB device").
 //------------------------------------------------------------------------------
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 //------------------------------------------------------------------------------
@@ -91,7 +91,7 @@
 /// \page "SAM7A3-EK - Operating frequencies"
 /// This page lists several definition related to the board operating frequency
 /// (when using the initialization done by board_lowlevel.c).
-/// 
+///
 /// !Definitions
 /// - BOARD_MAINOSC
 /// - BOARD_MCK
@@ -119,7 +119,7 @@
 /// \page "SAM7A3-EK - USB device"
 /// This page lists constants describing several characteristics (controller
 /// type, D+ pull-up type, etc.) of the USB device controller of the chip/board.
-/// 
+///
 /// !Constants
 /// - BOARD_USB_UDP
 /// - BOARD_USB_PULLUP_EXTERNAL
@@ -152,10 +152,10 @@
 /// are named using the following convention: PIN_* for a constant which defines
 /// a single Pin instance (but may include several PIOs sharing the same
 /// controller), and PINS_* for a list of Pin instances.
-///  
+///
 /// !DBGU
 /// - PINS_DBGU
-/// 
+///
 /// !LEDs
 /// - PIN_LED_DS1
 /// - PIN_LED_DS2
@@ -174,7 +174,7 @@
 /// - PIN_PUSHBUTTON_4
 /// - PINS_PUSHBUTTONS
 /// - PUSHBUTTON_BP1
-/// - PUSHBUTTON_BP2 
+/// - PUSHBUTTON_BP2
 /// - PUSHBUTTON_BP3
 /// - PUSHBUTTON_BP4
 ///
@@ -195,14 +195,14 @@
 /// - PIN_USART0_RXD
 /// - PIN_USART0_TXD
 /// - PIN_USART0_SCK
-/// 
+///
 /// !SPI0
 /// - PIN_SPI0_MISO
 /// - PIN_SPI0_MOSI
 /// - PIN_SPI0_SPCK
 /// - PINS_SPI0
 /// - PIN_SPI0_NPCS3
-/// 
+///
 /// !SPI1
 /// - PIN_SPI1_MISO
 /// - PIN_SPI1_MOSI
@@ -223,10 +223,10 @@
 /// - PIN_PWM_LED1
 /// - CHANNEL_PWM_LED0
 /// - CHANNEL_PWM_LED1
-/// 
+///
 /// !USB
 /// - PIN_USB_PULLUP
-/// 
+///
 /// !ADC
 /// - PIN_ADC_ADC0
 /// - PIN_ADC_ADC1
@@ -348,7 +348,7 @@
 /// SPI0 SPCK pin definition.
 #define PIN_SPI0_SPCK   {1 << 17, AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_A, PIO_DEFAULT}
 /// List of SPI0 pin definitions (MISO, MOSI & SPCK).
-#define PINS_SPI0       PIN_SPI0_MISO, PIN_SPI0_MOSI, PIN_SPI0_SPCK 
+#define PINS_SPI0       PIN_SPI0_MISO, PIN_SPI0_MOSI, PIN_SPI0_SPCK
 /// SPI0 chip select 3 pin definition.
 #define PIN_SPI0_NPCS3  {1 << 14, AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_A, PIO_DEFAULT}
 
@@ -440,7 +440,7 @@
 /// \page "SAM7A3-EK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the AT91SAM7A3-EK.
-/// 
+///
 /// !AT45 Dataflash Card
 /// - BOARD_AT45_A_SPI_BASE
 /// - BOARD_AT45_A_SPI_ID
@@ -523,7 +523,7 @@
 //------------------------------------------------------------------------------
 /// \page "SAM7A3-EK - Memories"
 /// This page lists definitions related to internal & external on-board memories.
-/// 
+///
 /// !Embedded Flash
 /// - BOARD_FLASH_EFC
 
@@ -536,7 +536,7 @@
 /// \page "SAM7A3-EK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the SAM7A3-EK.
-/// 
+///
 /// !ISO7816
 /// - PIN_SMARTCARD_CONNECT
 /// - PIN_ISO7816_RSTMC

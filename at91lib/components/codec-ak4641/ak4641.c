@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -186,7 +186,7 @@ inline void AK4641_Configure(AT91S_TWI *twi)
     // Power up the DAC
     value = AK4641_POWMGT2_PMDAC;
     AK4641_Write(twi, &value, 1, AK4641_POWMGT2);
-    
+
     // Select the right and left channel outputs, enable the DAC output
     value = AK4641_SIGSEL2_PSLOR | AK4641_SIGSEL2_PSLOL | AK4641_SIGSEL2_DACL;
     AK4641_Write(twi, &value, 1, AK4641_SIGSEL2);

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -38,7 +38,7 @@
 /// \page "NandFlash Maximum Supported Values"
 /// Since no memory allocation is available, limits have been set on various
 /// characteristics of a NandFlash chip:
-/// 
+///
 /// !Maximums
 /// - NandCommon_MAXNUMBLOCKS
 /// - NandCommon_MAXNUMPAGESPERBLOCK
@@ -68,7 +68,7 @@
 /// \page "NandFlash Error Codes"
 /// NandFlash API methods return either 0 (indicating that there was no error),
 /// or one of the following error codes:
-/// 
+///
 /// !Codes
 /// - NandCommon_ERROR_NOMOREBLOCKS
 /// - NandCommon_ERROR_BLOCKNOTMAPPED

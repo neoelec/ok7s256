@@ -62,14 +62,14 @@ SECTIONS
         . = ALIGN(4);
         _erelocate = .;
     }
-    
+
     .bss (NOLOAD) : {
         _szero = .;
         *(.bss)
         . = ALIGN(4);
         _ezero = .;
     } >sram
-    
+
     _sstack = 0x208000;
 }
 end = .;

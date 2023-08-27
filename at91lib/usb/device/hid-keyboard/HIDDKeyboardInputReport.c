@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -56,7 +56,7 @@ void HIDDKeyboardInputReport_Initialize(HIDDKeyboardInputReport *report)
 
     report->bmModifierKeys = 0;
     for (i = 0; i < HIDDKeyboardInputReport_MAXKEYPRESSES; i++) {
-    
+
         report->pressedKeys[i] = 0;
     }
 }
@@ -85,7 +85,7 @@ void HIDDKeyboardInputReport_PressStandardKey(HIDDKeyboardInputReport *report,
             found = 1;
             report->pressedKeys[i] = key;
         }
-        
+
         i++;
     }
 

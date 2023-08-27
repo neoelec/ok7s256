@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -81,7 +81,7 @@ void BOARD_RemapRam()
 /// Configure DDR
 //------------------------------------------------------------------------------
 void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
-{    
+{
     AT91PS_HDDRSDRC2 pDdrc = AT91C_BASE_DDR2C;
     volatile unsigned int *pDdr = (unsigned int *) AT91C_DDR2;
     int i;
@@ -106,7 +106,7 @@ void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
 
     switch (ddrModel) {
 
-        case DDR_MICRON_MT47H64M8: 
+        case DDR_MICRON_MT47H64M8:
 
             // Configure the DDR controller
             WRITE(pDdrc, HDDRSDRC2_MDR, ddrc_dbw   |
@@ -148,7 +148,7 @@ void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
             // Initialization Step 1 + 2: NOP command -> allow to enable clk
             WRITE(pDdrc, HDDRSDRC2_MR, AT91C_DDRC2_MODE_NOP_CMD);
             *pDdr = 0;
- 
+
             // Initialization Step 3 (must wait 200 us) (6 core cycles per iteration, core is at 396MHz: min 13200 loops)
             for (i = 0; i < 13300; i++) {
                 asm("    nop");
@@ -157,7 +157,7 @@ void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
             // NOP command -> allow to enable cke
             WRITE(pDdrc, HDDRSDRC2_MR, AT91C_DDRC2_MODE_NOP_CMD);
             *pDdr = 0;
-            
+
             // wait 400 ns min
             for (i = 0; i < 100; i++) {
                 asm("    nop");
@@ -166,7 +166,7 @@ void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
             // Initialization Step 4: Set All Bank Precharge
             WRITE(pDdrc, HDDRSDRC2_MR, AT91C_DDRC2_MODE_PRCGALL_CMD);
             *pDdr = 0;
-            
+
             // wait 400 ns min
             for (i = 0; i < 100; i++) {
                 asm("    nop");
@@ -175,7 +175,7 @@ void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
             // Initialization Step 5: Set EMR operation (EMRS2)
             WRITE(pDdrc, HDDRSDRC2_MR, AT91C_DDRC2_MODE_EXT_LMR_CMD);
             *((unsigned int *)((unsigned char *)pDdr + 0x4000000)) = 0;
-         
+
             // wait 2 cycles min
             for (i = 0; i < 100; i++) {
                 asm("    nop");
@@ -202,7 +202,7 @@ void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
             // Initialization Step 8a: enable DLL reset
             cr = READ(pDdrc, HDDRSDRC2_CR);
             WRITE(pDdrc, HDDRSDRC2_CR, cr | AT91C_DDRC2_DLL_RESET_ENABLED);
-            
+
             // Initialization Step 8b: reset DLL
             WRITE(pDdrc, HDDRSDRC2_MR, AT91C_DDRC2_MODE_EXT_LMR_CMD);
             //*(pDdr) = 0;
@@ -247,7 +247,7 @@ void BOARD_ConfigureDdram(unsigned char ddrModel, unsigned char busWidth)
             // Initialization Step 13: Set LMR operation
             WRITE(pDdrc, HDDRSDRC2_MR, AT91C_DDRC2_MODE_LMR_CMD);
             *(pDdr) = 0;
-         
+
             // Skip Initialization Step 14 to 17 (not supported by the DDR2 model)
 
             // Initialization Step 18: Set Normal mode
@@ -479,7 +479,7 @@ void BOARD_ConfigureNandFlash(unsigned char busWidth)
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
 }
@@ -501,20 +501,20 @@ void BOARD_ConfigureNandFlash48MHz(unsigned char busWidth)
                                  | AT91C_SMC_WRITEMODE
                                  | AT91C_SMC_NWAITM_NWAIT_DISABLE
                                  | ((0x1 << 16) & AT91C_SMC_TDF));
-    
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
 }
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NorFlash access
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNorFlash(unsigned char busWidth)
 {
@@ -541,7 +541,7 @@ void BOARD_ConfigureNorFlash(unsigned char busWidth)
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NorFlash access at 48MHz.
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNorFlash48MHz(unsigned char busWidth)
 {
@@ -553,17 +553,17 @@ void BOARD_ConfigureNorFlash48MHz(unsigned char busWidth)
                                   | AT91C_SMC_WRITEMODE
                                   | AT91C_SMC_NWAITM_NWAIT_DISABLE
                                   | ((0x1 << 16) & AT91C_SMC_TDF));
-                           
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
     else if (busWidth == 32) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_THIRTY_TWO_BITS;
     }
 }

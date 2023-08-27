@@ -47,9 +47,9 @@
 ///
 /// !!!Purpose
 ///
-/// The Basic-sd-spi-project will help you to get familiar with sdmmc_spi interface on 
+/// The Basic-sd-spi-project will help you to get familiar with sdmmc_spi interface on
 /// AT91SAM microcontrollers. It can also help you to get familiar with the SD operation flow
-/// which can be used for fast implementation of your own sd drivers and other applications 
+/// which can be used for fast implementation of your own sd drivers and other applications
 /// related.
 ///
 /// You can find following information depends on your needs:
@@ -65,15 +65,15 @@
 ///
 /// !!!Requirements
 ///
-/// This package can be used with all Atmel evaluation kits that have SPI and EBI interface,  
-/// the package runs at SRAM or SDRAM, so SDRAM device is needed if you want to run this 
+/// This package can be used with all Atmel evaluation kits that have SPI and EBI interface,
+/// the package runs at SRAM or SDRAM, so SDRAM device is needed if you want to run this
 /// package in SDRAM
 /// Please note that the AT91SAM7L-EK, AT91SAM7S-EK and AT91SAM7SE-EK don't have
 /// SDCARD inside board.
 ///
 /// !!!Description
 ///
-/// Open HyperTerminal before running this program, use SAM-BA to download this program to 
+/// Open HyperTerminal before running this program, use SAM-BA to download this program to
 /// SRAM or SDRAM, make the program run, the HyperTerminal will give out the test results.
 ///
 /// !!!Usage
@@ -144,7 +144,7 @@ static SdCard sdDrv;
 
 /// SD card pins.
 static const Pin pinsSd[] = {BOARD_SD_SPI_PINS};
- 
+
 //------------------------------------------------------------------------------
 //         Local define
 //------------------------------------------------------------------------------

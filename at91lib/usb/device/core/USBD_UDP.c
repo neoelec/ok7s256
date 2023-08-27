@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -27,7 +27,7 @@
  * ----------------------------------------------------------------------------
  */
 
-/** 
+/**
  \unit
 
  !!!Purpose
@@ -404,7 +404,7 @@ static void UDP_ResetEndpoints( void )
 }
 
 //------------------------------------------------------------------------------
-/// Disable all endpoints (except control endpoint 0), aborting current 
+/// Disable all endpoints (except control endpoint 0), aborting current
 /// transfers if necessary
 //------------------------------------------------------------------------------
 static void UDP_DisableEndpoints( void )
@@ -621,14 +621,14 @@ static void UDP_EndpointHandler(unsigned char bEndpoint)
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 /// USB interrupt handler
-/// Manages device resume, suspend, end of bus reset. 
+/// Manages device resume, suspend, end of bus reset.
 /// Forwards endpoint interrupts to the appropriate handler.
 //------------------------------------------------------------------------------
 void USBD_InterruptHandler(void)
 {
     unsigned int status;
     int eptnum = 0;
-    
+
     // Get interrupt status
     // Some interrupts may get masked depending on the device state
     status = AT91C_BASE_UDP->UDP_ISR;
@@ -716,9 +716,9 @@ void USBD_InterruptHandler(void)
                 USBDCallbacks_Resumed();
             }
         }
-        
+
         // Clear and disable resume interrupts
-        AT91C_BASE_UDP->UDP_ICR = AT91C_UDP_WAKEUP 
+        AT91C_BASE_UDP->UDP_ICR = AT91C_UDP_WAKEUP
                                   | AT91C_UDP_RXRSM
                                   | AT91C_UDP_RXSUSP;
         AT91C_BASE_UDP->UDP_IDR = AT91C_UDP_WAKEUP | AT91C_UDP_RXRSM;
@@ -760,12 +760,12 @@ void USBD_InterruptHandler(void)
 
             // Check if endpoint has a pending interrupt
             if ((status & (1 << eptnum)) != 0) {
-            
+
                 UDP_EndpointHandler(eptnum);
                 status &= ~(1 << eptnum);
-                
+
                 if (status != 0) {
-                
+
                     TRACE_INFO_WP("\n\r  - ");
                 }
             }
@@ -954,7 +954,7 @@ char USBD_Read(unsigned char    bEndpoint,
 void USBD_Halt(unsigned char bEndpoint)
 {
     Endpoint *pEndpoint = &(endpoints[bEndpoint]);
-    
+
     // Check that endpoint is enabled and not already in Halt state
     if ((pEndpoint->state != UDP_ENDPOINT_DISABLED)
         && (pEndpoint->state != UDP_ENDPOINT_HALTED)) {
@@ -997,7 +997,7 @@ void USBD_Unhalt(unsigned char bEndpoint)
         AT91C_BASE_UDP->UDP_RSTEP &= ~(1 << bEndpoint);
     }
 }
-    
+
 //------------------------------------------------------------------------------
 /// Returns the current Halt status of an endpoint.
 /// \param bEndpoint Index of endpoint
@@ -1170,7 +1170,7 @@ void USBD_Disconnect(void)
 
     // Device returns to the Powered state
     if (deviceState > USBD_STATE_POWERED) {
-    
+
         deviceState = USBD_STATE_POWERED;
     }
 }

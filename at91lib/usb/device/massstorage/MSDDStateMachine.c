@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -69,7 +69,7 @@ static void MSDD_GetCommandInformation(MSCbw *cbw,
 /// Pre-processes a command by checking the differences between the host and
 /// device expectations in term of transfer type and length.
 /// Once one of the thirteen cases is identified, the actions to do during the
-/// post-processing phase are stored in the dCase variable of the command 
+/// post-processing phase are stored in the dCase variable of the command
 /// state.
 /// \param  pMsdDriver Pointer to a MSDDriver instance
 /// \return 1 if the command is supported, false otherwise

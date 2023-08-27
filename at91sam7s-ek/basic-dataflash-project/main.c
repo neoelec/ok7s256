@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,13 +31,13 @@
 ///
 /// !!!Purpose
 ///
-/// The Basic Dataflash project will help new users get familiar with SPI interface 
-/// on Atmel's AT91 family of microcontrollers. This project gives you an AT45 
+/// The Basic Dataflash project will help new users get familiar with SPI interface
+/// on Atmel's AT91 family of microcontrollers. This project gives you an AT45
 /// Dataflash programming code so that can help develop your own SPI devices
 /// applications with maximum efficiency.
 ///
 /// You can find following information depends on your needs:
-/// - A Spi low level driver performs SPI device Initializes, data transfer and 
+/// - A Spi low level driver performs SPI device Initializes, data transfer and
 /// receive. It can be used by upper SPI driver such as AT45 %dataflash.
 /// - A Dataflash driver is based on top of the corresponding Spi driver.
 /// It allow user to do operations with %dataflash in a unified way.
@@ -48,13 +48,13 @@
 /// !!!Requirements
 ///
 /// This package can be used with all Atmel evaluation kits that have SPI
-/// interface and on-board or external Serialflash connected. The package runs at 
+/// interface and on-board or external Serialflash connected. The package runs at
 /// SRAM or SDRAM, so SDRAM device is needed if you want to run this package in SDRAM.
 ///
 ///
 /// !!!Description
 ///
-/// The demonstration program tests the dataflash present on the evaluation kit by 
+/// The demonstration program tests the dataflash present on the evaluation kit by
 /// erasing and writing each one of its pages.
 ///
 /// !!!Usage
@@ -82,7 +82,7 @@
 ///    -I- SPI interrupt enabled
 ///    -I- Waiting for a dataflash to be connected ...
 ///    \endcode
-/// -# As soon as a dataflash is connected, the tests will start. Eventually, 
+/// -# As soon as a dataflash is connected, the tests will start. Eventually,
 ///    the test result (pass or fail) will be output on the DBGU.
 //------------------------------------------------------------------------------
 
@@ -92,9 +92,9 @@
 /// !Purpose
 ///
 /// This file contains all the specific code for the basic-dataflash-project.
-/// It tests the dataflash present on the evaluation kit by erasing and writing 
+/// It tests the dataflash present on the evaluation kit by erasing and writing
 /// each one of its pages
-/// 
+///
 /// !Contents
 /// The code can be roughly broken down as follows:
 ///    - AT45 Dataflash write data function.
@@ -106,7 +106,7 @@
 ///       - Config SPI Interrupt Service Routine.
 ///       - Identifier the AT45 device connected to the evaluation kit.
 ///       - Test the dataflash by erasing and writing each one of its pages.
-/// 
+///
 /// !See also
 ///    - "spi-flash": Dataflash interface driver.
 /// Please refer to the list of functions in the #Overview# tab of this unit
@@ -205,7 +205,7 @@ static unsigned char AT45_GetStatus(At45 *pAt45)
 /// Waits for the At45 to be ready to accept new commands.
 /// \param pAt45  Pointer to a At45 driver instance.
 //------------------------------------------------------------------------------
-static void AT45_WaitReady(At45 *pAt45) 
+static void AT45_WaitReady(At45 *pAt45)
 {
     unsigned char ready = 0;
 
@@ -254,7 +254,7 @@ static void AT45_Read(
     At45 *pAt45,
     unsigned char *pBuffer,
     unsigned int size,
-    unsigned int address) 
+    unsigned int address)
 {
     unsigned char error;
 
@@ -284,7 +284,7 @@ static void AT45_Write(
     At45 *pAt45,
     unsigned char *pBuffer,
     unsigned int size,
-    unsigned int address) 
+    unsigned int address)
 {
     unsigned char error;
 
@@ -299,7 +299,7 @@ static void AT45_Write(
 
     // Wait until the command is sent
     while (AT45_IsBusy(pAt45));
-    
+
     // Wait until the At45 becomes ready again
     AT45_WaitReady(pAt45);
 }
@@ -309,13 +309,13 @@ static void AT45_Write(
 /// \param pAt45  Pointer to a At45 driver instance.
 /// \param address  Address of page to erase.
 //------------------------------------------------------------------------------
-static void AT45_Erase(At45 *pAt45, unsigned int address) 
+static void AT45_Erase(At45 *pAt45, unsigned int address)
 {
     unsigned char error;
 
     // Sanity checks
     ASSERT(pAt45, "-F- AT45_Erase: pAt45 is null\n\r");
-    
+
     // Issue a page erase command.
     error = AT45_SendCommand(pAt45, AT45_PAGE_ERASE, 4, 0, 0, address, 0, 0);
     ASSERT(!error, "-F- AT45_Erase: Could not issue command.\n\r");
@@ -350,7 +350,7 @@ int main()
     printf("-- Basic Dataflash Project %s --\n\r", SOFTPACK_VERSION);
     printf("-- %s\n\r", BOARD_NAME);
     printf("-- Compiled: %s %s --\n\r", __DATE__, __TIME__);
-    
+
     // SPI and At45 driver initialization
     TRACE_INFO("Initializing the SPI and AT45 drivers\n\r");
     AIC_ConfigureIT(BOARD_AT45_A_SPI_ID, 0, ISR_Spi);
@@ -379,7 +379,7 @@ int main()
     while (!testFailed && (page < AT45_PageNumber(&at45))) {
 
         TRACE_INFO("Test in progress on page: %6u\r", page);
-        
+
         // Erase page
         AT45_Erase(&at45, page * AT45_PageSize(&at45));
 
@@ -387,7 +387,7 @@ int main()
         memset(pBuffer, 0, AT45_PageSize(&at45));
         AT45_Read(&at45, pBuffer, AT45_PageSize(&at45), page * AT45_PageSize(&at45));
         for (i=0; i < AT45_PageSize(&at45); i++) {
-        
+
             if (pBuffer[i] != 0xff) {
 
                 TRACE_ERROR("Could not erase page %u\n\r", page);
@@ -398,7 +398,7 @@ int main()
 
         // Write page
         for (i=0; i < AT45_PageSize(&at45); i++) {
-        
+
             pBuffer[i] = i & 0xFF;
         }
         AT45_Write(&at45, pBuffer, AT45_PageSize(&at45), page * AT45_PageSize(&at45));
@@ -416,19 +416,19 @@ int main()
             }
         }
 
-        page++;    
+        page++;
     }
 
     // Display test result
     if (testFailed) {
-    
+
         TRACE_ERROR("Test failed.\n\r");
     }
     else {
-    
+
          TRACE_INFO("Test passed.\n\r");
     }
-    
+
     return 0;
 }
 

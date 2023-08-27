@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definition and functions for using AT91CAP9-related features, such
 /// has PIO pins, memories, etc.
-/// 
+///
 /// !Usage
 /// -# The code for booting the board is provided by board_cstartup.S and
 ///    board_lowlevel.c.
@@ -41,14 +41,14 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91CAP9-STK characteristics, AT91CAP9-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Usage
 /// -# For operating frequency information, see "AT91CAP9-STK - Operating frequencies".
 /// -# For using portable PIO definitions, see "AT91CAP9-STK - PIO definitions".
@@ -95,7 +95,7 @@
 /// \page "AT91CAP9-STK - Operating frequencies"
 /// This page lists several definition related to the board operating frequency
 /// (when using the initialization done by board_lowlevel.c).
-/// 
+///
 /// !Definitions
 /// - BOARD_MAINOSC
 /// - BOARD_MCK
@@ -122,7 +122,7 @@
 /// \page "AT91CAP9-STK - USB device"
 /// This page lists constants describing several characteristics (controller
 /// type, D+ pull-up type, etc.) of the USB device controller of the chip/board.
-/// 
+///
 /// !Constants
 /// - BOARD_USB_UDPHS
 /// - BOARD_USB_PULLUP_INTERNAL
@@ -162,7 +162,7 @@
 ///
 /// !DBGU
 /// - PINS_DBGU
-/// 
+///
 /// !LEDs
 /// - PIN_LED_0
 /// - PIN_LED_1
@@ -170,7 +170,7 @@
 /// - LED_POWER
 /// - LED_DS1
 /// - LED_DS2
-/// 
+///
 /// !Push buttons
 /// - PIN_PUSHBUTTON_1
 /// - PIN_PUSHBUTTON_2
@@ -179,7 +179,7 @@
 /// - PUSHBUTTON_BP2
 /// - JOYSTICK_LEFT
 /// - JOYSTICK_RIGHT
-/// 
+///
 /// !SPI0
 /// - PIN_SPI0_MISO
 /// - PIN_SPI0_MOSI
@@ -209,10 +209,10 @@
 ///
 /// !USB
 /// - PIN_USB_VBUS
-/// 
+///
 /// !MCI
 /// - PINS_MCI
-/// 
+///
 /// !TWI
 /// - PINS_TWI
 
@@ -309,7 +309,7 @@
 /// \page "AT91CAP9-STK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the AT91CAP9-STK.
-/// 
+///
 /// !AT45 Dataflash
 /// - BOARD_AT45_A_SPI_BASE
 /// - BOARD_AT45_A_SPI_ID
@@ -325,7 +325,7 @@
 /// - BOARD_AT26_A_SPI
 /// - BOARD_AT26_A_NPCS
 /// - BOARD_AT26_A_NPCS_PIN
-/// 
+///
 /// !LCD
 /// - PINS_LCD
 /// - BOARD_LCD_WIDTH
@@ -350,7 +350,7 @@
 /// - BOARD_LCD_TIMING_HFP
 /// - BOARD_LCD_TIMING_HBP
 /// - BOARD_LCD_TIMING_HPW
-///  
+///
 /// !TouchScreen
 /// - BOARD_TSC_ADS7843
 /// - PIN_TCS_IRQ
@@ -513,7 +513,7 @@
 //------------------------------------------------------------------------------
 /// \page "AT91CAP9-STK - Memories"
 /// This page lists definitions related to external on-board memories.
-/// 
+///
 /// !SDRAM
 /// - BOARD_SDRAM_SIZE
 /// - PIN_SDRAM

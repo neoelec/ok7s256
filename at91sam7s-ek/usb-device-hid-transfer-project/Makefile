@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------
-#         ATMEL Microcontroller Software Support 
+#         ATMEL Microcontroller Software Support
 # ----------------------------------------------------------------------------
 # Copyright (c) 2008, Atmel Corporation
 #
@@ -76,7 +76,7 @@ SIZE = $(CROSS_COMPILE)size
 OBJCOPY = $(CROSS_COMPILE)objcopy
 
 # Flags
-INCLUDES = -I$(AT91LIB)/boards/$(BOARD) -I$(AT91LIB)/peripherals 
+INCLUDES = -I$(AT91LIB)/boards/$(BOARD) -I$(AT91LIB)/peripherals
 INCLUDES += -I$(AT91LIB)/components -I$(AT91LIB)
 
 CFLAGS = -Wall -mlong-calls -ffunction-sections

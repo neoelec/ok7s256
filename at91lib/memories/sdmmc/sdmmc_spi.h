@@ -31,7 +31,7 @@
 /// \page "sdmmc_spi"
 ///
 /// !Purpose
-/// 
+///
 /// Implementation for sdcard spi mode physical layer driver. Supply a set of sdcard spi mode's
 /// interface.
 ///
@@ -48,7 +48,7 @@
 /// \page "sdcard spi mode initialization and identification"
 ///
 /// !Purpose
-/// 
+///
 /// sdcard spi mode initialization and identification sequence
 ///
 /// !Description
@@ -64,10 +64,10 @@
 ///       - Host sends Cmd58 to read OCR register to validate the voltage.
 ///          - If the response to Cmd58 is fail, initialize ends, the card is put into inactive state.
 ///          - If the response to Cmd58 is ok, continue to the next step.
-///       - Host sends ACmd41* with argument "HCS" equal to "1". 
-///       - If the response to ACmd41 failed, it means the card does not match the voltage 
+///       - Host sends ACmd41* with argument "HCS" equal to "1".
+///       - If the response to ACmd41 failed, it means the card does not match the voltage
 ///          desired by the host, the card will be put into inactive state, initialize ends.
-///       - If the response with "CCS" equal to "1", the card is a version 2.0 high capacity sdcard, 
+///       - If the response with "CCS" equal to "1", the card is a version 2.0 high capacity sdcard,
 ///          refer to "Card Initialize" for the succeeding initialize sequence.
 ///       - If the response with "CCS" equal to "0", the card is a version 2.0 standard capacity sdcard.
 ///          refer to "Card Initialize" for the succeeding initialize sequence.
@@ -76,17 +76,17 @@
 ///          - If the response to Cmd58 is fail, initialize ends, the card is put into inactive state.
 ///          - If the response to Cmd58 is ok, continue to the next step.
 ///       - Host sends ACmd41* argument "HCS" equal to "0".
-///       - If the response to ACmd41 ok, the card is a version 1.x sdcard, refer to "Card Initialize" for 
+///       - If the response to ACmd41 ok, the card is a version 1.x sdcard, refer to "Card Initialize" for
 ///          the succeeding initialize sequence.
 ///       - If the response to ACmd41 fails
 ///          - Host sends Cmd0 to reset card.
 ///          - Host sends Cmd1 to card.
-///          - If card has response to Cmd1, the card is a MMC card, refer to "Card Initialize" for the 
+///          - If card has response to Cmd1, the card is a MMC card, refer to "Card Initialize" for the
 ///             succeeding initialize sequence.
-///          - If card has no response to Cmd1, the card is either an unknown card or a card does 
+///          - If card has no response to Cmd1, the card is either an unknown card or a card does
 ///             not match host's voltage, the initialize ends.
 /// - Card Initialize
-///       - At this stage, the initialization and identification process is over, the following steps are done 
+///       - At this stage, the initialization and identification process is over, the following steps are done
 ///          for the sdcard's succeeding operation.
 ///       - Host sends Cmd59 to turn sdcard's CRC option off.
 ///       - Host sends Cmd9 to get the Card Specific Data (CSD).
@@ -99,12 +99,12 @@
 /// \page "sdcard spi mode write"
 ///
 /// !Purpose
-/// 
+///
 /// sdcard spi mode write process
 ///
 /// !Description
 /// - Make sure sdcard is under "transfer state", if the sdcard is under other state, host will send
-///    Cmd12 or use stop transmission token to stop multiple block write, and to transit sdcard to 
+///    Cmd12 or use stop transmission token to stop multiple block write, and to transit sdcard to
 ///    "stand-by state".
 /// - Host sends Cmd13 to check sdcard's status, to make sure sdcard is "ready-for-data".
 /// - Host sends Cmd25 to do multiple blocks write, the address here is different between high capacity
@@ -116,12 +116,12 @@
 /// \page "sdcard spi mode read"
 ///
 /// !Purpose
-/// 
+///
 /// sdcard spi mode read process
 ///
 /// !Description
 /// - Make sure sdcard is under "transfer state", if the sdcard is under other state, host will send
-///    Cmd12 or use stop transmission token to stop multiple block read and to transit sdcard to 
+///    Cmd12 or use stop transmission token to stop multiple block read and to transit sdcard to
 ///    "stand-by state".
 /// - Host sends Cmd13 to check sdcard's status, to make sure sdcard is "ready-for-data".
 /// - Host sends Cmd18 to do multiple blocks read, the address here is different between high capacity
@@ -133,14 +133,14 @@
 /// \page "sdhc"
 ///
 /// !Purpose
-/// 
+///
 /// highlight of sdhc
 ///
 /// !Sdhc initialization and identification
 ///
 ///   - Refer to page "sdcard spi mode initialization and identification" for the initialization and identification
 ///       sequence of a sdhc.
-/// 
+///
 /// !Functional difference between sdhc and standard capacity sdcard
 ///
 /// - Command argument is different:
@@ -150,7 +150,7 @@
 /// - Partial access and misalign access are disabled in sdhc as the block address is used.
 /// - Sdhc does not support write-protected commands (Cmd28, Cmd29, Cmd30).
 ///
-/// \note Memory access commands means block read commands (CMD17, CMD18), block write commands 
+/// \note Memory access commands means block read commands (CMD17, CMD18), block write commands
 ///   (CMD24, CMD25), and block erase commands (CMD32, CMD33).
 ///
 //------------------------------------------------------------------------------

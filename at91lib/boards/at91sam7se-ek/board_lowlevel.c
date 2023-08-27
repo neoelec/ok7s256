@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -138,7 +138,7 @@ void LowLevelInit( void )
     AT91C_BASE_PMC->PMC_MCKR |= AT91C_PMC_CSS_PLL_CLK;
     while (!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_MCKRDY));
 //#endif //#if !defined(sdram)
-    
+
     /* Initialize AIC
      ****************/
     AT91C_BASE_AIC->AIC_IDCR = 0xFFFFFFFF;

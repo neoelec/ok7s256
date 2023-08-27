@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,34 +30,34 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
-/// The INTERL %norflash Low-level driver code implement procedures to program 
-/// basic operations described INTEL-specified command set flash devices. 
-/// The various commands recognized by the devices are listed in the Commands 
-/// Tables provided in the corresponding INTEL command set compatible flash 
-/// datasheets. All operation functions are blocked, they wait for the 
+///
+/// The INTERL %norflash Low-level driver code implement procedures to program
+/// basic operations described INTEL-specified command set flash devices.
+/// The various commands recognized by the devices are listed in the Commands
+/// Tables provided in the corresponding INTEL command set compatible flash
+/// datasheets. All operation functions are blocked, they wait for the
 /// completion of an operation by polling the status register.
 ///
 /// !!!Usage
 /// -# Flash program using INTEL_Write_Data().
-///    - The Program command is used to modify the data stored at the 
-///      specified device address. Programming can only change bits 
-///      from ¡®1¡¯ to ¡®0¡¯. It may be necessary to erase the block before 
-///      programming to addresses within it. Programming modifies a single 
-///      Word at a time using static function intel_Program(). Programming 
-///      larger amounts of data must be done in one Word at a time by 
-///      giving a Program command, waiting for the command to complete, 
+///    - The Program command is used to modify the data stored at the
+///      specified device address. Programming can only change bits
+///      from ¡®1¡¯ to ¡®0¡¯. It may be necessary to erase the block before
+///      programming to addresses within it. Programming modifies a single
+///      Word at a time using static function intel_Program(). Programming
+///      larger amounts of data must be done in one Word at a time by
+///      giving a Program command, waiting for the command to complete,
 ///      giving the next Program command and so on.
 /// -# erase a block within the flash using INTEL_EraseSector().
-///    - Flash erase is performed on a block basis. An entire block is 
-///      erased each time an erase command sequence is given. 
+///    - Flash erase is performed on a block basis. An entire block is
+///      erased each time an erase command sequence is given.
 /// -# erase whole blocks within the flash using INTEL_EraseChip().
-/// -# INTEL_Reset() function can be issued, between Bus Write cycles 
-///    before the start of a program or erase operation, to return the 
+/// -# INTEL_Reset() function can be issued, between Bus Write cycles
+///    before the start of a program or erase operation, to return the
 ///    device to read mode.
-/// -# INTEL_ReadDeviceID() is used to retrieve information 
+/// -# INTEL_ReadDeviceID() is used to retrieve information
 ///    about the Flash Device type.
-/// -# INTEL_ReadManufactoryId() is used to retrieve information 
+/// -# INTEL_ReadManufactoryId() is used to retrieve information
 ///    about the Flash Device Manufactory ID.
 //------------------------------------------------------------------------------
 #ifndef NORFLASHINTEL_H
@@ -68,17 +68,17 @@
 //------------------------------------------------------------------------------
 
 void INTEL_Reset(struct NorFlashInfo *pNorFlashInfo, unsigned int address);
-    
+
 unsigned int INTEL_ReadManufactoryId(struct NorFlashInfo *NorFlashInfo);
-    
-unsigned int INTEL_ReadDeviceID(struct NorFlashInfo *pNorFlashInfo);    
+
+unsigned int INTEL_ReadDeviceID(struct NorFlashInfo *pNorFlashInfo);
 
 unsigned char INTEL_EraseSector(
-    struct NorFlashInfo *NorFlashInfo, 
+    struct NorFlashInfo *NorFlashInfo,
     unsigned int sectorAddr);
 
 unsigned char INTEL_EraseChip(struct NorFlashInfo *NorFlashInfo);
-    
+
 unsigned char INTEL_Write_Data(
     struct NorFlashInfo *NorFlashInfo,
     unsigned int address,
@@ -86,13 +86,13 @@ unsigned char INTEL_Write_Data(
     unsigned int size);
 
 const struct NorFlashOperations intelOperations = {
-   INTEL_Reset, 
+   INTEL_Reset,
    INTEL_Write_Data,
-   INTEL_ReadManufactoryId, 
+   INTEL_ReadManufactoryId,
    INTEL_ReadDeviceID,
    INTEL_EraseChip,
    INTEL_EraseSector
-   
+
 };
 
 #endif //#ifndef NORFLASHINTEL_H

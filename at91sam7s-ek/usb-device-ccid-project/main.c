@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -63,15 +63,15 @@
 ///       - Hardware flow control (RTS/CTS)
 /// -# Start the application. The following traces shall appear on the terminal:
 ///    \code
-///     -- USB Device CCID Project xxx -- 
+///     -- USB Device CCID Project xxx --
 ///     -- AT91xxxxxx-xx
 ///     -- Compiled: xxx xx xxxx xx:xx:xx --
 ///    \endcode
 /// -# Connect the USB cable to the board. Traces should start to appear on the terminal.<BR>
-/// If this is the first time the device is connected to the PC, 
-/// the operating system may take some time to install it. 
+/// If this is the first time the device is connected to the PC,
+/// the operating system may take some time to install it.
 /// -# The device is enumerated as a Smart Card Device implementing CCID class.<BR>
-/// -# The host use the CCID device driver (usbccid.sys) as the functionnal driver. 
+/// -# The host use the CCID device driver (usbccid.sys) as the functionnal driver.
 /// -# Launch Smart Access and connect it to the Card Reader Atmel.<BR>
 /// Use Smart Access for launch instruction command.<BR>
 /// Note that instruction command case one, two and three are implemanted.
@@ -102,7 +102,7 @@
 /// for more detailed information.
 //------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 //         Headers
 //------------------------------------------------------------------------------
 
@@ -190,7 +190,7 @@ static void ConfigureCardDetection(void)
     printf("-I- Smartcard detection not supported.\n\r");
 }
 
-#endif 
+#endif
 
 
 //------------------------------------------------------------------------------
@@ -243,7 +243,7 @@ static void VBus_Configure( void )
     }
     else {
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else
@@ -533,7 +533,7 @@ int main( void )
 
     // USB audio driver initialization
     CCIDDriver_Initialize();
-    
+
     // connect if needed
     VBUS_CONFIGURE();
     while (USBD_GetState() < USBD_STATE_CONFIGURED);

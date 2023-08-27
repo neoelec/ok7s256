@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -44,7 +44,7 @@
 ///   standard requests in USBD callbacks, to read/write through assigned USB
 ///   endpoints,
 /// - Create the CDC Serial device's descriptors that should be passed to
-///   the USBDDriver instance on initialization, so that the host can 
+///   the USBDDriver instance on initialization, so that the host can
 ///   recognize the %device as a USB CDC Serial COM port %device.
 ///
 /// For more information about what a particular group contains, please refer to
@@ -83,7 +83,7 @@
 
  !!Architecture
  ...
- 
+
  !Communication Class Interface
  The #Communication Class Interface# is used for %device management. It
  includes requests to manage the %device state, its responses, as well as
@@ -291,7 +291,7 @@ const CDCDSerialDriverConfigurationDescriptors configurationDescriptors[];
  The EP is defined as CDCDSerialDriverDescriptors_NOTIFICATION.
 \code
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(USBEndpointDescriptor_IN,
                      CDCDSerialDriverDescriptors_NOTIFICATION),
@@ -324,7 +324,7 @@ const CDCDSerialDriverConfigurationDescriptors configurationDescriptors[];
 \code
     // Bulk-OUT endpoint standard descriptor
     {
-        sizeof(USBEndpointDescriptor), 
+        sizeof(USBEndpointDescriptor),
         USBGenericDescriptor_ENDPOINT,
         USBEndpointDescriptor_ADDRESS(USBEndpointDescriptor_OUT,
                            CDCDSerialDriverDescriptors_DATAOUT),

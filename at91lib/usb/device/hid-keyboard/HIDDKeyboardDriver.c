@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -247,7 +247,7 @@ static void HIDDKeyboardDriver_SetReport(unsigned char type,
 
     // Check report type
     switch (type) {
-    
+
         case HIDReportRequest_INPUT:
             // SET_REPORT requests on input reports are ignored
             USBD_Stall(0);
@@ -260,7 +260,7 @@ static void HIDDKeyboardDriver_SetReport(unsigned char type,
                 USBD_Stall(0);
             }
             else {
-            
+
                 USBD_Read(0, // Endpoint #0
                           &(hiddKeyboardDriver.outputReport),
                           length,
@@ -292,7 +292,7 @@ void USBDCallbacks_RequestReceived(const USBGenericRequest *request)
 void USBDDriverCallbacks_ConfigurationChanged(unsigned char cfgnum)
 {
     if (cfgnum > 0) {
-    
+
         // Start receiving output reports
         USBD_Read(HIDDKeyboardDriverDescriptors_INTERRUPTOUT,
                   &(hiddKeyboardDriver.outputReport),
@@ -334,7 +334,7 @@ void HIDDKeyboardDriver_RequestHandler(const USBGenericRequest *request)
 
         // This is a standard request
         switch (USBGenericRequest_GetRequest(request)) {
-        
+
             case USBGenericRequest_GETDESCRIPTOR:
                 // Check if this is a HID descriptor, otherwise forward it to
                 // the standard driver

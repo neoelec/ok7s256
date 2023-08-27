@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -26,7 +26,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * ----------------------------------------------------------------------------
  */
- 
+
 //-----------------------------------------------------------------------------
 //         Headers
 //-----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ const static struct capture_size ov965x_sizes[] = {
 //------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-/// Configure the OV9650 for a specified image size, pixel format, 
+/// Configure the OV9650 for a specified image size, pixel format,
 /// and frame period.
 //-----------------------------------------------------------------------------
 void ov965x_configure(Twid *pTwid, unsigned int width, unsigned int heigth)
@@ -132,7 +132,7 @@ void ov965x_configure(Twid *pTwid, unsigned int width, unsigned int heigth)
             TRACE_DEBUG("QQCIF\n\r");
             reg_conf = ov9655_yuv_qqcif;
         break;
-        default:  
+        default:
             TRACE_DEBUG("ov965x_configure problem\n\r");
         break;
     }

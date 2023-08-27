@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -74,7 +74,7 @@
 //------------------------------------------------------------------------------
 //         Exported functions
 //------------------------------------------------------------------------------
-      
+
 extern inline void AK4641_Configure(AT91S_TWI *twi);
 extern inline void AK4641_SetMuted(AT91S_TWI *twi, unsigned char muted);
 

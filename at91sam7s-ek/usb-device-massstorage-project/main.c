@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -70,7 +70,7 @@
 /// !!!Description
 ///
 /// When an EK running this program connected to a host (PC for example), with
-/// USB cable, the EK appears as a USB Disk for the host. Then the host can 
+/// USB cable, the EK appears as a USB Disk for the host. Then the host can
 /// format/read/write on the disk.
 ///
 /// If there is SDRAM on the EK, the disk can be up to 10M so that read/write
@@ -210,7 +210,7 @@ unsigned char msdBuffer[BLOCK_SIZE];
 
 //------------------------------------------------------------------------------
 //         Remote wake-up support (optional)
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 #if (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_BUSPOWERED_RWAKEUP) \
     || (BOARD_USB_BMATTRIBUTES == USBConfigurationDescriptor_SELFPOWERED_RWAKEUP)
 
@@ -363,7 +363,7 @@ static void VBus_Configure( void )
     }
     else {
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else
@@ -433,14 +433,14 @@ static void MemoryInitialization(void)
     //LUN_Init(&(luns[numMedias]), &(medias[numMedias]), msdBuffer, 0, BOARD_DDRAM_SIZE-CODE_SIZE, sizeof(msdBuffer));
 
     numMedias++;
-   
+
 #elif defined(AT91C_EBI_SDRAM)
 
     TRACE_DEBUG("LUN SDRAM\n\r");
 #if !defined(sdram)
     BOARD_ConfigureSdram(BOARD_SDRAM_BUSWIDTH);
 #endif
-    
+
     MEDSdram_Initialize(&(medias[numMedias]),
                         (unsigned int) AT91C_EBI_SDRAM + CODE_SIZE,
                         10*1024*1024); // Only 10Mb used for faster formatting
@@ -458,11 +458,11 @@ static void MemoryInitialization(void)
 
 #endif // AT91C_EBI_SDRAM
 
-    // Flash 
+    // Flash
 #if defined(AT91C_BASE_EFC)
     TRACE_INFO("LUN Flash\n\r");
     if (numMedias == 0) {
- 
+
         FLA_Initialize(&(medias[numMedias]), AT91C_BASE_EFC);
         LUN_Init(&(luns[numMedias]),
                  &(medias[numMedias]),

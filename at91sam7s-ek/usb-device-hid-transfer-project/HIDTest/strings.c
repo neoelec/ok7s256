@@ -17,7 +17,7 @@ Environment:
 
 Revision History:
 
-    May-98 : Created 
+    May-98 : Created
 
 --*/
 
@@ -41,18 +41,18 @@ Strings_CreateDataBufferString(
 Routine Description:
     This routine takes a DataBuffer of size DataBufferLength and creates a string
     in BufferString that contains a string representation of the bytes stored in
-    data buffer.  
+    data buffer.
 
     The parameter NumBytesToDisplay tells the routine the maximum number of bytes
     from the buffer to display.  For instance, a caller may only want to convert
     the first four bytes of an eight byte buffer to a string
 
-    The parameter DisplayBlockSize indicates how many bytes should be grouped 
+    The parameter DisplayBlockSize indicates how many bytes should be grouped
     together in the display.  Valid values are 1, 2, 4 and would indicate whether
     the displayed bytes should be displayed as bytes, words, or dwords.
 
     The routine allocates a buffer big enough to store the data.  Callers of this
-    routine are responsible for freeing this string buffer.  
+    routine are responsible for freeing this string buffer.
 --*/
 {
     ULONG   BufferStringLength;
@@ -66,16 +66,16 @@ Routine Description:
     INT     ByteOffset;
 
     /*
-    // Determine the maximum number of bytes that will be displayed in 
+    // Determine the maximum number of bytes that will be displayed in
     //    the string
     */
-    
+
     MaxDisplayedBytes = (NumBytesToDisplay > DataBufferLength) ? DataBufferLength
                                                                : NumBytesToDisplay;
 
     /*
-    // Determine the size of the string we'll need: This is based on the 
-    //   maximum number of displayed bytes (MaxDisplayedBytes) and the 
+    // Determine the size of the string we'll need: This is based on the
+    //   maximum number of displayed bytes (MaxDisplayedBytes) and the
     //   DisplayBlockSize
     */
 
@@ -94,16 +94,16 @@ Routine Description:
         /*
         // Determine how many iterations through the conversion routine must be made.
         */
-        
+
         nFullIterations = MaxDisplayedBytes / DisplayBlockSize;
 
         /*
         // Initialize our variables which point to data in the buffer to convert
-        //   and the byte in the string in which to put the converted data value. 
+        //   and the byte in the string in which to put the converted data value.
         //   Next byte is set to String-1 because it is incremented on entry into the
         //   loop.
         */
-        
+
         CurrentBufferOffset = DataBuffer;
         NextByte = String-1;
 
@@ -112,8 +112,8 @@ Routine Description:
         //   partial iterations are performed afterwards if the number of bytes
         //   to display is not a multiple of the display block size
         */
-        
-        for (IterationIndex = 0; IterationIndex < nFullIterations; IterationIndex++) 
+
+        for (IterationIndex = 0; IterationIndex < nFullIterations; IterationIndex++)
         {
             NextByte++;
 
@@ -122,8 +122,8 @@ Routine Description:
             //    reverse order to display the the MSB of a block as the first
             //    value in the string
             */
-            
-            for (ByteOffset = DisplayBlockSize-1; ByteOffset >= 0; ByteOffset--) 
+
+            for (ByteOffset = DisplayBlockSize-1; ByteOffset >= 0; ByteOffset--)
             {
                 wsprintf(NextByte, "%02X", *(CurrentBufferOffset+ByteOffset));
 
@@ -133,7 +133,7 @@ Routine Description:
             /*
             // Insert the space to separate blocks
             */
-            
+
             *(NextByte) = ' ';
 
             CurrentBufferOffset += DisplayBlockSize;
@@ -142,21 +142,21 @@ Routine Description:
         /*
         // Resolve any other bytes that are left over
         */
-        
+
         LeftOverBytes = (MaxDisplayedBytes % DisplayBlockSize);
 
-        if (0 == LeftOverBytes) 
+        if (0 == LeftOverBytes)
         {
             *(NextByte) = '\0';
         }
 
-        for (ByteOffset = LeftOverBytes-1, NextByte++; ByteOffset >= 0; ByteOffset--) 
+        for (ByteOffset = LeftOverBytes-1, NextByte++; ByteOffset >= 0; ByteOffset--)
         {
             wsprintf(NextByte, "%02X", *(CurrentBufferOffset+ByteOffset));
             NextByte += 2;
         }
     }
-    
+
     *BufferString = String;
 
     return;
@@ -178,16 +178,16 @@ Routine Description:
     determine the base depending on the format of the number in the string.
 
     The parameter UnsignedSize specifies the size of unsigneds to store in the list.
-    
-    The routine allocates a CHAR buffer to store the list of unsigned values.  
 
-    On exit, nUnsigneds will report the number of unsigned values stored in 
+    The routine allocates a CHAR buffer to store the list of unsigned values.
+
+    On exit, nUnsigneds will report the number of unsigned values stored in
     UnsignedList.
-    
+
     The function will return TRUE if it could convert all of the numbers in the
     string into the unsigned list.  It will return FALSE if there was a problem
-    with the string or if there was a problem allocating memory to store the 
-    unsigned list.  
+    with the string or if there was a problem allocating memory to store the
+    unsigned list.
 --*/
 {
     CHAR    tokDelims[] = "\t,; ";
@@ -213,7 +213,7 @@ Routine Description:
 
     pList = (PCHAR) malloc(nAllocUnsigneds * sizeof(ULONG));
 
-    if (NULL == pList) 
+    if (NULL == pList)
     {
         return (FALSE);
     }
@@ -223,7 +223,7 @@ Routine Description:
     //   iBufferSize;
     */
 
-    ulMaxValue = (sizeof(ULONG) == UnsignedSize) ? ULONG_MAX 
+    ulMaxValue = (sizeof(ULONG) == UnsignedSize) ? ULONG_MAX
                                                  : (1 << (UnsignedSize*8)) - 1;
 
     /*
@@ -241,10 +241,10 @@ Routine Description:
     // Loop until there are no more tokens or we detect an error (fStatus == FALSE)
     */
 
-    while (NULL != strToken && fStatus) 
+    while (NULL != strToken && fStatus)
     {
         /*
-        // Set fStatus initially to false.  Only if nothing goes wrong in 
+        // Set fStatus initially to false.  Only if nothing goes wrong in
         //    the loop will this get set to TRUE
         */
 
@@ -260,22 +260,22 @@ Routine Description:
         // To be a valid value, *endp must point to the NULL character
         */
 
-        if ('\0' == *endp) 
+        if ('\0' == *endp)
         {
             /*
-            // Check to see that the ulValue found is less than or equal to 
+            // Check to see that the ulValue found is less than or equal to
             //     the maximum allowed by UnsignedSize.
             */
 
-            if (ulValue <= ulMaxValue) 
-            {    
+            if (ulValue <= ulMaxValue)
+            {
                 /*
                 // If we're set to overrun our buffer, attempt to allocate
                 //    more space.  If we can't then release the old space
-                //    and fail the loop.  
+                //    and fail the loop.
                 */
 
-                if (nAllocUnsigneds == nActualUnsigneds) 
+                if (nAllocUnsigneds == nActualUnsigneds)
                 {
                     nAllocUnsigneds *= 2;
 
@@ -299,7 +299,7 @@ Routine Description:
                 nActualUnsigneds++;
 
                 /*
-                // Prepare to reenter the loop.  Set fStatus = TRUE 
+                // Prepare to reenter the loop.  Set fStatus = TRUE
                 //    Try to get another token
                 */
 
@@ -315,7 +315,7 @@ Routine Description:
     //     release the list
     */
 
-    if (!fStatus || 0 == nActualUnsigneds) 
+    if (!fStatus || 0 == nActualUnsigneds)
     {
         free(pList);
         pList = NULL;
@@ -324,7 +324,7 @@ Routine Description:
 
     *UnsignedList = pList;
     *nUnsigneds = nActualUnsigneds;
-    
+
     return (fStatus);
 }
 

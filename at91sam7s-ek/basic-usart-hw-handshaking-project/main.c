@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -202,7 +202,7 @@ void ISR_Tc0(void)
 
     // RC compare
     if ((status & AT91C_TC_CPCS) == AT91C_TC_CPCS) {
-            
+
         // Display info
         bytesTotal += bytesReceived;
         sprintf(pString, "Bps: %4u; Tot: %6u\r", bytesReceived, bytesTotal);

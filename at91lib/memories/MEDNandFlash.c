@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -153,7 +153,7 @@ static unsigned char UnalignedWritePage(
                                                  pageWriteBuffer,
                                                  0);
             if (error) {
-    
+
                 TRACE_ERROR(
                           "UnalignedWrite: Could not read existing page data\n\r");
                 return 1;
@@ -245,7 +245,7 @@ static unsigned char MEDNandFlash_Write(
             offset = 0;
             page++;
             if (page == blockSize) {
-    
+
                 page = 0;
                 block++;
             }
@@ -382,14 +382,14 @@ static unsigned char MEDNandFlash_Read(
             status = MED_STATUS_ERROR;
         }
         else {
-        
+
             // Update values
             remainingLength -= readSize;
             buffer += readSize;
             offset = 0;
             page++;
             if (page == blockSizeInPages) {
-    
+
                 page = 0;
                 block++;
             }

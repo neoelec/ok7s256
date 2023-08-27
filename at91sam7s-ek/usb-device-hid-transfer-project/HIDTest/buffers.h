@@ -17,7 +17,7 @@ Environment:
 
 Revision History:
 
-    May-98 : Created 
+    May-98 : Created
 
 --*/
 
@@ -31,8 +31,8 @@ typedef struct _REPORT_BUFFER
     UCHAR       ucReportID;
 
 } REPORT_BUFFER, *PREPORT_BUFFER;
-    
-typedef struct _BUFFER_DISPALY 
+
+typedef struct _BUFFER_DISPALY
 {
     HWND                hBufferComboBox;
     HWND                hBufferEditBox;

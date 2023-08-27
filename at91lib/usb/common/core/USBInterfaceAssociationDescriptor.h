@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,11 +30,11 @@
 /**
  *  \page USBInterfaceAssociateDescriptor
  *  !!!Purpose
- * 
+ *
  *      Class for manipulating USB IAD descriptors.
- * 
+ *
  *  !!!Usage
- * 
+ *
  *      -# Test
  */
 
@@ -57,10 +57,10 @@
     Variables:
         bLength - Size of this descriptor in bytes.
         bDescriptorType - Descriptor type (<USBGenericDescriptor_IAD>).
-        bFirstInterface - Interface number of the first interface that is 
-                          associated with this function. 
-        bInterfaceCount - Number of contiguous interfaces that are 
-                          associated with this function. 
+        bFirstInterface - Interface number of the first interface that is
+                          associated with this function.
+        bInterfaceCount - Number of contiguous interfaces that are
+                          associated with this function.
         bFunctionClass - Class code (assigned by USB-IF).
         bFunctionSubClass - Subclass code (assigned by USB-IF).
         bFunctionProtocol - Protocol code (assigned by USB-IF)

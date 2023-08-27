@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -75,7 +75,7 @@ typedef struct {
    unsigned char bRefresh;
    /// Address of the associated feedback endpoint if any.
    unsigned char bSyncAddress;
-                                   
+
 } __attribute__ ((packed)) AUDEndpointDescriptor; // GCC
 
 #ifdef __ICCARM__          // IAR

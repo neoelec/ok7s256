@@ -152,7 +152,7 @@ static const Pin pins[] = {
 //------------------------------------------------------------------------------
 void UTIL_Loop(unsigned int loop)
 {
-    while(loop--);	
+    while(loop--);
 }
 
 

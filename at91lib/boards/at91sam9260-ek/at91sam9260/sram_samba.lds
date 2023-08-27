@@ -37,14 +37,14 @@ ENTRY(entry)
 
 MEMORY
 {
-    romcodesram (W!RX) : ORIGIN = 0x300000, LENGTH = 0x1000    
+    romcodesram (W!RX) : ORIGIN = 0x300000, LENGTH = 0x1000
     sram0 (W!RX) : ORIGIN = 0x200000, LENGTH = 0x1000
     sram1 (W!RX) : ORIGIN = 0x300000, LENGTH = 0x1000
     sdram (W!RX) : ORIGIN = 0x20000000, LENGTH = 0x4000000
 }
 
 SECTIONS
-{  
+{
     .fixed0 :
     {
         . = ALIGN(4);
@@ -90,7 +90,7 @@ SECTIONS
         . = ALIGN(4);
         _ezero = .;
     } >sram0
-    
+
     _sstack = 0x301000;
 }
 end = .;

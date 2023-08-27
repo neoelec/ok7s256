@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -41,7 +41,7 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
@@ -159,7 +159,7 @@
 ///
 /// !DBGU
 /// - PINS_DBGU
-/// 
+///
 /// !LEDs
 /// - PIN_LED_0
 /// - PIN_LED_1
@@ -167,7 +167,7 @@
 /// - LED_POWER
 /// - LED_DS1
 /// - LED_DS2
-/// 
+///
 /// !Push buttons
 /// - PIN_KEYBOARD_COL0
 /// - PIN_KEYBOARD_COL1
@@ -188,19 +188,19 @@
 /// - PUSHBUTTON_BP2
 /// - JOYSTICK_LEFT
 /// - JOYSTICK_RIGHT
-/// 
+///
 /// !USART0
 /// - PIN_USART0_RXD
 /// - PIN_USART0_TXD
 /// - PIN_USART0_SCK
-/// 
+///
 /// !SPI0
 /// - PIN_SPI0_MISO
 /// - PIN_SPI0_MOSI
 /// - PIN_SPI0_SPCK
 /// - PINS_SPI0
 /// - PIN_SPI0_NPCS0
-/// 
+///
 /// !AC97
 /// - PINS_AC97
 ///
@@ -221,7 +221,7 @@
 ///
 /// !SSC
 /// - PINS_SSC_TRANSMITTER
-/// 
+///
 /// !USB
 /// - PIN_USB_VBUS
 ///
@@ -376,7 +376,7 @@
 /// \page "AT91CAP9-DK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the AT91CAP9-DK.
-/// 
+///
 /// !AT45 Dataflash
 /// - BOARD_AT45_A_SPI_BASE
 /// - BOARD_AT45_A_SPI_ID
@@ -392,7 +392,7 @@
 /// - BOARD_AT26_A_SPI
 /// - BOARD_AT26_A_NPCS
 /// - BOARD_AT26_A_NPCS_PIN
-/// 
+///
 /// !LCD
 /// - PINS_LCD
 /// - BOARD_LCD_WIDTH
@@ -417,7 +417,7 @@
 /// - BOARD_LCD_TIMING_HFP
 /// - BOARD_LCD_TIMING_HBP
 /// - BOARD_LCD_TIMING_HPW
-/// 
+///
 /// !TouchScreen
 /// - BOARD_TSC_ADS7843
 /// - PIN_TCS_IRQ
@@ -427,7 +427,7 @@
 /// - BOARD_TSC_SPI_PINS
 /// - BOARD_TSC_NPCS
 /// - BOARD_TSC_NPCS_PIN
-/// 
+///
 /// !SD Card (MCI0)
 /// - BOARD_SD_MCI_BASE
 /// - BOARD_SD_MCI_ID
@@ -637,7 +637,7 @@
 //------------------------------------------------------------------------------
 /// \page "AT91CAP9-DK - Memories"
 /// This page lists definitions related to external on-board memories.
-/// 
+///
 /// !SDRAM
 /// - BOARD_SDRAM_SIZE
 /// - PINS_SDRAM

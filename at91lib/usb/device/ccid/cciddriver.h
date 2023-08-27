@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -33,9 +33,9 @@
 /// !Purpose
 ///
 /// Definition of methods for using a CCID device driver.
-/// 
+///
 /// !Usage
-/// 
+///
 /// -# CCIDDriver_Initialize
 /// -# CCID_Read
 /// -# CCID_Write
@@ -48,10 +48,10 @@
 #ifndef CCID_DRIVER_H
 #define CCID_DRIVER_H
 
-/// For reference, the absolute maximum block size 
-/// for a TPDU T=0 block is 260 bytes (5 bytes command; 255 bytes data), or 
-/// for a TPDU T=1 block is 259 bytes, or 
-/// for a short APDU T=1 block is 261 bytes, or 
+/// For reference, the absolute maximum block size
+/// for a TPDU T=0 block is 260 bytes (5 bytes command; 255 bytes data), or
+/// for a TPDU T=1 block is 259 bytes, or
+/// for a short APDU T=1 block is 261 bytes, or
 /// for an extended APDU T=1 block is 65544 bytes.
 #define ABDATA_SIZE 260
 
@@ -66,35 +66,35 @@
 /// Automatic parameter configuration based on ATR data
 #define CCID_FEATURES_AUTO_PCONF 0x00000002
 /// Automatic activation of ICC on inserting
-#define CCID_FEATURES_AUTO_ACTIV 0x00000004 
+#define CCID_FEATURES_AUTO_ACTIV 0x00000004
 /// Automatic ICC voltage selection
-#define CCID_FEATURES_AUTO_VOLT  0x00000008 
-/// Automatic ICC clock frequency change according to active parameters provided 
+#define CCID_FEATURES_AUTO_VOLT  0x00000008
+/// Automatic ICC clock frequency change according to active parameters provided
 /// by the Host or self determined
-#define CCID_FEATURES_AUTO_CLOCK 0x00000010 
-/// Automatic baud rate change according to active parameters provided by the 
+#define CCID_FEATURES_AUTO_CLOCK 0x00000010
+/// Automatic baud rate change according to active parameters provided by the
 /// Host or self determined
-#define CCID_FEATURES_AUTO_BAUD  0x00000020 
-/// Automatic parameters negotiation made by the CCID (use of warm or cold 
-/// resets or PPS according to a manufacturer proprietary algorithm to select 
+#define CCID_FEATURES_AUTO_BAUD  0x00000020
+/// Automatic parameters negotiation made by the CCID (use of warm or cold
+/// resets or PPS according to a manufacturer proprietary algorithm to select
 /// the communication parameters with the ICC)
-#define CCID_FEATURES_AUTO_PNEGO 0x00000040 
+#define CCID_FEATURES_AUTO_PNEGO 0x00000040
 /// Automatic PPS made by the CCID according to the active parameters
-#define CCID_FEATURES_AUTO_PPS   0x00000080 
+#define CCID_FEATURES_AUTO_PPS   0x00000080
 /// CCID can set ICC in clock stop mode
-#define CCID_FEATURES_ICCSTOP    0x00000100 
+#define CCID_FEATURES_ICCSTOP    0x00000100
 /// NAD value other than 00 accepted (T=1 protocol in use)
-#define CCID_FEATURES_NAD        0x00000200 
+#define CCID_FEATURES_NAD        0x00000200
 /// Automatic IFSD exchange as first exchange (T=1 protocol in use)
-#define CCID_FEATURES_AUTO_IFSD  0x00000400 
+#define CCID_FEATURES_AUTO_IFSD  0x00000400
 /// TPDU level exchanges with CCID
-#define CCID_FEATURES_EXC_TPDU   0x00010000 
+#define CCID_FEATURES_EXC_TPDU   0x00010000
 /// Short APDU level exchange with CCID
-#define CCID_FEATURES_EXC_SAPDU  0x00020000 
+#define CCID_FEATURES_EXC_SAPDU  0x00020000
 /// Short and Extended APDU level exchange with CCID
-#define CCID_FEATURES_EXC_APDU   0x00040000 
+#define CCID_FEATURES_EXC_APDU   0x00040000
 /// USB Wake up signaling supported on card insertion and removal
-#define CCID_FEATURES_WAKEUP     0x00100000 
+#define CCID_FEATURES_WAKEUP     0x00100000
 
 //------------------------------------------------------------------------------
 //         Types
@@ -216,15 +216,15 @@ typedef struct
 /// Protocol Data Structure for Protocol T=0 (bProtocolNum=0, dwLength=00000005h)
 typedef struct
 {
-    /// B7-4 – FI – Index into the table 7 in ISO/IEC 7816-3:1997 selecting a 
+    /// B7-4 – FI – Index into the table 7 in ISO/IEC 7816-3:1997 selecting a
     /// clock rate conversion factor
-    /// B3-0 – DI - Index into the table 8 in ISO/IEC 7816-3:1997 selecting a 
+    /// B3-0 – DI - Index into the table 8 in ISO/IEC 7816-3:1997 selecting a
     /// baud rate conversion factor
     unsigned char bmFindexDindex;
     /// For T=0 ,B0 – 0b, B7-2 – 000000b
     /// B1 – Convention used (b1=0 for direct, b1=1 for inverse)
     unsigned char bmTCCKST0;         // 0 to 2
-    /// Extra Guardtime between two characters. Add 0 to 254 etu to the normal 
+    /// Extra Guardtime between two characters. Add 0 to 254 etu to the normal
     /// guardtime of 12etu. FFh is the same as 00h.
     unsigned char bGuardTimeT0;      // 0 to FF
     /// WI for T=0 used to define WWT
@@ -241,16 +241,16 @@ typedef struct
 /// Protocol Data Structure for Protocol T=1 (bProtocolNum=1, dwLength=00000007h)
 typedef struct
 {
-    /// B7-4 – FI – Index into the table 7 in ISO/IEC 7816-3:1997 selecting a 
+    /// B7-4 – FI – Index into the table 7 in ISO/IEC 7816-3:1997 selecting a
     /// clock rate conversion factor
-    /// B3-0 – DI - Index into the table 8 in ISO/IEC 7816-3:1997 selecting a 
+    /// B3-0 – DI - Index into the table 8 in ISO/IEC 7816-3:1997 selecting a
     /// baud rate conversion factor
     unsigned char bmFindexDindex;
     /// For T=1, B7-2 – 000100b
     /// B0 – Checksum type (b0=0 for LRC, b0=1 for CRC
     /// B1 – Convention used (b1=0 for direct, b1=1 for inverse)
     unsigned char bmTCCKST1;           // 10h, 11h, 12h, 13h
-    /// Extra Guardtime (0 to 254 etu between two characters). 
+    /// Extra Guardtime (0 to 254 etu between two characters).
     /// If value is FFh, then guardtime is reduced by 1.
     unsigned char bGuardTimeT1;        // 0 to FF
     /// B7-4 = BWI
@@ -277,7 +277,7 @@ typedef struct
    unsigned char  bLength;
    /// Functional Descriptor type
    unsigned char  bDescriptorType;
-   /// Integrated Circuit(s) Cards Interface Devices (CCID) Specification 
+   /// Integrated Circuit(s) Cards Interface Devices (CCID) Specification
    /// Release Number
    unsigned short bcdCCID;
    /// Index of the highest available slot. An USB-ICC is regarded as a single
@@ -295,16 +295,16 @@ typedef struct
    /// bit position indicates support for the associated ISO protocol.
    /// 0001h = Protocol T=0
    /// 0002h = Protocol T=1
-   /// All other bits are reserved and must be set to zero. The field is 
-   /// intended to correspond to the PCSC specification definitions. 
+   /// All other bits are reserved and must be set to zero. The field is
+   /// intended to correspond to the PCSC specification definitions.
    unsigned long  dwProtocols;
    /// Default ICC clock frequency in KHz. This is an integer value.
    unsigned long  dwDefaultClock;
    /// Maximum supported ICC clock frequency in KHz. This is an integer value.
    unsigned long  dwMaximumClock;
-   /// The number of clock frequencies that are supported by the CCID. If the 
-   /// value is 00h, the supported clock frequencies are assumed to be the 
-   /// default clock frequency defined by dwDefaultClock and the maximum clock 
+   /// The number of clock frequencies that are supported by the CCID. If the
+   /// value is 00h, the supported clock frequencies are assumed to be the
+   /// default clock frequency defined by dwDefaultClock and the maximum clock
    /// frequency defined by dwMaximumClock.
    unsigned char  bNumClockSupported;
    /// Default ICC I/O data rate in bps. This is an integer value
@@ -321,7 +321,7 @@ typedef struct
    ///   0001h indicates support for the 2-wire protocol 1
    ///   0002h indicates support for the 3-wire protocol 1
    ///   0004h indicates support for the I2C protocol 1
-   /// All other values are outside of this specification, and must be handled 
+   /// All other values are outside of this specification, and must be handled
    /// by vendor-supplied drivers.
    unsigned long  dwSynchProtocols;
    /// The value is a bitwise OR operation performed on the following values:
@@ -333,8 +333,8 @@ typedef struct
    unsigned long  dwMechanical;
    /// This value indicates what intelligent features the CCID has.
    unsigned long  dwFeatures;
-   /// For extended APDU level the value shall be between 261 + 10 (header) and 
-   /// 65544 +10, otherwise the minimum value is the wMaxPacketSize of the 
+   /// For extended APDU level the value shall be between 261 + 10 (header) and
+   /// 65544 +10, otherwise the minimum value is the wMaxPacketSize of the
    /// Bulk-OUT endpoint.
    unsigned long  dwMaxCCIDMessageLength;
    /// Significant only for CCID that offers an APDU level for exchanges.
@@ -354,8 +354,8 @@ typedef struct
 //         Exported functions
 //------------------------------------------------------------------------------
 
-extern unsigned char RDRtoPCHardwareError( unsigned char bSlot, 
-                                           unsigned char bSeq, 
+extern unsigned char RDRtoPCHardwareError( unsigned char bSlot,
+                                           unsigned char bSeq,
                                            unsigned char bHardwareErrorCode );
 
 #if !defined(NOAUTOCALLBACK)

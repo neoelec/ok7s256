@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -36,7 +36,7 @@
 //------------------------------------------------------------------------------
 #define AD1981B_CMD(cmd, data) (((cmd << 16) & AT91C_AC97C_CADDR) | data)
 
-#define AD1981B_RESET 0x00    // Reset 
+#define AD1981B_RESET 0x00    // Reset
     #define AD1981B_RESET_ID0 (1 << 0)
     #define AD1981B_RESET_ID1 (1 << 1)
     #define AD1981B_RESET_ID2 (1 << 2)
@@ -45,55 +45,55 @@
     #define AD1981B_RESET_ID5 (1 << 5)
     #define AD1981B_RESET_ID6 (1 << 6)
     #define AD1981B_RESET_ID7 (1 << 7)
-    #define AD1981B_RESET_ID8 (1 << 8)                        
+    #define AD1981B_RESET_ID8 (1 << 8)
     #define AD1981B_RESET_ID9 (1 << 9)
 
-#define AD1981B_MASTER 0x02    // Master Volume 
+#define AD1981B_MASTER 0x02    // Master Volume
     #define AD1981B_MASTER_RMV0 (1 << 0)
     #define AD1981B_MASTER_RMV1 (1 << 1)
     #define AD1981B_MASTER_RMV2 (1 << 2)
-    #define AD1981B_MASTER_RMV3 (1 << 3)           
+    #define AD1981B_MASTER_RMV3 (1 << 3)
     #define AD1981B_MASTER_RMV4 (1 << 4)
     #define AD1981B_MASTER_RM (1 << 7)
     #define AD1981B_MASTER_LMV0 (1 << 8)
     #define AD1981B_MASTER_LMV1 (1 << 9)
     #define AD1981B_MASTER_LMV2 (1 << 10)
-    #define AD1981B_MASTER_LMV3 (1 << 11)           
+    #define AD1981B_MASTER_LMV3 (1 << 11)
     #define AD1981B_MASTER_LMV4 (1 << 12)
     #define AD1981B_MASTER_MM (1 << 15)
 
-#define AD1981B_HEADPHONE 0x04    // Headphone Volume (optional) 
+#define AD1981B_HEADPHONE 0x04    // Headphone Volume (optional)
     #define AD1981B_HEADPHONE_RHV0 (1 << 0)
     #define AD1981B_HEADPHONE_RHV1 (1 << 1)
     #define AD1981B_HEADPHONE_RHV2 (1 << 2)
     #define AD1981B_HEADPHONE_RHV3 (1 << 3)
-    #define AD1981B_HEADPHONE_RHV4 (1 << 4)                
+    #define AD1981B_HEADPHONE_RHV4 (1 << 4)
     #define AD1981B_HEADPHONE_RM (1 << 7)
     #define AD1981B_HEADPHONE_LHV0 (1 << 8)
     #define AD1981B_HEADPHONE_LHV1 (1 << 9)
     #define AD1981B_HEADPHONE_LHV2 (1 << 10)
     #define AD1981B_HEADPHONE_LHV3 (1 << 11)
-    #define AD1981B_HEADPHONE_LHV4 (1 << 12)   
+    #define AD1981B_HEADPHONE_LHV4 (1 << 12)
     #define AD1981B_HEADPHONE_HPM (1 << 15)
 
-#define AD1981B_MASTER_MONO        0x06    // Master Volume Mono (optional) 
+#define AD1981B_MASTER_MONO        0x06    // Master Volume Mono (optional)
 
-#define AD1981B_MASTER_TONE        0x08    // Master Tone (Bass & Treble) (optional) 
-#define AD1981B_PC_BEEP            0x0a    // PC Beep Volume (optinal) 
-#define AD1981B_PHONE              0x0c    // Phone Volume (optional) 
-#define AD1981B_MIC                0x0e    // MIC Volume 
-#define AD1981B_LINE               0x10    // Line In Volume 
-#define AD1981B_CD                 0x12    // CD Volume 
-#define AD1981B_VIDEO              0x14    // Video Volume (optional) 
-#define AD1981B_AUX                0x16    // AUX Volume (optional) 
-#define AD1981B_PCM                0x18    // PCM Volume 
-#define AD1981B_REC_SEL            0x1a    // Record Select 
-#define AD1981B_REC_GAIN           0x1c    // Record Gain 
-#define AD1981B_REC_GAIN_MIC       0x1e    // Record Gain MIC (optional) 
-#define AD1981B_GENERAL_PURPOSE    0x20    // General Purpose (optional) 
-#define AD1981B_3D_CONTROL         0x22    // 3D Control (optional) 
-#define AD1981B_INT_PAGING         0x24    // Audio Interrupt & Paging (AC'97 2.3) 
-#define AD1981B_POWERDOWN          0x26    // Powerdown control / status 
+#define AD1981B_MASTER_TONE        0x08    // Master Tone (Bass & Treble) (optional)
+#define AD1981B_PC_BEEP            0x0a    // PC Beep Volume (optinal)
+#define AD1981B_PHONE              0x0c    // Phone Volume (optional)
+#define AD1981B_MIC                0x0e    // MIC Volume
+#define AD1981B_LINE               0x10    // Line In Volume
+#define AD1981B_CD                 0x12    // CD Volume
+#define AD1981B_VIDEO              0x14    // Video Volume (optional)
+#define AD1981B_AUX                0x16    // AUX Volume (optional)
+#define AD1981B_PCM                0x18    // PCM Volume
+#define AD1981B_REC_SEL            0x1a    // Record Select
+#define AD1981B_REC_GAIN           0x1c    // Record Gain
+#define AD1981B_REC_GAIN_MIC       0x1e    // Record Gain MIC (optional)
+#define AD1981B_GENERAL_PURPOSE    0x20    // General Purpose (optional)
+#define AD1981B_3D_CONTROL         0x22    // 3D Control (optional)
+#define AD1981B_INT_PAGING         0x24    // Audio Interrupt & Paging (AC'97 2.3)
+#define AD1981B_POWERDOWN          0x26    // Powerdown control / status
 #define AD1981B_GENPURPOSE_LPBK (1 << 7)
 #define AD1981B_GENPURPOSE_LPBK_NO (0 << 7)
 #define AD1981B_GENPURPOSE_LPBK_YES (1 << 7)

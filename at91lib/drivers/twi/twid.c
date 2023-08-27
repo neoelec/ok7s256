@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -142,7 +142,7 @@ void TWID_Handler(Twid *pTwid)
         TWI_DisableIt(pTwi, AT91C_TWI_TXCOMP);
         pTransfer->status = 0;
         if (pTransfer->callback) {
-            
+
             pTransfer->callback((Async *) pTransfer);
         }
         pTwid->pTransfer = 0;
@@ -196,7 +196,7 @@ unsigned char TWID_Read(
 
     // Asynchronous transfer
     if (pAsync) {
-    
+
         // Update the transfer descriptor
         pTwid->pTransfer = pAsync;
         pTransfer = (AsyncTwi *) pAsync;
@@ -204,7 +204,7 @@ unsigned char TWID_Read(
         pTransfer->pData = pData;
         pTransfer->num = num;
         pTransfer->transferred = 0;
-        
+
         // Enable read interrupt and start the transfer
         TWI_EnableIt(pTwi, AT91C_TWI_RXRDY);
         TWI_StartRead(pTwi, address, iaddress, isize);
@@ -285,7 +285,7 @@ unsigned char TWID_Write(
 
     // Asynchronous transfer
     if (pAsync) {
-    
+
         // Update the transfer descriptor
         pTwid->pTransfer = pAsync;
         pTransfer = (AsyncTwi *) pAsync;
@@ -293,7 +293,7 @@ unsigned char TWID_Write(
         pTransfer->pData = pData;
         pTransfer->num = num;
         pTransfer->transferred = 1;
-    
+
         // Enable write interrupt and start the transfer
         TWI_StartWrite(pTwi, address, iaddress, isize, *pData);
         TWI_EnableIt(pTwi, AT91C_TWI_TXRDY);
@@ -307,7 +307,7 @@ unsigned char TWID_Write(
 
         // Send all bytes
         while (num > 0) {
-        
+
             // Wait before sending the next byte
             timeout = 0;
             while( !TWI_ByteSent(pTwi) && (++timeout<TWITIMEOUTMAX) );
@@ -333,7 +333,7 @@ unsigned char TWID_Write(
         }
 
     }
-    
+
     return 0;
 }
 

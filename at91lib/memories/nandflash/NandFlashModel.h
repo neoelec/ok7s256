@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,14 +30,14 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 ///     Type and methods for manipulating NandFlash models.
-/// 
+///
 /// !Usage
-/// 
+///
 /// -# Find the model of a NandFlash using its device ID with the
 ///    NandFlashModel_Find function.
-/// 
+///
 /// -# Retrieve parameters of a NandFlash model using the following functions:
 ///    - NandFlashModel_GetDeviceId
 ///    - NandFlashModel_GetDeviceSizeInBlocks
@@ -68,7 +68,7 @@ struct NandSpareScheme;
 //------------------------------------------------------------------------------
 /// \page "NandFlashModel options"
 /// This page lists the possible options for a NandFlash chip.
-/// 
+///
 /// !Options
 /// - NandFlashModel_DATABUS8
 /// - NandFlashModel_DATABUS16

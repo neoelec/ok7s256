@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,31 +31,31 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// The %Dma driver is a high level dma driver which performs DMA device Initializes,
-/// tansfer mode configuration and dma transfer. 
-///  
+/// tansfer mode configuration and dma transfer.
+///
 /// !!!Usage
-/// 
+///
 /// -# Initializes a %Dma controller and dma transfer instance.
 ///    Initializes dma for specified channel using DMAD_Initialize().
-/// -# Configures the %Dma transfer buffer by giving transfer mode, transfer mode 
-///    for source peripheral and destination peripheral could be single buffer or 
-///    multi-buffer(LLI/auto-reload/contiguous buffers) with or without 
-///    Picture-In-Picture mode. 
+/// -# Configures the %Dma transfer buffer by giving transfer mode, transfer mode
+///    for source peripheral and destination peripheral could be single buffer or
+///    multi-buffer(LLI/auto-reload/contiguous buffers) with or without
+///    Picture-In-Picture mode.
 ///    DMAD_Configure_Buffer()
 /// \code
 ///   // Configure multi-buffer transfer with source address auto-reloaded and
 ///      contiguous destination address.
-///    DMAD_Configure_Buffer(DMA_CHANNEL_1, 
-///                          DMA_TRANSFER_RELOAD, 
-///                          DMA_TRANSFER_CONTIGUOUS, 
-///                          0, 
+///    DMAD_Configure_Buffer(DMA_CHANNEL_1,
+///                          DMA_TRANSFER_RELOAD,
+///                          DMA_TRANSFER_CONTIGUOUS,
+///                          0,
 ///                          0);
 /// \endcode
-/// -# Configures the %Dma characteristics (such as source/destination 
+/// -# Configures the %Dma characteristics (such as source/destination
 ///    single transfer width, buffer transfer size and source/destionation
-///    start addreass for the device corresponding to the specified channle 
+///    start addreass for the device corresponding to the specified channle
 ///    using DMAD_Configure_TransferController().
 /// -# Starts a %Dma transfer using DMAD_BufferTransfer().
 ///    The transfer is performed using the %Dma channels.
@@ -63,16 +63,16 @@
 ///    -# Initialize the callback function if specified.
 ///    -# Enable the interrupt for specified %dma channel.
 ///    -# Enable the specified %dma channel.
-///    -# Example for transfering buffer through the %Dma. 
+///    -# Example for transfering buffer through the %Dma.
 /// \code
 ///     // Start channel 1 transfer. Source image auto-reload 4 times.
 ///     and transfer to destination continguous.
 ///     DMAD_BufferTransfer(DMA_CHANNEL_1, bufferSize * 4, TestCallback, 0);
 ///     while (!DMAD_IsFinished(DMA_CHANNEL_1));
 /// \endcode
-/// -# The DMAD_Handler() must be called by the DMA Interrupt Service Routine 
+/// -# The DMAD_Handler() must be called by the DMA Interrupt Service Routine
 ///    with the corresponding %Dma instance. It is invokes to check for pending
-///    interrupts. 
+///    interrupts.
 ///    - Example for initializing %Dma interrupt handler in upper application.
 /// \code
 ///       AIC_ConfigureIT(AT91C_ID_HDMA, 0, DMAD_Handler);
@@ -113,7 +113,7 @@ typedef struct _DmaLinkList {
 } DmaLinkList;
 
 //------------------------------------------------------------------------------
-/// DMA picture-in-picture mode configuration structure. 
+/// DMA picture-in-picture mode configuration structure.
 //------------------------------------------------------------------------------
 typedef struct _PictureInPicture {
     /// Size in byte add to the source address in PIP.
@@ -131,8 +131,8 @@ typedef struct _PictureInPicture {
 //         Global functions
 //------------------------------------------------------------------------------
 extern void DMAD_Initialize(unsigned char channel);
-                     
-extern unsigned char DMAD_Configure_Buffer(unsigned char channel, 
+
+extern unsigned char DMAD_Configure_Buffer(unsigned char channel,
                              unsigned char sourceTransferMode,
                              unsigned char destTransferMode,
                              DmaLinkList *lli,
@@ -144,10 +144,10 @@ extern unsigned char DMAD_Configure_TransferController(unsigned char channel,
                                              unsigned char destWidth,
                                              unsigned int sourceAddress,
                                              unsigned int destAddress);
-                                 
-extern unsigned char DMAD_BufferTransfer(unsigned char channel, 
-                                         unsigned int size, 
-                                         DmaCallback callback, 
+
+extern unsigned char DMAD_BufferTransfer(unsigned char channel,
+                                         unsigned int size,
+                                         DmaCallback callback,
                                          unsigned char polling);
 
 extern unsigned char DMAD_IsFinished(unsigned char channel);

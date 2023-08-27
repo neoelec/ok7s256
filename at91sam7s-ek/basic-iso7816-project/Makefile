@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------
-#         ATMEL Microcontroller Software Support 
+#         ATMEL Microcontroller Software Support
 # ----------------------------------------------------------------------------
 # Copyright (c) 2008, Atmel Corporation
 #
@@ -77,7 +77,7 @@ STRIP = $(CROSS_COMPILE)strip
 OBJCOPY = $(CROSS_COMPILE)objcopy
 
 # Flags
-INCLUDES = -I$(AT91LIB)/boards/$(BOARD) -I$(AT91LIB)/peripherals 
+INCLUDES = -I$(AT91LIB)/boards/$(BOARD) -I$(AT91LIB)/peripherals
 INCLUDES += -I$(AT91LIB)/components -I$(AT91LIB)
 
 CFLAGS = -Wall -mlong-calls -ffunction-sections
@@ -105,7 +105,7 @@ VPATH += $(BOARDS)/$(BOARD) $(BOARDS)/$(BOARD)/$(CHIP)
 C_OBJECTS = main.o
 C_OBJECTS += iso7816_4.o
 C_OBJECTS += string.o
-#C_OBJECTS += dbgu.o pio.o pio_it.o aic.o 
+#C_OBJECTS += dbgu.o pio.o pio_it.o aic.o
 C_OBJECTS += led.o math.o stdio.o usart.o
 C_OBJECTS += aic.o dbgu.o pio.o pio_it.o pit.o pmc.o cp15.o
 C_OBJECTS += board_memories.o board_lowlevel.o

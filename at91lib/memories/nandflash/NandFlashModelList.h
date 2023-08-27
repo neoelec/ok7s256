@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,11 +30,11 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Static array of the various NandFlashModels which are supported.
-/// 
+///
 /// !Usage
-/// 
+///
 /// -# Uses the NandFlashModel_Find function to look for a particular model in
 ///    the nandFlashModelList array.
 //------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -95,7 +95,7 @@ const unsigned char gpKeyboardMatrixAlt[S7LEKKBM_NUMKEYS] = {
     'L',
     S7LEKKBM_2NDF_LOCK,
     'M',
-    'N', 
+    'N',
     'O',
     'P',
     'Q',

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,18 +30,18 @@
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Mass Storage class definitions.
 ///
 /// See
-/// - <a 
+/// - <a
 /// href="http://www.usb.org/developers/devclass_docs/usb_msc_overview_1.2.pdf">
 /// USB Mass Storage Class Spec. Overview</a>
 /// - <a href="http://www.usb.org/developers/devclass_docs/usbmassbulk_10.pdf">
 /// USB Mass Storage Class Bulk-Only Transport</a>
-/// 
+///
 /// !Usage
-/// 
+///
 /// -# Uses "MSD Requests" to check incoming requests from USB Host.
 /// -# Uses "MSD Subclass Codes" and "MSD Protocol Codes" to fill %device
 ///    interface descriptors for a MSD %device.
@@ -177,7 +177,7 @@
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
-/// Command Block Wrapper (CBW), 
+/// Command Block Wrapper (CBW),
 /// See Table 5.1, USB Mass Storage Class Bulk-Only Transport.
 ///
 /// The CBW shall start on a packet boundary and shall end as a

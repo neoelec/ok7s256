@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,11 +31,11 @@
 /// \page "EccNandFlash"
 ///
 /// !!!Purpose
-/// 
-/// EccNandFlash layer is called by SkipBlockNandFlash driver, it will call the bl driver (RawNandFlash) 
-/// to do write/read operations, and do ECC check to the write/read result, it then will feedback the 
+///
+/// EccNandFlash layer is called by SkipBlockNandFlash driver, it will call the bl driver (RawNandFlash)
+/// to do write/read operations, and do ECC check to the write/read result, it then will feedback the
 /// ecc check result to the upper SkipBlockNandFlash layer driver.
-///  
+///
 /// !!!Usage
 ///
 /// -# EccNandFlash_Initialize is used to initializes an EccNandFlash instance.
@@ -43,7 +43,7 @@
 ///      will calculate ecc for the data that is going to be written, and write data and spare(with
 ///      calculated ecc) to Nandflash device.
 /// -# EccNandFlash_ReadPage is uese to read a Nandflash page with ecc check, the function
-///      will read out data and spare first, then it calculates ecc with data and then compare with 
+///      will read out data and spare first, then it calculates ecc with data and then compare with
 ///      the readout ecc, and feedback the ecc check result to dl driver.
 //------------------------------------------------------------------------------
 

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -26,7 +26,7 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * ----------------------------------------------------------------------------
  */
- 
+
 //-----------------------------------------------------------------------------
 //         Headers
 //-----------------------------------------------------------------------------
@@ -41,7 +41,7 @@
 /// terminating list entry for register in configuration file
 #define OV9650_REG_TERM 0xFF
 /// terminating list entry for value in configuration file
-#define OV9650_VAL_TERM 0xFF 
+#define OV9650_VAL_TERM 0xFF
 
 //-----------------------------------------------------------------------------
 //         Local Functions
@@ -214,7 +214,7 @@ void ov95x_DumpRegisters(Twid *pTwid)
         TRACE_INFO_WP("[0x%02x]=0x%02x ", i, value);
         if( ((i+1)%5) == 0 ) {
             TRACE_INFO_WP("\n\r");
-        }        
+        }
     }
     TRACE_INFO_WP("\n\r");
 }

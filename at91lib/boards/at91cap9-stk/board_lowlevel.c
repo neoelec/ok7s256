@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -44,7 +44,7 @@
     Constants: Clock and PLL settings
 
         BOARD_OSCOUNT - Startup time of main oscillator (in number of slow clock
-                        ticks). 
+                        ticks).
         BOARD_USBDIV - USB PLL divisor value to obtain a 48MHz clock.
         BOARD_CKGR_PLL - PLL frequency range.
         BOARD_PLLCOUNT - PLL startup time (in number of slow clock ticks).
@@ -105,10 +105,10 @@ void defaultIrqHandler( void )
 static void BOARD_AT73C224_initialize(void)
 {
     /// configure Pio pins
-    static const Pin pinTWI[] = {PINS_TWI};  
+    static const Pin pinTWI[] = {PINS_TWI};
     AT91C_BASE_PMC->PMC_PCER = 1 << AT91C_ID_TWI;
     PIO_Configure(pinTWI, 1);
-    
+
     // Reset the TWI
     AT91C_BASE_TWI->TWI_CR = AT91C_TWI_SWRST;
     // Set master mode
@@ -116,7 +116,7 @@ static void BOARD_AT73C224_initialize(void)
     // Set Clock Waveform Generator Register
     // MCK  = 100000000
     // TWCK = 400000
-    AT91C_BASE_TWI->TWI_CWGR = 0x00007A7A;    
+    AT91C_BASE_TWI->TWI_CWGR = 0x00007A7A;
 }
 
 //------------------------------------------------------------------------------
@@ -129,7 +129,7 @@ static void BOARD_AT73C224_Read(
     )
 {
     // Set STOP signal if only one byte is sent
-    //--------------------------------------------------------------------------  
+    //--------------------------------------------------------------------------
     AT91C_BASE_TWI->TWI_CR = AT91C_TWI_STOP;
 
     // Start read
@@ -140,19 +140,19 @@ static void BOARD_AT73C224_Read(
     AT91C_BASE_TWI->TWI_IADR = registerAddress;
     // Send START condition
     AT91C_BASE_TWI->TWI_CR = AT91C_TWI_START;
-    
+
     // Read all bytes, setting STOP before the last byte
-    //--------------------------------------------------------------------------    
+    //--------------------------------------------------------------------------
     AT91C_BASE_TWI->TWI_CR = AT91C_TWI_STOP;
 
     // Wait for byte then read and store it
-    //--------------------------------------------------------------------------    
+    //--------------------------------------------------------------------------
     while (! ((AT91C_BASE_TWI->TWI_SR & AT91C_TWI_RXRDY) == AT91C_TWI_RXRDY)) ;
     //(unsigned char)*buffer = AT91C_BASE_TWI->TWI_RHR;
     *pByte = AT91C_BASE_TWI->TWI_RHR;
-    
+
     // Wait for transfer to be complete
-    //--------------------------------------------------------------------------    
+    //--------------------------------------------------------------------------
     while (! ((AT91C_BASE_TWI->TWI_SR & AT91C_TWI_TXCOMP_MASTER) == AT91C_TWI_TXCOMP_MASTER));
 }
 
@@ -171,7 +171,7 @@ static void BOARD_AT73C224_Write(
     AT91C_BASE_TWI->TWI_IADR = registerAddress;
     // Write the byte
     AT91C_BASE_TWI->TWI_THR = byte;
-    
+
     // Wait for transfer to be complete
     while (! ((AT91C_BASE_TWI->TWI_SR & AT91C_TWI_TXCOMP_MASTER) == AT91C_TWI_TXCOMP_MASTER));
 }
@@ -185,7 +185,7 @@ static unsigned char configure_AT73C224(void)
 
     TRACE_CONFIGURE(DBGU_STANDARD, 115200, BOARD_MCK);
     //TRACE_INFO("configure_AT73C224\n\r");
-    
+
     BOARD_AT73C224_initialize();
 
     // Check that we are communicating with the good device
@@ -246,19 +246,19 @@ static unsigned char configure_AT73C224(void)
     BOARD_AT73C224_Write(0x0B, 0x11, AT73C223_SLAVEADDRESS_U5);
 
     // Passage of Buck in PWM mode
-    // Write 0xD8 @ 0x14           
+    // Write 0xD8 @ 0x14
     BOARD_AT73C224_Write(0xD8, 0x14, AT73C223_SLAVEADDRESS_U4);
 
     // Setting the ramp for optimal operation for the application CAP
     BOARD_AT73C224_Write(0x40, 0x72, AT73C223_SLAVEADDRESS_U5);   // RTRIM : 0x72 ;
 
     // Passage of Buck in PWM mode
-    // Write 0xD8 @ 0x14                 
+    // Write 0xD8 @ 0x14
     BOARD_AT73C224_Write(0xD8, 0x14, AT73C223_SLAVEADDRESS_U5);
 
     // Init for USB Host
     /*
-    // At the start-up, it is recommended to put 1Amp over current threshold 
+    // At the start-up, it is recommended to put 1Amp over current threshold
     // in order not to generate a reset of the product.
     BOARD_AT73C224_Write(0x01, 0x11, AT73C223_SLAVEADDRESS_U4);
 
@@ -304,7 +304,7 @@ void LowLevelInit( void )
 
     // Set Master Clock Division only (before select the clock)
     // Processor clock = PLLA (200 MHz)
-    // Master clock    = PLLA / 2 (100 MHz)   
+    // Master clock    = PLLA / 2 (100 MHz)
     AT91C_BASE_PMC->PMC_MCKR = AT91C_PMC_CSS_SLOW_CLK | AT91C_PMC_PRES_CLK | AT91C_PMC_MDIV_2;
     while (!(AT91C_BASE_PMC->PMC_SR & AT91C_PMC_MCKRDY));
 
@@ -334,14 +334,14 @@ void LowLevelInit( void )
 
     /* Remap
      *******/
-    BOARD_RemapRam();   
-    
+    BOARD_RemapRam();
+
     // Disable RTT and PIT interrupts (potential problem when program A
     // configures RTT, then program B wants to use PIT only, interrupts
     // from the RTT will still occur since they both use AT91C_ID_SYS)
     AT91C_BASE_RTTC->RTTC_RTMR &= ~(AT91C_RTTC_ALMIEN | AT91C_RTTC_RTTINCIEN);
-    AT91C_BASE_PITC->PITC_PIMR &= ~AT91C_PITC_PITIEN;        
-    
+    AT91C_BASE_PITC->PITC_PIMR &= ~AT91C_PITC_PITIEN;
+
     configure_AT73C224();
 }
 

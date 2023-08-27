@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,11 +31,11 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// Definitions for using USB %audio control interfaces.
 ///
 /// !!!Usage
-/// 
+///
 /// -# When declaring a standard USB interface descriptor for an %audio control
 ///    interface, use the "USB Audio control interface codes" constants.
 //------------------------------------------------------------------------------
@@ -52,7 +52,7 @@
 ///
 /// This page lists the class, subclass and protocol codes that a USB Audio
 /// Control interface descriptor should display.
-/// 
+///
 /// !Codes
 /// - AUDControlInterfaceDescriptor_CLASS
 /// - AUDControlInterfaceDescriptor_SUBCLASS

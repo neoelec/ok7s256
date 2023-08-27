@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -55,7 +55,7 @@
     Constants: Clock and PLL settings
 
         BOARD_OSCOUNT - Startup time of main oscillator (in number of slow clock
-                        ticks). 
+                        ticks).
         BOARD_USBDIV - USB PLL divisor value to obtain a 48MHz clock.
         BOARD_CKGR_PLL - PLL frequency range.
         BOARD_PLLCOUNT - PLL startup time (in number of slow clock ticks).
@@ -108,21 +108,21 @@ void defaultIrqHandler( void )
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 /// Performs the low-level initialization of the chip. Initialisation depends
-/// on where the application is executed: 
+/// on where the application is executed:
 /// - in sdram: it means that sdram has previously been initialized. No further
 ///             initialization is required.
-/// - in sram:  PLL shall be initialized in LowLevelInit. Other initializations 
+/// - in sram:  PLL shall be initialized in LowLevelInit. Other initializations
 ///             can be done later by the application.
-/// - in norflash: LowLevelInit can't be executed in norflash because SMC 
+/// - in norflash: LowLevelInit can't be executed in norflash because SMC
 ///             settings can't be changed while executing in external flash.
 ///             LowLevelInit shall be executed in internal sram. It initializes
-///             PLL and SMC. 
+///             PLL and SMC.
 /// This function also reset the AIC and disable RTT and PIT interrupts
 //------------------------------------------------------------------------------
 void LowLevelInit(void)
 {
     unsigned char i;
-    // If already running in sdram, PLL settings have already been done 
+    // If already running in sdram, PLL settings have already been done
 #if !defined(sdram)
 
     /* Initialize main oscillator

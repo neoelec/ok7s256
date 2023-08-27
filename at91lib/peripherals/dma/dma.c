@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -106,7 +106,7 @@ unsigned int DMA_GetMaskedStatus(void)
 }
 
 //------------------------------------------------------------------------------
-/// Enables DMAC channel 
+/// Enables DMAC channel
 /// \param channel Particular channel number.
 //------------------------------------------------------------------------------
 void DMA_EnableChannel(unsigned int channel)
@@ -116,7 +116,7 @@ void DMA_EnableChannel(unsigned int channel)
 }
 
 //------------------------------------------------------------------------------
-/// Disables a DMAC channel 
+/// Disables a DMAC channel
 /// \param channel Particular channel number.
 //------------------------------------------------------------------------------
 void DMA_DisableChannel(unsigned int channel)
@@ -146,7 +146,7 @@ void DMA_ClearAutoMode(unsigned int channel)
 }
 
 //------------------------------------------------------------------------------
-/// Return DMAC channel status 
+/// Return DMAC channel status
 //------------------------------------------------------------------------------
 unsigned int DMA_GetChannelStatus(void)
 {
@@ -199,8 +199,8 @@ void DMA_SetDescriptorAddr(unsigned char channel, unsigned int address)
 /// \param done Transfer done field.
 //-----------------------------------------------------------------------------
 void DMA_SetSourceBufferSize(unsigned char channel,
-                             unsigned int size, 
-                             unsigned char sourceWidth, 
+                             unsigned int size,
+                             unsigned char sourceWidth,
                              unsigned char destWidth,
                              unsigned char done)
 {
@@ -212,7 +212,7 @@ void DMA_SetSourceBufferSize(unsigned char channel,
                                                    destWidth << 28 |
                                                    done << 31);
 }
-                                
+
 //-----------------------------------------------------------------------------
 /// Set DMA transfer mode for source used by a HDMA channel.
 /// \param channel Particular channel number.
@@ -220,14 +220,14 @@ void DMA_SetSourceBufferSize(unsigned char channel,
 /// \param addressingType Type of addrassing mode
 ///                       0 : incrementing, 1: decrementing, 2: fixed.
 //-----------------------------------------------------------------------------
-void DMA_SetSourceBufferMode(unsigned char channel, 
+void DMA_SetSourceBufferMode(unsigned char channel,
                              unsigned char transferMode,
                              unsigned char addressingType)
 {
     unsigned int value;
-    
+
     ASSERT(channel < DMA_CHANNEL_NUM, "this channel does not exist");
-    
+
     value = AT91C_BASE_HDMA->HDMA_CH[channel].HDMA_CTRLB;
     value &= ~ (AT91C_SRC_DSCR | AT91C_SRC_INCR | 1<<31);
     switch(transferMode){
@@ -241,9 +241,9 @@ void DMA_SetSourceBufferMode(unsigned char channel,
         case DMA_TRANSFER_CONTIGUOUS:
              value |= AT91C_SRC_DSCR | addressingType << 24 | 1<<31;
              break;
-    }             
+    }
     AT91C_BASE_HDMA->HDMA_CH[channel].HDMA_CTRLB = value;
-    
+
     if(transferMode == DMA_TRANSFER_RELOAD || transferMode == DMA_TRANSFER_CONTIGUOUS){
         value = AT91C_BASE_HDMA->HDMA_CH[channel].HDMA_CFG;
         value &= ~ (AT91C_SRC_REP);
@@ -265,17 +265,17 @@ void DMA_SetSourceBufferMode(unsigned char channel,
 /// \param addressingType Type of addrassing mode
 ///                       0 : incrementing, 1: decrementing, 2: fixed.
 //-----------------------------------------------------------------------------
-void DMA_SetDestBufferMode(unsigned char channel, 
+void DMA_SetDestBufferMode(unsigned char channel,
                              unsigned char transferMode,
                              unsigned char addressingType)
 {
     unsigned int value;
-    
+
     ASSERT(channel < DMA_CHANNEL_NUM, "this channel does not exist");
-    
+
     value = AT91C_BASE_HDMA->HDMA_CH[channel].HDMA_CTRLB;
     value &= ~ (AT91C_DST_DSCR | AT91C_DST_INCR);
-    
+
     switch(transferMode){
         case DMA_TRANSFER_SIGNLE:
         case DMA_TRANSFER_RELOAD:
@@ -285,7 +285,7 @@ void DMA_SetDestBufferMode(unsigned char channel,
         case DMA_TRANSFER_LLI:
              value |= addressingType << 24;
              break;
-    }             
+    }
     AT91C_BASE_HDMA->HDMA_CH[channel].HDMA_CTRLB = value;
     if(transferMode == DMA_TRANSFER_RELOAD || transferMode == DMA_TRANSFER_CONTIGUOUS){
         value = AT91C_BASE_HDMA->HDMA_CH[channel].HDMA_CFG;
@@ -318,10 +318,10 @@ void DMA_SetConfiguration(unsigned char channel, unsigned int value)
 /// \param pipHole stop on done mode.
 /// \param pipBoundary lock mode.
 //------------------------------------------------------------------------------
-void DMA_SPIPconfiguration(unsigned char channel, 
-                           unsigned int pipHole, 
+void DMA_SPIPconfiguration(unsigned char channel,
+                           unsigned int pipHole,
                            unsigned int pipBoundary)
-                     
+
 {
     unsigned int value;
     ASSERT(channel < DMA_CHANNEL_NUM, "this channel does not exist");
@@ -338,10 +338,10 @@ void DMA_SPIPconfiguration(unsigned char channel,
 /// \param pipHole stop on done mode.
 /// \param pipBoundary lock mode.
 //------------------------------------------------------------------------------
-void DMA_DPIPconfiguration(unsigned char channel, 
-                           unsigned int pipHole, 
+void DMA_DPIPconfiguration(unsigned char channel,
+                           unsigned int pipHole,
                            unsigned int pipBoundary)
-                     
+
 {
     unsigned int value;
     ASSERT(channel < DMA_CHANNEL_NUM, "this channel does not exist");

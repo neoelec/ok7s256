@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -146,7 +146,7 @@ static unsigned char DM9161_FindValidPhy(Dm9161 * pDm)
             }
         }
     }
-    
+
     EMAC_DisableMdio();
     if (rc != 0xFF) {
 
@@ -352,7 +352,7 @@ unsigned char DM9161_AutoNegotiate(Dm9161 *pDm)
     }
     else {
         TRACE_ERROR("Problem OUI value\n\r");
-    }        
+    }
 
     // Setup control register
     rc  = EMAC_ReadPhy(phyAddress, DM9161_BMCR, &value, retryMax);

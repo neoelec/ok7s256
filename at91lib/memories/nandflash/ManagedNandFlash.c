@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -68,7 +68,7 @@ static unsigned char IsDeviceVirgin(const struct ManagedNandFlash *managed)
     const struct NandSpareScheme *scheme = NandFlashModel_GetScheme(MODEL(managed));
     unsigned char spare[NandCommon_MAXPAGESPARESIZE];
     unsigned char badBlockMarker;
-    
+
     unsigned char error;
 
     // Read spare area of page #0
@@ -340,7 +340,7 @@ unsigned char ManagedNandFlash_Initialize(
                     && (managed->blockStatuses[block].status != NandBlockStatus_BAD)) {
 
                     count++;
-                
+
                     switch (managed->blockStatuses[block].status) {
                         case NandBlockStatus_LIVE: live++; break;
                         case NandBlockStatus_DIRTY: dirty++; break;
@@ -350,7 +350,7 @@ unsigned char ManagedNandFlash_Initialize(
             }
 
             if (count > 0) {
-            
+
                 TRACE_FATAL("|  %4d  |  %8d  |  %4d  |  %4d  |  %4d  |\n\r",
                           eraseCount, count, free, live, dirty);
             }

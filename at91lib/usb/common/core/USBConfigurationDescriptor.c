@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -45,7 +45,7 @@
 //-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
-/// Returns the total length of a configuration, i.e. including the 
+/// Returns the total length of a configuration, i.e. including the
 /// descriptors following it.
 /// \param configuration Pointer to a USBConfigurationDescriptor instance.
 /// \return Total length (in bytes) of the configuration.
@@ -95,7 +95,7 @@ unsigned char USBConfigurationDescriptor_IsSelfPowered(
 ///
 /// Note that if the pointer to an array is null (0), nothing is stored in
 /// it.
-/// \param configuration Pointer to the start of the whole Configuration 
+/// \param configuration Pointer to the start of the whole Configuration
 ///                      descriptor.
 /// \param interfaces    Pointer to the Interface descriptor array.
 /// \param endpoints     Pointer to the Endpoint descriptor array.
@@ -124,7 +124,7 @@ void USBConfigurationDescriptor_Parse(
              == USBGenericDescriptor_INTERFACE) {
 
             if (interfaces) {
-            
+
                 *interfaces = (USBInterfaceDescriptor *) descriptor;
                 interfaces++;
             }
@@ -133,7 +133,7 @@ void USBConfigurationDescriptor_Parse(
                   == USBGenericDescriptor_ENDPOINT) {
 
             if (endpoints) {
-                
+
                 *endpoints = (USBEndpointDescriptor *) descriptor;
                 endpoints++;
             }

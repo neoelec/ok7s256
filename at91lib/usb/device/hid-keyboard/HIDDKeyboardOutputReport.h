@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -59,7 +59,7 @@
 //------------------------------------------------------------------------------
 /// HID output report structure used by the host to control the state of
 /// the keyboard LEDs.
-/// 
+///
 /// Only the first three bits are relevant, the other 5 are used as
 /// padding bits.
 //------------------------------------------------------------------------------

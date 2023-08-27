@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -202,8 +202,8 @@ void MEDDdram_Initialize(Media *media,
                          unsigned int baseAddress,
                          unsigned int size)
 {
-    unsigned int value;  
-  
+    unsigned int value;
+
     TRACE_INFO("MEDDdram init\n\r");
 
     // Initialize DDRAM if not already done
@@ -217,13 +217,13 @@ void MEDDdram_Initialize(Media *media,
         *((volatile unsigned int *) AT91C_DDR2) = value;
     }
     else {
-    
+
         TRACE_INFO("Initializing the DDRAM ...\n\r");
         BOARD_ConfigureDdram(0, BOARD_DDRAM_BUSWIDTH); // Micron, 16 bit data bus size
     }
-    
+
     // Initialize media fields
-    //--------------------------------------------------------------------------        
+    //--------------------------------------------------------------------------
     media->write = MEDDdram_Write;
     media->read = MEDDdram_Read;
     media->handler = 0;

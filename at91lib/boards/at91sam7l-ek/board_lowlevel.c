@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -123,7 +123,7 @@ void LowLevelInit(void)
     // Enable external oscillator (on first boot only, after that command does nothing)
     gLowLevelInitSupcStatus = AT91C_BASE_SUPC->SUPC_SR;
     if ((gLowLevelInitSupcStatus & AT91C_SUPC_OSCSEL) != AT91C_SUPC_OSCSEL) {
-        
+
         AT91C_BASE_SUPC->SUPC_CR = (0xA5 << 24) | AT91C_SUPC_XTALSEL;
         while ((AT91C_BASE_SUPC->SUPC_SR & AT91C_SUPC_OSCSEL) != AT91C_SUPC_OSCSEL);
     }

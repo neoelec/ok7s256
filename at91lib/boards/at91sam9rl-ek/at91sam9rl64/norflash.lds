@@ -43,7 +43,7 @@ MEMORY
 }
 
 SECTIONS
-{  
+{
     .prerelocate : AT (_efixed)
     {
         . = ALIGN(4);
@@ -53,7 +53,7 @@ SECTIONS
         . = ALIGN(4);
         _eprerelocate = .;
     } >sram
-    
+
     .fixed :
     {
         . = ALIGN(4);
@@ -83,7 +83,7 @@ SECTIONS
         . = ALIGN(4);
         _ezero = .;
     } >sram
-    
+
     _sstack = 0x310000;
 }
 end = .;

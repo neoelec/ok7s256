@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definition and functions for using AT91SAM7L-related features, such
 /// has PIO pins, memories, etc.
-/// 
+///
 /// !Usage
 /// -# The code for booting the board is provided by board_cstartup.S and
 ///    board_lowlevel.c.
@@ -41,20 +41,20 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91SAM7L-STK characteristics, AT91SAM7L-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Usage
 /// -# For operating frequency information, see "SAM7L-STK - Operating frequencies".
 /// -# For using portable PIO definitions, see "SAM7L-STK - PIO definitions".
 //------------------------------------------------------------------------------
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 //------------------------------------------------------------------------------
@@ -92,7 +92,7 @@
 /// \page "SAM7L-STK - Operating frequencies"
 /// This page lists several definition related to the board operating frequency
 /// (when using the initialization done by board_lowlevel.c).
-/// 
+///
 /// !Definitions
 /// - BOARD_MCK
 
@@ -106,10 +106,10 @@
 /// are named using the following convention: PIN_* for a constant which defines
 /// a single Pin instance (but may include several PIOs sharing the same
 /// controller), and PINS_* for a list of Pin instances.
-///  
+///
 /// !PCK
 /// - PIN_PCK0
-/// 
+///
 /// !DBGU
 /// - PINS_DBGU
 ///
@@ -125,14 +125,14 @@
 /// - PUSHBUTTON_BP3
 /// - PUSHBUTTON_BP4
 /// - PUSHBUTTON_BP5
-/// 
+///
 /// !SPI
 /// - PIN_SPI_MOSI
 /// - PIN_SPI_MISO
 /// - PIN_SPI_SPCK
 /// - PIN_SPI_NPCS3
 /// - PINS_SPI
-/// 
+///
 /// !USB
 /// - PIN_USB_VBUS
 /// - PIN_USB_PULLUP
@@ -223,7 +223,7 @@
 //------------------------------------------------------------------------------
 /// \page "SAM7L-STK - Memories"
 /// This page lists definitions related to internal & external on-board memories.
-/// 
+///
 /// !Embedded Flash
 /// - BOARD_FLASH_EEFC
 /// - BOARD_FLASH_IAP_ADDRESS

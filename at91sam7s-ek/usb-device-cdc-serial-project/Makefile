@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------
-#         ATMEL Microcontroller Software Support 
+#         ATMEL Microcontroller Software Support
 # ----------------------------------------------------------------------------
 # Copyright (c) 2008, Atmel Corporation
 #
@@ -76,7 +76,7 @@ SIZE = $(CROSS_COMPILE)size
 OBJCOPY = $(CROSS_COMPILE)objcopy
 
 # Flags
-INCLUDES = -I$(AT91LIB)/boards/$(BOARD) -I$(AT91LIB)/peripherals 
+INCLUDES = -I$(AT91LIB)/boards/$(BOARD) -I$(AT91LIB)/peripherals
 INCLUDES += -I$(AT91LIB)/components -I$(AT91LIB)/usb/device -I$(AT91LIB)
 
 CFLAGS = -Wall -mlong-calls -ffunction-sections
@@ -113,7 +113,7 @@ C_OBJECTS += USBDCallbacks_Reset.o
 C_OBJECTS += USBDDriverCb_CfgChanged.o
 C_OBJECTS += USBDDriverCb_IfSettingChanged.o
 C_OBJECTS += USBSetAddressRequest.o USBGenericDescriptor.o USBInterfaceRequest.o
-C_OBJECTS += USBGenericRequest.o USBGetDescriptorRequest.o 
+C_OBJECTS += USBGenericRequest.o USBGetDescriptorRequest.o
 C_OBJECTS += USBSetConfigurationRequest.o USBFeatureRequest.o
 C_OBJECTS += USBEndpointDescriptor.o USBConfigurationDescriptor.o
 C_OBJECTS += led.o string.o stdio.o

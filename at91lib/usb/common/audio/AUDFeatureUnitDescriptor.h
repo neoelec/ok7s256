@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -53,7 +53,7 @@
 /// This page lists the available controls for each channel of the audio
 /// interface. Each channel can have any control combination; simply perform
 /// a bitwise OR ('|') to combine several values.
-/// 
+///
 /// !Controls
 /// -# AUDFeatureUnitDescriptor_MUTE
 /// -# AUDFeatureUnitDescriptor_VOLUME

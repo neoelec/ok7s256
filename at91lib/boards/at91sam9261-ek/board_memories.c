@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -149,7 +149,7 @@ void BOARD_ConfigureSdram(unsigned char busWidth)
                                         | AT91C_SDRAMC_TWR_2
                                         | AT91C_SDRAMC_TRC_7
                                         | AT91C_SDRAMC_TRP_2
-                                        | AT91C_SDRAMC_TRCD_2 
+                                        | AT91C_SDRAMC_TRCD_2
                                         | AT91C_SDRAMC_TRAS_5
                                         | AT91C_SDRAMC_TXSR_8);
 
@@ -295,13 +295,13 @@ void BOARD_ConfigureNandFlash(unsigned char busWidth)
     AT91C_BASE_SMC->SMC_PULSE3 = 0x03030303;
     AT91C_BASE_SMC->SMC_CYCLE3 = 0x00050005;
       AT91C_BASE_SMC->SMC_CTRL3  = 0x00020003;
-      
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
 }
@@ -323,20 +323,20 @@ void BOARD_ConfigureNandFlash48MHz(unsigned char busWidth)
                                  | AT91C_SMC_WRITEMODE
                                  | AT91C_SMC_NWAITM_NWAIT_DISABLE
                                  | ((0x1 << 16) & AT91C_SMC_TDF));
-    
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
 }
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NorFlash access
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNorFlash(unsigned char busWidth)
 {
@@ -364,7 +364,7 @@ void BOARD_ConfigureNorFlash(unsigned char busWidth)
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NorFlash access at 48MHz.
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNorFlash48MHz(unsigned char busWidth)
 {
@@ -376,17 +376,17 @@ void BOARD_ConfigureNorFlash48MHz(unsigned char busWidth)
                                   | AT91C_SMC_WRITEMODE
                                   | AT91C_SMC_NWAITM_NWAIT_DISABLE
                                   | ((0x1 << 16) & AT91C_SMC_TDF));
-                           
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
     else if (busWidth == 32) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL0 |= AT91C_SMC_DBW_WIDTH_THIRTY_TWO_BITS;
     }
 }

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,8 +31,8 @@
 /// \page "MappedNandFlash"
 ///
 /// !!!Purpose
-/// 
-/// MappedNandFlash layer will do operations on logical blocks of nandflash, it is called by 
+///
+/// MappedNandFlash layer will do operations on logical blocks of nandflash, it is called by
 /// TranslatedNandFlash layer
 //------------------------------------------------------------------------------
 

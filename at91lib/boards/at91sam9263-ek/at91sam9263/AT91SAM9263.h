@@ -5083,7 +5083,7 @@ typedef struct _AT91S_ISI {
 #define AT91C_HECC1_CR  (AT91_CAST(AT91_REG *) 	0xFFFFE600) // (HECC1)  ECC reset register
 #define AT91C_HECC1_NPR (AT91_CAST(AT91_REG *) 	0xFFFFE610) // (HECC1)  ECC Parity N register
 #define AT91C_HECC1_SR  (AT91_CAST(AT91_REG *) 	0xFFFFE608) // (HECC1)  ECC Status register
-// ========== Register definition for ISI peripheral ========== 
+// ========== Register definition for ISI peripheral ==========
 #define AT91C_ISI_CDBA  (AT91_CAST(AT91_REG *) 	0xFFFC402C) // (ISI) Codec Dma Address Register
 #define AT91C_ISI_PDECF (AT91_CAST(AT91_REG *) 	0xFFFC4024) // (ISI) Preview Decimation Factor Register
 #define AT91C_ISI_IMR   (AT91_CAST(AT91_REG *) 	0xFFFC4014) // (ISI) Interrupt Mask Register

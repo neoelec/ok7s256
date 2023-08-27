@@ -1,5 +1,5 @@
 /*
- * The 'old-style' K&R function declarations have been replaced with 
+ * The 'old-style' K&R function declarations have been replaced with
  * 'ANSI-C-style' function declarations (in dhry_1.c and dhry_2,c)
  */
 
@@ -8,9 +8,9 @@
  *
  *                   "DHRYSTONE" Benchmark Program
  *                   -----------------------------
- *                                                                            
+ *
  *  Version:    C, Version 2.1
- *                                                                            
+ *
  *  File:       dhry_1.c (part 2 of 3)
  *
  *  Date:       May 25, 1988

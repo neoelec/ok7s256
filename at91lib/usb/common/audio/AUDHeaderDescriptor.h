@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -52,7 +52,7 @@
 /// \page "USB Audio class releases"
 /// This page lists the existing versions of the Audio class specification.
 ///
-/// 
+///
 /// !Versions
 /// - AUDHeaderDescriptor_AUD1_00
 

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -38,7 +38,7 @@
 //------------------------------------------------------------------------------
 //        Local defination
 //------------------------------------------------------------------------------
- 
+
 /// Command for vendor command set CMD_SET_AMD.
 #define AMD_CMD_IDOUT         0x00F0
 #define AMD_CMD_CFI           0x0098
@@ -81,15 +81,15 @@
 void amd_Reset(struct NorFlashInfo *pNorFlashInfo, unsigned int address)
 {
     unsigned char busWidth;
-    
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_UNLOCK_1);
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2),
                  AMD_CMD_UNLOCK_2);
-    WriteCommand(busWidth, 
+    WriteCommand(busWidth,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_IDOUT);
 }
@@ -101,42 +101,42 @@ void amd_Reset(struct NorFlashInfo *pNorFlashInfo, unsigned int address)
 /// \param index 0: manufactorid 1: device id.
 //------------------------------------------------------------------------------
 unsigned int amd_ReadIdentification(
-    struct NorFlashInfo *pNorFlashInfo, 
+    struct NorFlashInfo *pNorFlashInfo,
     unsigned char index)
 {
     unsigned int id;
     unsigned char busWidth;
     unsigned int address;
-    
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
-    
+
     // The amd_Read identification command sequence is initiated by first
-    // writing two unlock cycles. 
-    WriteCommand(busWidth, 
+    // writing two unlock cycles.
+    WriteCommand(busWidth,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_UNLOCK_1);
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2),
                  AMD_CMD_UNLOCK_2);
-                 
+
     // Followed by a third write cycle that contains the autoselect command.
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_IDIN);
-    
-    // The device then enters the autoselect mode. It may read at any address any 
-    // number of times without initiating another autoselect command sequence.   
+
+    // The device then enters the autoselect mode. It may read at any address any
+    // number of times without initiating another autoselect command sequence.
     address = NorFlash_GetByteAddressInChip(pNorFlashInfo, index);
     ReadRawData(busWidth, address, (unsigned char*)&id);
 
     // The system must write the exit command to return to the read mode
-    WriteCommand(busWidth, 
+    WriteCommand(busWidth,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_UNLOCK_1);
-    WriteCommand(busWidth, 
+    WriteCommand(busWidth,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2),
                  AMD_CMD_UNLOCK_2);
-    WriteCommand(busWidth, 
+    WriteCommand(busWidth,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_IDOUT);
     return id;
@@ -157,26 +157,26 @@ unsigned char amd_Program(
     unsigned int busAddress;
     unsigned char done = 0;
     unsigned char busWidth;
-    
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
     // The program command sequence is initiated by writing two unlock write cycles.
-    WriteCommand(busWidth, 
+    WriteCommand(busWidth,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_UNLOCK_1);
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2),
                  AMD_CMD_UNLOCK_2);
-    // Followed by the program set-up command.               
-    WriteCommand(busWidth, 
+    // Followed by the program set-up command.
+    WriteCommand(busWidth,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_PROGRAM);
-                 
-    // The program address and data are written next, 
+
+    // The program address and data are written next,
     // which in turn initiate the Embedded Program algorithm.
     busAddress = NorFlash_GetAddressInChip(pNorFlashInfo, address);
     WriteRawData(busWidth, busAddress, (unsigned char*)&data);
-    
-    // Data polling 
+
+    // Data polling
     do {
         ReadRawData(busWidth, busAddress, (unsigned char *)&pollingData);
         // Check if the chip program algorithm is completed.
@@ -186,12 +186,12 @@ unsigned char amd_Program(
         }
         else {
             // check if chip Program algrithm exceeded timing limits
-            
+
             if (pollingData & AMD_POLLING_DQ5 ) {
-            
+
                 // I/O should be rechecked.
                 ReadRawData(busWidth, busAddress, (unsigned char *)&pollingData);
-                
+
                 if ((pollingData & AMD_POLLING_DQ7) == (data & AMD_POLLING_DQ7)) {
                     // Program operation successful. Device in read mode.
                     done = 1;
@@ -247,41 +247,41 @@ unsigned int AMD_ReadDeviceID(struct NorFlashInfo *pNorFlashInfo)
 /// \param address Address offset to be erase.
 //------------------------------------------------------------------------------
 unsigned char AMD_EraseSector(
-    struct NorFlashInfo *pNorFlashInfo, 
+    struct NorFlashInfo *pNorFlashInfo,
     unsigned int address)
 {
     unsigned int pollingData;
     unsigned int busAddress;
     unsigned char busWidth;
     unsigned char done = 0;
-    
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
-    
-    //Programming is a six-bus-cycle operation. 
+
+    //Programming is a six-bus-cycle operation.
     // The erase command sequence is initiated by writing two unlock write cycles.
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_UNLOCK_1);
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2),
                  AMD_CMD_UNLOCK_2);
     // Followed by the program set-up command.
-    WriteCommand(busWidth, 
+    WriteCommand(busWidth,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_ERASE_SETUP);
     // Two additional unlock cycles are written.
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_UNLOCK_1);
-    WriteCommand(busWidth, 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2), 
+    WriteCommand(busWidth,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2),
                  AMD_CMD_UNLOCK_2);
-        
+
     // Followed by the address of the sector to be erased, and the sector erase command.
-    busAddress = NorFlash_GetAddressInChip(pNorFlashInfo,address);              
+    busAddress = NorFlash_GetAddressInChip(pNorFlashInfo,address);
     WriteCommand(busWidth, busAddress, AMD_CMD_ERASE_SECTOR);
-    
-    // Data polling 
+
+    // Data polling
     do {
         ReadRawData(busWidth, busAddress, (unsigned char *)&pollingData);
         // Check if the chip erase algorithm is completed.
@@ -292,7 +292,7 @@ unsigned char AMD_EraseSector(
         else {
             // check if sector earse algrithm exceeded timing limits
             if (pollingData & AMD_POLLING_DQ5 ) {
-            
+
                 // I/O should be rechecked.
                 ReadRawData(busWidth, busAddress, (unsigned char *)&pollingData);
                 if ((pollingData & AMD_POLLING_DQ7) == AMD_POLLING_DQ7 ){
@@ -321,37 +321,37 @@ unsigned char AMD_EraseChip(struct NorFlashInfo *pNorFlashInfo)
     unsigned char busWidth;
     unsigned int address;
     unsigned char done = 0;
-        
+
     busWidth = NorFlash_GetDataBusWidth(pNorFlashInfo);
-    
-    //Programming is a six-bus-cycle operation. 
+
+    //Programming is a six-bus-cycle operation.
     // The erase command sequence is initiated by writing two unlock write cycles.
-    WriteCommand(busWidth , 
+    WriteCommand(busWidth ,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_UNLOCK_1);
-    WriteCommand(busWidth , 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2), 
+    WriteCommand(busWidth ,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2),
                  AMD_CMD_UNLOCK_2);
-    // Followed by the program set-up command.               
-    WriteCommand(busWidth , 
+    // Followed by the program set-up command.
+    WriteCommand(busWidth ,
                  NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_ERASE_SETUP);
-                 
-    // Two additional unlock cycles are written.                 
-    WriteCommand(busWidth , 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1), 
+
+    // Two additional unlock cycles are written.
+    WriteCommand(busWidth ,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_UNLOCK_1);
-    WriteCommand(busWidth , 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2), 
+    WriteCommand(busWidth ,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_2),
                  AMD_CMD_UNLOCK_2);
-                 
+
     // Then followed by the chip erase command.
-    WriteCommand(busWidth , 
-                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1), 
+    WriteCommand(busWidth ,
+                 NorFlash_GetByteAddressInChip(pNorFlashInfo, AMD_OFFSET_UNLOCK_1),
                  AMD_CMD_ERASE_CHIP);
-                 
-    address = NorFlash_GetByteAddressInChip(pNorFlashInfo, 0);              
-    // Data polling 
+
+    address = NorFlash_GetByteAddressInChip(pNorFlashInfo, 0);
+    // Data polling
     do {
         ReadRawData(busWidth , address, (unsigned char*)&pollingData);
         // Check if the chip erase algorithm is completed.
@@ -360,14 +360,14 @@ unsigned char AMD_EraseChip(struct NorFlashInfo *pNorFlashInfo)
             done = 1;
         }
         else {
-            
+
             // When the time-out period is complete, DQ3 switches from a ¡°0¡± to a ¡°1.¡±
             if (pollingData & AMD_POLLING_DQ3 ) {
                 return NorCommon_ERROR_CANNOTERASE;
             }
             // check if chip earse algrithm exceeded timing limits
             if (pollingData & AMD_POLLING_DQ5 ) {
-                
+
                 // I/O should be rechecked.
                 ReadRawData(busWidth , address, (unsigned char*)&pollingData);
                 if ((pollingData & AMD_POLLING_DQ7) == AMD_POLLING_DQ7 ){
@@ -402,8 +402,8 @@ unsigned char AMD_Write_Data(
     unsigned int i;
     unsigned char busWidth;
     busWidth = pNorFlashInfo->deviceChipWidth;
-    
-    if (busWidth == FLASH_CHIP_WIDTH_8BITS ){ 
+
+    if (busWidth == FLASH_CHIP_WIDTH_8BITS ){
         for(i=0; i < size; i++) {
             if(amd_Program(pNorFlashInfo, address, buffer[i])) {
                 return NorCommon_ERROR_CANNOTWRITE;

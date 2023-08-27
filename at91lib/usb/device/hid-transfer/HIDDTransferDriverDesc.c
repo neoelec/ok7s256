@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -411,7 +411,7 @@ const unsigned char hiddReportDescriptor[] = {
         HIDReport_GLOBAL_LOGICALMINIMUM + 1, (unsigned char) -128,
         HIDReport_GLOBAL_LOGICALMAXIMUM + 1, (unsigned char)  127,
         HIDReport_OUTPUT + 1, 0,    // No Modifiers
-        
+
     HIDReport_ENDCOLLECTION
 };
 

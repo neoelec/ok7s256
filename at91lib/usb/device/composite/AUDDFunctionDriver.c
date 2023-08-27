@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -67,7 +67,7 @@ static void AUDD_MuteReceived(unsigned char channel)
 {
     AUDDSpeakerChannel *pChannel = &auddSpeakerChannels[channel];
     if (muted) {
-    
+
         if (!pChannel->muted) {
 
             pChannel->muted = 1;
@@ -77,7 +77,7 @@ static void AUDD_MuteReceived(unsigned char channel)
     else {
 
         if (pChannel->muted) {
-            
+
             pChannel->muted = 0;
             AUDDSpeakerChannel_MuteChanged(pChannel, 0);
         }

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -102,7 +102,7 @@
 ///
 /// -# http://support.microsoft.com/kb/814560
 /// -# http://support.microsoft.com/kb/918365
-/// 
+///
 /// !!!Description
 ///
 /// When an EK running this program connected to a host (PC for example), with
@@ -319,7 +319,7 @@ static void VBus_Configure( void )
     }
     else {
         USBD_Disconnect();
-    }           
+    }
 }
 
 #else
@@ -622,7 +622,7 @@ static void ISR_Timer0()
     unsigned int status = AT91C_BASE_TC0->TC_SR;
 
     if ((status & AT91C_TC_CPCS) != 0) {
-    
+
         // Flush PDC buffer
         size = DATABUFFERSIZE - AT91C_BASE_US0->US_RCR;
         if (size == 0) {
@@ -631,11 +631,11 @@ static void ISR_Timer0()
             return;
         }
         AT91C_BASE_US0->US_RCR = 0;
-    
+
         // Send current buffer through the USB
         while (CDCDSerialDriver_Write(0, usartBuffers[usartCurrentBuffer],
                                       size, 0, 0) != USBD_STATUS_SUCCESS);
-    
+
         // Restart read on buffer
         USART_ReadBuffer(AT91C_BASE_US0,
                          usartBuffers[usartCurrentBuffer],
@@ -764,7 +764,7 @@ void MSDDInitialize()
 #if !defined(sdram)
     BOARD_ConfigureSdram(16);
 #endif
-    
+
     MEDSdram_Initialize(&(medias[numMedias]),
                         (unsigned int) AT91C_EBI_SDRAM + CODE_SIZE,
                         10*1024*1024); // 10Mb used for R/W testing
@@ -777,7 +777,7 @@ void MSDDInitialize()
 #if defined(AT91C_BASE_EFC) && !defined(flash)
     TRACE_INFO("LUN Flash\n\r");
     if (numMedias == 0) {
- 
+
         FLA_Initialize(&(medias[numMedias]), AT91C_BASE_EFC);
         LUN_Init(&(luns[numMedias]), &(medias[numMedias]),
             msdBuffer, 30*1024, 34*1024, BLOCK_SIZE);

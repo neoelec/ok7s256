@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -79,7 +79,7 @@ void SDSPI_Configure(SdSpi *pSdSpi,
 
     // Enable the SPI clock
     AT91C_BASE_PMC->PMC_PCER = (1 << pSdSpi->spiId);
-    
+
     // Execute a software reset of the SPI twice
     pSpiHw->SPI_CR = AT91C_SPI_SWRST;
     pSpiHw->SPI_CR = AT91C_SPI_SWRST;
@@ -172,7 +172,7 @@ unsigned char SDSPI_PDC(SdSpi *pSdSpi, unsigned char *pData, unsigned int size)
 
 //! Should be moved to a new file
 //------------------------------------------------------------------------------
-/// Read data on SPI data bus; 
+/// Read data on SPI data bus;
 /// Returns 1 if read fails, returns 0 if no error.
 /// \param pSdSpi  Pointer to a SD SPI driver instance.
 /// \param pData  Data pointer.
@@ -199,7 +199,7 @@ unsigned char SDSPI_Read(SdSpi *pSdSpi, unsigned char *pData, unsigned int size)
 }
 
 //------------------------------------------------------------------------------
-/// Write data on SPI data bus; 
+/// Write data on SPI data bus;
 /// Returns 1 if write fails, returns 0 if no error.
 /// \param pSdSpi  Pointer to a SD SPI driver instance.
 /// \param pData  Data pointer.
@@ -269,13 +269,13 @@ void SDSPI_MakeCmd(unsigned char *pCmdToken, unsigned int arg)
 //------------------------------------------------------------------------------
 unsigned char SDSPI_GetCmdResp(SdSpi *pSdSpi, SdSpiCmd *pCommand)
 {
-    unsigned char resp[8];  // response 
+    unsigned char resp[8];  // response
     unsigned char error;
     unsigned int  respRetry = 8; //NCR max 8, refer to card datasheet
 
     memset(resp, 0, 8);
 
-    // Wait for response start bit. 
+    // Wait for response start bit.
     do {
         error = SDSPI_Read(pSdSpi, &resp[0], 1);
         if (error) {
@@ -308,8 +308,8 @@ unsigned char SDSPI_GetCmdResp(SdSpi *pSdSpi, SdSpiCmd *pCommand)
         if (error) {
             return error;
         }
-        *(pCommand->pResp) = resp[0] 
-                          | (resp[1] << 8) 
+        *(pCommand->pResp) = resp[0]
+                          | (resp[1] << 8)
                           | (resp[2] << 16)
                           | (resp[3] << 24);
         *(pCommand->pResp+1) = resp[4];
@@ -322,7 +322,7 @@ unsigned char SDSPI_GetCmdResp(SdSpi *pSdSpi, SdSpiCmd *pCommand)
             return error;
         }
         *(pCommand->pResp) = resp[0]
-                          | (resp[1] << 8) 
+                          | (resp[1] << 8)
                           | (resp[2] << 16)
                           | (resp[3] << 24);
         *(pCommand->pResp+1) = resp[4];
@@ -344,11 +344,11 @@ unsigned char SDSPI_GetCmdResp(SdSpi *pSdSpi, SdSpiCmd *pCommand)
 //------------------------------------------------------------------------------
 unsigned char SDSPI_GetDataResp(SdSpi *pSdSpi, SdSpiCmd *pCommand)
 {
-    unsigned char resp = 0;  // response 
+    unsigned char resp = 0;  // response
     unsigned char error;
     unsigned int respRetry = 18; //NCR max 8, refer to card datasheet
 
-    // Wait for response start bit. 
+    // Wait for response start bit.
     do {
         error = SDSPI_Read(pSdSpi, &resp, 1);
         if (error) {
@@ -526,7 +526,7 @@ unsigned char SDSPI_SendCommand(SdSpi *pSdSpi, SdSpiCmd *pCommand)
 //------------------------------------------------------------------------------
 /// The SPI_Handler must be called by the SPI Interrupt Service Routine with the
 /// corresponding Spi instance.
-/// The SPI_Handler will unlock the Spi semaphore and invoke the upper application 
+/// The SPI_Handler will unlock the Spi semaphore and invoke the upper application
 /// callback.
 /// \param pSdSpi  Pointer to a SdSpi instance.
 //------------------------------------------------------------------------------
@@ -593,7 +593,7 @@ void SDSPI_Close(SdSpi *pSdSpi)
     // Enable the SPI clock
     AT91C_BASE_PMC->PMC_PCER = (1 << pSdSpi->spiId);
 
-    // Disable the PDC transfer    
+    // Disable the PDC transfer
     pSpiHw->SPI_PTCR = AT91C_PDC_RXTDIS | AT91C_PDC_TXTDIS;
 
     // Enable the SPI
@@ -607,7 +607,7 @@ void SDSPI_Close(SdSpi *pSdSpi)
 }
 
 //------------------------------------------------------------------------------
-/// Returns 1 if the SPI driver is currently busy programming; 
+/// Returns 1 if the SPI driver is currently busy programming;
 /// otherwise returns 0.
 /// \param pSdSpi  Pointer to a SD SPI driver instance.
 //------------------------------------------------------------------------------
@@ -622,7 +622,7 @@ unsigned char SDSPI_IsBusy(SdSpi *pSdSpi)
 }
 
 //------------------------------------------------------------------------------
-/// Wait several cycles on SPI bus; 
+/// Wait several cycles on SPI bus;
 /// Returns 0 to indicates no error, otherwise return 1.
 /// \param pSdSpi  Pointer to a SD SPI driver instance.
 /// \param cycles  Wait data cycles.
@@ -654,7 +654,7 @@ unsigned char SDSPI_StopTranToken(SdSpi *pSdSpi)
 }
 
 //------------------------------------------------------------------------------
-/// Wait, SD card Ncs cycles; 
+/// Wait, SD card Ncs cycles;
 /// Returns 0 to indicates no error, otherwise return 1.
 /// \param pSdSpi  Pointer to a SD SPI driver instance.
 //------------------------------------------------------------------------------

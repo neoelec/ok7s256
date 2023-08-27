@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -221,7 +221,7 @@ void COMPOSITEDDriver_RequestHandler(const USBGenericRequest *request)
               USBGenericRequest_GetRequest(request));
             USBD_Stall(0);
         }
-        
+
     }
     // Check if this is a standard request
     else if (USBGenericRequest_GetType(request) == USBGenericRequest_STANDARD) {

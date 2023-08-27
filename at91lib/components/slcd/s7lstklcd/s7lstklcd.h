@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,12 +31,12 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// Interface for displaying on segment LCD of AT91SAM7L-STK board.
-/// 
+///
 /// !!!Usage
-/// 
-/// -# call corresponding function to display pixel, char and string. 
+///
+/// -# call corresponding function to display pixel, char and string.
 //------------------------------------------------------------------------------
 
 #ifndef S7LSTKLCD_H

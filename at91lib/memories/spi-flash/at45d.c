@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -51,7 +51,7 @@ static void AT45D_Wait(At45 *pAt45)
 
     // Wait for transfer to finish
     while (AT45_IsBusy(pAt45)) {
-    
+
         SPID_Handler(pAt45->pSpid);
     }
 }
@@ -65,7 +65,7 @@ static void AT45D_Wait(At45 *pAt45)
 /// Waits for the At45 to be ready to accept new commands.
 /// \param pAt45  Pointer to a At45 driver instance.
 //------------------------------------------------------------------------------
-void AT45D_WaitReady(At45 *pAt45) 
+void AT45D_WaitReady(At45 *pAt45)
 {
     unsigned char ready = 0;
 
@@ -96,7 +96,7 @@ unsigned char AT45D_GetStatus(At45 *pAt45)
 
     // Wait for command to terminate
     while (AT45_IsBusy(pAt45)) {
-    
+
         AT45D_Wait(pAt45);
     }
 
@@ -116,7 +116,7 @@ void AT45D_Read(
     At45 *pAt45,
     unsigned char *pBuffer,
     unsigned int size,
-    unsigned int address) 
+    unsigned int address)
 {
     unsigned char error;
 
@@ -129,7 +129,7 @@ void AT45D_Read(
 
     // Wait for the read command to execute
     while (AT45_IsBusy(pAt45)) {
-    
+
         AT45D_Wait(pAt45);
     }
 }
@@ -148,7 +148,7 @@ void AT45D_Write(
     At45 *pAt45,
     unsigned char *pBuffer,
     unsigned int size,
-    unsigned int address) 
+    unsigned int address)
 {
     unsigned char error;
 
@@ -162,7 +162,7 @@ void AT45D_Write(
 
     // Wait until the command is sent
     while (AT45_IsBusy(pAt45)) {
-    
+
         AT45D_Wait(pAt45);
     }
 
@@ -175,7 +175,7 @@ void AT45D_Write(
 /// \param pAt45  Pointer to a At45 driver instance.
 /// \param address  Address of page to erase.
 //------------------------------------------------------------------------------
-void AT45D_Erase(At45 *pAt45, unsigned int address) 
+void AT45D_Erase(At45 *pAt45, unsigned int address)
 {
     unsigned char error;
 
@@ -187,7 +187,7 @@ void AT45D_Erase(At45 *pAt45, unsigned int address)
 
     // Wait for end of transfer
     while (AT45_IsBusy(pAt45)) {
-    
+
         AT45D_Wait(pAt45);
     }
 
@@ -200,7 +200,7 @@ void AT45D_Erase(At45 *pAt45, unsigned int address)
 /// \param pAt45  Pointer to a At45 driver instance.
 //------------------------------------------------------------------------------
 
-void AT45D_BinaryPage(At45 *pAt45) 
+void AT45D_BinaryPage(At45 *pAt45)
 {
     unsigned char error;
     unsigned char opcode[3]= {AT45_BINARY_PAGE};
@@ -209,12 +209,12 @@ void AT45D_BinaryPage(At45 *pAt45)
     // Issue a binary page command.
 
     error = AT45_SendCommand(pAt45, AT45_BINARY_PAGE_FIRST_OPCODE, 1, opcode, 3, 0, 0, 0);
-   
+
     ASSERT(!error, "-F- AT45_Erase: Could not issue command.\n\r");
 
     // Wait for end of transfer
     while (AT45_IsBusy(pAt45)) {
-    
+
         AT45D_Wait(pAt45);
     }
 

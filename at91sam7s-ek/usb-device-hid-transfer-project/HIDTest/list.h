@@ -16,7 +16,7 @@ Environment:
 
 Revision History:
 
-    Nov-97 : Created 
+    Nov-97 : Created
 
 --*/
 
@@ -50,7 +50,7 @@ InsertTail(
 
 VOID
 RemoveNode(
-    IN  PLIST_NODE_HDR  ListNode   
+    IN  PLIST_NODE_HDR  ListNode
 );
 
 PLIST_NODE_HDR
@@ -110,18 +110,18 @@ DestroyListWithCallback(
     //     IN  PLIST    NewList
     // );
     */
-    
+
     #define InitializeList(nl) \
         { ((PLIST)(nl)) -> Flink = ((PLIST)(nl)) -> Blink = nl; }
-    
-    /* 
+
+    /*
     // VOID
     // InsertHead(
      /     IN  PLIST            List,
     //     IN  PLIST_NODE_HDR   ListNode
     // );
     */
-    
+
     #define InsertHead(List, Node) {                    \
         PLIST_NODE_HDR _EX_Flink;                       \
         PLIST_NODE_HDR _EX_List;                        \
@@ -133,16 +133,16 @@ DestroyListWithCallback(
         _EX_Flink->Blink = (((PLIST_NODE_HDR) (Node))); \
         _EX_List->Flink = ((PLIST_NODE_HDR) (Node));    \
     }
-    
-    
-    /* 
+
+
+    /*
     // VOID
     // InsertTail(
     //     IN  PLIST            List,
     //     IN  PLIST_NODE_HDR   ListNode
     // );
     */
-    
+
     #define InsertTail(List, Node) {                    \
         PLIST_NODE_HDR _EX_Blink;                       \
         PLIST_NODE_HDR _EX_List;                        \
@@ -154,14 +154,14 @@ DestroyListWithCallback(
         _EX_Blink->Flink = (((PLIST_NODE_HDR) (Node))); \
         _EX_List->Blink = ((PLIST_NODE_HDR) (Node));    \
     }
-    
+
     /*
     //  VOID
     //  RemoveNode(
-    //      IN  PLIST_NODE_HDR  ListNode   
+    //      IN  PLIST_NODE_HDR  ListNode
     //  );
     */
-    
+
     #define RemoveNode(node) {                          \
         PLIST_NODE_HDR _EX_Blink;                       \
         PLIST_NODE_HDR _EX_Flink;                       \
@@ -171,60 +171,60 @@ DestroyListWithCallback(
         _EX_Blink->Flink = _EX_Flink;                   \
         _EX_Flink->Blink = _EX_Blink;                   \
     }
-    
-    
-    /* 
+
+
+    /*
     // PLIST_NODE_HDR
     // RemoveHead(
     //     IN  PLIST    List
-    // );               
-    */                  
-    
+    // );
+    */
+
     #define RemoveHead(List)                            \
         GetListHead((List));                            \
-        RemoveNode(((PLIST_NODE_HDR) (List))->Flink)  
-                        
-    /*                  
-    // PLIST_NODE_HDR   
-    // RemoveTail(      
+        RemoveNode(((PLIST_NODE_HDR) (List))->Flink)
+
+    /*
+    // PLIST_NODE_HDR
+    // RemoveTail(
     //     IN  PLIST    List
-    // );               
-    */                  
-    
+    // );
+    */
+
     #define RemoveTail(List)                            \
         GetListTail((List));                            \
-        RemoveNode(((PLIST_NODE_HDR) (List))->Blink)    
-    
-    /*                  
-    // BOOL             
-    // IsListEmpty(     
+        RemoveNode(((PLIST_NODE_HDR) (List))->Blink)
+
+    /*
+    // BOOL
+    // IsListEmpty(
     //     IN  PLIST    List
-    // );               
-    */                  
-    
+    // );
+    */
+
     #define IsListEmpty(List)                           \
         (((PLIST_NODE_HDR) (List))->Flink == ((PLIST_NODE_HDR) (List)))
-                        
-    /*                  
-    // PLIST_NODE_HDR   
-    // GetListHead(     
+
+    /*
+    // PLIST_NODE_HDR
+    // GetListHead(
     //     IN  PLIST    List
-    // );               
-    */                  
-    
+    // );
+    */
+
     #define GetListHead(List)                           \
         (((PLIST_NODE_HDR) (List))->Flink)
-    
-    /*                  
-    // PLIST_NODE_HDR   
-    // GetListTail(     
+
+    /*
+    // PLIST_NODE_HDR
+    // GetListTail(
     //     IN  PLIST    List
-    // );               
-    */                  
-    
+    // );
+    */
+
     #define GetListTail(List)                           \
         (((PLIST_NODE_HDR) (List))->Blink)
-                        
+
 
     /*
     // PLIST_NODE_HDR
@@ -236,7 +236,7 @@ DestroyListWithCallback(
     #define GetNextEntry(ListNode)                      \
         (((PLIST_NODE_HDR) (ListNode)) -> Flink);
 
-    /* 
+    /*
     // PLIST_NODE_HDR
     // GetPrevEntry(
     //    IN  PLIST_NODE_HDR  ListNode
@@ -246,14 +246,14 @@ DestroyListWithCallback(
     #define GetPrevEntry(ListNode)                      \
         (((PLIST_NODE_HDR) (ListNode)) -> Blink);
 
-    /* 
+    /*
     // VOID
     // DestroyListNoCallback(
     //     IN  PLIST           List,
     //     IN  PLIST_CALLBACK  Callback
     // );
-    */ 
-    
+    */
+
     #define DestroyListNoCallback(list)                 \
         PLIST_NODE_HDR  currNode;                       \
                                                         \
@@ -262,14 +262,14 @@ DestroyListWithCallback(
         }                                               \
     }
 
-    /* 
+    /*
     // VOID
     // DestroyListWithCallback(
     //     IN  PLIST           List,
     //     IN  PLIST_CALLBACK  Callback
     // );
-    */ 
-    
+    */
+
     #define DestroyListWithCallback(list, cb) {         \
         PLIST_NODE_HDR  currNode;                       \
                                                         \
@@ -278,6 +278,6 @@ DestroyListWithCallback(
             (cb)(currNode);                             \
         }                                               \
     }
-    
+
 #endif
 

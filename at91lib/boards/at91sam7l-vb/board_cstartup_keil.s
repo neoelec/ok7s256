@@ -1,5 +1,5 @@
 ; * ----------------------------------------------------------------------------
-; *         ATMEL Microcontroller Software Support 
+; *         ATMEL Microcontroller Software Support
 ; * ----------------------------------------------------------------------------
 ; * Copyright (c) 2008, Atmel Corporation
 ; *
@@ -67,9 +67,9 @@ USR_Stack_Size      EQU     0x00000400
 
 ; Exception Vectors
 
-Vectors         
-				LDR     pc,=resetHandler 
-undefVector  
+Vectors
+				LDR     pc,=resetHandler
+undefVector
 			    b   	undefVector             ; Undefined instruction
 swiVector
         		b       swiVector               ; Software interrupt
@@ -83,14 +83,14 @@ irqVector
         b       irqHandler              ; Interrupt
 fiqVector
                                         ; Fast interrupt
-	
+
 ;------------------------------------------------------------------------------
 ; Handles a fast interrupt request by branching to the address defined in the
 ; AIC.
 ;------------------------------------------------------------------------------
 fiqHandler
         b       fiqHandler
-	
+
 ;------------------------------------------------------------------------------
 ; Handles incoming interrupt requests by branching to the corresponding
 ; handler, as defined in the AIC. Supports interrupt nesting.
@@ -129,11 +129,11 @@ irqHandler
 ; with interrupts disabled.
 ; Initializes the chip and branches to the main() function.
 ;------------------------------------------------------------------------------
-                
+
    		AREA  cstartup, CODE
    		ENTRY        ; Entry point for the application
-   		
-   		
+
+
 ; Reset Handler
 
         EXPORT  resetHandler
@@ -143,15 +143,15 @@ irqHandler
         IMPORT  |Image$$Relocate_region$$ZI$$Limit|
         IMPORT  |Image$$ARM_LIB_STACK$$Base|
         IMPORT  |Image$$ARM_LIB_STACK$$ZI$$Limit|
-        
+
 		; Perform low-level initialization of the chip using LowLevelInit()
 		IMPORT  LowLevelInit
-		
-resetHandler   
-        
+
+resetHandler
+
         ; Set pc to actual code location (i.e. not in remap zone)
 	    LDR     pc, =label
-label	    
+label
 		; Set up temporary stack (Top of the SRAM)
 		LDR     r0, = |Image$$ARM_LIB_STACK$$ZI$$Limit|
         MOV     sp, r0
@@ -161,28 +161,28 @@ label
         BX      r0
 
 
-;Initialize the Relocate_region segment 
+;Initialize the Relocate_region segment
 		LDR 	r0, = |Image$$Fixed_region$$Limit|
 		LDR 	r1, = |Image$$Relocate_region$$Base|
 		LDR 	r3, = |Image$$Relocate_region$$ZI$$Base|
-	    
-	    CMP     r0, r1                 
+
+	    CMP     r0, r1
      	BEQ     %1
-     	
-     	
+
+
         ; Copy init data
-0       CMP     r1, r3         
-        LDRCC   r2, [r0], #4   
+0       CMP     r1, r3
+        LDRCC   r2, [r0], #4
         STRCC   r2, [r1], #4
         BCC     %0
 
 1       LDR     r1, =|Image$$Relocate_region$$ZI$$Limit|
         MOV     r2, #0
-2       CMP     r3, r1                  
+2       CMP     r3, r1
         STRCC   r2, [r3], #4
         BCC     %2
-       
-               
+
+
 ; Setup Stack for each mode
 
         LDR     R0, = |Image$$ARM_LIB_STACK$$ZI$$Limit|
@@ -192,9 +192,9 @@ label
         MOV     SP, R0
         SUB     R4, SP, #IRQ_Stack_Size
 
-; Supervisor mode (interrupts enabled) 
+; Supervisor mode (interrupts enabled)
         MSR     CPSR_c, #ARM_MODE_SVC | F_BIT
-        MOV     SP, R4   
+        MOV     SP, R4
 
 ; Enter the C code
 
@@ -202,6 +202,6 @@ label
         LDR     R0, =__main
         BX      R0
 loop4
-        B       loop4                
+        B       loop4
 
        END

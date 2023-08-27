@@ -3638,7 +3638,7 @@ typedef struct _AT91S_ISI {
 #define AT91C_UHP_HcControl (AT91_CAST(AT91_REG *) 	0x00500004) // (UHP) Operating modes for the Host Controller
 #define AT91C_UHP_HcBulkDoneHead (AT91_CAST(AT91_REG *) 	0x00500030) // (UHP) Last completed transfer descriptor
 #define AT91C_UHP_HcRhDescriptorA (AT91_CAST(AT91_REG *) 	0x00500048) // (UHP) Root Hub characteristics A
-// ========== Register definition for ISI peripheral ========== 
+// ========== Register definition for ISI peripheral ==========
 #define AT91C_ISI_PSIZE (AT91_CAST(AT91_REG *) 	0xFFFC0020) // (ISI) Preview Size Register
 #define AT91C_ISI_CR1   (AT91_CAST(AT91_REG *) 	0xFFFC0000) // (ISI) Control Register 1
 #define AT91C_ISI_R2YSET1 (AT91_CAST(AT91_REG *) 	0xFFFC003C) // (ISI) Color Space Conversion Register

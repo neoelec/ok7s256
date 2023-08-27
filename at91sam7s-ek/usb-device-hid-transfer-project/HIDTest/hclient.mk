@@ -30,7 +30,7 @@ L32LIBSNODEP = $(ROOT)\dev\tools\c932\lib\libcmt.lib  \
                $(ROOT)\dev\tools\c932\lib\crtdll.lib \
                $(ROOT)\wdm\ddk\lib\i386\hid.lib \
                $(ROOT)\wdm\ddk\lib\i386\hidclass.lib \
-               $(ROOT)\dev\lib\setupapi.lib 
+               $(ROOT)\dev\lib\setupapi.lib
 
 !include $(ROOT)\dev\master.mk
 

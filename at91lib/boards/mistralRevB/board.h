@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -34,7 +34,7 @@
         Definitions for the AT91SAM9265-mistralRevB.
  */
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 #if defined(at91sam9265)
@@ -110,7 +110,7 @@
 /// \page "MISTRALREVB - USB device"
 /// This page lists constants describing several characteristics (controller
 /// type, D+ pull-up type, etc.) of the USB device controller of the chip/board.
-/// 
+///
 /// - BOARD_USB_UDPHS
 /// - BOARD_USB_PULLUP_INTERNAL
 /// - BOARD_USB_NUMENDPOINTS
@@ -157,10 +157,10 @@
 	AT91C_PA1_SPI0_MOSI | \
 	AT91C_PA0_SPI0_MISO | \
 	AT91C_PA2_SPI0_SPCK, \
-	AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_A, PIO_DEFAULT}	
+	AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_A, PIO_DEFAULT}
 #define PIN_SPI0_NPCS0 {AT91C_PA3_SPI0_NPCS0,  AT91C_BASE_PIOA, AT91C_ID_PIOA, PIO_PERIPH_A, PIO_DEFAULT}
 #define PIN_SPI0_NPCS1 {AT91C_PC11_SPI0_NPCS1, AT91C_BASE_PIOC, AT91C_ID_PIOCDE, PIO_PERIPH_B, PIO_DEFAULT}
-	
+
 /*
     Constants: SSC pins
         PIN_SSC_TRANSMITTER - SSC pins for the transmitter.

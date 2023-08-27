@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -52,9 +52,9 @@
 /// \page "USB Audio Input terminal types"
 ///
 /// This page lists the available types for an Input terminal.
-/// 
+///
 /// !Types
-/// 
+///
 /// - AUDInputTerminalDescriptor_USBSTREAMING
 /// - AUDInputTerminalDescriptor_MICROPHONE
 /// - AUDInputTerminalDescriptor_SPEAKERPHONE
@@ -76,9 +76,9 @@
 /// \page "USB Audio Channel spatial locations"
 ///
 /// This page lists the possible spatial locations for audio channels.
-/// 
+///
 /// !Locations
-/// 
+///
 /// - AUDInputTerminalDescriptor_LEFTFRONT
 /// - AUDInputTerminalDescriptor_RIGHTFRONT
 /// - AUDInputTerminalDescriptor_CENTERFRONT

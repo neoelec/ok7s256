@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,13 +31,13 @@
 ///
 /// !!!Purpose
 ///
-/// The Basic Serialflash project will help new users get familiar with SPI interface 
-/// on Atmel's AT91 family of microcontrollers. This project gives you an AT26 
-/// serial firmware dataflash programming code so that can help develop your own 
+/// The Basic Serialflash project will help new users get familiar with SPI interface
+/// on Atmel's AT91 family of microcontrollers. This project gives you an AT26
+/// serial firmware dataflash programming code so that can help develop your own
 /// SPI devices applications with maximum efficiency.
 ///
 /// You can find following information depends on your needs:
-/// - A Spi low level driver performs SPI device Initializes, data transfer and 
+/// - A Spi low level driver performs SPI device Initializes, data transfer and
 /// receive. It can be used by upper SPI driver such as AT26 %dataflash.
 /// - A Dataflash driver is based on top of the corresponding Spi driver.
 /// It allow user to do operations with %dataflash in a unified way.
@@ -48,13 +48,13 @@
 /// !!!Requirements
 ///
 /// This package can be used with all Atmel evaluation kits that have SPI
-/// interface and on-board or external Dataflash connected. The package runs at 
+/// interface and on-board or external Dataflash connected. The package runs at
 /// SRAM or SDRAM, so SDRAM device is needed if you want to run this package in SDRAM.
 ///
 ///
 /// !!!Description
 ///
-/// The demonstration program tests the dataflash present on the evaluation kit by 
+/// The demonstration program tests the dataflash present on the evaluation kit by
 /// erasing and writing each one of its pages.
 ///
 /// !!!Usage
@@ -72,32 +72,32 @@
 ///   - 1 stop bit
 ///   - No flow control
 /// -# Start the application.
-/// -# Upon startup, the application will output the following lines on the DBGU: 
+/// -# Upon startup, the application will output the following lines on the DBGU:
 ///    \code
 ///     -- Basic Serial Firmware Dataflash Project xxx --
 ///     -- AT91xxxxxx-xx
 ///     -- Compiled: xxx xx xxxx xx:xx:xx --
-///     -I- SPI and At26 initialized 
+///     -I- SPI and At26 initialized
 ///    \endcode
-/// -# The program will connect to the serial firmware dataflash through the SPI 
-///    and start sending commands to it. It will perform the following: 
-///    - Read the JEDEC identifier of the device to autodetect it 
-///      The next line should indicate if the serial dataflash has been 
-///      correctly identified. For example, this is what appears when an 
-///      AT26DF321 chip is recognized: 
+/// -# The program will connect to the serial firmware dataflash through the SPI
+///    and start sending commands to it. It will perform the following:
+///    - Read the JEDEC identifier of the device to autodetect it
+///      The next line should indicate if the serial dataflash has been
+///      correctly identified. For example, this is what appears when an
+///      AT26DF321 chip is recognized:
 ///    \code
-///    -I- AT26DF321 Serial Flash detected 
+///    -I- AT26DF321 Serial Flash detected
 ///    \endcode
-///    - Erase the chip 
-///    - Check that each page is blank 
-///    - Write a "Walking one" pattern on each page: 
+///    - Erase the chip
+///    - Check that each page is blank
+///    - Write a "Walking one" pattern on each page:
 ///    \code
 ///    Byte 0 = 00000001
 ///    Byte 1 = 00000010
 ///    Byte 2 = 00000100
-///    ........ 
+///    ........
 ///    \endcode
-///    - Verify that the pattern has been correctly applied on each page 
+///    - Verify that the pattern has been correctly applied on each page
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 /// \unit
@@ -105,9 +105,9 @@
 /// !Purpose
 ///
 /// This file contains all the specific code for the basic-serialflash-project.
-/// It tests the serial firmware dataflash present on the evaluation kit by 
+/// It tests the serial firmware dataflash present on the evaluation kit by
 /// erasing and writing each one of its pages.
-/// 
+///
 /// !Contents
 /// The code can be roughly broken down as follows:
 ///    - AT26 Dataflash write data function.
@@ -119,7 +119,7 @@
 ///       - Config SPI Interrupt Service Routine.
 ///       - Identifier the AT26 device connected to the evaluation kit.
 ///       - Test the dataflash by erasing and writing each one of its pages.
-/// 
+///
 /// !See also
 ///    - "spi-flash": SPI Dataflash interface driver.
 ///
@@ -273,7 +273,7 @@ static unsigned int AT26_ReadJedecId(At26 *pAt26)
     unsigned int id = 0;
 
     SANITY_CHECK(pAt26);
- 
+
     // Issue a read ID command
     error = AT26_SendCommand(pAt26, AT26_READ_JEDEC_ID, 1,
                              (unsigned char *) &id, 3, 0, 0, 0);
@@ -323,7 +323,7 @@ static unsigned char AT26_Unprotect(At26 *pAt26)
         // Protection already disabled
         return 0;
     }
-    
+
     // Check if sector protection registers are locked
     if ((status & AT26_STATUS_SPRL) == AT26_STATUS_SPRL_LOCKED) {
 
@@ -331,11 +331,11 @@ static unsigned char AT26_Unprotect(At26 *pAt26)
         AT26_EnableWrite(pAt26);
         AT26_WriteStatus(pAt26, 0);
     }
-    
+
     // Perform a global unprotect command
       AT26_EnableWrite(pAt26);
     AT26_WriteStatus(pAt26, 0);
-    
+
     // Check the new status
     if ((status & (AT26_STATUS_SPRL | AT26_STATUS_SWP)) != 0) {
 
@@ -365,14 +365,14 @@ static unsigned char AT26_EraseChip(At26 *pAt26)
         TRACE_WARNING("AT26_EraseBlock: Device is protected.\n\r");
         return AT26_ERROR_PROTECTED;
     }
-    
+
     // Enable critical write operation
       AT26_EnableWrite(pAt26);
-    
+
     // Erase the chip
     error = AT26_SendCommand(pAt26, AT26_CHIP_ERASE_2, 1, 0, 0, 0, 0, 0);
     ASSERT(!error, "-F- AT26_ChipErase: Could not issue command.\n\r");
-     while (AT26_IsBusy(pAt26));    
+     while (AT26_IsBusy(pAt26));
     AT26_WaitReady(pAt26);
 
     return 0;
@@ -391,7 +391,7 @@ static unsigned char AT26_EraseBlock(At26 *pAt26, unsigned int address)
     unsigned char error;
 
     SANITY_CHECK(pAt26);
- 
+
     // Check that the flash is ready an unprotected
     status = AT26_ReadStatus(pAt26);
     if ((status & AT26_STATUS_RDYBSY) != AT26_STATUS_RDYBSY_BUSY) {
@@ -450,10 +450,10 @@ static unsigned char AT26_Write(
 
         // Compute number of bytes to program in page
         writeSize = min(size, pageSize - (address % pageSize));
-                
+
         // Enable critical write operation
         AT26_EnableWrite(pAt26);
-     
+
          // Program page
           error = AT26_SendCommand(pAt26, AT26_BYTE_PAGE_PROGRAM, 4,
                            pData, writeSize, address, 0, 0);
@@ -467,7 +467,7 @@ static unsigned char AT26_Write(
 
             return AT26_ERROR_PROGRAM;
         }
-        
+
         size -= writeSize;
         address += writeSize;
     }
@@ -489,7 +489,7 @@ static void AT26_Read(
     unsigned int address)
 {
     unsigned char error;
-    
+
      // Start a read operation
       error = AT26_SendCommand(pAt26, AT26_READ_ARRAY_LF, 4, pData, size, address, 0, 0);
     ASSERT(!error, "-F- AT26_Read: Could not issue command.\n\r");
@@ -525,7 +525,7 @@ int main(void)
     AT26_Configure(&at26, &spid, SPI_CS);
     AIC_EnableIT(SPI_ID);
     TRACE_INFO("SPI and AT26 drivers initialized\n\r");
-    
+
     // Read the JEDEC ID of the device to identify it
     jedecId = AT26_ReadJedecId(&at26);
     if (AT26_FindDevice(&at26, jedecId)) {

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -52,7 +52,7 @@
 ///
 /// This page lists the class, subclass & protocol codes that a USB audio
 /// device should display in its device descriptor.
-/// 
+///
 /// !Codes
 /// - AUDDeviceDescriptor_CLASS
 /// - AUDDeviceDescriptor_SUBCLASS

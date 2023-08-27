@@ -31,7 +31,7 @@
 /// \page "sdspi"
 ///
 /// !Purpose
-///  
+///
 /// sdcard spi-bus driver
 ///
 /// !Usage

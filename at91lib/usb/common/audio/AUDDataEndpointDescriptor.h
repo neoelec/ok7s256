@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,11 +31,11 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// Definition of the USB audio-specific data endpoint descriptor.
 ///
 /// !!!Usage
-/// 
+///
 /// -# Declare an AUDDataEndpointDescriptor instance as part of the
 ///    configuration descriptors of a USB %audio %device.
 //------------------------------------------------------------------------------
@@ -54,7 +54,7 @@
 /// \page "USB Audio Lock delay units"
 ///
 /// This page lists the valid lock delay unit types.
-/// 
+///
 /// !Units
 /// - AUDDataEndpointDescriptor_MILLISECONDS
 /// - AUDDataEndpointDescriptor_PCMSAMPLES

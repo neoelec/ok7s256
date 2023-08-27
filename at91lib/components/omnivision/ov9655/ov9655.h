@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,11 +31,11 @@
 /// \unit
 ///
 /// !!!Purpose
-/// 
+///
 /// Specific configuration for Omnivision OV6555 captor
-/// 
+///
 /// !!!Usage
-/// 
+///
 /// -# Different files are been provided by Omnivision:
 ///     - 9655_yuv_cif.h
 ///     - 9655_yuv_qcif.h

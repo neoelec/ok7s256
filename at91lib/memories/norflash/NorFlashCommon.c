@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -45,22 +45,22 @@
     {*(volatile unsigned short *)(commandAddress) = (unsigned short) command;}
 #define WRITE_COMMAND32(commandAddress, command) \
     {*(volatile unsigned int *)(commandAddress) = (unsigned int) command;}
-    
+
 #define WRITE_DATA8(dataAddress, data) \
     {(*((volatile unsigned char *) dataAddress)) = (unsigned char) data;}
 #define WRITE_DATA16(dataAddress, data) \
     {(*((volatile unsigned short *) dataAddress)) = (unsigned short) data;}
 #define WRITE_DATA32(dataAddress, data) \
     {(*((volatile unsigned int *) dataAddress)) = (unsigned int) data;}
-    
+
 #define READ_DATA8(dataAddress) \
     (*((volatile unsigned char *) dataAddress))
 #define READ_DATA16(dataAddress) \
     (*((volatile unsigned short *) dataAddress))
 #define READ_DATA32(dataAddress) \
     (*((volatile unsigned int *) dataAddress))
-    
-    
+
+
 //------------------------------------------------------------------------------
 //         Exported functions
 //------------------------------------------------------------------------------
@@ -72,8 +72,8 @@
 /// \param command Command to be send.
 //------------------------------------------------------------------------------
 unsigned char WriteCommand(
-    unsigned char busWidth, 
-    unsigned int commandAddress, 
+    unsigned char busWidth,
+    unsigned int commandAddress,
     unsigned int command)
 {
     if (busWidth == 8 ){
@@ -100,11 +100,11 @@ void ReadRawData(
     unsigned int  address,
     unsigned char *buffer)
 {
-    if (busWidth == 8 ){    
+    if (busWidth == 8 ){
             *buffer = READ_DATA8(address);
     }
     else if( busWidth == 16 ){
-        
+
         unsigned short *buffer16 = (unsigned short *) buffer;
         *buffer16 = READ_DATA16(address);
     }
@@ -127,7 +127,7 @@ void WriteRawData(
     unsigned char *buffer)
 
 {
-    if (busWidth == 8 ){    
+    if (busWidth == 8 ){
         WRITE_DATA8(address, *buffer);
     }
     else if( busWidth == 16 ){

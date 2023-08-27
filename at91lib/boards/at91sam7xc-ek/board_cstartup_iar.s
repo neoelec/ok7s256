@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -98,7 +98,7 @@ SWI_Addr:       DCD   SWI_Handler
 Prefetch_Addr:  DCD   Prefetch_Handler
 Abort_Addr:     DCD   Abort_Handler
 FIQ_Addr:       DCD   FIQ_Handler
-	
+
 /*
    Handles incoming interrupt requests by branching to the corresponding
    handler, as defined in the AIC. Supports interrupt nesting.

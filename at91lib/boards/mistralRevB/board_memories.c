@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -95,9 +95,9 @@ void BOARD_ConfigureSdram(unsigned char busWidth)
   unsigned int i;
   volatile unsigned int *pSdram = (unsigned int *) AT91C_EBI0_SDRAM;
 
-  // Program SDRAMC : CAS = 2, 4 banks, row = 12, column = 9 SDRAM 128MB 
+  // Program SDRAMC : CAS = 2, 4 banks, row = 12, column = 9 SDRAM 128MB
   // 133MHz barrette NADIA + 32 bit mode
-  AT91C_BASE_SDRAMC0->SDRAMC_CR =   AT91C_SDRAMC_NC_9   
+  AT91C_BASE_SDRAMC0->SDRAMC_CR =   AT91C_SDRAMC_NC_9
                                   | AT91C_SDRAMC_NR_13
                                   | AT91C_SDRAMC_NB_4_BANKS
                                   | AT91C_SDRAMC_CAS_2

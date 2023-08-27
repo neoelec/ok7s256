@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,12 +31,12 @@
 /// \dir "Basic ISO7816 project"
 ///
 /// !!!Purpose
-/// This example sends ISO 7816 commands to a smartcard connected to the 
+/// This example sends ISO 7816 commands to a smartcard connected to the
 /// evaluation kits on AT91 microcontrollers.
 ///
 /// !!!Description
-/// The iso7816 software provide in this examples is use to transform APDU 
-/// commands to TPDU commands for the smart card. 
+/// The iso7816 software provide in this examples is use to transform APDU
+/// commands to TPDU commands for the smart card.
 /// The iso7816 provide here is for the protocol T=0 only.
 /// The send and the receive of a character is made under polling.
 /// In the file ISO7816_Init is defined all pins of the card. User must have to
@@ -60,12 +60,12 @@
 ///    C1: Vcc:   7816_3V5V  C5: Gnd  C4: RFU
 ///    C2: Reset: 7816_RST   C6: Vpp  C8: RFU
 ///    C3: Clock: 7816_CLK   C7: 7816_IO
-///    An other pin must be connected on the card reader for detecting the 
+///    An other pin must be connected on the card reader for detecting the
 ///    insertion and removal: 7816_IRQ.
 ///    On Atmel’s boards, all this pins can be easily connecting with jumpers.
 /// -# Start the application. The following traces shall appear on the terminal:
 ///    \code
-///     -- Basic ISO7816 Project xxx -- 
+///     -- Basic ISO7816 Project xxx --
 ///     -- AT91xxxxxx-xx
 ///     -- Compiled: xxx xx xxxx xx:xx:xx --
 ///     Display the ATR
@@ -108,7 +108,7 @@
 //------------------------------------------------------------------------------
 
 
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 //         Headers
 //------------------------------------------------------------------------------
 
@@ -202,7 +202,7 @@ static void ConfigureCardDetection(void)
     printf("-I- Smartcard detection not supported.\n\r");
 }
 
-#endif 
+#endif
 
 //------------------------------------------------------------------------------
 // Displays a menu which enables the user to send several commands to the
@@ -254,7 +254,7 @@ static void SendReceiveCommands(void)
 
             printf("\n\r-I- Sending command ");
             for (i=0; i < sizeof(testCommand1); i++) {
-        
+
                 printf("0x%02X ", testCommand1[i]);
             }
             printf("...\n\r");
@@ -266,7 +266,7 @@ static void SendReceiveCommands(void)
 
             printf("\n\r-I- Sending command ");
             for (i=0; i < sizeof(testCommand2); i++) {
-        
+
                 printf("0x%02X ", testCommand2[i]);
             }
             printf("...\n\r");
@@ -278,7 +278,7 @@ static void SendReceiveCommands(void)
 
             printf("\n\r-I- Sending command ");
             for (i=0; i < sizeof(testCommand3); i++) {
-        
+
                 printf("0x%02X ", testCommand3[i]);
             }
             printf("...\n\r");

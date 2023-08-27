@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -30,10 +30,10 @@
 //------------------------------------------------------------------------------
 /// \dir
 /// !Purpose
-/// 
+///
 /// Definition and functions for using AT91SAM7L-related features, such
 /// has PIO pins, memories, etc.
-/// 
+///
 /// !Usage
 /// -# The code for booting the board is provided by board_cstartup.S and
 ///    board_lowlevel.c.
@@ -41,20 +41,20 @@
 ///    components, see board.h.
 /// -# For manipulating memories (remapping, SDRAM, etc.), see board_memories.h.
 //------------------------------------------------------------------------------
- 
+
 //------------------------------------------------------------------------------
 /// \unit
 /// !Purpose
-/// 
+///
 /// Definition of AT91SAM7L-EK characteristics, AT91SAM7L-dependant PIOs and
 /// external components interfacing.
-/// 
+///
 /// !Usage
 /// -# For operating frequency information, see "SAM7L-EK - Operating frequencies".
 /// -# For using portable PIO definitions, see "SAM7L-EK - PIO definitions".
 //------------------------------------------------------------------------------
 
-#ifndef BOARD_H 
+#ifndef BOARD_H
 #define BOARD_H
 
 //------------------------------------------------------------------------------
@@ -92,7 +92,7 @@
 /// \page "SAM7L-EK - Operating frequencies"
 /// This page lists several definition related to the board operating frequency
 /// (when using the initialization done by board_lowlevel.c).
-/// 
+///
 /// !Definitions
 /// - BOARD_MCK
 
@@ -118,13 +118,13 @@
 /// are named using the following convention: PIN_* for a constant which defines
 /// a single Pin instance (but may include several PIOs sharing the same
 /// controller), and PINS_* for a list of Pin instances.
-///  
+///
 /// !PCK
 /// - PIN_PCK0
-/// 
+///
 /// !DBGU
 /// - PINS_DBGU
-/// 
+///
 /// !LEDs
 /// - PIN_LED_DS1
 /// - PIN_LED_DS2
@@ -149,18 +149,18 @@
 ///
 /// !USART
 /// - PIN_USART0_TXD_POW
-/// 
+///
 /// !SPI
 /// - PIN_SPI_MOSI
 /// - PIN_SPI_MISO
 /// - PIN_SPI_SPCK
 /// - PIN_SPI_NPCS3
 /// - PINS_SPI
-/// 
+///
 /// !USB
 /// - PIN_USB_VBUS
 /// - PIN_USB_PULLUP
-/// 
+///
 /// !Keyboard Matrix
 /// - PIN_KBMATRIX_ROW_0
 /// - PIN_KBMATRIX_ROW_1
@@ -301,7 +301,7 @@
 //------------------------------------------------------------------------------
 /// \page "SAM7L-EK - Memories"
 /// This page lists definitions related to internal & external on-board memories.
-/// 
+///
 /// !Embedded Flash
 /// - BOARD_FLASH_EEFC
 /// - BOARD_FLASH_IAP_ADDRESS
@@ -343,9 +343,9 @@
 ///
 /// !SD Card SPI
 /// - BOARD_SD_SPI_BASE
-/// - BOARD_SD_SPI_ID  
+/// - BOARD_SD_SPI_ID
 /// - BOARD_SD_SPI_PINS
-/// - BOARD_SD_NPCS    
+/// - BOARD_SD_NPCS
 
 /// Base address of SPI peripheral connected to the dataflash.
 #define BOARD_AT45_A_SPI_BASE         AT91C_BASE_SPI
@@ -381,7 +381,7 @@
 /// \page "SAM7L-EK - External components"
 /// This page lists the definitions related to external on-board components
 /// located in the board.h file for the SAM7L-EK.
-/// 
+///
 /// !ISO7816
 /// - PIN_SMARTCARD_CONNECT
 /// - PIN_ISO7816_RSTMC

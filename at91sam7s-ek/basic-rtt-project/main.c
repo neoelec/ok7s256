@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -26,30 +26,30 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * ----------------------------------------------------------------------------
  */
- 
+
 //-----------------------------------------------------------------------------
 /// \dir "Real Time Timer"
 ///
 /// !!!Purpose
 ///
-/// This example demonstrates the Real-Time Timer (RTT) provided on 
-/// AT91 microcontrollers. It enables the user to set an alarm and watch 
-/// it being triggered when the timer reaches the corresponding value. 
+/// This example demonstrates the Real-Time Timer (RTT) provided on
+/// AT91 microcontrollers. It enables the user to set an alarm and watch
+/// it being triggered when the timer reaches the corresponding value.
 ///
 /// You can configure the RTT by following steps
 /// - SetPrescaler the RTT to 1s (32768)
 /// - Initialize the ISR routine which refesh it when 1s is counted down
-/// - Enable the RTT Interrtup of the vector 
+/// - Enable the RTT Interrtup of the vector
 ///
 /// !See
 /// - rtt: Real Timer Timer driver
-/// - aic: Advanced Interrupt Controller driver 
+/// - aic: Advanced Interrupt Controller driver
 ///
 ///
 /// !!!Description
 ///
-/// When launched, this program displays a timer count and a menu on the DBGU, 
-/// enabling the user to choose between several options: 
+/// When launched, this program displays a timer count and a menu on the DBGU,
+/// enabling the user to choose between several options:
 ///
 ///
 /// !!!Usage
@@ -82,7 +82,7 @@
 ///     Choice?
 ///    \endcode
 ///
-/// The user can then choose any of the available options to perform the described action. 
+/// The user can then choose any of the available options to perform the described action.
 ///
 //-----------------------------------------------------------------------------
 
@@ -258,7 +258,7 @@ int main(void)
     RefreshDisplay();
 
     // User input loop
-    while (1) { 
+    while (1) {
 
         // Wait for user input
         c = DBGU_GetChar();
@@ -309,7 +309,7 @@ int main(void)
 
                     RTT_SetAlarm(AT91C_BASE_RTTC, newAlarm);
                 }
-               
+
                 state = STATE_MAINMENU;
                 RefreshDisplay();
             }

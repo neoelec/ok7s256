@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -80,7 +80,7 @@ static unsigned char muted;
 static void AUDDSpeakerDriver_MuteReceived(unsigned int channel)
 {
     if (muted) {
-    
+
         AUDDSpeakerChannel_Mute(&(auddSpeakerDriver.channels[channel]));
     }
     else {
@@ -162,7 +162,7 @@ static void AUDDSpeakerDriver_GetFeatureCurrentValue(unsigned char entity,
 //        Changes the current active alternate setting of the given interface.
 //
 //    Parameters:
-//        
+//
 //*/
 //TRACE_DEBUG_M("SetInterface(%d,%d) ", setup->wIndex, setup->wValue);
 //
@@ -174,7 +174,7 @@ static void AUDDSpeakerDriver_GetFeatureCurrentValue(unsigned char entity,
 //                    case 0:
 //                    case 1:
 //                        if (speakerDriver->isOutStreamEnabled != setup->wValue) {
-//                        
+//
 //                            speakerDriver->isOutStreamEnabled = setup->wValue;
 //                            SPK_OutStreamStatusChanged(speakerDriver);
 //                            LED_SetGlowing(LED_OTHER, setup->wValue);
@@ -248,7 +248,7 @@ void AUDDSpeakerDriver_Initialize()
     AUDDSpeakerChannel_Initialize(&(auddSpeakerDriver.channels[2]),
                                   AUDDSpeakerDriver_RIGHTCHANNEL,
                                   0);
-    
+
     // Initialize the USB driver
     USBDDriver_Initialize(&(auddSpeakerDriver.usbdDriver),
                           &auddSpeakerDriverDescriptors,
@@ -281,7 +281,7 @@ void AUDDSpeakerDriver_RequestHandler(const USBGenericRequest *request)
                 TRACE_INFO_WP(
                           "sCur(0x%04X) ",
                           USBGenericRequest_GetIndex(request));
-    
+
                 // Check the target interface and entity
                 entity = AUDGenericRequest_GetEntity(request);
                 interface = AUDGenericRequest_GetInterface(request);
@@ -295,25 +295,25 @@ void AUDDSpeakerDriver_RequestHandler(const USBGenericRequest *request)
                         USBGenericRequest_GetLength(request));
                 }
                 else {
-    
+
                     TRACE_WARNING(
                               "AUDDSpeakerDriver_RequestHandler: Unsupported entity/interface combination (0x%04X)\n\r",
                               USBGenericRequest_GetIndex(request));
                     USBD_Stall(0);
                 }
                 break;
-    
+
             case AUDGenericRequest_GETCUR:
                 TRACE_INFO_WP(
                           "gCur(0x%04X) ",
                           USBGenericRequest_GetIndex(request));
-    
+
                 // Check the target interface and entity
                 entity = AUDGenericRequest_GetEntity(request);
                 interface = AUDGenericRequest_GetInterface(request);
                 if ((entity == AUDDSpeakerDriverDescriptors_FEATUREUNIT)
                     && (interface == AUDDSpeakerDriverDescriptors_CONTROL)) {
-    
+
                     AUDDSpeakerDriver_GetFeatureCurrentValue(
                         entity,
                         AUDFeatureUnitRequest_GetChannel(request),
@@ -321,16 +321,16 @@ void AUDDSpeakerDriver_RequestHandler(const USBGenericRequest *request)
                         USBGenericRequest_GetLength(request));
                 }
                 else {
-    
+
                     TRACE_WARNING(
                               "AUDDSpeakerDriver_RequestHandler: Unsupported entity/interface combination (0x%04X)\n\r",
                               USBGenericRequest_GetIndex(request));
                     USBD_Stall(0);
                 }
                 break;
-    
+
             default:
-    
+
                 TRACE_WARNING(
                           "AUDDSpeakerDriver_RequestHandler: Unsupported request (%d)\n\r",
                           USBGenericRequest_GetRequest(request));

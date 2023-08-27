@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -46,7 +46,7 @@
 //------------------------------------------------------------------------------
 /// Vendor command set control interface ID code .
 #define CMD_SET_NULL          0x0000
-#define CMD_SET_INTEL_EXT     0x0001 
+#define CMD_SET_INTEL_EXT     0x0001
 #define CMD_SET_AMD           0x0002
 #define CMD_SET_INTEL         0x0003
 #define CMD_SET_AMD_EXT       0x0004
@@ -188,9 +188,9 @@ struct NorFlash {
 
 
 extern unsigned char NorFlash_CFI_Detect(
-    struct NorFlash *norFlash, 
+    struct NorFlash *norFlash,
     unsigned char hardwareBusWidth);
-    
+
 
 unsigned int NorFlash_GetDeviceNumOfBlocks( struct NorFlashInfo *pNorFlashInfo);
 
@@ -198,7 +198,7 @@ unsigned int NorFlash_GetDeviceMinBlockSize(struct NorFlashInfo *pNorFlashInfo);
 
 unsigned int NorFlash_GetDeviceMaxBlockSize(
     struct NorFlashInfo *pNorFlashInfo);
-    
+
 unsigned int NorFlash_GetDeviceBlockSize(
     struct NorFlashInfo *pNorFlashInfo,
     unsigned int sector);
@@ -219,7 +219,7 @@ unsigned int NorFlash_GetByteAddressInChip(
 
 unsigned int NorFlash_GetAddressInChip(
    struct NorFlashInfo *pNorFlashInfo, unsigned int offset);
-					 
+
 unsigned char NorFlash_GetDataBusWidth(
    struct NorFlashInfo *pNorFlashInfo);
 

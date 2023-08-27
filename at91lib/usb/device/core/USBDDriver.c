@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -80,14 +80,14 @@ static void SetConfiguration(USBDDriver *pDriver, unsigned char cfgnum)
 
     // If the configuration is not 0, configure endpoints
     if (cfgnum != 0) {
-    
+
         // Parse configuration to get endpoint descriptors
         USBConfigurationDescriptor_Parse(pConfiguration, 0, pEndpoints, 0);
-    
+
         // Configure endpoints
         int i = 0;
         while (pEndpoints[i] != 0) {
-    
+
             USBD_ConfigureEndpoint(pEndpoints[i]);
             i++;
         }
@@ -170,7 +170,7 @@ static void GetEndpointStatus(unsigned char bEndpoint)
 
             data = 1;
         }
-        
+
         // Send the endpoint status
         USBD_Write(0, &data, 2, 0, 0);
     }
@@ -219,7 +219,7 @@ static void GetDescriptor(
 
     // Check the descriptor type
     switch (type) {
-        
+
         case USBGenericDescriptor_DEVICE:
             TRACE_INFO_WP("Dev ");
 
@@ -329,7 +329,7 @@ static void SetInterface(
     }
     else {
 
-        // Change the current setting of the interface and trigger the callback 
+        // Change the current setting of the interface and trigger the callback
         // if necessary
         if (pDriver->pInterfaces[infnum] != setting) {
 
@@ -378,16 +378,16 @@ static void USBDDriver_Test(unsigned char test)
     // the most significant byte of wIndex is used to specify the specific test mode
     switch (test) {
         case USBFeatureRequest_TESTPACKET:
-            //Test mode Test_Packet: 
+            //Test mode Test_Packet:
             //Upon command, a port must repetitively transmit the following test packet until
-            //the exit action is taken. This enables the testing of rise and fall times, eye 
+            //the exit action is taken. This enables the testing of rise and fall times, eye
             //patterns, jitter, and any other dynamic waveform specifications.
-            //The test packet is made up by concatenating the following strings. 
-            //(Note: For J/K NRZI data, and for NRZ data, the bit on the left is the first one 
-            //transmitted. “S” indicates that a bit stuff occurs, which inserts an “extra” NRZI data bit. 
+            //The test packet is made up by concatenating the following strings.
+            //(Note: For J/K NRZI data, and for NRZ data, the bit on the left is the first one
+            //transmitted. “S” indicates that a bit stuff occurs, which inserts an “extra” NRZI data bit.
             //“* N” is used to indicate N occurrences of a string of bits or symbols.)
-            //A port in Test_Packet mode must send this packet repetitively. The inter-packet timing 
-            //must be no less than the minimum allowable inter-packet gap as defined in Section 7.1.18 and 
+            //A port in Test_Packet mode must send this packet repetitively. The inter-packet timing
+            //must be no less than the minimum allowable inter-packet gap as defined in Section 7.1.18 and
             //no greater than 125 us.
             // Send ZLP
             USBD_Test(USBFeatureRequest_TESTSENDZLP);
@@ -477,7 +477,7 @@ void USBDDriver_Initialize(
 
     // Initialize interfaces array if not null
     if (pInterfaces != 0) {
-    
+
         memset(pInterfaces, sizeof(pInterfaces), 0);
     }
 }
@@ -540,25 +540,25 @@ void USBDDriver_RequestHandler(
 
         case USBGenericRequest_GETSTATUS:
             TRACE_INFO_WP("gSta ");
-    
+
             // Check who is the recipient
             switch (USBGenericRequest_GetRecipient(pRequest)) {
-    
+
                 case USBGenericRequest_DEVICE:
                     TRACE_INFO_WP("Dev ");
-    
+
                     // Send the device status
                     GetDeviceStatus(pDriver);
                     break;
-    
+
                 case USBGenericRequest_ENDPOINT:
                     TRACE_INFO_WP("Ept ");
-    
+
                     // Send the endpoint status
                     eptnum = USBGenericRequest_GetEndpointNumber(pRequest);
                     GetEndpointStatus(eptnum);
                     break;
-    
+
                 default:
                     TRACE_WARNING(
                               "USBDDriver_RequestHandler: Unknown recipient (%d)\n\r",

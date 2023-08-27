@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -78,7 +78,7 @@ static unsigned char CheckBlock(
 
     // Retrieve model scheme
     scheme = NandFlashModel_GetScheme(MODEL(skipBlock));
-    
+
     // Read spare area of first page of block
     error = RawNandFlash_ReadPage(RAW(skipBlock), block, 0, 0, spare);
     if (error) {
@@ -182,13 +182,13 @@ unsigned char SkipBlockNandFlash_Initialize(
         error = CheckBlock(skipBlock, block);
 
         if (error != GOODBLOCK) {
-            
+
             if (error == BADBLOCK) {
-                
+
                 TRACE_DEBUG("Block #%d is bad\n\r", block);
             }
             else {
-                
+
                 TRACE_ERROR(
                 "SkipBlockNandFlash_Initialize: Cannot retrieve info from block #%u\n\r", block);
             }
@@ -220,7 +220,7 @@ unsigned char SkipBlockNandFlash_EraseBlock(
     if (eraseType != SCRUB_ERASE) {
         // Check block status
         if (CheckBlock(skipBlock, block) != GOODBLOCK) {
-    
+
             TRACE_INFO("SkipBlockNandFlash_EraseBlock: Block is BAD\n\r");
             return NandCommon_ERROR_BADBLOCK;
         }
@@ -298,7 +298,7 @@ unsigned char SkipBlockNandFlash_ReadBlock(
     unsigned short i;
     // Error returned by SkipBlockNandFlash_WritePage
     unsigned char error = 0;
-    
+
     // Retrieve model information
     pageSize = NandFlashModel_GetPageDataSize(MODEL(skipBlock));
     numPagesPerBlock = NandFlashModel_GetBlockSizeInPages(MODEL(skipBlock));
@@ -320,7 +320,7 @@ unsigned char SkipBlockNandFlash_ReadBlock(
         }
         data = (void *) ((unsigned char *) data + pageSize);
     }
-    
+
     return 0;
 }
 
@@ -373,7 +373,7 @@ unsigned char SkipBlockNandFlash_WriteBlock(
     unsigned short i;
     // Error returned by SkipBlockNandFlash_WritePage
     unsigned char error = 0;
-    
+
     // Retrieve model information
     pageSize = NandFlashModel_GetPageDataSize(MODEL(skipBlock));
     numPagesPerBlock = NandFlashModel_GetBlockSizeInPages(MODEL(skipBlock));
@@ -383,10 +383,10 @@ unsigned char SkipBlockNandFlash_WriteBlock(
 
         TRACE_ERROR("SkipBlockNandFlash_WriteBlock: Block is BAD.\n\r");
         return NandCommon_ERROR_BADBLOCK;
-    }    
-    
+    }
+
     for (i = 0; i < numPagesPerBlock; i++) {
-        error = EccNandFlash_WritePage(ECC(skipBlock), block, i, data, 0);       
+        error = EccNandFlash_WritePage(ECC(skipBlock), block, i, data, 0);
         if (error) {
 
             TRACE_ERROR("SkipBlockNandFlash_WriteBlock: Cannot write page %d of block %d.\n\r", i, block);
@@ -423,7 +423,7 @@ unsigned char SkipBlockNandFlash_WriteBlock(
 //    unsigned short i;
 //    // Error returned by SkipBlockNandFlash_WritePage
 //    unsigned char error = 0;
-//    
+//
 //    // Retrieve model information
 //    pageSize = NandFlashModel_GetPageDataSize(MODEL(skipBlock));
 //    numPagesPerBlock = NandFlashModel_GetBlockSizeInPages(MODEL(skipBlock));

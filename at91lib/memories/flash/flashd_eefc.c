@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -132,9 +132,9 @@ unsigned char FLASHD_Write(
     unsigned char error;
 
     unsigned int sizeTmp;
-    unsigned int *pAlignedDestination; 
+    unsigned int *pAlignedDestination;
     unsigned int *pAlignedSource;
-    
+
     SANITY_CHECK(address >= AT91C_IFLASH);
     SANITY_CHECK(pBuffer);
     SANITY_CHECK((address + size) <= (AT91C_IFLASH + AT91C_IFLASH_SIZE));
@@ -160,17 +160,17 @@ unsigned char FLASHD_Write(
         memcpy(pPageBuffer + offset + writeSize, (void *) (pageAddress + offset + writeSize), padding);
 
         // Write page
-        // Writing 8-bit and 16-bit data is not allowed 
+        // Writing 8-bit and 16-bit data is not allowed
         // and may lead to unpredictable data corruption
         pAlignedDestination = (unsigned int*)pageAddress;
-        pAlignedSource = (unsigned int*)pPageBuffer;        
+        pAlignedSource = (unsigned int*)pPageBuffer;
         sizeTmp = AT91C_IFLASH_PAGE_SIZE;
         while (sizeTmp >= 4) {
 
             *pAlignedDestination++ = *pAlignedSource++;
             sizeTmp -= 4;
-        }        
-               
+        }
+
         // Send writing command
         error = EFC_PerformCommand(AT91C_EFC_FCMD_EWP, page);
         if (error) {

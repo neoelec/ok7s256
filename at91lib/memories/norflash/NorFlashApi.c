@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -55,7 +55,7 @@ void NORFLASH_Reset(struct NorFlash *pNorFlash, unsigned int address)
 /// \param pNorFlash  Pointer to a NorFlash instance.
 //------------------------------------------------------------------------------
 unsigned int NORFLASH_ReadManufactoryID(struct NorFlash *pNorFlash)
-{ 
+{
     return ((pNorFlash->pOperations)->_fReadManufactoryID)(&(pNorFlash->norFlashInfo));
 }
 
@@ -76,7 +76,7 @@ unsigned int NORFLASH_ReadDeviceID(struct NorFlash *pNorFlash)
 /// \param address Address offset to be erase.
 //------------------------------------------------------------------------------
 unsigned char NORFLASH_EraseSector(
-    struct NorFlash *pNorFlash, 
+    struct NorFlash *pNorFlash,
     unsigned int address)
 {
     return ((pNorFlash->pOperations)->_fEraseSector)(&(pNorFlash->norFlashInfo), address);

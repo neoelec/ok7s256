@@ -5473,7 +5473,7 @@ typedef struct _AT91S_UHP {
 #define AT91C_ADC_CHSR  (AT91_CAST(AT91_REG *) 	0xFFFC0018) // (ADC) ADC Channel Status Register
 #define AT91C_ADC_SR    (AT91_CAST(AT91_REG *) 	0xFFFC001C) // (ADC) ADC Status Register
 #define AT91C_ADC_CDR7  (AT91_CAST(AT91_REG *) 	0xFFFC004C) // (ADC) ADC Channel Data Register 7
-// ========== Register definition for ISI peripheral ========== 
+// ========== Register definition for ISI peripheral ==========
 #define AT91C_ISI_CDBA  (AT91_CAST(AT91_REG *) 	0xFFFC402C) // (ISI) Codec Dma Address Register
 #define AT91C_ISI_PDECF (AT91_CAST(AT91_REG *) 	0xFFFC4024) // (ISI) Preview Decimation Factor Register
 #define AT91C_ISI_IMR   (AT91_CAST(AT91_REG *) 	0xFFFC4014) // (ISI) Interrupt Mask Register

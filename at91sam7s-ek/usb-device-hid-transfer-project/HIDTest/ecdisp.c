@@ -17,7 +17,7 @@ Environment:
 
 Revision History:
 
-    May-98 : Created 
+    May-98 : Created
 
 --*/
 
@@ -74,7 +74,7 @@ Revision History:
 #define HIDP_GET_BUTTON_CAPS          21
 #define HIDP_GET_BUTTONS              22
 #define HIDP_GET_BUTTONS_EX           23
-#define HIDP_GET_CAPS                 24 
+#define HIDP_GET_CAPS                 24
 #define HIDP_GET_DATA                 25
 #define HIDP_GET_EXTENDED_ATTRIBUTES  26
 #define HIDP_GET_LINK_COLL_NODES      27
@@ -102,7 +102,7 @@ Revision History:
 #define HID_CLEAR_REPORT              49
 
 /*
-// These two definitions are not used by the display routines since 
+// These two definitions are not used by the display routines since
 //    the two functions were molded together into one for purpose of execution
 */
 
@@ -239,7 +239,7 @@ typedef struct _FUNCTION_NAMES
     char *szFunctionName;
 } FUNCTION_NAMES;
 
-typedef struct _PARAMETER_STATE 
+typedef struct _PARAMETER_STATE
 {
     BOOL fInputReport;
     BOOL fOutputReport;
@@ -255,7 +255,7 @@ typedef struct _PARAMETER_STATE
 
 typedef enum { DLGBOX_INIT_FAILED = -1, DLGBOX_ERROR, DLGBOX_CANCEL, DLGBOX_OK } DLGBOX_STATUS;
 
-typedef struct _ECDISPLAY_PARAMS 
+typedef struct _ECDISPLAY_PARAMS
 {
     HIDP_REPORT_TYPE          ReportType;
     USAGE                     UsagePage;
@@ -282,7 +282,7 @@ typedef struct _READ_PARAMS
     PHID_DEVICE device;
     BOOLEAN     stopThread;
 } READ_PARAMS, *PREAD_PARAMS;
-    
+
 /*****************************************************************************
 /* Local data variables
 /*****************************************************************************/
@@ -375,7 +375,7 @@ static PARAMETER_STATE pState[HID_NUMCALLS] = {
                                          {  TRUE,  TRUE,  TRUE, FALSE, FALSE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_GET_BUTTONS_EX
                                          { FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE }, // HIDP_GET_CAPS
                                          {  TRUE,  TRUE,  TRUE, FALSE, FALSE, FALSE, FALSE,  TRUE,  TRUE,  TRUE }, // HIDP_GET_DATA
-                                         {  TRUE,  TRUE,  TRUE,  TRUE, FALSE, FALSE, FALSE,  TRUE,  TRUE,  TRUE }, // HIDP_GET_EXTENDED_ATTRIBUTES 
+                                         {  TRUE,  TRUE,  TRUE,  TRUE, FALSE, FALSE, FALSE,  TRUE,  TRUE,  TRUE }, // HIDP_GET_EXTENDED_ATTRIBUTES
                                          { FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE }, // HIDP_GET_LINK_COLL_NODES
                                          {  TRUE,  TRUE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_GET_SCALED_USAGE_VALUE
                                          {  TRUE,  TRUE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE, FALSE, FALSE, FALSE }, // HIDP_GET_SPECIFIC_BUTTON_CAPS
@@ -391,7 +391,7 @@ static PARAMETER_STATE pState[HID_NUMCALLS] = {
                                          {  TRUE,  TRUE,  TRUE, FALSE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_SET_BUTTONS
                                          {  TRUE,  TRUE,  TRUE, FALSE, FALSE, FALSE, FALSE,  TRUE,  TRUE,  TRUE }, // HIDP_SET_DATA
                                          {  TRUE,  TRUE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_SET_SCALED_USAGE_VALUE
-                                         {  TRUE,  TRUE,  TRUE, FALSE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_SET_USAGES                                        
+                                         {  TRUE,  TRUE,  TRUE, FALSE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_SET_USAGES
                                          {  TRUE,  TRUE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_SET_USAGE_VALUE
                                          {  TRUE,  TRUE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_SET_USAGE_VALUE_ARRAY
                                          { FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE }, // HIDP_TRANSLATE_USAGES
@@ -399,7 +399,7 @@ static PARAMETER_STATE pState[HID_NUMCALLS] = {
                                          {  TRUE,  TRUE,  TRUE, FALSE,  TRUE, FALSE,  TRUE,  TRUE,  TRUE,  TRUE }, // HIDP_UNSET_USAGES
                                          { FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE }, // HIDP_USAGE_LIST_DIFFERENCE
                                          {  TRUE,  TRUE,  TRUE, FALSE, FALSE, FALSE, FALSE,  TRUE,  TRUE,  TRUE }  // HID_CLEAR_BUFFER
-                                        }; 
+                                        };
 
 
 /*****************************************************************************
@@ -413,25 +413,25 @@ vLoadExtCalls(
 
 VOID
 vSetReportType(
-    HWND hDlg, 
+    HWND hDlg,
     LONG lId
 );
 
-VOID 
+VOID
 vInitEditText(
-    HWND   hText, 
-    INT    cbTextSize, 
+    HWND   hText,
+    INT    cbTextSize,
     CHAR   *pchText
 );
 
 VOID vEnableParameters(
-    HWND     hDlg, 
+    HWND     hDlg,
     LRESULT  iCallSelection
 );
 
-BOOL 
+BOOL
 fGetAndVerifyParameters(
-    HWND              hDlg, 
+    HWND              hDlg,
     PECDISPLAY_PARAMS pParams
 );
 
@@ -449,13 +449,13 @@ ECDisp_DisplayOutput(
     IN PEXTCALL_PARAMS Results
 );
 
-VOID 
+VOID
 vExecuteAndDisplayOutput(
-    HWND              hOutputWindow, 
-    PHID_DEVICE       pDevice, 
-    INT               iFuncCall, 
+    HWND              hOutputWindow,
+    PHID_DEVICE       pDevice,
+    INT               iFuncCall,
     PECDISPLAY_PARAMS pParams
-);              
+);
 
 CHAR *pchGetHidAppStatusString(
     NTSTATUS StatusCode
@@ -553,7 +553,7 @@ ConvertStringToUnsignedList(
     IN OUT PCHAR   InString,
     OUT    PCHAR   *UnsignedList,
     OUT    PULONG  nUnsigneds
-); 
+);
 
 BOOL
 ConvertStringToUlongList(
@@ -571,7 +571,7 @@ ConvertStringToUsageList(
 
 VOID
 ECDisp_MakeGUIDString(
-    IN  GUID guid, 
+    IN  GUID guid,
     OUT CHAR szString[],
 	IN  UINT uiBuffSize
 );
@@ -593,9 +593,9 @@ ECDisp_ConvertUlongListToValueList(
 
 BOOL
 SetDlgItemIntHex(
-   HWND hDlg, 
-   INT nIDDlgItem, 
-   UINT uValue, 
+   HWND hDlg,
+   INT nIDDlgItem,
+   UINT uValue,
    INT nBytes
 );
 
@@ -630,7 +630,7 @@ bExtCallDlgProc(
 )
 {
     static PHID_DEVICE          pDevice;
-    static CHAR                 szTempBuff[1024]; 
+    static CHAR                 szTempBuff[1024];
     static CHAR                 szLabel[512];
     static CHAR                 szValue[512];
     static INT                  iLBCounter;
@@ -642,7 +642,7 @@ bExtCallDlgProc(
     static INT                  nFeatureReportIDs;
     static HANDLE               ReadThread;
     static READ_THREAD_CONTEXT  readContext;
-    
+
            INT                  iIndex;
            ECDISPLAY_PARAMS     params;
            DWORD                threadID;
@@ -650,14 +650,14 @@ bExtCallDlgProc(
     switch(message)
     {
     case WM_INITDIALOG:
-    
+
         /*
         // Initializing the dialog box involves the following steps:
         //  1) Determine from the parameter the pointer to the selected device
         //  2) Initializing the controls in the dialog box to their initial values
-        //  3) Send a message that our list of routines has changed 
+        //  3) Send a message that our list of routines has changed
         */
-    
+
         pDevice = (PHID_DEVICE) lParam;
 
         vInitECControls(hDlg,
@@ -666,15 +666,15 @@ bExtCallDlgProc(
                         pDevice -> Caps.OutputReportByteLength,
                         &pOutputDisplay,
                         pDevice -> Caps.FeatureReportByteLength,
-                        &pFeatureDisplay);                        
+                        &pFeatureDisplay);
 
         ReadThread = NULL;
-        
+
         PostMessage(hDlg,
                     WM_COMMAND,
                     IDC_EXTCALLS + (CBN_SELCHANGE << 16),
                     (LPARAM) GetDlgItem(hDlg,IDC_EXTCALLS));
-        break; 
+        break;
 
     case WM_COMMAND:
         switch(LOWORD(wParam))
@@ -683,13 +683,13 @@ bExtCallDlgProc(
             switch (HIWORD(wParam))
             {
             case CBN_SELCHANGE:
-                iIndex = (INT) SendDlgItemMessage(hDlg, 
+                iIndex = (INT) SendDlgItemMessage(hDlg,
                                                   IDC_EXTCALLS,
                                                   CB_GETCURSEL,
                                                   0,
                                                   0);
                 vEnableParameters(hDlg,
-                                  SendDlgItemMessage(hDlg, 
+                                  SendDlgItemMessage(hDlg,
                                                      IDC_EXTCALLS,
                                                      CB_GETITEMDATA,
                                                      iIndex,
@@ -706,19 +706,19 @@ bExtCallDlgProc(
             break;
 
         case IDC_OUTPUT_SELECT:
-            if (CBN_SELCHANGE == HIWORD(wParam)) 
+            if (CBN_SELCHANGE == HIWORD(wParam))
             {
                  BufferDisplay_ChangeSelection(pOutputDisplay);
             }
             break;
 
         case IDC_FEATURE_SELECT:
-            if (CBN_SELCHANGE == HIWORD(wParam)) 
+            if (CBN_SELCHANGE == HIWORD(wParam))
             {
                  BufferDisplay_ChangeSelection(pFeatureDisplay);
             }
             break;
-             
+
         case IDC_EXECUTE:
             /*
             // Get the parameters and verify that they are all correct
@@ -726,7 +726,7 @@ bExtCallDlgProc(
             //   don't continue any further.
             */
 
-            if ( !fGetAndVerifyParameters(hDlg, &params) ) 
+            if ( !fGetAndVerifyParameters(hDlg, &params) )
             {
                 ECDISP_ERROR(hDlg, "Error: One or more parameters are invalid");
             }
@@ -734,7 +734,7 @@ bExtCallDlgProc(
             /*
             // Else the parameters are valid and we can execute the call
             */
-              
+
             else
             {
                 iIndex = (INT) SendDlgItemMessage(hDlg, IDC_EXTCALLS, CB_GETCURSEL, 0, 0);
@@ -754,11 +754,11 @@ bExtCallDlgProc(
         // Start up a read thread that can read input reports while
         //  we operate on the other stuff
         */
-        
+
         case IDC_READ_SYNCH:
         case IDC_READ_ASYNCH:
-        
-            if (NULL == ReadThread) 
+
+            if (NULL == ReadThread)
             {
                 readContext.HidDevice = pDevice;
                 readContext.TerminateThread = FALSE;
@@ -768,21 +768,21 @@ bExtCallDlgProc(
 
                 ReadThread = CreateThread(  NULL,
                                             0,
-                                            (LOWORD(wParam) == IDC_READ_SYNCH) ? 
+                                            (LOWORD(wParam) == IDC_READ_SYNCH) ?
                                             SynchReadThreadProc :
                                             AsynchReadThreadProc,
                                             (LPVOID) &readContext,
                                             0,
                                             &threadID);
 
-                if (NULL == ReadThread) 
+                if (NULL == ReadThread)
                 {
                     MessageBox(hDlg,
                                "Unable to create read thread",
                                HCLIENT_ERROR,
                                MB_ICONEXCLAMATION);
                 }
-                else 
+                else
                 {
                     EnableWindow(GetDlgItem(hDlg, IDC_READ_SYNCH),
                                  (LOWORD(wParam) == IDC_READ_SYNCH));
@@ -792,29 +792,29 @@ bExtCallDlgProc(
 
                     SetWindowText(GetDlgItem(hDlg, LOWORD(wParam)),
                                   "Stop Read Thread");
-                                 
+
                     EnableWindow(GetDlgItem(hDlg, IDC_CANCEL), FALSE);
                 }
             }
-            else 
+            else
             {
                 readContext.TerminateThread = TRUE;
 
                 WaitForSingleObject(ReadThread, INFINITE);
 
                 ReadThread = NULL;
-                
+
                 SetWindowText(GetDlgItem(hDlg, IDC_READ_SYNCH),
                               "Start Synchronous Read Thread");
 
                 SetWindowText(GetDlgItem(hDlg, IDC_READ_ASYNCH),
                               "Start Asynchronous Read Thread");
 
-                EnableWindow(GetDlgItem(hDlg, IDC_READ_SYNCH), TRUE);                                     
-                EnableWindow(GetDlgItem(hDlg, IDC_READ_ASYNCH), TRUE);                                     
-                EnableWindow(GetDlgItem(hDlg, IDC_CANCEL), TRUE);                                     
-            }                                     
-            break;    
+                EnableWindow(GetDlgItem(hDlg, IDC_READ_SYNCH), TRUE);
+                EnableWindow(GetDlgItem(hDlg, IDC_READ_ASYNCH), TRUE);
+                EnableWindow(GetDlgItem(hDlg, IDC_CANCEL), TRUE);
+            }
+            break;
 
         case IDC_CANCEL:
             BufferDisplay_Destroy(pInputDisplay);
@@ -829,7 +829,7 @@ bExtCallDlgProc(
         PostMessage(hDlg, WM_COMMAND, IDC_CANCEL, 0);
         break;
 
-    } 
+    }
     return FALSE;
 }
 
@@ -844,19 +844,19 @@ vLoadExtCalls(
     /*
     // Load the physical device specific calls
     */
-    
-    for (uiIndex = 0; uiIndex < HID_DEVCALLS; uiIndex++) 
+
+    for (uiIndex = 0; uiIndex < HID_DEVCALLS; uiIndex++)
     {
-        iIndex = (INT) SendMessage(hExtCalls, 
-                                   CB_ADDSTRING, 
-                                   0, 
+        iIndex = (INT) SendMessage(hExtCalls,
+                                   CB_ADDSTRING,
+                                   0,
                                    (LPARAM) DeviceCalls[uiIndex].szFunctionName);
 
-        if (CB_ERR != iIndex && CB_ERRSPACE != iIndex) 
+        if (CB_ERR != iIndex && CB_ERRSPACE != iIndex)
         {
             SendMessage(hExtCalls,
                         CB_SETITEMDATA,
-                        iIndex, 
+                        iIndex,
                         DeviceCalls[uiIndex].uiIndex);
         }
     }
@@ -867,16 +867,16 @@ vLoadExtCalls(
 
     for (uiIndex = 0; uiIndex < HID_PPDCALLS; uiIndex++)
     {
-        iIndex = (INT) SendMessage(hExtCalls, 
-                                   CB_ADDSTRING, 
-                                   0, 
+        iIndex = (INT) SendMessage(hExtCalls,
+                                   CB_ADDSTRING,
+                                   0,
                                    (LPARAM) PpdCalls[uiIndex].szFunctionName);
 
-        if (CB_ERR != iIndex && CB_ERRSPACE != iIndex) 
+        if (CB_ERR != iIndex && CB_ERRSPACE != iIndex)
         {
             SendMessage(hExtCalls,
                         CB_SETITEMDATA,
-                        iIndex, 
+                        iIndex,
                         PpdCalls[uiIndex].uiIndex);
         }
     }
@@ -886,7 +886,7 @@ vLoadExtCalls(
 }
 
 VOID vSetReportType(
-    HWND hDlg, 
+    HWND hDlg,
     LONG lId
 )
 {
@@ -894,14 +894,14 @@ VOID vSetReportType(
     return;
 }
 
-VOID 
+VOID
 vInitEditText(
-    HWND hText, 
-    INT  cbTextSize, 
+    HWND hText,
+    INT  cbTextSize,
     CHAR *pchText
 )
 {
-    SendMessage(hText, EM_SETLIMITTEXT, (WPARAM) cbTextSize, 0); 
+    SendMessage(hText, EM_SETLIMITTEXT, (WPARAM) cbTextSize, 0);
     SendMessage(hText, EM_REPLACESEL, 0, (LPARAM) pchText);
 
     return;
@@ -925,23 +925,23 @@ VOID vEnableParameters(
 
     return;
 }
-    
-BOOL 
+
+BOOL
 fGetAndVerifyParameters(
-    HWND              hDlg, 
+    HWND              hDlg,
     PECDISPLAY_PARAMS pParams
 )
 {
     /*
     // Declare a text buffer of size 7 since the parameter limit is at most 6
-    //   characters in the edit box.  
+    //   characters in the edit box.
     */
-    
+
     CHAR    WindowText[7];
     BOOL    fStatus = TRUE;
     PCHAR   nptr;
-    
-    if (IsDlgButtonChecked(hDlg, IDC_INPUT)) 
+
+    if (IsDlgButtonChecked(hDlg, IDC_INPUT))
     {
         pParams -> ReportType = HidP_Input;
     }
@@ -957,12 +957,12 @@ fGetAndVerifyParameters(
     /*
     // Get and verify the usage page window text;
     */
-    
+
     GetWindowText(GetDlgItem(hDlg, IDC_USAGEPAGE), WindowText, 7);
 
     pParams -> UsagePage = (USAGE) strtol(WindowText, &nptr, 16);
 
-    if (*nptr != '\0') 
+    if (*nptr != '\0')
     {
         fStatus = FALSE;
         pParams -> UsagePage = 0;
@@ -976,12 +976,12 @@ fGetAndVerifyParameters(
 
     pParams -> Usage = (USAGE) strtol(WindowText, &nptr, 16);
 
-    if (*nptr != '\0') 
+    if (*nptr != '\0')
     {
         fStatus = FALSE;
         pParams -> Usage = 0;
     }
-    
+
     /*
     // Get and verify the link collection window text
     */
@@ -995,12 +995,12 @@ fGetAndVerifyParameters(
         fStatus = FALSE;
         pParams -> LinkCollection = 0;
     }
-    
+
     GetWindowText(GetDlgItem(hDlg, IDC_REPORTID), WindowText, 7);
 
     pParams -> ReportID = (UCHAR) strtol(WindowText, &nptr, 10);
- 
-    if (*nptr != '\0') 
+
+    if (*nptr != '\0')
     {
         fStatus = FALSE;
         pParams -> ReportID = 0;
@@ -1031,9 +1031,9 @@ vInitECControls(
     /*
     // Set the radio buttons initially to the input report type
     */
-    
+
     vSetReportType(hDlg, IDC_INPUT);
-    
+
     /*
     // Initialize the edit controls text
     */
@@ -1054,7 +1054,7 @@ vInitECControls(
                                      HidP_Input,
                                      ppInputDisplay);
 
-    if (!fInitStatus) 
+    if (!fInitStatus)
     {
         ECDISP_ERROR(hDlg, "Error initializing input buffer display");
     }
@@ -1066,7 +1066,7 @@ vInitECControls(
                                      HidP_Output,
                                      ppOutputDisplay);
 
-    if (!fInitStatus) 
+    if (!fInitStatus)
     {
         ECDISP_ERROR(hDlg,  "Error initializing output buffer display");
     }
@@ -1078,7 +1078,7 @@ vInitECControls(
                                      HidP_Feature,
                                      ppFeatureDisplay);
 
-    if (!fInitStatus) 
+    if (!fInitStatus)
     {
         ECDISP_ERROR(hDlg, "Error initializing feature buffer display");
     }
@@ -1086,11 +1086,11 @@ vInitECControls(
     /*
     // Reset the output box content
     */
-    
+
     SendMessage(GetDlgItem(hDlg, IDC_CALLOUTPUT), LB_RESETCONTENT, 0, 0);
     return;
 }
-    
+
 BOOL
 ECDisp_Execute(
     IN     INT             FuncCall,
@@ -1100,18 +1100,18 @@ ECDisp_Execute(
 /*++
 RoutineDescription:
     This routine is a complex routine for executing all of the functions.  The
-    routine was originally developed with consideration for future use that 
-    never materialized.  
+    routine was originally developed with consideration for future use that
+    never materialized.
 
     It makes use of the calls in extcalls.c which basically execute the given
-    function and does some verification on the buffers that are passed down to 
-    HID.DLL.  
+    function and does some verification on the buffers that are passed down to
+    HID.DLL.
 
-    The input parameters are specify the function call to execute, the 
+    The input parameters are specify the function call to execute, the
     call parameters structures and the call status structure.
 
     If any further buffers are needed for the specific calls, they will be
-    allocated here.  
+    allocated here.
 
     The CallStatus parameters is a structure set by the ExtCalls_ routines
 
@@ -1135,7 +1135,7 @@ RoutineDescription:
 
     CallStatus -> IsHidError = FALSE;
 
-    switch (FuncCall) 
+    switch (FuncCall)
     {
     case HID_READ_REPORT:
         CallStatus -> IsHidError = !ReadFile(CallParams -> DeviceHandle,
@@ -1163,7 +1163,7 @@ RoutineDescription:
     case HIDD_GET_HID_GUID:
         CallParams -> List = malloc(sizeof(GUID));
 
-        if (NULL != CallParams -> List) 
+        if (NULL != CallParams -> List)
         {
             HidD_GetHidGuid((GUID *) CallParams -> List);
         }
@@ -1182,13 +1182,13 @@ RoutineDescription:
     case HIDD_GET_ATTRIBUTES:
         CallParams -> List = malloc(sizeof(HIDD_ATTRIBUTES));
 
-        if (NULL != CallParams -> List) 
+        if (NULL != CallParams -> List)
         {
             CallStatus -> IsHidError = !HidD_GetAttributes(CallParams -> DeviceHandle,
                                                            CallParams -> List);
         }
         return (NULL != CallParams -> List);
-        
+
     case HIDD_GET_FEATURE:
         *(CallParams -> ReportBuffer) = CallParams -> ReportID;
 
@@ -1231,7 +1231,7 @@ RoutineDescription:
     case HIDD_GET_PHYSICAL_DESCRIPTOR:
         CallParams -> List = (PCHAR) malloc (CallParams -> ListLength);
 
-        if (NULL != CallParams -> List ) 
+        if (NULL != CallParams -> List )
         {
             CallStatus -> IsHidError = !HidD_GetPhysicalDescriptor(CallParams -> DeviceHandle,
                                                                    CallParams -> List,
@@ -1240,10 +1240,10 @@ RoutineDescription:
         return (NULL != CallParams -> List);
 
     case HIDD_GET_MANUFACTURER_STRING:
-        
+
         CallParams -> List = (PWCHAR) malloc (CallParams -> ListLength);
 
-        if (NULL != CallParams -> List ) 
+        if (NULL != CallParams -> List )
         {
             CallStatus -> IsHidError = !HidD_GetManufacturerString(CallParams -> DeviceHandle,
                                                                    CallParams -> List,
@@ -1254,7 +1254,7 @@ RoutineDescription:
     case HIDD_GET_PRODUCT_STRING:
         CallParams -> List = (PWCHAR) malloc (CallParams -> ListLength);
 
-        if (NULL != CallParams -> List ) 
+        if (NULL != CallParams -> List )
         {
             CallStatus -> IsHidError = !HidD_GetProductString(CallParams -> DeviceHandle,
                                                              CallParams -> List,
@@ -1276,11 +1276,11 @@ RoutineDescription:
             CallStatus -> HidErrorCode = status;
         }
         return (NULL != CallParams -> List);
-        
+
     case HIDD_GET_INDEXED_STRING:
         CallParams -> List = (PWCHAR) malloc (CallParams -> ListLength);
 
-        if (NULL != CallParams -> List ) 
+        if (NULL != CallParams -> List )
         {
             CallStatus -> IsHidError = !HidD_GetIndexedString(CallParams -> DeviceHandle,
                                                               CallParams -> Index,
@@ -1288,11 +1288,11 @@ RoutineDescription:
                                                               CallParams -> ListLength);
         }
         return (NULL != CallParams -> List);
-        
+
     case HIDD_GET_SERIAL_NUMBER_STRING:
         CallParams -> List = (PWCHAR) malloc (CallParams -> ListLength);
 
-        if (NULL != CallParams -> List ) 
+        if (NULL != CallParams -> List )
         {
             CallStatus -> IsHidError = !HidD_GetSerialNumberString(CallParams -> DeviceHandle,
                                                                    CallParams -> List,
@@ -1303,7 +1303,7 @@ RoutineDescription:
     case HIDD_GET_MS_GENRE_DESCRIPTOR:
         CallParams -> List = (PCHAR) malloc (CallParams -> ListLength);
 
-        if (NULL != CallParams -> List ) 
+        if (NULL != CallParams -> List )
         {
             CallStatus -> IsHidError = !HidD_GetMsGenreDescriptor(CallParams -> DeviceHandle,
                                                                   CallParams -> List,
@@ -1316,7 +1316,7 @@ RoutineDescription:
 
         CallParams -> List = malloc(size);
 
-        if (NULL != CallParams -> List) 
+        if (NULL != CallParams -> List)
         {
             status = HidP_GetButtonCaps(CallParams -> ReportType,
                                         CallParams -> List,
@@ -1336,7 +1336,7 @@ RoutineDescription:
 
         CallParams -> List = malloc(CallParams -> ListLength * sizeof(USAGE));
 
-        if (NULL != CallParams -> List) 
+        if (NULL != CallParams -> List)
         {
             status = HidP_GetButtons(CallParams -> ReportType,
                                      CallParams -> UsagePage,
@@ -1360,7 +1360,7 @@ RoutineDescription:
 
         CallParams -> List = malloc(CallParams -> ListLength * sizeof(USAGE_AND_PAGE));
 
-        if (NULL != CallParams -> List) 
+        if (NULL != CallParams -> List)
         {
             status = HidP_GetButtonsEx(CallParams -> ReportType,
                                        CallParams -> LinkCollection,
@@ -1375,7 +1375,7 @@ RoutineDescription:
         }
         return (NULL != CallParams -> List);
 
-        
+
     case HIDP_GET_CAPS:
 
         CallParams -> ListLength = sizeof(HIDP_CAPS);
@@ -1460,7 +1460,7 @@ RoutineDescription:
             CallStatus -> HidErrorCode = status;
        }
        return (NULL != CallParams -> List);
-        
+
     case HIDP_GET_SPECIFIC_VALUE_CAPS:
 
         CallParams -> List = malloc(CallParams -> ListLength * sizeof(HIDP_VALUE_CAPS));
@@ -1524,7 +1524,7 @@ RoutineDescription:
             CallStatus -> HidErrorCode = status;
        }
        return (NULL != CallParams -> List);
-         
+
     case HIDP_GET_USAGE_VALUE:
         status = HidP_GetUsageValue(CallParams -> ReportType,
                                     CallParams -> UsagePage,
@@ -1551,7 +1551,7 @@ RoutineDescription:
                                            &ValueCapsLength,
                                            CallParams -> Ppd);
 
-        if (HIDP_STATUS_SUCCESS != status) 
+        if (HIDP_STATUS_SUCCESS != status)
         {
             return (FALSE);
         }
@@ -1563,7 +1563,7 @@ RoutineDescription:
 
         CallParams -> List = malloc(CallParams -> ListLength);
 
-        if (NULL != CallParams -> List) 
+        if (NULL != CallParams -> List)
         {
             status = HidP_GetUsageValueArray(CallParams -> ReportType,
                                              CallParams -> UsagePage,
@@ -1582,7 +1582,7 @@ RoutineDescription:
 
     case HIDP_GET_VALUE_CAPS:
         CallParams -> List = malloc(CallParams -> ListLength * sizeof(HIDP_VALUE_CAPS));
-        if (NULL != CallParams -> List) 
+        if (NULL != CallParams -> List)
         {
             status = HidP_GetValueCaps(CallParams -> ReportType,
                                        CallParams -> List,
@@ -1595,7 +1595,7 @@ RoutineDescription:
 
 
     case HIDP_INITIALIZE_REPORT_FOR_ID:
-        
+
         status = pfnHidP_InitializeReportForID(CallParams -> ReportType,
                                                CallParams -> ReportID,
                                                CallParams -> Ppd,
@@ -1714,11 +1714,11 @@ RoutineDescription:
                                            &ValueCapsLength,
                                            CallParams -> Ppd);
 
-        if (HIDP_STATUS_SUCCESS != status) 
+        if (HIDP_STATUS_SUCCESS != status)
         {
             return (FALSE);
         }
-        
+
         CallParams -> BitSize     = ValueCaps.BitSize;
         CallParams -> ReportCount = ValueCaps.ReportCount;
 
@@ -1730,7 +1730,7 @@ RoutineDescription:
                                                            (PCHAR *) &CallParams -> List,
                                                            &CallParams -> ListLength);
 
-        if (!ExecuteStatus) 
+        if (!ExecuteStatus)
         {
             return (FALSE);
         }
@@ -1774,11 +1774,11 @@ RoutineDescription:
                                   CallParams -> Ppd,
                                   CallParams -> ReportBuffer,
                                   CallParams -> ReportLength);
-                          
+
         CallStatus -> IsHidError = (HIDP_STATUS_SUCCESS != status);
         CallStatus -> HidErrorCode = status;
-                          
-        return (TRUE);    
+
+        return (TRUE);
 
     case HIDP_USAGE_LIST_DIFFERENCE:
         CallParams -> MakeList = (PUSAGE) malloc (sizeof(USAGE) * CallParams -> ListLength);
@@ -1789,7 +1789,7 @@ RoutineDescription:
         }
 
         CallParams -> BreakList = (PUSAGE) malloc (sizeof(USAGE) * CallParams -> ListLength);
-        if (NULL == CallParams -> BreakList) 
+        if (NULL == CallParams -> BreakList)
         {
             free(CallParams -> MakeList);
 
@@ -1819,8 +1819,8 @@ ECDisp_DisplayOutput(
 /*++
 RoutineDescription:
     This routine is responsible for displaying the output from calls to HID.DLL
-    functions.  It must extract and interpret the appropriate data from the 
-    PEXTCALL_PARAMS structure. 
+    functions.  It must extract and interpret the appropriate data from the
+    PEXTCALL_PARAMS structure.
 --*/
 {
     PHIDP_LINK_COLLECTION_NODE NodeList;
@@ -1858,7 +1858,7 @@ RoutineDescription:
         break;
 
     case HIDD_GET_ATTRIBUTES:
-        vDisplayDeviceAttributes((PHIDD_ATTRIBUTES) Results -> List, 
+        vDisplayDeviceAttributes((PHIDD_ATTRIBUTES) Results -> List,
                                  hOutputWindow);
         break;
 
@@ -1872,15 +1872,15 @@ RoutineDescription:
     case HIDD_GET_MS_GENRE_DESCRIPTOR:
         OUTSTRING(hOutputWindow, "MS Genre Descriptor");
         OUTSTRING(hOutputWindow, "===================");
-    
+
             /*
         // To display a physical descriptor, the procedure currently just
-        //   creates a string data buffer by bytes and displays that 
+        //   creates a string data buffer by bytes and displays that
         //   in the results box.  It will display in rows of 16 bytes apiece.
         */
-        
+
         Index = 0;
-        while (Index < Results -> ListLength) 
+        while (Index < Results -> ListLength)
         {
             Strings_CreateDataBufferString(((PCHAR) Results -> List) + Index,
                                            Results -> ListLength - Index,
@@ -1888,12 +1888,12 @@ RoutineDescription:
                                            1,
                                            &GenreDescString);
 
-            if (NULL != GenreDescString) 
+            if (NULL != GenreDescString)
             {
                 OUTSTRING(hOutputWindow, GenreDescString);
                 free(GenreDescString);
             }
-            else 
+            else
             {
                OUTSTRING(hOutputWindow, "Error trying to display ms genre descriptor");
             }
@@ -1901,18 +1901,18 @@ RoutineDescription:
         }
         break;
 
-    case HIDD_GET_PHYSICAL_DESCRIPTOR: 
+    case HIDD_GET_PHYSICAL_DESCRIPTOR:
         OUTSTRING(hOutputWindow, "Physical Descriptor");
         OUTSTRING(hOutputWindow, "===================");
 
         /*
         // To display a physical descriptor, the procedure currently just
-        //   creates a string data buffer by bytes and displays that 
+        //   creates a string data buffer by bytes and displays that
         //   in the results box.  It will display in rows of 16 bytes apiece.
         */
-        
+
         Index = 0;
-        while (Index < Results -> ListLength) 
+        while (Index < Results -> ListLength)
         {
             Strings_CreateDataBufferString(((PCHAR) Results -> List) + Index,
                                            Results -> ListLength - Index,
@@ -1920,12 +1920,12 @@ RoutineDescription:
                                            1,
                                            &PhysDescString);
 
-            if (NULL != PhysDescString) 
+            if (NULL != PhysDescString)
             {
                 OUTSTRING(hOutputWindow, PhysDescString);
                 free(PhysDescString);
             }
-            else 
+            else
             {
                OUTSTRING(hOutputWindow, "Error trying to display physical descriptor");
             }
@@ -1944,7 +1944,7 @@ RoutineDescription:
     //   type of string.  Fixing of this display mechanism is a future (low priority)
     //   workitem.
     */
-    
+
     case HIDD_GET_PRODUCT_STRING:
         OUTSTRING(hOutputWindow, "Product String");
         OUTSTRING(hOutputWindow, "==============");
@@ -1971,12 +1971,12 @@ RoutineDescription:
         OUTSTRING(hOutputWindow, "=====================");
         OUTWSTRING(hOutputWindow, Results -> List);
         break;
-        
+
     case HIDP_GET_BUTTON_CAPS:
     case HIDP_GET_SPECIFIC_BUTTON_CAPS:
 
         ButtonCaps = (PHIDP_BUTTON_CAPS) (Results -> List);
-        for (Index = 0; Index < Results -> ListLength; Index++, ButtonCaps++) 
+        for (Index = 0; Index < Results -> ListLength; Index++, ButtonCaps++)
         {
              OUTSTRING(hOutputWindow, "==========================");
              vDisplayButtonAttributes(ButtonCaps, hOutputWindow);
@@ -1984,14 +1984,14 @@ RoutineDescription:
         break;
 
     /*
-    // HidP_GetButtons and HidP_GetUsages are in reality the same call.  
-    //   HidP_GetButtons actually a macro which gets redefined into 
+    // HidP_GetButtons and HidP_GetUsages are in reality the same call.
+    //   HidP_GetButtons actually a macro which gets redefined into
     //   HidP_GetUsages with the same parameter order.  That is why their
-    //   display mechanisms are identical.  This call returns in the 
+    //   display mechanisms are identical.  This call returns in the
     //   List parameter a list of Usages.  The display mechanism converts
     //   these usages into a string of numbers.
     */
-    
+
     case HIDP_GET_BUTTONS:
     case HIDP_GET_USAGES:
 
@@ -1999,7 +1999,7 @@ RoutineDescription:
         OUTSTRING(hOutputWindow, "===============");
 
         UsageList = (PUSAGE) Results -> List;
-        for (Index = 0; Index < Results -> ListLength; Index++) 
+        for (Index = 0; Index < Results -> ListLength; Index++)
         {
             vCreateUsageString(UsageList + Index, szTempBuffer);
 
@@ -2009,11 +2009,11 @@ RoutineDescription:
 
     /*
     // Like get their siblings, the normal get functions, these routines are
-    //   currently one in the same.  The difference between these routines 
+    //   currently one in the same.  The difference between these routines
     //   and their siblings is the return of a usage page along with each
     //   usage.  Therefore, both values must be displayed at the same time.
     */
-    
+
     case HIDP_GET_BUTTONS_EX:
     case HIDP_GET_USAGES_EX:
 
@@ -2021,7 +2021,7 @@ RoutineDescription:
         OUTSTRING(hOutputWindow, "===============");
 
         UsageAndPageList = (PUSAGE_AND_PAGE) Results -> List;
-        for (Index = 0; Index < Results -> ListLength; Index++) 
+        for (Index = 0; Index < Results -> ListLength; Index++)
         {
             vCreateUsageAndPageString(UsageAndPageList + Index,
                                       szTempBuffer);
@@ -2037,9 +2037,9 @@ RoutineDescription:
     case HIDP_GET_DATA:
         OUTSTRING(hOutputWindow, "Data Indices");
         OUTSTRING(hOutputWindow, "============");
-        
+
         DataList = (PHIDP_DATA) Results -> List;
-        for (Index = 0; Index < Results -> ListLength; Index++) 
+        for (Index = 0; Index < Results -> ListLength; Index++)
         {
             vDisplayDataAttributes(DataList+Index,
                                    FALSE,
@@ -2050,21 +2050,21 @@ RoutineDescription:
     case HIDP_GET_EXTENDED_ATTRIBUTES:
         OUTSTRING(hOutputWindow, "Extended Attributes");
         OUTSTRING(hOutputWindow, "===================");
-        
+
         ExtAttrib = (PHIDP_EXTENDED_ATTRIBUTES) Results -> List;
 
         DisplayExtendedAttributes(hOutputWindow,
-                                  ExtAttrib -> GlobalUnknowns, 
+                                  ExtAttrib -> GlobalUnknowns,
                                   ExtAttrib -> NumGlobalUnknowns);
         break;
-        
+
     case HIDP_GET_LINK_COLL_NODES:
 
         OUTSTRING(hOutputWindow, "Link Collection Nodes");
         OUTSTRING(hOutputWindow, "=====================");
-        
+
         NodeList = (PHIDP_LINK_COLLECTION_NODE) Results -> List;
-        for (Index = 0; Index < Results -> ListLength; Index++) 
+        for (Index = 0; Index < Results -> ListLength; Index++)
         {
             OUTSTRING(hOutputWindow, "===========================");
             vDisplayLinkCollectionNode(NodeList+Index,
@@ -2074,7 +2074,7 @@ RoutineDescription:
         break;
 
     case HIDP_GET_SCALED_USAGE_VALUE:
-    
+
         stringReturn = StringCbPrintf(szTempBuffer, TEMP_BUFFER_SIZE,
                        "Scaled usage value: %ld", Results -> ScaledValue);
         OUTSTRING(hOutputWindow, szTempBuffer);
@@ -2093,28 +2093,28 @@ RoutineDescription:
     //   an even byte size so we must use the special extraction routine to get
     //   each of the values in the array.
     */
-    
+
     case HIDP_GET_USAGE_VALUE_ARRAY:
 
         UsageValueArray = (PCHAR) Results -> List;
 
-        for (Index = 0; Index < Results -> ReportCount; Index++) 
+        for (Index = 0; Index < Results -> ReportCount; Index++)
         {
             vCreateUsageValueStringFromArray(UsageValueArray,
                                              Results -> BitSize,
                                              (USHORT) Index,
                                              szTempBuffer);
-    
+
             OUTSTRING(hOutputWindow, szTempBuffer);
         }
         break;
 
     case HIDP_GET_VALUE_CAPS:
     case HIDP_GET_SPECIFIC_VALUE_CAPS:
-        
+
         ValueCaps = (PHIDP_VALUE_CAPS) Results -> List;
 
-        for (Index = 0; Index < (INT) Results -> ListLength; Index++) 
+        for (Index = 0; Index < (INT) Results -> ListLength; Index++)
         {
             OUTSTRING(hOutputWindow, "==========================");
             vDisplayValueAttributes(ValueCaps + Index,
@@ -2139,16 +2139,16 @@ RoutineDescription:
     //   break lists generated by the function.  Therefore, we end up creating
     //   two different usage list strings.
     */
-    
+
     case HIDP_USAGE_LIST_DIFFERENCE:
-        
+
         OUTSTRING(hOutputWindow, "Make List");
         OUTSTRING(hOutputWindow, "=========");
 
         UsageList = (PUSAGE) Results -> MakeList;
         Index = 0;
 
-        while (0 != *(UsageList+Index) && Index < Results -> ListLength) 
+        while (0 != *(UsageList+Index) && Index < Results -> ListLength)
         {
             vCreateUsageString(UsageList + Index,
                                szTempBuffer);
@@ -2163,7 +2163,7 @@ RoutineDescription:
         UsageList = (PUSAGE) Results -> BreakList;
         Index = 0;
 
-        while (0 != *(UsageList+Index) && Index < Results -> ListLength) 
+        while (0 != *(UsageList+Index) && Index < Results -> ListLength)
         {
             vCreateUsageString(UsageList + Index,
                                szTempBuffer);
@@ -2174,12 +2174,12 @@ RoutineDescription:
         break;
 
     /*
-    // These functions simply update the buffer that is specified as the 
+    // These functions simply update the buffer that is specified as the
     //   input parameter.  We must select the correct display buffer mechanism
     //   based on the ReportType for the call and then update the given report
     //   in that display mechanism.
     */
-    
+
     case HID_READ_REPORT:
     case HIDD_GET_FEATURE:
     case HIDD_GET_INPUT_REPORT:
@@ -2205,7 +2205,7 @@ RoutineDescription:
     return;
 }
 
-VOID 
+VOID
 vExecuteAndDisplayOutput(
     HWND              hOutputWindow,
     PHID_DEVICE       pDevice,
@@ -2214,9 +2214,9 @@ vExecuteAndDisplayOutput(
 )
 /*++
 RoutineDescription:
-    This routine is a long function that is responsible for retrieving all the 
+    This routine is a long function that is responsible for retrieving all the
     paramter for a given function call, setting up the CallParameters structure
-    and then call the execute routine to get the necessary results and status of 
+    and then call the execute routine to get the necessary results and status of
     the operation.  It is then responsible for displaying the appropriate status
     and results if the function did not fail
 
@@ -2242,13 +2242,13 @@ RoutineDescription:
 	HRESULT			  stringReturn;
 
     /*
-    // ExecuteAndDisplayOutput needless to say, consists of two parts: 
+    // ExecuteAndDisplayOutput needless to say, consists of two parts:
     //    Executing and Displaying output.  The first section involves the
     //     execution phase where all parameters are filled in if necessary
     //     and ECDisp_Execute is called
     */
 
-    if (IS_NOT_IMPLEMENTED(iFuncCall)) 
+    if (IS_NOT_IMPLEMENTED(iFuncCall))
     {
         OUTSTRING(hOutputWindow, "Function not yet implemented");
         return;
@@ -2260,7 +2260,7 @@ RoutineDescription:
     //    then call the clear buffer command
     */
 
-    if (HID_CLEAR_REPORT == iFuncCall) 
+    if (HID_CLEAR_REPORT == iFuncCall)
     {
         SELECT_ON_REPORT_TYPE(params -> ReportType,
                               pInputDisplay,
@@ -2298,14 +2298,14 @@ RoutineDescription:
     //          we won't break any of the code that follows the switch statement
     */
 
-    switch (iFuncCall) 
+    switch (iFuncCall)
     {
     case HIDP_SET_BUTTONS:
     case HIDP_SET_USAGES:
     case HIDP_UNSET_BUTTONS:
     case HIDP_UNSET_USAGES:
 
-        switch (iFuncCall) 
+        switch (iFuncCall)
         {
         case HIDP_SET_BUTTONS:
             DlgBoxNumber = IDD_SET_BUTTONS;
@@ -2329,14 +2329,14 @@ RoutineDescription:
                                                     GetParent(hOutputWindow),
                                                     bSetUsagesDlgProc,
                                                     (LPARAM) params);
-        /*                      
+        /*
         // If the above call returns 1, then the dialog box routine
         //     successfully acquired a string from the user and put the
         //     pointer to it in params -> szListString.
         //     Now we need to convert the string to a usage list
         */
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
             return;
 
         ExecuteStatus = ConvertStringToUsageList(params -> szListString,
@@ -2344,7 +2344,7 @@ RoutineDescription:
                                                  &params -> ListLength);
         free(params -> szListString);
 
-        if (!ExecuteStatus) 
+        if (!ExecuteStatus)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Error getting usage list");
@@ -2359,25 +2359,25 @@ RoutineDescription:
                                                     bGetIndexedDlgProc,
                                                     (LPARAM) params);
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
             return;
 
         params -> Index = strtoul(params -> szListString, &endp, 10);
-        
-        if ('\0' != *endp) 
+
+        if ('\0' != *endp)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Invalid index value");
 
             free(params -> szListString);
-            free(params -> szListString2);                            
+            free(params -> szListString2);
             return;
         }
-        
+
         free(params -> szListString);
         params -> ListLength = strtoul(params -> szListString2, &endp, 10);
 
-        if ('\0' != *endp) 
+        if ('\0' != *endp)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Invalid buffer size");
@@ -2395,25 +2395,25 @@ RoutineDescription:
                                                     bGetIndexedDlgProc,
                                                     (LPARAM) params);
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
             return;
 
         params -> Index = strtoul(params -> szListString, &endp, 10);
-        
-        if ('\0' != *endp) 
+
+        if ('\0' != *endp)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Invalid index value");
 
             free(params -> szListString);
-            free(params -> szListString2);                            
+            free(params -> szListString2);
             return;
         }
-        
+
         free(params -> szListString);
         params -> ListLength = strtoul(params -> szListString2, &endp, 10);
 
-        if ('\0' != *endp) 
+        if ('\0' != *endp)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Invalid buffer size");
@@ -2422,7 +2422,7 @@ RoutineDescription:
         }
         free(params -> szListString2);
         break;
-        
+
     case HIDD_GET_MS_GENRE_DESCRIPTOR:
     case HIDD_GET_PHYSICAL_DESCRIPTOR:
     case HIDD_GET_MANUFACTURER_STRING:
@@ -2434,14 +2434,14 @@ RoutineDescription:
                                                     bSetBufLenDlgProc,
                                                     (LPARAM) params);
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
             return;
 
         params -> ListLength = strtoul(params -> szListString, &endp, 10);
 
-        if ('\0' != *endp) 
+        if ('\0' != *endp)
         {
-            free(params -> szListString);                
+            free(params -> szListString);
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Invalid buffer length");
             return;
@@ -2462,12 +2462,12 @@ RoutineDescription:
         //     Now we need to convert the string to a usage list
         */
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
            return;
 
         params -> Value = strtoul(params -> szListString, &endp, 10);
 
-        if ('\0' != *endp) 
+        if ('\0' != *endp)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Invalid value specified");
@@ -2485,7 +2485,7 @@ RoutineDescription:
                                                     bSetDataDlgProc,
                                                     (LPARAM) params);
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
             return;
 
         break;
@@ -2503,12 +2503,12 @@ RoutineDescription:
         //     Now we need to convert the string to a usage list
         */
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
             return;
 
         params -> ScaledValue = strtol(params -> szListString, &endp, 10);
 
-        if ('\0' != *endp) 
+        if ('\0' != *endp)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Invalid scaled usage value");
@@ -2533,12 +2533,12 @@ RoutineDescription:
         //     Now we need to convert the string to a usage list
         */
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
            return;
 
         params -> Value = strtoul(params -> szListString, &endp, 10);
-        
-        if ('\0' != *endp) 
+
+        if ('\0' != *endp)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Invalid usage value");
@@ -2564,7 +2564,7 @@ RoutineDescription:
         //     Now we need to convert the string to a usage list
         */
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
             return;
 
         ExecuteStatus = ConvertStringToUlongList(params -> szListString,
@@ -2572,7 +2572,7 @@ RoutineDescription:
                                                  &params -> ListLength);
         free(params -> szListString);
 
-        if (!ExecuteStatus) 
+        if (!ExecuteStatus)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Error getting list of values");
@@ -2587,7 +2587,7 @@ RoutineDescription:
                                                     bGetUsageDiffDlgProc,
                                                     (LPARAM) params);
 
-        if (DLGBOX_OK != iDlgStatus) 
+        if (DLGBOX_OK != iDlgStatus)
         {
             return;
         }
@@ -2598,7 +2598,7 @@ RoutineDescription:
                                                      (PCHAR *) &params -> UsageList,
                                                      &params -> ListLength);
 
-        if (!ExecuteStatus) 
+        if (!ExecuteStatus)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Error getting list of values");
@@ -2610,11 +2610,11 @@ RoutineDescription:
 
         ExecuteStatus = Strings_StringToUnsignedList(params -> szListString2,
                                                      sizeof(USAGE),
-                                                     16, 
+                                                     16,
                                                      (PCHAR *) &params -> UsageList2,
                                                      &params -> ListLength2);
 
-        if (!ExecuteStatus) 
+        if (!ExecuteStatus)
         {
             ECDISP_ERROR(GetParent(hOutputWindow),
                          "Error getting list of values");
@@ -2634,7 +2634,7 @@ RoutineDescription:
     // Step 2: Extract the common parameters.  It's probably easier
     //    to simply fill in the spots in call parameters whether they are used
     //    or not instead of filling in only those that are relevant to a given
-    //    function.  The details of some function relevant parameters are 
+    //    function.  The details of some function relevant parameters are
     //    handled after this.
     */
 
@@ -2661,7 +2661,7 @@ RoutineDescription:
     //    type
     */
 
-    switch (iFuncCall) 
+    switch (iFuncCall)
     {
     case HID_READ_REPORT:
 
@@ -2671,12 +2671,12 @@ RoutineDescription:
                                FALSE,
                                FALSE,
                                &readDevice);
-        
-        if (!status) 
+
+        if (!status)
         {
             OUTSTRING(hOutputWindow, "Unable to open device for reading");
         }
-        
+
         CallParameters.DeviceHandle  = readDevice.HidDevice;
         CallParameters.ReportType   = HidP_Input;
         CallParameters.ReportBuffer = readDevice.InputReportBuffer;
@@ -2691,12 +2691,12 @@ RoutineDescription:
                                FALSE,
                                FALSE,
                                &writeDevice);
-                               
-        if (!status) 
+
+        if (!status)
         {
             OUTSTRING(hOutputWindow, "Unable to open device for writing");
         }
-        
+
         BufferDisplay_CopyCurrentBuffer(pOutputDisplay,
                                         writeDevice.OutputReportBuffer);
 
@@ -2757,8 +2757,8 @@ RoutineDescription:
     case HIDP_SET_USAGE_VALUE_ARRAY:
     case HIDP_UNSET_BUTTONS:
     case HIDP_UNSET_USAGES:
-        
-        switch (CallParameters.ReportType) 
+
+        switch (CallParameters.ReportType)
         {
         case HidP_Input:
             pBufferDisplay = pInputDisplay;
@@ -2789,12 +2789,12 @@ RoutineDescription:
     }
 
     /*
-    // Now, we need to deal with those functions which have a List that is 
+    // Now, we need to deal with those functions which have a List that is
     //   used for either retrieving or gathering data.  There are two different
-    //   cases.  The first involves the user inputting a buffer and the system 
-    //   performing some action on the buffer, such as SetButtons.  We'll also 
+    //   cases.  The first involves the user inputting a buffer and the system
+    //   performing some action on the buffer, such as SetButtons.  We'll also
     //   the other functions that require one of the union fields to be set.
-    //   
+    //
     */
 
     /*
@@ -2808,13 +2808,13 @@ RoutineDescription:
     /*
     // Then there's the third case UsageListDifference which truly changes
     //   everything.  We've got to determine the size of the resulting lists
-    //   is the MaxSize of the other two lists.  Plus, we need to insure that 
+    //   is the MaxSize of the other two lists.  Plus, we need to insure that
     //   our buffers are 00 terminated if they are less than the max size, ie
     //   there not the same size as the larger buffer.  This may require
     //   reallocation of the block.
     */
 
-    switch (iFuncCall) 
+    switch (iFuncCall)
     {
     /*
     // First Case functions
@@ -2895,12 +2895,12 @@ RoutineDescription:
         CallParameters.List  = params -> UsageList;
         CallParameters.List2 = params -> UsageList2;
 
-        if (CallParameters.ListLength > params -> ListLength) 
+        if (CallParameters.ListLength > params -> ListLength)
         {
             CallParameters.List = (PUSAGE) realloc(params -> UsageList,
                                                    (params -> ListLength+1) * sizeof(USAGE));
 
-            if (NULL == CallParameters.List) 
+            if (NULL == CallParameters.List)
             {
                 ECDISP_ERROR(GetParent(hOutputWindow),
                              "Error allocating memory");
@@ -2913,12 +2913,12 @@ RoutineDescription:
 
             *(((PUSAGE) CallParameters.List) + CallParameters.ListLength - 1) = 0;
         }
-        else if (CallParameters.ListLength > params -> ListLength2) 
+        else if (CallParameters.ListLength > params -> ListLength2)
         {
             CallParameters.List2 = (PUSAGE) realloc(params -> UsageList2,
                                                    (params -> ListLength+1) * sizeof(USAGE));
 
-            if (NULL == CallParameters.List2) 
+            if (NULL == CallParameters.List2)
             {
                 ECDISP_ERROR(GetParent(hOutputWindow),
                              "Error allocating memory");
@@ -2940,7 +2940,7 @@ RoutineDescription:
     // Params are now set up and ready to go, let's execute
     */
 
-    if (HIDD_GET_FREE_PREPARSED_DATA == iFuncCall) 
+    if (HIDD_GET_FREE_PREPARSED_DATA == iFuncCall)
     {
         ExecuteStatus = ECDisp_Execute(HIDD_GET_PREPARSED_DATA,
                                        &CallParameters,
@@ -2952,7 +2952,7 @@ RoutineDescription:
             return;
         }
 
-        DISPLAY_HIDD_STATUS(hOutputWindow, 
+        DISPLAY_HIDD_STATUS(hOutputWindow,
                             "HidD_GetPreparsedData",
                             CallStatus,
 							stringReturn);
@@ -2964,14 +2964,14 @@ RoutineDescription:
                                            &CallStatus);
 
             OUTSTRING(hOutputWindow, "=======================");
-            
-            if (!ExecuteStatus) 
+
+            if (!ExecuteStatus)
             {
                 OUTSTRING(hOutputWindow, "Unknown error: Couldn't execute function");
                 return;
             }
 
-            DISPLAY_HIDD_STATUS(hOutputWindow, 
+            DISPLAY_HIDD_STATUS(hOutputWindow,
                                 "HidD_FreePreparsedData",
                                 CallStatus,
 								stringReturn);
@@ -2980,49 +2980,49 @@ RoutineDescription:
     else
     {
         if ((HID_READ_REPORT == iFuncCall || HID_WRITE_REPORT == iFuncCall) &&
-            (!status)) 
+            (!status))
         {
             //
             // Indicate there was an error so we don't display anything further
             //
-        
+
             CallStatus.IsHidError = TRUE;
         }
-        else 
-        {    
+        else
+        {
             ExecuteStatus = ECDisp_Execute(iFuncCall,
                                            &CallParameters,
                                            &CallStatus);
 
-            if (!ExecuteStatus) 
+            if (!ExecuteStatus)
             {
                 OUTSTRING(hOutputWindow, "Unknown error: Couldn't execute function");
                 return;
             }
 
-            if (IS_HIDD_FUNCTION(iFuncCall) || IS_HID_FUNCTION(iFuncCall)) 
+            if (IS_HIDD_FUNCTION(iFuncCall) || IS_HID_FUNCTION(iFuncCall))
             {
-                DISPLAY_HIDD_STATUS(hOutputWindow, 
+                DISPLAY_HIDD_STATUS(hOutputWindow,
                                     GET_FUNCTION_NAME(iFuncCall),
                                     CallStatus,
 									stringReturn);
 
             }
-            else 
+            else
             {
                 DISPLAY_HIDP_STATUS(hOutputWindow,
                                     GET_FUNCTION_NAME(iFuncCall),
                                     CallStatus,
 									stringReturn);
             }
-        }            
+        }
     }
 
     /*
     // Display the other results only if there wasn't a HID error
     */
 
-    if (!CallStatus.IsHidError || (HIDP_STATUS_NULL == CallStatus.HidErrorCode)) 
+    if (!CallStatus.IsHidError || (HIDP_STATUS_NULL == CallStatus.HidErrorCode))
     {
         OUTSTRING(hOutputWindow, "=======================");
 
@@ -3031,23 +3031,23 @@ RoutineDescription:
         //   display the info for the parts that are dependent on the function being
         //   called
         */
-    
+
         ECDisp_DisplayOutput(hOutputWindow,
                             iFuncCall,
                             &CallParameters);
     }
 
-    if (CallParameters.List != NULL) 
+    if (CallParameters.List != NULL)
     {
         free(CallParameters.List);
     }
 
-    if (List2Alloc && CallParameters.List2 != NULL) 
+    if (List2Alloc && CallParameters.List2 != NULL)
     {
         free(CallParameters.List2);
     }
 
-    if (MakeListAlloc && CallParameters.MakeList != NULL) 
+    if (MakeListAlloc && CallParameters.MakeList != NULL)
     {
         free(CallParameters.MakeList);
     }
@@ -3079,7 +3079,7 @@ RoutineDescription:
     for some purpose which never materialized but was left in because it might be
     useful in the future.
 --*/
-{    
+{
     INT               nAllocatedIDs;
     INT               nFoundIDs;
     INT               nWalkCount;
@@ -3112,48 +3112,48 @@ RoutineDescription:
     nFoundIDs = 0;
     pButtonWalk = phidButtonCaps;
     pValueWalk = phidValueCaps;
-                                              
+
     pucBuffer = (UCHAR *) malloc(sizeof(UCHAR) * nAllocatedIDs);
-    if (NULL == pucBuffer) 
+    if (NULL == pucBuffer)
         return;
 
     /*
     // Beginning with the button caps and then going to the value caps do the
     // following
     //
-    // 1) Take the report ID and search the array of report IDs looking for 
-    //       an existing report ID and add to the array if not there.  
+    // 1) Take the report ID and search the array of report IDs looking for
+    //       an existing report ID and add to the array if not there.
     //
     // 2) Add the report ID to the array in sorted order that way we sort the
-    //      array at any time.  
-    // 
+    //      array at any time.
+    //
     // 3) Must also realloc the array if we run out of array space
     */
 
-    for (usIndex = 0; usIndex < nButtonCaps; usIndex++, pButtonWalk++) 
+    for (usIndex = 0; usIndex < nButtonCaps; usIndex++, pButtonWalk++)
     {
         ucReportID = pButtonWalk -> ReportID;
-        
+
         pucWalk = pucBuffer;
         nWalkCount = 0;
         fIDFound = FALSE;
 
-        while (!fIDFound && nWalkCount < nFoundIDs) 
+        while (!fIDFound && nWalkCount < nFoundIDs)
         {
-            if (*pucWalk == ucReportID) 
+            if (*pucWalk == ucReportID)
             {
                 fIDFound = TRUE;
             }
-            else if (ucReportID > *pucWalk) 
+            else if (ucReportID > *pucWalk)
             {
                 pucWalk++;
                 nWalkCount++;
             }
         }
 
-        if (!fIDFound) 
+        if (!fIDFound)
         {
-            if (nFoundIDs == nAllocatedIDs) 
+            if (nFoundIDs == nAllocatedIDs)
             {
                 nAllocatedIDs *= 2;
 
@@ -3176,7 +3176,7 @@ RoutineDescription:
             /*
             // At this point, pucWalk points to the smallest ReportID in the
             //   buffer that is greater than the ReportID we want to insert.
-            //   We need to bump all reportIDs beginning at pucWalk up one 
+            //   We need to bump all reportIDs beginning at pucWalk up one
             //   spot and insert the new ReportID at pucWalk
             */
 
@@ -3188,7 +3188,7 @@ RoutineDescription:
 
     *ppReportIDList = pucBuffer;
     *nReportIDs = nFoundIDs;
-    
+
     return;
 }
 
@@ -3204,28 +3204,28 @@ bSetUsagesDlgProc(
            INT                StringLength;
            DLGBOX_STATUS      RetValue;
 
-    switch (message) 
+    switch (message)
     {
     case WM_INITDIALOG:
-        
+
         pParams = (PECDISPLAY_PARAMS) lParam;
 
-        SetDlgItemIntHex(hDlg, 
-                         IDC_USAGE_PAGE, 
+        SetDlgItemIntHex(hDlg,
+                         IDC_USAGE_PAGE,
                          pParams -> UsagePage,
                          2);
         break;
 
     case WM_COMMAND:
-        switch (LOWORD(wParam)) 
+        switch (LOWORD(wParam))
         {
         case IDOK:
             StringLength = GetWindowTextLength(GetDlgItem(hDlg, IDC_USAGE_LIST));
 
-            if (StringLength > 0) 
+            if (StringLength > 0)
             {
                 pParams -> szListString = (PCHAR) malloc(StringLength+1);
-                if (NULL == pParams -> szListString) 
+                if (NULL == pParams -> szListString)
                 {
                     ECDISP_ERROR(hDlg, "Error allocating memory");
                     RetValue = DLGBOX_ERROR;
@@ -3239,7 +3239,7 @@ bSetUsagesDlgProc(
                     RetValue = DLGBOX_OK;
                 }
             }
-            else 
+            else
             {
                 pParams -> szListString = NULL;
                 RetValue = DLGBOX_CANCEL;
@@ -3269,14 +3269,14 @@ bSetValueDlgProc(
            INT                StringLength;
            DLGBOX_STATUS      RetValue;
 
-    switch (message) 
+    switch (message)
     {
     case WM_INITDIALOG:
 
         pParams = (PECDISPLAY_PARAMS) lParam;
 
-        SetDlgItemIntHex(hDlg, 
-                         IDC_USAGE_PAGE, 
+        SetDlgItemIntHex(hDlg,
+                         IDC_USAGE_PAGE,
                          pParams -> UsagePage,
                          sizeof(USAGE));
 
@@ -3287,21 +3287,21 @@ bSetValueDlgProc(
         break;
 
     case WM_COMMAND:
-        switch (LOWORD(wParam)) 
+        switch (LOWORD(wParam))
         {
         case IDOK:
             StringLength = GetWindowTextLength(GetDlgItem(hDlg, IDC_VALUE));
 
-            if (StringLength > 0) 
+            if (StringLength > 0)
             {
                 pParams -> szListString = (PCHAR) malloc(StringLength+1);
-                if (NULL == pParams -> szListString) 
+                if (NULL == pParams -> szListString)
                 {
                     ECDISP_ERROR(hDlg, "Error allocating memory");
 
                     RetValue = DLGBOX_ERROR;
                 }
-                else 
+                else
                 {
                     GetWindowText(GetDlgItem(hDlg, IDC_VALUE),
                                   pParams -> szListString,
@@ -3340,29 +3340,29 @@ bSetInputBuffDlgProc(
            INT                StringLength;
            DLGBOX_STATUS      RetValue;
 
-    switch (message) 
+    switch (message)
     {
     case WM_INITDIALOG:
         pParams = (PECDISPLAY_PARAMS) lParam;
         break;
 
     case WM_COMMAND:
-        switch (LOWORD(wParam)) 
+        switch (LOWORD(wParam))
         {
         case IDOK:
             StringLength = GetWindowTextLength(GetDlgItem(hDlg, IDC_INPUT_BUFFERS));
 
-            if (StringLength > 0) 
+            if (StringLength > 0)
             {
                 pParams -> szListString = (PCHAR) malloc(StringLength+1);
 
-                if (NULL == pParams -> szListString) 
+                if (NULL == pParams -> szListString)
                 {
                     ECDISP_ERROR(hDlg, "Error allocating memory");
 
                     RetValue = DLGBOX_ERROR;
                 }
-                else 
+                else
                 {
                     GetWindowText(GetDlgItem(hDlg, IDC_INPUT_BUFFERS),
                                   pParams -> szListString,
@@ -3371,7 +3371,7 @@ bSetInputBuffDlgProc(
                     RetValue = DLGBOX_OK;
                 }
             }
-            else 
+            else
             {
                 pParams -> szListString = NULL;
                 RetValue = DLGBOX_CANCEL;
@@ -3425,23 +3425,23 @@ bSetDataDlgProc(
         break;
 
     case WM_COMMAND:
-        switch (LOWORD(wParam)) 
+        switch (LOWORD(wParam))
         {
         case IDC_ADD_DATA:
             IndexValue = GetDlgItemInt(hDlg,
                                        IDC_INDEX,
                                        &lpTranslated,
                                        FALSE);
-            if (!lpTranslated) 
+            if (!lpTranslated)
             {
                 ECDISP_ERROR(hDlg,
                            "Invalid index value: must be unsigned integer");
                 break;
             }
-            
-            if (0 == GetWindowText(GetDlgItem(hDlg, IDC_VALUE), 
-                                   DataString, 1023)) 
-            {                                          
+
+            if (0 == GetWindowText(GetDlgItem(hDlg, IDC_VALUE),
+                                   DataString, 1023))
+            {
                 ECDISP_ERROR(hDlg, "Invalid data value");
                 break;
             }
@@ -3452,14 +3452,14 @@ bSetDataDlgProc(
             {
                 Value = 1;
             }
-            else if (0 == lstrcmp(DataString, "FALSE")) 
+            else if (0 == lstrcmp(DataString, "FALSE"))
             {
                 Value = 0;
             }
-            else 
+            else
             {
                 Value = strtoul(DataString, &endp, 10);
-                if (*endp != '\0') 
+                if (*endp != '\0')
                 {
                     ECDISP_ERROR(hDlg, "Invalid data value");
                     break;
@@ -3467,7 +3467,7 @@ bSetDataDlgProc(
             }
             stringReturn = StringCbPrintf(DataString,
                            TEMP_BUFFER_SIZE,
-                           SETDATA_LISTBOX_FORMAT, 
+                           SETDATA_LISTBOX_FORMAT,
                            IndexValue,
                            Value);
 
@@ -3476,7 +3476,7 @@ bSetDataDlgProc(
                                               0,
                                               (LPARAM) DataString);
 
-            if (CB_ERR == ListBoxStatus || CB_ERRSPACE == ListBoxStatus) 
+            if (CB_ERR == ListBoxStatus || CB_ERRSPACE == ListBoxStatus)
             {
                 ECDISP_ERROR(hDlg, "Error adding string to data list");
                 break;
@@ -3500,7 +3500,7 @@ bSetDataDlgProc(
             if (0 != DataListLength)
             {
                 DataList = malloc(DataListLength * sizeof(HIDP_DATA));
-                if (NULL == DataList) 
+                if (NULL == DataList)
                 {
                     ECDISP_ERROR(hDlg, "Error allocating memory");
 
@@ -3508,15 +3508,15 @@ bSetDataDlgProc(
                     RetValue = DLGBOX_CANCEL;
                     break;
                 }
-                
-                for (Index = 0, CurrData = DataList; Index < DataListLength; Index++, CurrData++) 
+
+                for (Index = 0, CurrData = DataList; Index < DataListLength; Index++, CurrData++)
                 {
                     SendMessage(GetDlgItem(hDlg, IDC_DATA_LIST),
                                 LB_GETTEXT,
                                 Index,
                                 (LPARAM) DataString);
 
-                    iReturn = sscanf(DataString, 
+                    iReturn = sscanf(DataString,
                            SETDATA_LISTBOX_FORMAT,
                            &IndexValue,
                            &Value);
@@ -3526,7 +3526,7 @@ bSetDataDlgProc(
                 }
                 RetValue = DLGBOX_OK;
             }
-            else 
+            else
             {
                 DataList = NULL;
                 RetValue = DLGBOX_CANCEL;
@@ -3558,30 +3558,30 @@ bSetBufLenDlgProc(
            INT                StringLength;
            DLGBOX_STATUS      RetValue;
 
-    switch (message) 
-    { 
+    switch (message)
+    {
    case WM_INITDIALOG:
 
         pParams = (PECDISPLAY_PARAMS) lParam;
         break;
 
     case WM_COMMAND:
-        switch (LOWORD(wParam)) 
+        switch (LOWORD(wParam))
         {
         case IDOK:
             StringLength = GetWindowTextLength(GetDlgItem(hDlg, IDC_BUFFER_LENGTH));
 
-            if (StringLength > 0) 
+            if (StringLength > 0)
             {
                 pParams -> szListString = (PCHAR) malloc(StringLength+1);
-                if (NULL == pParams -> szListString) 
+                if (NULL == pParams -> szListString)
                 {
                     ECDISP_ERROR(hDlg, "Error allocating memory");
 
                     RetValue = DLGBOX_ERROR;
 
                 }
-                else 
+                else
                 {
                     GetWindowText(GetDlgItem(hDlg, IDC_BUFFER_LENGTH),
                                   pParams -> szListString,
@@ -3620,7 +3620,7 @@ bSetInputBuffersDlgProc(
            INT                StringLength;
            DLGBOX_STATUS      RetValue;
 
-    switch (message) 
+    switch (message)
     {
     case WM_INITDIALOG:
 
@@ -3628,21 +3628,21 @@ bSetInputBuffersDlgProc(
         break;
 
     case WM_COMMAND:
-        switch (LOWORD(wParam)) 
+        switch (LOWORD(wParam))
         {
         case IDOK:
             StringLength = GetWindowTextLength(GetDlgItem(hDlg, IDC_INPUT_BUFFERS));
 
-            if (StringLength > 0) 
+            if (StringLength > 0)
             {
                 pParams -> szListString = (PCHAR) malloc(StringLength+1);
 
-                if (NULL == pParams -> szListString) 
+                if (NULL == pParams -> szListString)
                 {
                     ECDISP_ERROR(hDlg, "Error allocating memory");
                     RetValue = DLGBOX_ERROR;
                 }
-                else 
+                else
                 {
                     GetWindowText(GetDlgItem(hDlg, IDC_INPUT_BUFFERS),
                                   pParams -> szListString,
@@ -3682,7 +3682,7 @@ bGetIndexedDlgProc(
            INT                StringLength2;
            DLGBOX_STATUS      RetValue;
 
-    switch (message) 
+    switch (message)
     {
     case WM_INITDIALOG:
 
@@ -3690,13 +3690,13 @@ bGetIndexedDlgProc(
         break;
 
     case WM_COMMAND:
-        switch (LOWORD(wParam)) 
+        switch (LOWORD(wParam))
         {
-        case IDOK:       
+        case IDOK:
             StringLength  = GetWindowTextLength(GetDlgItem(hDlg, IDC_INDEX));
             StringLength2 = GetWindowTextLength(GetDlgItem(hDlg, IDC_BUFFER_LENGTH));
 
-            if (StringLength <= 0 || StringLength2 <= 0) 
+            if (StringLength <= 0 || StringLength2 <= 0)
             {
                 pParams -> szListString = NULL;
                 pParams -> szListString2 = NULL;
@@ -3707,19 +3707,19 @@ bGetIndexedDlgProc(
             pParams -> szListString = (PCHAR) malloc(StringLength+1);
             pParams -> szListString2 = (PCHAR) malloc(StringLength2+1);
 
-            if (NULL == pParams -> szListString || NULL == pParams -> szListString2) 
+            if (NULL == pParams -> szListString || NULL == pParams -> szListString2)
             {
                    ECDISP_ERROR(hDlg, "Error allocating memory");
 
-                   if (NULL != pParams -> szListString) 
+                   if (NULL != pParams -> szListString)
                        free(pParams -> szListString);
 
-                   if (NULL != pParams -> szListString2) 
+                   if (NULL != pParams -> szListString2)
                        free(pParams -> szListString2);
 
                    RetValue = DLGBOX_ERROR;
             }
-            else 
+            else
             {
                 GetWindowText(GetDlgItem(hDlg, IDC_INDEX),
                               pParams -> szListString,
@@ -3756,7 +3756,7 @@ bGetUsageDiffDlgProc(
            INT                StringLength2;
            DLGBOX_STATUS      RetValue;
 
-    switch (message) 
+    switch (message)
     {
     case WM_INITDIALOG:
 
@@ -3764,20 +3764,20 @@ bGetUsageDiffDlgProc(
         break;
 
     case WM_COMMAND:
-        switch (LOWORD(wParam)) 
+        switch (LOWORD(wParam))
         {
-        case IDOK:       
+        case IDOK:
             StringLength  = GetWindowTextLength(GetDlgItem(hDlg, IDC_USAGE_LIST1));
             StringLength2 = GetWindowTextLength(GetDlgItem(hDlg, IDC_USAGE_LIST2));
 
-            if (StringLength <= 0) 
+            if (StringLength <= 0)
             {
                 pParams -> szListString = NULL;
             }
-            else 
+            else
             {
                 pParams -> szListString = (PCHAR) malloc(StringLength+1);
-                if (NULL == pParams -> szListString) 
+                if (NULL == pParams -> szListString)
                 {
                     ECDISP_ERROR(hDlg,
                                  "Error allocating memory");
@@ -3787,14 +3787,14 @@ bGetUsageDiffDlgProc(
                 }
             }
 
-            if (StringLength2 <= 0) 
+            if (StringLength2 <= 0)
             {
                 pParams -> szListString2 = NULL;
             }
-            else 
+            else
             {
                 pParams -> szListString2 = (PCHAR) malloc(StringLength2+1);
-                if (NULL == pParams -> szListString2) 
+                if (NULL == pParams -> szListString2)
                 {
                     ECDISP_ERROR(hDlg,
                                  "Error allocating memory");
@@ -3845,7 +3845,7 @@ ConvertStringToUsageList(
 /*++
 RoutineDescription:
     This routine converts a string of values into a string of usages which are
-    currently 2 byte values.  We use base 16 to specify that the usages should 
+    currently 2 byte values.  We use base 16 to specify that the usages should
     be expressed as hexidecimal numbers.
 --*/
 {
@@ -3878,9 +3878,9 @@ RoutineDescription
 
 BOOL
 SetDlgItemIntHex(
-   HWND hDlg, 
-   INT nIDDlgItem, 
-   UINT uValue, 
+   HWND hDlg,
+   INT nIDDlgItem,
+   UINT uValue,
    INT nBytes
 )
 {
@@ -3905,7 +3905,7 @@ SetDlgItemIntHex(
 
 VOID
 ECDisp_MakeGUIDString(
-    IN  GUID guid, 
+    IN  GUID guid,
     OUT CHAR szString[],
 	IN  UINT uiBuffSize
 )
@@ -3914,12 +3914,12 @@ ECDisp_MakeGUIDString(
     INT i;
 	HRESULT stringReturn;
 
-    for (i = 0; i < 8; i++) 
+    for (i = 0; i < 8; i++)
     {
         stringReturn = StringCbPrintf(&(szCharString[i]), sizeof(szCharString),
                        "%x", guid.Data4[i]);
     }
-    
+
     stringReturn = StringCbPrintf(szString, uiBuffSize,
                    "%x-%x%x-%s", guid.Data1, guid.Data2, guid.Data3, szCharString);
     return;
@@ -3933,7 +3933,7 @@ ECDisp_GetHidAppStatusString(
     static CHAR hidString[128];
 	HRESULT		stringReturn;
 
-    switch (StatusCode) 
+    switch (StatusCode)
     {
     case HIDP_STATUS_SUCCESS:
         return ("Success");
@@ -3977,19 +3977,19 @@ ECDisp_GetHidAppStatusString(
     case HIDP_STATUS_IS_VALUE_ARRAY:
         return ("Is value array");
 
-    case HIDP_STATUS_DATA_INDEX_NOT_FOUND:   
+    case HIDP_STATUS_DATA_INDEX_NOT_FOUND:
         return ("Data index not found");
 
     case HIDP_STATUS_DATA_INDEX_OUT_OF_RANGE:
         return ("Data index out of range");
 
-    case HIDP_STATUS_BUTTON_NOT_PRESSED:     
+    case HIDP_STATUS_BUTTON_NOT_PRESSED:
         return ("Button not pressed");
 
     case HIDP_STATUS_REPORT_DOES_NOT_EXIST:
         return ("Report does not exist");
 
-    case HIDP_STATUS_NOT_IMPLEMENTED:        
+    case HIDP_STATUS_NOT_IMPLEMENTED:
         return ("Not implemented");
 
     default:
@@ -3997,7 +3997,7 @@ ECDisp_GetHidAppStatusString(
                        "Unknown HID Status error: 0x%x", StatusCode);
         return (hidString);
     }
-}             
+}
 
 BOOL
 ECDisp_ConvertUlongListToValueList(
@@ -4010,10 +4010,10 @@ ECDisp_ConvertUlongListToValueList(
 )
 /*++
 RoutineDescription:
-    This routine takes a list of ULong values and formats a value list that is 
+    This routine takes a list of ULong values and formats a value list that is
     used as input to HidP_SetUsageValueArray.  Unfortunately, this HidP function
     requires the caller to format the input buffer which means taking each of
-    the values in Ulong, truncating their values to meet bit size and then set 
+    the values in Ulong, truncating their values to meet bit size and then set
     those bits at the appropriate spot in the buffer.  That is the purpose of
     this function
 
@@ -4034,7 +4034,7 @@ RoutineDescription:
 
     *ValueList = NULL;
     *ValueListSize = 0;
-    
+
     //
     // Do some parameter validation...ReportCount should never be zero.
     //
@@ -4065,7 +4065,7 @@ RoutineDescription:
     ListSize = ROUND_TO_NEAREST_BYTE(BitSize * ReportCount);
     List = (PCHAR) malloc(ListSize);
 
-    if (NULL == List) 
+    if (NULL == List)
     {
         SetLastError(ERROR_OUTOFMEMORY);
         return (FALSE);
@@ -4104,7 +4104,7 @@ RoutineDescription:
     //           care about.
     //      3) Determines how many bits can fit at the current byte index based
     //          on the current byte offset and the number of bits left to add
-    //      4) Retrieve those bits, shift them to the correct position and 
+    //      4) Retrieve those bits, shift them to the correct position and
     //            use bitwise or to get the correct values in the buffer
     //      5) Increment the byte index and set our new byte offset
     //      6) Shift our Ulong value right to get rid of least significant bits
@@ -4112,18 +4112,18 @@ RoutineDescription:
     //      7) Repeat through step 3 until no more bits to add
     */
 
-    for (UlongIndex = 0; UlongIndex < nUlongs; UlongIndex++) 
-    {    
+    for (UlongIndex = 0; UlongIndex < nUlongs; UlongIndex++)
+    {
         BitsToAdd = BitSize;
 
         ulValue = *(UlongList + UlongIndex) & ulMask;
 
-        while (BitsToAdd > 0) 
+        while (BitsToAdd > 0)
         {
             nBits = min (8 - iByteOffset, BitsToAdd);
-            
+
             LowByte = (UCHAR) (ulValue & 0xFF);
-            
+
             LowByte = LowByte << iByteOffset;
 
             *(List+iByteIndex) |= LowByte;
@@ -4136,7 +4136,7 @@ RoutineDescription:
             ulValue = ulValue >> nBits;
         }
     }
-        
+
     *ValueList = List;
     *ValueListSize = ListSize;
 
@@ -4176,16 +4176,16 @@ DisplayExtendedAttributes(
     stringReturn = StringCbPrintf(szTempBuffer, TEMP_BUFFER_SIZE,
                    "Number of attributes: %d", UnknownListLength);
     OUTSTRING(OutputWindow, szTempBuffer);
-    
+
     current = UnknownList;
-    for (index = 0; index < UnknownListLength; index++) 
+    for (index = 0; index < UnknownListLength; index++)
     {
        stringReturn = StringCbPrintf(szTempBuffer,
                       TEMP_BUFFER_SIZE,
-                      "Token: %d  BitField: 0x%X", 
+                      "Token: %d  BitField: 0x%X",
                       current -> Token,
                       current -> BitField);
-            
+
         OUTSTRING(OutputWindow, szTempBuffer);
     }
 

@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -52,7 +52,7 @@
 /// \page "USB Audio Output terminal types"
 ///
 /// This page lists the available types for an output terminal.
-/// 
+///
 /// !Types
 /// - AUDOutputTerminalDescriptor_USBTREAMING
 /// - AUDOutputTerminalDescriptor_SPEAKER

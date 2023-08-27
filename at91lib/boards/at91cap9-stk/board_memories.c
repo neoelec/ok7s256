@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -38,7 +38,7 @@
 #include <board.h>
 #include <pio/pio.h>
 #include "board_memories.h"
-                       
+
 /*
     Macros:
         READ - Reads a register value. Useful to add trace information to read
@@ -80,7 +80,7 @@ void BOARD_ConfigureVddMemSel(unsigned char VddMemSel)
     }
     else {
 
-        AT91C_BASE_CCFG->CCFG_EBICSA |= AT91C_EBI_SUP_3V3;        
+        AT91C_BASE_CCFG->CCFG_EBICSA |= AT91C_EBI_SUP_3V3;
     }
 }
 
@@ -125,24 +125,24 @@ void BOARD_ConfigureSdram(unsigned char busWidth)
 
     // Enable corresponding PIOs
     PIO_Configure(pinsSdram, 1);
-    
-    WRITE(AT91C_BASE_SDDRC, SDDRC_MDR , AT91C_MD_SDR_SDRAM 
+
+    WRITE(AT91C_BASE_SDDRC, SDDRC_MDR , AT91C_MD_SDR_SDRAM
                                         | sdrc_dbw);    // SDRAM type 3.3V
-                                        
-    WRITE(AT91C_BASE_SDDRC, SDDRC_CR  , AT91C_NC_DDR10_SDR9 
-                                        | AT91C_NR_13 
+
+    WRITE(AT91C_BASE_SDDRC, SDDRC_CR  , AT91C_NC_DDR10_SDR9
+                                        | AT91C_NR_13
                                         | AT91C_CAS_3);    // row = 13, column = 9 SDRAM CAS = 3
-    
+
     WRITE(AT91C_BASE_SDDRC, SDDRC_LPR , 0x00000000);    // Low power register => Low-power is inhibited // No define
 
     sleep_time(50000);               // --------- WAIT ---------
 
     WRITE(AT91C_BASE_SDDRC, SDDRC_MR, AT91C_MODE_NOP_CMD);  // NOP command
     pSdram[0] = 0x00000000;          // Dummy read to access SDRAM : validate preceeding command
-    
+
     WRITE(AT91C_BASE_SDDRC, SDDRC_MR, AT91C_MODE_NOP_CMD);  // NOP command
     pSdram[0] = 0x00000000;  // Dummy read to access SDRAM : validate preceeding command
-    
+
     WRITE(AT91C_BASE_SDDRC, SDDRC_MR, AT91C_MODE_NOP_CMD);  // NOP command
     pSdram[0] = 0x00000000;  // Dummy read to access SDRAM : validate preceeding command
 
@@ -153,68 +153,68 @@ void BOARD_ConfigureSdram(unsigned char busWidth)
 
     WRITE(AT91C_BASE_SDDRC, SDDRC_MR, AT91C_MODE_RFSH_CMD);  // AutoRefresh command
     pSdram[0] = 0x00000000;  // Dummy read to access SDRAM : validate preceeding command
-       
+
     sleep_time(50000);               // --------- WAIT ---------
 
     WRITE(AT91C_BASE_SDDRC, SDDRC_MR, AT91C_MODE_RFSH_CMD);  // AutoRefresh command
     pSdram[0] = 0x00000000;  // Dummy read to access SDRAM : validate preceeding command
-    
+
     sleep_time(50000);               // --------- WAIT ---------
 
     WRITE(AT91C_BASE_SDDRC, SDDRC_MR, AT91C_MODE_LMR_CMD);  // Set MR JEDEC compliant : Load mode Register command
     pSdram[19] = 0x5a5a5b5b;    // Perform LMR burst=1, lat=2
 
     WRITE(AT91C_BASE_SDDRC, SDDRC_MR, AT91C_MODE_NORMAL_CMD);  // Set Normal mode : Any access to the DDRSDRAMC is decoded normally
-    pSdram[0] = 0x00000000;  // Dummy read to access SDRAM : validate preceeding command 
+    pSdram[0] = 0x00000000;  // Dummy read to access SDRAM : validate preceeding command
 
     WRITE(AT91C_BASE_SDDRC, SDDRC_RTR, 781);         // Set Refresh Timer (ex: ((64 x 10^-3)/8192) x 100 x 10^6 ) => 781 for 100 MHz
-                                     
+
     WRITE(AT91C_BASE_SDDRC, SDDRC_HS, AT91C_OVL);        // High speed register : Optimization is disabled
-       
+
     sleep_time(50000);               // --------- WAIT ---------
 }
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NandFlash access at 100MHz.
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNandFlash(unsigned char busWidth)
 {
     // Configure EBI
     AT91C_BASE_CCFG->CCFG_EBICSA |= AT91C_EBI_CS3A_SM;
 
-    // Configure SMC 
-    
+    // Configure SMC
+
     // Configure SMC
     AT91C_BASE_SMC->SMC_SETUP3 = 0x00010001;
     AT91C_BASE_SMC->SMC_PULSE3 = 0x03030303;
     AT91C_BASE_SMC->SMC_CYCLE3 = 0x00050005;
     AT91C_BASE_SMC->SMC_CTRL3  = 0x00020003;
-    
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
     else if (busWidth == 32) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_THIRTY_TWO_BITS;
     }
 }
 
 //------------------------------------------------------------------------------
 /// Configures the EBI for NandFlash access at 48MHz.
-/// \Param busWidth Bus width 
+/// \Param busWidth Bus width
 //------------------------------------------------------------------------------
 void BOARD_ConfigureNandFlash48MHz(unsigned char busWidth)
 {
     // Configure EBI
     AT91C_BASE_CCFG->CCFG_EBICSA |= AT91C_EBI_CS3A_SM;
 
-    // Configure SMC 
+    // Configure SMC
     AT91C_BASE_SMC->SMC_SETUP3 = 0x00010001;
     AT91C_BASE_SMC->SMC_PULSE3 = 0x04030302;
     AT91C_BASE_SMC->SMC_CYCLE3 = 0x00070004;
@@ -222,17 +222,17 @@ void BOARD_ConfigureNandFlash48MHz(unsigned char busWidth)
                                   | AT91C_SMC_WRITEMODE
                                   | AT91C_SMC_NWAITM_NWAIT_DISABLE
                                   | ((0x1 << 16) & AT91C_SMC_TDF));
-                           
+
     if (busWidth == 8) {
 
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_EIGTH_BITS;
     }
     else if (busWidth == 16) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_SIXTEEN_BITS;
     }
     else if (busWidth == 32) {
- 
+
         AT91C_BASE_SMC->SMC_CTRL3 |= AT91C_SMC_DBW_WIDTH_THIRTY_TWO_BITS;
     }
 }

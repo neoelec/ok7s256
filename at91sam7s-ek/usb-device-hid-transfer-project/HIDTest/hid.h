@@ -76,14 +76,14 @@ typedef struct _HID_DATA {
    };
 } HID_DATA, *PHID_DATA;
 
-typedef struct _HID_DEVICE {   
+typedef struct _HID_DEVICE {
     PCHAR                DevicePath;
     HANDLE               HidDevice; // A file handle to the hid device.
     BOOL                 OpenedForRead;
     BOOL                 OpenedForWrite;
     BOOL                 OpenedOverlapped;
     BOOL                 OpenedExclusive;
-    
+
     PHIDP_PREPARSED_DATA Ppd; // The opaque parser info describing this device
     HIDP_CAPS            Caps; // The Capabilities of this hid device.
     HIDD_ATTRIBUTES      Attributes;
@@ -151,7 +151,7 @@ ReadOverlapped (
     PHID_DEVICE     HidDevice,
     HANDLE          CompletionEvent
    );
-   
+
 BOOLEAN
 Write (
    PHID_DEVICE    HidDevice

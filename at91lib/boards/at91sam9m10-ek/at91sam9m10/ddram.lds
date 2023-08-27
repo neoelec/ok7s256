@@ -43,7 +43,7 @@ MEMORY
 }
 
 SECTIONS
-{  
+{
     .fixed :
     {
         . = ALIGN(4);
@@ -81,7 +81,7 @@ SECTIONS
         . = ALIGN(4);
         _ezero = .;
     } >ddr_ebi0
-    
+
     _sstack = 0x70000000 + 128 * 1024 * 1024;
 }
 end = .;

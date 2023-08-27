@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -31,11 +31,11 @@
 /// \unit
 ///
 /// !Purpose
-/// 
+///
 /// ISO 7816 driver
-/// 
+///
 /// !Usage
-/// 
+///
 /// Explanation on the usage of the code made available through the header file.
 //------------------------------------------------------------------------------
 
@@ -186,8 +186,8 @@ void ISO7816_IccPowerOff( void )
 /// \param wLength  Block length
 /// \return         Message index
 //------------------------------------------------------------------------------
-unsigned short ISO7816_XfrBlockTPDU_T0(const unsigned char *pAPDU, 
-                                        unsigned char *pMessage, 
+unsigned short ISO7816_XfrBlockTPDU_T0(const unsigned char *pAPDU,
+                                        unsigned char *pMessage,
                                         unsigned short wLength )
 {
     unsigned short NeNc;
@@ -310,7 +310,7 @@ unsigned short ISO7816_XfrBlockTPDU_T0(const unsigned char *pAPDU,
     ISO7816_GetChar(&pMessage[indexMessage++]); // SW2
 
     return( indexMessage );
-    
+
 }
 
 //------------------------------------------------------------------------------
@@ -586,13 +586,13 @@ void ISO7816_Init( const Pin pPinIso7816RstMC )
     // Pin ISO7816 initialize
     st_pinIso7816RstMC  = pPinIso7816RstMC;
 
-    USART_Configure( AT91C_BASE_US0, 
+    USART_Configure( AT91C_BASE_US0,
                      AT91C_US_USMODE_ISO7816_0
-                     | AT91C_US_CLKS_CLOCK       
-                     | AT91C_US_NBSTOP_1_BIT     
-                     | AT91C_US_PAR_EVEN         
-                     | AT91C_US_CHRL_8_BITS      
-                     | AT91C_US_CKLO             
+                     | AT91C_US_CLKS_CLOCK
+                     | AT91C_US_NBSTOP_1_BIT
+                     | AT91C_US_PAR_EVEN
+                     | AT91C_US_CHRL_8_BITS
+                     | AT91C_US_CKLO
                      | (3<<24), // MAX_ITERATION
                      1,
                      0);

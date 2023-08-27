@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- *         ATMEL Microcontroller Software Support 
+ *         ATMEL Microcontroller Software Support
  * ----------------------------------------------------------------------------
  * Copyright (c) 2008, Atmel Corporation
  *
@@ -75,7 +75,7 @@ typedef struct {
     /// HID class specification release number in BCD format.
     unsigned short bcdHID;
     /// Country code of the device if it is localized.
-    unsigned char bCountryCode; 
+    unsigned char bCountryCode;
     /// Number of subordinate descriptors.
     unsigned char bNumDescriptors;
     /// Type of the first subordinate descriptor.

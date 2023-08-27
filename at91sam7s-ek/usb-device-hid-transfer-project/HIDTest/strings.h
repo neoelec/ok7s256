@@ -9,7 +9,7 @@ Module Name:
 Abstract:
 
     This module contains the public function definitions for the routines
-    in strings.c that handle conversion of integer/data buffer to/from 
+    in strings.c that handle conversion of integer/data buffer to/from
     string represenation
 
 Environment:
@@ -18,7 +18,7 @@ Environment:
 
 Revision History:
 
-    May-98 : Created 
+    May-98 : Created
 
 --*/
 
