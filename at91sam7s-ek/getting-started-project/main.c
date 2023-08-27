@@ -122,7 +122,7 @@
 /// Delay for pushbutton debouncing (in milliseconds).
 #define DEBOUNCE_TIME       500
 
-/// PIT period value in µseconds.
+/// PIT period value in Âµseconds.
 #define PIT_PERIOD          1000
 
 //------------------------------------------------------------------------------

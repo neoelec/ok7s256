@@ -41,7 +41,7 @@
 //------------------------------------------------------------------------------
 /// Initialize the Periodic Interval Timer to generate a tick at the specified
 /// period, given the current master clock frequency.
-/// \param period  Period in µsecond.
+/// \param period  Period in Âµsecond.
 /// \param pit_frequency  Master clock frequency in MHz.
 //------------------------------------------------------------------------------
 void PIT_Init(unsigned int period, unsigned int pit_frequency)

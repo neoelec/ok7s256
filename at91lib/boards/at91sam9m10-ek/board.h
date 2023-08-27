@@ -455,10 +455,10 @@
 
 /// Touchscreen ADC clock frequency to use.
 #define BOARD_TOUCHSCREEN_ADCCLK    1000000 // 8MHz max
-/// Touchscreen ADC startup time in µseconds.
+/// Touchscreen ADC startup time in Âµseconds.
 #define BOARD_TOUCHSCREEN_STARTUP   40
 /// Touchscreen ADC track and hold time in nanoseconds.
-#define BOARD_TOUCHSCREEN_SHTIM     1000    // min 1µs at 8MHz
+#define BOARD_TOUCHSCREEN_SHTIM     1000    // min 1Âµs at 8MHz
 /// Touchscreen pen debounce time in nanoseconds.
 #define BOARD_TOUCHSCREEN_DEBOUNCE  10000000
 
