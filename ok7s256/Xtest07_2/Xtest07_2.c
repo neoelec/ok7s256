@@ -7,7 +7,7 @@
 
 #include "lib_AT91SAM7S256.h"
 #include <OK7S256gcc.h>
-#include "OK7S256Korean.h"
+#include <OK7S256Korean.h>
 
 void GLCD_2hex(unsigned int number)
 {                                              /* display 2-digit hex number */

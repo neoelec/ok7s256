@@ -7,7 +7,7 @@
 
 #include "lib_AT91SAM7S256.h"
 #include <OK7S256gcc.h>
-#include "OK7S256Korean.h"
+#include <OK7S256Korean.h>
 
 volatile unsigned int RTT_flag = 0;            // RTT interrupt flag
 volatile unsigned int cursor, second, minute, hour, ampm; // time variable
