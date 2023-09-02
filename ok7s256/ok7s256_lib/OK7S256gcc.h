@@ -105,18 +105,18 @@ void Error(void)
   Beep();
 }
 
-__inline void AT91F_PIO_Opendrain(             /* configure open drain */
-                                   AT91PS_PIO pPio, unsigned int multiDrvEnable)
+__inline void AT91F_PIO_Opendrain(		/* configure open drain */
+	AT91PS_PIO pPio, unsigned int multiDrvEnable)
 {
-//  pPio->PIO_MDDR = ~multiDrvEnable;
-  pPio->PIO_MDER = multiDrvEnable;
+//	pPio->PIO_MDDR = ~multiDrvEnable;
+	pPio->PIO_MDER = multiDrvEnable;
 }
 
-__inline void AT91F_PIO_Pullup(                /* configure pull up */
-                                AT91PS_PIO pPio, unsigned int pullupEnable)
+__inline void AT91F_PIO_Pullup(			/* configure pull up */
+	AT91PS_PIO pPio, unsigned int pullupEnable)
 {
-//  pPio->PIO_PPUDR = ~pullupEnable;
-  pPio->PIO_PPUER = pullupEnable;
+//	pPio->PIO_PPUDR = ~pullupEnable;
+	pPio->PIO_PPUER = pullupEnable;
 }
 
 void MCU_initialize(void)
