@@ -1,14 +1,14 @@
 /* ========================================================================== */
-/*		    Xtest06_2.c : Image Display on GLCD		              */
+/*                    Xtest06_2.c : Image Display on GLCD                     */
 /* ========================================================================== */
-/*			  Designed and programmed by Duck-Yong Yoon in 2007.  */
+/*                        Designed and programmed by Duck-Yong Yoon in 2007.  */
 
 #include "AT91SAM7S256.h"
 #include "lib_AT91SAM7S256.h"
 #include "OK7S256gcc.h"
 #include "OK7S256GLCD.h"
 
-const unsigned char screen1[1024] =		/* image data of screen 1 */
+const unsigned char screen1[1024] =            /* image data of screen 1 */
 { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -139,7 +139,7 @@ const unsigned char screen1[1024] =		/* image data of screen 1 */
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const unsigned char screen2[1024] =		/* image data of screen 2 */
+const unsigned char screen2[1024] =            /* image data of screen 2 */
 { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -270,7 +270,7 @@ const unsigned char screen2[1024] =		/* image data of screen 2 */
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-const unsigned char screen3[1024] =		/* image data of screen 3 */
+const unsigned char screen3[1024] =            /* image data of screen 3 */
 { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -401,51 +401,52 @@ const unsigned char screen3[1024] =		/* image data of screen 3 */
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 };
 
-void GLCD_draw(unsigned int number)		/* draw a GLCD screen */
-{ unsigned int i, j;
+void GLCD_draw(unsigned int number)
+{                                              /* draw a GLCD screen */
+  unsigned int i, j;
 
-  for(i = 0; i <= 7; i++)
-    { GLCD_command(GLCD_CS2|GLCD_CS1,0xB8 + (7-i)); // X addtess
-      GLCD_command(GLCD_CS1,0x40);		// Y start address of CS1
-      for(j = 0; j <= 63; j++)			// draw CS1 data
-        { if(number == 1)
-            GLCD_data(GLCD_CS1, screen1[i + j*8]);
-          else if(number == 2)
-            GLCD_data(GLCD_CS1, screen2[i + j*8]);
-          else if(number == 3)
-            GLCD_data(GLCD_CS1, screen3[i + j*8]);
-        }
-      GLCD_command(GLCD_CS2,0x40);		// Y start address of CS2
-      for(j = 64; j <= 127; j++)		// draw CS2 data
-        { if(number == 1)
-            GLCD_data(GLCD_CS2, screen1[i + j*8]);
-          else if(number == 2)
-            GLCD_data(GLCD_CS2, screen2[i + j*8]);
-          else if(number == 3)
-            GLCD_data(GLCD_CS2, screen3[i + j*8]);
-        }
+  for (i = 0; i <= 7; i++) {
+    GLCD_command(GLCD_CS2 | GLCD_CS1, 0xB8 + (7 - i));  // X addtess
+    GLCD_command(GLCD_CS1, 0x40);              // Y start address of CS1
+    for (j = 0; j <= 63; j++) {                // draw CS1 data
+      if (number == 1)
+        GLCD_data(GLCD_CS1, screen1[i + j * 8]);
+      else if (number == 2)
+        GLCD_data(GLCD_CS1, screen2[i + j * 8]);
+      else if (number == 3)
+        GLCD_data(GLCD_CS1, screen3[i + j * 8]);
     }
+    GLCD_command(GLCD_CS2, 0x40);              // Y start address of CS2
+    for (j = 64; j <= 127; j++) {              // draw CS2 data
+      if (number == 1)
+        GLCD_data(GLCD_CS2, screen1[i + j * 8]);
+      else if (number == 2)
+        GLCD_data(GLCD_CS2, screen2[i + j * 8]);
+      else if (number == 3)
+        GLCD_data(GLCD_CS2, screen3[i + j * 8]);
+    }
+  }
 }
 
 int main(void)
 {
   unsigned int i;
 
-  MCU_initialize();				// initialize AT91SAM7S256 & kit
-  Delay_ms(50);					// wait for system stabilization
-  LCD_initialize();				// initialize text LCD
-  GLCD_clear();		               		// initialize GLCD screen
+  MCU_initialize();                            // initialize AT91SAM7S256 & kit
+  Delay_ms(50);                                // wait for system stabilization
+  LCD_initialize();                            // initialize text LCD
+  GLCD_clear();                                // initialize GLCD screen
 
-  LCD_string(0x80," Image Graphic  ");          // display title on text LCD
-  LCD_string(0xC0,"   screen(0)    ");
+  LCD_string(0x80, " Image Graphic  ");        // display title on text LCD
+  LCD_string(0xC0, "   screen(0)    ");
   Beep();
 
-  while(1)
-    { for(i=1; i<=3; i++)                       // draw screen 1, 2, 3
-        { LCD_command(0xCA);
-          LCD_data(i + '0');
-          GLCD_draw(i);
-          Delay_ms(3000);
-        }
+  while (1) {
+    for (i = 1; i <= 3; i++) {                 // draw screen 1, 2, 3
+      LCD_command(0xCA);
+      LCD_data(i + '0');
+      GLCD_draw(i);
+      Delay_ms(3000);
     }
+  }
 }
