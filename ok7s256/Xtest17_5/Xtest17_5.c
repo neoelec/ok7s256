@@ -7,7 +7,7 @@
 
 #include "lib_AT91SAM7S256.h"
 #include <OK7S256gcc.h>
-#include "OK7S256GLCD.h"
+#include <OK7S256GLCD.h>
 
 volatile unsigned int n;                       // interrupt count (0-110)
 volatile unsigned int AD_data, AD_flag;        // A/D data and flag

@@ -8,7 +8,7 @@
 
 #include "lib_AT91SAM7S256.h"
 #include <OK7S256gcc.h>
-#include "OK7S256GLCD.h"
+#include <OK7S256GLCD.h>
 
 void TWI_initialize(void)
 {                                              /* initialize TWI */

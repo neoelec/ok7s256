@@ -1,5 +1,5 @@
 TARGET		:= Xtest06_1
 
-C_OBJECTS	:= $(TARGET).o OK7S256gcc.o
+C_OBJECTS	:= $(TARGET).o OK7S256gcc.o OK7S256GLCD.o
 
 include ../at91sam7s.mk

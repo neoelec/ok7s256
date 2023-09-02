@@ -7,7 +7,7 @@
 
 #include "lib_AT91SAM7S256.h"
 #include <OK7S256gcc.h>
-#include "OK7S256GLCD.h"
+#include <OK7S256GLCD.h>
 
 const unsigned char screen1[1024] =            /* image data of screen 1 */
 { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
