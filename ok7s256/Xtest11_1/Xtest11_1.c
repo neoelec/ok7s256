@@ -6,7 +6,7 @@
 #include <board.h>
 
 #include "lib_AT91SAM7S256.h"
-#include "OK7S256gcc.h"
+#include <OK7S256gcc.h>
 
 void LCD_4d(unsigned int number)
 {                                              /* display 4-digit decimal number */

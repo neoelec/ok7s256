@@ -6,7 +6,7 @@
 #include <board.h>
 
 #include "lib_AT91SAM7S256.h"
-#include "OK7S256gcc.h"
+#include <OK7S256gcc.h>
 
 void USART0_TX_char(unsigned int data)
 {                                              /* transmit a character by USART0 */

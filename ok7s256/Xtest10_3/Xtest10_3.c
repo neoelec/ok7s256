@@ -6,7 +6,7 @@
 #include <board.h>
 
 #include "lib_AT91SAM7S256.h"
-#include "OK7S256gcc.h"
+#include <OK7S256gcc.h>
 #include "OK7S256Korean.h"
 
 volatile unsigned int PIT_count = 0;           // PIT interrupt count

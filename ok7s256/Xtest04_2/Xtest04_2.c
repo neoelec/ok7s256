@@ -6,7 +6,7 @@
 #include <board.h>
 
 #include "lib_AT91SAM7S256.h"
-#include "OK7S256gcc.h"
+#include <OK7S256gcc.h>
 
 void Set_font(void)
 {                                              /* set user character font */

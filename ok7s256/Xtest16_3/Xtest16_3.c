@@ -6,7 +6,7 @@
 #include <board.h>
 
 #include "lib_AT91SAM7S256.h"
-#include "OK7S256gcc.h"
+#include <OK7S256gcc.h>
 
 unsigned int year, month, date, weekday;       // time variable
 unsigned int second, minute, hour, ampm, cursor;
