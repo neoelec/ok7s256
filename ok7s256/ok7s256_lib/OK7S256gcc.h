@@ -5,10 +5,6 @@
 #ifndef __OK7S256GCC_H__
 #define __OK7S256GCC_H__
 
-#define EXT_OC 18432000                        // external oscilator MAINCK
-#define MCK 48000000                           // master clock MCK
-#define MCKKHz (MCK/1000)                      // MCK/1000
-
 #define PA0 (1 << 0)                           // define bit number of PIO
 #define PA1 (1 << 1)
 #define PA2 (1 << 2)

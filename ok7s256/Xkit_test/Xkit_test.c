@@ -241,7 +241,7 @@ void Test7()
 
   AT91F_US0_CfgPMC();                          // enable clock of USART0
   AT91F_PIO_CfgPeriph(AT91C_BASE_PIOA, AT91C_PA6_TXD0 | AT91C_PA5_RXD0, 0); // enable TXD0, RXD0
-  AT91F_US_Configure(AT91C_BASE_US0, MCK, 0x08C0, 115200, 0); // 115200 bps, 8 data, no parity, 1 stop
+  AT91F_US_Configure(AT91C_BASE_US0, BOARD_MCK, 0x08C0, 115200, 0); // 115200 bps, 8 data, no parity, 1 stop
   AT91F_US_ResetTx(AT91C_BASE_US0);            // reset and enable USART0 transmitter
   AT91F_US_ResetRx(AT91C_BASE_US0);            // reset and enable USART0 receiver
 
