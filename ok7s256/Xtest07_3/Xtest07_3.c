@@ -93,9 +93,9 @@ int main(void)
   LCD_string(0xC0, " Integer Number ");
 
   while (1) {
-    GLCD_string(0, 0, 1, " ºÎÈ£ ¾ø´Â Á¤¼ö ");  // multiplication without sign
+    GLCD_string(0, 0, 1, " ë¶€í˜¸ ì—†ëŠ” ì •ìˆ˜ "); // multiplication without sign
     GLCD_string(1, 0, 0, " 00 x 00 = 0000 ");
-    GLCD_string(2, 0, 1, " ºÎÈ£ ÀÖ´Â Á¤¼ö ");  // multiplication with sign
+    GLCD_string(2, 0, 1, " ë¶€í˜¸ ìžˆëŠ” ì •ìˆ˜ "); // multiplication with sign
     GLCD_string(3, 0, 0, "+00x(+00)= +0000");
 
     Beep();

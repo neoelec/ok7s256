@@ -78,10 +78,10 @@ int main(void)
 
   while (1) {
     Beep();
-    GLCD_string(0, 0, 0, " ** Á¤¼öÇ¥½Ã ** ");  // display 8 bit integer
-    GLCD_string(1, 0, 0, "16Áø¼ö= 0x00    ");
-    GLCD_string(2, 0, 0, "10Áø¼ö= 000     ");
-    GLCD_string(3, 0, 0, " 2Áø¼ö= 00000000");
+    GLCD_string(0, 0, 0, " ** ì •ìˆ˜í‘œì‹œ ** "); // display 8 bit integer
+    GLCD_string(1, 0, 0, "16ì§„ìˆ˜= 0x00    ");
+    GLCD_string(2, 0, 0, "10ì§„ìˆ˜= 000     ");
+    GLCD_string(3, 0, 0, " 2ì§„ìˆ˜= 00000000");
 
     for (i = 1; i <= 255; i++) {
       GLCD_xy(1, 10);                          // (display hex)

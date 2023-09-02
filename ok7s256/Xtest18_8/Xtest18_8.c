@@ -87,10 +87,10 @@ int main(void)
   LCD_string(0x80, "    printf()    ");        // display title on text LCD
   LCD_string(0xC0, "    for GLCD    ");
 
-  GLCD_string(0, 0, 1, " printf() ÇÔ¼ö  ");    // display title on graphic LCD
+  GLCD_string(0, 0, 1, " printf() í•¨ìˆ˜  ");  // display title on graphic LCD
   GLCD_string(1, 0, 0, "                ");
-  GLCD_string(2, 0, 0, "  Á¤¼ö =   000  ");
-  GLCD_string(3, 0, 0, "  ½Ç¼ö = 0.000  ");
+  GLCD_string(2, 0, 0, "  ì •ìˆ˜ =   000  ");
+  GLCD_string(3, 0, 0, "  ì‹¤ìˆ˜ = 0.000  ");
 
   while (1) {
     for (i = 1, x = 0.001; i <= 200; i++, x += 0.001) { // loop by 200 times

@@ -23,26 +23,26 @@ int main(void)
 
   while (1) {
     Beep();
-    GLCD_string(0, 0, 0, "ARM7 ¸¶½ºÅÍ Å°Æ®");  // display screen 1
+    GLCD_string(0, 0, 0, "ARM7 ë§ˆìŠ¤í„° í‚¤íŠ¸");  // display screen 1
     GLCD_string(1, 0, 1, " OK-7S256  V1.0 ");
     GLCD_string(2, 0, 0, "   2007/06/01   ");
-    GLCD_string(3, 0, 0, "À±´ö¿ë ¼³°è,Á¦ÀÛ");
+    GLCD_string(3, 0, 0, "ìœ¤ë•ìš© ì„¤ê³„,ì œì‘");
     Delay_ms(5000);
 
     Beep();
-    GLCD_string(0, 0, 0, "    Çö´ë LCD    ");  // display screen 2
+    GLCD_string(0, 0, 0, "    í˜„ëŒ€ LCD    "); // display screen 2
     GLCD_string(1, 0, 1, "  HG12605NY-LY  ");
     GLCD_string(2, 0, 0, "                ");
-    GLCD_string(3, 0, 2, "128x64 ±×·¡ÇÈLCD");
+    GLCD_string(3, 0, 2, "128x64 ê·¸ë˜í”½LCD");
     Delay_ms(5000);
 
     Beep();
-    GLCD_string(0, 0, 0, " 3°¡Áö ¹®ÀÚ¼Ó¼º ");  // display screen 3
-    GLCD_string(1, 0, 0, "¹®ÀÚ¼Ó¼º0 : Á¤»ó");
-    GLCD_string(2, 0, 0, "¹®ÀÚ¼Ó¼º1 : ");
-    GLCD_string(2, 12, 1, "¿ª»ó");
-    GLCD_string(3, 0, 0, "¹®ÀÚ¼Ó¼º2 : ");
-    GLCD_string(3, 12, 2, "¹ØÁÙ");
+    GLCD_string(0, 0, 0, " 3ê°€ì§€ ë¬¸ìì†ì„± "); // display screen 3
+    GLCD_string(1, 0, 0, "ë¬¸ìì†ì„±0 : ì •ìƒ");
+    GLCD_string(2, 0, 0, "ë¬¸ìì†ì„±1 : ");
+    GLCD_string(2, 12, 1, "ì—­ìƒ");
+    GLCD_string(3, 0, 0, "ë¬¸ìì†ì„±2 : ");
+    GLCD_string(3, 12, 2, "ë°‘ì¤„");
     Delay_ms(5000);
 
     Beep();

@@ -111,19 +111,19 @@ void RTC_display(void)
 
   weekday = TWI_receive(0x03);                 // display weekday
   if (weekday == 1)
-    GLCD_string(1, 12, 0, "ÀÏ");
+    GLCD_string(1, 12, 0, "ì¼");
   else if (weekday == 2)
-    GLCD_string(1, 12, 0, "¿ù");
+    GLCD_string(1, 12, 0, "ì›”");
   else if (weekday == 3)
-    GLCD_string(1, 12, 0, "È­");
+    GLCD_string(1, 12, 0, "í™”");
   else if (weekday == 4)
-    GLCD_string(1, 12, 0, "¼ö");
+    GLCD_string(1, 12, 0, "ìˆ˜");
   else if (weekday == 5)
-    GLCD_string(1, 12, 0, "¸ñ");
+    GLCD_string(1, 12, 0, "ëª©");
   else if (weekday == 6)
-    GLCD_string(1, 12, 0, "±Ý");
+    GLCD_string(1, 12, 0, "ê¸ˆ");
   else
-    GLCD_string(1, 12, 0, "Åä");
+    GLCD_string(1, 12, 0, "í† ");
 
   hour = TWI_receive(0x02) & 0x3F;             // display hour
   if (hour > 0x20) {
@@ -275,7 +275,7 @@ int main(void)
   LCD_string(0xC0, "    on GLCD     ");
 
   GLCD_string(0, 0, 0, "****************");    // display title on graphic LCD
-  GLCD_string(1, 0, 0, " 2007/06/01(¿ù) ");
+  GLCD_string(1, 0, 0, " 2007/06/01(ì›”) ");
   GLCD_string(2, 0, 0, "  12:00:00 AM   ");
   GLCD_string(3, 0, 0, "****************");
   Beep();

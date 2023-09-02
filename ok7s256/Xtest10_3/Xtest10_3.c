@@ -148,7 +148,7 @@ int main(void)
   LCD_string(0xC0, "    on GLCD     ");
 
   GLCD_string(0, 0, 0, "****************");    // display title on graphic LCD
-  GLCD_string(1, 0, 0, "  µðÁöÅÐ ½Ã°è   ");
+  GLCD_string(1, 0, 0, "  ë””ì§€í„¸ ì‹œê³„   ");
   GLCD_string(2, 0, 0, "  12:00:00 AM   ");
   GLCD_string(3, 0, 0, "****************");
   Beep();
