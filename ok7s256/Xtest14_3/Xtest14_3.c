@@ -5,7 +5,7 @@
 
 #include <board.h>
 
-#include "lib_AT91SAM7S256.h"
+#include <lib_AT91SAM7S256.h>
 #include <OK7S256gcc.h>
 
 unsigned int DBGU_RX_char_nowait(void)

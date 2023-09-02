@@ -5,7 +5,7 @@
 
 #include <board.h>
 
-#include "lib_AT91SAM7S256.h"
+#include <lib_AT91SAM7S256.h>
 #include <OK7S256gcc.h>
 
 __inline void AT91F_PWMC_CfgMode(AT91PS_PWMC pPWM,  // pointer to a PWM controller
