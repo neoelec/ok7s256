@@ -40,9 +40,6 @@
 #ifndef lib_AT91SAM7S256_H
 #define lib_AT91SAM7S256_H
 
-/* FIXME: to prevent linker errors */
-#define __inline static inline
-
 /* *****************************************************************************
                 SOFTWARE API FOR AIC
    ***************************************************************************** */
