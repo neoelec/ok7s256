@@ -5,6 +5,8 @@
 #ifndef __OK7S256GCC_H__
 #define __OK7S256GCC_H__
 
+#include "lib_AT91SAM7S256gcc.h"
+
 #define PA0 (1 << 0)                           // define bit number of PIO
 #define PA1 (1 << 1)
 #define PA2 (1 << 2)
@@ -59,19 +61,5 @@ extern void LCD_initialize(void);              /* initialize text LCD module */
 extern void LCD_string(unsigned int command, char *string); /* display a string on text LCD */
 extern unsigned int Key_in(void);              /* input key KEY2 - KEY1 without debouncing */
 extern unsigned int Key_input(void);           /* input key KEY2 - KEY1 with debouncing */
-
-__inline void AT91F_PIO_Opendrain(		/* configure open drain */
-	AT91PS_PIO pPio, unsigned int multiDrvEnable)
-{
-//	pPio->PIO_MDDR = ~multiDrvEnable;
-	pPio->PIO_MDER = multiDrvEnable;
-}
-
-__inline void AT91F_PIO_Pullup(			/* configure pull up */
-	AT91PS_PIO pPio, unsigned int pullupEnable)
-{
-//	pPio->PIO_PPUDR = ~pullupEnable;
-	pPio->PIO_PPUER = pullupEnable;
-}
 
 #endif /* __OK7S256GCC_H__ */

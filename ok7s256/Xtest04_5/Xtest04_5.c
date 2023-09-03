@@ -6,7 +6,6 @@
 #include <math.h>
 #include <board.h>
 
-#include <lib_AT91SAM7S256.h>
 #include <OK7S256gcc.h>
 
 void LCD_1d1(double number)
