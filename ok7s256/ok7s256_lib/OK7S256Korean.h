@@ -48,11 +48,6 @@ extern void GLCD_English(unsigned int attribute, unsigned char Ecode);
 extern void GLCD_Korean(unsigned int attribute, unsigned int Kcode);
 
 /* ------------------------------------------------------------------------------- */
-/*    Korean Code Conversion from KSSM(완성형) to KS(조합형)                       */
-/* ------------------------------------------------------------------------------- */
-extern unsigned int KS_code_conversion(unsigned int KSSM);
-
-/* ------------------------------------------------------------------------------- */
 /*   Display a String(attribute : 0x00=normal, 0x01 = reverse, 0x02 = underline)   */
 /* ------------------------------------------------------------------------------- */
 extern void GLCD_string(unsigned int x, unsigned int y, unsigned int attribute, char *string);
