@@ -60,8 +60,8 @@ EXT_LIBS= ../external_libs
 # Output file basename
 OUTPUT = basic-dhrystone-project-$(BOARD)-$(CHIP)
 
-# Compile for SRAM
-MEMORIES = sram
+# Compile for all memories available on the board (this sets $(MEMORIES))
+include $(AT91LIB)/boards/$(BOARD)/board.mak
 
 # Output directories
 BIN = bin
