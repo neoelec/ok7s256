@@ -187,6 +187,8 @@ static volatile unsigned char conversionDone;
 #define ADC_NUM_4  ADC_CHANNEL_7
 #endif
 
+#include "ok7s256hack.h"
+
 //------------------------------------------------------------------------------
 //         Local functions
 //------------------------------------------------------------------------------
