@@ -110,7 +110,7 @@ VPATH		+= $(PERIPH)/cp15
 VPATH		+= $(BOARDS)/$(BOARD) $(BOARDS)/$(BOARD)/$(CHIP)
 VPATH		+= $(RCNLIB)/drivers/lcd
 VPATH		+= $(RCNLIB)/utility
-VPATH		+= $(PERIPH)/aic $(PERIPH)/pio $(PERIPH)/pit $(PERIPH)/tc $(PERIPH)/pmc $(PERIPH)/rstc
+VPATH		+= $(PERIPH)/aic $(PERIPH)/pio $(PERIPH)/pit $(PERIPH)/tc $(PERIPH)/pmc $(PERIPH)/rstc $(PERIPH)/adc
 
 # Objects built from C source files
 #C_OBJECTS		:= $(TARGET).o
