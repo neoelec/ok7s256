@@ -26,7 +26,8 @@
 # EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 # ----------------------------------------------------------------------------
 
-PROJECT_PATH	:= $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
+COMMON_MK_FILE	:= $(realpath $(lastword $(MAKEFILE_LIST)))
+PROJECT_PATH	:= $(shell dirname $(COMMON_MK_FILE))
 
 # 	Makefile for compiling the Getting Started project
 
@@ -64,6 +65,9 @@ OK7S256LIB	:= $(PROJECT_PATH)/ok7s256_lib
 # Output file basename
 OUTPUT		:= $(TARGET)-$(BOARD)-$(CHIP)
 
+# J-Link
+JLINK		:= /opt/SEGGER/JLink
+
 # Compile for all memories available on the board (this sets $(MEMORIES))
 include $(AT91LIB)/boards/$(BOARD)/board.mak
 
@@ -83,42 +87,47 @@ CC		:= $(CROSS_COMPILE)gcc
 SIZE		:= $(CROSS_COMPILE)size
 STRIP		:= $(CROSS_COMPILE)strip
 OBJCOPY		:= $(CROSS_COMPILE)objcopy
+JFLASHEXE	:= $(JLINK)/JFlashExe
 
 # Flags
-INCLUDES	:= -I$(AT91LIB)/boards/$(BOARD) -I$(AT91LIB)/peripherals
-INCLUDES	+= -I$(AT91LIB)/components -I$(AT91LIB)
-INCLUDES	+= -I$(OK7S256LIB)
-
 CFLAGS		:= -Wall -mlong-calls -ffunction-sections --param=min-pagesize=0
-CFLAGS		+= -g $(OPTIMIZATION) $(INCLUDES) -D$(CHIP) -DTRACE_LEVEL=$(TRACE_LEVEL)
-ASFLAGS		:= -g $(OPTIMIZATION) $(INCLUDES) -D$(CHIP) -D__ASSEMBLY__
-LDFLAGS		:= -g $(OPTIMIZATION) -nostartfiles -Wl,--gc-sections
+CFLAGS		+= -D$(CHIP) -DTRACE_LEVEL=$(TRACE_LEVEL)
+ASFLAGS		:= -D$(CHIP) -D__ASSEMBLY__
+LDFLAGS		:= -nostartfiles -Wl,--gc-sections
+JFLASHFLAGS	:= -openprj $(JLINK)/Samples/JFlash/ProjectFiles/Atmel/$(shell echo $(CHIP) | tr  '[:lower:]' '[:upper:]').jflash
 
 #-------------------------------------------------------------------------------
 #		Files
 #-------------------------------------------------------------------------------
 
 # Directories where source files can be found
-UTILITY		:= $(AT91LIB)/utility
-PERIPH		:= $(AT91LIB)/peripherals
 BOARDS		:= $(AT91LIB)/boards
+DRV		:= $(AT91LIB)/drivers
+PERIPH		:= $(AT91LIB)/peripherals
+UTILITY		:= $(AT91LIB)/utility
 
-VPATH		+= $(UTILITY)
+INCLUDES	:= -I$(AT91LIB)
+INCLUDES	+= -I$(AT91LIB)/boards/$(BOARD)
+INCLUDES	+= -I$(AT91LIB)/peripherals
+INCLUDES	+= -I$(OK7S256LIB)
+
+VPATH		+= $(BOARDS)/$(BOARD) $(BOARDS)/$(BOARD)/$(CHIP)
 VPATH		+= $(PERIPH)/dbgu
 VPATH		+= $(PERIPH)/cp15
-VPATH		+= $(BOARDS)/$(BOARD) $(BOARDS)/$(BOARD)/$(CHIP)
+VPATH		+= $(PERIPH)/rstc
+VPATH		+= $(UTILITY)
 VPATH		+= $(OK7S256LIB)
-#VPATH		+= $(PERIPH)/aic $(PERIPH)/pio $(PERIPH)/pit $(PERIPH)/tc $(PERIPH)/pmc
 
 # Objects built from C source files
-#C_OBJECTS		:= $(TARGET).o
-C_OBJECTS	+= stdio.o dbgu.o cp15.o
+#C_OBJECTS	:= $(TARGET).o
+C_OBJECTS	+= stdio.o dbgu.o cp15.o rstc.o
 C_OBJECTS	+= board_memories.o board_lowlevel.o
-#C_OBJECTS	+= pio.o aic.o pio_it.o pit.o tc.o pmc.o
 
 # Objects built from Assembly source files
-ASM_OBJECTS	:= board_cstartup.o
+ASM_OBJECTS	+= board_cstartup.o
 ASM_OBJECTS	+= cp15_asm.o
+
+LIBRARIES	:= -lm
 
 # Append OBJ and BIN directories to output filename
 OUTPUT		:= $(BIN)/$(OUTPUT)
@@ -127,7 +136,9 @@ OUTPUT		:= $(BIN)/$(OUTPUT)
 #		Rules
 #-------------------------------------------------------------------------------
 
-all: $(BIN) $(OBJ) $(MEMORIES)
+all: $(MEMORIES)
+
+$(MEMORIES): $(BIN) $(OBJ)
 
 $(BIN) $(OBJ):
 	mkdir $@
@@ -135,17 +146,31 @@ $(BIN) $(OBJ):
 define RULES
 C_OBJECTS_$(1)	:= $(addprefix $(OBJ)/$(1)_, $(C_OBJECTS))
 ASM_OBJECTS_$(1):= $(addprefix $(OBJ)/$(1)_, $(ASM_OBJECTS))
+LD_SCRIPT_$(1)	:= $(AT91LIB)/boards/$(REF_BOARD)/$(CHIP)/$(1).lds
 
-$(1): $$(ASM_OBJECTS_$(1)) $$(C_OBJECTS_$(1))
-	$(CC) $(LDFLAGS) -T"$(AT91LIB)/boards/$(REF_BOARD)/$(CHIP)/$$@.lds" -o $(OUTPUT)-$$@.elf $$^ -lm
-	$(OBJCOPY) -O binary $(OUTPUT)-$$@.elf $(OUTPUT)-$$@.bin
-	$(SIZE) $$^ $(OUTPUT)-$$@.elf
+ELF_$(1)	:= $(OUTPUT)-$(1).elf
+$$(ELF_$(1)): $$(ASM_OBJECTS_$(1)) $$(C_OBJECTS_$(1))
+	$(CC) -g $(OPTIMIZATION) $(LDFLAGS) -T"$$(LD_SCRIPT_$(1))" \
+		-o $$@ $$^ $(LIBRARIES)
+	$(SIZE) $$^ $$@
 
-$$(C_OBJECTS_$(1)): $(OBJ)/$(1)_%.o: %.c Makefile $(OBJ) $(BIN)
-	$(CC) $(CFLAGS) -D$(1) -c -o $$@ $$<
+BIN_$(1)	:= $(OUTPUT)-$(1).bin
+$$(BIN_$(1)): $$(ELF_$(1))
+	$(OBJCOPY) -O binary $$< $$@
 
-$$(ASM_OBJECTS_$(1)): $(OBJ)/$(1)_%.o: %.S Makefile $(OBJ) $(BIN)
-	$(CC) $(ASFLAGS) -D$(1) -c -o $$@ $$<
+$(1): $$(BIN_$(1))
+
+$$(C_OBJECTS_$(1)): $(OBJ)/$(1)_%.o: %.c Makefile $(COMMON_MK_FILE)
+	$(CC) -g $(OPTIMIZATION) $(INCLUDES) $(CFLAGS) -D$(1) -c -o $$@ $$<
+
+$$(ASM_OBJECTS_$(1)): $(OBJ)/$(1)_%.o: %.S Makefile $(COMMON_MK_FILE)
+	$(CC) -g $(OPTIMIZATION) $(INCLUDES) $(ASFLAGS) -D$(1) -c -o $$@ $$<
+
+program_$(1): $(1)
+	$(JFLASHEXE) $(JFLASHFLAGS) -open $$(BIN_$(1)),`cat $$(LD_SCRIPT_$(1)) | \
+			grep -E '$(1).+ORIGIN' | \
+			perl -pe 's/^.+ORIGIN\s*=\s*(\S+)\s*,.+$$$$/$$$$1/'` \
+		-auto -startapp -exit
 
 endef
 
