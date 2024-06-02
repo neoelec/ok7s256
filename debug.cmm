@@ -1,0 +1,45 @@
+// SPDX-License-Identifier: GPL-2.0+
+// Copyright (c) 2024 YOUNGJIN JOO (neoelec@gmail.com)
+
+B::
+
+PRIVATE &E_Func &E_Args
+ENTRY &E_Func %LINE &E_Args
+PRIVATE &ret
+
+GOSUB debug_main &E_Func &E_Args
+ENTRY %LINE &ret
+
+ENDDO &ret
+
+debug_main:
+(
+  PRIVATE &_func &_args
+  ENTRY &_func %LINE &_args
+  PRIVATE &ret
+
+  GOSUB &_func &_args
+
+  RETURN &ret
+)
+
+on_init_soc:
+(
+  RETURN
+)
+
+on_booting:
+(
+  DO &G_RCN_OS_Script_Path/symbol.cmm load
+  SYStem.RESetTarget
+  Break.Set main /CMD "Break.Delete main"
+
+  RETURN
+)
+
+on_running:
+(
+  DO &G_RCN_OS_Script_Path/symbol.cmm load
+
+  RETURN
+)
